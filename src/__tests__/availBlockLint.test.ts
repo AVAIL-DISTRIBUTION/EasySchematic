@@ -145,23 +145,25 @@ describe("lintBlock: category (avail-taxonomy.json)", () => {
     expect(lintBlock({ ...clean(), category: "AV distribution / XTP Systems" }).level).toBe("A");
   });
 
-  it("missing category", () => {
-    expect(lintBlock({ ...clean(), category: "" }).warnings).toEqual(["нет category"]);
+  it("missing category is an error", () => {
+    expect(lintBlock({ ...clean(), category: "" })).toEqual({ level: "FIX", errors: ["нет category"], warnings: [] });
   });
 
-  it("unknown path or a group (non-leaf) category", () => {
-    expect(lintBlock({ ...clean(), category: "KVM / Extenders" }).warnings).toEqual([
-      "category «KVM / Extenders» — не листовая категория avail-taxonomy.json",
-    ]);
-    expect(lintBlock({ ...clean(), category: "AV distribution" }).warnings).toEqual([
+  it("unknown path or a group (non-leaf) category is an error", () => {
+    expect(lintBlock({ ...clean(), category: "KVM / Extenders" })).toMatchObject({
+      level: "FIX",
+      errors: ["category «KVM / Extenders» — не листовая категория avail-taxonomy.json"],
+    });
+    expect(lintBlock({ ...clean(), category: "AV distribution" }).errors).toEqual([
       "category «AV distribution» — не листовая категория avail-taxonomy.json",
     ]);
   });
 
-  it("schematic=false categories are not for blocks", () => {
-    expect(lintBlock({ ...clean(), category: "Connectivity / Bulk Cables" }).warnings).toEqual([
-      "category «Connectivity / Bulk Cables» не для блоков на схеме (schematic=false)",
-    ]);
+  it("schematic=false category is an error for a block", () => {
+    expect(lintBlock({ ...clean(), category: "Connectivity / Bulk Cables" })).toMatchObject({
+      level: "FIX",
+      errors: ["category «Connectivity / Bulk Cables» не для блоков на схеме (schematic=false)"],
+    });
   });
 });
 
@@ -216,18 +218,12 @@ describe("engineer blocks (tools/avail/fixtures/engineer-blocks.json)", () => {
     expect(rows.length).toBe(22);
   });
 
-  it("levels: A 0 / B 4 / FIX 18", () => {
-    expect(formatBlockReport(rows).trimEnd().split("\n").at(-1)).toBe("Итого: {'A': 0, 'B': 4, 'FIX': 18}");
-    expect(rows.filter((r) => r.level === "B").map((r) => r.label)).toEqual([
-      "Extron XTP II CrossPoint 1600",
-      "Extron DTP3 T 203",
-      "Extron DTP3 R 201",
-      "MXA925",
-    ]);
+  it("levels: all FIX — their categories are EasySchematic's, not the taxonomy's", () => {
+    expect(formatBlockReport(rows).trimEnd().split("\n").at(-1)).toBe("Итого: {'A': 0, 'B': 0, 'FIX': 22}");
   });
 
-  it("every block is told its category is not an AVAIL leaf category", () => {
-    for (const r of rows) expect(r.warnings.some((w) => w.startsWith("category «")), r.label).toBe(true);
+  it("every block gets a category error", () => {
+    for (const r of rows) expect(r.errors.some((e) => e.startsWith("category «")), r.label).toBe(true);
   });
 
   it("vendors: Netgear alias, ASUS and Absen outside the portfolio", () => {

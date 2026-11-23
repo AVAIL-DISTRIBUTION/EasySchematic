@@ -1,5 +1,9 @@
 import { type DragEvent, type ChangeEvent, useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { getBundledTemplates, fetchTemplates, isLibraryDegraded } from "../templateApi";
+// AVAIL: status badges, "show unverified", taxonomy grouping, review card (src/avail/)
+import { AvailCategoryTree, AvailLibraryToggle, AvailTemplateExtras } from "../avail/LibraryUi";
+import { useAvailLibraryReload, useAvailState } from "../avail/useAvail";
+import { isAvailLibrary } from "../avail/libraryMode";
 import type { DeviceTemplate, CustomTemplateGroup, OwnedGearFile, OwnedGearItem, SchematicNode, DeviceData } from "../types";
 import { useSchematicStore, CATEGORY_ORDER_DEFAULT } from "../store";
 import { scoreTemplate } from "../templateSearch";
@@ -118,6 +122,7 @@ function TemplateItem({
             <span className="text-[8px] text-blue-500 bg-blue-50 rounded px-1 py-px font-normal shrink-0">preset</span>
           )}
         </span>
+        <AvailTemplateExtras template={template} />
         {template.manufacturer && (
           <span className="text-[9px] text-[var(--color-text-muted)] opacity-70 truncate">
             <HighlightedText text={template.manufacturer} query={query} />
@@ -1063,7 +1068,7 @@ export default function DeviceLibrary() {
   const [showDeviceCreator, setShowDeviceCreator] = useState(false);
   const [showImportDialog, setShowImportDialog] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
-  const [templates, setTemplates] = useState(getBundledTemplates);
+  const [templates, setTemplates] = useState(() => (isAvailLibrary() ? [] : getBundledTemplates()));
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
   const [selectedBrands, setSelectedBrands] = useState<Set<string>>(new Set());
   const [selectedSignalTypes, setSelectedSignalTypes] = useState<Set<string>>(new Set());
@@ -1162,6 +1167,8 @@ export default function DeviceLibrary() {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- canonical load-on-mount; loadLibrary sets state as it fetches
     loadLibrary();
   }, [loadLibrary]);
+  useAvailLibraryReload(loadLibrary);
+  const avail = useAvailState();
 
   const handleAddToOwned = useCallback((template: DeviceTemplate) => {
     addOwnedGear(template, 1);
@@ -1540,6 +1547,8 @@ export default function DeviceLibrary() {
           </div>
         )}
 
+        <AvailLibraryToggle />
+
         {/* Create New Device */}
         {!hasFilter && (!query || "create new device".includes(query.toLowerCase())) && (
           <button
@@ -1606,7 +1615,24 @@ export default function DeviceLibrary() {
               onAddToOwned={handleAddToOwned}
             />
 
-            {filteredCategories.map((cat, i) => (
+            {avail.active ? (
+              <AvailCategoryTree
+                categories={filteredCategories}
+                renderSection={(section) => (
+                  <CategorySection
+                    label={section.label}
+                    templates={section.templates}
+                    query={query}
+                    defaultOpen={false}
+                    presetIds={presetIds}
+                    favoriteSet={favoriteSet}
+                    ownedQuantityMap={ownedQuantityMap}
+                    onToggleFavorite={toggleFavoriteTemplate}
+                    onAddToOwned={handleAddToOwned}
+                  />
+                )}
+              />
+            ) : filteredCategories.map((cat, i) => (
               <CategorySection
                 key={cat.label}
                 label={cat.label}

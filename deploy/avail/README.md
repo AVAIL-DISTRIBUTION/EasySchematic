@@ -60,6 +60,32 @@ docker compose exec api npm run import:upstream                # импорт
 Импорт пишет в ту же базу, что и работающий API (том `/data`); перед первым импортом
 стоит сделать бэкап (`./backup.sh`).
 
+После импорта — автонормализация шаблонов наших вендоров (raw/draft): записываются только
+шаблоны, у которых вырос уровень по стандарту, статус не меняется.
+
+```bash
+docker compose exec api npm run normalize:library -- --dry-run   # отчёт: FIX→B по вендорам, топ причин
+docker compose exec api npm run normalize:library                # запись
+```
+
+## Роли: модераторы и админы
+
+Утверждать шаблоны (карточка ревью в библиотеке) могут модераторы и админы. Роль хранится
+в `users.role` (`contributor` / `moderator` / `admin`); пользователь появляется в базе после
+первого входа.
+
+Первый админ — прямо в базе:
+```bash
+docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','boss@avail-int.com')"
+```
+Дальше админ назначает роли через API upstream (нужна его сессия — cookie `session` из браузера):
+```bash
+curl -s https://sch.avail-int.com/api/users -H 'Cookie: session=<…>'                  # id пользователей
+curl -s -X PUT https://sch.avail-int.com/api/users/<id>/role -H 'Cookie: session=<…>' \
+     -H 'Content-Type: application/json' -d '{"role":"moderator"}'
+```
+Роль действует сразу; в открытом редакторе — после перезагрузки страницы.
+
 ## Бэкапы
 
 `backup.sh` делает консистентный снимок SQLite (online backup API, тот же механизм, что

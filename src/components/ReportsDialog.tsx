@@ -52,6 +52,7 @@ import { useSpreadsheetSelection } from "../spreadsheet/useSpreadsheetSelection"
 import type { SpreadsheetColumn } from "../spreadsheet/types";
 import FillSeriesDialog from "../spreadsheet/FillSeriesDialog";
 import { deviceTypeDisplay } from "../typeRegistry";
+import { AvailUnverifiedNotice } from "../avail/LibraryUi";
 
 export type ReportsTab = "network" | "devices" | "packList" | "cableSchedule" | "patchPanel" | "power";
 
@@ -217,6 +218,9 @@ function ReportsDialog({ initialTab, onClose }: ReportsDialogProps) {
               &times;
             </button>
           </div>
+
+          {/* AVAIL: warning when the project uses blocks from unverified templates */}
+          <AvailUnverifiedNotice nodes={nodes} />
 
           {/* Tabs */}
           <div className="px-4 pt-2 flex items-center gap-1 border-b border-[var(--color-border)]">

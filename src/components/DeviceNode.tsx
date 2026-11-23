@@ -19,6 +19,7 @@ import { isPortConnected } from "../portVisibility";
 import { conflictingExclusivePortIds, exclusiveGroupOf } from "../exclusivePorts";
 import { signalCssColor, signalLabel } from "../typeRegistry";
 import { useTypeRegistryVersion } from "../hooks/useTypeRegistryVersion";
+import { AvailBlockBadge } from "../avail/LibraryUi"; // AVAIL: template status badge
 import { estimateDeviceWidth } from "../deviceWidth";
 
 type ColumnItem =
@@ -530,6 +531,7 @@ function DeviceNodeComponent({ id, data, selected }: NodeProps<DeviceNodeType>) 
       `}
       style={{ width: deviceWidth }}
     >
+      <AvailBlockBadge templateId={data.templateId} />
       {/* Header band — merged name strip + header aux rows. Height is always a 16-multiple
            (min 32) so the first port below stays on the pathfinding grid. */}
       {renderHeaderBand(headerAuxRows)}

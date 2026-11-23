@@ -1,0 +1,4 @@
+/* AVAIL: status badges are working information — not part of PNG/PDF exports. */
+[data-export-capturing] .avail-export-hide {
+  display: none !important;
+}

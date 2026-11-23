@@ -69,10 +69,15 @@ PR всегда открываем в `master` нашего форка, **ник
 
 ### Статусы шаблонов
 
-Таблица `avail_template_meta` (наша миграция `api-avail/migrations/9001_*.sql`; таблицы
+Таблица `avail_template_meta` (наши миграции `api-avail/migrations/9001–9002`; таблицы
 upstream не меняем): `template_id` → `status` (`verified` / `draft` / `raw` / `hidden`),
-`source`, `upstream_id`, `lint_level` (A / B / FIX на момент записи), `updated_by`,
-`updated_at`. Шаблон без строки — `raw`.
+`source`, `upstream_id`, `lint_level` (A / B / FIX), `linted_version`, `updated_by`,
+`updated_at`. Шаблон без строки — `raw`; при старте API каждый шаблон получает строку.
+
+`lint_level` пересчитывается при каждом сохранении шаблона любым маршрутом (upstream
+`PUT /templates/:id`, `POST /templates`, одобрение заявки): upstream увеличивает
+`templates.version`, а после каждого успешного запроса на запись `server.ts` вызывает
+`syncLintLevels` — перелинтовка шаблонов, у которых `linted_version ≠ version`.
 
 | Статус | Что значит |
 |--------|------------|
@@ -84,7 +89,28 @@ upstream не меняем): `template_id` → `status` (`verified` / `draft` / 
 API (`api-avail/src/routes.ts`): `GET /avail/templates/status[?status=…]`,
 `GET /avail/templates/:id/status` — без авторизации, как `GET /templates`;
 `PUT /avail/templates/:id/status` `{"status": …}` — модератор/админ или `ADMIN_TOKEN`,
-пересчитывает `lint_level`, пишет `updated_by`.
+пересчитывает `lint_level`, пишет `updated_by`; `verified` — только при уровне A, иначе
+400 с `level`, `errors`, `warnings`. Смена статуса сдвигает ETag библиотеки.
+
+Библиотека отфильтрована по статусу: `server.ts` отдаёт `GET /templates` и
+`GET /templates/summary` нашими маршрутами `/avail/library/…` — по умолчанию `verified` +
+`draft`, `?include=raw` добавляет `raw`, `?include=hidden` — только модератору/админу (иначе
+403). У каждого шаблона поле `availStatus`, в ответе заголовок `X-Avail-Library: 1`.
+`GET /templates/:id` не фильтруется (схемы ссылаются и на raw-шаблоны).
+
+Редактор (`src/avail/libraryMode.ts`, `LibraryUi.tsx`, `useAvail.ts`) включает режим AVAIL
+сам, увидев `X-Avail-Library`; с API upstream всё как в upstream. В режиме AVAIL:
+переключатель «Показать непроверенные» (запоминается в браузере), список без встроенной
+библиотеки-подложки (поиск по id для существующих схем её сохраняет), группировка по
+таксономии (группа → подкатегория, только `schematic=true`, остальное — «Без категории»),
+значки «черновик» / «не проверен» у шаблонов и блоков на схеме (в экспорт не попадают),
+предупреждение в отчётах о блоках из непроверенных шаблонов, для модератора — карточка
+ревью (линтер, чек-лист стандарта, «В черновик» / «Утвердить» / «Скрыть»).
+
+Роли — механизм upstream: `users.role` (`contributor` / `moderator` / `admin`),
+`PUT /users/:id/role` (только сессия админа). Первого админа назначают в базе:
+`docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','<email>')"`
+(пользователь должен один раз войти).
 
 Импорт сырья (`api-avail/src/importUpstream.ts`, CLI `npm run import:upstream`): тянет
 публичный `GET /templates` с api.easyschematic.live, приводит `manufacturer` к
@@ -93,6 +119,15 @@ API (`api-avail/src/routes.ts`): `GET /avail/templates/status[?status=…]`,
 `label`); `verified`/`draft` не трогает, `hidden` обновляет, оставляя скрытым; повторный
 запуск ничего не меняет. На сервере: `docker compose exec api npm run import:upstream`
 (`-- --dry-run` — только отчёт).
+
+Автонормализатор (`src/avail/normalize.ts`, чистая функция `normalizeBlock(template) →
+{template, changes}`): секции → словарь стандарта (по имени или по типу сигнала и
+направлению) и порядок секций, `manufacturer`/`label`/`shortName`, подписи из капса,
+`bidirectional` для LAN/Dante/AVB/serial/GPIO/шин, `category` по `deviceTypeDefaults`. Ничего не
+выдумывает: неоднозначное не меняет, а пишет в `changes` с `manual: true`. CLI
+`npm run normalize:library [-- --dry-run]` (`api-avail/src/normalizeLibrary.ts`) прогоняет
+шаблоны наших вендоров со статусом raw/draft и записывает только те, у кого вырос уровень;
+статус не меняет.
 
 ## API на нашем сервере (api-avail/)
 
@@ -107,8 +142,9 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/d1.ts` | шим D1 поверх better-sqlite3: `prepare/bind/first/all/run/raw`, `batch` (одна транзакция), `exec`; файл `DATA_DIR/easyschematic.sqlite`, WAL, foreign keys ON (как в D1) |
 | `src/r2.ts` | шим R2 поверх файлов: `get/put/delete/list/head` с http/custom-метаданными; `DATA_DIR/r2/objects/*` + `DATA_DIR/r2/meta/*.json` |
 | `src/migrate.ts` | при старте применяет `api/migrations/*.sql`, затем наши `api-avail/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
-| `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов: маршруты `/avail/templates/…/status` на upstream-приложении и работа с `avail_template_meta` |
+| `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
+| `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
 | `src/seed.ts` | сид библиотеки из встроенных шаблонов (`src/deviceLibrary.ts`) через `templateToRow` из `api/src/db.ts`, без обращения к easyschematic.live |
@@ -126,11 +162,15 @@ Hono-приложение без изменений** под Node, а всё с�
 | `api/src/index.ts` `maxSchematicsPerUser()` | `MAX_SCHEMATICS_PER_USER` → лимит схем на пользователя (`0` = без лимита) |
 | `api/src/auth.ts` `Env.Bindings` | типы этих переменных |
 | `api/src/index.ts` `export { app }` | экземпляр Hono-приложения: `api-avail` регистрирует на нём свои маршруты `/avail/…` (за теми же CORS, сессией и заголовками) |
+| `src/templateApi.ts` | AVAIL: `GET /templates` с `libraryQuery()` и сессией, `noteLibraryResponse`, без встроенной подложки в списке, `invalidateTemplates()` |
+| `src/components/DeviceLibrary.tsx` | AVAIL: `AvailLibraryToggle`, `AvailCategoryTree`, `AvailTemplateExtras`, перезагрузка по смене статусов |
+| `src/components/DeviceNode.tsx` | `AvailBlockBadge` — значок статуса над блоком |
+| `src/components/ReportsDialog.tsx` | `AvailUnverifiedNotice` — предупреждение о блоках из непроверенных шаблонов |
 | `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
 | `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |
 | `vite.config.ts` `navigateFallbackDenylist` | service worker не отдаёт SPA на навигации в `/api/` (иначе OAuth start/callback попадают в `index.html`) |
 
-Наш фронтенд-код — в `src/avail/`, тесты — `src/__tests__/availAuth.test.ts`.
+Наш фронтенд-код — в `src/avail/`, тесты — `src/__tests__/avail*.test.ts`.
 
 Переменные окружения:
 
@@ -211,7 +251,7 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 | Фаза | Содержание |
 |------|------------|
 | 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
-| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts` (сделано); справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live (сделано) |
+| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано) |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |
 | 4 | **Интеграция Claude** — помощь в проектировании через Claude |

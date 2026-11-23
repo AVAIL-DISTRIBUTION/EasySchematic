@@ -96,10 +96,10 @@ export function normalizeTemplate(t: UpstreamTemplate): UpstreamTemplate {
 
 type Row = Record<string, string | number | null>;
 
-const META_UPSERT = `INSERT INTO avail_template_meta (template_id, status, source, upstream_id, lint_level, updated_by, updated_at)
-  VALUES (@template_id, @status, @source, @upstream_id, @lint_level, @updated_by, datetime('now'))
+const META_UPSERT = `INSERT INTO avail_template_meta (template_id, status, source, upstream_id, lint_level, linted_version, updated_by, updated_at)
+  VALUES (@template_id, @status, @source, @upstream_id, @lint_level, @linted_version, @updated_by, datetime('now'))
   ON CONFLICT(template_id) DO UPDATE SET status = excluded.status, source = excluded.source,
-    upstream_id = excluded.upstream_id, lint_level = excluded.lint_level,
+    upstream_id = excluded.upstream_id, lint_level = excluded.lint_level, linted_version = excluded.linted_version,
     updated_by = excluded.updated_by, updated_at = excluded.updated_at`;
 
 class DryRun extends Error {}
@@ -208,7 +208,15 @@ export function importTemplates(
         version: typeof raw.version === "number" ? raw.version : 1,
       };
       const status: TemplateStatus = existingStatus === "hidden" ? "hidden" : "raw";
-      const metaRow = { template_id: id, status, source, upstream_id: raw.id, lint_level: level, updated_by: updatedBy };
+      const metaRow = {
+        template_id: id,
+        status,
+        source,
+        upstream_id: raw.id,
+        lint_level: level,
+        linted_version: row.version,
+        updated_by: updatedBy,
+      };
 
       if (!existing) {
         insertTemplate.run(row);
@@ -220,7 +228,8 @@ export function importTemplates(
         const rowChanged = columns.some((c) => (existing[c] ?? null) !== (row[c] ?? null));
         const m = meta.get(id);
         const metaChanged =
-          !m || m.status !== status || m.source !== source || m.upstream_id !== raw.id || m.lint_level !== level;
+          !m || m.status !== status || m.source !== source || m.upstream_id !== raw.id || m.lint_level !== level ||
+          m.linted_version !== row.version;
         if (rowChanged) {
           updateTemplate.run(row);
           reindex(existing, row as TemplateRow & Row);
