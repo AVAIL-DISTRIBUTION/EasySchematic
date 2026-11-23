@@ -62,8 +62,21 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/seed.ts` | сид библиотеки из встроенных шаблонов (`src/deviceLibrary.ts`) через `templateToRow` из `api/src/db.ts`, без обращения к easyschematic.live |
 | `src/mail.ts` | почта отключена: запросы `fetch` к `api.resend.com` не уходят наружу, в лог пишутся только получатель и тема |
 
-Правки в `api/src` — только минимальные точки подключения с фолбэком на поведение
-upstream. Сейчас такая одна: `API_PUBLIC_URL` для Google OAuth `redirect_uri`.
+Правки в upstream-файлах — только минимальные точки подключения, каждая без
+переменной ведёт себя как upstream. Сейчас это:
+
+| Где | Точка подключения |
+|-----|-------------------|
+| `api/src/index.ts` `googleRedirectUri()` | `API_PUBLIC_URL` → Google OAuth `redirect_uri` |
+| `api/src/index.ts` `configuredOrigins()` / `corsOrigin()` / `isAllowedOrigin()` | `ALLOWED_ORIGINS` → credentialed CORS и проверка `returnTo` |
+| `api/src/index.ts` `googleAllowedDomains()` + `/auth/google/callback` | `GOOGLE_ALLOWED_DOMAIN` → вход только при `hd` из списка (и `email_verified`), отказ `?error=domain_not_allowed`; подсказка `hd=` в `/auth/google/start` |
+| `api/src/index.ts` `magicLinkGate` | `DISABLE_MAGIC_LINK=1` → `/auth/login`, `/auth/verify` отвечают 403 |
+| `api/src/auth.ts` `Env.Bindings` | типы этих переменных |
+| `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
+| `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |
+| `vite.config.ts` `navigateFallbackDenylist` | service worker не отдаёт SPA на навигации в `/api/` (иначе OAuth start/callback попадают в `index.html`) |
+
+Наш фронтенд-код — в `src/avail/`, тесты — `src/__tests__/availAuth.test.ts`.
 
 Переменные окружения:
 
@@ -75,7 +88,10 @@ upstream. Сейчас такая одна: `API_PUBLIC_URL` для Google OAuth
 | `SEED_LIBRARY` | `if-empty` | `if-empty` / `always` (upsert встроенных шаблонов) / `off` |
 | `ADMIN_TOKEN` | — (обязателен, ≥16 символов) | Bearer-токен админа; пустой токен upstream пропустил бы как админа, поэтому без него сервер не стартует |
 | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | — | Google OAuth |
-| `API_PUBLIC_URL` | — | публичный адрес API, например `https://api.example.com`; из него строится `redirect_uri` (`…/auth/google/callback`) |
+| `API_PUBLIC_URL` | — | публичный адрес API, например `https://sch.avail-int.com/api`; из него строится `redirect_uri` (`…/auth/google/callback`) |
+| `ALLOWED_ORIGINS` | — (как upstream: `*.easyschematic.live` + loopback) | origin через запятую; **заменяет** список upstream для CORS с cookie и для `returnTo` |
+| `GOOGLE_ALLOWED_DOMAIN` | — (любой аккаунт Google) | домен(ы) Workspace через запятую; вход только при совпадении claim `hd` |
+| `DISABLE_MAGIC_LINK` | — (вход по почте включён) | `1` — вход по почте отключён (403). Без него ограничение домена обходится через magic-link, сервер пишет предупреждение |
 | `SUPPORT_FORWARD_EMAIL` | — | не используется (почта отключена) |
 
 IP клиента upstream берёт из `CF-Connecting-IP` / `X-Forwarded-For`, поэтому API
@@ -121,12 +137,22 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
   `ghcr.io/avail-distribution/easyschematic-api` (API).
 - `.github/workflows/avail-api-test.yml` — typecheck, тесты и сборка `api-avail`
   на PR и push в `master`.
+- Адреса фронтенда вшиваются при сборке (`import.meta.env`): build-args
+  `VITE_TEMPLATE_API_URL`, `VITE_DEVICES_URL`, `VITE_AUTH_GOOGLE_ONLY` в
+  `Dockerfile.avail`, в CI берутся из repository variables (`vars.*`). Пустое значение
+  = дефолт приложения. В коде наши адреса не хардкодим.
+- `deploy/avail/` — продакшен на сервере: `docker-compose.yml` (caddy + app + api на
+  образах из GHCR), `Caddyfile` (`handle_path /api/*` → api, остальное → app, без basic
+  auth), `.env.example`, `update.sh` (pull + up -d), `backup.sh` (снимок SQLite + `r2/`,
+  ротация 14 дней, опционально S3). Подробности — `deploy/avail/README.md`.
+  Схема: фронтенд и API на одном домене, API под `/api`
+  (`https://sch.avail-int.com`, `https://sch.avail-int.com/api`).
 
 ## План фаз
 
 | Фаза | Содержание |
 |------|------------|
-| 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище); вход через Google Workspace только для нашего домена; ежедневные бэкапы; отключение внешней библиотеки шаблонов |
+| 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
 | 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `tools/avail/avail_block_lint.py` |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |

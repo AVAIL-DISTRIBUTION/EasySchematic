@@ -1,0 +1,52 @@
+# AVAIL DISTRIBUTION: production stack on our server.
+#   caddy  HTTPS on ${SITE_DOMAIN}; /api/* → api (prefix stripped), everything else → app
+#   app    frontend (nginx) — ghcr.io/avail-distribution/easyschematic
+#   api    API (Node + SQLite + files) — ghcr.io/avail-distribution/easyschematic-api
+# Settings come from .env next to this file (copy .env.example). See README.md.
+name: easyschematic
+
+services:
+  app:
+    image: ghcr.io/avail-distribution/easyschematic:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+
+  api:
+    image: ghcr.io/avail-distribution/easyschematic-api:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    # Listed one by one rather than env_file, so backup/S3 credentials in .env
+    # never reach the API container.
+    environment:
+      ADMIN_TOKEN: ${ADMIN_TOKEN:?set ADMIN_TOKEN in .env}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:?set GOOGLE_CLIENT_ID in .env}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:?set GOOGLE_CLIENT_SECRET in .env}
+      API_PUBLIC_URL: ${API_PUBLIC_URL:?set API_PUBLIC_URL in .env}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:?set ALLOWED_ORIGINS in .env}
+      GOOGLE_ALLOWED_DOMAIN: ${GOOGLE_ALLOWED_DOMAIN:?set GOOGLE_ALLOWED_DOMAIN in .env}
+      DISABLE_MAGIC_LINK: ${DISABLE_MAGIC_LINK:-1}
+      SEED_LIBRARY: ${SEED_LIBRARY:-if-empty}
+    volumes:
+      - api-data:/data
+
+  caddy:
+    image: caddy:2.8
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:?set SITE_DOMAIN in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - app
+      - api
+
+volumes:
+  # SQLite database + schematic files. This is what backup.sh archives.
+  api-data:
+  # Caddy's TLS certificates and state.
+  caddy-data:
+  caddy-config:

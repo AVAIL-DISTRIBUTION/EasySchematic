@@ -25,6 +25,9 @@ export interface ApiConfig {
     GOOGLE_CLIENT_SECRET: string;
     SUPPORT_FORWARD_EMAIL: string;
     API_PUBLIC_URL: string;
+    ALLOWED_ORIGINS: string;
+    GOOGLE_ALLOWED_DOMAIN: string;
+    DISABLE_MAGIC_LINK: string;
   };
   log?: (msg: string) => void;
 }
@@ -41,6 +44,9 @@ export function configFromEnv(env: NodeJS.ProcessEnv = process.env): ApiConfig {
       GOOGLE_CLIENT_SECRET: env.GOOGLE_CLIENT_SECRET ?? "",
       SUPPORT_FORWARD_EMAIL: env.SUPPORT_FORWARD_EMAIL ?? "",
       API_PUBLIC_URL: env.API_PUBLIC_URL ?? "",
+      ALLOWED_ORIGINS: env.ALLOWED_ORIGINS ?? "",
+      GOOGLE_ALLOWED_DOMAIN: env.GOOGLE_ALLOWED_DOMAIN ?? "",
+      DISABLE_MAGIC_LINK: env.DISABLE_MAGIC_LINK ?? "",
     },
   };
 }
@@ -71,6 +77,11 @@ export function createApiServer(config: ApiConfig): ApiServer {
   // "Authorization: Bearer " (no token) through as admin. Refuse to start instead.
   if (config.vars.ADMIN_TOKEN.length < 16) {
     throw new Error("ADMIN_TOKEN must be set to at least 16 characters (it grants admin via Authorization: Bearer)");
+  }
+  const magicLinkOff = config.vars.DISABLE_MAGIC_LINK === "1" || config.vars.DISABLE_MAGIC_LINK === "true";
+  if (config.vars.GOOGLE_ALLOWED_DOMAIN && !magicLinkOff) {
+    // Email sign-in creates accounts for any address, so the domain gate alone is bypassable.
+    log("WARNING: GOOGLE_ALLOWED_DOMAIN is set but magic-link sign-in is on; set DISABLE_MAGIC_LINK=1");
   }
   mkdirSync(config.dataDir, { recursive: true });
   installMailStub(log);

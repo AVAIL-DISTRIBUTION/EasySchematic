@@ -20,6 +20,12 @@ export type Env = {
     GOOGLE_CLIENT_SECRET: string;
     /** Optional public base URL of this API for self-hosting; see googleRedirectUri(). */
     API_PUBLIC_URL?: string;
+    /** Optional comma-separated CORS / returnTo allowlist; replaces the defaults when set. */
+    ALLOWED_ORIGINS?: string;
+    /** Optional comma-separated Workspace domain(s) allowed to sign in with Google (hd claim). */
+    GOOGLE_ALLOWED_DOMAIN?: string;
+    /** "1" disables magic-link sign-in (/auth/login, /auth/verify answer 403). */
+    DISABLE_MAGIC_LINK?: string;
   };
   Variables: {
     user?: SessionUser;
