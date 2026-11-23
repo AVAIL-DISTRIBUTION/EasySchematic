@@ -30,7 +30,7 @@ const tmp = mkdtempSync(path.join(tmpdir(), "avail-block-lint-"));
 afterAll(() => rmSync(tmp, { recursive: true, force: true }));
 
 function python(script: string, ...args: string[]): string {
-  return execFileSync("python3", ["-I", path.join(TOOLS, script), ...args], { encoding: "utf8" });
+  return execFileSync("python3", ["-I", "-B", path.join(TOOLS, script), ...args], { encoding: "utf8" });
 }
 
 /** A block that passes every rule (level A); tests change one thing at a time. */
