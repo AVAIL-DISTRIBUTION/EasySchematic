@@ -1,37 +1,27 @@
 /**
- * src/avail/blockLint.ts must give the same result as the reference
- * tools/avail/avail_block_lint.py on every block: level and the E/W messages.
+ * src/avail/blockLint.ts — the AVAIL Device Block Standard linter, and the reference
+ * data helpers in src/avail/library.ts (taxonomy, vendors).
  *
- * - engineer-blocks.expected.json is the Python result committed with the fixture
- *   (refresh: python3 tools/avail/lint_to_json.py <fixture> > <expected>), so the
- *   check runs even without Python.
- * - Where python3 is available (CI, dev machines), Python is also run live on the
- *   fixture and on edge-case blocks, and the CLI report is compared line for line.
+ * Until v0.2 the TS linter was checked for parity with tools/avail/avail_block_lint.py;
+ * since v0.3 (category / manufacturer / Generic rules) TS is the only implementation
+ * and the Python script is an archive.
  */
-import { execFileSync, spawnSync } from "node:child_process";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
-import path from "node:path";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { afterAll, describe, expect, it } from "vitest";
-import { blocksOf, formatBlockReport, lintBlock, lintDocument, type BlockReportRow } from "../avail/blockLint";
+import { describe, expect, it } from "vitest";
+import { blocksOf, formatBlockReport, genericModelNumber, lintBlock, lintDocument } from "../avail/blockLint";
+import {
+  defaultCategoryFor,
+  findCategory,
+  findVendor,
+  normalizeManufacturer,
+  TAXONOMY,
+  VENDORS,
+} from "../avail/library";
 import type { DeviceTemplate } from "../types";
 
-const ROOT = fileURLToPath(new URL("../..", import.meta.url));
-const TOOLS = path.join(ROOT, "tools/avail");
-const FIXTURE = path.join(TOOLS, "fixtures/engineer-blocks.json");
-const EXPECTED = path.join(TOOLS, "fixtures/engineer-blocks.expected.json");
-
+const FIXTURE = fileURLToPath(new URL("../../tools/avail/fixtures/engineer-blocks.json", import.meta.url));
 const fixture: unknown = JSON.parse(readFileSync(FIXTURE, "utf8"));
-const expected = JSON.parse(readFileSync(EXPECTED, "utf8")) as BlockReportRow[];
-
-const hasPython = spawnSync("python3", ["--version"]).status === 0;
-const tmp = mkdtempSync(path.join(tmpdir(), "avail-block-lint-"));
-afterAll(() => rmSync(tmp, { recursive: true, force: true }));
-
-function python(script: string, ...args: string[]): string {
-  return execFileSync("python3", ["-I", "-B", path.join(TOOLS, script), ...args], { encoding: "utf8" });
-}
 
 /** A block that passes every rule (level A); tests change one thing at a time. */
 function clean(): DeviceTemplate & Record<string, unknown> {
@@ -42,7 +32,7 @@ function clean(): DeviceTemplate & Record<string, unknown> {
     shortName: "DTP3 T 203",
     manufacturer: "Extron",
     deviceType: "hdbaset-extender",
-    category: "KVM / Extenders",
+    category: "AV distribution / Extenders",
     auxiliaryData: [{ text: "{{deviceType}}", position: "header" }],
     heightMm: 25, widthMm: 100, depthMm: 90, weightKg: 0.3,
     powerDrawW: 6, voltage: "12 VDC",
@@ -57,89 +47,62 @@ function clean(): DeviceTemplate & Record<string, unknown> {
   } as DeviceTemplate & Record<string, unknown>;
 }
 
-/** Blocks that probe the places where Python and JS semantics differ. */
-function edgeCases(): object[] {
-  const port = (over: Record<string, unknown>) => ({ ...clean().ports[0], ...over });
-  return [
-    clean(),
-    { ...clean(), slots: [] },                                    // [] is falsy in Python
-    { ...clean(), slots: [{ id: "s" }], ports: [] },
-    { ...clean(), heightMm: 0 },                                  // 0 is "missing"
-    { ...clean(), auxiliaryData: [] },
-    { ...clean(), auxiliaryData: [{ text: "{{deviceType}}" }, { text: "x" }] },
-    { ...clean(), color: "" },
-    { ...clean(), color: "#ff0000" },
-    { ...clean(), model: "" },
-    { ...clean(), shortName: "60-1885-52" },
-    { ...clean(), shortName: "60-1885-52\n" },                    // Python `$` before a final newline
-    { ...clean(), shortName: "٦٠-١٨٨٥-٥٢" },                     // Python \d is Unicode
-    { ...clean(), manufacturer: "", label: "X" },
-    { ...clean(), label: "extron dtp3", model: "extron dtp3" },
-    { ...clean(), deviceType: "speaker", ports: [], powerDrawW: 0 },
-    { ...clean(), deviceType: "passive", ports: [] },
-    { ...clean(), poeDrawW: 12, powerDrawW: 0, ports: [] },
-    { ...clean(), searchTerms: [] },
-    { ...clean(), ports: [port({ section: "Video Inputs (Front)" }), port({ section: "Audio Inputs" }), port({ section: "Video Outputs" })] },
-    { ...clean(), ports: [port({ section: "Video Inputs (Front)\n" }), port({ section: "Power  (rear) " }), port({ section: "" })] },
-    { ...clean(), ports: [port({ section: "Slot 1", label: "IGNORED" }), port({ section: "Video Inputs　(A)" })] },
-    { ...clean(), ports: [port({ label: "HDMI INPUT" }), port({ label: "HDMI INPUT" }), port({ label: "HDMI\u001cINPUT" }), port({ label: "МИКРОФОН ВХОД" })] },
-    { ...clean(), ports: [port({ label: "Вход Ёжика номер 1234567890123" }), port({ label: "x".repeat(28) }), port({ label: "😀".repeat(15) })] },
-    { ...clean(), ports: [port({ label: "кdtp", signalType: "hdmi" }), port({ label: "_xtp" }), port({ label: "-HDBaseT out" }), port({ label: "1dtp" })] },
-    { ...clean(), ports: [port({ label: "Power Loop", signalType: "power", direction: "output" }), port({ label: "PWR", signalType: "power", direction: "output" })] },
-    { ...clean(), ports: [port({ label: "RS-232", signalType: "rs422", direction: "bidirectional" }), port({ label: "Dante", signalType: "dante", direction: "input" })] },
-    { ...clean(), ports: [port({ label: "Relay 1", signalType: "gpio" }), port({ label: "EBUS", signalType: "serial" }), port({ connectorType: "" })] },
-  ];
+/** A Generic block by the standard: no physics, no referenceUrl. */
+function generic(): DeviceTemplate & Record<string, unknown> {
+  const { heightMm: _h, widthMm: _w, depthMm: _d, weightKg: _k, powerDrawW: _p, voltage: _v, referenceUrl: _r, ...rest } = clean();
+  return {
+    ...rest,
+    label: "Generic Room PC",
+    model: "Generic Room PC",
+    modelNumber: "GEN-ROOM-PC",
+    shortName: "Room PC",
+    manufacturer: "Generic",
+    deviceType: "computer",
+    category: "Other / Generic",
+  } as DeviceTemplate & Record<string, unknown>;
 }
 
-describe("blockLint vs avail_block_lint.py — engineer blocks", () => {
-  const actual = lintDocument(fixture);
-
-  it("reads every device node of the schematic", () => {
-    expect(actual.map((r) => r.label)).toEqual(expected.map((r) => r.label));
-    expect(actual.length).toBe(22);
+describe("reference data (docs/avail)", () => {
+  it("every deviceTypeDefaults target is a leaf category of the taxonomy", () => {
+    for (const [type, path] of Object.entries(TAXONOMY.deviceTypeDefaults)) {
+      if (path === null) continue;
+      expect(findCategory(path)?.leaf, `${type} → ${path}`).toBe(true);
+    }
   });
 
-  it.each(expected.map((e, i) => [i, e.label, e] as const))("block %i %s: level and number of E/W", (i, _label, e) => {
-    const r = actual[i];
-    expect({ level: r.level, E: r.errors.length, W: r.warnings.length }).toEqual({
-      level: e.level,
-      E: e.errors.length,
-      W: e.warnings.length,
-    });
+  it("no name or alias points to two different vendors (case-insensitive)", () => {
+    const owner = new Map<string, string>();
+    for (const v of VENDORS) {
+      for (const n of [v.name, ...v.aliases]) {
+        const k = n.toLowerCase();
+        expect(owner.get(k) ?? v.name, n).toBe(v.name);
+        owner.set(k, v.name);
+      }
+    }
   });
 
-  it("same messages, in the same order", () => {
-    expect(actual).toEqual(expected);
+  it("normalizeManufacturer: aliases and case to the canonical name, others trimmed", () => {
+    expect(normalizeManufacturer("Biamp Systems")).toBe("Biamp");
+    expect(normalizeManufacturer("biamp")).toBe("Biamp");
+    expect(normalizeManufacturer("  Netgear-AV ")).toBe("NETGEAR");
+    expect(normalizeManufacturer("NEC")).toBe("Sharp");
+    expect(normalizeManufacturer("tv  one")).toBe("tvONE");
+    expect(normalizeManufacturer("Blackmagic  Design ")).toBe("Blackmagic Design");
+    expect(normalizeManufacturer("Martin")).toBe("Martin"); // lighting, not Martin Audio
+    expect(normalizeManufacturer("")).toBeUndefined();
+    expect(findVendor("Generic")?.name).toBe("Generic");
   });
 
-  it("summary matches the reference run (A 0 / B 4 / FIX 18)", () => {
-    expect(formatBlockReport(actual).trimEnd().split("\n").at(-1)).toBe("Итого: {'A': 0, 'B': 4, 'FIX': 18}");
+  it("defaultCategoryFor: mapped, null and unknown device types", () => {
+    expect(defaultCategoryFor("audio-dsp")).toBe("Audio Products / DSP");
+    expect(defaultCategoryFor("camera")).toBeNull();
+    expect(defaultCategoryFor("no-such-type")).toBeNull();
+    expect(defaultCategoryFor("toString")).toBeNull();
+    expect(defaultCategoryFor(undefined)).toBeNull();
   });
 });
 
-describe.skipIf(!hasPython)("blockLint vs avail_block_lint.py — live Python run", () => {
-  it("committed snapshot is up to date", () => {
-    expect(JSON.parse(python("lint_to_json.py", FIXTURE))).toEqual(expected);
-  });
-
-  it("edge cases (truthiness, Unicode, regex anchors) give identical results", () => {
-    const blocks = edgeCases();
-    const file = path.join(tmp, "edge.json");
-    writeFileSync(file, JSON.stringify({ templates: blocks }));
-    const py = JSON.parse(python("lint_to_json.py", file)) as BlockReportRow[];
-    expect(lintDocument({ templates: blocks })).toEqual(py);
-  });
-
-  it.each([[[]], [["--verbose"]]])("CLI report is identical to the Python script %j", (flags) => {
-    const ts = execFileSync("npx", ["tsx", path.join(ROOT, "src/avail/blockLintCli.ts"), FIXTURE, ...flags], {
-      encoding: "utf8",
-      cwd: ROOT,
-    });
-    expect(ts).toBe(python("avail_block_lint.py", FIXTURE, ...flags));
-  }, 30_000);
-});
-
-describe("lintBlock rules", () => {
+describe("lintBlock: card, physics and port rules (v0.2)", () => {
   it("a complete block is level A", () => {
     expect(lintBlock(clean())).toEqual({ level: "A", errors: [], warnings: [] });
   });
@@ -162,10 +125,118 @@ describe("lintBlock rules", () => {
     expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain("«HDMI In»: секция «Rear» вне словаря");
   });
 
+  it("keeps the v0.2 Python semantics: [] and 0 are missing, Unicode \\b, code-point length", () => {
+    expect(lintBlock({ ...clean(), searchTerms: [] }).warnings).toEqual(["нет searchTerms"]);
+    expect(lintBlock({ ...clean(), heightMm: 0 }).warnings).toEqual(["нет heightMm"]);
+    const [hdmi, ...rest] = clean().ports;
+    expect(lintBlock({ ...clean(), ports: [hdmi, { ...hdmi, label: "кdtp" }, ...rest] }).level).toBe("A");
+    expect(lintBlock({ ...clean(), ports: [hdmi, { ...hdmi, label: "😀".repeat(15) }, ...rest] }).level).toBe("A");
+  });
+
   it("never throws on malformed input", () => {
-    for (const bad of [{}, { ports: null }, { ports: [null, 1, "x"] }, { auxiliaryData: "x", label: 5 }]) {
+    for (const bad of [{}, { ports: null }, { ports: [null, 1, "x"] }, { auxiliaryData: "x", label: 5, category: 7 }]) {
       expect(() => lintBlock(bad)).not.toThrow();
     }
+  });
+});
+
+describe("lintBlock: category (avail-taxonomy.json)", () => {
+  it("leaf category with schematic=true passes", () => {
+    expect(lintBlock({ ...clean(), category: "AV distribution / XTP Systems" }).level).toBe("A");
+  });
+
+  it("missing category", () => {
+    expect(lintBlock({ ...clean(), category: "" }).warnings).toEqual(["нет category"]);
+  });
+
+  it("unknown path or a group (non-leaf) category", () => {
+    expect(lintBlock({ ...clean(), category: "KVM / Extenders" }).warnings).toEqual([
+      "category «KVM / Extenders» — не листовая категория avail-taxonomy.json",
+    ]);
+    expect(lintBlock({ ...clean(), category: "AV distribution" }).warnings).toEqual([
+      "category «AV distribution» — не листовая категория avail-taxonomy.json",
+    ]);
+  });
+
+  it("schematic=false categories are not for blocks", () => {
+    expect(lintBlock({ ...clean(), category: "Connectivity / Bulk Cables" }).warnings).toEqual([
+      "category «Connectivity / Bulk Cables» не для блоков на схеме (schematic=false)",
+    ]);
+  });
+});
+
+describe("lintBlock: manufacturer (avail-vendors.json)", () => {
+  it("alias instead of the canonical name", () => {
+    const b = { ...clean(), manufacturer: "Biamp Systems", label: "Biamp Systems X", model: "Biamp Systems X" };
+    expect(lintBlock(b).warnings).toEqual(["manufacturer «Biamp Systems» — синоним, нужно «Biamp»"]);
+    expect(lintBlock({ ...clean(), manufacturer: "EXTRON" }).warnings).toEqual(["manufacturer «EXTRON» — синоним, нужно «Extron»"]);
+  });
+
+  it("vendor outside the portfolio", () => {
+    const b = { ...clean(), manufacturer: "ASUS", label: "ASUS NUC", model: "ASUS NUC" };
+    expect(lintBlock(b).warnings).toEqual(["manufacturer «ASUS» не из avail-vendors.json (вне портфеля — Generic)"]);
+  });
+});
+
+describe("lintBlock: Generic", () => {
+  it("Generic block without physics and referenceUrl is level A", () => {
+    expect(lintBlock(generic())).toEqual({ level: "A", errors: [], warnings: [] });
+  });
+
+  it("non-Generic block without physics is not", () => {
+    const { manufacturer: _m, ...g } = generic();
+    expect(lintBlock({ ...g, manufacturer: "Extron", label: "Extron PC", model: "Extron PC" }).warnings).toEqual(
+      expect.arrayContaining(["нет heightMm", "нет powerDrawW/voltage (или poeDrawW)", "нет referenceUrl"]),
+    );
+  });
+
+  it("label must be «Generic <класс>»", () => {
+    const b = { ...generic(), label: "Generic", model: "Generic" };
+    expect(lintBlock(b).warnings).toEqual(["Generic: label должен быть «Generic <класс>»"]);
+  });
+
+  it("modelNumber must be GEN-<КЛАСС> of the label", () => {
+    expect(lintBlock({ ...generic(), modelNumber: "GEN-PC" }).warnings).toEqual(["Generic: modelNumber должен быть «GEN-ROOM-PC»"]);
+    expect(lintBlock({ ...generic(), modelNumber: "NUC13" }).warnings).toEqual(["Generic: modelNumber должен быть «GEN-ROOM-PC»"]);
+    expect(lintBlock({ ...generic(), modelNumber: "" }).errors).toEqual(["нет modelNumber"]);
+  });
+
+  it("genericModelNumber", () => {
+    expect(genericModelNumber("Generic Laptop")).toBe("GEN-LAPTOP");
+    expect(genericModelNumber("Generic Room PC")).toBe("GEN-ROOM-PC");
+    expect(genericModelNumber("Generic USB-C / HDMI adapter")).toBe("GEN-USB-C-HDMI-ADAPTER");
+    expect(genericModelNumber("Generic Ноутбук")).toBe("GEN-НОУТБУК");
+  });
+});
+
+describe("engineer blocks (tools/avail/fixtures/engineer-blocks.json)", () => {
+  const rows = lintDocument(fixture);
+
+  it("reads every device node of the schematic", () => {
+    expect(rows.length).toBe(22);
+  });
+
+  it("levels: A 0 / B 4 / FIX 18", () => {
+    expect(formatBlockReport(rows).trimEnd().split("\n").at(-1)).toBe("Итого: {'A': 0, 'B': 4, 'FIX': 18}");
+    expect(rows.filter((r) => r.level === "B").map((r) => r.label)).toEqual([
+      "Extron XTP II CrossPoint 1600",
+      "Extron DTP3 T 203",
+      "Extron DTP3 R 201",
+      "MXA925",
+    ]);
+  });
+
+  it("every block is told its category is not an AVAIL leaf category", () => {
+    for (const r of rows) expect(r.warnings.some((w) => w.startsWith("category «")), r.label).toBe(true);
+  });
+
+  it("vendors: Netgear alias, ASUS and Absen outside the portfolio", () => {
+    const msgs = rows.flatMap((r) => r.warnings).filter((w) => w.startsWith("manufacturer"));
+    expect(msgs.sort()).toEqual([
+      "manufacturer «ASUS» не из avail-vendors.json (вне портфеля — Generic)",
+      "manufacturer «Absen» не из avail-vendors.json (вне портфеля — Generic)",
+      "manufacturer «Netgear» — синоним, нужно «NETGEAR»",
+    ]);
   });
 });
 

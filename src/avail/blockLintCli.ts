@@ -1,5 +1,5 @@
 /**
- * AVAIL block linter CLI — same report as tools/avail/avail_block_lint.py.
+ * AVAIL block linter CLI (src/avail/blockLint.ts).
  *
  *   npm run avail:lint -- <schematic.json | device-archive.json> [--verbose]
  *

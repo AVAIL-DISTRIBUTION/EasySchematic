@@ -52,8 +52,11 @@ async function sessionCookie(email = "eng@avail.test"): Promise<string> {
 }
 
 describe("api-avail smoke", () => {
-  it("applied every migration on a fresh database", () => {
-    const expected = listMigrations(path.resolve(__dirname, "../../api/migrations"));
+  it("applied every migration on a fresh database: upstream's, then ours (9xxx)", () => {
+    const ours = listMigrations(path.resolve(__dirname, "../migrations"));
+    expect(ours.length).toBeGreaterThan(0);
+    expect(ours.every((f) => f.startsWith("9"))).toBe(true);
+    const expected = [...listMigrations(path.resolve(__dirname, "../../api/migrations")), ...ours];
     expect(api.migrations.applied).toEqual(expected);
     const rows = api.db.sqlite.prepare("SELECT name FROM d1_migrations ORDER BY id").all() as { name: string }[];
     expect(rows.map((r) => r.name)).toEqual(expected);

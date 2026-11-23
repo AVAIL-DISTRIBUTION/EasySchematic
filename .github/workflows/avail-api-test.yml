@@ -5,10 +5,10 @@ name: AVAIL api tests
 on:
   push:
     branches: [master]
-    paths: ["api/**", "api-avail/**", "src/**", ".github/workflows/avail-api-test.yml"]
+    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", ".github/workflows/avail-api-test.yml"]
   pull_request:
     branches: [master]
-    paths: ["api/**", "api-avail/**", "src/**", ".github/workflows/avail-api-test.yml"]
+    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", ".github/workflows/avail-api-test.yml"]
 
 jobs:
   test:

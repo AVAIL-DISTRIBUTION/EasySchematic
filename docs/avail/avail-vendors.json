@@ -1,0 +1,105 @@
+{
+ "version": 1,
+ "vendors": [
+  {
+   "name": "Extron",
+   "aliases": []
+  },
+  {
+   "name": "Shure",
+   "aliases": []
+  },
+  {
+   "name": "Televic",
+   "aliases": []
+  },
+  {
+   "name": "WyreStorm",
+   "aliases": [
+    "Wyrestorm",
+    "WYRESTORM"
+   ]
+  },
+  {
+   "name": "Biamp",
+   "aliases": [
+    "Biamp Systems"
+   ]
+  },
+  {
+   "name": "Renkus-Heinz",
+   "aliases": [
+    "Renkus Heinz"
+   ]
+  },
+  {
+   "name": "Powersoft",
+   "aliases": []
+  },
+  {
+   "name": "Martin Audio",
+   "aliases": []
+  },
+  {
+   "name": "tvONE",
+   "aliases": [
+    "TV One",
+    "tv one",
+    "TVOne"
+   ]
+  },
+  {
+   "name": "Datapath",
+   "aliases": []
+  },
+  {
+   "name": "Lumens",
+   "aliases": []
+  },
+  {
+   "name": "Vaddio",
+   "aliases": [
+    "Legrand Vaddio"
+   ]
+  },
+  {
+   "name": "Sony",
+   "aliases": [],
+   "scope": "только системные видеокамеры"
+  },
+  {
+   "name": "Sharp",
+   "aliases": [
+    "Sharp NEC",
+    "Sharp/NEC",
+    "NEC"
+   ]
+  },
+  {
+   "name": "Digital Projection",
+   "aliases": []
+  },
+  {
+   "name": "NETGEAR",
+   "aliases": [
+    "Netgear",
+    "Netgear-AV",
+    "NETGEAR AV"
+   ],
+   "scope": "линейка AV Line (M4250/M4350)"
+  },
+  {
+   "name": "Audinate",
+   "aliases": []
+  },
+  {
+   "name": "Xilica",
+   "aliases": []
+  },
+  {
+   "name": "Generic",
+   "aliases": [],
+   "scope": "всё нужное в проекте, но не из портфеля AVAIL"
+  }
+ ]
+}

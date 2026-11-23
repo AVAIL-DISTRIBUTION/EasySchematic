@@ -6,6 +6,8 @@ dist
 # Sub-projects not needed for frontend build
 devices
 docs
+# AVAIL: reference data the block linter imports (src/avail/library.ts)
+!docs/avail
 api/src
 api/migrations
 api/backup-*.sql

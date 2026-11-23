@@ -1,0 +1,10 @@
+{
+  "name": "easyschematic-api-avail-runtime",
+  "private": true,
+  "type": "module",
+  "description": "package.json of the API image (/app): scripts for docker compose exec api npm run …",
+  "scripts": {
+    "start": "node --enable-source-maps dist/server.mjs",
+    "import:upstream": "node --enable-source-maps dist/import-upstream.mjs"
+  }
+}
