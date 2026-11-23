@@ -1,0 +1,481 @@
+[
+  {
+    "label": "ASUS NUC 13 Pro",
+    "level": "FIX",
+    "errors": [
+      "«HDMI 1 Out»: секция «Back of unit» вне словаря",
+      "«Headphone»: секция «Front of unit» вне словаря",
+      "«USB»: секция «Front of unit» вне словаря",
+      "«USB»: секция «Front of unit» вне словаря",
+      "«USB-C 1»: секция «Back of unit» вне словаря",
+      "«USB-C 2»: секция «Back of unit» вне словаря",
+      "«USB 2.0»: секция «Back of unit» вне словаря",
+      "«USB 3.0»: секция «Back of unit» вне словаря",
+      "«Ethernet»: секция «Back of unit» вне словаря",
+      "«AC Power»: секция «Back of unit» вне словаря",
+      "«HDMI 2 Out»: секция «Back of unit» вне словаря"
+    ],
+    "warnings": [
+      "нет shortName",
+      "нет searchTerms"
+    ]
+  },
+  {
+    "label": "Extron DTP CrossPoint 108 4K",
+    "level": "FIX",
+    "errors": [
+      "«EXP Bus»: секция «EXP Bus» вне словаря",
+      "«LAN (Switcher)»: секция «Switcher Control» вне словаря",
+      "«USB (Front)»: секция «Switcher Control» вне словаря",
+      "«RS-232 (Switcher)»: секция «Switcher Control» вне словаря",
+      "«RS-232 Pass-Thru TP Tx 1»: секция «Pass-Thru (TP Tx)» вне словаря",
+      "«IR Pass-Thru TP Tx 1»: секция «Pass-Thru (TP Tx)» вне словаря",
+      "«RS-232 Pass-Thru TP Tx 2»: секция «Pass-Thru (TP Tx)» вне словаря",
+      "«IR Pass-Thru TP Tx 2»: секция «Pass-Thru (TP Tx)» вне словаря",
+      "«RS-232 Pass-Thru TP Rx 1»: секция «Pass-Thru (TP Rx)» вне словаря",
+      "«IR Pass-Thru TP Rx 1»: секция «Pass-Thru (TP Rx)» вне словаря",
+      "«RS-232 Pass-Thru TP Rx 2»: секция «Pass-Thru (TP Rx)» вне словаря",
+      "«IR Pass-Thru TP Rx 2»: секция «Pass-Thru (TP Rx)» вне словаря"
+    ],
+    "warnings": [
+      "shortName = артикул (60-1381-01), нужна модель",
+      "задан color",
+      "«HDMI Output 1 (Buffered Mirror)»: подпись длиннее 28 символов",
+      "«HDMI Output 2 (Buffered Mirror)»: подпись длиннее 28 символов"
+    ]
+  },
+  {
+    "label": "Extron XTP II CrossPoint 1600",
+    "level": "B",
+    "errors": [],
+    "warnings": [
+      "shortName = артикул (60-1545-01), нужна модель",
+      "задан color",
+      "«RS-232 / RS-422»: подпись капсом"
+    ]
+  },
+  {
+    "label": "Extron Quantum Ultra II 305",
+    "level": "FIX",
+    "errors": [
+      "«Setup HDMI»: секция «Setup» вне словаря",
+      "«Setup USB 1»: секция «Setup» вне словаря",
+      "«Setup USB 2»: секция «Setup» вне словаря",
+      "«Setup USB 3»: секция «Setup» вне словаря"
+    ],
+    "warnings": [
+      "задан color"
+    ]
+  },
+  {
+    "label": "Extron DTP3 T 203",
+    "level": "B",
+    "errors": [],
+    "warnings": [
+      "shortName = артикул (60-1885-52), нужна модель",
+      "задан color",
+      "«USB-C In (DP Alt, 4 HBR2 lanes)»: подпись длиннее 28 символов"
+    ]
+  },
+  {
+    "label": "Extron DTP3 R 201",
+    "level": "B",
+    "errors": [],
+    "warnings": [
+      "shortName = артикул (60-1869-63), нужна модель",
+      "задан color"
+    ]
+  },
+  {
+    "label": "Extron IPCP Pro 255Q xi",
+    "level": "FIX",
+    "errors": [
+      "«eBUS»: секция «eBUS» вне словаря",
+      "«Volume Control»: секция «VOL» вне словаря",
+      "«LAN»: секция «LAN» вне словаря",
+      "«AV LAN»: секция «LAN» вне словаря"
+    ],
+    "warnings": [
+      "shortName = артикул (60-1914-01), нужна модель",
+      "«COM 1»: serial должен быть bidirectional",
+      "«COM 2»: serial должен быть bidirectional",
+      "«Relay 1»: gpio должен быть bidirectional",
+      "«Relay 1»: реле должно быть contact-closure",
+      "«Relay 2»: gpio должен быть bidirectional",
+      "«Relay 2»: реле должно быть contact-closure",
+      "«eBUS»: serial должен быть bidirectional",
+      "«eBUS»: eBUS должен быть ebus",
+      "«Volume Control»: gpio должен быть bidirectional",
+      "«AV LAN»: подпись капсом",
+      "порядок секций не по стандарту"
+    ]
+  },
+  {
+    "label": "Extron TLP Pro 1035T",
+    "level": "FIX",
+    "errors": [
+      "нет порта питания"
+    ],
+    "warnings": [
+      "нет shortName",
+      "задан color"
+    ]
+  },
+  {
+    "label": "Extron DMP 128 Plus C AT",
+    "level": "FIX",
+    "errors": [
+      "«Mic/Line In 1»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 2»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 3»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 4»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 5»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 6»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 7»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 8»: секция «Mic/Line Inputs (with phantom)» вне словаря",
+      "«Mic/Line In 9»: секция «Mic/Line Inputs» вне словаря",
+      "«Mic/Line In 10»: секция «Mic/Line Inputs» вне словаря",
+      "«Mic/Line In 11»: секция «Mic/Line Inputs» вне словаря",
+      "«Mic/Line In 12»: секция «Mic/Line Inputs» вне словаря",
+      "«Line Out 1»: секция «Line Outputs» вне словаря",
+      "«Line Out 2»: секция «Line Outputs» вне словаря",
+      "«Line Out 3»: секция «Line Outputs» вне словаря",
+      "«Line Out 4»: секция «Line Outputs» вне словаря",
+      "«Line Out 5»: секция «Line Outputs» вне словаря",
+      "«Line Out 6»: секция «Line Outputs» вне словаря",
+      "«Line Out 7»: секция «Line Outputs» вне словаря",
+      "«Line Out 8»: секция «Line Outputs» вне словаря",
+      "«USB Audio (Rear)»: секция «USB Audio» вне словаря",
+      "«ACP Bus»: секция «ACP Bus» вне словаря",
+      "«Dante / AES67 1»: секция «Dante Network» вне словаря",
+      "«Dante / AES67 2»: секция «Dante Network» вне словаря",
+      "«Dante / AES67 3»: секция «Dante Network» вне словаря",
+      "«Dante / AES67 4»: секция «Dante Network» вне словаря"
+    ],
+    "warnings": [
+      "shortName = артикул (60-1512-10), нужна модель",
+      "задан color",
+      "порядок секций не по стандарту"
+    ]
+  },
+  {
+    "label": "ME982",
+    "level": "FIX",
+    "errors": [
+      "«HDMI In 1»: нет секции",
+      "«HDMI In 2»: нет секции",
+      "«HDMI In 3»: нет секции",
+      "«USB-A (Peripheral)»: нет секции",
+      "«USB-A (Peripheral)»: нет секции",
+      "«USB-A (Peripheral)»: нет секции",
+      "«LAN 1»: нет секции",
+      "«Ctrl (RS-232)»: нет секции",
+      "«Ctrl (RS-232)»: RS-232 размечен как rs422",
+      "«Remote In (IR)»: нет секции",
+      "«Power In»: нет секции",
+      "«USB-C (DP-Alt), 15W»: нет секции",
+      "«SPDIF-O Out»: нет секции",
+      "«3.5 mm Audio Out»: нет секции"
+    ],
+    "warnings": [
+      "label не начинается с производителя (Sharp)",
+      "нет shortName",
+      "нет heightMm",
+      "нет powerDrawW/voltage (или poeDrawW)",
+      "нет searchTerms",
+      "«LAN 1»: ethernet должен быть bidirectional",
+      "«Ctrl (RS-232)»: rs422 должен быть bidirectional"
+    ]
+  },
+  {
+    "label": "Lumens VC-TR61",
+    "level": "FIX",
+    "errors": [
+      "«3.5mm TRS»: секция «Audio In» вне словаря",
+      "«RS-232 In»: нет секции",
+      "«RS-232 In»: RS-232 размечен как rs422",
+      "«HDMI Out»: нет секции",
+      "«3G SDI»: нет секции",
+      "«RS-232 Out»: нет секции",
+      "«RS-232 Out»: RS-232 размечен как rs422",
+      "«USB B 3.0»: нет секции",
+      "«Ethernet/PoE»: нет секции"
+    ],
+    "warnings": [
+      "нет shortName",
+      "«RS-232 In»: rs422 должен быть bidirectional",
+      "«RS-232 Out»: rs422 должен быть bidirectional"
+    ]
+  },
+  {
+    "label": "M4250-26G4XF-PoE+",
+    "level": "FIX",
+    "errors": [
+      "«OOB»: секция «OOB» вне словаря",
+      "«Console»: секция «Console» вне словаря",
+      "«Console USB»: секция «Console» вне словаря",
+      "«LAN 1»: секция «Lan» вне словаря",
+      "«LAN 2»: секция «Lan» вне словаря",
+      "«LAN 3»: секция «Lan» вне словаря",
+      "«LAN 4»: секция «Lan» вне словаря",
+      "«LAN 5»: секция «Lan» вне словаря",
+      "«LAN 6»: секция «Lan» вне словаря",
+      "«LAN 7»: секция «Lan» вне словаря",
+      "«LAN 8»: секция «Lan» вне словаря",
+      "«LAN 9»: секция «Lan» вне словаря",
+      "«LAN 10»: секция «Lan» вне словаря",
+      "«LAN 11»: секция «Lan» вне словаря",
+      "«LAN 12»: секция «Lan» вне словаря",
+      "«LAN 13»: секция «Lan» вне словаря",
+      "«LAN 14»: секция «Lan» вне словаря",
+      "«LAN 15»: секция «Lan» вне словаря",
+      "«LAN 16»: секция «Lan» вне словаря",
+      "«LAN 17»: секция «Lan» вне словаря",
+      "«LAN 18»: секция «Lan» вне словаря",
+      "«LAN 19»: секция «Lan» вне словаря",
+      "«LAN 20»: секция «Lan» вне словаря",
+      "«LAN 21»: секция «Lan» вне словаря",
+      "«LAN 22»: секция «Lan» вне словаря",
+      "«LAN 23»: секция «Lan» вне словаря",
+      "«LAN 24»: секция «Lan» вне словаря",
+      "«LAN 25»: секция «Lan» вне словаря",
+      "«LAN 26»: секция «Lan» вне словаря",
+      "«SFP 27»: секция «SFP» вне словаря",
+      "«SFP 28»: секция «SFP» вне словаря",
+      "«SFP 29»: секция «SFP» вне словаря",
+      "«SFP 30»: секция «SFP» вне словаря"
+    ],
+    "warnings": [
+      "label не начинается с производителя (Netgear)",
+      "нет searchTerms"
+    ]
+  },
+  {
+    "label": "Biamp TesiraFORTÉ DAN AI",
+    "level": "FIX",
+    "errors": [
+      "нет порта питания",
+      "«Control»: нет секции",
+      "«Dante»: нет секции",
+      "«USB Audio»: нет секции",
+      "«RS-232»: нет секции",
+      "«Logic I/O»: нет секции",
+      "«Input 1»: нет секции",
+      "«Input 2»: нет секции",
+      "«Input 3»: нет секции",
+      "«Input 4»: нет секции",
+      "«Input 5»: нет секции",
+      "«Input 6»: нет секции",
+      "«Input 7»: нет секции",
+      "«Input 8»: нет секции",
+      "«Input 9»: нет секции",
+      "«Input 10»: нет секции",
+      "«Input 11»: нет секции",
+      "«Input 12»: нет секции",
+      "«Output 1»: нет секции",
+      "«Output 2»: нет секции",
+      "«Output 3»: нет секции",
+      "«Output 4»: нет секции",
+      "«Output 5»: нет секции",
+      "«Output 6»: нет секции",
+      "«Output 7»: нет секции",
+      "«Output 8»: нет секции"
+    ],
+    "warnings": [
+      "нет powerDrawW/voltage (или poeDrawW)",
+      "нет searchTerms"
+    ]
+  },
+  {
+    "label": "MXA925",
+    "level": "B",
+    "errors": [],
+    "warnings": [
+      "label не начинается с производителя (Shure)",
+      "нет shortName",
+      "«AEC REF IN»: подпись капсом",
+      "«AEC REF IN»: dante должен быть bidirectional (каналы Dante — не порты)",
+      "«AUTOMIX OUT»: подпись капсом",
+      "«AUTOMIX OUT»: dante должен быть bidirectional (каналы Dante — не порты)",
+      "порядок секций не по стандарту"
+    ]
+  },
+  {
+    "label": "Shure IntelliMix P300",
+    "level": "FIX",
+    "errors": [
+      "нет порта питания",
+      "«DANTE»: нет секции",
+      "«USB»: нет секции",
+      "«IN 1»: нет секции",
+      "«IN 2»: нет секции",
+      "«OUT 1»: нет секции",
+      "«OUT 2»: нет секции"
+    ],
+    "warnings": [
+      "нет shortName",
+      "нет heightMm",
+      "нет powerDrawW/voltage (или poeDrawW)",
+      "нет searchTerms"
+    ]
+  },
+  {
+    "label": "Biamp Desono DX-S5-UB-W",
+    "level": "FIX",
+    "errors": [
+      "«INPUT»: нет секции",
+      "«THRU»: нет секции"
+    ],
+    "warnings": [
+      "нет shortName",
+      "нет searchTerms"
+    ]
+  },
+  {
+    "label": "Extron SMP 352 - 400 GB SSD",
+    "level": "FIX",
+    "errors": [
+      "«HDMI In 1»: секция «Video In» вне словаря",
+      "«HDMI In 2»: секция «Video In» вне словаря",
+      "«HDMI In 3»: секция «Video In» вне словаря",
+      "«HDMI Loop Out»: секция «Video Out» вне словаря",
+      "«HDMI Out (Confidence Monitor)»: секция «Video Out» вне словаря",
+      "«Audio In 1 (Stereo, with Loop)»: секция «Audio In» вне словаря",
+      "«Audio In 2 (Stereo)»: секция «Audio In» вне словаря",
+      "«Audio Loop Out»: секция «Audio Out» вне словаря",
+      "«Audio Out (Stereo)»: секция «Audio Out» вне словаря"
+    ],
+    "warnings": [
+      "shortName = артикул (60-1634-11), нужна модель",
+      "задан color",
+      "«HDMI Out (Confidence Monitor)»: подпись длиннее 28 символов",
+      "«Audio In 1 (Stereo, with Loop)»: подпись длиннее 28 символов",
+      "порядок секций не по стандарту"
+    ]
+  },
+  {
+    "label": "Absen Clear Cobalt CL0.7 MicroLED",
+    "level": "FIX",
+    "errors": [
+      "«DATA IN»: нет секции",
+      "«DATA LOOP»: нет секции",
+      "«POWER IN»: нет секции",
+      "«POWER LOOP»: нет секции"
+    ],
+    "warnings": [
+      "нет shortName",
+      "нет powerDrawW/voltage (или poeDrawW)",
+      "нет searchTerms",
+      "«DATA IN»: подпись капсом",
+      "«DATA IN»: ethernet должен быть bidirectional",
+      "«DATA LOOP»: подпись капсом",
+      "«DATA LOOP»: ethernet должен быть bidirectional",
+      "«POWER IN»: подпись капсом",
+      "«POWER LOOP»: подпись капсом"
+    ]
+  },
+  {
+    "label": "Shure SLXD4QDAN+A",
+    "level": "FIX",
+    "errors": [
+      "«Antenna A In»: нет секции",
+      "«Antenna B In»: нет секции",
+      "«Antenna A Cascade Out»: нет секции",
+      "«Antenna B Cascade Out»: нет секции",
+      "«Primary Dante / Control»: нет секции",
+      "«Secondary Dante / Control»: нет секции",
+      "«CH1 XLR Audio Out»: нет секции",
+      "«CH1 1/4\" Audio Out»: нет секции",
+      "«CH2 XLR Audio Out»: нет секции",
+      "«CH2 1/4\" Audio Out»: нет секции",
+      "«CH3 XLR Audio Out»: нет секции",
+      "«CH3 1/4\" Audio Out»: нет секции",
+      "«CH4 XLR Audio Out»: нет секции",
+      "«CH4 1/4\" Audio Out»: нет секции",
+      "«15V DC Power In»: нет секции"
+    ],
+    "warnings": [
+      "нет shortName"
+    ]
+  },
+  {
+    "label": "Shure UA874",
+    "level": "FIX",
+    "errors": [
+      "«Antenna»: секция «Antenna Out» вне словаря",
+      "«Microphone»: секция «Line In» вне словаря"
+    ],
+    "warnings": [
+      "нет shortName",
+      "задан color"
+    ]
+  },
+  {
+    "label": "Biamp Voltara D 2400.8",
+    "level": "FIX",
+    "errors": [
+      "«Power»: нет секции",
+      "«In 1»: секция «Analog Inputs» вне словаря",
+      "«In 2»: секция «Analog Inputs» вне словаря",
+      "«In 3»: секция «Analog Inputs» вне словаря",
+      "«In 4»: секция «Analog Inputs» вне словаря",
+      "«In 5»: секция «Analog Inputs» вне словаря",
+      "«In 6»: секция «Analog Inputs» вне словаря",
+      "«In 7»: секция «Analog Inputs» вне словаря",
+      "«In 8»: секция «Analog Inputs» вне словаря",
+      "«Network 1»: нет connectorType",
+      "«Network 1»: секция «Network Ports» вне словаря",
+      "«Network 2»: нет connectorType",
+      "«Network 2»: секция «Network Ports» вне словаря",
+      "«Logic 1»: секция «Logic IO» вне словаря",
+      "«Logic 2»: секция «Logic IO» вне словаря",
+      "«Logic 3»: секция «Logic IO» вне словаря",
+      "«Logic 4»: секция «Logic IO» вне словаря",
+      "«GPIO 1»: секция «GPIO» вне словаря",
+      "«GPIO 2»: секция «GPIO» вне словаря",
+      "«GPIO 3»: секция «GPIO» вне словаря",
+      "«GPIO 4»: секция «GPIO» вне словаря"
+    ],
+    "warnings": [
+      "нет shortName",
+      "нет searchTerms"
+    ]
+  },
+  {
+    "label": "NHD-500-TX v2 Encoder",
+    "level": "FIX",
+    "errors": [
+      "«HDMI IN»: нет connectorType",
+      "«HDMI IN»: нет секции",
+      "«AUDIO IN/OUT»: нет секции",
+      "«HDMI LOOP OUT 1»: нет connectorType",
+      "«HDMI LOOP OUT 1»: нет секции",
+      "«BALANCED AUDIO OUT 1»: нет connectorType",
+      "«BALANCED AUDIO OUT 1»: нет секции",
+      "«LAN (POE)»: нет connectorType",
+      "«LAN (POE)»: нет секции",
+      "«FIBER»: нет секции",
+      "«IR TX»: нет секции",
+      "«IR RX»: нет секции",
+      "«RS-232»: нет секции",
+      "«USB-B HOST»: нет connectorType",
+      "«USB-B HOST»: нет секции",
+      "«12V»: нет секции"
+    ],
+    "warnings": [
+      "label не начинается с производителя (WyreStorm)",
+      "нет shortName",
+      "нет heightMm",
+      "нет powerDrawW/voltage (или poeDrawW)",
+      "нет searchTerms",
+      "«HDMI IN»: подпись капсом",
+      "«AUDIO IN/OUT»: подпись капсом",
+      "«HDMI LOOP OUT 1»: подпись капсом",
+      "«BALANCED AUDIO OUT 1»: подпись капсом",
+      "«LAN (POE)»: подпись капсом",
+      "«IR TX»: подпись капсом",
+      "«IR RX»: подпись капсом",
+      "«USB-B HOST»: подпись капсом"
+    ]
+  }
+]

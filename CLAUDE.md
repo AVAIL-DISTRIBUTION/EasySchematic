@@ -41,10 +41,24 @@ PR всегда открываем в `master` нашего форка, **ник
 
 ## Стандарт блоков устройств
 
-Все шаблоны библиотеки устройств соответствуют
-[AVAIL Device Block Standard](https://claude.ai/artifact/1yZ4p4xJUjiHVmAx1VrTxH).
-Соответствие проверяется линтером `avail_block_lint.py` (добавим в фазе 1
-в `tools/avail/`).
+Все шаблоны библиотеки устройств соответствуют стандарту
+[`docs/avail/device-block-standard.md`](docs/avail/device-block-standard.md)
+(AVAIL Device Block Standard). Источник истины — этот файл в репозитории;
+стандарт меняем PR-ом вместе с линтером.
+
+Соответствие проверяет линтер — уровень блока A / B / FIX, ошибки (E) и
+рекомендации (W):
+
+| Файл | Что это |
+|------|---------|
+| `tools/avail/avail_block_lint.py` | эталонная реализация (Python) |
+| `src/avail/blockLint.ts` | та же логика на TypeScript, чистая функция `lintBlock(template) → {level, errors, warnings}`; без зависимостей от браузера и Node — для фронтенда и API |
+| `src/avail/blockLintCli.ts` | CLI: `npm run avail:lint -- <файл.json> [--verbose]`, отчёт как у Python-версии |
+| `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
+| `tools/avail/fixtures/engineer-blocks.expected.json` | результат Python-версии на них (`python3 tools/avail/lint_to_json.py …`) |
+
+Правило меняется в обеих реализациях сразу. `src/__tests__/availBlockLint.test.ts`
+сверяет TS с Python по каждому блоку (снимок + живой запуск `python3`, если он есть).
 
 ## API на нашем сервере (api-avail/)
 
@@ -71,6 +85,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `api/src/index.ts` `configuredOrigins()` / `corsOrigin()` / `isAllowedOrigin()` | `ALLOWED_ORIGINS` → credentialed CORS и проверка `returnTo` |
 | `api/src/index.ts` `googleAllowedDomains()` + `/auth/google/callback` | `GOOGLE_ALLOWED_DOMAIN` → вход только при `hd` из списка (и `email_verified`), отказ `?error=domain_not_allowed`; подсказка `hd=` в `/auth/google/start` |
 | `api/src/index.ts` `magicLinkGate` | `DISABLE_MAGIC_LINK=1` → `/auth/login`, `/auth/verify` отвечают 403 |
+| `api/src/index.ts` `maxSchematicsPerUser()` | `MAX_SCHEMATICS_PER_USER` → лимит схем на пользователя (`0` = без лимита) |
 | `api/src/auth.ts` `Env.Bindings` | типы этих переменных |
 | `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
 | `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |
@@ -92,6 +107,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `ALLOWED_ORIGINS` | — (как upstream: `*.easyschematic.live` + loopback) | origin через запятую; **заменяет** список upstream для CORS с cookie и для `returnTo` |
 | `GOOGLE_ALLOWED_DOMAIN` | — (любой аккаунт Google) | домен(ы) Workspace через запятую; вход только при совпадении claim `hd` |
 | `DISABLE_MAGIC_LINK` | — (вход по почте включён) | `1` — вход по почте отключён (403). Без него ограничение домена обходится через magic-link, сервер пишет предупреждение |
+| `MAX_SCHEMATICS_PER_USER` | — (как upstream: 10) | сколько схем может сохранить пользователь; `0` — без лимита (в `deploy/avail` — `0`); нецелое или отрицательное значение = 10 |
 | `SUPPORT_FORWARD_EMAIL` | — | не используется (почта отключена) |
 
 IP клиента upstream берёт из `CF-Connecting-IP` / `X-Forwarded-For`, поэтому API
@@ -153,7 +169,7 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 | Фаза | Содержание |
 |------|------------|
 | 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
-| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `tools/avail/avail_block_lint.py` |
+| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков (`tools/avail/avail_block_lint.py` + `src/avail/blockLint.ts`, сделано) |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |
 | 4 | **Интеграция Claude** — помощь в проектировании через Claude |

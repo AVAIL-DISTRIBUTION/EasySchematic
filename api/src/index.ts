@@ -2711,6 +2711,14 @@ app.post("/support-emails/:id/reply", async (c) => {
 
 const MAX_SCHEMATIC_SIZE = 10 * 1024 * 1024; // 10 MB
 const MAX_SCHEMATICS_PER_USER = 10;
+
+/** MAX_SCHEMATICS_PER_USER env (self-hosting): a whole number, 0 = no limit; unset or invalid = upstream's 10. */
+function maxSchematicsPerUser(env: Env["Bindings"]): number {
+  const raw = (env.MAX_SCHEMATICS_PER_USER ?? "").trim();
+  if (!/^\d+$/.test(raw)) return MAX_SCHEMATICS_PER_USER;
+  const n = Number(raw);
+  return n === 0 ? Infinity : n;
+}
 const MAX_NODES = 1000;
 const MAX_EDGES = 5000;
 const MAX_LOGO_BYTES = 500_000; // 500 KB — resized 400×200 PNG is typically 20-50 KB
@@ -2776,8 +2784,9 @@ app.post("/schematics", async (c) => {
     .prepare("SELECT COUNT(*) as cnt FROM schematics WHERE user_id = ?")
     .bind(user.id)
     .first<{ cnt: number }>();
-  if ((countRow?.cnt ?? 0) >= MAX_SCHEMATICS_PER_USER) {
-    return c.json({ error: `Maximum ${MAX_SCHEMATICS_PER_USER} schematics allowed. Delete one to save a new one.` }, 400);
+  const maxSchematics = maxSchematicsPerUser(c.env);
+  if ((countRow?.cnt ?? 0) >= maxSchematics) {
+    return c.json({ error: `Maximum ${maxSchematics} schematics allowed. Delete one to save a new one.` }, 400);
   }
 
   const raw = await c.req.text();

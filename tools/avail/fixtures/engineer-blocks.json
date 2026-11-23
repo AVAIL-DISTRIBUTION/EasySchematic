@@ -1,0 +1,5184 @@
+{
+  "version": 44,
+  "name": "blocks",
+  "nodes": [
+    {
+      "id": "device-103",
+      "type": "device",
+      "position": {
+        "x": 160,
+        "y": 928
+      },
+      "data": {
+        "label": "ASUS NUC 13 Pro",
+        "deviceType": "computer",
+        "ports": [
+          {
+            "id": "p1795167743579-18-0",
+            "label": "HDMI 1 Out",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Back of unit",
+            "connectorType": "hdmi",
+            "templatePortId": "tpl-0"
+          },
+          {
+            "id": "p1795167743579-18-1",
+            "label": "Headphone",
+            "signalType": "analog-audio",
+            "direction": "bidirectional",
+            "section": "Front of unit",
+            "connectorType": "trs-eighth",
+            "gender": "female",
+            "templatePortId": "tpl-1"
+          },
+          {
+            "id": "p1795167743579-18-2",
+            "label": "USB",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "section": "Front of unit",
+            "connectorType": "usb-a",
+            "templatePortId": "tpl-2"
+          },
+          {
+            "id": "p1795167743579-18-3",
+            "label": "USB",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "section": "Front of unit",
+            "connectorType": "usb-a",
+            "templatePortId": "tpl-3"
+          },
+          {
+            "id": "p1795167743579-18-4",
+            "label": "USB-C 1",
+            "signalType": "thunderbolt",
+            "direction": "bidirectional",
+            "section": "Back of unit",
+            "connectorType": "usb-c",
+            "templatePortId": "tpl-4"
+          },
+          {
+            "id": "p1795167743579-18-5",
+            "label": "USB-C 2",
+            "signalType": "thunderbolt",
+            "direction": "bidirectional",
+            "section": "Back of unit",
+            "connectorType": "usb-c",
+            "templatePortId": "tpl-5"
+          },
+          {
+            "id": "p1795167743579-18-6",
+            "label": "USB 2.0",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "section": "Back of unit",
+            "connectorType": "usb-a",
+            "templatePortId": "tpl-6"
+          },
+          {
+            "id": "p1795167743579-18-7",
+            "label": "USB 3.0",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "section": "Back of unit",
+            "connectorType": "usb-a",
+            "templatePortId": "tpl-7"
+          },
+          {
+            "id": "p1795167743579-18-8",
+            "label": "Ethernet",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Back of unit",
+            "connectorType": "rj45",
+            "templatePortId": "tpl-8"
+          },
+          {
+            "id": "p1795167743579-18-9",
+            "label": "AC Power",
+            "signalType": "power",
+            "direction": "input",
+            "section": "Back of unit",
+            "connectorType": "iec",
+            "templatePortId": "tpl-9"
+          },
+          {
+            "id": "p1795167743579-18-10",
+            "label": "HDMI 2 Out",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Back of unit",
+            "connectorType": "hdmi",
+            "templatePortId": "tpl-10"
+          }
+        ],
+        "baseLabel": "ASUS NUC 13 Pro",
+        "model": "ASUS NUC 13 Pro",
+        "templateId": "35812da6-de33-47a9-b037-2c03e0b71d83",
+        "templateVersion": 2,
+        "manufacturer": "ASUS",
+        "modelNumber": "ASUS NUC 13",
+        "referenceUrl": "https://www.asus.com/us/displays-desktops/nucs/nuc-mini-pcs/asus-nuc-13-pro/",
+        "category": "Sources",
+        "powerDrawW": 120,
+        "voltage": "100-240V",
+        "heightMm": 37,
+        "widthMm": 117,
+        "depthMm": 112,
+        "weightKg": 0.502,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 255
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-105",
+      "type": "device",
+      "position": {
+        "x": 192,
+        "y": 128
+      },
+      "data": {
+        "label": "Extron DTP CrossPoint 108 4K",
+        "deviceType": "switcher",
+        "ports": [
+          {
+            "label": "HDMI Input 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
+            "id": "p1795167803132-20-0",
+            "templatePortId": "port-0"
+          },
+          {
+            "label": "HDMI Input 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
+            "id": "p1795167803132-20-1",
+            "templatePortId": "port-1"
+          },
+          {
+            "label": "HDMI Input 3",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
+            "id": "p1795167803132-20-2",
+            "templatePortId": "port-2"
+          },
+          {
+            "label": "HDMI Input 4",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
+            "id": "p1795167803132-20-3",
+            "templatePortId": "port-3"
+          },
+          {
+            "label": "HDMI Input 5",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
+            "id": "p1795167803132-20-4",
+            "templatePortId": "port-4"
+          },
+          {
+            "label": "HDMI Input 6",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
+            "id": "p1795167803132-20-5",
+            "templatePortId": "port-5"
+          },
+          {
+            "label": "DTP/XTP Input 1",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "connectorType": "rj45",
+            "section": "Video Inputs",
+            "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required.",
+            "id": "p1795167803132-20-6",
+            "templatePortId": "port-6"
+          },
+          {
+            "label": "DTP/XTP Input 2",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "connectorType": "rj45",
+            "section": "Video Inputs",
+            "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required.",
+            "id": "p1795167803132-20-7",
+            "templatePortId": "port-7"
+          },
+          {
+            "label": "DTP/XTP Input 3",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "connectorType": "rj45",
+            "section": "Video Inputs",
+            "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required.",
+            "id": "p1795167803132-20-8",
+            "templatePortId": "port-8"
+          },
+          {
+            "label": "DTP/XTP Input 4",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "connectorType": "rj45",
+            "section": "Video Inputs",
+            "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required.",
+            "id": "p1795167803132-20-9",
+            "templatePortId": "port-9"
+          },
+          {
+            "label": "HDMI Output 1",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs (Matrix)",
+            "notes": "Non-scaled HDMI matrix output (1.4, HDCP 1.4). Embedded audio mirrors video routing.",
+            "id": "p1795167803132-20-10",
+            "templatePortId": "port-10"
+          },
+          {
+            "label": "HDMI Output 2",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs (Matrix)",
+            "notes": "Non-scaled HDMI matrix output (1.4, HDCP 1.4). Embedded audio mirrors video routing.",
+            "id": "p1795167803132-20-11",
+            "templatePortId": "port-11"
+          },
+          {
+            "label": "HDMI Output 3",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs (Matrix)",
+            "notes": "Non-scaled HDMI matrix output (1.4, HDCP 1.4). Embedded audio mirrors video routing.",
+            "id": "p1795167803132-20-12",
+            "templatePortId": "port-12"
+          },
+          {
+            "label": "HDMI Output 4",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs (Matrix)",
+            "notes": "Non-scaled HDMI matrix output (1.4, HDCP 1.4). Embedded audio mirrors video routing.",
+            "id": "p1795167803132-20-13",
+            "templatePortId": "port-13"
+          },
+          {
+            "label": "Scaled DTP/XTP/HDBT Output 1",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "connectorType": "rj45",
+            "section": "Video Outputs (Scaled)",
+            "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft).",
+            "id": "p1795167803132-20-14",
+            "templatePortId": "port-14"
+          },
+          {
+            "label": "Scaled DTP/XTP/HDBT Output 2",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "connectorType": "rj45",
+            "section": "Video Outputs (Scaled)",
+            "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft).",
+            "id": "p1795167803132-20-15",
+            "templatePortId": "port-15"
+          },
+          {
+            "label": "Scaled DTP/XTP/HDBT Output 3",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "connectorType": "rj45",
+            "section": "Video Outputs (Scaled)",
+            "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft).",
+            "id": "p1795167803132-20-16",
+            "templatePortId": "port-16"
+          },
+          {
+            "label": "Scaled DTP/XTP/HDBT Output 4",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "connectorType": "rj45",
+            "section": "Video Outputs (Scaled)",
+            "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft).",
+            "id": "p1795167803132-20-17",
+            "templatePortId": "port-17"
+          },
+          {
+            "label": "HDMI Output 1 (Buffered Mirror)",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs (Scaled)",
+            "notes": "Buffered HDMI mirror of a scaled DTP output, for local monitoring. Same routing as the paired RJ-45 output (typically scaled outputs 5 and 6 in the panel labeling).",
+            "id": "p1795167803132-20-18",
+            "templatePortId": "port-18"
+          },
+          {
+            "label": "HDMI Output 2 (Buffered Mirror)",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs (Scaled)",
+            "notes": "Buffered HDMI mirror of a scaled DTP output, for local monitoring. Same routing as the paired RJ-45 output (typically scaled outputs 5 and 6 in the panel labeling).",
+            "id": "p1795167803132-20-19",
+            "templatePortId": "port-19"
+          },
+          {
+            "label": "Audio Input 1 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
+            "id": "p1795167803132-20-20",
+            "templatePortId": "port-20"
+          },
+          {
+            "label": "Audio Input 2 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
+            "id": "p1795167803132-20-21",
+            "templatePortId": "port-21"
+          },
+          {
+            "label": "Audio Input 3 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
+            "id": "p1795167803132-20-22",
+            "templatePortId": "port-22"
+          },
+          {
+            "label": "Audio Input 4 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
+            "id": "p1795167803132-20-23",
+            "templatePortId": "port-23"
+          },
+          {
+            "label": "Audio Input 5 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
+            "id": "p1795167803132-20-24",
+            "templatePortId": "port-24"
+          },
+          {
+            "label": "Audio Input 6 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
+            "id": "p1795167803132-20-25",
+            "templatePortId": "port-25"
+          },
+          {
+            "label": "Mic/Line Input 1",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
+            "id": "p1795167803132-20-26",
+            "templatePortId": "port-26"
+          },
+          {
+            "label": "Mic/Line Input 2",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
+            "id": "p1795167803132-20-27",
+            "templatePortId": "port-27"
+          },
+          {
+            "label": "Mic/Line Input 3",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
+            "id": "p1795167803132-20-28",
+            "templatePortId": "port-28"
+          },
+          {
+            "label": "Mic/Line Input 4",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio Inputs",
+            "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
+            "id": "p1795167803132-20-29",
+            "templatePortId": "port-29"
+          },
+          {
+            "label": "Audio Output 1 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Audio Outputs",
+            "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced.",
+            "id": "p1795167803132-20-30",
+            "templatePortId": "port-30"
+          },
+          {
+            "label": "Audio Output 2 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Audio Outputs",
+            "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced.",
+            "id": "p1795167803132-20-31",
+            "templatePortId": "port-31"
+          },
+          {
+            "label": "Audio Output 3 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Audio Outputs",
+            "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced.",
+            "id": "p1795167803132-20-32",
+            "templatePortId": "port-32"
+          },
+          {
+            "label": "Audio Output 4 (Stereo Line)",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Audio Outputs",
+            "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced.",
+            "id": "p1795167803132-20-33",
+            "templatePortId": "port-33"
+          },
+          {
+            "label": "S/PDIF Output",
+            "signalType": "spdif",
+            "direction": "output",
+            "connectorType": "rca",
+            "section": "Audio Outputs",
+            "notes": "S/PDIF digital audio output on coaxial RCA. 75 ohm impedance.",
+            "id": "p1795167803132-20-34",
+            "templatePortId": "port-34"
+          },
+          {
+            "label": "EXP Bus",
+            "signalType": "extron-exp",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "EXP Bus",
+            "notes": "Extron proprietary EXP audio expansion bus on RJ-45. 16ch Tx + 16ch Rx, 24-bit/48kHz uncompressed. Links a second Extron DSP for I/O expansion. Shielded CAT 6 up to 10m. Modeled as `aes` + `rj45` per project convention (no `extron-exp` SignalType).",
+            "id": "p1795167803132-20-35",
+            "templatePortId": "port-35"
+          },
+          {
+            "label": "LAN (Switcher)",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Switcher Control",
+            "notes": "10/100Base-T half/full-duplex Ethernet for switcher control + web UI + SIS protocol. Default 192.168.254.254. Independent from the IPCP control processor's Ethernet ports.",
+            "id": "p1795167803132-20-36",
+            "templatePortId": "port-36"
+          },
+          {
+            "label": "USB (Front)",
+            "signalType": "usb",
+            "direction": "input",
+            "connectorType": "usb-mini",
+            "section": "Switcher Control",
+            "notes": "Front-panel USB Mini-B for direct switcher configuration via PC. USB 2.0 low speed.",
+            "id": "p1795167803132-20-37",
+            "templatePortId": "port-37"
+          },
+          {
+            "label": "RS-232 (Switcher)",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Switcher Control",
+            "notes": "Bidirectional RS-232 control for the switcher matrix on 3.5mm 3-pole captive screw. 9600-115200 baud. Independent from any IPCP control-processor serial ports.",
+            "id": "p1795167803132-20-38",
+            "templatePortId": "port-38"
+          },
+          {
+            "label": "RS-232 Pass-Thru TP Tx 1",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Tx)",
+            "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
+            "id": "p1795167803132-20-39",
+            "templatePortId": "port-39"
+          },
+          {
+            "label": "IR Pass-Thru TP Tx 1",
+            "signalType": "ir",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Tx)",
+            "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
+            "id": "p1795167803132-20-40",
+            "templatePortId": "port-40"
+          },
+          {
+            "label": "RS-232 Pass-Thru TP Tx 2",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Tx)",
+            "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
+            "id": "p1795167803132-20-41",
+            "templatePortId": "port-41"
+          },
+          {
+            "label": "IR Pass-Thru TP Tx 2",
+            "signalType": "ir",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Tx)",
+            "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
+            "id": "p1795167803132-20-42",
+            "templatePortId": "port-42"
+          },
+          {
+            "label": "RS-232 Pass-Thru TP Rx 1",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Rx)",
+            "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
+            "id": "p1795167803132-20-43",
+            "templatePortId": "port-43"
+          },
+          {
+            "label": "IR Pass-Thru TP Rx 1",
+            "signalType": "ir",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Rx)",
+            "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
+            "id": "p1795167803132-20-44",
+            "templatePortId": "port-44"
+          },
+          {
+            "label": "RS-232 Pass-Thru TP Rx 2",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Rx)",
+            "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
+            "id": "p1795167803132-20-45",
+            "templatePortId": "port-45"
+          },
+          {
+            "label": "IR Pass-Thru TP Rx 2",
+            "signalType": "ir",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Pass-Thru (TP Rx)",
+            "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
+            "id": "p1795167803132-20-46",
+            "templatePortId": "port-46"
+          },
+          {
+            "label": "AC Mains",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "iec",
+            "section": "Power",
+            "notes": "Internal universal-input PSU. 100-240 VAC, 50-60 Hz, IEC C14 inlet.",
+            "id": "p1795167803132-20-47",
+            "templatePortId": "port-47"
+          }
+        ],
+        "color": "#0c4a6e",
+        "baseLabel": "Extron DTP CrossPoint 108 4K",
+        "model": "Extron DTP CrossPoint 108 4K",
+        "shortName": "60-1381-01",
+        "templateId": "e3254e2b-619a-4f09-9bb1-4084dc32e19d",
+        "templateVersion": 1,
+        "manufacturer": "Extron",
+        "modelNumber": "60-1381-01",
+        "referenceUrl": "https://www.extron.com/product/dtpcp4k108",
+        "category": "Switching",
+        "powerDrawW": 154,
+        "voltage": "100-240V",
+        "searchTerms": [
+          "dtp",
+          "crosspoint",
+          "4k",
+          "hdbaset",
+          "extender",
+          "10x8",
+          "seamless",
+          "scaling",
+          "presentation",
+          "matrix",
+          "switcher",
+          "analog-audio",
+          "hdmi",
+          "serial",
+          "spdif",
+          "ethernet",
+          "60-1381-01",
+          "dtp cp 4k",
+          "scaler",
+          "dsp"
+        ],
+        "heightMm": 133,
+        "widthMm": 442,
+        "depthMm": 406,
+        "weightKg": 7.7,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 320,
+        "height": 703
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-106",
+      "type": "device",
+      "position": {
+        "x": 688,
+        "y": 128
+      },
+      "data": {
+        "label": "Extron XTP II CrossPoint 1600",
+        "shortName": "60-1545-01",
+        "deviceType": "frame",
+        "ports": [
+          {
+            "id": "p1795167821309-21-0",
+            "label": "LAN",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Network",
+            "connectorType": "rj45",
+            "notes": "10/100Base-T control. Default 192.168.254.254."
+          },
+          {
+            "id": "p1795167821309-21-1",
+            "label": "RS-232 / RS-422",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Control",
+            "connectorType": "db9",
+            "notes": "Rear panel female 9-pin D. Selectable RS-232 / RS-422. 9600 (default) to 115200 baud."
+          },
+          {
+            "id": "p1795167821309-21-2",
+            "label": "USB Config",
+            "signalType": "usb",
+            "direction": "input",
+            "section": "Control",
+            "connectorType": "usb-mini",
+            "notes": "Front panel USB Mini-B for direct PC config. USB 2.0 low speed."
+          },
+          {
+            "id": "p1795167821309-21-3",
+            "label": "AC Power",
+            "signalType": "power",
+            "direction": "input",
+            "section": "Power",
+            "connectorType": "iec",
+            "notes": "Internal PSU. IEC C14 mains, 100-240 VAC, 50-60 Hz."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-0",
+            "label": "HDMI In 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-1",
+            "label": "HDMI In 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-2",
+            "label": "HDMI In 3",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-3",
+            "label": "HDMI In 4",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-4",
+            "label": "Audio In 1",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-5",
+            "label": "Audio In 2",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-6",
+            "label": "Audio In 3",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-1-1795167833645-22-7",
+            "label": "Audio In 4",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-0",
+            "label": "HDMI In 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-1",
+            "label": "HDMI In 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-2",
+            "label": "HDMI In 3",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-3",
+            "label": "HDMI In 4",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-4",
+            "label": "Audio In 1",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-5",
+            "label": "Audio In 2",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-6",
+            "label": "Audio In 3",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-2-1795167905777-23-7",
+            "label": "Audio In 4",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-0",
+            "label": "XTP Out 1",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-1",
+            "label": "XTP Out 2",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-2",
+            "label": "XTP Out 3",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-3",
+            "label": "XTP Out 4",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-4",
+            "label": "RS-232 / IR 1",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-5",
+            "label": "RS-232 / IR 2",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-6",
+            "label": "RS-232 / IR 3",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-7",
+            "label": "RS-232 / IR 4",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-8",
+            "label": "LAN 1",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-9",
+            "label": "LAN 2",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-10",
+            "label": "LAN 3",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-4-1795167913588-24-11",
+            "label": "LAN 4",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-0",
+            "label": "Fiber In 1",
+            "signalType": "fiber",
+            "direction": "input",
+            "section": "Slot 6",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-1",
+            "label": "Fiber In 2",
+            "signalType": "fiber",
+            "direction": "input",
+            "section": "Slot 6",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-2",
+            "label": "Fiber In 3",
+            "signalType": "fiber",
+            "direction": "input",
+            "section": "Slot 6",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-3",
+            "label": "Fiber In 4",
+            "signalType": "fiber",
+            "direction": "input",
+            "section": "Slot 6",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-4",
+            "label": "RS-232 / IR 1",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-5",
+            "label": "RS-232 / IR 2",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-6",
+            "label": "RS-232 / IR 3",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-7",
+            "label": "RS-232 / IR 4",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-8",
+            "label": "LAN 1",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-9",
+            "label": "LAN 2",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-10",
+            "label": "LAN 3",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-6-1795167923494-25-11",
+            "label": "LAN 4",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 6",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-0",
+            "label": "HDMI Out 1",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. 5V/250mA peripheral power."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-1",
+            "label": "HDMI Out 2",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. 5V/250mA peripheral power."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-2",
+            "label": "HDMI Out 3",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. 5V/250mA peripheral power."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-3",
+            "label": "HDMI Out 4",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. 5V/250mA peripheral power."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-4",
+            "label": "Audio Out 1",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-5",
+            "label": "Audio Out 2",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-6",
+            "label": "Audio Out 3",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-7",
+            "label": "Audio Out 4",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "phoenix",
+            "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-8",
+            "label": "Dante Primary",
+            "signalType": "dante",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "rj45",
+            "notes": "Dante / AES67 (software selectable). 4 stereo Tx channels. 24-bit / 48 kHz."
+          },
+          {
+            "id": "slot-slot-3-1795167994279-26-9",
+            "label": "Dante Secondary",
+            "signalType": "dante",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "rj45",
+            "notes": "Dante / AES67 (redundant or switched)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-0",
+            "label": "Fiber Out 1",
+            "signalType": "fiber",
+            "direction": "output",
+            "section": "Slot 5",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-1",
+            "label": "Fiber Out 2",
+            "signalType": "fiber",
+            "direction": "output",
+            "section": "Slot 5",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-2",
+            "label": "Fiber Out 3",
+            "signalType": "fiber",
+            "direction": "output",
+            "section": "Slot 5",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-3",
+            "label": "Fiber Out 4",
+            "signalType": "fiber",
+            "direction": "output",
+            "section": "Slot 5",
+            "connectorType": "lc",
+            "notes": "XTP fiber link (proprietary multiplexed video/audio/RS-232/IR/Ethernet). 1 LC per channel. 8.5 Gbps per channel."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-4",
+            "label": "RS-232 / IR 1",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-5",
+            "label": "RS-232 / IR 2",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-6",
+            "label": "RS-232 / IR 3",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-7",
+            "label": "RS-232 / IR 4",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "phoenix",
+            "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-8",
+            "label": "LAN 1",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-9",
+            "label": "LAN 2",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-10",
+            "label": "LAN 3",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          },
+          {
+            "id": "slot-slot-5-1795168004791-27-11",
+            "label": "LAN 4",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Slot 5",
+            "connectorType": "rj45",
+            "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2)."
+          }
+        ],
+        "manufacturer": "Extron",
+        "modelNumber": "60-1545-01",
+        "referenceUrl": "https://www.extron.com/product/xtpiicp1600",
+        "category": "Infrastructure",
+        "templateId": "b36b3ad1-bb96-46f7-83a8-53e11eb0f63c",
+        "templateVersion": 1,
+        "color": "#1e3a8a",
+        "model": "Extron XTP II CrossPoint 1600",
+        "powerDrawW": 875,
+        "voltage": "100-240V",
+        "heightMm": 222,
+        "widthMm": 432,
+        "depthMm": 445,
+        "weightKg": 17.7,
+        "baseLabel": "Extron XTP II CrossPoint 1600",
+        "slots": [
+          {
+            "slotId": "slot-1",
+            "label": "Slot 1",
+            "slotFamily": "extron-xtp-2",
+            "cardTemplateId": "36e4e1c4-afdd-4f3d-baca-9aaffe4a0596",
+            "cardLabel": "Extron XTP II CP 4i HD 4K PLUS",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-1112-01",
+            "portIds": [
+              "slot-slot-1-1795167833645-22-0",
+              "slot-slot-1-1795167833645-22-1",
+              "slot-slot-1-1795167833645-22-2",
+              "slot-slot-1-1795167833645-22-3",
+              "slot-slot-1-1795167833645-22-4",
+              "slot-slot-1-1795167833645-22-5",
+              "slot-slot-1-1795167833645-22-6",
+              "slot-slot-1-1795167833645-22-7"
+            ]
+          },
+          {
+            "slotId": "slot-2",
+            "label": "Slot 2",
+            "slotFamily": "extron-xtp-2",
+            "cardTemplateId": "425fb918-7ccb-482a-81ac-23581cb4c882",
+            "cardLabel": "Extron XTP II CP 4i HD 8K",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-1262-01",
+            "portIds": [
+              "slot-slot-2-1795167905777-23-0",
+              "slot-slot-2-1795167905777-23-1",
+              "slot-slot-2-1795167905777-23-2",
+              "slot-slot-2-1795167905777-23-3",
+              "slot-slot-2-1795167905777-23-4",
+              "slot-slot-2-1795167905777-23-5",
+              "slot-slot-2-1795167905777-23-6",
+              "slot-slot-2-1795167905777-23-7"
+            ]
+          },
+          {
+            "slotId": "slot-3",
+            "label": "Slot 3",
+            "slotFamily": "extron-xtp-2",
+            "cardTemplateId": "aee481b5-c9c4-4df8-bd96-a918259740e0",
+            "cardLabel": "Extron XTP II CP 4o HD AT 4K PLUS",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-1182-01",
+            "portIds": [
+              "slot-slot-3-1795167994279-26-0",
+              "slot-slot-3-1795167994279-26-1",
+              "slot-slot-3-1795167994279-26-2",
+              "slot-slot-3-1795167994279-26-3",
+              "slot-slot-3-1795167994279-26-4",
+              "slot-slot-3-1795167994279-26-5",
+              "slot-slot-3-1795167994279-26-6",
+              "slot-slot-3-1795167994279-26-7",
+              "slot-slot-3-1795167994279-26-8",
+              "slot-slot-3-1795167994279-26-9"
+            ]
+          },
+          {
+            "slotId": "slot-4",
+            "label": "Slot 4",
+            "slotFamily": "extron-xtp-2",
+            "cardTemplateId": "b3258ad4-e2f6-45bf-b108-1003b3a78ebd",
+            "cardLabel": "Extron XTP CP 4o 4K",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-943-31",
+            "portIds": [
+              "slot-slot-4-1795167913588-24-0",
+              "slot-slot-4-1795167913588-24-1",
+              "slot-slot-4-1795167913588-24-2",
+              "slot-slot-4-1795167913588-24-3",
+              "slot-slot-4-1795167913588-24-4",
+              "slot-slot-4-1795167913588-24-5",
+              "slot-slot-4-1795167913588-24-6",
+              "slot-slot-4-1795167913588-24-7",
+              "slot-slot-4-1795167913588-24-8",
+              "slot-slot-4-1795167913588-24-9",
+              "slot-slot-4-1795167913588-24-10",
+              "slot-slot-4-1795167913588-24-11"
+            ]
+          },
+          {
+            "slotId": "slot-5",
+            "label": "Slot 5",
+            "slotFamily": "extron-xtp-2",
+            "cardTemplateId": "30d80738-e56a-403e-ada2-62fced60c83a",
+            "cardLabel": "Extron XTP CP 4o Fiber 4K MM",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-986-01",
+            "portIds": [
+              "slot-slot-5-1795168004791-27-0",
+              "slot-slot-5-1795168004791-27-1",
+              "slot-slot-5-1795168004791-27-2",
+              "slot-slot-5-1795168004791-27-3",
+              "slot-slot-5-1795168004791-27-4",
+              "slot-slot-5-1795168004791-27-5",
+              "slot-slot-5-1795168004791-27-6",
+              "slot-slot-5-1795168004791-27-7",
+              "slot-slot-5-1795168004791-27-8",
+              "slot-slot-5-1795168004791-27-9",
+              "slot-slot-5-1795168004791-27-10",
+              "slot-slot-5-1795168004791-27-11"
+            ]
+          },
+          {
+            "slotId": "slot-6",
+            "label": "Slot 6",
+            "slotFamily": "extron-xtp-2",
+            "cardTemplateId": "17f2b968-fedc-4f74-877e-27bb6bb82aac",
+            "cardLabel": "Extron XTP CP 4i Fiber 4K SM",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-985-02",
+            "portIds": [
+              "slot-slot-6-1795167923494-25-0",
+              "slot-slot-6-1795167923494-25-1",
+              "slot-slot-6-1795167923494-25-2",
+              "slot-slot-6-1795167923494-25-3",
+              "slot-slot-6-1795167923494-25-4",
+              "slot-slot-6-1795167923494-25-5",
+              "slot-slot-6-1795167923494-25-6",
+              "slot-slot-6-1795167923494-25-7",
+              "slot-slot-6-1795167923494-25-8",
+              "slot-slot-6-1795167923494-25-9",
+              "slot-slot-6-1795167923494-25-10",
+              "slot-slot-6-1795167923494-25-11"
+            ]
+          },
+          {
+            "slotId": "slot-7",
+            "label": "Slot 7",
+            "slotFamily": "extron-xtp-2",
+            "portIds": []
+          },
+          {
+            "slotId": "slot-8",
+            "label": "Slot 8",
+            "slotFamily": "extron-xtp-2",
+            "portIds": []
+          }
+        ],
+        "fitWidth": true,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "searchTerms": [
+          "xtp",
+          "ii",
+          "crosspoint",
+          "switcher",
+          "matrix",
+          "routing",
+          "modular",
+          "digital",
+          "switchers",
+          "4x4",
+          "16x16",
+          "speedswitch",
+          "technology",
+          "serial",
+          "ethernet",
+          "60-1545-01",
+          "xtp ii matrix"
+        ]
+      },
+      "measured": {
+        "width": 208,
+        "height": 1007
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-107",
+      "type": "device",
+      "position": {
+        "x": 1104,
+        "y": 128
+      },
+      "data": {
+        "label": "Extron Quantum Ultra II 305",
+        "shortName": "Quantum Ultra II 305",
+        "deviceType": "frame",
+        "ports": [
+          {
+            "id": "p1795168041492-28-0",
+            "label": "LAN A",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Network",
+            "connectorType": "rj45",
+            "notes": "Gigabit control / VCS / Telnet / SSH. Default 192.168.254.254."
+          },
+          {
+            "id": "p1795168041492-28-1",
+            "label": "LAN B",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Network",
+            "connectorType": "rj45",
+            "notes": "Gigabit control (separate subnet). Default 192.168.1.254."
+          },
+          {
+            "id": "p1795168041492-28-2",
+            "label": "RS-232",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "section": "Control",
+            "connectorType": "phoenix",
+            "notes": "3-pole captive screw. 9600, 8-N-1."
+          },
+          {
+            "id": "p1795168041492-28-3",
+            "label": "USB Config",
+            "signalType": "usb",
+            "direction": "input",
+            "section": "Control",
+            "connectorType": "usb-mini",
+            "notes": "USB Mini-B for direct PC config."
+          },
+          {
+            "id": "p1795168041492-28-4",
+            "label": "Setup HDMI",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Setup",
+            "connectorType": "hdmi",
+            "notes": "Local setup display output (640x480 to 1920x1200)."
+          },
+          {
+            "id": "p1795168041492-28-5",
+            "label": "Setup USB 1",
+            "signalType": "usb",
+            "direction": "output",
+            "section": "Setup",
+            "connectorType": "usb-a",
+            "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage."
+          },
+          {
+            "id": "p1795168041492-28-6",
+            "label": "Setup USB 2",
+            "signalType": "usb",
+            "direction": "output",
+            "section": "Setup",
+            "connectorType": "usb-a",
+            "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage."
+          },
+          {
+            "id": "p1795168041492-28-7",
+            "label": "Setup USB 3",
+            "signalType": "usb",
+            "direction": "output",
+            "section": "Setup",
+            "connectorType": "usb-a",
+            "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage."
+          },
+          {
+            "id": "p1795168041492-28-8",
+            "label": "AC Power",
+            "signalType": "power",
+            "direction": "input",
+            "section": "Power",
+            "connectorType": "iec",
+            "notes": "Internal Everlast PSU. IEC C14 inlet. 100-240 VAC, 50-60 Hz."
+          },
+          {
+            "id": "slot-slot-1-1795168057356-29-0",
+            "label": "HDMI In 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-1-1795168057356-29-1",
+            "label": "HDMI In 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-1-1795168057356-29-2",
+            "label": "HDMI In 3",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-1-1795168057356-29-3",
+            "label": "HDMI In 4",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 1",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-0",
+            "label": "DTP3 In 1",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-1",
+            "label": "HDMI In 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-2",
+            "label": "DTP3 In 2",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-3",
+            "label": "HDMI In 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-4",
+            "label": "DTP3 In 3",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-5",
+            "label": "HDMI In 3",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-6",
+            "label": "DTP3 In 4",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-7",
+            "label": "HDMI In 4",
+            "signalType": "hdmi",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-2-1795168061253-30-8",
+            "label": "DTP Power Inject",
+            "signalType": "power",
+            "direction": "input",
+            "section": "Slot 2",
+            "connectorType": "phoenix",
+            "notes": "Captive screw input. Up to 72W shared across 4 DTP3 inputs to remotely power transmitters (DTP3 mode only)."
+          },
+          {
+            "id": "slot-slot-3-1795168065773-31-0",
+            "label": "HDMI Out 1",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-3-1795168065773-31-1",
+            "label": "HDMI Out 2",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-3-1795168065773-31-2",
+            "label": "HDMI Out 3",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-3-1795168065773-31-3",
+            "label": "HDMI Out 4",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 3",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock)."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-0",
+            "label": "DTP3 Out 1",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-1",
+            "label": "HDMI Out 1",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-2",
+            "label": "DTP3 Out 2",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-3",
+            "label": "HDMI Out 2",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-4",
+            "label": "DTP3 Out 3",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-5",
+            "label": "HDMI Out 3",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-6",
+            "label": "DTP3 Out 4",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "rj45",
+            "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-7",
+            "label": "HDMI Out 4",
+            "signalType": "hdmi",
+            "direction": "output",
+            "section": "Slot 4",
+            "connectorType": "hdmi",
+            "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3."
+          },
+          {
+            "id": "slot-slot-4-1795168069177-32-8",
+            "label": "DTP Power Inject",
+            "signalType": "power",
+            "direction": "input",
+            "section": "Slot 4",
+            "connectorType": "phoenix",
+            "notes": "Captive screw input. Up to 72W shared across 4 DTP3 outputs to remotely power receivers (DTP3 mode only)."
+          }
+        ],
+        "manufacturer": "Extron",
+        "modelNumber": "Quantum Ultra II 305",
+        "referenceUrl": "https://www.extron.com/product/quantumultra2",
+        "category": "Infrastructure",
+        "templateId": "ed46a8e8-0f40-4dc1-b160-978ac91c8d8d",
+        "templateVersion": 1,
+        "color": "#6b21a8",
+        "model": "Extron Quantum Ultra II 305",
+        "powerDrawW": 760,
+        "voltage": "100-240V",
+        "heightMm": 133,
+        "widthMm": 445,
+        "depthMm": 483,
+        "weightKg": 13,
+        "baseLabel": "Extron Quantum Ultra II 305",
+        "slots": [
+          {
+            "slotId": "slot-1",
+            "label": "Slot 1",
+            "slotFamily": "extron-quantum-ultra-2",
+            "cardTemplateId": "1643c10d-5541-4d4d-b587-3a0e14ce76ea",
+            "cardLabel": "Extron Quantum IN4HDMI 4K PLUS",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "Quantum IN4HDMI 4K PLUS",
+            "portIds": [
+              "slot-slot-1-1795168057356-29-0",
+              "slot-slot-1-1795168057356-29-1",
+              "slot-slot-1-1795168057356-29-2",
+              "slot-slot-1-1795168057356-29-3"
+            ]
+          },
+          {
+            "slotId": "slot-2",
+            "label": "Slot 2",
+            "slotFamily": "extron-quantum-ultra-2",
+            "cardTemplateId": "d623abf2-82e9-45ab-a8b2-56e8dbc96676",
+            "cardLabel": "Extron Quantum IN4DTP3",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-1326-01",
+            "portIds": [
+              "slot-slot-2-1795168061253-30-0",
+              "slot-slot-2-1795168061253-30-1",
+              "slot-slot-2-1795168061253-30-2",
+              "slot-slot-2-1795168061253-30-3",
+              "slot-slot-2-1795168061253-30-4",
+              "slot-slot-2-1795168061253-30-5",
+              "slot-slot-2-1795168061253-30-6",
+              "slot-slot-2-1795168061253-30-7",
+              "slot-slot-2-1795168061253-30-8"
+            ]
+          },
+          {
+            "slotId": "slot-3",
+            "label": "Slot 3",
+            "slotFamily": "extron-quantum-ultra-2",
+            "cardTemplateId": "a339e111-9c09-487c-a69d-3e16785b934c",
+            "cardLabel": "Extron Quantum OUT4HDMI 4K PLUS",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "Quantum OUT4HDMI 4K PLUS",
+            "portIds": [
+              "slot-slot-3-1795168065773-31-0",
+              "slot-slot-3-1795168065773-31-1",
+              "slot-slot-3-1795168065773-31-2",
+              "slot-slot-3-1795168065773-31-3"
+            ]
+          },
+          {
+            "slotId": "slot-4",
+            "label": "Slot 4",
+            "slotFamily": "extron-quantum-ultra-2",
+            "cardTemplateId": "f14acf63-f511-4206-bf8f-77396162d0b3",
+            "cardLabel": "Extron Quantum OUT4DTP3",
+            "cardManufacturer": "Extron",
+            "cardModelNumber": "70-1327-01",
+            "portIds": [
+              "slot-slot-4-1795168069177-32-0",
+              "slot-slot-4-1795168069177-32-1",
+              "slot-slot-4-1795168069177-32-2",
+              "slot-slot-4-1795168069177-32-3",
+              "slot-slot-4-1795168069177-32-4",
+              "slot-slot-4-1795168069177-32-5",
+              "slot-slot-4-1795168069177-32-6",
+              "slot-slot-4-1795168069177-32-7",
+              "slot-slot-4-1795168069177-32-8"
+            ]
+          },
+          {
+            "slotId": "slot-5",
+            "label": "Slot 5",
+            "slotFamily": "extron-quantum-ultra-2",
+            "portIds": []
+          }
+        ],
+        "fitWidth": true,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "searchTerms": [
+          "quantum",
+          "ultra",
+          "ii",
+          "2",
+          "305",
+          "videowall",
+          "processor",
+          "chassis",
+          "frame",
+          "5 slot",
+          "3u",
+          "8k",
+          "extron"
+        ]
+      },
+      "measured": {
+        "width": 208,
+        "height": 479
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-108",
+      "type": "device",
+      "position": {
+        "x": 1504,
+        "y": 128
+      },
+      "data": {
+        "label": "Extron DTP3 T 203",
+        "deviceType": "hdbaset-extender",
+        "ports": [
+          {
+            "label": "HDMI In 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "id": "p1795168231268-33-0",
+            "templatePortId": "port-0"
+          },
+          {
+            "label": "HDMI In 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video Inputs",
+            "id": "p1795168231268-33-1",
+            "templatePortId": "port-1"
+          },
+          {
+            "label": "USB-C In (DP Alt, 4 HBR2 lanes)",
+            "signalType": "usb",
+            "direction": "input",
+            "connectorType": "usb-c",
+            "section": "Video Inputs",
+            "id": "p1795168231268-33-2",
+            "templatePortId": "port-2"
+          },
+          {
+            "label": "HDMI Out (loop)",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs",
+            "id": "p1795168231268-33-3",
+            "templatePortId": "port-3"
+          },
+          {
+            "label": "DTP3 Out (RJ-45 to Rx)",
+            "signalType": "hdbaset",
+            "direction": "output",
+            "connectorType": "rj45",
+            "section": "Video Outputs",
+            "id": "p1795168231268-33-4",
+            "templatePortId": "port-4"
+          },
+          {
+            "label": "USB-C Config (Front)",
+            "signalType": "usb",
+            "direction": "input",
+            "connectorType": "usb-c",
+            "section": "Control",
+            "id": "p1795168231268-33-5",
+            "templatePortId": "port-5"
+          },
+          {
+            "label": "LAN",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Control",
+            "id": "p1795168231268-33-6",
+            "templatePortId": "port-6"
+          },
+          {
+            "label": "RS-232 (3-pole)",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Control",
+            "id": "p1795168231268-33-7",
+            "templatePortId": "port-7"
+          },
+          {
+            "label": "Contact Closure",
+            "signalType": "contact-closure",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Control",
+            "id": "p1795168231268-33-8",
+            "templatePortId": "port-8"
+          },
+          {
+            "label": "Tally Out",
+            "signalType": "tally",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Control",
+            "id": "p1795168231268-33-9",
+            "templatePortId": "port-9"
+          },
+          {
+            "label": "AC Power",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "iec",
+            "section": "Power",
+            "id": "p1795168231268-33-10",
+            "templatePortId": "port-10"
+          }
+        ],
+        "color": "#7c3aed",
+        "baseLabel": "Extron DTP3 T 203",
+        "model": "Extron DTP3 T 203",
+        "shortName": "60-1885-52",
+        "templateId": "4a869e1e-6b71-4225-8f4b-87350936293d",
+        "templateVersion": 1,
+        "manufacturer": "Extron",
+        "modelNumber": "60-1885-52",
+        "referenceUrl": "https://www.extron.com/product/dtp3t203",
+        "category": "KVM / Extenders",
+        "powerDrawW": 90.3,
+        "voltage": "100-240V",
+        "searchTerms": [
+          "dtp3",
+          "hdbaset",
+          "extender",
+          "dtp",
+          "three",
+          "input",
+          "4k",
+          "switcher",
+          "integrated",
+          "transmitter",
+          "gpio",
+          "tally",
+          "serial",
+          "ethernet",
+          "hdmi",
+          "60-1885-52",
+          "dtp3 sw"
+        ],
+        "heightMm": 44,
+        "widthMm": 222,
+        "depthMm": 216,
+        "weightKg": 0.98,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 320,
+        "height": 239
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-109",
+      "type": "device",
+      "position": {
+        "x": 1504,
+        "y": 432
+      },
+      "data": {
+        "label": "Extron DTP3 R 201",
+        "deviceType": "hdbaset-extender",
+        "ports": [
+          {
+            "label": "DTP3 In (RJ-45 from Tx)",
+            "signalType": "hdbaset",
+            "direction": "input",
+            "connectorType": "rj45",
+            "section": "Video Inputs",
+            "id": "p1795168250149-34-0",
+            "templatePortId": "port-0"
+          },
+          {
+            "label": "HDMI Out",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Outputs",
+            "id": "p1795168250149-34-1",
+            "templatePortId": "port-1"
+          },
+          {
+            "label": "Audio Out (Stereo)",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Audio Outputs",
+            "id": "p1795168250149-34-2",
+            "templatePortId": "port-2"
+          },
+          {
+            "label": "USB-C Config (Front)",
+            "signalType": "usb",
+            "direction": "input",
+            "connectorType": "usb-c",
+            "section": "Control",
+            "id": "p1795168250149-34-3",
+            "templatePortId": "port-3"
+          },
+          {
+            "label": "RS-232 (Pass-through)",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Control",
+            "id": "p1795168250149-34-4",
+            "templatePortId": "port-4"
+          },
+          {
+            "label": "Power 12VDC",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "barrel",
+            "section": "Power",
+            "id": "p1795168250149-34-5",
+            "templatePortId": "port-5"
+          }
+        ],
+        "color": "#7c3aed",
+        "baseLabel": "Extron DTP3 R 201",
+        "model": "Extron DTP3 R 201",
+        "shortName": "60-1869-63",
+        "templateId": "49bc6d64-ab6b-4b23-9329-d81f00527c9c",
+        "templateVersion": 1,
+        "manufacturer": "Extron",
+        "modelNumber": "60-1869-63",
+        "referenceUrl": "https://www.extron.com/product/dtp3r201",
+        "category": "KVM / Extenders",
+        "powerDrawW": 7.37,
+        "voltage": "12VDC",
+        "searchTerms": [
+          "dtp3",
+          "hdbaset",
+          "extender",
+          "dtp",
+          "4k",
+          "hdmi",
+          "receiver",
+          "audio",
+          "de",
+          "embedding",
+          "analog-audio",
+          "serial",
+          "60-1869-63",
+          "dtp3 rx"
+        ],
+        "heightMm": 25,
+        "widthMm": 109,
+        "depthMm": 152,
+        "weightKg": 0.27,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 272,
+        "height": 175
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-110",
+      "type": "device",
+      "position": {
+        "x": 1984,
+        "y": 128
+      },
+      "data": {
+        "label": "Extron IPCP Pro 255Q xi",
+        "deviceType": "control-processor",
+        "ports": [
+          {
+            "id": "p1795168268940-35-0",
+            "label": "COM 1",
+            "signalType": "serial",
+            "direction": "output",
+            "section": "Serial",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-2"
+          },
+          {
+            "id": "p1795168268940-35-1",
+            "label": "COM 2",
+            "signalType": "serial",
+            "direction": "output",
+            "section": "Serial",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-3"
+          },
+          {
+            "id": "p1795168268940-35-2",
+            "label": "IR/S",
+            "signalType": "ir",
+            "direction": "output",
+            "section": "Serial",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-4"
+          },
+          {
+            "id": "p1795168268940-35-3",
+            "label": "Relay 1",
+            "signalType": "gpio",
+            "direction": "output",
+            "section": "Relays",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-5"
+          },
+          {
+            "id": "p1795168268940-35-4",
+            "label": "Relay 2",
+            "signalType": "gpio",
+            "direction": "output",
+            "section": "Relays",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-6"
+          },
+          {
+            "id": "p1795168268940-35-5",
+            "label": "eBUS",
+            "signalType": "serial",
+            "direction": "output",
+            "section": "eBUS",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-7"
+          },
+          {
+            "id": "p1795168268940-35-6",
+            "label": "Volume Control",
+            "signalType": "gpio",
+            "direction": "output",
+            "section": "VOL",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-8"
+          },
+          {
+            "id": "p1795168268940-35-7",
+            "label": "12v Power",
+            "signalType": "power",
+            "direction": "input",
+            "section": "Power",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-9"
+          },
+          {
+            "id": "p1795168268940-35-8",
+            "label": "Digital I/O 1",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "templatePortId": "e8ef99d9"
+          },
+          {
+            "id": "p1795168268940-35-9",
+            "label": "Digital I/O 2",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "templatePortId": "7f01805d"
+          },
+          {
+            "id": "p1795168268940-35-10",
+            "label": "Digital I/O 3",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "templatePortId": "e5f27f25"
+          },
+          {
+            "id": "p1795168268940-35-11",
+            "label": "Digital I/O 4",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "templatePortId": "a25f7d68"
+          },
+          {
+            "id": "p1795168268940-35-12",
+            "label": "LAN",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "LAN",
+            "templatePortId": "a8be91ca"
+          },
+          {
+            "id": "p1795168268940-35-13",
+            "label": "AV LAN",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "LAN",
+            "templatePortId": "06e83f6a"
+          }
+        ],
+        "baseLabel": "Extron IPCP Pro 255Q xi",
+        "model": "Extron IPCP Pro 255Q xi",
+        "shortName": "60-1914-01",
+        "templateId": "6241c5fc-a8d6-4afb-a4fc-c90c5c0b9e9b",
+        "templateVersion": 3,
+        "manufacturer": "Extron",
+        "modelNumber": "60-1914-01",
+        "referenceUrl": "https://www.extron.com/product/ipcppro255qxi",
+        "category": "Control",
+        "powerDrawW": 18,
+        "voltage": "12",
+        "searchTerms": [
+          "extron",
+          "control",
+          "controller",
+          "processor"
+        ],
+        "heightMm": 43,
+        "widthMm": 109,
+        "depthMm": 152,
+        "weightKg": 0.4,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 176,
+        "height": 351
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-111",
+      "type": "device",
+      "position": {
+        "x": 2016,
+        "y": 544
+      },
+      "data": {
+        "label": "Extron TLP Pro 1035T",
+        "deviceType": "touch-screen",
+        "ports": [
+          {
+            "label": "LAN / PoE",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Network",
+            "poeDrawW": 11.5,
+            "notes": "PoE 802.3af class 3",
+            "id": "p1795168280900-36-0",
+            "templatePortId": "port-0"
+          },
+          {
+            "label": "USB",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-a",
+            "section": "USB",
+            "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+            "id": "p1795168280900-36-1",
+            "templatePortId": "port-1"
+          }
+        ],
+        "color": "#92400e",
+        "baseLabel": "Extron TLP Pro 1035T",
+        "model": "Extron TLP Pro 1035T",
+        "templateId": "470f759b-c911-4b39-a558-a9fd5b05e0fa",
+        "templateVersion": 1,
+        "manufacturer": "Extron",
+        "modelNumber": "60-1999-02",
+        "referenceUrl": "https://www.extron.com/product/tlppro1035t",
+        "category": "Control",
+        "powerDrawW": 11.5,
+        "voltage": "PoE 802.3af class 3",
+        "searchTerms": [
+          "tlp",
+          "pro",
+          "black",
+          "control",
+          "processor",
+          "automation",
+          "10\"",
+          "tabletop",
+          "touchlink",
+          "touchpanel",
+          "ethernet",
+          "extron",
+          "60-1999-02",
+          "1035t"
+        ],
+        "heightMm": 163,
+        "widthMm": 257,
+        "depthMm": 105,
+        "weightKg": 1.36,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 111
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-112",
+      "type": "device",
+      "position": {
+        "x": 1072,
+        "y": 704
+      },
+      "data": {
+        "label": "Extron DMP 128 Plus C AT",
+        "deviceType": "audio-dsp",
+        "ports": [
+          {
+            "label": "Mic/Line In 1",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-0",
+            "templatePortId": "port-0"
+          },
+          {
+            "label": "Mic/Line In 2",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-1",
+            "templatePortId": "port-1"
+          },
+          {
+            "label": "Mic/Line In 3",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-2",
+            "templatePortId": "port-2"
+          },
+          {
+            "label": "Mic/Line In 4",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-3",
+            "templatePortId": "port-3"
+          },
+          {
+            "label": "Mic/Line In 5",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-4",
+            "templatePortId": "port-4"
+          },
+          {
+            "label": "Mic/Line In 6",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-5",
+            "templatePortId": "port-5"
+          },
+          {
+            "label": "Mic/Line In 7",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-6",
+            "templatePortId": "port-6"
+          },
+          {
+            "label": "Mic/Line In 8",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs (with phantom)",
+            "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+            "id": "p1795168316765-37-7",
+            "templatePortId": "port-7"
+          },
+          {
+            "label": "Mic/Line In 9",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs",
+            "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+            "id": "p1795168316765-37-8",
+            "templatePortId": "port-8"
+          },
+          {
+            "label": "Mic/Line In 10",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs",
+            "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+            "id": "p1795168316765-37-9",
+            "templatePortId": "port-9"
+          },
+          {
+            "label": "Mic/Line In 11",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs",
+            "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+            "id": "p1795168316765-37-10",
+            "templatePortId": "port-10"
+          },
+          {
+            "label": "Mic/Line In 12",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Mic/Line Inputs",
+            "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+            "id": "p1795168316765-37-11",
+            "templatePortId": "port-11"
+          },
+          {
+            "label": "Line Out 1",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-12",
+            "templatePortId": "port-12"
+          },
+          {
+            "label": "Line Out 2",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-13",
+            "templatePortId": "port-13"
+          },
+          {
+            "label": "Line Out 3",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-14",
+            "templatePortId": "port-14"
+          },
+          {
+            "label": "Line Out 4",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-15",
+            "templatePortId": "port-15"
+          },
+          {
+            "label": "Line Out 5",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-16",
+            "templatePortId": "port-16"
+          },
+          {
+            "label": "Line Out 6",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-17",
+            "templatePortId": "port-17"
+          },
+          {
+            "label": "Line Out 7",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-18",
+            "templatePortId": "port-18"
+          },
+          {
+            "label": "Line Out 8",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Line Outputs",
+            "id": "p1795168316765-37-19",
+            "templatePortId": "port-19"
+          },
+          {
+            "label": "LAN",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Network",
+            "notes": "10/100/1000 Base-T host control / configuration.",
+            "id": "p1795168316765-37-20",
+            "templatePortId": "port-20"
+          },
+          {
+            "label": "USB Audio (Rear)",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-mini",
+            "section": "USB Audio",
+            "notes": "Rear-panel USB Mini-B for USB audio bridge (USB 2.0 high-speed). Up to 4 channels of digital audio in/out.",
+            "id": "p1795168316765-37-21",
+            "templatePortId": "port-21"
+          },
+          {
+            "label": "RS-232",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Control",
+            "notes": "Bidirectional RS-232 host control on a 3-pole 3.5mm captive screw (38400 baud default).",
+            "id": "p1795168316765-37-22",
+            "templatePortId": "port-22"
+          },
+          {
+            "label": "USB Config (Front)",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-mini",
+            "section": "Configuration",
+            "notes": "Front-panel USB Mini-B for DSP Configurator / PCS configuration (USB 2.0).",
+            "id": "p1795168316765-37-23",
+            "templatePortId": "port-23"
+          },
+          {
+            "label": "ACP Bus",
+            "signalType": "ebus",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "ACP Bus",
+            "notes": "ACP audio control panel bus on a 4-pole 3.5mm captive screw — supports up to 8 ACP panels (+12V/+S/-S/G). Mapped to `serial` SignalType (no `acp`/`ebus` type in src/types.ts).",
+            "id": "p1795168316765-37-24",
+            "templatePortId": "port-24"
+          },
+          {
+            "label": "Digital I/O 1",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-25",
+            "templatePortId": "port-25"
+          },
+          {
+            "label": "Digital I/O 2",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-26",
+            "templatePortId": "port-26"
+          },
+          {
+            "label": "Digital I/O 3",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-27",
+            "templatePortId": "port-27"
+          },
+          {
+            "label": "Digital I/O 4",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-28",
+            "templatePortId": "port-28"
+          },
+          {
+            "label": "Digital I/O 5",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-29",
+            "templatePortId": "port-29"
+          },
+          {
+            "label": "Digital I/O 6",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-30",
+            "templatePortId": "port-30"
+          },
+          {
+            "label": "Digital I/O 7",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-31",
+            "templatePortId": "port-31"
+          },
+          {
+            "label": "Digital I/O 8",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Digital I/O",
+            "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+            "id": "p1795168316765-37-32",
+            "templatePortId": "port-32"
+          },
+          {
+            "label": "EXP",
+            "signalType": "extron-exp",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Expansion",
+            "notes": "Proprietary 16×16 bidirectional digital audio expansion port over shielded CAT6 (24-bit / 48 kHz uncompressed). Used to link two DMP units or link to a DTP CrossPoint matrix. Mapped to `aes` SignalType per session 5 XMP 240 convention (no `extron-exp` SignalType in src/types.ts).",
+            "id": "p1795168316765-37-33",
+            "templatePortId": "port-33"
+          },
+          {
+            "label": "Power",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "iec",
+            "section": "Power",
+            "notes": "Internal 100-240 VAC PSU (IEC mains).",
+            "id": "p1795168316765-37-34",
+            "templatePortId": "port-34"
+          },
+          {
+            "label": "Dante / AES67 1",
+            "signalType": "dante",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Dante Network",
+            "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+            "id": "p1795168316765-37-35",
+            "templatePortId": "port-35"
+          },
+          {
+            "label": "Dante / AES67 2",
+            "signalType": "dante",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Dante Network",
+            "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+            "id": "p1795168316765-37-36",
+            "templatePortId": "port-36"
+          },
+          {
+            "label": "Dante / AES67 3",
+            "signalType": "dante",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Dante Network",
+            "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+            "id": "p1795168316765-37-37",
+            "templatePortId": "port-37"
+          },
+          {
+            "label": "Dante / AES67 4",
+            "signalType": "dante",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Dante Network",
+            "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+            "id": "p1795168316765-37-38",
+            "templatePortId": "port-38"
+          }
+        ],
+        "color": "#9333ea",
+        "baseLabel": "Extron DMP 128 Plus C AT",
+        "model": "Extron DMP 128 Plus C AT",
+        "shortName": "60-1512-10",
+        "templateId": "5e04097f-2f45-4d73-89fa-62031906f1a6",
+        "templateVersion": 1,
+        "manufacturer": "Extron",
+        "modelNumber": "60-1512-10",
+        "referenceUrl": "https://www.extron.com/product/dmp128plus",
+        "category": "Audio",
+        "powerDrawW": 32.1,
+        "voltage": "100-240V",
+        "searchTerms": [
+          "dmp",
+          "plus",
+          "dsp",
+          "audio",
+          "processor",
+          "12x8",
+          "prodsp",
+          "digital",
+          "matrix",
+          "processors",
+          "gpio",
+          "analog-audio",
+          "usb",
+          "ethernet",
+          "dante",
+          "serial",
+          "60-1512-10"
+        ],
+        "heightMm": 43,
+        "widthMm": 442,
+        "depthMm": 241,
+        "weightKg": 2.1,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 304,
+        "height": 719
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-113",
+      "type": "device",
+      "position": {
+        "x": 384,
+        "y": 928
+      },
+      "data": {
+        "label": "ME982",
+        "deviceType": "display",
+        "ports": [
+          {
+            "id": "p1795168364300-38-0",
+            "label": "HDMI In 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "templatePortId": "tpl-0"
+          },
+          {
+            "id": "p1795168364300-38-1",
+            "label": "HDMI In 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "templatePortId": "tpl-1"
+          },
+          {
+            "id": "p1795168364300-38-2",
+            "label": "HDMI In 3",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-2"
+          },
+          {
+            "id": "p1795168364300-38-3",
+            "label": "USB-A (Peripheral)",
+            "signalType": "usb",
+            "direction": "input",
+            "connectorType": "usb-a",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-3"
+          },
+          {
+            "id": "p1795168364300-38-4",
+            "label": "USB-A (Peripheral)",
+            "signalType": "usb",
+            "direction": "input",
+            "connectorType": "usb-a",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-4"
+          },
+          {
+            "id": "p1795168364300-38-5",
+            "label": "USB-A (Peripheral)",
+            "signalType": "usb",
+            "direction": "input",
+            "connectorType": "usb-a",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-5"
+          },
+          {
+            "id": "p1795168364300-38-6",
+            "label": "LAN 1",
+            "signalType": "ethernet",
+            "direction": "input",
+            "connectorType": "rj45",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-6"
+          },
+          {
+            "id": "p1795168364300-38-7",
+            "label": "Ctrl (RS-232)",
+            "signalType": "rs422",
+            "direction": "input",
+            "connectorType": "db9",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-7"
+          },
+          {
+            "id": "p1795168364300-38-8",
+            "label": "Remote In (IR)",
+            "signalType": "ir",
+            "direction": "input",
+            "connectorType": "trs-eighth",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-8"
+          },
+          {
+            "id": "p1795168364300-38-9",
+            "label": "Power In",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "iec",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-9"
+          },
+          {
+            "id": "p1795168364300-38-10",
+            "label": "USB-C (DP-Alt), 15W",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-c",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-10"
+          },
+          {
+            "id": "p1795168364300-38-11",
+            "label": "SPDIF-O Out",
+            "signalType": "spdif",
+            "direction": "output",
+            "connectorType": "toslink",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-11"
+          },
+          {
+            "id": "p1795168364300-38-12",
+            "label": "3.5 mm Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "trs-eighth",
+            "inheritsSignal": false,
+            "templatePortId": "tpl-12"
+          }
+        ],
+        "baseLabel": "ME982",
+        "model": "ME982",
+        "templateId": "13c9c4e2-b857-49c2-8af0-b33964760ea2",
+        "templateVersion": 1,
+        "manufacturer": "Sharp",
+        "modelNumber": "L50ME982",
+        "referenceUrl": "https://www.sharpdisplays.eu/p/de/de/products/details/t/large-format-displays/midrange-displays/rp/me982.xhtml",
+        "category": "Displays",
+        "powerDrawW": 175,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 224,
+        "height": 223
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-114",
+      "type": "device",
+      "position": {
+        "x": 160,
+        "y": 1280
+      },
+      "data": {
+        "label": "Lumens VC-TR61",
+        "deviceType": "ptz-camera",
+        "ports": [
+          {
+            "id": "p1795168397124-39-0",
+            "label": "3.5mm TRS",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Audio In",
+            "connectorType": "trs-eighth",
+            "templatePortId": "tpl-0"
+          },
+          {
+            "id": "p1795168397124-39-1",
+            "label": "RS-232 In",
+            "signalType": "rs422",
+            "direction": "input",
+            "connectorType": "rj45",
+            "templatePortId": "tpl-1"
+          },
+          {
+            "id": "p1795168397124-39-2",
+            "label": "HDMI Out",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "templatePortId": "tpl-2"
+          },
+          {
+            "id": "p1795168397124-39-3",
+            "label": "3G SDI",
+            "signalType": "sdi",
+            "direction": "output",
+            "connectorType": "bnc",
+            "templatePortId": "tpl-3"
+          },
+          {
+            "id": "p1795168397124-39-4",
+            "label": "RS-232 Out",
+            "signalType": "rs422",
+            "direction": "output",
+            "connectorType": "rj45",
+            "templatePortId": "tpl-4"
+          },
+          {
+            "id": "p1795168397124-39-5",
+            "label": "USB B 3.0",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-b",
+            "templatePortId": "tpl-5"
+          },
+          {
+            "id": "p1795168397124-39-6",
+            "label": "Ethernet/PoE",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "templatePortId": "tpl-6"
+          }
+        ],
+        "baseLabel": "Lumens VC-TR61",
+        "model": "Lumens VC-TR61",
+        "templateId": "99b34b4f-8f00-48cf-8dff-de2e8d908a63",
+        "templateVersion": 1,
+        "manufacturer": "Lumens",
+        "modelNumber": "VC-TR61",
+        "referenceUrl": "https://www.mylumens.com/en/Products_detail/1135/VC-TR61-4K-AI-Auto-Tracking-30x-Zoom-PTZ-Camera",
+        "category": "Sources",
+        "powerDrawW": 25,
+        "voltage": "12",
+        "poeBudgetW": 26,
+        "poeDrawW": 26,
+        "searchTerms": [
+          "lumens",
+          "vc-tr61",
+          "camera",
+          "ptz"
+        ],
+        "heightMm": 197,
+        "widthMm": 174,
+        "depthMm": 187,
+        "weightKg": 2,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 133
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-115",
+      "type": "device",
+      "position": {
+        "x": 160,
+        "y": 1488
+      },
+      "data": {
+        "label": "M4250-26G4XF-PoE+",
+        "deviceType": "network-switch",
+        "ports": [
+          {
+            "id": "p1795168411782-40-0",
+            "label": "OOB",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "OOB",
+            "templatePortId": "5b1797d3"
+          },
+          {
+            "id": "p1795168411782-40-1",
+            "label": "Console",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Console",
+            "templatePortId": "bb47b9c2"
+          },
+          {
+            "id": "p1795168411782-40-2",
+            "label": "Console USB",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-c",
+            "section": "Console",
+            "templatePortId": "84e18a51"
+          },
+          {
+            "id": "p1795168411782-40-3",
+            "label": "LAN 1",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "779d7d89"
+          },
+          {
+            "id": "p1795168411782-40-4",
+            "label": "LAN 2",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "25e6a7b6"
+          },
+          {
+            "id": "p1795168411782-40-5",
+            "label": "LAN 3",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "d804e526"
+          },
+          {
+            "id": "p1795168411782-40-6",
+            "label": "LAN 4",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "68dca73c"
+          },
+          {
+            "id": "p1795168411782-40-7",
+            "label": "LAN 5",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "0e8af7a3"
+          },
+          {
+            "id": "p1795168411782-40-8",
+            "label": "LAN 6",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "edbf7a08"
+          },
+          {
+            "id": "p1795168411782-40-9",
+            "label": "LAN 7",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "dacdbf1e"
+          },
+          {
+            "id": "p1795168411782-40-10",
+            "label": "LAN 8",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "76b4f64a"
+          },
+          {
+            "id": "p1795168411782-40-11",
+            "label": "LAN 9",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "8e58a1df"
+          },
+          {
+            "id": "p1795168411782-40-12",
+            "label": "LAN 10",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "8cce1681"
+          },
+          {
+            "id": "p1795168411782-40-13",
+            "label": "LAN 11",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "032361fe"
+          },
+          {
+            "id": "p1795168411782-40-14",
+            "label": "LAN 12",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "064e29a8"
+          },
+          {
+            "id": "p1795168411782-40-15",
+            "label": "LAN 13",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "e7bb51e1"
+          },
+          {
+            "id": "p1795168411782-40-16",
+            "label": "LAN 14",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "aa1cf69d"
+          },
+          {
+            "id": "p1795168411782-40-17",
+            "label": "LAN 15",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "cf00c0ec"
+          },
+          {
+            "id": "p1795168411782-40-18",
+            "label": "LAN 16",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "b4a80fd9"
+          },
+          {
+            "id": "p1795168411782-40-19",
+            "label": "LAN 17",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "428509f6"
+          },
+          {
+            "id": "p1795168411782-40-20",
+            "label": "LAN 18",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "34d37a8e"
+          },
+          {
+            "id": "p1795168411782-40-21",
+            "label": "LAN 19",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "625beb09"
+          },
+          {
+            "id": "p1795168411782-40-22",
+            "label": "LAN 20",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "e39f8d77"
+          },
+          {
+            "id": "p1795168411782-40-23",
+            "label": "LAN 21",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "98197592"
+          },
+          {
+            "id": "p1795168411782-40-24",
+            "label": "LAN 22",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "e9baf53a"
+          },
+          {
+            "id": "p1795168411782-40-25",
+            "label": "LAN 23",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "6de010fc"
+          },
+          {
+            "id": "p1795168411782-40-26",
+            "label": "LAN 24",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "1ca59ce5"
+          },
+          {
+            "id": "p1795168411782-40-27",
+            "label": "LAN 25",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "b7d813af"
+          },
+          {
+            "id": "p1795168411782-40-28",
+            "label": "LAN 26",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Lan",
+            "templatePortId": "af6fc09c"
+          },
+          {
+            "id": "p1795168411782-40-29",
+            "label": "SFP 27",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "sfp",
+            "section": "SFP",
+            "templatePortId": "585a0267"
+          },
+          {
+            "id": "p1795168411782-40-30",
+            "label": "SFP 28",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "sfp",
+            "section": "SFP",
+            "templatePortId": "80a884b1"
+          },
+          {
+            "id": "p1795168411782-40-31",
+            "label": "SFP 29",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "sfp",
+            "section": "SFP",
+            "templatePortId": "8b0717fa"
+          },
+          {
+            "id": "p1795168411782-40-32",
+            "label": "SFP 30",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "sfp",
+            "section": "SFP",
+            "templatePortId": "0406bbf4"
+          },
+          {
+            "id": "p1795168411782-40-33",
+            "label": "Power",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "iec",
+            "section": "Power",
+            "templatePortId": "229f7d4f"
+          }
+        ],
+        "baseLabel": "M4250-26G4XF-PoE+",
+        "model": "M4250-26G4XF-PoE+",
+        "shortName": "GSM4230PX",
+        "templateId": "1d2accea-72b6-456b-ab50-5f5738e699e0",
+        "templateVersion": 1,
+        "manufacturer": "Netgear",
+        "modelNumber": "GSM4230PX",
+        "referenceUrl": "https://www.netgear.com/business/wired/switches/fully-managed/gsm4230px/",
+        "category": "Networking",
+        "powerDrawW": 614,
+        "voltage": "100-240",
+        "poeBudgetW": 480,
+        "heightMm": 43,
+        "widthMm": 440,
+        "depthMm": 400,
+        "weightKg": 5.5,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 671
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-116",
+      "type": "device",
+      "position": {
+        "x": 1552,
+        "y": 800
+      },
+      "data": {
+        "label": "Biamp TesiraFORTÉ DAN AI",
+        "deviceType": "audio-interface",
+        "ports": [
+          {
+            "id": "p1795168461335-41-0",
+            "label": "Control",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "templatePortId": "p-ctrl"
+          },
+          {
+            "id": "p1795168461335-41-1",
+            "label": "Dante",
+            "signalType": "dante",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "templatePortId": "p-dante"
+          },
+          {
+            "id": "p1795168461335-41-2",
+            "label": "USB Audio",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-b",
+            "templatePortId": "p-usb"
+          },
+          {
+            "id": "p1795168461335-41-3",
+            "label": "RS-232",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-rs232"
+          },
+          {
+            "id": "p1795168461335-41-4",
+            "label": "Logic I/O",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-gpio"
+          },
+          {
+            "id": "p1795168461335-41-5",
+            "label": "Input 1",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in1"
+          },
+          {
+            "id": "p1795168461335-41-6",
+            "label": "Input 2",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in2"
+          },
+          {
+            "id": "p1795168461335-41-7",
+            "label": "Input 3",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in3"
+          },
+          {
+            "id": "p1795168461335-41-8",
+            "label": "Input 4",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in4"
+          },
+          {
+            "id": "p1795168461335-41-9",
+            "label": "Input 5",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in5"
+          },
+          {
+            "id": "p1795168461335-41-10",
+            "label": "Input 6",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in6"
+          },
+          {
+            "id": "p1795168461335-41-11",
+            "label": "Input 7",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in7"
+          },
+          {
+            "id": "p1795168461335-41-12",
+            "label": "Input 8",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in8"
+          },
+          {
+            "id": "p1795168461335-41-13",
+            "label": "Input 9",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in9"
+          },
+          {
+            "id": "p1795168461335-41-14",
+            "label": "Input 10",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in10"
+          },
+          {
+            "id": "p1795168461335-41-15",
+            "label": "Input 11",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in11"
+          },
+          {
+            "id": "p1795168461335-41-16",
+            "label": "Input 12",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-in12"
+          },
+          {
+            "id": "p1795168461335-41-17",
+            "label": "Output 1",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out1"
+          },
+          {
+            "id": "p1795168461335-41-18",
+            "label": "Output 2",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out2"
+          },
+          {
+            "id": "p1795168461335-41-19",
+            "label": "Output 3",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out3"
+          },
+          {
+            "id": "p1795168461335-41-20",
+            "label": "Output 4",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out4"
+          },
+          {
+            "id": "p1795168461335-41-21",
+            "label": "Output 5",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out5"
+          },
+          {
+            "id": "p1795168461335-41-22",
+            "label": "Output 6",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out6"
+          },
+          {
+            "id": "p1795168461335-41-23",
+            "label": "Output 7",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out7"
+          },
+          {
+            "id": "p1795168461335-41-24",
+            "label": "Output 8",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p-out8"
+          }
+        ],
+        "baseLabel": "Biamp TesiraFORTÉ DAN AI",
+        "model": "Biamp TesiraFORTÉ DAN AI",
+        "shortName": "FORTÉ DAN AI",
+        "templateId": "9220f38b-5cf2-4e8d-bd8d-e701fffa5a71",
+        "templateVersion": 1,
+        "manufacturer": "Biamp",
+        "modelNumber": "FORTÉ DAN AI",
+        "referenceUrl": "https://products.biamp.com/product-details/-/o/d/TesiraFORT-DAN-AI/ecom-item/920-00448-00001",
+        "category": "Audio I/O",
+        "powerDrawW": 35,
+        "heightMm": 44,
+        "widthMm": 483,
+        "depthMm": 267,
+        "weightKg": 3.63,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 319
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-117",
+      "type": "device",
+      "position": {
+        "x": 1840,
+        "y": 800
+      },
+      "data": {
+        "label": "MXA925",
+        "deviceType": "wired-mic",
+        "ports": [
+          {
+            "id": "p1795168520940-42-0",
+            "label": "LAN",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Control",
+            "templatePortId": "64c04981"
+          },
+          {
+            "id": "p1795168520940-42-1",
+            "label": "AEC REF IN",
+            "signalType": "dante",
+            "direction": "input",
+            "connectorType": "rj45",
+            "section": "Dante",
+            "templatePortId": "99b7c3d7"
+          },
+          {
+            "id": "p1795168520940-42-2",
+            "label": "AUTOMIX OUT",
+            "signalType": "dante",
+            "direction": "output",
+            "connectorType": "rj45",
+            "section": "Dante",
+            "templatePortId": "9a37c865"
+          }
+        ],
+        "baseLabel": "MXA925",
+        "model": "MXA925",
+        "templateId": "199a6c79-a4cb-490e-b956-993bc25e493f",
+        "templateVersion": 1,
+        "manufacturer": "Shure",
+        "modelNumber": "MXA925",
+        "referenceUrl": "https://www.shure.com/en-US/products/microphones/mxa925?variant=MXA925B-R",
+        "category": "Microphones",
+        "poeDrawW": 10.1,
+        "searchTerms": [
+          "ceiling",
+          "array",
+          "microphone",
+          "video conferencing"
+        ],
+        "heightMm": 55,
+        "widthMm": 604,
+        "depthMm": 604,
+        "weightKg": 5.4,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 176,
+        "height": 111
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-118",
+      "type": "device",
+      "position": {
+        "x": 1872,
+        "y": 976
+      },
+      "data": {
+        "label": "Shure IntelliMix P300",
+        "deviceType": "audio-dsp",
+        "ports": [
+          {
+            "id": "p1795168528756-43-0",
+            "label": "DANTE",
+            "signalType": "dante",
+            "connectorType": "rj45",
+            "direction": "bidirectional",
+            "templatePortId": "e69d29af"
+          },
+          {
+            "id": "p1795168528756-43-1",
+            "label": "USB",
+            "signalType": "usb",
+            "connectorType": "usb-b",
+            "direction": "bidirectional",
+            "templatePortId": "725de24b"
+          },
+          {
+            "id": "p1795168528756-43-2",
+            "label": "IN 1",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "templatePortId": "009f769e"
+          },
+          {
+            "id": "p1795168528756-43-3",
+            "label": "IN 2",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "templatePortId": "40816557"
+          },
+          {
+            "id": "p1795168528756-43-4",
+            "label": "OUT 1",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "templatePortId": "36aa98f7"
+          },
+          {
+            "id": "p1795168528756-43-5",
+            "label": "OUT 2",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "templatePortId": "f19a893c"
+          }
+        ],
+        "baseLabel": "Shure IntelliMix P300",
+        "model": "Shure IntelliMix P300",
+        "templateId": "02bb6f09-1879-46fb-aaa3-311e05c3441a",
+        "templateVersion": 2,
+        "manufacturer": "Shure",
+        "modelNumber": "P300-IMX",
+        "referenceUrl": "https://www.shure.com/en-US/products/mixers/p300?variant=P300-IMX",
+        "category": "Audio",
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 111
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-119",
+      "type": "device",
+      "position": {
+        "x": 1552,
+        "y": 1184
+      },
+      "data": {
+        "label": "Biamp Desono DX-S5-UB-W",
+        "deviceType": "speaker",
+        "ports": [
+          {
+            "id": "p1795168569861-44-0",
+            "label": "INPUT",
+            "signalType": "speaker-level",
+            "direction": "input",
+            "connectorType": "terminal-block",
+            "templatePortId": "p17875511919820-4ex"
+          },
+          {
+            "id": "p1795168569861-44-1",
+            "label": "THRU",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "connectorType": "terminal-block",
+            "templatePortId": "p17875511919823-ndm"
+          }
+        ],
+        "baseLabel": "Biamp Desono DX-S5-UB-W",
+        "model": "Biamp Desono DX-S5-UB-W",
+        "templateId": "08a27b09-d1ef-490d-aba0-56717619a77a",
+        "templateVersion": 1,
+        "manufacturer": "Biamp",
+        "modelNumber": "DX-S5-UB-W",
+        "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00332-20000",
+        "category": "Speakers",
+        "heightMm": 280,
+        "widthMm": 180,
+        "depthMm": 185,
+        "weightKg": 4.7,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 63
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-120",
+      "type": "device",
+      "position": {
+        "x": 2272,
+        "y": 128
+      },
+      "data": {
+        "label": "Extron SMP 352 - 400 GB SSD",
+        "deviceType": "streaming-encoder",
+        "ports": [
+          {
+            "label": "HDMI In 1",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video In",
+            "id": "p1795168750005-45-0",
+            "templatePortId": "port-0"
+          },
+          {
+            "label": "HDMI In 2",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video In",
+            "id": "p1795168750005-45-1",
+            "templatePortId": "port-1"
+          },
+          {
+            "label": "HDMI In 3",
+            "signalType": "hdmi",
+            "direction": "input",
+            "connectorType": "hdmi",
+            "section": "Video In",
+            "id": "p1795168750005-45-2",
+            "templatePortId": "port-2"
+          },
+          {
+            "label": "HDMI Loop Out",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Out",
+            "id": "p1795168750005-45-3",
+            "templatePortId": "port-3"
+          },
+          {
+            "label": "LAN / Streaming",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "section": "Network",
+            "notes": "10/100/1000 Base-T host control + RTSP/RTMP/HLS streaming output.",
+            "id": "p1795168750005-45-4",
+            "templatePortId": "port-4"
+          },
+          {
+            "label": "HDMI Out (Confidence Monitor)",
+            "signalType": "hdmi",
+            "direction": "output",
+            "connectorType": "hdmi",
+            "section": "Video Out",
+            "id": "p1795168750005-45-5",
+            "templatePortId": "port-5"
+          },
+          {
+            "label": "Audio In 1 (Stereo, with Loop)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio In",
+            "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw, with analog loop-through to the next captive.",
+            "id": "p1795168750005-45-6",
+            "templatePortId": "port-6"
+          },
+          {
+            "label": "Audio In 2 (Stereo)",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "section": "Audio In",
+            "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+            "id": "p1795168750005-45-7",
+            "templatePortId": "port-7"
+          },
+          {
+            "label": "Audio Loop Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Audio Out",
+            "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+            "id": "p1795168750005-45-8",
+            "templatePortId": "port-8"
+          },
+          {
+            "label": "Audio Out (Stereo)",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "phoenix",
+            "section": "Audio Out",
+            "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+            "id": "p1795168750005-45-9",
+            "templatePortId": "port-9"
+          },
+          {
+            "label": "USB-A (Front)",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-a",
+            "section": "USB",
+            "notes": "USB 2.0 Type-A (1.5A current limit) — for USB storage / keyboard / mouse.",
+            "id": "p1795168750005-45-10",
+            "templatePortId": "port-10"
+          },
+          {
+            "label": "USB-A (Rear)",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-a",
+            "section": "USB",
+            "notes": "USB 2.0 Type-A (1.5A current limit) — for USB storage / keyboard / mouse.",
+            "id": "p1795168750005-45-11",
+            "templatePortId": "port-11"
+          },
+          {
+            "label": "USB Config",
+            "signalType": "usb",
+            "direction": "bidirectional",
+            "connectorType": "usb-mini",
+            "section": "Configuration",
+            "notes": "Front-panel USB Mini-B for PCS / DSP Configurator (USB 2.0).",
+            "id": "p1795168750005-45-12",
+            "templatePortId": "port-12"
+          },
+          {
+            "label": "RS-232",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "section": "Control",
+            "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+            "id": "p1795168750005-45-13",
+            "templatePortId": "port-13"
+          },
+          {
+            "label": "Power",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "iec",
+            "section": "Power",
+            "notes": "Internal 100-240 VAC PSU (IEC mains).",
+            "id": "p1795168750005-45-14",
+            "templatePortId": "port-14"
+          }
+        ],
+        "color": "#b91c1c",
+        "baseLabel": "Extron SMP 352 - 400 GB SSD",
+        "model": "Extron SMP 352 - 400 GB SSD",
+        "shortName": "60-1634-11",
+        "templateId": "12059230-b472-45f6-8bf4-6de726b32619",
+        "templateVersion": 1,
+        "manufacturer": "Extron",
+        "modelNumber": "60-1634-11",
+        "referenceUrl": "https://www.extron.com/product/smp352",
+        "category": "Networking",
+        "powerDrawW": 30,
+        "voltage": "100-240V",
+        "searchTerms": [
+          "smp",
+          "gb",
+          "ssd",
+          "streaming",
+          "encoder",
+          "capture",
+          "dual",
+          "recording",
+          "h.264",
+          "media",
+          "processor",
+          "usb",
+          "hdmi",
+          "ethernet",
+          "analog-audio",
+          "component-video",
+          "serial",
+          "gpio",
+          "60-1634-11"
+        ],
+        "heightMm": 43,
+        "widthMm": 444,
+        "depthMm": 292,
+        "weightKg": 2.7,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 320,
+        "height": 335
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-121",
+      "type": "device",
+      "position": {
+        "x": 384,
+        "y": 1184
+      },
+      "data": {
+        "label": "Absen Clear Cobalt CL0.7 MicroLED",
+        "deviceType": "led-cabinet",
+        "ports": [
+          {
+            "id": "p1795168780111-46-0",
+            "label": "DATA IN",
+            "signalType": "ethernet",
+            "direction": "input",
+            "connectorType": "rj45",
+            "inheritsSignal": false,
+            "templatePortId": "p17870641811110-uad"
+          },
+          {
+            "id": "p1795168780111-46-1",
+            "label": "DATA LOOP",
+            "signalType": "ethernet",
+            "direction": "output",
+            "connectorType": "rj45",
+            "inheritsSignal": false,
+            "templatePortId": "p17870641811111-f8w"
+          },
+          {
+            "id": "p1795168780111-46-2",
+            "label": "POWER IN",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "powercon-true1",
+            "templatePortId": "p17870641811112-7nm"
+          },
+          {
+            "id": "p1795168780111-46-3",
+            "label": "POWER LOOP",
+            "signalType": "power",
+            "direction": "output",
+            "connectorType": "powercon-true1",
+            "templatePortId": "p17870641811113-s0w"
+          }
+        ],
+        "baseLabel": "Absen Clear Cobalt CL0.7 MicroLED",
+        "model": "Absen Clear Cobalt CL0.7 MicroLED",
+        "templateId": "e662c75f-0b71-428c-9ded-eaf8065b72d4",
+        "templateVersion": 2,
+        "manufacturer": "Absen",
+        "modelNumber": "CL0.7",
+        "referenceUrl": "https://www.absen.com/product/data-visualization/clear-cobalt-series",
+        "category": "LED Video",
+        "powerDrawW": 140,
+        "heightMm": 338,
+        "widthMm": 600,
+        "depthMm": 40,
+        "weightKg": 6.8,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 176,
+        "height": 79
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-123",
+      "type": "device",
+      "position": {
+        "x": 2352,
+        "y": 800
+      },
+      "data": {
+        "label": "Shure SLXD4QDAN+A",
+        "deviceType": "wireless-mic-receiver",
+        "ports": [
+          {
+            "id": "p1795169021452-51-0",
+            "label": "Antenna A In",
+            "signalType": "rf",
+            "direction": "input",
+            "connectorType": "bnc",
+            "templatePortId": "slxd4q-ant-a-in"
+          },
+          {
+            "id": "p1795169021452-51-1",
+            "label": "Antenna B In",
+            "signalType": "rf",
+            "direction": "input",
+            "connectorType": "bnc",
+            "templatePortId": "slxd4q-ant-b-in"
+          },
+          {
+            "id": "p1795169021452-51-2",
+            "label": "Antenna A Cascade Out",
+            "signalType": "rf",
+            "direction": "output",
+            "connectorType": "bnc",
+            "templatePortId": "slxd4q-ant-a-casc"
+          },
+          {
+            "id": "p1795169021452-51-3",
+            "label": "Antenna B Cascade Out",
+            "signalType": "rf",
+            "direction": "output",
+            "connectorType": "bnc",
+            "templatePortId": "slxd4q-ant-b-casc"
+          },
+          {
+            "id": "p1795169021452-51-4",
+            "label": "Primary Dante / Control",
+            "signalType": "dante",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "templatePortId": "slxd4q-dante-pri"
+          },
+          {
+            "id": "p1795169021452-51-5",
+            "label": "Secondary Dante / Control",
+            "signalType": "dante",
+            "direction": "bidirectional",
+            "connectorType": "rj45",
+            "templatePortId": "slxd4q-dante-sec"
+          },
+          {
+            "id": "p1795169021452-51-6",
+            "label": "CH1 XLR Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "xlr-3",
+            "templatePortId": "slxd4q-ch1-xlr-out"
+          },
+          {
+            "id": "p1795169021452-51-7",
+            "label": "CH1 1/4\" Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "trs-quarter",
+            "templatePortId": "slxd4q-ch1-trs-out"
+          },
+          {
+            "id": "p1795169021452-51-8",
+            "label": "CH2 XLR Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "xlr-3",
+            "templatePortId": "slxd4q-ch2-xlr-out"
+          },
+          {
+            "id": "p1795169021452-51-9",
+            "label": "CH2 1/4\" Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "trs-quarter",
+            "templatePortId": "slxd4q-ch2-trs-out"
+          },
+          {
+            "id": "p1795169021452-51-10",
+            "label": "CH3 XLR Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "xlr-3",
+            "templatePortId": "slxd4q-ch3-xlr-out"
+          },
+          {
+            "id": "p1795169021452-51-11",
+            "label": "CH3 1/4\" Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "trs-quarter",
+            "templatePortId": "slxd4q-ch3-trs-out"
+          },
+          {
+            "id": "p1795169021452-51-12",
+            "label": "CH4 XLR Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "xlr-3",
+            "templatePortId": "slxd4q-ch4-xlr-out"
+          },
+          {
+            "id": "p1795169021452-51-13",
+            "label": "CH4 1/4\" Audio Out",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "connectorType": "trs-quarter",
+            "templatePortId": "slxd4q-ch4-trs-out"
+          },
+          {
+            "id": "p1795169021452-51-14",
+            "label": "15V DC Power In",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "barrel",
+            "templatePortId": "slxd4q-dc-power-in"
+          }
+        ],
+        "baseLabel": "Shure SLXD4QDAN+A",
+        "model": "Shure SLXD4QDAN+A",
+        "templateId": "edc86ca5-5c32-4636-800a-bcb57688f6c9",
+        "templateVersion": 1,
+        "manufacturer": "Shure",
+        "modelNumber": "SLXD4QDAN+A",
+        "referenceUrl": "https://www.shure.com/en-US/products/wireless-systems/slxd-plus/slxd4q-dan-plus",
+        "category": "Microphones",
+        "powerDrawW": 15.5,
+        "voltage": "15V DC",
+        "searchTerms": [
+          "shure",
+          "slxd",
+          "slx-d",
+          "slx-d+",
+          "slxd4q",
+          "slxd4qdan",
+          "slxd4qdan+",
+          "slxd4qdan+a",
+          "dante",
+          "wireless receiver",
+          "quad receiver"
+        ],
+        "heightMm": 42,
+        "widthMm": 393,
+        "depthMm": 152,
+        "weightKg": 1.75,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 272,
+        "height": 239
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-124",
+      "type": "device",
+      "position": {
+        "x": 2112,
+        "y": 800
+      },
+      "data": {
+        "label": "Shure UA874",
+        "deviceType": "antenna",
+        "ports": [
+          {
+            "id": "p1795169071084-52-0",
+            "label": "Antenna",
+            "signalType": "rf",
+            "direction": "output",
+            "connectorType": "bnc",
+            "section": "Antenna Out",
+            "gender": "female",
+            "templatePortId": "ua874-rf-out"
+          },
+          {
+            "id": "p1795169071084-52-1",
+            "label": "Microphone",
+            "signalType": "rf",
+            "connectorType": "wireless",
+            "direction": "input",
+            "inheritsSignal": false,
+            "section": "Line In",
+            "templatePortId": "65964f3d"
+          }
+        ],
+        "color": "#0f172a",
+        "baseLabel": "Shure UA874",
+        "model": "Shure UA874",
+        "templateId": "83f9a762-b585-47cb-bad7-4dc19e8ca015",
+        "templateVersion": 2,
+        "manufacturer": "Shure",
+        "modelNumber": "UA874",
+        "referenceUrl": "https://www.shure.com/en-US/products/accessories/ua874",
+        "category": "Wireless",
+        "voltage": "10 - 15",
+        "thermalBtuh": 3,
+        "searchTerms": [
+          "shure",
+          "antenna",
+          "ua874"
+        ],
+        "heightMm": 316,
+        "widthMm": 359,
+        "depthMm": 36,
+        "weightKg": 0.32,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 144,
+        "height": 79
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-125",
+      "type": "device",
+      "position": {
+        "x": 1536,
+        "y": 1312
+      },
+      "data": {
+        "label": "Biamp Voltara D 2400.8",
+        "deviceType": "amplifier",
+        "ports": [
+          {
+            "id": "p1795169226476-53-0",
+            "label": "Power",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "iec",
+            "templatePortId": "tpl-0"
+          },
+          {
+            "id": "p1795169226476-53-1",
+            "label": "In 1",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-1"
+          },
+          {
+            "id": "p1795169226476-53-2",
+            "label": "In 2",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-2"
+          },
+          {
+            "id": "p1795169226476-53-3",
+            "label": "In 3",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-3"
+          },
+          {
+            "id": "p1795169226476-53-4",
+            "label": "In 4",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-4"
+          },
+          {
+            "id": "p1795169226476-53-5",
+            "label": "In 5",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-5"
+          },
+          {
+            "id": "p1795169226476-53-6",
+            "label": "In 6",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-6"
+          },
+          {
+            "id": "p1795169226476-53-7",
+            "label": "In 7",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-7"
+          },
+          {
+            "id": "p1795169226476-53-8",
+            "label": "In 8",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "section": "Analog Inputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-8"
+          },
+          {
+            "id": "p1795169226476-53-9",
+            "label": "Out 1",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-9"
+          },
+          {
+            "id": "p1795169226476-53-10",
+            "label": "Out 2",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-10"
+          },
+          {
+            "id": "p1795169226476-53-11",
+            "label": "Out 3",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-11"
+          },
+          {
+            "id": "p1795169226476-53-12",
+            "label": "Out 4",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-12"
+          },
+          {
+            "id": "p1795169226476-53-13",
+            "label": "Out 5",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-13"
+          },
+          {
+            "id": "p1795169226476-53-14",
+            "label": "Out 6",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-14"
+          },
+          {
+            "id": "p1795169226476-53-15",
+            "label": "Out 7",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-15"
+          },
+          {
+            "id": "p1795169226476-53-16",
+            "label": "Out 8",
+            "signalType": "speaker-level",
+            "direction": "output",
+            "section": "Speaker Outputs",
+            "connectorType": "terminal-block",
+            "templatePortId": "tpl-16"
+          },
+          {
+            "id": "p1795169226476-53-17",
+            "label": "Network 1",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Network Ports",
+            "templatePortId": "tpl-17"
+          },
+          {
+            "id": "p1795169226476-53-18",
+            "label": "Network 2",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "section": "Network Ports",
+            "templatePortId": "tpl-18"
+          },
+          {
+            "id": "p1795169226476-53-19",
+            "label": "Logic 1",
+            "signalType": "analog-audio",
+            "direction": "bidirectional",
+            "section": "Logic IO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-19"
+          },
+          {
+            "id": "p1795169226476-53-20",
+            "label": "Logic 2",
+            "signalType": "analog-audio",
+            "direction": "bidirectional",
+            "section": "Logic IO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-20"
+          },
+          {
+            "id": "p1795169226476-53-21",
+            "label": "Logic 3",
+            "signalType": "analog-audio",
+            "direction": "bidirectional",
+            "section": "Logic IO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-21"
+          },
+          {
+            "id": "p1795169226476-53-22",
+            "label": "Logic 4",
+            "signalType": "analog-audio",
+            "direction": "bidirectional",
+            "section": "Logic IO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-22"
+          },
+          {
+            "id": "p1795169226476-53-23",
+            "label": "GPIO 1",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "section": "GPIO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-23"
+          },
+          {
+            "id": "p1795169226476-53-24",
+            "label": "GPIO 2",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "section": "GPIO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-24"
+          },
+          {
+            "id": "p1795169226476-53-25",
+            "label": "GPIO 3",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "section": "GPIO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-25"
+          },
+          {
+            "id": "p1795169226476-53-26",
+            "label": "GPIO 4",
+            "signalType": "gpio",
+            "direction": "bidirectional",
+            "section": "GPIO",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-26"
+          }
+        ],
+        "baseLabel": "Biamp Voltara D 2400.8",
+        "model": "Biamp Voltara D 2400.8",
+        "templateId": "0ce14f2f-01ed-4c57-bf44-ef6557e09c92",
+        "templateVersion": 1,
+        "manufacturer": "Biamp",
+        "modelNumber": "Voltera D 2400.8",
+        "referenceUrl": "https://products.biamp.com/product-details/-/o/category/0F9ABE9E-B69F-40A1-B557-298ADE1A491B/cn/Voltera-Amplifiers/ecom-item/920-01957-00001",
+        "category": "Amplifiers",
+        "powerDrawW": 1200,
+        "voltage": "100-240V",
+        "heightMm": 44,
+        "widthMm": 444,
+        "depthMm": 430,
+        "weightKg": 8.3,
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 176,
+        "height": 415
+      },
+      "dragging": false
+    },
+    {
+      "id": "device-127",
+      "type": "device",
+      "position": {
+        "x": 1936,
+        "y": 1312
+      },
+      "data": {
+        "label": "NHD-500-TX v2 Encoder",
+        "deviceType": "av-over-ip",
+        "ports": [
+          {
+            "id": "p1795169281308-55-0",
+            "label": "HDMI IN",
+            "signalType": "hdmi",
+            "direction": "input",
+            "templatePortId": "tpl-0"
+          },
+          {
+            "id": "p1795169281308-55-1",
+            "label": "AUDIO IN/OUT",
+            "signalType": "analog-audio",
+            "direction": "input",
+            "connectorType": "phoenix",
+            "multiConnect": true,
+            "templatePortId": "tpl-1"
+          },
+          {
+            "id": "p1795169281308-55-2",
+            "label": "HDMI LOOP OUT 1",
+            "signalType": "hdmi",
+            "direction": "output",
+            "templatePortId": "tpl-2"
+          },
+          {
+            "id": "p1795169281308-55-3",
+            "label": "BALANCED AUDIO OUT 1",
+            "signalType": "analog-audio",
+            "direction": "output",
+            "templatePortId": "tpl-3"
+          },
+          {
+            "id": "p1795169281308-55-4",
+            "label": "LAN (POE)",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "templatePortId": "tpl-4"
+          },
+          {
+            "id": "p1795169281308-55-5",
+            "label": "FIBER",
+            "signalType": "ethernet",
+            "direction": "bidirectional",
+            "connectorType": "sfp",
+            "templatePortId": "tpl-5"
+          },
+          {
+            "id": "p1795169281308-55-6",
+            "label": "IR TX",
+            "signalType": "ir",
+            "direction": "output",
+            "connectorType": "trs-eighth",
+            "templatePortId": "tpl-6"
+          },
+          {
+            "id": "p1795169281308-55-7",
+            "label": "IR RX",
+            "signalType": "ir",
+            "direction": "input",
+            "connectorType": "trs-eighth",
+            "templatePortId": "tpl-7"
+          },
+          {
+            "id": "p1795169281308-55-8",
+            "label": "RS-232",
+            "signalType": "serial",
+            "direction": "bidirectional",
+            "connectorType": "phoenix",
+            "templatePortId": "tpl-8"
+          },
+          {
+            "id": "p1795169281308-55-9",
+            "label": "USB-B HOST",
+            "signalType": "usb",
+            "direction": "input",
+            "templatePortId": "tpl-9"
+          },
+          {
+            "id": "p1795169281308-55-10",
+            "label": "12V",
+            "signalType": "power",
+            "direction": "input",
+            "connectorType": "barrel",
+            "templatePortId": "tpl-10"
+          }
+        ],
+        "baseLabel": "NHD-500-TX v2 Encoder",
+        "model": "NHD-500-TX v2 Encoder",
+        "templateId": "e347f955-abc7-4ce3-9a0f-e2c946b7f295",
+        "templateVersion": 1,
+        "manufacturer": "WyreStorm",
+        "modelNumber": "NHD-500-TX v2",
+        "referenceUrl": "https://www.wyrestorm.com/product/nhd-500-tx-rx-v2/",
+        "category": "Networking",
+        "auxiliaryData": [
+          {
+            "text": "{{deviceType}}",
+            "position": "header"
+          }
+        ],
+        "fitWidth": true
+      },
+      "measured": {
+        "width": 272,
+        "height": 175
+      },
+      "dragging": false
+    }
+  ],
+  "edges": [],
+  "printPaperId": "iso-a1",
+  "printOrientation": "landscape",
+  "printScale": 1,
+  "titleBlock": {
+    "showName": "",
+    "venue": "",
+    "designer": "",
+    "engineer": "",
+    "date": "",
+    "drawingTitle": "",
+    "company": "",
+    "revision": "",
+    "logo": "",
+    "customFields": []
+  },
+  "titleBlockLayout": {
+    "columns": [
+      0.35,
+      0.65
+    ],
+    "rows": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "widthIn": 3,
+    "heightIn": 1,
+    "cells": [
+      {
+        "id": "cell-1",
+        "row": 0,
+        "col": 0,
+        "rowSpan": 1,
+        "colSpan": 2,
+        "content": {
+          "type": "field",
+          "field": "showName"
+        },
+        "fontSize": 9,
+        "fontWeight": "bold",
+        "fontFamily": "sans-serif",
+        "align": "center",
+        "color": "#1e293b"
+      },
+      {
+        "id": "cell-2",
+        "row": 1,
+        "col": 0,
+        "rowSpan": 1,
+        "colSpan": 2,
+        "content": {
+          "type": "field",
+          "field": "venue"
+        },
+        "fontSize": 7.5,
+        "fontWeight": "normal",
+        "fontFamily": "sans-serif",
+        "align": "center",
+        "color": "#475569"
+      },
+      {
+        "id": "cell-3",
+        "row": 2,
+        "col": 0,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "static",
+          "text": "Designer:"
+        },
+        "fontSize": 7,
+        "fontWeight": "normal",
+        "fontFamily": "sans-serif",
+        "align": "left",
+        "color": "#000000"
+      },
+      {
+        "id": "cell-4",
+        "row": 2,
+        "col": 1,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "field",
+          "field": "designer"
+        },
+        "fontSize": 7,
+        "fontWeight": "normal",
+        "fontFamily": "sans-serif",
+        "align": "left",
+        "color": "#1e293b"
+      },
+      {
+        "id": "cell-5",
+        "row": 3,
+        "col": 0,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "static",
+          "text": "Engineer:"
+        },
+        "fontSize": 7,
+        "fontWeight": "normal",
+        "fontFamily": "sans-serif",
+        "align": "left",
+        "color": "#000000"
+      },
+      {
+        "id": "cell-6",
+        "row": 3,
+        "col": 1,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "field",
+          "field": "engineer"
+        },
+        "fontSize": 7,
+        "fontWeight": "normal",
+        "fontFamily": "sans-serif",
+        "align": "left",
+        "color": "#1e293b"
+      },
+      {
+        "id": "cell-7",
+        "row": 4,
+        "col": 0,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "static",
+          "text": "Date:"
+        },
+        "fontSize": 7,
+        "fontWeight": "normal",
+        "fontFamily": "sans-serif",
+        "align": "left",
+        "color": "#000000"
+      },
+      {
+        "id": "cell-8",
+        "row": 4,
+        "col": 1,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "field",
+          "field": "date"
+        },
+        "fontSize": 7,
+        "fontWeight": "normal",
+        "fontFamily": "sans-serif",
+        "align": "left",
+        "color": "#1e293b"
+      },
+      {
+        "id": "cell-9",
+        "row": 5,
+        "col": 0,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "field",
+          "field": "drawingTitle"
+        },
+        "fontSize": 7,
+        "fontWeight": "bold",
+        "fontFamily": "sans-serif",
+        "align": "left",
+        "color": "#1e293b"
+      },
+      {
+        "id": "cell-10",
+        "row": 5,
+        "col": 1,
+        "rowSpan": 1,
+        "colSpan": 1,
+        "content": {
+          "type": "pageNumber"
+        },
+        "fontSize": 7,
+        "fontWeight": "bold",
+        "fontFamily": "sans-serif",
+        "align": "center",
+        "color": "#475569"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "printsheet-1",
+      "label": "Sheet 1",
+      "type": "print-sheet",
+      "paperId": "iso-a3",
+      "orientation": "landscape",
+      "viewports": [],
+      "showTitleBlock": true
+    },
+    {
+      "id": "printsheet-2",
+      "label": "Sheet 2",
+      "type": "print-sheet",
+      "paperId": "arch-d",
+      "orientation": "landscape",
+      "viewports": [],
+      "showTitleBlock": true
+    },
+    {
+      "id": "rackpage-1",
+      "label": "Rack Page 1",
+      "type": "rack-elevation",
+      "racks": [
+        {
+          "label": "Rack 1",
+          "rackType": "floor-19",
+          "heightU": 16,
+          "depthMm": 600,
+          "widthClass": "19in",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "id": "rack-1"
+        }
+      ],
+      "placements": [
+        {
+          "id": "rp-1",
+          "rackId": "rack-1",
+          "deviceNodeId": "device-103",
+          "uPosition": 15,
+          "face": "front",
+          "mountedOnShelfId": "ra-1",
+          "shelfOffsetMm": {
+            "x": 167.4541666666667,
+            "y": 0
+          }
+        },
+        {
+          "id": "rp-2",
+          "rackId": "rack-1",
+          "deviceNodeId": "device-116",
+          "uPosition": 13,
+          "face": "front"
+        },
+        {
+          "id": "rp-3",
+          "rackId": "rack-1",
+          "deviceNodeId": "device-112",
+          "uPosition": 12,
+          "face": "front"
+        },
+        {
+          "id": "rp-4",
+          "rackId": "rack-1",
+          "deviceNodeId": "device-108",
+          "uPosition": 10,
+          "face": "front",
+          "halfRackSide": "left"
+        },
+        {
+          "id": "rp-5",
+          "rackId": "rack-1",
+          "deviceNodeId": "device-107",
+          "uPosition": 7,
+          "face": "front"
+        },
+        {
+          "id": "rp-6",
+          "rackId": "rack-1",
+          "deviceNodeId": "device-106",
+          "uPosition": 4,
+          "face": "front",
+          "mountedOnShelfId": "ra-2",
+          "shelfOffsetMm": {
+            "x": 9.954166666666708,
+            "y": 0
+          }
+        },
+        {
+          "id": "rp-7",
+          "rackId": "rack-1",
+          "deviceNodeId": "device-115",
+          "uPosition": 2,
+          "face": "front"
+        }
+      ],
+      "accessories": [
+        {
+          "id": "ra-1",
+          "rackId": "rack-1",
+          "type": "shelf",
+          "uPosition": 15,
+          "heightU": 1,
+          "face": "front"
+        },
+        {
+          "id": "ra-2",
+          "rackId": "rack-1",
+          "type": "shelf",
+          "uPosition": 4,
+          "heightU": 1,
+          "face": "front"
+        }
+      ]
+    }
+  ]
+}

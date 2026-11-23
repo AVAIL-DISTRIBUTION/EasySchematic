@@ -24,6 +24,7 @@ services:
       GOOGLE_ALLOWED_DOMAIN: ${GOOGLE_ALLOWED_DOMAIN:?set GOOGLE_ALLOWED_DOMAIN in .env}
       DISABLE_MAGIC_LINK: ${DISABLE_MAGIC_LINK:-1}
       SEED_LIBRARY: ${SEED_LIBRARY:-if-empty}
+      MAX_SCHEMATICS_PER_USER: ${MAX_SCHEMATICS_PER_USER:-0}
     volumes:
       - api-data:/data
 
