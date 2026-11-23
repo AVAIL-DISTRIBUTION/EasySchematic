@@ -1,6 +1,8 @@
-# AVAIL DISTRIBUTION: build the frontend image from Dockerfile.avail and publish
-# it to GHCR on every push to master. Target is linux/arm64 (our server), built
-# on a native arm64 runner, so no QEMU emulation is involved.
+# AVAIL DISTRIBUTION: build our images and publish them to GHCR on every push to
+# master. Target is linux/arm64 (our server), built on a native arm64 runner, so no
+# QEMU emulation is involved.
+#   image      Dockerfile.avail      -> ghcr.io/avail-distribution/easyschematic
+#   api-image  Dockerfile.api-avail  -> ghcr.io/avail-distribution/easyschematic-api
 name: AVAIL image
 
 on:
@@ -14,6 +16,7 @@ concurrency:
 
 env:
   IMAGE: ghcr.io/avail-distribution/easyschematic
+  API_IMAGE: ghcr.io/avail-distribution/easyschematic-api
 
 jobs:
   image:
@@ -50,5 +53,43 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=frontend
+          cache-to: type=gha,mode=max,scope=frontend
+
+  api-image:
+    if: github.repository == 'AVAIL-DISTRIBUTION/EasySchematic'
+    runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.API_IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,format=long
+
+      # BuildKit reads Dockerfile.api-avail.dockerignore next to the Dockerfile
+      # instead of the root .dockerignore (which excludes api/src).
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.api-avail
+          platforms: linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=api
+          cache-to: type=gha,mode=max,scope=api

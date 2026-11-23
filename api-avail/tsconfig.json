@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": [
+      "ES2023"
+    ],
+    "types": [
+      "node",
+      "@cloudflare/workers-types"
+    ],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@xyflow/react": [
+        "./node_modules/@xyflow/react"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "test"
+  ]
+}

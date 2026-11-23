@@ -1,0 +1,13 @@
+# Build context for Dockerfile.api-avail (BuildKit picks this file over .dockerignore).
+# Allow-list: only what the API image is built from.
+*
+!src
+!api/package.json
+!api/package-lock.json
+!api/src
+!api/migrations
+!api-avail
+**/node_modules
+api-avail/dist
+api-avail/data
+src/__tests__

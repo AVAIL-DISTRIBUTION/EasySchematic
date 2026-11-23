@@ -1,0 +1,27 @@
+{
+  "name": "easyschematic-api-avail",
+  "private": true,
+  "type": "module",
+  "description": "AVAIL: runs the upstream Hono API (api/src) under Node with SQLite + file storage instead of Cloudflare D1/R2",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "build": "node build.mjs",
+    "typecheck": "tsc -p .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.11",
+    "better-sqlite3": "^13.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20260316.1",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.0",
+    "@xyflow/react": "12.10.1",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.0"
+  }
+}
