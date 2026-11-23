@@ -10,6 +10,7 @@ import {
 import { registerTypes } from "./typeRegistry";
 import { withRepairedSlots } from "./slotDefinitions";
 import { isCustomTypeKind, typeDefsFromRecords, type CustomTypeRecord } from "./customTypes/model";
+import { isAvailLibrary, libraryQuery, noteCachedLibrary, noteLibraryResponse } from "./avail/libraryMode";
 
 const API_URL =
   import.meta.env?.VITE_TEMPLATE_API_URL ?? "https://api.easyschematic.live";
@@ -37,6 +38,18 @@ function effectiveTemplates(): DeviceTemplate[] {
   const cachedIds = new Set(cached.map((t) => t.id).filter((id): id is string => !!id));
   const bundledFloor = bundled.filter((t) => t.id && !cachedIds.has(t.id));
   return [...cached, ...bundledFloor];
+}
+
+/** The library the pickers list. AVAIL: what our API returned (filtered by status), no
+ *  bundled floor — lookups by id (getTemplateById) keep the floor for existing schematics. */
+function libraryTemplates(): DeviceTemplate[] {
+  return isAvailLibrary() && cached ? cached : effectiveTemplates();
+}
+
+/** AVAIL: drop the in-memory library so the next fetchTemplates() asks the API again. */
+export function invalidateTemplates(): void {
+  cached = null;
+  degraded = false;
 }
 
 /** Look up a card template by ID from cached API data, bundled fallback, or caller-supplied extras (user's custom templates). */
@@ -301,9 +314,15 @@ async function fetchTemplatesOnce(): Promise<DeviceTemplate[]> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TEMPLATE_FETCH_TIMEOUT_MS);
   try {
-    const res = await fetch(`${API_URL}/templates`, { signal: ctrl.signal });
+    // AVAIL: our API filters by the user's role (hidden is for moderators), so send the session.
+    const res = await fetch(`${API_URL}/templates${libraryQuery()}`, {
+      signal: ctrl.signal,
+      ...(isAvailLibrary() && { credentials: "include" as const }),
+    });
     if (!res.ok) throw new Error(`API ${res.status}`);
-    return (await res.json()) as DeviceTemplate[];
+    const data = (await res.json()) as DeviceTemplate[];
+    noteLibraryResponse(res, data); // AVAIL: status-filtered library (src/avail/libraryMode.ts)
+    return data;
   } finally {
     clearTimeout(timer);
   }
@@ -318,7 +337,7 @@ async function fetchTemplatesOnce(): Promise<DeviceTemplate[]> {
  */
 export async function fetchTemplates(): Promise<DeviceTemplate[]> {
   void loadCommunityTypes(); // the types the library's ports use; once per page load
-  if (cached && !degraded) return effectiveTemplates();
+  if (cached && !degraded) return libraryTemplates();
 
   let lastErr: unknown;
   for (let attempt = 0; attempt <= TEMPLATE_FETCH_RETRIES; attempt++) {
@@ -327,7 +346,7 @@ export async function fetchTemplates(): Promise<DeviceTemplate[]> {
       cached = data;
       degraded = false;
       void saveCachedTemplates(data); // persist last-good full library for next time
-      return effectiveTemplates();
+      return libraryTemplates();
     } catch (err) {
       lastErr = err;
       if (attempt < TEMPLATE_FETCH_RETRIES) {
@@ -341,7 +360,8 @@ export async function fetchTemplates(): Promise<DeviceTemplate[]> {
   if (cachedLib?.length) {
     cached = cachedLib;
     degraded = true;
-    return effectiveTemplates();
+    noteCachedLibrary(cachedLib);
+    return libraryTemplates();
   }
 
   // Nothing cached either — caller keeps the bundled subset and surfaces a notice.

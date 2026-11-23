@@ -9,7 +9,8 @@
     "build": "node build.mjs",
     "typecheck": "tsc -p .",
     "test": "vitest run",
-    "import:upstream": "tsx src/importCli.ts"
+    "import:upstream": "tsx src/importCli.ts",
+    "normalize:library": "tsx src/normalizeCli.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.11",

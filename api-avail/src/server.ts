@@ -12,6 +12,7 @@ import { applyMigrations, type MigrationResult } from "./migrate";
 import { parseSeedMode, seedLibrary, type SeedResult } from "./seed";
 import { installMailStub } from "./mail";
 import { registerAvailRoutes } from "./routes";
+import { syncLintLevels } from "./templateMeta";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
@@ -92,6 +93,23 @@ export function applyAllMigrations(
   return { applied: [...upstreamResult.applied, ...ours.applied], skipped: upstreamResult.skipped };
 }
 
+const READ_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
+
+/** GET /templates and /templates/summary are served by our status-filtered routes (routes.ts). */
+const LIBRARY_PATHS: Record<string, string> = {
+  "/templates": "/avail/library/templates",
+  "/templates/summary": "/avail/library/summary",
+};
+
+export function libraryRewrite(request: Request): Request {
+  if (request.method !== "GET" && request.method !== "HEAD") return request;
+  const url = new URL(request.url);
+  const target = LIBRARY_PATHS[url.pathname.replace(/\/+$/, "") || "/"];
+  if (!target) return request;
+  url.pathname = target;
+  return new Request(url, request);
+}
+
 export function createApiServer(config: ApiConfig): ApiServer {
   const log = config.log ?? ((msg: string) => console.log(msg));
   // api/src compares the bearer token with ===, so an empty ADMIN_TOKEN would let
@@ -113,6 +131,8 @@ export function createApiServer(config: ApiConfig): ApiServer {
   const migrations = applyAllMigrations(db.sqlite, config, log);
   const seed = seedLibrary(db.sqlite, parseSeedMode(config.seedMode));
   if (seed.seeded > 0) log(`library seeded: ${seed.seeded} templates (mode ${seed.mode})`);
+  const linted = syncLintLevels(db.sqlite);
+  if (linted > 0) log(`lint levels updated: ${linted} templates`);
 
   const bindings = {
     easyschematic_db: db as unknown as D1Database,
@@ -123,7 +143,19 @@ export function createApiServer(config: ApiConfig): ApiServer {
   const ctx = executionContext(log);
 
   return {
-    fetch: async (request) => upstream.fetch(request, bindings, ctx),
+    fetch: async (request) => {
+      const response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
+      // Whatever route saved a template (PUT /templates/:id, POST /templates, an approved
+      // submission…), upstream bumped its version: re-lint the changed ones.
+      if (!READ_METHODS.has(request.method) && response.status < 400) {
+        try {
+          syncLintLevels(db.sqlite);
+        } catch (err) {
+          log(`lint sync failed: ${String(err)}`);
+        }
+      }
+      return response;
+    },
     db,
     bucket,
     migrations,

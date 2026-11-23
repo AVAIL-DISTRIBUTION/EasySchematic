@@ -14,6 +14,7 @@ const common = {
   logLevel: "info",
 };
 
-// The API server, and the raw-template import CLI (npm run import:upstream in the image).
+// The API server and the CLIs run in the image: import:upstream, normalize:library.
 await build({ ...common, entryPoints: ["src/main.ts"], outfile: "dist/server.mjs" });
 await build({ ...common, entryPoints: ["src/importCli.ts"], outfile: "dist/import-upstream.mjs" });
+await build({ ...common, entryPoints: ["src/normalizeCli.ts"], outfile: "dist/normalize-library.mjs" });

@@ -73,22 +73,27 @@ describe("api-avail smoke", () => {
     expect(await res.json()).toEqual({ ok: true });
   });
 
-  it("GET /templates returns the seeded templates, with a working ETag", async () => {
-    const res = await fetch(`${base}/templates`);
-    expect(res.status).toBe(200);
-    const templates = (await res.json()) as { id: string; label: string; ports: unknown[] }[];
+  it("GET /templates: seeded templates are raw — hidden by default, all of them with include=raw, ETag works", async () => {
+    const byDefault = await fetch(`${base}/templates`);
+    expect(byDefault.status).toBe(200);
+    expect(byDefault.headers.get("x-avail-library")).toBe("1");
+    expect(await byDefault.json()).toEqual([]);
+
+    const res = await fetch(`${base}/templates?include=raw`);
+    const templates = (await res.json()) as { id: string; label: string; ports: unknown[]; availStatus: string }[];
     expect(templates.length).toBe(api.seed.seeded);
-    expect(templates[0]).toMatchObject({ id: expect.any(String), label: expect.any(String) });
+    expect(templates[0]).toMatchObject({ id: expect.any(String), label: expect.any(String), availStatus: "raw" });
     expect(Array.isArray(templates[0].ports)).toBe(true);
 
     const etag = res.headers.get("etag");
     expect(etag).toBeTruthy();
-    const again = await fetch(`${base}/templates`, { headers: { "If-None-Match": etag! } });
+    expect(etag).not.toBe(byDefault.headers.get("etag"));
+    const again = await fetch(`${base}/templates?include=raw`, { headers: { "If-None-Match": etag! } });
     expect(again.status).toBe(304);
   });
 
   it("GET /templates/summary works", async () => {
-    const res = await fetch(`${base}/templates/summary`);
+    const res = await fetch(`${base}/templates/summary?include=raw`);
     expect(res.status).toBe(200);
     expect(((await res.json()) as unknown[]).length).toBe(api.seed.seeded);
   });

@@ -5,8 +5,8 @@
  * tools/avail/avail_block_lint.py (v0.2, kept there as an archive) and still follows
  * its semantics: truthiness (empty arrays/objects and 0 are "missing"), Unicode-aware
  * \b and \s, `$` that also matches before a trailing newline, length in code points.
- * Since v0.3 it also checks category and manufacturer against the AVAIL reference
- * data (src/avail/library.ts).
+ * Since v0.3 it also checks category (errors) and manufacturer (warnings) against the
+ * AVAIL reference data (src/avail/library.ts).
  *
  * Pure functions with no browser or Node dependencies, so the editor and the API can
  * both call them. Errors (E) block level B, warnings (W) block level A:
@@ -121,12 +121,13 @@ export function lintBlock(block: object): BlockLintResult {
   if (!truthy(sn)) W.push("нет shortName");
   else if (typeof sn === "string" && SKU_RE.test(sn)) W.push(`shortName = артикул (${sn}), нужна модель`);
   if (!truthy(d.deviceType)) E.push("нет deviceType");
+  // Every library template is a schematic block, so a schematic=false category is an error too.
   const category = d.category;
-  if (!truthy(category)) W.push("нет category");
+  if (!truthy(category)) E.push("нет category");
   else {
     const c = findCategory(typeof category === "string" ? category : undefined);
-    if (!c || !c.leaf) W.push(`category «${String(category)}» — не листовая категория avail-taxonomy.json`);
-    else if (!c.schematic) W.push(`category «${c.path}» не для блоков на схеме (schematic=false)`);
+    if (!c || !c.leaf) E.push(`category «${String(category)}» — не листовая категория avail-taxonomy.json`);
+    else if (!c.schematic) E.push(`category «${c.path}» не для блоков на схеме (schematic=false)`);
   }
   const aux = truthy(d.auxiliaryData) ? asArray(d.auxiliaryData) : [];
   if (!(aux.length === 1 && asObj(aux[0]).text === "{{deviceType}}")) W.push("шапка не {{deviceType}}");

@@ -81,9 +81,14 @@ describe("ALLOWED_ORIGINS", () => {
     expect(mine.headers.get("access-control-allow-origin")).toBeNull();
   });
 
-  it("public library reads stay open to any origin", async () => {
-    const res = await req(ours, "/templates/summary", { headers: { Origin: "https://evil.example" } });
-    expect(res.headers.get("access-control-allow-origin")).toBe("*");
+  it("the library (GET /templates, served by our status-filtered route) is not open to any origin", async () => {
+    const evil = await req(ours, "/templates/summary", { headers: { Origin: "https://evil.example" } });
+    expect(evil.headers.get("access-control-allow-origin")).toBeNull();
+    const mine = await req(ours, "/templates/summary", { headers: { Origin: OURS } });
+    expect(mine.headers.get("access-control-allow-origin")).toBe(OURS);
+    // Other public reads keep upstream's open CORS.
+    const cats = await req(ours, "/templates/categories", { headers: { Origin: "https://evil.example" } });
+    expect(cats.headers.get("access-control-allow-origin")).toBe("*");
   });
 
   async function storedReturnTo(api: ApiServer, returnTo: string): Promise<string | null> {
