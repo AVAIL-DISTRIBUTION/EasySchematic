@@ -26,6 +26,8 @@ export type Env = {
     GOOGLE_ALLOWED_DOMAIN?: string;
     /** "1" disables magic-link sign-in (/auth/login, /auth/verify answer 403). */
     DISABLE_MAGIC_LINK?: string;
+    /** Optional schematics-per-user cap; "0" = no limit, unset = upstream's 10. */
+    MAX_SCHEMATICS_PER_USER?: string;
   };
   Variables: {
     user?: SessionUser;

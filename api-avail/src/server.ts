@@ -28,6 +28,7 @@ export interface ApiConfig {
     ALLOWED_ORIGINS: string;
     GOOGLE_ALLOWED_DOMAIN: string;
     DISABLE_MAGIC_LINK: string;
+    MAX_SCHEMATICS_PER_USER: string;
   };
   log?: (msg: string) => void;
 }
@@ -47,6 +48,7 @@ export function configFromEnv(env: NodeJS.ProcessEnv = process.env): ApiConfig {
       ALLOWED_ORIGINS: env.ALLOWED_ORIGINS ?? "",
       GOOGLE_ALLOWED_DOMAIN: env.GOOGLE_ALLOWED_DOMAIN ?? "",
       DISABLE_MAGIC_LINK: env.DISABLE_MAGIC_LINK ?? "",
+      MAX_SCHEMATICS_PER_USER: env.MAX_SCHEMATICS_PER_USER ?? "",
     },
   };
 }
