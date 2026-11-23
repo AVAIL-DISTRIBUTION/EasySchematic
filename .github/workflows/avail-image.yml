@@ -1,0 +1,54 @@
+# AVAIL DISTRIBUTION: build the frontend image from Dockerfile.avail and publish
+# it to GHCR on every push to master. Target is linux/arm64 (our server), built
+# on a native arm64 runner, so no QEMU emulation is involved.
+name: AVAIL image
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: avail-image
+  cancel-in-progress: true
+
+env:
+  IMAGE: ghcr.io/avail-distribution/easyschematic
+
+jobs:
+  image:
+    # Only in our fork; upstream has no use for this image.
+    if: github.repository == 'AVAIL-DISTRIBUTION/EasySchematic'
+    runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,format=long
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.avail
+          platforms: linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
