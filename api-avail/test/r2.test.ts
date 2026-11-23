@@ -41,7 +41,9 @@ describe("R2 shim", () => {
   });
 
   it("accepts ArrayBuffer, Blob, ReadableStream and Headers metadata", async () => {
-    await bucket.put("ab", new TextEncoder().encode("1").buffer);
+    const ab = new ArrayBuffer(1);
+    new Uint8Array(ab)[0] = 0x31; // "1"
+    await bucket.put("ab", ab);
     await bucket.put("blob", new Blob(["2"]));
     await bucket.put("stream", new Blob(["3"]).stream());
     await bucket.put("hdr", "4", { httpMetadata: new Headers({ "content-type": "text/plain" }) });
