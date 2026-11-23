@@ -1,0 +1,33 @@
+# AVAIL DISTRIBUTION: type-check and test api-avail (D1/R2 shims, migrations,
+# seed, end-to-end smoke against the upstream app in api/src).
+name: AVAIL api tests
+
+on:
+  push:
+    branches: [master]
+    paths: ["api/**", "api-avail/**", "src/**", ".github/workflows/avail-api-test.yml"]
+  pull_request:
+    branches: [master]
+    paths: ["api/**", "api-avail/**", "src/**", ".github/workflows/avail-api-test.yml"]
+
+jobs:
+  test:
+    if: github.repository == 'AVAIL-DISTRIBUTION/EasySchematic'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            api/package-lock.json
+            api-avail/package-lock.json
+
+      # Runtime deps only (hono, postal-mime): api/src resolves them from api/node_modules.
+      - run: cd api && npm ci --omit=dev
+      - run: cd api-avail && npm ci
+      - run: cd api-avail && npm run typecheck
+      - run: cd api-avail && npm test
+      - run: cd api-avail && npm run build

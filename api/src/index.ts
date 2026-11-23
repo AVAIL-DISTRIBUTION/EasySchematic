@@ -436,6 +436,16 @@ app.post("/auth/logout", async (c) => {
 
 // ==================== GOOGLE OAUTH ENDPOINTS ====================
 
+/** OAuth redirect_uri. API_PUBLIC_URL (e.g. "https://api.example.com") overrides it for
+ *  self-hosted deployments; unset, it's the official host, or localhost:8787 in dev. */
+function googleRedirectUri(c: { req: { url: string }; env: Env["Bindings"] }): string {
+  if (c.env.API_PUBLIC_URL) return `${c.env.API_PUBLIC_URL.replace(/\/+$/, "")}/auth/google/callback`;
+  const isLocalhost = new URL(c.req.url).hostname === "localhost";
+  return isLocalhost
+    ? "http://localhost:8787/auth/google/callback"
+    : "https://api.easyschematic.live/auth/google/callback";
+}
+
 app.get("/auth/google/start", async (c) => {
   const returnTo = c.req.query("returnTo");
   const validReturnTo = returnTo && isAllowedOrigin(returnTo) ? returnTo : undefined;
@@ -457,10 +467,7 @@ app.get("/auth/google/start", async (c) => {
     .bind(state, validReturnTo ?? null, expiresAt)
     .run();
 
-  const isLocalhost = new URL(c.req.url).hostname === "localhost";
-  const redirectUri = isLocalhost
-    ? "http://localhost:8787/auth/google/callback"
-    : "https://api.easyschematic.live/auth/google/callback";
+  const redirectUri = googleRedirectUri(c);
 
   const params = new URLSearchParams({
     client_id: c.env.GOOGLE_CLIENT_ID,
@@ -514,10 +521,7 @@ app.get("/auth/google/callback", async (c) => {
   if (!code) return redirectWithError("expired");
 
   // Exchange code for tokens
-  const isLocalhost = new URL(c.req.url).hostname === "localhost";
-  const redirectUri = isLocalhost
-    ? "http://localhost:8787/auth/google/callback"
-    : "https://api.easyschematic.live/auth/google/callback";
+  const redirectUri = googleRedirectUri(c);
 
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",

@@ -18,6 +18,8 @@ export type Env = {
     SUPPORT_FORWARD_EMAIL: string;
     GOOGLE_CLIENT_ID: string;
     GOOGLE_CLIENT_SECRET: string;
+    /** Optional public base URL of this API for self-hosting; see googleRedirectUri(). */
+    API_PUBLIC_URL?: string;
   };
   Variables: {
     user?: SessionUser;
