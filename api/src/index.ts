@@ -59,6 +59,17 @@ app.use("*", async (c, next) => {
   c.header("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
 });
 
+// DISABLE_MAGIC_LINK=1 turns off email sign-in (self-hosted, Google-only deployments).
+// Registered ahead of the routes so it answers before they run.
+const magicLinkGate = createMiddleware<Env>(async (c, next) => {
+  if (c.env.DISABLE_MAGIC_LINK === "1" || c.env.DISABLE_MAGIC_LINK === "true") {
+    return c.json({ error: "Email sign-in is disabled on this server. Sign in with Google." }, 403);
+  }
+  return next();
+});
+app.use("/auth/login", magicLinkGate);
+app.use("/auth/verify", magicLinkGate);
+
 // Session middleware on all routes
 app.use("*", sessionMiddleware);
 
@@ -151,16 +162,26 @@ const STATIC_ALLOWED_ORIGINS = [
 // it back (even with credentials, for login/cloud) is safe.
 const LOOPBACK_ORIGIN = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/;
 
-/** CORS origin resolver: echoes an origin back iff it's an official host or loopback. */
-function corsOrigin(origin: string): string | null {
+/** Comma-separated ALLOWED_ORIGINS, for self-hosted deployments. When set it replaces
+ *  the official hosts and loopback; unset (or empty), the defaults above apply. */
+function configuredOrigins(env: Env["Bindings"] | undefined): string[] | null {
+  const list = (env?.ALLOWED_ORIGINS ?? "").split(",").map((o) => o.trim().replace(/\/+$/, "")).filter(Boolean);
+  return list.length ? list : null;
+}
+
+/** CORS origin resolver: echoes an origin back iff it's an official host or loopback
+ *  (or, when ALLOWED_ORIGINS is set, iff it's in that list). */
+function corsOrigin(origin: string, c?: { env: Env["Bindings"] }): string | null {
   if (!origin) return null;
+  const configured = configuredOrigins(c?.env);
+  if (configured) return configured.includes(origin) ? origin : null;
   if (STATIC_ALLOWED_ORIGINS.includes(origin)) return origin;
   if (LOOPBACK_ORIGIN.test(origin)) return origin;
   return null;
 }
 
-function isAllowedOrigin(url: string): boolean {
-  try { return corsOrigin(new URL(url).origin) !== null; }
+function isAllowedOrigin(url: string, env?: Env["Bindings"]): boolean {
+  try { return corsOrigin(new URL(url).origin, env && { env }) !== null; }
   catch { return false; }
 }
 
@@ -188,7 +209,7 @@ function cookieRedirect(c: { header: (k: string, v: string, options?: { append?:
 app.post("/auth/login", async (c) => {
   const body = await c.req.json<{ email?: string; returnTo?: string }>();
   const email = body.email?.trim().toLowerCase();
-  const returnTo = body.returnTo && isAllowedOrigin(body.returnTo) ? body.returnTo : undefined;
+  const returnTo = body.returnTo && isAllowedOrigin(body.returnTo, c.env) ? body.returnTo : undefined;
 
   if (!email || !email.includes("@")) {
     return c.json({ error: "Valid email is required" }, 400);
@@ -295,7 +316,7 @@ ${body}
 app.get("/auth/verify", async (c) => {
   const token = c.req.query("token");
   const returnTo = c.req.query("returnTo");
-  const validReturnTo = returnTo && isAllowedOrigin(returnTo) ? returnTo : undefined;
+  const validReturnTo = returnTo && isAllowedOrigin(returnTo, c.env) ? returnTo : undefined;
 
   if (!token) {
     return c.html(authPage("Invalid Link", `<h1>Invalid Link</h1><p>This login link is missing a token.</p>
@@ -351,7 +372,7 @@ app.post("/auth/verify", async (c) => {
   }
 
   const returnTo = c.req.query("returnTo");
-  const validReturnTo = returnTo && isAllowedOrigin(returnTo) ? returnTo : undefined;
+  const validReturnTo = returnTo && isAllowedOrigin(returnTo, c.env) ? returnTo : undefined;
 
   if (!token) {
     return c.html(authPage("Invalid Request", `<h1>Invalid Request</h1><p>No token provided.</p>
@@ -446,9 +467,14 @@ function googleRedirectUri(c: { req: { url: string }; env: Env["Bindings"] }): s
     : "https://api.easyschematic.live/auth/google/callback";
 }
 
+/** GOOGLE_ALLOWED_DOMAIN, comma-separated and lowercased; empty means any account (upstream). */
+function googleAllowedDomains(env: Env["Bindings"]): string[] {
+  return (env.GOOGLE_ALLOWED_DOMAIN ?? "").split(",").map((d) => d.trim().toLowerCase()).filter(Boolean);
+}
+
 app.get("/auth/google/start", async (c) => {
   const returnTo = c.req.query("returnTo");
-  const validReturnTo = returnTo && isAllowedOrigin(returnTo) ? returnTo : undefined;
+  const validReturnTo = returnTo && isAllowedOrigin(returnTo, c.env) ? returnTo : undefined;
 
   const db = c.env.easyschematic_db;
 
@@ -477,6 +503,9 @@ app.get("/auth/google/start", async (c) => {
     state,
     prompt: "select_account",
   });
+  // Account-chooser hint only; the callback enforces the domain.
+  const allowedDomains = googleAllowedDomains(c.env);
+  if (allowedDomains.length === 1) params.set("hd", allowedDomains[0]);
 
   return c.redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`);
 });
@@ -545,11 +574,19 @@ app.get("/auth/google/callback", async (c) => {
 
   // Decode id_token payload (trusted — direct from Google over HTTPS)
   const payload = JSON.parse(atob(tokenData.id_token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/")));
-  const { sub, email, email_verified, name } = payload as {
-    sub: string; email: string; email_verified: boolean; name?: string;
+  const { sub, email, email_verified, name, hd } = payload as {
+    sub: string; email: string; email_verified: boolean; name?: string; hd?: string;
   };
 
   if (!email_verified) return redirectWithError("email_not_verified");
+
+  // GOOGLE_ALLOWED_DOMAIN: only Workspace accounts whose hd claim matches may sign in.
+  // Consumer Google accounts carry no hd claim, so they're refused too.
+  const allowedDomains = googleAllowedDomains(c.env);
+  if (allowedDomains.length && !allowedDomains.includes((hd ?? "").toLowerCase())) {
+    console.warn(`[auth/google] refused ${email}: hd=${hd ?? "(none)"} not in GOOGLE_ALLOWED_DOMAIN`);
+    return redirectWithError("domain_not_allowed");
+  }
 
   const normalizedEmail = email.toLowerCase();
 

@@ -4,6 +4,7 @@ import { ReactFlowProvider } from "@xyflow/react";
 import "./index.css";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import { initServiceWorkerUpdates } from "./sw-register";
+import AuthErrorNotice from "./avail/AuthErrorNotice.tsx";
 
 initServiceWorkerUpdates();
 
@@ -47,6 +48,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ErrorBoundary>
       <Root />
+      <AuthErrorNotice />
     </ErrorBoundary>
   </StrictMode>,
 );

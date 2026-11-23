@@ -1,0 +1,18 @@
+# AVAIL DISTRIBUTION: frontend and API on one domain.
+# No basic auth: access is controlled by Google Workspace sign-in in the API
+# (GOOGLE_ALLOWED_DOMAIN). Caddy obtains and renews the TLS certificate itself.
+
+{$SITE_DOMAIN} {
+	encode zstd gzip
+
+	# API under /api; handle_path strips the prefix, so the API sees /auth/..., /templates...
+	# Caddy sets X-Forwarded-For from the real client address (incoming values from
+	# clients are not trusted), which the API's rate limiting relies on.
+	handle_path /api/* {
+		reverse_proxy api:8787
+	}
+
+	handle {
+		reverse_proxy app:80
+	}
+}

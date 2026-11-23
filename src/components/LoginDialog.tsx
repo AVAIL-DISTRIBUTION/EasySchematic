@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { requestLogin } from "../templateApi";
+import { isGoogleOnly } from "../avail/auth";
 
 const API_URL =
   import.meta.env?.VITE_TEMPLATE_API_URL ?? "https://api.easyschematic.live";
@@ -17,6 +18,8 @@ export default function LoginDialog({ open, onClose }: Props) {
   const [sending, setSending] = useState(false);
 
   if (!open) return null;
+  // AVAIL: Google Workspace only — no email sign-in (VITE_AUTH_GOOGLE_ONLY=1).
+  const googleOnly = isGoogleOnly();
 
   const handleSend = async () => {
     const trimmed = email.trim().toLowerCase();
@@ -111,6 +114,7 @@ export default function LoginDialog({ open, onClose }: Props) {
                 </svg>
                 Sign in with Google
               </button>
+              {!googleOnly && <>
               <div className="flex items-center gap-3 my-3">
                 <div className="flex-1 h-px" style={{ backgroundColor: "var(--color-border)" }} />
                 <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>or</span>
@@ -133,6 +137,7 @@ export default function LoginDialog({ open, onClose }: Props) {
               {error && (
                 <p className="text-xs mt-2 text-red-500">{error}</p>
               )}
+              </>}
             </>
           )}
         </div>
@@ -151,7 +156,7 @@ export default function LoginDialog({ open, onClose }: Props) {
           >
             {sent ? "Close" : "Cancel"}
           </button>
-          {!sent && (
+          {!sent && !googleOnly && (
             <button
               onClick={handleSend}
               disabled={sending}

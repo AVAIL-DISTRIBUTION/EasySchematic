@@ -1,0 +1,3 @@
+# Root .gitignore ignores .env*; the example is meant to be committed, the real .env never.
+!.env.example
+.env

@@ -14,7 +14,20 @@ COPY package.json package-lock.json .npmrc ./
 COPY patches ./patches
 RUN npm ci
 COPY . .
-RUN npm run generate-fallback && npx vite build
+# Deployment addresses are baked in at build time (Vite inlines import.meta.env),
+# passed as build args so they live in CI variables, not in the code:
+#   VITE_TEMPLATE_API_URL  API base, e.g. https://sch.avail-int.com/api
+#   VITE_DEVICES_URL       device database site linked from the editor
+#   VITE_AUTH_GOOGLE_ONLY  1 = login dialog offers Google only
+# An arg passed as an empty string is unset before the build: the app tests these
+# with `??`, so "" would replace the default with an empty URL.
+ARG VITE_TEMPLATE_API_URL
+ARG VITE_DEVICES_URL
+ARG VITE_AUTH_GOOGLE_ONLY
+RUN for v in VITE_TEMPLATE_API_URL VITE_DEVICES_URL VITE_AUTH_GOOGLE_ONLY; do \
+      eval "[ -n \"\${$v}\" ]" || unset "$v"; \
+    done; \
+    npm run generate-fallback && npx vite build
 
 # Production stage
 FROM nginx:bookworm

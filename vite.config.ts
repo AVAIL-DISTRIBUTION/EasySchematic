@@ -39,6 +39,10 @@ export default defineConfig({
         // → updateSW(true)) is now what skips waiting and reloads, on the
         // user's terms or after they go idle.
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        // Self-hosted with the API on the same origin under /api (AVAIL): the SPA
+        // fallback must not swallow navigations to it, e.g. the Google OAuth
+        // start/callback redirects. No effect when the API is on its own host.
+        navigateFallbackDenylist: [/^\/api\//],
         globPatterns: ['**/*.{js,css,html,svg,png,ttf,json}'],
         globIgnores: [
           '**/deviceLibrary.fallback.json',

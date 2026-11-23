@@ -51,6 +51,12 @@ jobs:
           file: Dockerfile.avail
           platforms: linux/arm64
           push: true
+          # Repository variables (Settings → Secrets and variables → Actions → Variables).
+          # Unset ones arrive empty and Dockerfile.avail falls back to the app defaults.
+          build-args: |
+            VITE_TEMPLATE_API_URL=${{ vars.VITE_TEMPLATE_API_URL }}
+            VITE_DEVICES_URL=${{ vars.VITE_DEVICES_URL }}
+            VITE_AUTH_GOOGLE_ONLY=${{ vars.VITE_AUTH_GOOGLE_ONLY }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha,scope=frontend
