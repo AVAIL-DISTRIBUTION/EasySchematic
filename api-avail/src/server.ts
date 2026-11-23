@@ -5,18 +5,25 @@
 import { mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import upstream from "../../api/src/index";
+import upstream, { app as upstreamApp } from "../../api/src/index";
 import { D1DatabaseShim } from "./d1";
 import { R2BucketShim } from "./r2";
 import { applyMigrations, type MigrationResult } from "./migrate";
 import { parseSeedMode, seedLibrary, type SeedResult } from "./seed";
 import { installMailStub } from "./mail";
+import { registerAvailRoutes } from "./routes";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
+
+// Our routes (/avail/...) join the upstream app once, before it serves any request
+// (Hono builds its router on the first match and refuses new routes after that).
+registerAvailRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
   migrationsDir: string;
+  /** Our migrations (api-avail/migrations, 9xxx), applied after upstream's. */
+  availMigrationsDir: string;
   seedMode: string | undefined;
   /** Secrets and settings handed to the app as Workers bindings. */
   vars: {
@@ -38,6 +45,7 @@ export function configFromEnv(env: NodeJS.ProcessEnv = process.env): ApiConfig {
     dataDir: path.resolve(env.DATA_DIR ?? "./data"),
     // Source (api-avail/src) and bundle (api-avail/dist) both sit two levels below the repo root.
     migrationsDir: path.resolve(env.MIGRATIONS_DIR ?? path.join(here, "../../api/migrations")),
+    availMigrationsDir: path.resolve(env.AVAIL_MIGRATIONS_DIR ?? path.join(here, "../migrations")),
     seedMode: env.SEED_LIBRARY,
     vars: {
       ADMIN_TOKEN: env.ADMIN_TOKEN ?? "",
@@ -73,6 +81,17 @@ function executionContext(log: (msg: string) => void): ExecutionContext {
   } as unknown as ExecutionContext;
 }
 
+/** Upstream migrations, then ours; both are recorded in d1_migrations. */
+export function applyAllMigrations(
+  sqlite: D1DatabaseShim["sqlite"],
+  config: Pick<ApiConfig, "migrationsDir" | "availMigrationsDir">,
+  log: (msg: string) => void = () => {},
+): MigrationResult {
+  const upstreamResult = applyMigrations(sqlite, config.migrationsDir, log);
+  const ours = applyMigrations(sqlite, config.availMigrationsDir, log);
+  return { applied: [...upstreamResult.applied, ...ours.applied], skipped: upstreamResult.skipped };
+}
+
 export function createApiServer(config: ApiConfig): ApiServer {
   const log = config.log ?? ((msg: string) => console.log(msg));
   // api/src compares the bearer token with ===, so an empty ADMIN_TOKEN would let
@@ -91,7 +110,7 @@ export function createApiServer(config: ApiConfig): ApiServer {
   const db = new D1DatabaseShim(path.join(config.dataDir, "easyschematic.sqlite"));
   const bucket = new R2BucketShim(path.join(config.dataDir, "r2"));
 
-  const migrations = applyMigrations(db.sqlite, config.migrationsDir, log);
+  const migrations = applyAllMigrations(db.sqlite, config, log);
   const seed = seedLibrary(db.sqlite, parseSeedMode(config.seedMode));
   if (seed.seeded > 0) log(`library seeded: ${seed.seeded} templates (mode ${seed.mode})`);
 

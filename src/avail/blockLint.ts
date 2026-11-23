@@ -1,18 +1,19 @@
 /**
  * AVAIL Device Block Standard linter (docs/avail/device-block-standard.md).
  *
- * TypeScript port of tools/avail/avail_block_lint.py — the Python script is the
- * reference: same rules, same messages, same A / B / FIX levels. Pure functions with
- * no browser or Node dependencies, so the editor and the API can both call them.
+ * The only implementation of the standard's formal rules. It started as a port of
+ * tools/avail/avail_block_lint.py (v0.2, kept there as an archive) and still follows
+ * its semantics: truthiness (empty arrays/objects and 0 are "missing"), Unicode-aware
+ * \b and \s, `$` that also matches before a trailing newline, length in code points.
+ * Since v0.3 it also checks category and manufacturer against the AVAIL reference
+ * data (src/avail/library.ts).
  *
- * Errors (E) block level B, warnings (W) block level A:
+ * Pure functions with no browser or Node dependencies, so the editor and the API can
+ * both call them. Errors (E) block level B, warnings (W) block level A:
  *   FIX — at least one error; B — no errors, some warnings; A — clean.
- *
- * Python semantics are reproduced where they differ from JS: truthiness (empty
- * arrays/objects and 0 are "missing"), Unicode-aware \b and \s, `$` that also
- * matches before a trailing newline, and string length in code points.
- * src/__tests__/availBlockLint.test.ts runs both versions on the same blocks.
  */
+import { findCategory, findVendor, GENERIC_VENDOR } from "./library";
+
 
 export type BlockLevel = "A" | "B" | "FIX";
 
@@ -43,6 +44,14 @@ const HAS_LATIN_WORD_RE = /[A-Za-z]{2,}/;
 const POWER_PASSTHROUGH_RE = /loop|thru|out/iu;
 // Python's \b is Unicode-aware: a letter or digit of any script before "dtp" is not a boundary.
 const HDBASET_RE = /(?<![\p{L}\p{N}_])(dtp|xtp|hdbaset)/u;
+const GENERIC_PREFIX = `${GENERIC_VENDOR} `;
+const GENERIC_MODEL_RE = /^GEN-[\p{Lu}\p{N}]+(?:-[\p{Lu}\p{N}]+)*$/u;
+
+/** modelNumber of a Generic block: "Generic Room PC" → "GEN-ROOM-PC". */
+export function genericModelNumber(label: string): string {
+  const cls = label.startsWith(GENERIC_PREFIX) ? label.slice(GENERIC_PREFIX.length) : label;
+  return "GEN-" + cls.trim().toUpperCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean).join("-");
+}
 
 type Obj = Record<string, unknown>;
 
@@ -91,29 +100,52 @@ export function lintBlock(block: object): BlockLintResult {
   // --- card
   if (!man) E.push("нет manufacturer");
   else if (!label.toLowerCase().startsWith(man.toLowerCase())) W.push(`label не начинается с производителя (${man})`);
+  const vendor = findVendor(man);
+  if (man && !vendor) W.push(`manufacturer «${man}» не из avail-vendors.json (вне портфеля — Generic)`);
+  else if (vendor && vendor.name !== man) W.push(`manufacturer «${man}» — синоним, нужно «${vendor.name}»`);
+  const generic = vendor?.name === GENERIC_VENDOR;
+  if (generic) {
+    const cls = label.startsWith(GENERIC_PREFIX) ? label.slice(GENERIC_PREFIX.length).trim() : "";
+    if (!cls) W.push(`Generic: label должен быть «Generic <класс>»`);
+    const mn = d.modelNumber;
+    if (truthy(mn)) {
+      const want = cls ? genericModelNumber(label) : null;
+      if (want ? mn !== want : !(typeof mn === "string" && GENERIC_MODEL_RE.test(mn))) {
+        W.push(`Generic: modelNumber должен быть «${want ?? "GEN-<КЛАСС>"}»`);
+      }
+    }
+  }
   if (truthy(model) && model !== label) W.push("model отличается от label");
   if (!truthy(d.modelNumber)) E.push("нет modelNumber");
   const sn = d.shortName;
   if (!truthy(sn)) W.push("нет shortName");
   else if (typeof sn === "string" && SKU_RE.test(sn)) W.push(`shortName = артикул (${sn}), нужна модель`);
   if (!truthy(d.deviceType)) E.push("нет deviceType");
-  if (!truthy(d.category)) W.push("нет category");
+  const category = d.category;
+  if (!truthy(category)) W.push("нет category");
+  else {
+    const c = findCategory(typeof category === "string" ? category : undefined);
+    if (!c || !c.leaf) W.push(`category «${String(category)}» — не листовая категория avail-taxonomy.json`);
+    else if (!c.schematic) W.push(`category «${c.path}» не для блоков на схеме (schematic=false)`);
+  }
   const aux = truthy(d.auxiliaryData) ? asArray(d.auxiliaryData) : [];
   if (!(aux.length === 1 && asObj(aux[0]).text === "{{deviceType}}")) W.push("шапка не {{deviceType}}");
   if (truthy(d.color)) W.push("задан color");
 
-  // --- physical
+  // --- physical (not required for Generic blocks: there is no single product to measure)
   const poe = truthy(d.poeDrawW);
-  for (const f of ["heightMm", "widthMm", "depthMm", "weightKg"]) {
-    if (!truthy(d[f])) {
-      W.push(`нет ${f}`);
-      break;
-    }
-  }
   const deviceType = d.deviceType;
-  const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive";
-  if (!poe && !passive && !(truthy(d.powerDrawW) && truthy(d.voltage))) W.push("нет powerDrawW/voltage (или poeDrawW)");
-  if (!truthy(d.referenceUrl)) W.push("нет referenceUrl");
+  if (!generic) {
+    for (const f of ["heightMm", "widthMm", "depthMm", "weightKg"]) {
+      if (!truthy(d[f])) {
+        W.push(`нет ${f}`);
+        break;
+      }
+    }
+    const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive";
+    if (!poe && !passive && !(truthy(d.powerDrawW) && truthy(d.voltage))) W.push("нет powerDrawW/voltage (или poeDrawW)");
+    if (!truthy(d.referenceUrl)) W.push("нет referenceUrl");
+  }
   if (!truthy(d.searchTerms)) W.push("нет searchTerms");
 
   // --- ports (ports of card slots are checked with the card, not here)
@@ -183,7 +215,7 @@ function padEnd(s: string, n: number): string {
   return s + " ".repeat(Math.max(0, n - pyLen(s)));
 }
 
-/** The text report of `python3 avail_block_lint.py <file> [--verbose]`, line for line. */
+/** Text report: one line per block, messages with --verbose, totals (format of the v0.2 Python script). */
 export function formatBlockReport(rows: BlockReportRow[], verbose = false): string {
   const lines: string[] = [];
   for (const r of rows) {

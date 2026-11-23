@@ -1,0 +1,805 @@
+{
+ "version": 1,
+ "source": "Odoo product categories (AVAIL), 2026-11",
+ "note": "Шаблон получает category = путь листовой категории. schematic=false — позиция не появляется блоком на схеме (только BoQ/BoM). usage=rack — для чертежей стоек.",
+ "categories": [
+  {
+   "path": "AV distribution",
+   "group": "AV distribution",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "AV distribution / AVoIP",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Accessories",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "AV distribution / DVI",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Distribution Amplifiers",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Extenders",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Fiber Optics",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / HD-SDI, 3G-SDI & 12G",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Interfaces",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Matrix Switchers",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Scalers",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / Switchers",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / USB for Pro AV",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "AV distribution / XTP Systems",
+   "group": "AV distribution",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products",
+   "group": "Audio Products",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Audio Products / Accessories",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Audio Products / Control",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / DSP",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Discussion Systems",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Headphones",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Interfaces",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Mixers",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Power Amplifiers",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Public Address",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Software",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Audio Products / Sources",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Audio Products / Speakers",
+   "group": "Audio Products",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Connectivity",
+   "group": "Connectivity",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Connectivity / Architectural",
+   "group": "Connectivity",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Connectivity / Bulk Cables",
+   "group": "Connectivity",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Connectivity / Cables & Adapters",
+   "group": "Connectivity",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Connectivity / Connectors",
+   "group": "Connectivity",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Connectivity / Mounting Hardware",
+   "group": "Connectivity",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Control Systems",
+   "group": "Control Systems",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Control Systems / Button Panel",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Control Systems / IP Link Control Proc",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Control Systems / Licenses",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Control Systems / MediaLink Controller",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Control Systems / Processors",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Control Systems / Room Scheduling",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Control Systems / Software",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Control Systems / Touch panels",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Control Systems / eBUS",
+   "group": "Control Systems",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Displays",
+   "group": "Displays",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Displays / Accessories",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Displays / Desktop Displays",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Displays / Interactive Displays",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Displays / LED",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Displays / Mediaplayers",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Displays / Software",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Displays / Standalone Displays",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Displays / Videowall Displays",
+   "group": "Displays",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Integration Tools",
+   "group": "Integration Tools",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Integration Tools / Adapters",
+   "group": "Integration Tools",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Integration Tools / Installation",
+   "group": "Integration Tools",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Integration Tools / PSU",
+   "group": "Integration Tools",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Integration Tools / Racks",
+   "group": "Integration Tools",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false,
+   "usage": "rack"
+  },
+  {
+   "path": "Integration Tools / Tools",
+   "group": "Integration Tools",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Lighting equipment",
+   "group": "Lighting equipment",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Lighting equipment / Consoles",
+   "group": "Lighting equipment",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Lighting equipment / Lighting fixtures",
+   "group": "Lighting equipment",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Microphones",
+   "group": "Microphones",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Microphones / Accessories",
+   "group": "Microphones",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Microphones / Array microphones",
+   "group": "Microphones",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Microphones / Gooseneck microphones",
+   "group": "Microphones",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Microphones / Wired microphones",
+   "group": "Microphones",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Microphones / Wireless microphones",
+   "group": "Microphones",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Mounts",
+   "group": "Mounts",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Mounts / Ceiling mounts",
+   "group": "Mounts",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Mounts / Floor stands",
+   "group": "Mounts",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Mounts / Mobile stands",
+   "group": "Mounts",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Mounts / Table mounts",
+   "group": "Mounts",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Mounts / Wallmounts",
+   "group": "Mounts",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Networking",
+   "group": "Networking",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Networking / Switches",
+   "group": "Networking",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Networking / Wireless",
+   "group": "Networking",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Processing",
+   "group": "Processing",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Processing / Mediaservers",
+   "group": "Processing",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Processing / Multiviewers",
+   "group": "Processing",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Processing / Videomixers",
+   "group": "Processing",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Processing / Videowall Processors",
+   "group": "Processing",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Projection",
+   "group": "Projection",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Projection / Lens",
+   "group": "Projection",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Projection / Projection cubes",
+   "group": "Projection",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Projection / Projectors",
+   "group": "Projection",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Projection / Screens",
+   "group": "Projection",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Streaming and Recording",
+   "group": "Streaming and Recording",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Streaming and Recording / Media processors",
+   "group": "Streaming and Recording",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Streaming and Recording / Streaming AV",
+   "group": "Streaming and Recording",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "UC",
+   "group": "UC",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "UC / Collaboration System",
+   "group": "UC",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "UC / Speakerphones",
+   "group": "UC",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "UC / Video conference systems",
+   "group": "UC",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Videocameras",
+   "group": "Videocameras",
+   "leaf": false,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Videocameras / Camera controls",
+   "group": "Videocameras",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Videocameras / Camera mounts",
+   "group": "Videocameras",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": false
+  },
+  {
+   "path": "Videocameras / Document cameras",
+   "group": "Videocameras",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Videocameras / Interfaces",
+   "group": "Videocameras",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Videocameras / PTZ cameras",
+   "group": "Videocameras",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Videocameras / USB cameras",
+   "group": "Videocameras",
+   "leaf": true,
+   "source": "odoo",
+   "schematic": true
+  },
+  {
+   "path": "Other / Generic",
+   "group": "Other",
+   "leaf": true,
+   "source": "avail",
+   "schematic": true,
+   "note": "Generic-устройства без подходящей категории в учётной системе (ноутбук, Room PC, мышь)"
+  }
+ ],
+ "deviceTypeDefaults": {
+  "hdbaset-extender": "AV distribution / Extenders",
+  "kvm-extender": "AV distribution / Extenders",
+  "hdmi-extender": "AV distribution / Extenders",
+  "usb-extender": "AV distribution / USB for Pro AV",
+  "fiber-transmitter": "AV distribution / Fiber Optics",
+  "av-over-ip": "AV distribution / AVoIP",
+  "avoip-encoder": "AV distribution / AVoIP",
+  "avoip-decoder": "AV distribution / AVoIP",
+  "switcher": "AV distribution / Switchers",
+  "presentation-system": "AV distribution / Switchers",
+  "router": "AV distribution / Matrix Switchers",
+  "da": "AV distribution / Distribution Amplifiers",
+  "hdmi-splitter": "AV distribution / Distribution Amplifiers",
+  "scaler": "AV distribution / Scalers",
+  "converter": "AV distribution / Interfaces",
+  "frame": null,
+  "adapter": "Integration Tools / Adapters",
+  "power-supply": "Integration Tools / PSU",
+  "24vdc-power-supply": "Integration Tools / PSU",
+  "audio-dsp": "Audio Products / DSP",
+  "audio-matrix": "Audio Products / DSP",
+  "amplifier": "Audio Products / Power Amplifiers",
+  "speaker": "Audio Products / Speakers",
+  "subwoofer": "Audio Products / Speakers",
+  "studio-monitor": "Audio Products / Speakers",
+  "audio-mixer": "Audio Products / Mixers",
+  "power-mixer": "Audio Products / Mixers",
+  "audio-interface": "Audio Products / Interfaces",
+  "stage-box": "Audio Products / Interfaces",
+  "audio-embedder": "Audio Products / Interfaces",
+  "di-box": "Audio Products / Interfaces",
+  "audio-over-cat-extender": "Audio Products / Interfaces",
+  "conference-system": "Audio Products / Discussion Systems",
+  "interpreter-desk": "Audio Products / Discussion Systems",
+  "assistive-listening": "Audio Products / Public Address",
+  "headphone-amplifier": "Audio Products / Headphones",
+  "wired-mic": "Microphones / Wired microphones",
+  "wireless-mic-receiver": "Microphones / Wireless microphones",
+  "antenna": "Microphones / Wireless microphones",
+  "antenna-distribution": "Microphones / Wireless microphones",
+  "iem-transmitter": "Microphones / Wireless microphones",
+  "charging-station": "Microphones / Accessories",
+  "control-processor": "Control Systems / Processors",
+  "gateway": "Control Systems / Processors",
+  "touch-screen": "Control Systems / Touch panels",
+  "touch-controller": "Control Systems / Touch panels",
+  "button-panel": "Control Systems / Button Panel",
+  "keypad": "Control Systems / Button Panel",
+  "control-expansion": null,
+  "monitor": "Displays / Standalone Displays",
+  "tv": "Displays / Standalone Displays",
+  "display": "Displays / Standalone Displays",
+  "led-cabinet": "Displays / LED",
+  "led-processor": "Displays / LED",
+  "digital-signage-player": "Displays / Mediaplayers",
+  "media-player": "Displays / Mediaplayers",
+  "projector": "Projection / Projectors",
+  "screen": "Projection / Screens",
+  "network-switch": "Networking / Switches",
+  "access-point": "Networking / Wireless",
+  "network-wifi": "Networking / Wireless",
+  "media-server": "Processing / Mediaservers",
+  "multiviewer": "Processing / Multiviewers",
+  "video-wall-controller": "Processing / Videowall Processors",
+  "streaming-encoder": "Streaming and Recording / Streaming AV",
+  "streaming-decoder": "Streaming and Recording / Streaming AV",
+  "recorder": "Streaming and Recording / Media processors",
+  "capture-card": "Streaming and Recording / Media processors",
+  "codec": "UC / Video conference systems",
+  "video-bar": "UC / Video conference systems",
+  "mtr-pc": "UC / Video conference systems",
+  "conferencing-bridge": "UC / Video conference systems",
+  "wireless-presentation": "UC / Collaboration System",
+  "audio-bar": "UC / Speakerphones",
+  "ptz-camera": "Videocameras / PTZ cameras",
+  "camera": null,
+  "ptz-controller": "Videocameras / Camera controls",
+  "lighting-console": "Lighting equipment / Consoles",
+  "moving-light": "Lighting equipment / Lighting fixtures",
+  "led-fixture": "Lighting equipment / Lighting fixtures",
+  "patch-panel": "Connectivity / Architectural",
+  "wall-plate": "Connectivity / Architectural",
+  "table-box": "Connectivity / Architectural",
+  "computer": "Other / Generic",
+  "mouse": "Other / Generic",
+  "keyboard": "Other / Generic",
+  "dock": "Other / Generic"
+ }
+}

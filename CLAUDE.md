@@ -46,19 +46,53 @@ PR всегда открываем в `master` нашего форка, **ник
 (AVAIL Device Block Standard). Источник истины — этот файл в репозитории;
 стандарт меняем PR-ом вместе с линтером.
 
+Справочники — тоже источник истины, меняются PR-ом:
+
+- `docs/avail/avail-taxonomy.json` — категории учётной системы (Odoo) + Other / Generic;
+  `category` шаблона = путь листовой категории, на схеме — только `schematic=true`;
+  `deviceTypeDefaults` — категория по умолчанию для типа устройства (`null` — без категории);
+- `docs/avail/avail-vendors.json` — вендоры портфеля и их синонимы; `manufacturer` =
+  каноническое `name`, всё вне портфеля — `Generic`.
+
 Соответствие проверяет линтер — уровень блока A / B / FIX, ошибки (E) и
 рекомендации (W):
 
 | Файл | Что это |
 |------|---------|
-| `tools/avail/avail_block_lint.py` | эталонная реализация (Python) |
-| `src/avail/blockLint.ts` | та же логика на TypeScript, чистая функция `lintBlock(template) → {level, errors, warnings}`; без зависимостей от браузера и Node — для фронтенда и API |
-| `src/avail/blockLintCli.ts` | CLI: `npm run avail:lint -- <файл.json> [--verbose]`, отчёт как у Python-версии |
+| `src/avail/blockLint.ts` | **единственная** реализация: чистая функция `lintBlock(template) → {level, errors, warnings}`; без зависимостей от браузера и Node — для фронтенда и API |
+| `src/avail/library.ts` | справочники: `findCategory`, `defaultCategoryFor`, `findVendor`, `normalizeManufacturer` |
+| `src/avail/blockLintCli.ts` | CLI: `npm run avail:lint -- <файл.json> [--verbose]` |
+| `tools/avail/avail_block_lint.py` | архив: Python-версия v0.2 (до справочников), не поддерживается |
 | `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
-| `tools/avail/fixtures/engineer-blocks.expected.json` | результат Python-версии на них (`python3 tools/avail/lint_to_json.py …`) |
 
-Правило меняется в обеих реализациях сразу. `src/__tests__/availBlockLint.test.ts`
-сверяет TS с Python по каждому блоку (снимок + живой запуск `python3`, если он есть).
+Тесты — `src/__tests__/availBlockLint.test.ts`.
+
+### Статусы шаблонов
+
+Таблица `avail_template_meta` (наша миграция `api-avail/migrations/9001_*.sql`; таблицы
+upstream не меняем): `template_id` → `status` (`verified` / `draft` / `raw` / `hidden`),
+`source`, `upstream_id`, `lint_level` (A / B / FIX на момент записи), `updated_by`,
+`updated_at`. Шаблон без строки — `raw`.
+
+| Статус | Что значит |
+|--------|------------|
+| `verified` | проверен AVAIL (уровень A), для проектов заказчику |
+| `draft` | инженер дорабатывает |
+| `raw` | сырьё (импорт), не проверено |
+| `hidden` | не показывается в библиотеке |
+
+API (`api-avail/src/routes.ts`): `GET /avail/templates/status[?status=…]`,
+`GET /avail/templates/:id/status` — без авторизации, как `GET /templates`;
+`PUT /avail/templates/:id/status` `{"status": …}` — модератор/админ или `ADMIN_TOKEN`,
+пересчитывает `lint_level`, пишет `updated_by`.
+
+Импорт сырья (`api-avail/src/importUpstream.ts`, CLI `npm run import:upstream`): тянет
+публичный `GET /templates` с api.easyschematic.live, приводит `manufacturer` к
+каноническому имени, ставит `category` по `deviceTypeDefaults`, считает `lint_level`,
+пишет со статусом `raw`. Один шаблон на пару производитель+модель (`modelNumber`, иначе
+`label`); `verified`/`draft` не трогает, `hidden` обновляет, оставляя скрытым; повторный
+запуск ничего не меняет. На сервере: `docker compose exec api npm run import:upstream`
+(`-- --dry-run` — только отчёт).
 
 ## API на нашем сервере (api-avail/)
 
@@ -72,7 +106,11 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/server.ts` | собирает Workers-style `env` из шимов и переменных окружения, вызывает `app.fetch` из `api/src/index.ts` |
 | `src/d1.ts` | шим D1 поверх better-sqlite3: `prepare/bind/first/all/run/raw`, `batch` (одна транзакция), `exec`; файл `DATA_DIR/easyschematic.sqlite`, WAL, foreign keys ON (как в D1) |
 | `src/r2.ts` | шим R2 поверх файлов: `get/put/delete/list/head` с http/custom-метаданными; `DATA_DIR/r2/objects/*` + `DATA_DIR/r2/meta/*.json` |
-| `src/migrate.ts` | при старте применяет `api/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
+| `src/migrate.ts` | при старте применяет `api/migrations/*.sql`, затем наши `api-avail/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
+| `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов: маршруты `/avail/templates/…/status` на upstream-приложении и работа с `avail_template_meta` |
+| `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
+| `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
+| `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
 | `src/seed.ts` | сид библиотеки из встроенных шаблонов (`src/deviceLibrary.ts`) через `templateToRow` из `api/src/db.ts`, без обращения к easyschematic.live |
 | `src/mail.ts` | почта отключена: запросы `fetch` к `api.resend.com` не уходят наружу, в лог пишутся только получатель и тема |
 
@@ -87,6 +125,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `api/src/index.ts` `magicLinkGate` | `DISABLE_MAGIC_LINK=1` → `/auth/login`, `/auth/verify` отвечают 403 |
 | `api/src/index.ts` `maxSchematicsPerUser()` | `MAX_SCHEMATICS_PER_USER` → лимит схем на пользователя (`0` = без лимита) |
 | `api/src/auth.ts` `Env.Bindings` | типы этих переменных |
+| `api/src/index.ts` `export { app }` | экземпляр Hono-приложения: `api-avail` регистрирует на нём свои маршруты `/avail/…` (за теми же CORS, сессией и заголовками) |
 | `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
 | `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |
 | `vite.config.ts` `navigateFallbackDenylist` | service worker не отдаёт SPA на навигации в `/api/` (иначе OAuth start/callback попадают в `index.html`) |
@@ -100,6 +139,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `PORT`, `HOST` | `8787`, `0.0.0.0` | где слушать |
 | `DATA_DIR` | `./data` | SQLite и файлы R2 — **это и есть всё, что бэкапить** |
 | `MIGRATIONS_DIR` | `../api/migrations` | в Docker `/app/migrations` |
+| `AVAIL_MIGRATIONS_DIR` | `api-avail/migrations` | наши миграции (9xxx); в Docker `/app/migrations-avail` |
 | `SEED_LIBRARY` | `if-empty` | `if-empty` / `always` (upsert встроенных шаблонов) / `off` |
 | `ADMIN_TOKEN` | — (обязателен, ≥16 символов) | Bearer-токен админа; пустой токен upstream пропустил бы как админа, поэтому без него сервер не стартует |
 | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | — | Google OAuth |
@@ -122,6 +162,8 @@ cd api-avail && npm ci
 ADMIN_TOKEN=local-dev-admin-token npm run dev      # tsx watch, http://localhost:8787
 curl localhost:8787/health
 curl localhost:8787/templates/summary | head -c 300
+curl localhost:8787/avail/templates/status | head -c 300
+npm run import:upstream -- --dry-run   # отчёт импорта без записи (DATA_DIR как у сервера)
 
 npm test            # шимы D1/R2, почта, smoke (сервер, миграции, шаблоны, схемы)
 npm run typecheck   # tsc по api-avail и api/src
@@ -169,7 +211,7 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 | Фаза | Содержание |
 |------|------------|
 | 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
-| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков (`tools/avail/avail_block_lint.py` + `src/avail/blockLint.ts`, сделано) |
+| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts` (сделано); справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live (сделано) |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |
 | 4 | **Интеграция Claude** — помощь в проектировании через Claude |

@@ -3098,6 +3098,10 @@ app.get("/health", async (c) => {
 
 import { handleEmail } from "./email";
 
+// Self-hosting (api-avail): the app instance, so a host can register its own routes
+// behind the same CORS, session and security middleware. Unused by the Worker.
+export { app };
+
 export default {
   fetch: app.fetch,
   async email(message: ForwardableEmailMessage, env: Env["Bindings"], _ctx: ExecutionContext) {
