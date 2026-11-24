@@ -109,25 +109,25 @@ describe("lintBlock: card, physics and port rules (v0.2)", () => {
 
   it("warnings only → B, any error → FIX", () => {
     expect(lintBlock({ ...clean(), color: "#f00" }).level).toBe("B");
-    expect(lintBlock({ ...clean(), modelNumber: "" })).toMatchObject({ level: "FIX", errors: ["нет modelNumber"] });
+    expect(lintBlock({ ...clean(), modelNumber: "" })).toMatchObject({ level: "FIX", errors: ["no modelNumber"] });
   });
 
   it("missing power port is an error unless PoE, slots, speaker or antenna", () => {
     const noPower = { ...clean(), ports: clean().ports.filter((p) => p.signalType !== "power") };
-    expect(lintBlock(noPower).errors).toContain("нет порта питания");
-    expect(lintBlock({ ...noPower, poeDrawW: 10 }).errors).not.toContain("нет порта питания");
-    expect(lintBlock({ ...noPower, deviceType: "antenna" }).errors).not.toContain("нет порта питания");
+    expect(lintBlock(noPower).errors).toContain("no power port");
+    expect(lintBlock({ ...noPower, poeDrawW: 10 }).errors).not.toContain("no power port");
+    expect(lintBlock({ ...noPower, deviceType: "antenna" }).errors).not.toContain("no power port");
   });
 
   it("section order and vocabulary", () => {
     const [hdmi, dtp, rs232, power] = clean().ports;
-    expect(lintBlock({ ...clean(), ports: [power, hdmi, dtp, rs232] }).warnings).toContain("порядок секций не по стандарту");
-    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain("«HDMI In»: секция «Rear» вне словаря");
+    expect(lintBlock({ ...clean(), ports: [power, hdmi, dtp, rs232] }).warnings).toContain("sections are not in the standard order");
+    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain('"HDMI In": section "Rear" is not in the vocabulary');
   });
 
   it("keeps the v0.2 Python semantics: [] and 0 are missing, Unicode \\b, code-point length", () => {
-    expect(lintBlock({ ...clean(), searchTerms: [] }).warnings).toEqual(["нет searchTerms"]);
-    expect(lintBlock({ ...clean(), heightMm: 0 }).warnings).toEqual(["нет heightMm"]);
+    expect(lintBlock({ ...clean(), searchTerms: [] }).warnings).toEqual(["no searchTerms"]);
+    expect(lintBlock({ ...clean(), heightMm: 0 }).warnings).toEqual(["no heightMm"]);
     const [hdmi, ...rest] = clean().ports;
     expect(lintBlock({ ...clean(), ports: [hdmi, { ...hdmi, label: "кdtp" }, ...rest] }).level).toBe("A");
     expect(lintBlock({ ...clean(), ports: [hdmi, { ...hdmi, label: "😀".repeat(15) }, ...rest] }).level).toBe("A");
@@ -146,23 +146,23 @@ describe("lintBlock: category (avail-taxonomy.json)", () => {
   });
 
   it("missing category is an error", () => {
-    expect(lintBlock({ ...clean(), category: "" })).toEqual({ level: "FIX", errors: ["нет category"], warnings: [] });
+    expect(lintBlock({ ...clean(), category: "" })).toEqual({ level: "FIX", errors: ["no category"], warnings: [] });
   });
 
   it("unknown path or a group (non-leaf) category is an error", () => {
     expect(lintBlock({ ...clean(), category: "KVM / Extenders" })).toMatchObject({
       level: "FIX",
-      errors: ["category «KVM / Extenders» — не листовая категория avail-taxonomy.json"],
+      errors: ['category "KVM / Extenders" is not a leaf category of avail-taxonomy.json'],
     });
     expect(lintBlock({ ...clean(), category: "AV distribution" }).errors).toEqual([
-      "category «AV distribution» — не листовая категория avail-taxonomy.json",
+      'category "AV distribution" is not a leaf category of avail-taxonomy.json',
     ]);
   });
 
   it("schematic=false category is an error for a block", () => {
     expect(lintBlock({ ...clean(), category: "Connectivity / Bulk Cables" })).toMatchObject({
       level: "FIX",
-      errors: ["category «Connectivity / Bulk Cables» не для блоков на схеме (schematic=false)"],
+      errors: ['category "Connectivity / Bulk Cables" is not for schematic blocks (schematic=false)'],
     });
   });
 });
@@ -170,13 +170,13 @@ describe("lintBlock: category (avail-taxonomy.json)", () => {
 describe("lintBlock: manufacturer (avail-vendors.json)", () => {
   it("alias instead of the canonical name", () => {
     const b = { ...clean(), manufacturer: "Biamp Systems", label: "Biamp Systems X", model: "Biamp Systems X" };
-    expect(lintBlock(b).warnings).toEqual(["manufacturer «Biamp Systems» — синоним, нужно «Biamp»"]);
-    expect(lintBlock({ ...clean(), manufacturer: "EXTRON" }).warnings).toEqual(["manufacturer «EXTRON» — синоним, нужно «Extron»"]);
+    expect(lintBlock(b).warnings).toEqual(['manufacturer "Biamp Systems" is an alias, use "Biamp"']);
+    expect(lintBlock({ ...clean(), manufacturer: "EXTRON" }).warnings).toEqual(['manufacturer "EXTRON" is an alias, use "Extron"']);
   });
 
   it("vendor outside the portfolio", () => {
     const b = { ...clean(), manufacturer: "ASUS", label: "ASUS NUC", model: "ASUS NUC" };
-    expect(lintBlock(b).warnings).toEqual(["manufacturer «ASUS» не из avail-vendors.json (вне портфеля — Generic)"]);
+    expect(lintBlock(b).warnings).toEqual(['manufacturer "ASUS" is not in avail-vendors.json (outside the portfolio use Generic)']);
   });
 });
 
@@ -188,19 +188,19 @@ describe("lintBlock: Generic", () => {
   it("non-Generic block without physics is not", () => {
     const { manufacturer: _m, ...g } = generic();
     expect(lintBlock({ ...g, manufacturer: "Extron", label: "Extron PC", model: "Extron PC" }).warnings).toEqual(
-      expect.arrayContaining(["нет heightMm", "нет powerDrawW/voltage (или poeDrawW)", "нет referenceUrl"]),
+      expect.arrayContaining(["no heightMm", "no powerDrawW/voltage (or poeDrawW)", "no referenceUrl"]),
     );
   });
 
-  it("label must be «Generic <класс>»", () => {
+  it("label must be \"Generic <class>\"", () => {
     const b = { ...generic(), label: "Generic", model: "Generic" };
-    expect(lintBlock(b).warnings).toEqual(["Generic: label должен быть «Generic <класс>»"]);
+    expect(lintBlock(b).warnings).toEqual(['Generic: label must be "Generic <class>"']);
   });
 
-  it("modelNumber must be GEN-<КЛАСС> of the label", () => {
-    expect(lintBlock({ ...generic(), modelNumber: "GEN-PC" }).warnings).toEqual(["Generic: modelNumber должен быть «GEN-ROOM-PC»"]);
-    expect(lintBlock({ ...generic(), modelNumber: "NUC13" }).warnings).toEqual(["Generic: modelNumber должен быть «GEN-ROOM-PC»"]);
-    expect(lintBlock({ ...generic(), modelNumber: "" }).errors).toEqual(["нет modelNumber"]);
+  it("modelNumber must be GEN-<CLASS> of the label", () => {
+    expect(lintBlock({ ...generic(), modelNumber: "GEN-PC" }).warnings).toEqual(['Generic: modelNumber must be "GEN-ROOM-PC"']);
+    expect(lintBlock({ ...generic(), modelNumber: "NUC13" }).warnings).toEqual(['Generic: modelNumber must be "GEN-ROOM-PC"']);
+    expect(lintBlock({ ...generic(), modelNumber: "" }).errors).toEqual(["no modelNumber"]);
   });
 
   it("genericModelNumber", () => {
@@ -219,19 +219,19 @@ describe("engineer blocks (tools/avail/fixtures/engineer-blocks.json)", () => {
   });
 
   it("levels: all FIX — their categories are EasySchematic's, not the taxonomy's", () => {
-    expect(formatBlockReport(rows).trimEnd().split("\n").at(-1)).toBe("Итого: {'A': 0, 'B': 0, 'FIX': 22}");
+    expect(formatBlockReport(rows).trimEnd().split("\n").at(-1)).toBe("Total: A 0 / B 0 / FIX 22");
   });
 
   it("every block gets a category error", () => {
-    for (const r of rows) expect(r.errors.some((e) => e.startsWith("category «")), r.label).toBe(true);
+    for (const r of rows) expect(r.errors.some((e) => e.startsWith('category "')), r.label).toBe(true);
   });
 
   it("vendors: Netgear alias, ASUS and Absen outside the portfolio", () => {
     const msgs = rows.flatMap((r) => r.warnings).filter((w) => w.startsWith("manufacturer"));
     expect(msgs.sort()).toEqual([
-      "manufacturer «ASUS» не из avail-vendors.json (вне портфеля — Generic)",
-      "manufacturer «Absen» не из avail-vendors.json (вне портфеля — Generic)",
-      "manufacturer «Netgear» — синоним, нужно «NETGEAR»",
+      'manufacturer "ASUS" is not in avail-vendors.json (outside the portfolio use Generic)',
+      'manufacturer "Absen" is not in avail-vendors.json (outside the portfolio use Generic)',
+      'manufacturer "Netgear" is an alias, use "NETGEAR"',
     ]);
   });
 });

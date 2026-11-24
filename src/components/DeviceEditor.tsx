@@ -37,6 +37,7 @@ import { deriveThermalBtuh } from "../thermal";
 import { HEADER_COLOR_SWATCH_FALLBACK, headerColorAfterRevert, normalizeHeaderColor, resolveDeviceHeaderColor, type HeaderColorCapture } from "../deviceHeaderColor";
 import { buildDeviceTemplate, buildTemplatePreset, type PortDraft } from "../deviceTemplateBuild";
 import { installedSlotsToDefinitions, slotOwnedPortIds } from "../slotDefinitions";
+import { AvailTemplateEditBar } from "../avail/LibraryUi";
 import { carriesPowerCapacity } from "../deviceTypeCategories";
 import { editorPortsMatch, visibleSaveActions, SAVE_ACTION_LABELS, SAVE_ACTION_TITLES, type SaveActionId } from "../deviceEditorActions";
 import { visiblePortRowControls, PORT_ROW_CONTROL_TITLES, type PortRowControlId } from "../portRowControls";
@@ -2057,6 +2058,9 @@ export default function DeviceEditor() {
             </div>
           </details>
         </div>
+
+        {/* AVAIL: library template edit session (live linter, Save to library) */}
+        <AvailTemplateEditBar nodeId={deviceSessionId} build={buildDeviceData as () => Record<string, unknown> | null} onSaved={close} />
 
         {/* Footer */}
         <div className="px-4 py-3 border-t border-[var(--color-border)] flex items-center gap-2">

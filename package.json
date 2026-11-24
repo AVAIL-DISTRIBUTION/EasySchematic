@@ -46,7 +46,8 @@
     "fixture:check": "npx tsx src/testSchematic/run.ts --check",
     "test:e2e": "playwright test",
     "test:e2e:install": "playwright install chromium",
-    "avail:lint": "npx tsx src/avail/blockLintCli.ts"
+    "avail:lint": "npx tsx src/avail/blockLintCli.ts",
+    "avail:check-library": "npx tsx src/avail/checkLibraryCli.ts"
   },
   "overrides": {
     "serialize-javascript": "^7.0.5"

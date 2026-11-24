@@ -24,6 +24,7 @@ function block(over: Record<string, unknown> = {}) {
     manufacturer: "Extron",
     deviceType: "hdbaset-extender",
     category: "AV distribution / Extenders",
+    auxiliaryData: [{ text: "{{deviceType}}", position: "header" }],
     ports: [port("1", { section: "Video Inputs" }), port("2", { label: "Power", signalType: "power", section: "Power", connectorType: "barrel" })],
     ...over,
   };
@@ -37,6 +38,27 @@ describe("normalizeBlock: card", () => {
     const r = normalizeBlock(b);
     expect(r.changes).toEqual([]);
     expect(r.template).toEqual(b);
+  });
+
+  it("header → the single row {{deviceType}}; other rows are replaced", () => {
+    for (const aux of [undefined, [], [{ text: "{{modelNumber}}" }], [{ text: "{{deviceType}}" }, { text: "{{modelNumber}}", position: "footer" }]]) {
+      const r = normalizeBlock(block({ auxiliaryData: aux }));
+      expect(r.template.auxiliaryData, JSON.stringify(aux)).toEqual([{ text: "{{deviceType}}", position: "header" }]);
+      expect(field(r.changes, "auxiliaryData")).toHaveLength(1);
+      expect(lintBlock(r.template).warnings).not.toContain("header is not {{deviceType}}");
+    }
+    // A footer-positioned {{deviceType}} row passes the linter, so it is left as it is.
+    expect(field(normalizeBlock(block({ auxiliaryData: [{ text: "{{deviceType}}" }] })).changes, "auxiliaryData")).toEqual([]);
+  });
+
+  it("color is removed; an empty color goes silently", () => {
+    const r = normalizeBlock(block({ color: "#7c3aed" }));
+    expect("color" in r.template).toBe(false);
+    expect(field(r.changes, "color")).toEqual([expect.objectContaining({ from: "#7c3aed" })]);
+    expect(lintBlock(r.template).warnings).not.toContain("color is set");
+    const empty = normalizeBlock(block({ color: "" }));
+    expect("color" in empty.template).toBe(false);
+    expect(field(empty.changes, "color")).toEqual([]);
   });
 
   it("does not modify its input", () => {

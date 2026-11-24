@@ -77,7 +77,7 @@ describe("normalizeLibrary", () => {
     const r = normalizeLibrary(api.db.sqlite);
     expect(r).toMatchObject({ processed: 1, improved: 0, sameLevelNotWritten: 1, transitions: { "FIX→FIX": 1 } });
     expect(row("s")).toEqual(before);
-    expect(r.topReasons).toContainEqual({ reason: "E нет connectorType", count: 1 });
+    expect(r.topReasons).toContainEqual({ reason: "E no connectorType", count: 1 });
   });
 
   it("leaves verified and hidden templates and other vendors alone", () => {
@@ -112,16 +112,16 @@ describe("normalizeLibrary", () => {
   it("report text", () => {
     insert(community("a"));
     const text = formatNormalizeReport(normalizeLibrary(api.db.sqlite, { dryRun: true }));
-    expect(text).toContain("пробный запуск");
-    expect(text).toContain("Переходы: FIX→B 1");
+    expect(text).toContain("dry run, nothing written");
+    expect(text).toContain("Transitions: FIX→B 1");
     expect(text).toMatch(/WyreStorm +1 +1 +0 +0/);
-    expect(text).toContain("Топ-10 оставшихся причин:");
+    expect(text).toContain("Top 10 remaining reasons:");
   });
 
   it("reasonKey masks ports and values", () => {
-    expect(reasonKey("E", "«HDMI In»: нет connectorType")).toBe("E нет connectorType");
-    expect(reasonKey("E", "«X»: секция «Rear» вне словаря")).toBe("E секция «…» вне словаря");
-    expect(reasonKey("W", "label не начинается с производителя (Extron)")).toBe("W label не начинается с производителя (…)");
-    expect(reasonKey("W", "нет powerDrawW/voltage (или poeDrawW)")).toBe("W нет powerDrawW/voltage (или poeDrawW)");
+    expect(reasonKey("E", '"HDMI In": no connectorType')).toBe("E no connectorType");
+    expect(reasonKey("E", '"X": section "Rear" is not in the vocabulary')).toBe('E section "…" is not in the vocabulary');
+    expect(reasonKey("W", "label does not start with the manufacturer (Extron)")).toBe("W label does not start with the manufacturer (…)");
+    expect(reasonKey("W", "no powerDrawW/voltage (or poeDrawW)")).toBe("W no powerDrawW/voltage (or poeDrawW)");
   });
 });

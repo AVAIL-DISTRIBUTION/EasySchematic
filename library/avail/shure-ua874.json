@@ -1,0 +1,52 @@
+{
+  "id": "83f9a762-b585-47cb-bad7-4dc19e8ca015",
+  "label": "Shure UA874",
+  "shortName": "UA874",
+  "manufacturer": "Shure",
+  "modelNumber": "UA874",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-US/products/accessories/ua874",
+  "searchTerms": [
+    "ua874",
+    "ua874us",
+    "ua874e",
+    "ua874wb",
+    "active antenna",
+    "directional antenna",
+    "shure"
+  ],
+  "heightMm": 316,
+  "widthMm": 359,
+  "depthMm": 36,
+  "weightKg": 0.317,
+  "voltage": "10-15V DC",
+  "ports": [
+    {
+      "id": "p1795169071084-52-0",
+      "label": "RF Out",
+      "signalType": "rf",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "RF",
+      "gender": "female",
+      "notes": "BNC female, 50 ohm; 10-15 V DC bias (75 mA) from the receiver over the same coax"
+    },
+    {
+      "id": "p1795169071084-52-1",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "connectorType": "wireless",
+      "direction": "input",
+      "inheritsSignal": false,
+      "section": "RF",
+      "notes": "Wireless link from transmitters"
+    }
+  ]
+}

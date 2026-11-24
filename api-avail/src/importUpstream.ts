@@ -282,17 +282,17 @@ export function formatImportReport(r: ImportReport, origin: string): string {
   const oursTotal = ours.reduce((n, [, c]) => n + c, 0);
   const width = Math.max(...ours.map(([name]) => name.length));
   return [
-    `Импорт шаблонов: ${origin}${r.dryRun ? " (пробный запуск, в базу ничего не записано)" : ""}`,
-    `Получено: ${r.received} (некорректных ${r.invalid}, дублей производитель+модель ${r.duplicates})`,
-    `Импортировано: ${r.imported} — новых ${r.inserted}, обновлено ${r.updated}, без изменений ${r.unchanged}`,
-    `Не тронуты (verified/draft): ${r.skippedProtected}; оставлены скрытыми (hidden): ${r.keptHidden}`,
+    `Template import: ${origin}${r.dryRun ? " (dry run, nothing written)" : ""}`,
+    `Received: ${r.received} (invalid ${r.invalid}, manufacturer + model duplicates ${r.duplicates})`,
+    `Imported: ${r.imported}; new ${r.inserted}, updated ${r.updated}, unchanged ${r.unchanged}`,
+    `Not touched (verified/draft): ${r.skippedProtected}; kept hidden: ${r.keptHidden}`,
     ``,
-    `Вендоры AVAIL: ${oursTotal}`,
+    `AVAIL vendors: ${oursTotal}`,
     ...ours.map(([name, n]) => `  ${name.padEnd(width)}  ${n}`),
-    `Прочие вендоры: ${r.otherVendors.templates} (производителей: ${r.otherVendors.manufacturers})`,
-    `Без производителя: ${r.noManufacturer}`,
-    `Без категории: ${r.noCategory}`,
+    `Other vendors: ${r.otherVendors.templates} (manufacturers: ${r.otherVendors.manufacturers})`,
+    `No manufacturer: ${r.noManufacturer}`,
+    `No category: ${r.noCategory}`,
     ``,
-    `Уровни по стандарту: A ${r.levels.A} / B ${r.levels.B} / FIX ${r.levels.FIX}`,
+    `Standard levels: A ${r.levels.A} / B ${r.levels.B} / FIX ${r.levels.FIX}`,
   ].join("\n") + "\n";
 }

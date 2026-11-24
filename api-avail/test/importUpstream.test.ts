@@ -202,13 +202,13 @@ describe("importTemplates", () => {
     expect(r.levels.A + r.levels.B + r.levels.FIX).toBe(6);
 
     const text = formatImportReport(r, "https://api.easyschematic.live/templates");
-    expect(text).toContain("Импортировано: 6 — новых 6, обновлено 0, без изменений 0");
-    expect(text).toContain("Вендоры AVAIL: 2");
+    expect(text).toContain("Imported: 6; new 6, updated 0, unchanged 0");
+    expect(text).toContain("AVAIL vendors: 2");
     expect(text).toMatch(/ {2}WyreStorm +1\n/);
-    expect(text).toContain("Прочие вендоры: 3 (производителей: 2)");
-    expect(text).toContain("Без производителя: 1");
-    expect(text).toContain("Без категории: 2");
-    expect(text).toMatch(/Уровни по стандарту: A \d+ \/ B \d+ \/ FIX \d+/);
+    expect(text).toContain("Other vendors: 3 (manufacturers: 2)");
+    expect(text).toContain("No manufacturer: 1");
+    expect(text).toContain("No category: 2");
+    expect(text).toMatch(/Standard levels: A \d+ \/ B \d+ \/ FIX \d+/);
   });
 });
 

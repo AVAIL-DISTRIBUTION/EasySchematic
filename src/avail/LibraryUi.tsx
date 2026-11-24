@@ -1,16 +1,28 @@
 /**
- * AVAIL library UI: status badges, the "show unverified" switch, taxonomy grouping,
- * the moderator review card and the report notice. Each component renders nothing
- * outside AVAIL mode (see libraryMode.ts), so the upstream files they are mounted in
- * behave as upstream against upstream's API.
+ * AVAIL library UI: status badges, the "Show unverified" switch, taxonomy grouping,
+ * the moderator review card, template editing and the report notice. Each component
+ * renders nothing outside AVAIL mode (see libraryMode.ts), so the upstream files they
+ * are mounted in behave as upstream against upstream's API.
+ *
+ * All text is English and kept as whole strings (no sentences glued from pieces), so it
+ * can move to a translation table later.
  */
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { lintBlock } from "./blockLint";
-import { changeTemplateStatus, type StatusChangeError } from "./api";
+import { lintBlock, type BlockLintResult } from "./blockLint";
+import {
+  changeTemplateStatus,
+  fetchTemplateStatus,
+  saveLibraryTemplate,
+  type StatusChangeError,
+  type TemplateStatusInfo,
+} from "./api";
 import { blockStatus, notifyLibraryChanged, setShowUnverified, statusBadge, statusOfTemplate, type TemplateStatus } from "./libraryMode";
-import { groupByTaxonomy, REVIEW_CHECKLIST, unverifiedBlocks } from "./libraryView";
-import { useAvailState } from "./useAvail";
+import { deviceCardRows, groupByTaxonomy, portsBySection, REVIEW_CHECKLIST, unverifiedBlocks } from "./libraryView";
+import { deviceDataToTemplate, editSessionFor, endEditSession } from "./templateEdit";
+import { useAvailState, useStartTemplateEdit } from "./useAvail";
+import { useSchematicStore } from "../store";
+import { slotOwnedPortIds } from "../slotDefinitions";
 import type { DeviceTemplate } from "../types";
 import "./avail.css";
 
@@ -41,45 +53,64 @@ export function AvailBlockBadge({ templateId }: { templateId?: string }) {
   );
 }
 
-/** Library list item extras: status badge and, for moderators, the review button. */
+const smallBtn =
+  "text-[8px] rounded px-1 py-px font-normal shrink-0 text-blue-600 hover:bg-blue-50 opacity-0 group-hover:opacity-100 cursor-pointer";
+
+/** Library list item extras: status badge and, for moderators, Review and Edit. */
 export function AvailTemplateExtras({ template }: { template: DeviceTemplate }) {
   const { active, moderator } = useAvailState();
   const [reviewing, setReviewing] = useState(false);
+  const edit = useStartTemplateEdit();
   if (!active) return null;
   const status = statusOfTemplate(template);
   if (!statusBadge(status) && !(moderator && template.id)) return null;
+  const stop = (e: React.SyntheticEvent) => e.stopPropagation();
   return (
     <span className="flex items-center gap-1">
       <AvailStatusBadge status={status} />
       {moderator && template.id && (
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setReviewing(true);
-          }}
-          onMouseDown={(e) => e.stopPropagation()}
-          className="text-[8px] rounded px-1 py-px font-normal shrink-0 text-blue-600 hover:bg-blue-50 opacity-0 group-hover:opacity-100 cursor-pointer"
-          title="Ревью шаблона"
-        >
-          ревью
-        </button>
+        <>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setReviewing(true);
+            }}
+            onMouseDown={stop}
+            className={smallBtn}
+            title="Review this template"
+          >
+            Review
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              void edit.start(template.id!);
+            }}
+            onMouseDown={stop}
+            disabled={edit.busy}
+            className={smallBtn}
+            title={edit.error ?? "Edit this template in the Device Editor"}
+          >
+            Edit
+          </button>
+        </>
       )}
       {reviewing && createPortal(<AvailReviewDialog template={template} onClose={() => setReviewing(false)} />, document.body)}
     </span>
   );
 }
 
-/** «Показать непроверенные» in the library panel; remembered in the browser. */
+/** "Show unverified" in the library panel; remembered in the browser. */
 export function AvailLibraryToggle() {
   const { active, showUnverified, moderator } = useAvailState();
   if (!active) return null;
   return (
     <label
       className="flex items-center gap-1.5 px-1 text-[10px] text-[var(--color-text-muted)] cursor-pointer select-none"
-      title={moderator ? "Добавить в библиотеку шаблоны raw и hidden" : "Добавить в библиотеку шаблоны raw (не проверены AVAIL)"}
+      title={moderator ? "Also list raw and hidden templates" : "Also list raw templates (not checked by AVAIL)"}
     >
       <input type="checkbox" checked={showUnverified} onChange={(e) => setShowUnverified(e.target.checked)} className="cursor-pointer" />
-      Показать непроверенные
+      Show unverified
     </label>
   );
 }
@@ -117,15 +148,118 @@ export function AvailCategoryTree<T>({
   );
 }
 
-/** Moderator's review card: linter result, the standard's checklist, status buttons. */
+const LEVEL_CLASS: Record<string, string> = {
+  A: "bg-green-100 text-green-800",
+  B: "bg-amber-100 text-amber-800",
+  FIX: "bg-red-100 text-red-700",
+};
+
+/** Linter verdict: level, E/W counts and messages. Used by the review card and the editor. */
+export function AvailLintResult({ lint, compact = false }: { lint: BlockLintResult; compact?: boolean }) {
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-1">
+        <span className="font-semibold text-[var(--color-text-heading)]">Linter</span>
+        <span className={`rounded px-1.5 py-px font-semibold ${LEVEL_CLASS[lint.level]}`}>{lint.level}</span>
+        <span className="text-[var(--color-text-muted)]">
+          E {lint.errors.length} · W {lint.warnings.length}
+        </span>
+      </div>
+      {lint.errors.length > 0 && (
+        <ul className={`list-disc pl-5 text-red-700 ${compact ? "max-h-24 overflow-y-auto" : ""}`}>
+          {lint.errors.map((m, i) => <li key={`e${i}`}>{m}</li>)}
+        </ul>
+      )}
+      {lint.warnings.length > 0 && (
+        <ul className={`list-disc pl-5 text-amber-800 ${compact ? "max-h-24 overflow-y-auto" : ""}`}>
+          {lint.warnings.map((m, i) => <li key={`w${i}`}>{m}</li>)}
+        </ul>
+      )}
+      {lint.level === "A" && <div className="text-green-800">All formal rules of the standard are met.</div>}
+    </div>
+  );
+}
+
+function DeviceCard({ template }: { template: DeviceTemplate }) {
+  return (
+    <table className="w-full">
+      <tbody>
+        {deviceCardRows(template).map((r) => (
+          <tr key={r.label}>
+            <td className="pr-3 py-px text-[var(--color-text-muted)] whitespace-nowrap align-top">{r.label}</td>
+            <td className="py-px break-all">
+              {r.href ? (
+                <a href={r.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  {r.value}
+                </a>
+              ) : (
+                r.value
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+function PortsTable({ template }: { template: DeviceTemplate }) {
+  const groups = useMemo(() => portsBySection(template.ports ?? []), [template]);
+  if (groups.length === 0) return <div className="text-[var(--color-text-muted)]">No ports.</div>;
+  const th = "text-left font-normal text-[var(--color-text-muted)] pr-2 py-px";
+  return (
+    <table className="w-full text-[11px]">
+      <thead>
+        <tr>
+          <th className={th}>Label</th>
+          <th className={th}>Direction</th>
+          <th className={th}>Signal</th>
+          <th className={th}>Connector</th>
+          <th className={th}>Notes</th>
+        </tr>
+      </thead>
+      {groups.map((g) => (
+        <tbody key={g.section}>
+          <tr>
+            <td colSpan={5} className="pt-2 pb-px font-semibold text-[var(--color-text-heading)]">
+              {g.section}
+            </td>
+          </tr>
+          {g.ports.map((p, i) => (
+            <tr key={i} className="align-top border-t border-[var(--color-border)]">
+              <td className="pr-2 py-px">{p.label}</td>
+              <td className="pr-2 py-px">{p.direction}</td>
+              <td className="pr-2 py-px">{p.signal}</td>
+              <td className={`pr-2 py-px ${p.connector ? "" : "text-red-700"}`}>{p.connector || "—"}</td>
+              <td className="py-px text-[var(--color-text-muted)]">{p.notes}</td>
+            </tr>
+          ))}
+        </tbody>
+      ))}
+    </table>
+  );
+}
+
+/** Moderator's review card: device card, ports by section, linter, checklist, status buttons. */
 export function AvailReviewDialog({ template, onClose }: { template: DeviceTemplate; onClose: () => void }) {
   const lint = useMemo(() => lintBlock(template), [template]);
   const status = statusOfTemplate(template);
   const [checked, setChecked] = useState<boolean[]>(() => REVIEW_CHECKLIST.map(() => false));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<StatusChangeError | null>(null);
+  const [info, setInfo] = useState<TemplateStatusInfo | null>(null);
+  const edit = useStartTemplateEdit();
   const allChecked = checked.every(Boolean);
   const canVerify = lint.level === "A" && allChecked;
+
+  useEffect(() => {
+    if (!template.id) return;
+    let live = true;
+    void fetchTemplateStatus(template.id).then((s) => live && setInfo(s));
+    return () => {
+      live = false;
+    };
+  }, [template.id]);
 
   const apply = async (next: TemplateStatus) => {
     if (!template.id) return;
@@ -142,85 +276,173 @@ export function AvailReviewDialog({ template, onClose }: { template: DeviceTempl
     }
   };
 
-  const levelClass = lint.level === "A" ? "bg-green-100 text-green-800" : lint.level === "B" ? "bg-amber-100 text-amber-800" : "bg-red-100 text-red-700";
   const btn = "px-3 py-1.5 rounded text-xs border cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed";
+  const hint = lint.level !== "A" ? "Only a level A template can be verified." : !allChecked ? "Tick every checklist item to verify." : "";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30" onClick={onClose} onMouseDown={(e) => e.stopPropagation()}>
       <div
-        className="bg-white border border-[var(--color-border)] rounded-lg shadow-2xl w-[560px] max-h-[85vh] flex flex-col cursor-default"
+        className="bg-white border border-[var(--color-border)] rounded-lg shadow-2xl w-[1040px] max-w-[95vw] max-h-[90vh] flex flex-col cursor-default"
         onClick={(e) => e.stopPropagation()}
         draggable={false}
         onDragStart={(e) => e.preventDefault()}
       >
         <div className="px-4 py-3 border-b border-[var(--color-border)] flex items-center gap-2">
-          <h2 className="text-sm font-semibold text-[var(--color-text-heading)] truncate">{template.label}</h2>
+          <h2 className="text-sm font-semibold text-[var(--color-text-heading)] truncate">Review: {template.label}</h2>
           <AvailStatusBadge status={status} />
           <div className="flex-1" />
-          <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-[var(--color-text-heading)] text-lg leading-none cursor-pointer" title="Закрыть">
+          <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-[var(--color-text-heading)] text-lg leading-none cursor-pointer" title="Close">
             &times;
           </button>
         </div>
 
-        <div className="px-4 py-3 overflow-y-auto text-xs flex flex-col gap-3">
-          <div className="text-[var(--color-text-muted)]">
-            {[template.manufacturer, template.modelNumber, template.category ?? "без категории"].filter(Boolean).join(" · ")}
+        {info?.statusReason && (
+          <div className="px-4 py-2 border-b border-amber-200 bg-amber-50 text-xs text-amber-900">
+            <span className="font-semibold">Status changed automatically:</span> {info.statusReason}
+            {info.statusChangedAt ? ` (${info.statusChangedAt} UTC)` : ""}
+          </div>
+        )}
+
+        <div className="flex-1 min-h-0 overflow-y-auto text-xs grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-4 px-4 py-3">
+          <div className="flex flex-col gap-3 min-w-0">
+            <section>
+              <div className="font-semibold text-[var(--color-text-heading)] mb-1">Device</div>
+              <DeviceCard template={template} />
+            </section>
+            <section>
+              <div className="font-semibold text-[var(--color-text-heading)] mb-1">Ports ({template.ports?.length ?? 0})</div>
+              <PortsTable template={template} />
+            </section>
           </div>
 
-          <section>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="font-semibold text-[var(--color-text-heading)]">Линтер</span>
-              <span className={`rounded px-1.5 py-px font-semibold ${levelClass}`}>{lint.level}</span>
-              <span className="text-[var(--color-text-muted)]">ошибок {lint.errors.length}, предупреждений {lint.warnings.length}</span>
-            </div>
-            {lint.errors.length > 0 && (
-              <ul className="list-disc pl-5 text-red-700">{lint.errors.map((m, i) => <li key={`e${i}`}>{m}</li>)}</ul>
-            )}
-            {lint.warnings.length > 0 && (
-              <ul className="list-disc pl-5 text-amber-800">{lint.warnings.map((m, i) => <li key={`w${i}`}>{m}</li>)}</ul>
-            )}
-            {lint.level === "A" && <div className="text-green-800">Формальные правила стандарта выполнены.</div>}
-          </section>
-
-          <section>
-            <div className="font-semibold text-[var(--color-text-heading)] mb-1">Чек-лист инженера (стандарт, п. 8)</div>
-            {REVIEW_CHECKLIST.map((item, i) => (
-              <label key={item} className="flex items-start gap-2 py-0.5 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={checked[i]}
-                  onChange={(e) => setChecked((c) => c.map((v, j) => (j === i ? e.target.checked : v)))}
-                  className="mt-0.5"
-                />
-                <span>{item}</span>
-              </label>
-            ))}
-          </section>
-
-          {error && (
-            <div className="border border-red-200 bg-red-50 rounded p-2 text-red-700">
-              <div className="font-semibold">{error.message}</div>
-              {[...(error.errors ?? []).map((m) => `E ${m}`), ...(error.warnings ?? []).map((m) => `W ${m}`)].map((m, i) => (
-                <div key={i}>{m}</div>
+          <div className="flex flex-col gap-3 min-w-0">
+            <section>
+              <AvailLintResult lint={lint} />
+            </section>
+            <section>
+              <div className="font-semibold text-[var(--color-text-heading)] mb-1">Engineer's checklist (standard, section 8)</div>
+              {REVIEW_CHECKLIST.map((item, i) => (
+                <label key={item} className="flex items-start gap-2 py-0.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={checked[i]}
+                    onChange={(e) => setChecked((c) => c.map((v, j) => (j === i ? e.target.checked : v)))}
+                    className="mt-0.5"
+                  />
+                  <span>{item}</span>
+                </label>
               ))}
-            </div>
-          )}
+            </section>
+            {(error || edit.error) && (
+              <div className="border border-red-200 bg-red-50 rounded p-2 text-red-700">
+                <div className="font-semibold">{error?.message ?? edit.error}</div>
+                {[...(error?.errors ?? []).map((m) => `E ${m}`), ...(error?.warnings ?? []).map((m) => `W ${m}`)].map((m, i) => (
+                  <div key={i}>{m}</div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="px-4 py-3 border-t border-[var(--color-border)] flex items-center gap-2">
-          <span className="text-[10px] text-[var(--color-text-muted)] flex-1">
-            {lint.level !== "A" ? "Утвердить можно только шаблон уровня A." : !allChecked ? "Отметьте все пункты чек-листа." : ""}
-          </span>
+          <button
+            disabled={busy || edit.busy || !template.id}
+            onClick={async () => {
+              if (template.id && (await edit.start(template.id))) onClose();
+            }}
+            className={`${btn} border-blue-300 text-blue-700 hover:bg-blue-50`}
+          >
+            Edit
+          </button>
+          <span className="text-[10px] text-[var(--color-text-muted)] flex-1">{hint}</span>
           <button disabled={busy || status === "draft"} onClick={() => apply("draft")} className={`${btn} border-amber-300 text-amber-800 hover:bg-amber-50`}>
-            В черновик
+            Move to draft
           </button>
           <button disabled={busy || status === "hidden"} onClick={() => apply("hidden")} className={`${btn} border-gray-300 text-gray-700 hover:bg-gray-50`}>
-            Скрыть
+            Hide
           </button>
           <button disabled={busy || !canVerify || status === "verified"} onClick={() => apply("verified")} className={`${btn} border-green-600 bg-green-600 text-white hover:bg-green-700`}>
-            Утвердить
+            Verify
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Mounted in upstream's Device Editor. Renders only when the editor shows the provisional
+ * copy of a library template (the Edit flow): live linter result of the form, and
+ * "Save to library" (PUT /templates/:id). After saving, the API re-lints the template and
+ * moves a verified one that fell below level A to draft; the bar reports the outcome and
+ * closes the editor, which discards the canvas copy.
+ */
+export function AvailTemplateEditBar({
+  nodeId,
+  build,
+  onSaved,
+}: {
+  nodeId: string | null;
+  build: () => Record<string, unknown> | null;
+  onSaved: () => void;
+}) {
+  const session = editSessionFor(nodeId);
+  const addToast = useSchematicStore((s) => s.addToast);
+  const node = useSchematicStore((s) => (nodeId ? s.nodes.find((n) => n.id === nodeId) : undefined));
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const draft = useMemo(() => {
+    if (!session) return null;
+    const data = build();
+    if (!data) return null;
+    const slots = (node?.data as { slots?: Parameters<typeof slotOwnedPortIds>[0] } | undefined)?.slots;
+    return deviceDataToTemplate(data, session.original, slotOwnedPortIds(slots));
+  }, [session, build, node]);
+  const lint = useMemo(() => (draft ? lintBlock(draft) : null), [draft]);
+
+  if (!session || !draft || !lint) return null;
+
+  const save = async () => {
+    setBusy(true);
+    setError(null);
+    try {
+      await saveLibraryTemplate(session.templateId, draft);
+      if (nodeId) endEditSession(nodeId);
+      const info = await fetchTemplateStatus(session.templateId);
+      notifyLibraryChanged();
+      if (info?.statusReason && info.status === "draft") {
+        addToast(`Saved to the library. ${info.statusReason}. The template is now a draft.`, "info");
+      } else {
+        addToast(`Saved to the library: level ${info?.lintLevel ?? lint.level}, status ${info?.status ?? "unchanged"}.`, "success");
+      }
+      onSaved();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div data-testid="avail-template-edit-bar" className="px-4 py-2 border-t border-blue-200 bg-blue-50 text-xs flex flex-col gap-1.5">
+      <div className="text-blue-900">
+        Editing library template <span className="font-semibold">{session.original.label}</span>. Save to library writes it for everyone;
+        closing the editor discards this canvas copy.
+      </div>
+      <AvailLintResult lint={lint} compact />
+      {lint.level !== "A" && (
+        <div className="text-amber-900">A verified template saved below level A becomes a draft.</div>
+      )}
+      {error && <div className="text-red-700 font-semibold">{error}</div>}
+      <div className="flex justify-end">
+        <button
+          onClick={save}
+          disabled={busy}
+          className="px-3 py-1.5 rounded text-xs border border-blue-600 bg-blue-600 text-white hover:bg-blue-700 cursor-pointer disabled:opacity-40"
+        >
+          Save to library
+        </button>
       </div>
     </div>
   );
@@ -232,19 +454,16 @@ export function AvailUnverifiedNotice({ nodes }: { nodes: readonly { id: string;
   const blocks = useMemo(() => unverifiedBlocks(nodes), [nodes]);
   if (blocks.length === 0) return null;
   const names = blocks.slice(0, 8).map((b) => b.label).join(", ");
+  const more = blocks.length - 8;
   return (
     <div className="px-4 py-2 border-b border-red-200 bg-red-50 text-xs text-red-700 shrink-0">
-      <span className="font-semibold">В проекте {blocks.length} {plural(blocks.length)} из непроверенных шаблонов</span>
-      {" "}(не проверены AVAIL): {names}
-      {blocks.length > 8 ? ` и ещё ${blocks.length - 8}` : ""}. Перед выдачей заказчику замените их или отправьте шаблоны на ревью.
+      <div className="font-semibold">
+        {blocks.length === 1
+          ? "This project has 1 block from an unverified template."
+          : `This project has ${blocks.length} blocks from unverified templates.`}
+      </div>
+      <div>Blocks: {names}{more > 0 ? ` (+${more} more)` : ""}</div>
+      <div>Before handing the project to a customer, replace them or send their templates for review.</div>
     </div>
   );
-}
-
-function plural(n: number): string {
-  const m10 = n % 10;
-  const m100 = n % 100;
-  if (m10 === 1 && m100 !== 11) return "блок";
-  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return "блока";
-  return "блоков";
 }

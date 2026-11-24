@@ -6,11 +6,13 @@
  *
  * Pure function, the input is not modified. Rule of the game: nothing is invented.
  * When a field cannot be fixed unambiguously it is left as it is and a change with
- * `manual: true` ("требует ручной правки") explains why.
+ * `manual: true` ("needs a manual fix") explains why.
  *
  * What it does:
  *   - manufacturer → canonical vendor name; category from deviceTypeDefaults when the
  *     current one is not a schematic leaf of the taxonomy;
+ *   - header (auxiliaryData) → the single row {{deviceType}}; color is removed (the
+ *     header color will come from the category);
  *   - label starts with the canonical manufacturer; shortName = model (label without the
  *     manufacturer) when empty or a part number;
  *   - port labels in all caps → standard form (words capitalized, abbreviations upper),
@@ -30,7 +32,7 @@ export interface NormalizeChange {
   to?: unknown;
   /** What was done, or why it needs a human. */
   note: string;
-  /** true — not changed: no unambiguous fix ("требует ручной правки"). */
+  /** true — not changed: no unambiguous fix ("needs a manual fix"). */
   manual?: boolean;
 }
 
@@ -105,6 +107,14 @@ const WORDS = new Set(
    circuit key mirrored genlock patch ethernet automix screen matrix composite cascade hi low ceiling mains debug
    passthrough up down cable secure reference wireless wired receiver transmitter encoder decoder scaler`.split(/\s+/).filter(Boolean),
 );
+
+/** The standard's header (section 2): a single aux row with the device type. */
+export const STANDARD_HEADER: readonly { text: string; position: "header" }[] = [{ text: "{{deviceType}}", position: "header" }];
+
+/** Same condition as the linter: exactly one aux row, {{deviceType}}. */
+export function hasStandardHeader(aux: unknown): boolean {
+  return Array.isArray(aux) && aux.length === 1 && !!aux[0] && typeof aux[0] === "object" && (aux[0] as Obj).text === "{{deviceType}}";
+}
 
 function str(v: unknown): string {
   return typeof v === "string" ? v : "";
@@ -199,7 +209,7 @@ function targetSection(port: PortLike): { section: string; front: boolean } | { 
   const directionHint = DIRECTION_SECTIONS[key];
   const bySignal = sectionByPurpose(port, directionHint);
   if (bySignal) return { section: bySignal + (LOCATION_SECTIONS.has(key) || front || directionHint ? "" : suffix), front };
-  return { manual: `секция «${raw}»: по типу сигнала «${str(port.signalType)}» и направлению секция не определяется однозначно` };
+  return { manual: `section "${raw}": signal type "${str(port.signalType)}" and direction do not determine the section` };
 }
 
 /**
@@ -214,10 +224,10 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
   const manRaw = str(t.manufacturer);
   const man = normalizeManufacturer(manRaw);
   if (man && man !== manRaw) {
-    changes.push({ field: "manufacturer", from: manRaw, to: man, note: "каноническое имя из avail-vendors.json" });
+    changes.push({ field: "manufacturer", from: manRaw, to: man, note: "canonical name from avail-vendors.json" });
     t.manufacturer = man;
   }
-  if (!man) changes.push({ field: "manufacturer", note: "нет производителя: label и shortName не нормализуются", manual: true });
+  if (!man) changes.push({ field: "manufacturer", note: "no manufacturer: label and shortName are not normalized", manual: true });
 
   // --- category
   const cat = findCategory(str(t.category));
@@ -225,11 +235,23 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
     const def = defaultCategoryFor(str(t.deviceType));
     const defCat = findCategory(def);
     if (def && defCat?.leaf && defCat.schematic) {
-      changes.push({ field: "category", from: t.category ?? null, to: def, note: `по deviceTypeDefaults для «${str(t.deviceType)}»` });
+      changes.push({ field: "category", from: t.category ?? null, to: def, note: `deviceTypeDefaults for "${str(t.deviceType)}"` });
       t.category = def;
     } else {
-      changes.push({ field: "category", from: t.category ?? null, note: `для типа «${str(t.deviceType)}» нет категории по умолчанию — выбрать в таксономии`, manual: true });
+      changes.push({ field: "category", from: t.category ?? null, note: `no default category for type "${str(t.deviceType)}": pick one from the taxonomy`, manual: true });
     }
+  }
+
+  // --- header: one row, {{deviceType}}; no color (the standard, section 2)
+  if (!hasStandardHeader(t.auxiliaryData)) {
+    changes.push({ field: "auxiliaryData", from: t.auxiliaryData ?? null, to: [...STANDARD_HEADER], note: "header = {{deviceType}}" });
+    t.auxiliaryData = STANDARD_HEADER.map((r) => ({ ...r }));
+  }
+  if ("color" in t) {
+    if (t.color !== undefined && t.color !== null && t.color !== "") {
+      changes.push({ field: "color", from: t.color, note: "color removed: the header color will come from the category" });
+    }
+    delete t.color;
   }
 
   // --- label: canonical manufacturer at the start
@@ -241,7 +263,7 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
     const hit = prefixes.find((p) => startsWithWord(label, p));
     const next = hit ? `${man}${label.slice(hit.length)}` : `${man} ${label}`;
     if (next !== label) {
-      changes.push({ field: "label", from: label, to: next, note: "label = производитель + модель" });
+      changes.push({ field: "label", from: label, to: next, note: "label = manufacturer + model" });
       t.label = next;
     }
   }
@@ -252,10 +274,10 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
     const l = str(t.label);
     const model = man && startsWithWord(l, man) ? l.slice(man.length).trim() : "";
     if (model) {
-      changes.push({ field: "shortName", from: sn || null, to: model, note: sn ? "был артикул — модель из label" : "модель из label" });
+      changes.push({ field: "shortName", from: sn || null, to: model, note: sn ? "was a part number: model taken from label" : "model taken from label" });
       t.shortName = model;
     } else {
-      changes.push({ field: "shortName", from: sn || null, note: "модель из label не выделяется", manual: true });
+      changes.push({ field: "shortName", from: sn || null, note: "cannot tell the model from the label", manual: true });
     }
   }
 
@@ -273,11 +295,11 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
       if (isCapsLabel(pl)) {
         const fixed = standardCaseLabel(pl);
         if (!fixed) {
-          changes.push({ field: `${where}.label`, from: pl, note: "подпись капсом с незнакомыми словами — исправить по шелкографии", manual: true });
+          changes.push({ field: `${where}.label`, from: pl, note: "all-caps label with unknown words: fix it from the panel silkscreen", manual: true });
         } else if (isCapsLabel(fixed)) {
-          changes.push({ field: `${where}.label`, from: pl, note: "подпись из одних аббревиатур — проверить по шелкографии", manual: true });
+          changes.push({ field: `${where}.label`, from: pl, note: "label made of abbreviations only: check it against the panel silkscreen", manual: true });
         } else {
-          changes.push({ field: `${where}.label`, from: pl, to: fixed, note: "подпись из капса в стандартную форму" });
+          changes.push({ field: `${where}.label`, from: pl, to: fixed, note: "all-caps label → standard case" });
           port.label = fixed;
         }
       }
@@ -285,7 +307,7 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
       // direction
       const sig = str(port.signalType);
       if (BIDIRECTIONAL_SIGNALS.has(sig) && port.direction !== "bidirectional" && port.direction !== "passthrough") {
-        changes.push({ field: `${where}.direction`, from: port.direction, to: "bidirectional", note: `${sig} — bidirectional по стандарту (4.3)` });
+        changes.push({ field: `${where}.direction`, from: port.direction, to: "bidirectional", note: `${sig} is bidirectional by the standard (4.3)` });
         port.direction = "bidirectional";
       }
 
@@ -294,11 +316,11 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
       if (target && "manual" in target) {
         changes.push({ field: `${where}.section`, from: port.section ?? null, note: target.manual, manual: true });
       } else if (target) {
-        changes.push({ field: `${where}.section`, from: port.section ?? null, to: target.section, note: "секция по словарю стандарта" });
+        changes.push({ field: `${where}.section`, from: port.section ?? null, to: target.section, note: "section from the standard's vocabulary" });
         port.section = target.section;
         const cur = str(port.label);
         if (target.front && !/front/i.test(cur)) {
-          changes.push({ field: `${where}.label`, from: cur, to: `${cur} (Front)`, note: "порт передней панели — «(Front)» в подписи" });
+          changes.push({ field: `${where}.label`, from: cur, to: `${cur} (Front)`, note: "front panel port: \"(Front)\" added to the label" });
           port.label = `${cur} (Front)`;
         }
       }
@@ -312,7 +334,7 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
     };
     const sorted = ports.map((p, i) => ({ p, i, r: rank(p) })).sort((a, b) => a.r - b.r || a.i - b.i).map((x) => x.p);
     if (sorted.some((p, i) => p !== ports[i])) {
-      changes.push({ field: "ports.order", note: "порты упорядочены по секциям стандарта (4.1)" });
+      changes.push({ field: "ports.order", note: "ports ordered by the standard's sections (4.1)" });
     }
     t.ports = sorted;
   }

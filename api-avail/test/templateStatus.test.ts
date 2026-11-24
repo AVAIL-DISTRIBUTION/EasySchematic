@@ -10,6 +10,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { templateToRow } from "../../api/src/db";
 import { libraryStatuses } from "../src/routes";
 import { configFromEnv, createApiServer, type ApiServer } from "../src/server";
+import { syncLintLevels } from "../src/templateMeta";
 
 const ADMIN_TOKEN = "test-admin-token-0123456789";
 const BEARER = { Authorization: `Bearer ${ADMIN_TOKEN}` };
@@ -83,7 +84,10 @@ const firstSeededId = () => (api.db.sqlite.prepare("SELECT id FROM templates ORD
 describe("avail_template_meta", () => {
   it("is created by our migrations, upstream tables untouched", () => {
     const cols = (api.db.sqlite.prepare("PRAGMA table_info(avail_template_meta)").all() as { name: string }[]).map((c) => c.name);
-    expect(cols).toEqual(["template_id", "status", "source", "upstream_id", "lint_level", "updated_by", "updated_at", "linted_version"]);
+    expect(cols).toEqual([
+      "template_id", "status", "source", "upstream_id", "lint_level", "updated_by", "updated_at", "linted_version",
+      "status_reason", "status_changed_at", "source_hash",
+    ]);
     const templateCols = (api.db.sqlite.prepare("PRAGMA table_info(templates)").all() as { name: string }[]).map((c) => c.name);
     expect(templateCols.some((c) => c.includes("status") || c.includes("avail") || c.includes("lint"))).toBe(false);
   });
@@ -124,6 +128,53 @@ describe("lint_level follows every save", () => {
     });
     expect(res.status).toBe(200);
     expect(meta("relint-1")).toMatchObject({ lint_level: "FIX", linted_version: 2, status: "draft" });
+  });
+
+  it("a verified template that falls below level A on save becomes draft, with reason and time", async () => {
+    insertTemplate(cleanTemplate("stale-v"));
+    expect((await put("stale-v", { status: "verified" }, BEARER)).status).toBe(200);
+    expect(meta("stale-v")).toMatchObject({ status: "verified", status_reason: null });
+    const etagBefore = (await req("/templates")).headers.get("ETag");
+
+    const { id: _id, ...body } = cleanTemplate("stale-v");
+    const res = await req("/templates/stale-v", {
+      method: "PUT",
+      headers: { ...BEARER, "Content-Type": "application/json" },
+      body: JSON.stringify({ ...body, searchTerms: [] }), // W "no searchTerms": level B
+    });
+    expect(res.status).toBe(200);
+    const m = meta("stale-v")!;
+    expect(m).toMatchObject({ status: "draft", lint_level: "B", linted_version: 2, updated_by: "lint" });
+    expect(m.status_reason).toBe("Standard level B after save (version 2); verified needs level A");
+    expect(m.status_changed_at).toMatch(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/);
+    // The status change rolls the library ETag; the API reports the reason.
+    expect((await req("/templates")).headers.get("ETag")).not.toBe(etagBefore);
+    expect(await json(req("/avail/templates/stale-v/status"))).toMatchObject({
+      status: "draft",
+      statusReason: "Standard level B after save (version 2); verified needs level A",
+      statusChangedAt: m.status_changed_at,
+    });
+
+    // A person setting the status again clears the automatic reason.
+    expect(await json(put("stale-v", { status: "hidden" }, BEARER))).toMatchObject({ status: "hidden", statusReason: null });
+  });
+
+  it("a verified template still at level A after save stays verified", async () => {
+    insertTemplate(cleanTemplate("still-a"));
+    await put("still-a", { status: "verified" }, BEARER);
+    const { id: _id, ...body } = cleanTemplate("still-a");
+    await req("/templates/still-a", {
+      method: "PUT",
+      headers: { ...BEARER, "Content-Type": "application/json" },
+      body: JSON.stringify({ ...body, searchTerms: ["changed"] }),
+    });
+    expect(meta("still-a")).toMatchObject({ status: "verified", lint_level: "A", linted_version: 2, status_reason: null });
+  });
+
+  it("draft and raw templates keep their status whatever the level", () => {
+    insertTemplate({ ...cleanTemplate("raw-fix"), category: "Audio" });
+    expect(syncLintLevels(api.db.sqlite).demoted).toEqual([]);
+    expect(meta("raw-fix")).toMatchObject({ status: "raw", lint_level: "FIX" });
   });
 
   it("upstream POST /templates: the new template is raw with its lint level", async () => {

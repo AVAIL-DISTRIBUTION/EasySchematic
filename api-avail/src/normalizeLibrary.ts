@@ -41,11 +41,11 @@ export interface NormalizeLibraryReport {
   levelsAfter: Record<BlockLevel, number>;
 }
 
-/** Lint message without the specific port / value: "«HDMI In»: нет connectorType" → "E нет connectorType". */
+/** Lint message without the specific port / value: '"HDMI In": no connectorType' → "E no connectorType". */
 export function reasonKey(kind: "E" | "W", message: string): string {
   const m = message
-    .replace(/^«[^»]*»: /, "")
-    .replace(/«[^»]*»/g, "«…»")
+    .replace(/^"[^"]*": /, "")
+    .replace(/"[^"]*"/g, '"…"')
     .replace(/\(([^\s)]+)\)$/, "(…)");
   return `${kind} ${m}`;
 }
@@ -111,7 +111,11 @@ export function normalizeLibrary(
       const after = lintBlock(normalized);
       const key = `${before.level}→${after.level}`;
       report.transitions[key] = (report.transitions[key] ?? 0) + 1;
-      for (const c of changes) if (c.manual) manual.set(c.note.replace(/«[^»]*»/g, "«…»"), (manual.get(c.note.replace(/«[^»]*»/g, "«…»")) ?? 0) + 1);
+      for (const c of changes) {
+        if (!c.manual) continue;
+        const k = c.note.replace(/"[^"]*"/g, '"…"');
+        manual.set(k, (manual.get(k) ?? 0) + 1);
+      }
 
       const improves = RANK[after.level] > RANK[before.level];
       const final = improves ? after : before;
@@ -148,18 +152,18 @@ export function formatNormalizeReport(r: NormalizeLibraryReport): string {
   const w = Math.max(6, ...vendors.map(([n]) => n.length));
   const transitions = Object.entries(r.transitions).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(", ");
   return [
-    `Нормализация шаблонов наших вендоров (raw/draft)${r.dryRun ? " — пробный запуск, в базу ничего не записано" : ""}`,
-    `Обработано: ${r.processed}; уровень вырос: ${r.improved}${r.dryRun ? "" : " (записано)"}; изменения без роста уровня (не записаны): ${r.sameLevelNotWritten}`,
-    `Переходы: ${transitions || "—"}`,
-    `Уровни после: A ${r.levelsAfter.A} / B ${r.levelsAfter.B} / FIX ${r.levelsAfter.FIX}`,
+    `Normalization of our vendors' templates (raw/draft)${r.dryRun ? " (dry run, nothing written)" : ""}`,
+    `Processed: ${r.processed}; level raised: ${r.improved}${r.dryRun ? "" : " (written)"}; changed without a level change (not written): ${r.sameLevelNotWritten}`,
+    `Transitions: ${transitions || "-"}`,
+    `Levels after: A ${r.levelsAfter.A} / B ${r.levelsAfter.B} / FIX ${r.levelsAfter.FIX}`,
     ``,
-    `По вендорам:   ${"обработано".padStart(10)}  FIX→B  FIX→A  B→A`,
+    `By vendor:     ${"processed".padStart(10)}  FIX→B  FIX→A  B→A`,
     ...vendors.map(([name, s]) => `  ${name.padEnd(w)}  ${String(s.processed).padStart(10)}  ${String(s.fixToB).padStart(5)}  ${String(s.fixToA).padStart(5)}  ${String(s.bToA).padStart(3)}`),
     ``,
-    `Топ-10 оставшихся причин:`,
-    ...r.topReasons.map((x, i) => `  ${String(i + 1).padStart(2)}. ${x.reason} — ${x.count}`),
+    `Top 10 remaining reasons:`,
+    ...r.topReasons.map((x, i) => `  ${String(i + 1).padStart(2)}. ${x.reason}: ${x.count}`),
     ``,
-    `Требует ручной правки (топ-5):`,
-    ...r.topManual.map((x) => `  - ${x.reason} — ${x.count}`),
+    `Needs a manual fix (top 5):`,
+    ...r.topManual.map((x) => `  - ${x.reason}: ${x.count}`),
   ].join("\n") + "\n";
 }

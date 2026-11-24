@@ -1,6 +1,8 @@
 /**
- * AVAIL API calls from the editor: the signed-in user's role and template statuses.
+ * AVAIL API calls from the editor: the signed-in user's role, template statuses, and
+ * loading/saving a library template for the Edit flow.
  */
+import type { DeviceTemplate } from "../types";
 import { setRole, type TemplateStatus, type UserRole } from "./libraryMode";
 
 export function apiUrl(): string {
@@ -47,4 +49,42 @@ export async function changeTemplateStatus(templateId: string, status: TemplateS
     warnings: body.warnings,
   };
   throw err;
+}
+
+export interface TemplateStatusInfo {
+  templateId: string;
+  status: TemplateStatus;
+  lintLevel: string | null;
+  statusReason: string | null;
+  statusChangedAt: string | null;
+}
+
+/** GET /avail/templates/:id/status; null when unknown or unreachable. */
+export async function fetchTemplateStatus(templateId: string): Promise<TemplateStatusInfo | null> {
+  try {
+    const res = await fetch(`${apiUrl()}/avail/templates/${encodeURIComponent(templateId)}/status`, { credentials: "include" });
+    return res.ok ? ((await res.json()) as TemplateStatusInfo) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** The stored template, fresh from the database (GET /templates/:id, not the cached library). */
+export async function fetchLibraryTemplate(templateId: string): Promise<DeviceTemplate> {
+  const res = await fetch(`${apiUrl()}/templates/${encodeURIComponent(templateId)}`, { credentials: "include", cache: "no-store" });
+  if (!res.ok) throw new Error(`Could not load the template (HTTP ${res.status})`);
+  return (await res.json()) as DeviceTemplate;
+}
+
+/** PUT /templates/:id (moderator/admin session); throws with the API's error message. */
+export async function saveLibraryTemplate(templateId: string, template: Omit<DeviceTemplate, "id" | "version">): Promise<void> {
+  const res = await fetch(`${apiUrl()}/templates/${encodeURIComponent(templateId)}`, {
+    method: "PUT",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(template),
+  });
+  if (res.ok) return;
+  const body = (await res.json().catch(() => ({}))) as { error?: string };
+  throw new Error(body.error ?? `HTTP ${res.status}`);
 }

@@ -26,9 +26,9 @@ export default function AuthErrorNotice() {
         type="button"
         onClick={() => setError(null)}
         className="text-xs underline cursor-pointer shrink-0"
-        aria-label="Закрыть"
+        aria-label="Dismiss"
       >
-        Закрыть
+        Dismiss
       </button>
     </div>
   );

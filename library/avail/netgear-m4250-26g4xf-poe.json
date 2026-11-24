@@ -1,0 +1,348 @@
+{
+  "id": "1d2accea-72b6-456b-ab50-5f5738e699e0",
+  "label": "NETGEAR M4250-26G4XF-PoE+",
+  "shortName": "GSM4230PX",
+  "manufacturer": "NETGEAR",
+  "modelNumber": "GSM4230PX",
+  "deviceType": "network-switch",
+  "category": "Networking / Switches",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.netgear.com/business/wired/switches/fully-managed/gsm4230px/",
+  "searchTerms": [
+    "gsm4230px",
+    "m4250-26g4xf-poe+",
+    "m4250",
+    "av line",
+    "poe+ switch",
+    "managed switch",
+    "netgear"
+  ],
+  "heightMm": 43.2,
+  "widthMm": 440,
+  "depthMm": 400,
+  "weightKg": 5.45,
+  "powerDrawW": 614,
+  "voltage": "100-240V",
+  "poeBudgetW": 480,
+  "ports": [
+    {
+      "id": "p1795168411782-40-3",
+      "label": "LAN 1 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-4",
+      "label": "LAN 2 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-5",
+      "label": "LAN 3 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-6",
+      "label": "LAN 4 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-7",
+      "label": "LAN 5 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-8",
+      "label": "LAN 6 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-9",
+      "label": "LAN 7 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-10",
+      "label": "LAN 8 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-11",
+      "label": "LAN 9 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-12",
+      "label": "LAN 10 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-13",
+      "label": "LAN 11 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-14",
+      "label": "LAN 12 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-15",
+      "label": "LAN 13 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-16",
+      "label": "LAN 14 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-17",
+      "label": "LAN 15 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-18",
+      "label": "LAN 16 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-19",
+      "label": "LAN 17 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-20",
+      "label": "LAN 18 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-21",
+      "label": "LAN 19 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-22",
+      "label": "LAN 20 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-23",
+      "label": "LAN 21 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-24",
+      "label": "LAN 22 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-25",
+      "label": "LAN 23 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-26",
+      "label": "LAN 24 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W"
+    },
+    {
+      "id": "p1795168411782-40-27",
+      "label": "LAN 25",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, no PoE"
+    },
+    {
+      "id": "p1795168411782-40-28",
+      "label": "LAN 26",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1G RJ-45, no PoE"
+    },
+    {
+      "id": "p1795168411782-40-29",
+      "label": "SFP+ 27",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "p1795168411782-40-30",
+      "label": "SFP+ 28",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "p1795168411782-40-31",
+      "label": "SFP+ 29",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "p1795168411782-40-32",
+      "label": "SFP+ 30",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "ng-usb",
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 storage port"
+    },
+    {
+      "id": "p1795168411782-40-0",
+      "label": "OOB",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Configuration",
+      "notes": "1G out-of-band management"
+    },
+    {
+      "id": "p1795168411782-40-1",
+      "label": "Console (RS-232)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Configuration",
+      "notes": "RJ-45 RS-232 console"
+    },
+    {
+      "id": "p1795168411782-40-2",
+      "label": "Console (USB-C)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Configuration"
+    },
+    {
+      "id": "p1795168411782-40-33",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal PSU, IEC C14 inlet with on/off switch"
+    }
+  ]
+}

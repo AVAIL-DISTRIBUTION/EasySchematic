@@ -1,0 +1,161 @@
+{
+  "id": "avail-biamp-tesiraforte-x-400",
+  "label": "Biamp TesiraFORTÉ X 400",
+  "shortName": "FORTÉ X 400",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00091-00001",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/d/TesiraFORT-X-400-Meeting-Room-DSP/ecom-item/920-00091-00001",
+  "searchTerms": [
+    "920-00091-00001",
+    "tesiraforte x 400",
+    "forte x 400",
+    "x400",
+    "dsp",
+    "aec",
+    "avb",
+    "dante",
+    "biamp"
+  ],
+  "heightMm": 37.3,
+  "widthMm": 206,
+  "depthMm": 206,
+  "weightKg": 0.86,
+  "powerDrawW": 150,
+  "voltage": "100-240V",
+  "ports": [
+    {
+      "id": "fortex400-in1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "fortex400-in2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "fortex400-out1",
+      "label": "Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "fortex400-out2",
+      "label": "Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "fortex400-lan1",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1 Gb: media and control (AVB, Dante, VoIP); no PoE"
+    },
+    {
+      "id": "fortex400-lan2",
+      "label": "LAN 2 (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "AVB",
+      "notes": "1 Gb: media and control (AVB, Dante, VoIP); PoE+ 802.3at class 4, 30 W"
+    },
+    {
+      "id": "fortex400-lan3",
+      "label": "LAN 3 (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "AVB",
+      "notes": "1 Gb: media and control (AVB, Dante, VoIP); PoE+ 802.3at class 4, 30 W"
+    },
+    {
+      "id": "fortex400-lan4",
+      "label": "LAN 4 (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "AVB",
+      "notes": "1 Gb: media and control (AVB, Dante, VoIP); PoE+ 802.3at class 4, 30 W"
+    },
+    {
+      "id": "fortex400-lan5",
+      "label": "LAN 5 (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "AVB",
+      "notes": "1 Gb: media and control (AVB, Dante, VoIP); PoE+ 802.3at class 4, 30 W"
+    },
+    {
+      "id": "fortex400-gpio1",
+      "label": "Logic I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "fortex400-gpio2",
+      "label": "Logic I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "fortex400-gpio3",
+      "label": "Logic I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "fortex400-gpio4",
+      "label": "Logic I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "fortex400-usb",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB-B to the UC host: USB audio and HID"
+    },
+    {
+      "id": "fortex400-pwr",
+      "label": "Power (DC barrel)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power"
+    }
+  ]
+}

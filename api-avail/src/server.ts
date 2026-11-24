@@ -131,8 +131,9 @@ export function createApiServer(config: ApiConfig): ApiServer {
   const migrations = applyAllMigrations(db.sqlite, config, log);
   const seed = seedLibrary(db.sqlite, parseSeedMode(config.seedMode));
   if (seed.seeded > 0) log(`library seeded: ${seed.seeded} templates (mode ${seed.mode})`);
-  const linted = syncLintLevels(db.sqlite);
-  if (linted > 0) log(`lint levels updated: ${linted} templates`);
+  const synced = syncLintLevels(db.sqlite);
+  if (synced.linted > 0) log(`lint levels updated: ${synced.linted} templates`);
+  if (synced.demoted.length > 0) log(`verified below level A, moved to draft: ${synced.demoted.join(", ")}`);
 
   const bindings = {
     easyschematic_db: db as unknown as D1Database,
@@ -146,10 +147,12 @@ export function createApiServer(config: ApiConfig): ApiServer {
     fetch: async (request) => {
       const response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
       // Whatever route saved a template (PUT /templates/:id, POST /templates, an approved
-      // submission…), upstream bumped its version: re-lint the changed ones.
+      // submission…), upstream bumped its version: re-lint the changed ones (a verified
+      // one that fell below level A becomes draft).
       if (!READ_METHODS.has(request.method) && response.status < 400) {
         try {
-          syncLintLevels(db.sqlite);
+          const { demoted } = syncLintLevels(db.sqlite);
+          if (demoted.length > 0) log(`verified below level A, moved to draft: ${demoted.join(", ")}`);
         } catch (err) {
           log(`lint sync failed: ${String(err)}`);
         }

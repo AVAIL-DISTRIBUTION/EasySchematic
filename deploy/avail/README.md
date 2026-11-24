@@ -68,6 +68,19 @@ docker compose exec api npm run normalize:library -- --dry-run   # отчёт: F
 docker compose exec api npm run normalize:library                # запись
 ```
 
+Курируемая библиотека AVAIL (`library/avail/*.json` из репозитория, едет в образе API в
+`/app/library`): загружается со статусом draft, `verified` ставит только модератор в
+интерфейсе. Неизменившиеся файлы не трогаются (повторный запуск — без изменений); шаблон
+verified, чей файл изменился, обновляется и уходит в draft с причиной. `library/hidden.json`
+скрывает дубли (сейчас — второй Shure AD4Q).
+
+```bash
+docker compose exec api npm run import:avail -- --dry-run   # отчёт по каждому файлу, без записи
+docker compose exec api npm run import:avail                # запись
+```
+
+После `./update.sh` (новый образ = новая версия библиотеки) — повторить `import:avail`.
+
 ## Роли: модераторы и админы
 
 Утверждать шаблоны (карточка ревью в библиотеке) могут модераторы и админы. Роль хранится

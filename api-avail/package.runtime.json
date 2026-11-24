@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node --enable-source-maps dist/server.mjs",
     "import:upstream": "node --enable-source-maps dist/import-upstream.mjs",
-    "normalize:library": "node --enable-source-maps dist/normalize-library.mjs"
+    "normalize:library": "node --enable-source-maps dist/normalize-library.mjs",
+    "import:avail": "node --enable-source-maps dist/import-avail.mjs"
   }
 }

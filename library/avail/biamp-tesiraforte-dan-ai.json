@@ -1,0 +1,248 @@
+{
+  "id": "9220f38b-5cf2-4e8d-bd8d-e701fffa5a71",
+  "label": "Biamp TesiraFORTÉ DAN AI",
+  "shortName": "FORTÉ DAN AI",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00448-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00448-00001",
+  "searchTerms": [
+    "920-00448-00001",
+    "tesiraforte dan ai",
+    "tesiraforte",
+    "forte",
+    "dan ai",
+    "dsp",
+    "aec",
+    "dante",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 267,
+  "weightKg": 3.63,
+  "powerDrawW": 35,
+  "voltage": "100-240V",
+  "ports": [
+    {
+      "id": "p1795168461335-41-5",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-6",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-7",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-8",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-9",
+      "label": "Mic/Line In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-10",
+      "label": "Mic/Line In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-11",
+      "label": "Mic/Line In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-12",
+      "label": "Mic/Line In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-13",
+      "label": "Mic/Line In 9",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-14",
+      "label": "Mic/Line In 10",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-15",
+      "label": "Mic/Line In 11",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-16",
+      "label": "Mic/Line In 12",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p1795168461335-41-17",
+      "label": "Mic/Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-18",
+      "label": "Mic/Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-19",
+      "label": "Mic/Line Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-20",
+      "label": "Mic/Line Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-21",
+      "label": "Mic/Line Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-22",
+      "label": "Mic/Line Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-23",
+      "label": "Mic/Line Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-24",
+      "label": "Mic/Line Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p1795168461335-41-0",
+      "label": "LAN (Control)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit, Tesira control"
+    },
+    {
+      "id": "p1795168461335-41-1",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Gigabit Dante / AES67, 32 x 32 channels"
+    },
+    {
+      "id": "p1795168461335-41-3",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Serial"
+    },
+    {
+      "id": "p1795168461335-41-4",
+      "label": "Logic I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Digital I/O",
+      "notes": "4 logic channels, removable terminal block"
+    },
+    {
+      "id": "p1795168461335-41-2",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "Up to 8 channels of USB audio"
+    },
+    {
+      "id": "p1795168461335-41-pw",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal universal PSU, IEC inlet, 100-240 VAC"
+    }
+  ]
+}

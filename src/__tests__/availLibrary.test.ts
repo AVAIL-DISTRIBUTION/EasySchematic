@@ -83,11 +83,11 @@ describe("libraryMode", () => {
     expect(blockStatus("c")).toBe("hidden");
   });
 
-  it("badges: verified none, draft «черновик», raw «не проверен»", () => {
+  it("badges: verified none, then Draft / Unverified / Hidden", () => {
     expect(statusBadge("verified")).toBeNull();
-    expect(statusBadge("draft")).toBe("черновик");
-    expect(statusBadge("raw")).toBe("не проверен");
-    expect(statusBadge("hidden")).toBe("скрыт");
+    expect(statusBadge("draft")).toBe("Draft");
+    expect(statusBadge("raw")).toBe("Unverified");
+    expect(statusBadge("hidden")).toBe("Hidden");
     expect(statusBadge(null)).toBeNull();
     expect(statusOfTemplate(tpl("x", "draft"))).toBe("draft");
     expect(statusOfTemplate(tpl("x", "bogus"))).toBeNull();
@@ -138,7 +138,7 @@ describe("libraryMode", () => {
 });
 
 describe("groupByTaxonomy", () => {
-  it("group → subcategory in taxonomy order; the rest under «Без категории»", () => {
+  it("group → subcategory in taxonomy order; the rest under Uncategorized", () => {
     const groups = groupByTaxonomy([
       { label: "Audio Products / DSP", templates: ["dsp"] },
       { label: "AV distribution / Extenders", templates: ["ext"] },

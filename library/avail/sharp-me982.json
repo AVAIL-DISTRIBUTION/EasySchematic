@@ -1,0 +1,158 @@
+{
+  "id": "13c9c4e2-b857-49c2-8af0-b33964760ea2",
+  "label": "Sharp ME982",
+  "shortName": "ME982",
+  "manufacturer": "Sharp",
+  "modelNumber": "L50ME982",
+  "deviceType": "display",
+  "category": "Displays / Standalone Displays",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.sharpdisplays.eu/p/de/de/products/details/t/large-format-displays/midrange-displays/rp/me982.xhtml",
+  "searchTerms": [
+    "l50me982",
+    "pn-me982",
+    "me982",
+    "98 inch",
+    "large format display",
+    "sharp nec",
+    "sharp"
+  ],
+  "heightMm": 1255,
+  "widthMm": 2199,
+  "depthMm": 69,
+  "weightKg": 54.5,
+  "powerDrawW": 443.6,
+  "voltage": "100-240V",
+  "ports": [
+    {
+      "id": "p1795168364300-38-0",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "p1795168364300-38-1",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "p1795168364300-38-2",
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "inheritsSignal": false,
+      "section": "Video Inputs"
+    },
+    {
+      "id": "p1795168364300-38-10",
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "inheritsSignal": false,
+      "section": "Video Inputs",
+      "notes": "DisplayPort Alt Mode, HDCP 2.2, audio, USB data; supplies 15 W to the laptop"
+    },
+    {
+      "id": "p1795168364300-38-11",
+      "label": "Optical Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "inheritsSignal": false,
+      "section": "Audio Outputs",
+      "notes": "S/PDIF Toslink"
+    },
+    {
+      "id": "p1795168364300-38-12",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "inheritsSignal": false,
+      "section": "Audio Outputs",
+      "notes": "3.5 mm line out"
+    },
+    {
+      "id": "p1795168364300-38-6",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "inheritsSignal": false,
+      "section": "Network",
+      "notes": "100 Mbit/s"
+    },
+    {
+      "id": "p1795168364300-38-7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "db9",
+      "inheritsSignal": false,
+      "section": "Serial",
+      "notes": "RS-232C, D-sub 9 (cross type)"
+    },
+    {
+      "id": "p1795168364300-38-8",
+      "label": "Remote In (IR)",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "inheritsSignal": false,
+      "section": "IR",
+      "notes": "3.5 mm IR extender input"
+    },
+    {
+      "id": "p1795168364300-38-3",
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "inheritsSignal": false,
+      "section": "USB",
+      "notes": "USB 2.0 peripheral"
+    },
+    {
+      "id": "p1795168364300-38-4",
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "inheritsSignal": false,
+      "section": "USB",
+      "notes": "USB 3.0 peripheral / storage"
+    },
+    {
+      "id": "p1795168364300-38-5",
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "inheritsSignal": false,
+      "section": "USB",
+      "notes": "USB 3.0 peripheral / storage"
+    },
+    {
+      "id": "p1795168364300-38-9",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "inheritsSignal": false,
+      "section": "Power",
+      "notes": "Internal PSU, 100-240 VAC"
+    }
+  ]
+}

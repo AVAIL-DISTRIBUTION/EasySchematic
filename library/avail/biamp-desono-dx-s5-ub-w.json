@@ -1,0 +1,50 @@
+{
+  "id": "08a27b09-d1ef-490d-aba0-56717619a77a",
+  "label": "Biamp Desono DX-S5-UB-W",
+  "shortName": "Desono DX-S5-UB-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "DX-S5-UB-W",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://downloads.biamp.com/assets/docs/default-source/data-sheets/biamp_data_sheet_desono-dx-s5_jan26.pdf",
+  "searchTerms": [
+    "dx-s5-ub-w",
+    "desono dx-s5",
+    "desono",
+    "surface mount speaker",
+    "70v",
+    "100v",
+    "white",
+    "biamp"
+  ],
+  "heightMm": 286,
+  "widthMm": 180,
+  "depthMm": 219,
+  "weightKg": 4.7,
+  "ports": [
+    {
+      "id": "p1795168569861-44-0",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs",
+      "notes": "Lever-actuated 4-position terminal block (In +/-, Thru +/-); 70 V / 100 V taps or 6 ohm"
+    },
+    {
+      "id": "p1795168569861-44-1",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Speaker Outputs",
+      "notes": "Pass-through on the same terminal block, for daisy-chaining"
+    }
+  ]
+}

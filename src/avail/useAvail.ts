@@ -1,8 +1,10 @@
 /**
  * React side of src/avail/libraryMode.ts.
  */
-import { useEffect, useSyncExternalStore } from "react";
-import { loadRole } from "./api";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
+import { fetchLibraryTemplate, loadRole } from "./api";
+import { startEditSession } from "./templateEdit";
+import { useSchematicStore } from "../store";
 import {
   getRole,
   getShowUnverified,
@@ -37,4 +39,35 @@ export function useAvailLibraryReload(load: () => void): void {
       load();
     });
   }, [load]);
+}
+
+/**
+ * Opens upstream's Device Editor on a provisional copy of the stored template (see
+ * templateEdit.ts). Returns the starter and the last error.
+ */
+export function useStartTemplateEdit(): { start: (templateId: string) => Promise<boolean>; error: string | null; busy: boolean } {
+  const createAndEditDevice = useSchematicStore((s) => s.createAndEditDevice);
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const start = useCallback(
+    async (templateId: string) => {
+      setBusy(true);
+      setError(null);
+      try {
+        const template = await fetchLibraryTemplate(templateId);
+        createAndEditDevice(template, { x: 0, y: 0 });
+        const nodeId = useSchematicStore.getState().creatingNodeId;
+        if (!nodeId) throw new Error("The device editor did not open");
+        startEditSession(nodeId, template);
+        return true;
+      } catch (e) {
+        setError(e instanceof Error ? e.message : String(e));
+        return false;
+      } finally {
+        setBusy(false);
+      }
+    },
+    [createAndEditDevice],
+  );
+  return { start, error, busy };
 }

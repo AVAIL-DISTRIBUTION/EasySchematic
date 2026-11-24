@@ -1,0 +1,136 @@
+{
+  "id": "e347f955-abc7-4ce3-9a0f-e2c946b7f295",
+  "label": "WyreStorm NHD-500-TX v2",
+  "shortName": "NHD-500-TX v2",
+  "manufacturer": "WyreStorm",
+  "modelNumber": "NHD-500-TX",
+  "deviceType": "av-over-ip",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-500-tx-rx-v2/",
+  "searchTerms": [
+    "nhd-500-tx",
+    "nhd-500-tx v2",
+    "networkhd",
+    "avoip",
+    "encoder",
+    "wyrestorm"
+  ],
+  "voltage": "12V DC",
+  "ports": [
+    {
+      "id": "p1795169281308-55-0",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0b"
+    },
+    {
+      "id": "p1795169281308-55-2",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0b local monitor loop"
+    },
+    {
+      "id": "p1795169281308-55-1",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "multiConnect": true,
+      "section": "Audio Inputs",
+      "notes": "5-pin balanced terminal block"
+    },
+    {
+      "id": "p1795169281308-55-3",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "5-pin balanced; WyreStorm lists the 5-pin balanced audio as both input and output (one terminal block in the box) — check the panel"
+    },
+    {
+      "id": "p1795169281308-55-sp",
+      "label": "Optical Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "toslink",
+      "notes": "S/PDIF digital audio"
+    },
+    {
+      "id": "p1795169281308-55-4",
+      "label": "LAN (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1GbE, PoE+ 802.3at"
+    },
+    {
+      "id": "p1795169281308-55-5",
+      "label": "SFP (1G)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1G SFP (SX/LX/LX10)"
+    },
+    {
+      "id": "p1795169281308-55-8",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin Phoenix"
+    },
+    {
+      "id": "p1795169281308-55-6",
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5 mm TS mono"
+    },
+    {
+      "id": "p1795169281308-55-7",
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5 mm TRS stereo"
+    },
+    {
+      "id": "p1795169281308-55-9",
+      "label": "USB 2.0",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 2.0 Type B"
+    },
+    {
+      "id": "p1795169281308-55-10",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "12 V DC 1 A (or PoE+); WyreStorm does not name the connector"
+    }
+  ]
+}
