@@ -1,6 +1,10 @@
 /**
- * AVAIL template status (table avail_template_meta, migration 9001), next to the
+ * AVAIL template status (table avail_template_meta, migrations 9001–9003), next to the
  * upstream `templates` table. A template without a meta row is "raw".
+ *
+ * Status rule kept on every save: a verified template whose standard level falls below
+ * A is moved to draft automatically, with the reason and time in status_reason /
+ * status_changed_at (syncLintLevels). verified itself is only ever set by a person.
  */
 import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
@@ -24,6 +28,9 @@ export interface TemplateMeta {
   lintLevel: BlockLevel | null;
   updatedBy: string | null;
   updatedAt: string | null;
+  /** Why the status was last changed automatically; null after a manual change. */
+  statusReason: string | null;
+  statusChangedAt: string | null;
 }
 
 export interface TemplateMetaRow {
@@ -35,6 +42,9 @@ export interface TemplateMetaRow {
   updated_by: string | null;
   updated_at: string | null;
   linted_version?: number | null;
+  status_reason?: string | null;
+  status_changed_at?: string | null;
+  source_hash?: string | null;
 }
 
 export function metaFromRow(r: TemplateMetaRow): TemplateMeta {
@@ -46,12 +56,14 @@ export function metaFromRow(r: TemplateMetaRow): TemplateMeta {
     lintLevel: r.lint_level,
     updatedBy: r.updated_by,
     updatedAt: r.updated_at,
+    statusReason: r.status_reason ?? null,
+    statusChangedAt: r.status_changed_at ?? null,
   };
 }
 
 /** Every template with its status; templates without a meta row come back as raw. */
 export const SELECT_META = `SELECT t.id AS template_id, COALESCE(m.status, 'raw') AS status, m.source, m.upstream_id,
-       m.lint_level, m.updated_by, m.updated_at
+       m.lint_level, m.updated_by, m.updated_at, m.status_reason, m.status_changed_at
   FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id`;
 
 /** Standard level of a stored template row. */
@@ -62,29 +74,59 @@ export function lintRow(row: TemplateRow): BlockLevel {
 /** Roll the library ETag (library_meta.version) so clients refetch GET /templates. */
 export const BUMP_LIBRARY_VERSION = "UPDATE library_meta SET version = version + 1 WHERE id = 1";
 
+/** status_reason of a verified template moved to draft because its level fell below A. */
+export function demotionReason(level: BlockLevel, version: number): string {
+  return `Standard level ${level} after save (version ${version}); verified needs level A`;
+}
+
+export interface SyncResult {
+  /** Templates re-linted. */
+  linted: number;
+  /** Verified templates moved to draft because their level fell below A. */
+  demoted: string[];
+}
+
 /**
  * Re-lints every template whose lint is missing or older than its current version, and
  * gives templates without a meta row one (status raw). Upstream bumps templates.version
  * on each save, so running this after every write request keeps lint_level current
- * whichever route saved the template. Returns the number of templates re-linted.
+ * whichever route saved the template.
+ *
+ * A verified template that is no longer at level A becomes draft, with the reason and
+ * time recorded; the library ETag is rolled when that happens (the library is filtered
+ * by status).
  */
-export function syncLintLevels(sqlite: Database.Database): number {
+export function syncLintLevels(sqlite: Database.Database): SyncResult {
   const stale = sqlite
     .prepare(
-      `SELECT t.* FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
+      `SELECT t.*, m.status AS avail_status FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
         WHERE m.template_id IS NULL OR m.lint_level IS NULL OR m.linted_version IS NULL OR m.linted_version <> t.version`,
     )
-    .all() as TemplateRow[];
-  if (stale.length === 0) return 0;
+    .all() as (TemplateRow & { avail_status: TemplateStatus | null })[];
+  if (stale.length === 0) return { linted: 0, demoted: [] };
   const upsert = sqlite.prepare(
     `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at)
      VALUES (?, 'raw', ?, ?, 'lint', datetime('now'))
      ON CONFLICT(template_id) DO UPDATE SET lint_level = excluded.lint_level, linted_version = excluded.linted_version`,
   );
+  const demote = sqlite.prepare(
+    `UPDATE avail_template_meta SET status = 'draft', status_reason = ?, status_changed_at = datetime('now'),
+       updated_by = 'lint', updated_at = datetime('now')
+     WHERE template_id = ? AND status = 'verified'`,
+  );
+  const demoted: string[] = [];
   sqlite.transaction(() => {
-    for (const row of stale) upsert.run(row.id, lintRow(row), row.version);
+    for (const row of stale) {
+      const level = lintRow(row);
+      upsert.run(row.id, level, row.version);
+      if (row.avail_status === "verified" && level !== "A") {
+        demote.run(demotionReason(level, row.version), row.id);
+        demoted.push(row.id);
+      }
+    }
+    if (demoted.length) sqlite.prepare(BUMP_LIBRARY_VERSION).run();
   })();
-  return stale.length;
+  return { linted: stale.length, demoted };
 }
 
 export async function getTemplateMeta(db: D1Database, templateId: string): Promise<TemplateMeta | null> {
@@ -107,7 +149,8 @@ export type SetStatusResult =
   | { ok: false; reason: "not_level_a"; lint: BlockLintResult };
 
 /**
- * Sets the status of an existing template and re-lints it. Keeps source/upstream_id.
+ * Sets the status of an existing template and re-lints it. Keeps source/upstream_id;
+ * clears status_reason (a person decided) and stamps status_changed_at when it changes.
  * verified is refused unless the template is at level A. Rolls the library ETag:
  * GET /templates is filtered by status.
  */
@@ -124,10 +167,14 @@ export async function setTemplateStatus(
   await db.batch([
     db
       .prepare(
-        `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at)
-         VALUES (?, ?, ?, ?, ?, datetime('now'))
+        `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at,
+           status_reason, status_changed_at)
+         VALUES (?, ?, ?, ?, ?, datetime('now'), NULL, datetime('now'))
          ON CONFLICT(template_id) DO UPDATE SET status = excluded.status, lint_level = excluded.lint_level,
-           linted_version = excluded.linted_version, updated_by = excluded.updated_by, updated_at = excluded.updated_at`,
+           linted_version = excluded.linted_version, updated_by = excluded.updated_by, updated_at = excluded.updated_at,
+           status_reason = NULL,
+           status_changed_at = CASE WHEN avail_template_meta.status = excluded.status
+             THEN avail_template_meta.status_changed_at ELSE excluded.status_changed_at END`,
       )
       .bind(templateId, status, lint.level, row.version, updatedBy),
     db.prepare(BUMP_LIBRARY_VERSION),

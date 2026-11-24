@@ -16,12 +16,12 @@ export function isGoogleOnly(env: Env = import.meta.env ?? {}): boolean {
 
 /** Error codes api/src redirects with from /auth/google/callback. */
 export const AUTH_ERROR_MESSAGES: Record<string, string> = {
-  domain_not_allowed: "Вход разрешён только для корпоративных аккаунтов Google Workspace AVAIL. Войдите рабочим аккаунтом.",
-  email_not_verified: "Адрес почты в аккаунте Google не подтверждён.",
-  account_conflict: "Этот адрес уже привязан к другому аккаунту Google.",
-  oauth_denied: "Вход через Google отменён.",
-  oauth_failed: "Google не подтвердил вход. Попробуйте ещё раз.",
-  expired: "Время на вход истекло. Попробуйте ещё раз.",
+  domain_not_allowed: "Sign-in is limited to AVAIL Google Workspace accounts. Please sign in with your work account.",
+  email_not_verified: "The email address of this Google account is not verified.",
+  account_conflict: "This email address is already linked to another Google account.",
+  oauth_denied: "Google sign-in was cancelled.",
+  oauth_failed: "Google did not confirm the sign-in. Please try again.",
+  expired: "The sign-in took too long. Please try again.",
 };
 
 export interface AuthError {

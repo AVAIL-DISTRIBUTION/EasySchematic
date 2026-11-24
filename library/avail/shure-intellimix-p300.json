@@ -1,0 +1,96 @@
+{
+  "id": "02bb6f09-1879-46fb-aaa3-311e05c3441a",
+  "label": "Shure IntelliMix P300",
+  "shortName": "IntelliMix P300",
+  "manufacturer": "Shure",
+  "modelNumber": "P300-IMX",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-US/products/mixers/p300?variant=P300-IMX",
+  "searchTerms": [
+    "p300-imx",
+    "p300",
+    "intellimix",
+    "audio conferencing processor",
+    "dsp",
+    "aec",
+    "dante",
+    "shure"
+  ],
+  "heightMm": 40,
+  "widthMm": 210,
+  "depthMm": 226,
+  "weightKg": 1.71,
+  "poeDrawW": 17.5,
+  "ports": [
+    {
+      "id": "p1795168528756-43-2",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Active balanced, 3-pin block"
+    },
+    {
+      "id": "p1795168528756-43-3",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Active balanced, 3-pin block"
+    },
+    {
+      "id": "p1795168528756-43-m",
+      "label": "Mobile (TRRS)",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm TRRS for a phone: tip/ring in, sleeve out"
+    },
+    {
+      "id": "p1795168528756-43-4",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Impedance balanced, 3-pin block"
+    },
+    {
+      "id": "p1795168528756-43-5",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Impedance balanced, 3-pin block"
+    },
+    {
+      "id": "p1795168528756-43-0",
+      "label": "Dante (PoE+)",
+      "signalType": "dante",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "Dante 10 in / 8 out and control; the only power input, PoE+ 802.3at class 4 (17.5 W max)"
+    },
+    {
+      "id": "p1795168528756-43-1",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "connectorType": "usb-b",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 2.0 Type B, 2 in / 2 out"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "avail-generic-mini-pc",
+  "label": "Generic Mini PC",
+  "shortName": "Mini PC",
+  "manufacturer": "Generic",
+  "modelNumber": "GEN-MINI-PC",
+  "deviceType": "computer",
+  "category": "Other / Generic",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "mini pc",
+    "room pc",
+    "nuc",
+    "computer",
+    "pc",
+    "generic"
+  ],
+  "ports": [
+    {
+      "id": "hdmi1",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "hdmi2",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "tb1",
+      "label": "USB-C 1 (Thunderbolt)",
+      "signalType": "thunderbolt",
+      "direction": "bidirectional",
+      "section": "Video Outputs",
+      "connectorType": "usb-c",
+      "notes": "Thunderbolt / USB-C with DisplayPort"
+    },
+    {
+      "id": "tb2",
+      "label": "USB-C 2 (Thunderbolt)",
+      "signalType": "thunderbolt",
+      "direction": "bidirectional",
+      "section": "Video Outputs",
+      "connectorType": "usb-c",
+      "notes": "Thunderbolt / USB-C with DisplayPort"
+    },
+    {
+      "id": "hp",
+      "label": "Headphone Out (Front)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-eighth"
+    },
+    {
+      "id": "lan",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "usbf",
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "Front USB-A ports; count depends on the model"
+    },
+    {
+      "id": "usbr",
+      "label": "USB-A (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "Rear USB-A ports; count depends on the model"
+    },
+    {
+      "id": "pwr",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External power adapter"
+    }
+  ]
+}

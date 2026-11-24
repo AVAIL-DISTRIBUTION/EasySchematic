@@ -1,0 +1,69 @@
+{
+  "id": "avail-biamp-parle-tcm-xa",
+  "label": "Biamp Parlé TCM-XA",
+  "shortName": "TCM-XA",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00499-10000",
+  "deviceType": "microphone",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/cn/Microphones/ecom-item/920-00499-10000",
+  "searchTerms": [
+    "920-00499-10000",
+    "920-00499-20000",
+    "parle tcm-xa",
+    "parle",
+    "tcm-xa",
+    "beamtracking",
+    "ceiling mic",
+    "biamp"
+  ],
+  "heightMm": 30,
+  "widthMm": 172,
+  "depthMm": 132,
+  "weightKg": 0.68,
+  "poeDrawW": 25.5,
+  "ports": [
+    {
+      "id": "tcmxa-spk1",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Amplifier output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "tcmxa-spk2",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Amplifier output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "tcmxa-avb",
+      "label": "AVB (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "AVB",
+      "notes": "To a PoE+ switch: AVB and control; PoE+ 802.3at class 4"
+    },
+    {
+      "id": "tcmxa-xex",
+      "label": "TCM-XEX Expansion",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "To a TCM-XEX expansion box, up to 10 m"
+    }
+  ]
+}

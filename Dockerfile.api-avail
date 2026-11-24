@@ -24,12 +24,15 @@ ENV NODE_ENV=production \
     PORT=8787 \
     DATA_DIR=/data \
     MIGRATIONS_DIR=/app/migrations \
-    AVAIL_MIGRATIONS_DIR=/app/migrations-avail
+    AVAIL_MIGRATIONS_DIR=/app/migrations-avail \
+    AVAIL_LIBRARY_DIR=/app/library/avail
 WORKDIR /app
 COPY --from=builder /app/api-avail/node_modules ./node_modules
 COPY --from=builder /app/api-avail/dist ./dist
 COPY api/migrations ./migrations
 COPY api-avail/migrations ./migrations-avail
+# Curated library for `npm run import:avail` (library/avail + library/hidden.json).
+COPY library ./library
 # Scripts for `docker compose exec api npm run import:upstream` and the like.
 COPY api-avail/package.runtime.json ./package.json
 RUN mkdir -p /data && chown node:node /data

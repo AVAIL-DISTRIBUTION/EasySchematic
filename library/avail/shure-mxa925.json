@@ -1,0 +1,52 @@
+{
+  "id": "199a6c79-a4cb-490e-b956-993bc25e493f",
+  "label": "Shure MXA925",
+  "shortName": "MXA925",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA925",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-US/products/microphones/mxa925?variant=MXA925B-S",
+  "searchTerms": [
+    "mxa925",
+    "mxa925b-s",
+    "mxa925w-s",
+    "mxa925b-r",
+    "mxa925w-r",
+    "microflex advance",
+    "ceiling array",
+    "dante",
+    "shure"
+  ],
+  "heightMm": 54.69,
+  "widthMm": 603.8,
+  "depthMm": 603.8,
+  "weightKg": 5.4,
+  "poeDrawW": 12.5,
+  "ports": [
+    {
+      "id": "p1795168520940-42-0",
+      "label": "Dante (Primary, PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Port 1: Dante / AES67 and control, PoE class 0 (12.5 W max). Dante channels: 1 automix out + 1 AEC reference in; with automatic coverage off, 8 direct outs as well"
+    },
+    {
+      "id": "p1795168520940-42-3",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Port 2: secondary network port, no PoE"
+    }
+  ]
+}

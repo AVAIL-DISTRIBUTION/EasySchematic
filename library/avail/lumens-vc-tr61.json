@@ -1,0 +1,106 @@
+{
+  "id": "99b34b4f-8f00-48cf-8dff-de2e8d908a63",
+  "label": "Lumens VC-TR61",
+  "shortName": "VC-TR61",
+  "manufacturer": "Lumens",
+  "modelNumber": "VC-TR61",
+  "deviceType": "ptz-camera",
+  "category": "Videocameras / PTZ cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.mylumens.com/en/Products_detail/1135/VC-TR61-4K-AI-Auto-Tracking-30x-Zoom-PTZ-Camera",
+  "searchTerms": [
+    "vc-tr61",
+    "vc-tr61n",
+    "ptz camera",
+    "auto tracking",
+    "4k",
+    "30x zoom",
+    "visca",
+    "lumens"
+  ],
+  "heightMm": 197.11,
+  "widthMm": 186.65,
+  "depthMm": 174,
+  "weightKg": 2,
+  "powerDrawW": 25,
+  "voltage": "12V DC",
+  "poeDrawW": 26,
+  "ports": [
+    {
+      "id": "p1795168397124-39-2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "p1795168397124-39-3",
+      "label": "SDI Out",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "3G-SDI, BNC 75 ohm"
+    },
+    {
+      "id": "p1795168397124-39-0",
+      "label": "Audio In (Line)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm line in"
+    },
+    {
+      "id": "p1795168397124-39-6",
+      "label": "LAN (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE+ 802.3at, 26 W"
+    },
+    {
+      "id": "p1795168397124-39-1",
+      "label": "RS-232 In",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Serial",
+      "notes": "RS-232 (VISCA) on RJ-45, daisy-chain up to 7 cameras"
+    },
+    {
+      "id": "p1795168397124-39-4",
+      "label": "RS-232 Out",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Serial",
+      "notes": "RS-232 (VISCA) on RJ-45, daisy-chain up to 7 cameras"
+    },
+    {
+      "id": "p1795168397124-39-5",
+      "label": "USB 3.0",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 3.0 Type B, UVC / UAC"
+    },
+    {
+      "id": "p1795168397124-39-pw",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V DC ±20 %, 25 W; or PoE+ on the LAN port"
+    }
+  ]
+}

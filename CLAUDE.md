@@ -37,7 +37,11 @@ PR всегда открываем в `master` нашего форка, **ник
   для UI-сценариев — e2e (Playwright) при необходимости.
 - **PR с описанием «что сделано и как проверить».** В описании PR два
   обязательных раздела: что изменено и пошаговая проверка.
-- Перед PR: `npm run generate-fallback && npm test && npm run lint`.
+- **UI и пользовательские сообщения — только английский; локализация — отдельной фазой.**
+  Это касается интерфейса, баннеров, сообщений линтера, CLI и логов. Строки держим целыми
+  фразами (без склейки из кусков), чтобы потом вынести их в переводы. Документация в
+  `docs/avail/` и этот файл могут быть на русском.
+- Перед PR: `npm run generate-fallback && npm test && npm run lint` (и `npm run avail:check-library`).
 
 ## Стандарт блоков устройств
 
@@ -62,22 +66,43 @@ PR всегда открываем в `master` нашего форка, **ник
 | `src/avail/blockLint.ts` | **единственная** реализация: чистая функция `lintBlock(template) → {level, errors, warnings}`; без зависимостей от браузера и Node — для фронтенда и API |
 | `src/avail/library.ts` | справочники: `findCategory`, `defaultCategoryFor`, `findVendor`, `normalizeManufacturer` |
 | `src/avail/blockLintCli.ts` | CLI: `npm run avail:lint -- <файл.json> [--verbose]` |
+| `src/avail/libraryFiles.ts`, `checkLibraryCli.ts` | курируемая библиотека: имя файла, уровень A, дубли; CI `npm run avail:check-library` |
 | `tools/avail/avail_block_lint.py` | архив: Python-версия v0.2 (до справочников), не поддерживается |
 | `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
+| `tools/avail/incoming/avail-biamp-templates.json` | 4 шаблона Biamp из пилота (исходник) |
+
+### Курируемая библиотека
+
+`library/avail/*.json` — по одному шаблону на файл, имя по производителю и модели латиницей
+(`extron-dtp3-t-203.json` = `slug(label)`), поле `id` — id шаблона в базе (для блоков
+инженеров — их upstream-id, чтобы схемы со ссылкой на шаблон получили проверенную версию).
+Каждый файл обязан быть на уровне A: CI (`avail-api-test.yml`) и `npm test` падают иначе.
+`library/avail-pending/` — шаблоны, которым не хватает официальных данных (CI их уровень не
+требует, `import:avail` не грузит). `library/hidden.json` — шаблоны, которые держим скрытыми.
+Физику и referenceUrl берём только с официальных страниц производителя.
+
+`npm run import:avail [-- --dry-run]` (`api-avail/src/importAvail.ts`): новые → draft;
+файл не изменился (sha-256 в `avail_template_meta.source_hash`) → не трогаем, что бы ни
+случилось с шаблоном в редакторе; файл изменился → данные из файла, verified → draft с
+причиной; hidden остаётся hidden. Совпадение: по `source=avail-library` + id файла, по id,
+по производитель+модель. На свежей базе CLI сначала сидит встроенную библиотеку, как сервер.
 
 Тесты — `src/__tests__/availBlockLint.test.ts`.
 
 ### Статусы шаблонов
 
-Таблица `avail_template_meta` (наши миграции `api-avail/migrations/9001–9002`; таблицы
+Таблица `avail_template_meta` (наши миграции `api-avail/migrations/9001–9003`; таблицы
 upstream не меняем): `template_id` → `status` (`verified` / `draft` / `raw` / `hidden`),
 `source`, `upstream_id`, `lint_level` (A / B / FIX), `linted_version`, `updated_by`,
-`updated_at`. Шаблон без строки — `raw`; при старте API каждый шаблон получает строку.
+`updated_at`, `status_reason`, `status_changed_at`, `source_hash`. Шаблон без строки — `raw`; при старте API каждый шаблон получает строку.
 
 `lint_level` пересчитывается при каждом сохранении шаблона любым маршрутом (upstream
 `PUT /templates/:id`, `POST /templates`, одобрение заявки): upstream увеличивает
 `templates.version`, а после каждого успешного запроса на запись `server.ts` вызывает
 `syncLintLevels` — перелинтовка шаблонов, у которых `linted_version ≠ version`.
+**Устаревший verified:** если после сохранения уровень ниже A, статус автоматически
+становится `draft`, причина и время — в `status_reason` / `status_changed_at` (миграция 9003),
+API отдаёт их как `statusReason` / `statusChangedAt`. Ручная смена статуса причину сбрасывает.
 
 | Статус | Что значит |
 |--------|------------|
@@ -100,12 +125,16 @@ API (`api-avail/src/routes.ts`): `GET /avail/templates/status[?status=…]`,
 
 Редактор (`src/avail/libraryMode.ts`, `LibraryUi.tsx`, `useAvail.ts`) включает режим AVAIL
 сам, увидев `X-Avail-Library`; с API upstream всё как в upstream. В режиме AVAIL:
-переключатель «Показать непроверенные» (запоминается в браузере), список без встроенной
+переключатель Show unverified (запоминается в браузере), список без встроенной
 библиотеки-подложки (поиск по id для существующих схем её сохраняет), группировка по
-таксономии (группа → подкатегория, только `schematic=true`, остальное — «Без категории»),
-значки «черновик» / «не проверен» у шаблонов и блоков на схеме (в экспорт не попадают),
+таксономии (группа → подкатегория, только `schematic=true`, остальное — Uncategorized),
+значки Draft / Unverified / Hidden у шаблонов и блоков на схеме (в экспорт не попадают),
 предупреждение в отчётах о блоках из непроверенных шаблонов, для модератора — карточка
-ревью (линтер, чек-лист стандарта, «В черновик» / «Утвердить» / «Скрыть»).
+Review (порты по секциям, карточка устройства, линтер, чек-лист инженера, причина
+автосмены статуса; Move to draft / Hide / Verify) и кнопка **Edit**: открывает Device
+Editor upstream на временной копии шаблона из базы (`src/avail/templateEdit.ts`), в редакторе
+— живой линтер и Save to library (`PUT /templates/:id`); после сохранения уровень и статус
+пересчитываются, копия со схемы убирается.
 
 Роли — механизм upstream: `users.role` (`contributor` / `moderator` / `admin`),
 `PUT /users/:id/role` (только сессия админа). Первого админа назначают в базе:
@@ -123,7 +152,8 @@ API (`api-avail/src/routes.ts`): `GET /avail/templates/status[?status=…]`,
 Автонормализатор (`src/avail/normalize.ts`, чистая функция `normalizeBlock(template) →
 {template, changes}`): секции → словарь стандарта (по имени или по типу сигнала и
 направлению) и порядок секций, `manufacturer`/`label`/`shortName`, подписи из капса,
-`bidirectional` для LAN/Dante/AVB/serial/GPIO/шин, `category` по `deviceTypeDefaults`. Ничего не
+`bidirectional` для LAN/Dante/AVB/serial/GPIO/шин, `category` по `deviceTypeDefaults`,
+шапка `auxiliaryData` → одна строка `{{deviceType}}`, удаление `color`. Ничего не
 выдумывает: неоднозначное не меняет, а пишет в `changes` с `manual: true`. CLI
 `npm run normalize:library [-- --dry-run]` (`api-avail/src/normalizeLibrary.ts`) прогоняет
 шаблоны наших вендоров со статусом raw/draft и записывает только те, у кого вырос уровень;
@@ -144,6 +174,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/migrate.ts` | при старте применяет `api/migrations/*.sql`, затем наши `api-avail/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
 | `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
+| `src/importAvail.ts`, `src/importAvailCli.ts` | загрузка курируемой библиотеки `library/avail` (`npm run import:avail`); в образе — `/app/library`, `AVAIL_LIBRARY_DIR` |
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
@@ -165,6 +196,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/templateApi.ts` | AVAIL: `GET /templates` с `libraryQuery()` и сессией, `noteLibraryResponse`, без встроенной подложки в списке, `invalidateTemplates()` |
 | `src/components/DeviceLibrary.tsx` | AVAIL: `AvailLibraryToggle`, `AvailCategoryTree`, `AvailTemplateExtras`, перезагрузка по смене статусов |
 | `src/components/DeviceNode.tsx` | `AvailBlockBadge` — значок статуса над блоком |
+| `src/components/DeviceEditor.tsx` | `AvailTemplateEditBar` — живой линтер и Save to library в режиме Edit (без сессии Edit не рендерится) |
 | `src/components/ReportsDialog.tsx` | `AvailUnverifiedNotice` — предупреждение о блоках из непроверенных шаблонов |
 | `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
 | `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |
@@ -251,7 +283,7 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 | Фаза | Содержание |
 |------|------------|
 | 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
-| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано) |
+| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано); курируемая библиотека `library/avail` (21 шаблон уровня A), редактирование шаблонов из ревью, английский интерфейс (сделано) |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |
 | 4 | **Интеграция Claude** — помощь в проектировании через Claude |

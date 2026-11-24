@@ -122,12 +122,16 @@ export function blockStatus(templateId: string | undefined | null): TemplateStat
   return statuses.get(templateId) ?? "raw";
 }
 
-/** Badge text: verified — none, draft — «черновик», raw — «не проверен», hidden — «скрыт». */
+/** Badge text, one whole string per status (ready for a translation table): verified has none. */
+export const STATUS_BADGES: Readonly<Record<TemplateStatus, string | null>> = {
+  verified: null,
+  draft: "Draft",
+  raw: "Unverified",
+  hidden: "Hidden",
+};
+
 export function statusBadge(status: TemplateStatus | null): string | null {
-  if (status === "draft") return "черновик";
-  if (status === "raw") return "не проверен";
-  if (status === "hidden") return "скрыт";
-  return null;
+  return status ? STATUS_BADGES[status] : null;
 }
 
 // ---- "show unverified" and role

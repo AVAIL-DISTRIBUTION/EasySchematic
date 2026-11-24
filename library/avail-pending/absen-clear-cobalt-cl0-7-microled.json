@@ -1,0 +1,64 @@
+{
+  "id": "e662c75f-0b71-428c-9ded-eaf8065b72d4",
+  "label": "Absen Clear Cobalt CL0.7 MicroLED",
+  "shortName": "Clear Cobalt CL0.7 MicroLED",
+  "manufacturer": "Absen",
+  "modelNumber": "CL0.7",
+  "deviceType": "led-cabinet",
+  "category": "Displays / LED",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.absen.com/product/data-visualization/clear-cobalt-series",
+  "searchTerms": [
+    "cl0.7",
+    "clear cobalt",
+    "microled",
+    "led cabinet",
+    "absen"
+  ],
+  "heightMm": 338,
+  "widthMm": 600,
+  "depthMm": 40,
+  "weightKg": 6.8,
+  "powerDrawW": 140,
+  "ports": [
+    {
+      "id": "p1795168780111-46-0",
+      "label": "Data In",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "inheritsSignal": false,
+      "section": "Network"
+    },
+    {
+      "id": "p1795168780111-46-1",
+      "label": "Data Loop",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "inheritsSignal": false,
+      "section": "Network"
+    },
+    {
+      "id": "p1795168780111-46-2",
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "powercon-true1",
+      "section": "Power"
+    },
+    {
+      "id": "p1795168780111-46-3",
+      "label": "Power Loop",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "powercon-true1",
+      "section": "Power"
+    }
+  ]
+}

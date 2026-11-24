@@ -1,14 +1,15 @@
 # AVAIL DISTRIBUTION: type-check and test api-avail (D1/R2 shims, migrations,
-# seed, end-to-end smoke against the upstream app in api/src).
+# seed, end-to-end smoke against the upstream app in api/src), and check the curated
+# library: every library/avail/*.json must be at standard level A.
 name: AVAIL api tests
 
 on:
   push:
     branches: [master]
-    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", ".github/workflows/avail-api-test.yml"]
+    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", "library/**", ".github/workflows/avail-api-test.yml"]
   pull_request:
     branches: [master]
-    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", ".github/workflows/avail-api-test.yml"]
+    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", "library/**", ".github/workflows/avail-api-test.yml"]
 
 jobs:
   test:
@@ -28,6 +29,8 @@ jobs:
       # Runtime deps only (hono, postal-mime): api/src resolves them from api/node_modules.
       - run: cd api && npm ci --omit=dev
       - run: cd api-avail && npm ci
+      # Curated library: level A for library/avail/, shape for library/avail-pending/.
+      - run: cd api-avail && npx tsx ../src/avail/checkLibraryCli.ts
       - run: cd api-avail && npm run typecheck
       - run: cd api-avail && npm test
       - run: cd api-avail && npm run build

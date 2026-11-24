@@ -1,0 +1,227 @@
+{
+  "id": "12059230-b472-45f6-8bf4-6de726b32619",
+  "label": "Extron SMP 352 - 400 GB SSD",
+  "shortName": "SMP 352 - 400 GB SSD",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1634-11",
+  "deviceType": "streaming-encoder",
+  "category": "Streaming and Recording / Streaming AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/smp352",
+  "searchTerms": [
+    "60-1634-11",
+    "smp 352",
+    "streaming media processor",
+    "recorder",
+    "streaming",
+    "h.264",
+    "extron"
+  ],
+  "heightMm": 43,
+  "widthMm": 444,
+  "depthMm": 292,
+  "weightKg": 2.7,
+  "powerDrawW": 30,
+  "voltage": "100-240V",
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "p1795168750005-45-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "p1795168750005-45-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "p1795168750005-45-2"
+    },
+    {
+      "id": "p1795168750005-45-c1",
+      "label": "Component In",
+      "signalType": "component-video",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "bnc",
+      "notes": "3 BNC: component (Y, Pb, Pr) or composite; switched with the HDMI inputs"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "p1795168750005-45-3"
+    },
+    {
+      "label": "HDMI Out (Monitor)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "p1795168750005-45-5",
+      "notes": "Confidence monitor output"
+    },
+    {
+      "label": "Audio In 1 (Stereo, Loop)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Channel A, stereo balanced/unbalanced, 5-pole 3.5 mm captive screw, with analog loop-through",
+      "id": "p1795168750005-45-6"
+    },
+    {
+      "label": "Audio In 2 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Channel B, stereo or 2 mono, 5-pole 3.5 mm captive screw",
+      "id": "p1795168750005-45-7"
+    },
+    {
+      "label": "Audio Loop Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "p1795168750005-45-8"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "p1795168750005-45-9"
+    },
+    {
+      "label": "LAN / Streaming",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T host control + RTSP/RTMP/HLS streaming output.",
+      "id": "p1795168750005-45-4"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "p1795168750005-45-13"
+    },
+    {
+      "id": "p1795168750005-45-d1",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (5 = Gnd)"
+    },
+    {
+      "id": "p1795168750005-45-d2",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (5 = Gnd)"
+    },
+    {
+      "id": "p1795168750005-45-d3",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (5 = Gnd)"
+    },
+    {
+      "id": "p1795168750005-45-d4",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (5 = Gnd)"
+    },
+    {
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0, storage; 1.5 A on one selectable storage port, 0.5 A on the other",
+      "id": "p1795168750005-45-10"
+    },
+    {
+      "label": "USB-A (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0, storage; 1.5 A on one selectable storage port, 0.5 A on the other",
+      "id": "p1795168750005-45-11"
+    },
+    {
+      "id": "p1795168750005-45-k1",
+      "label": "USB-A KB/Mouse 1 (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0, keyboard / mouse control, 0.5 A"
+    },
+    {
+      "id": "p1795168750005-45-k2",
+      "label": "USB-A KB/Mouse 2 (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0, keyboard / mouse control, 0.5 A"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB mini-B, configuration (USB 2.0)",
+      "id": "p1795168750005-45-12"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "p1795168750005-45-14"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "470f759b-c911-4b39-a558-a9fd5b05e0fa",
+  "label": "Extron TLP Pro 1035T",
+  "shortName": "TLP Pro 1035T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1999-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1035t",
+  "searchTerms": [
+    "60-1999-02",
+    "tlp pro 1035t",
+    "touchlink",
+    "touchpanel",
+    "tabletop",
+    "10 inch",
+    "extron"
+  ],
+  "heightMm": 149,
+  "widthMm": 245,
+  "depthMm": 85.2,
+  "ports": [
+    {
+      "label": "LAN (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 11.5,
+      "notes": "10/100/1000; PoE 802.3af class 3 or 802.3at class 4",
+      "id": "p1795168280900-36-0"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "Accessories (USB 2.0, 5 VDC 500 mA out) or 9 VDC 3 A power input as an alternative to PoE",
+      "id": "p1795168280900-36-1"
+    }
+  ]
+}

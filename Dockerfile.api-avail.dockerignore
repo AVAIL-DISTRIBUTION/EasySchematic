@@ -8,6 +8,7 @@
 !api/migrations
 !api-avail
 !docs/avail
+!library
 **/node_modules
 api-avail/dist
 api-avail/data
