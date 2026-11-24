@@ -47,22 +47,29 @@ describe("applyVendorDecisions", () => {
     insert("y", { manufacturer: "Yamaha Pro Audio" });
     insert("b", { manufacturer: "Bose" });
     insert("n", { manufacturer: "Netgear", deviceType: "network-switch", modelNumber: "GSM4230PX" });
+    insert("ng", { manufacturer: "NETGEAR", label: "NETGEAR M4350-16V4C", deviceType: "network-switch", modelNumber: "VSM4320C" });
+    insert("ws", { manufacturer: "WyreStorm", label: "WyreStorm NHD-500-TX", deviceType: "av-over-ip" });
+    insert("ws-bare", { manufacturer: "WyreStorm", label: "NHD-400-RX", deviceType: "av-over-ip" });
     const r = applyVendorDecisions(api.db.sqlite);
     expect(row("y")).toMatchObject({ manufacturer: "Yamaha", version: 2 });
     expect(row("b")!.manufacturer).toBe("Bose Professional");
-    expect(row("n")!.manufacturer).toBe("NETGEAR");
+    expect(row("n")!.manufacturer).toBe("Netgear-AV");
+    // The label follows when it starts with the old spelling; a label without the brand is left as it is.
+    expect(row("ng")).toMatchObject({ manufacturer: "Netgear-AV", label: "Netgear-AV M4350-16V4C" });
+    expect(row("ws")).toMatchObject({ manufacturer: "Wyrestorm", label: "Wyrestorm NHD-500-TX" });
+    expect(row("ws-bare")).toMatchObject({ manufacturer: "Wyrestorm", label: "NHD-400-RX" });
     expect(r.renamed).toEqual(
-      expect.arrayContaining([{ from: "Yamaha Pro Audio", to: "Yamaha", count: 1 }, { from: "Netgear", to: "NETGEAR", count: 1 }]),
+      expect.arrayContaining([{ from: "Yamaha Pro Audio", to: "Yamaha", count: 1 }, { from: "Netgear", to: "Netgear-AV", count: 1 }, { from: "NETGEAR", to: "Netgear-AV", count: 1 }, { from: "WyreStorm", to: "Wyrestorm", count: 2 }]),
     );
   });
 
-  it("scope: deletes Sony outside system cameras and NETGEAR outside AV Line", () => {
+  it("scope: deletes Sony outside system cameras and Netgear-AV outside AV Line", () => {
     insert("s-cam", { manufacturer: "Sony", deviceType: "ptz-camera" });
     insert("s-tv", { manufacturer: "Sony", deviceType: "tv" }, "raw");
     insert("n-av", { manufacturer: "NETGEAR", deviceType: "network-switch", label: "NETGEAR M4350-16V4C", modelNumber: "VSM4320C" });
     insert("n-wifi", { manufacturer: "NETGEAR", deviceType: "access-point", label: "NETGEAR WAX610", modelNumber: "WAX610" });
     const r = applyVendorDecisions(api.db.sqlite);
-    expect(r.scopeDeleted).toEqual({ Sony: 1, NETGEAR: 1 });
+    expect(r.scopeDeleted).toEqual({ Sony: 1, "Netgear-AV": 1 });
     expect(row("s-cam")).toBeDefined();
     expect(row("s-tv")).toBeUndefined();
     expect(meta("s-tv")).toBeUndefined();

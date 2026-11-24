@@ -97,6 +97,18 @@ function startsWithWord(label: string, prefix: string): boolean {
   return next === "" || /\s/.test(next);
 }
 
+/**
+ * The label with the canonical manufacturer in front: a known spelling at the start (the
+ * canonical name, an alias, the original value) is replaced, otherwise the name is added.
+ * Longest spelling first: "Biamp Systems X" is the alias "Biamp Systems", not "Biamp" + "Systems X".
+ */
+export function labelWithManufacturer(label: string, manufacturer: string, original = ""): string {
+  const vendor = findVendor(manufacturer);
+  const prefixes = [manufacturer, ...(vendor ? [vendor.name, ...vendor.aliases] : []), original].filter(Boolean).sort((a, b) => b.length - a.length);
+  const hit = prefixes.find((p) => startsWithWord(label, p));
+  return hit ? `${manufacturer}${label.slice(hit.length)}` : `${manufacturer} ${label}`;
+}
+
 /** Lint condition for an all-caps label: ≥2 Latin words and no lower case. */
 export function isCapsLabel(label: string): boolean {
   const words = label.split(/[\s/()-]+/).filter((w) => /[A-Za-z]{2,}/.test(w));
@@ -175,11 +187,7 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
   // --- label: canonical manufacturer at the start
   const label = str(t.label);
   if (man && label) {
-    // Longest name first: "Biamp Systems X" is the alias "Biamp Systems", not "Biamp" + "Systems X".
-    const vendor = findVendor(man);
-    const prefixes = [man, ...(vendor ? [vendor.name, ...vendor.aliases] : []), manRaw].filter(Boolean).sort((a, b) => b.length - a.length);
-    const hit = prefixes.find((p) => startsWithWord(label, p));
-    const next = hit ? `${man}${label.slice(hit.length)}` : `${man} ${label}`;
+    const next = labelWithManufacturer(label, man, manRaw);
     if (next !== label) {
       changes.push({ field: "label", from: label, to: next, note: "label = manufacturer + model" });
       t.label = next;

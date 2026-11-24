@@ -84,7 +84,8 @@ docker compose exec api npm run import:avail                # запись
 ### Чистка по решениям о вендорах
 
 `docs/avail/vendor-decisions.json` решает, каких производителей библиотека держит: переименовывает
-к основному написанию, оставляет у Sony только системные камеры и у NETGEAR только AV Line,
+к основному написанию (как в учётной системе: WyreStorm → Wyrestorm, NETGEAR → Netgear-AV; подпись,
+начинающаяся со старого написания, тоже), оставляет у Sony только системные камеры и у Netgear-AV только AV Line,
 сводит бренды из списка generic в «Generic <тип>» (только для типов, где Generic ещё нет; существующие Generic не перезаписываются), удаляет остальных и
 шаблоны без производителя (строки `templates` и `avail_template_meta`). Шаблоны `library/avail`
 не трогаются; сохранённые схемы открываются (блок хранит свои данные). Всё в одной транзакции.
@@ -96,7 +97,9 @@ docker compose exec api npm run apply:vendor-decisions -- --dry-run    # отч�
 docker compose exec api npm run apply:vendor-decisions                 # запись
 ```
 
-Откат — восстановление из бэкапа. Повторный `import:upstream` удалённое не возвращает.
+Откат — восстановление из бэкапа. Повторный `import:upstream` удалённое не возвращает и не
+затирает то, что записали нормализатор и чистки: пока шаблон в источнике не менялся
+(`avail_template_meta.source_hash`), локальная строка остаётся как есть.
 
 ### Generic-вендор и нормализатор v2
 
@@ -106,7 +109,9 @@ Conference System) приходят из `library/avail` через `import:avai
 
 ```bash
 ./backup.sh                                                          # обязательно перед записью
-docker compose exec api npm run import:avail                         # пересобранные Generic
+docker compose exec api npm run import:avail                         # пересобранные Generic, Netgear-AV M4250
+docker compose exec api npm run apply:vendor-decisions -- --dry-run  # написания учётной системы: WyreStorm → Wyrestorm, NETGEAR → Netgear-AV
+docker compose exec api npm run apply:vendor-decisions
 docker compose exec api npm run apply:generic-plan -- --dry-run      # отчёт: переименования, удаления
 docker compose exec api npm run apply:generic-plan
 docker compose exec api npm run normalize:library -- --dry-run       # уровни до/после, разбивка нерешённых секций

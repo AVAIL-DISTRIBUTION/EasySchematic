@@ -6,7 +6,7 @@
  *
  *   keep     — keep list ∪ every vendor of avail-vendors.json (portfolio or supported);
  *              the manufacturer is written in its canonical form (rename map, aliases);
- *   scope    — Sony: only keepDeviceTypes; NETGEAR: only models matching keepModelPattern;
+ *   scope    — Sony: only keepDeviceTypes; Netgear-AV: only models matching keepModelPattern;
  *   generic  — brands we do not carry: per deviceType one template becomes
  *              "Generic <type>" (genericTemplate), the rest go;
  *   drop     — everything else, and templates without a manufacturer.
@@ -87,7 +87,10 @@ export class VendorRules {
     }
     if (rule?.keepModelPattern) {
       const label = (t.label ?? "").trim();
-      const bare = label.toLowerCase().startsWith(k + " ") ? label.slice(k.length + 1) : label;
+      // The label without the brand in any spelling: "NETGEAR M4350-16V4C" → "M4350-16V4C".
+      const spellings = [manufacturer, raw, ...(findVendor(manufacturer)?.aliases ?? [])].map(key).sort((a, b) => b.length - a.length);
+      const hit = spellings.find((sp) => label.toLowerCase().startsWith(sp + " "));
+      const bare = hit ? label.slice(hit.length + 1) : label;
       const candidates = [t.modelNumber ?? "", label, bare];
       if (!candidates.some((c) => rule.keepModelPattern!.test(c.trim()))) {
         return { kind: "scope", manufacturer, reason: `model ${t.modelNumber || label} is outside the ${manufacturer} scope` };

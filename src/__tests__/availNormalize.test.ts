@@ -254,7 +254,7 @@ describe("normalizeBlock improves the lint level", () => {
     expect(lintBlock(community).level).toBe("FIX");
     const r = normalizeBlock(community);
     expect(lintBlock(r.template)).toMatchObject({ level: "B", errors: [] });
-    expect(r.template).toMatchObject({ manufacturer: "WyreStorm", label: "WyreStorm NHD-500-TX", shortName: "NHD-500-TX", category: "AV distribution / AVoIP" });
+    expect(r.template).toMatchObject({ manufacturer: "Wyrestorm", label: "Wyrestorm NHD-500-TX", shortName: "NHD-500-TX", category: "AV distribution / AVoIP" });
     expect(r.template.ports.map((p) => `${p.section}: ${p.label}`)).toEqual([
       "Video Inputs: HDMI Input",
       "Video Outputs: HDMI Loop Out",

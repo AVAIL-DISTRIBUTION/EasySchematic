@@ -61,8 +61,8 @@ describe("normalizeLibrary", () => {
 
     const r = normalizeLibrary(api.db.sqlite);
     expect(r).toMatchObject({ processed: 2, improved: 2, transitions: { "FIX→B": 2 } });
-    expect(r.byVendor.WyreStorm).toMatchObject({ processed: 2, written: 2, fixToB: 2 });
-    expect(row("a")).toMatchObject({ manufacturer: "WyreStorm", label: "WyreStorm NHD-a", category: "AV distribution / AVoIP", version: 2 });
+    expect(r.byVendor.Wyrestorm).toMatchObject({ processed: 2, written: 2, fixToB: 2 });
+    expect(row("a")).toMatchObject({ manufacturer: "Wyrestorm", label: "Wyrestorm NHD-a", category: "AV distribution / AVoIP", version: 2 });
     expect(JSON.parse(row("a").ports as string).map((p: { section: string }) => p.section)).toEqual(["Video Inputs", "Network", "Power"]);
     expect(meta("a")).toMatchObject({ status: "raw", lint_level: "B", linted_version: 2, updated_by: "normalize" });
     expect(meta("d")).toMatchObject({ status: "draft", lint_level: "B" });
@@ -117,7 +117,7 @@ describe("normalizeLibrary", () => {
     const before = row("a");
     const version = api.db.sqlite.prepare("SELECT version FROM library_meta").get();
     const r = normalizeLibrary(api.db.sqlite, { dryRun: true });
-    expect(r).toMatchObject({ dryRun: true, improved: 1, byVendor: { WyreStorm: { fixToB: 1, written: 0 } } });
+    expect(r).toMatchObject({ dryRun: true, improved: 1, byVendor: { Wyrestorm: { fixToB: 1, written: 0 } } });
     expect(row("a")).toEqual(before);
     expect(api.db.sqlite.prepare("SELECT version FROM library_meta").get()).toEqual(version);
   });
@@ -136,7 +136,7 @@ describe("normalizeLibrary", () => {
     const text = formatNormalizeReport(normalizeLibrary(api.db.sqlite, { dryRun: true }));
     expect(text).toContain("dry run, nothing written");
     expect(text).toContain("Transitions: FIX→B 1");
-    expect(text).toMatch(/WyreStorm +1 +1 +0 +0/);
+    expect(text).toMatch(/Wyrestorm +1 +1 +0 +0/);
     expect(text).toContain("Top 10 remaining reasons:");
   });
 

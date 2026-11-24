@@ -16,16 +16,21 @@
  *
  * Vendor decisions (docs/avail/vendor-decisions.json, src/avail/vendorDecisions.ts) come
  * first: templates without a manufacturer, of manufacturers outside keep/rename/generic, and
- * outside a vendor's scope (Sony, NETGEAR) are skipped; kept ones get the canonical
+ * outside a vendor's scope (Sony, Netgear-AV) are skipped; kept ones get the canonical
  * manufacturer; a brand folded into Generic is imported only as "Generic <type>" and only
  * when no Generic of that type exists. So a repeated import after apply:vendor-decisions
  * does not bring back what the cleanup removed. Ids deleted by docs/avail/generic-plan.json
  * are skipped too, and rows written by either cleanup are not overwritten.
  *
+ * Local improvements survive: while a source template is unchanged since the last import
+ * (meta.source_hash), its row is not overwritten, so what normalize:library, the cleanups or a
+ * moderator wrote stays. A changed source template replaces the row (normalize again after).
+ *
  * Status rules: verified and draft templates are never touched; hidden ones get the
  * new data but stay hidden; everything else becomes raw. A second run with the same
  * source data changes nothing (all "unchanged").
  */
+import { createHash } from "node:crypto";
 import type Database from "better-sqlite3";
 import { templateToRow, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
@@ -65,6 +70,8 @@ export interface ImportReport {
   inserted: number;
   updated: number;
   unchanged: number;
+  /** Source unchanged since the last import (same hash): the local row, normalized or edited, kept. */
+  keptLocal: number;
   /** Matched a verified/draft template, or one written by apply:vendor-decisions: left as it is. */
   skippedProtected: number;
   /** Matched a hidden template: data refreshed, still hidden. */
@@ -119,11 +126,16 @@ export function normalizeTemplate(t: UpstreamTemplate): UpstreamTemplate {
 
 type Row = Record<string, string | number | null>;
 
-const META_UPSERT = `INSERT INTO avail_template_meta (template_id, status, source, upstream_id, lint_level, linted_version, updated_by, updated_at)
-  VALUES (@template_id, @status, @source, @upstream_id, @lint_level, @linted_version, @updated_by, datetime('now'))
+const META_UPSERT = `INSERT INTO avail_template_meta (template_id, status, source, upstream_id, lint_level, linted_version, updated_by, updated_at, source_hash)
+  VALUES (@template_id, @status, @source, @upstream_id, @lint_level, @linted_version, @updated_by, datetime('now'), @source_hash)
   ON CONFLICT(template_id) DO UPDATE SET status = excluded.status, source = excluded.source,
     upstream_id = excluded.upstream_id, lint_level = excluded.lint_level, linted_version = excluded.linted_version,
-    updated_by = excluded.updated_by, updated_at = excluded.updated_at`;
+    updated_by = excluded.updated_by, updated_at = excluded.updated_at, source_hash = excluded.source_hash`;
+
+/** Hash of a source template as received: tells whether the source changed since the last import. */
+export function sourceHash(t: unknown): string {
+  return createHash("sha256").update(JSON.stringify(t)).digest("hex");
+}
 
 class DryRun extends Error {}
 
@@ -143,6 +155,7 @@ export function importTemplates(
     inserted: 0,
     updated: 0,
     unchanged: 0,
+    keptLocal: 0,
     skippedProtected: 0,
     keptHidden: 0,
     ourVendors: Object.fromEntries(VENDORS.map((v) => [v.name, 0])),
@@ -253,7 +266,9 @@ export function importTemplates(
         version: typeof raw.version === "number" ? raw.version : 1,
       };
       const status: TemplateStatus = existingStatus === "hidden" ? "hidden" : "raw";
+      const hash = sourceHash(raw);
       const metaRow = {
+        source_hash: hash,
         template_id: id,
         status,
         source,
@@ -270,11 +285,24 @@ export function importTemplates(
         report.inserted++;
         contentChanged = true;
       } else {
-        const rowChanged = columns.some((c) => (existing[c] ?? null) !== (row[c] ?? null));
         const m = meta.get(id);
+        // The local row may have been improved since the last import (normalize:library, the
+        // cleanups, a moderator's edit). Keep it while the source has not changed: same hash, or
+        // (rows imported before hashes were kept) a local version above the source's.
+        const sourceVersion = typeof raw.version === "number" ? raw.version : 1;
+        const sameSource = m?.source_hash ? m.source_hash === hash : Number(existing.version) > sourceVersion;
+        if (sameSource && m?.source === source && m.upstream_id === raw.id) {
+          if (m.source_hash !== hash) upsertMeta.run({ ...metaRow, lint_level: m.lint_level, linted_version: m.linted_version, status: m.status });
+          report.keptLocal++;
+          report.unchanged++;
+          report.imported++;
+          report.levels[(m.lint_level ?? level) as BlockLevel]++;
+          return;
+        }
+        const rowChanged = columns.some((c) => (existing[c] ?? null) !== (row[c] ?? null));
         const metaChanged =
           !m || m.status !== status || m.source !== source || m.upstream_id !== raw.id || m.lint_level !== level ||
-          m.linted_version !== row.version;
+          m.linted_version !== row.version || m.source_hash !== hash;
         if (rowChanged) {
           updateTemplate.run(row);
           reindex(existing, row as TemplateRow & Row);
@@ -331,7 +359,7 @@ export function formatImportReport(r: ImportReport, origin: string): string {
     `Received: ${r.received} (invalid ${r.invalid}, manufacturer + model duplicates ${r.duplicates})`,
     `Skipped by vendor decisions: no manufacturer ${r.skipped.noManufacturer}, manufacturer not decided ${r.skipped.notDecided}, outside scope ${r.skipped.scope}, Generic of the type exists ${r.skipped.genericExists}, deleted by the Generic plan ${r.skipped.genericPlan}`,
     `Generic created: ${r.genericCreated.length ? r.genericCreated.join(", ") : "-"}`,
-    `Imported: ${r.imported}; new ${r.inserted}, updated ${r.updated}, unchanged ${r.unchanged}`,
+    `Imported: ${r.imported}; new ${r.inserted}, updated ${r.updated}, unchanged ${r.unchanged} (of them kept as edited locally: ${r.keptLocal})`,
     `Not touched (verified/draft, written by vendor decisions): ${r.skippedProtected}; kept hidden: ${r.keptHidden}`,
     ``,
     `AVAIL vendors: ${oursTotal}`,

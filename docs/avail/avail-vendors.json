@@ -1,6 +1,6 @@
 {
  "version": 2,
- "note": "portfolio: true — вендоры портфеля AVAIL; false — поддерживаемые вендоры вне портфеля (решения о вендорах: vendor-decisions.json). Линтер принимает оба уровня.",
+ "note": "portfolio: true — вендоры портфеля AVAIL; false — поддерживаемые вендоры вне портфеля (решения о вендорах: vendor-decisions.json). Линтер принимает оба уровня. Основное написание — как в учётной системе (Odoo), написание производителя — в aliases.",
  "vendors": [
   {
    "name": "Extron",
@@ -18,10 +18,10 @@
    "aliases": []
   },
   {
-   "name": "WyreStorm",
+   "name": "Wyrestorm",
    "portfolio": true,
    "aliases": [
-    "Wyrestorm",
+    "WyreStorm",
     "WYRESTORM"
    ]
   },
@@ -50,12 +50,12 @@
    "aliases": []
   },
   {
-   "name": "tvONE",
+   "name": "TV One",
    "portfolio": true,
    "aliases": [
-    "TV One",
-    "tv one",
-    "TVOne"
+    "tvONE",
+    "TVOne",
+    "tv one"
    ]
   },
   {
@@ -96,11 +96,11 @@
    "aliases": []
   },
   {
-   "name": "NETGEAR",
+   "name": "Netgear-AV",
    "portfolio": true,
    "aliases": [
+    "NETGEAR",
     "Netgear",
-    "Netgear-AV",
     "NETGEAR AV"
    ],
    "scope": "линейка AV Line (M4250/M4350)"

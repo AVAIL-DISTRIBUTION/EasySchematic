@@ -56,7 +56,8 @@ PR всегда открываем в `master` нашего форка, **ник
   `category` шаблона = путь листовой категории, на схеме — только `schematic=true`;
   `deviceTypeDefaults` — категория по умолчанию для типа устройства (`null` — без категории);
 - `docs/avail/avail-vendors.json` — вендоры и их синонимы; `manufacturer` = каноническое
-  `name`, всё вне списка — `Generic`. Два уровня: `portfolio: true` (19, портфель AVAIL) и
+  `name`, всё вне списка — `Generic`. Основное написание — как в учётной системе (Wyrestorm,
+  Netgear-AV, TV One), написание производителя — в `aliases`. Два уровня: `portfolio: true` (19, портфель AVAIL) и
   `portfolio: false` (11 поддерживаемых вне портфеля); линтер принимает оба;
 - `docs/avail/vendor-decisions.json` — решения о вендорах (keep / rename / scope / generic,
   остальное удаляется); правила — `src/avail/vendorDecisions.ts`, применяет
@@ -156,7 +157,9 @@ Editor upstream на временной копии шаблона из базы 
 каноническому имени, ставит `category` по `deviceTypeDefaults`, считает `lint_level`,
 пишет со статусом `raw`. Один шаблон на пару производитель+модель (`modelNumber`, иначе
 `label`); `verified`/`draft` не трогает, `hidden` обновляет, оставляя скрытым; повторный
-запуск ничего не меняет. На сервере: `docker compose exec api npm run import:upstream`
+запуск ничего не меняет. Локальные улучшения переживают повторный импорт: пока шаблон в
+источнике не менялся (`source_hash` в `avail_template_meta`; для строк, импортированных до
+хешей, — локальная версия выше версии источника), строка не перезаписывается. На сервере: `docker compose exec api npm run import:upstream`
 (`-- --dry-run` — только отчёт).
 
 Автонормализатор (`src/avail/normalize.ts`, чистая функция `normalizeBlock(template) →

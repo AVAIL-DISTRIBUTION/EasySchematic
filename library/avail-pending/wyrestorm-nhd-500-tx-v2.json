@@ -1,8 +1,8 @@
 {
   "id": "e347f955-abc7-4ce3-9a0f-e2c946b7f295",
-  "label": "WyreStorm NHD-500-TX v2",
+  "label": "Wyrestorm NHD-500-TX v2",
   "shortName": "NHD-500-TX v2",
-  "manufacturer": "WyreStorm",
+  "manufacturer": "Wyrestorm",
   "modelNumber": "NHD-500-TX",
   "deviceType": "av-over-ip",
   "category": "AV distribution / AVoIP",

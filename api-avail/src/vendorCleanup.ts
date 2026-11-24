@@ -2,8 +2,10 @@
  * apply:vendor-decisions — cleans the library by docs/avail/vendor-decisions.json
  * (rules in src/avail/vendorDecisions.ts), in one transaction:
  *
- *   rename   manufacturer → canonical spelling (Yamaha Pro Audio → Yamaha, Netgear → NETGEAR);
- *   scope    Sony outside keepDeviceTypes, NETGEAR outside keepModelPattern → deleted;
+ *   rename   manufacturer → canonical spelling, the one of our accounting system (Yamaha Pro Audio →
+ *            Yamaha, NETGEAR → Netgear-AV, WyreStorm → Wyrestorm); a label that starts with the old
+ *            spelling gets the new one ("NETGEAR M4350-16V4C" → "Netgear-AV M4350-16V4C");
+ *   scope    Sony outside keepDeviceTypes, Netgear-AV outside keepModelPattern → deleted;
  *   generic  brands we do not carry: for a deviceType without any Generic template, the most
  *            complete branded one becomes "Generic <type>" (same id, so schematics keep their
  *            link) and the others are deleted; where a Generic of that type exists, all the
@@ -18,6 +20,7 @@
 import type Database from "better-sqlite3";
 import { rowToTemplate, templateToRow, type TemplateRow } from "../../api/src/db";
 import { GENERIC_VENDOR } from "../../src/avail/library";
+import { labelWithManufacturer } from "../../src/avail/normalize";
 import { completeness, genericTemplate, VendorRules } from "../../src/avail/vendorDecisions";
 import { AVAIL_LIBRARY_SOURCE } from "./importAvail";
 import { VENDOR_DECISIONS_SOURCE } from "./importUpstream";
@@ -108,7 +111,7 @@ export function applyVendorDecisions(
   const update = sqlite.prepare(
     `UPDATE templates SET ${columns.map((c) => `${c} = @${c}`).join(", ")}, version = version + 1, updated_at = datetime('now') WHERE id = @id`,
   );
-  const renameStmt = sqlite.prepare("UPDATE templates SET manufacturer = ?, version = version + 1, updated_at = datetime('now') WHERE id = ?");
+  const renameStmt = sqlite.prepare("UPDATE templates SET manufacturer = ?, label = ?, version = version + 1, updated_at = datetime('now') WHERE id = ?");
   const delMeta = sqlite.prepare("DELETE FROM avail_template_meta WHERE template_id = ?");
   const delTemplate = sqlite.prepare("DELETE FROM templates WHERE id = ?");
   // Rows written here get source "vendor-decisions": import:upstream leaves them alone, so a
@@ -157,7 +160,11 @@ export function applyVendorDecisions(
         genericByType.set(r.device_type, list);
       } else {
         if (c.renamed) {
-          renameStmt.run(c.manufacturer, r.id);
+          // The label follows only when it starts with a spelling of this vendor.
+          const relabeled = labelWithManufacturer(r.label, c.manufacturer, r.manufacturer ?? "");
+          const label = relabeled.endsWith(` ${r.label}`) ? r.label : relabeled;
+          renameStmt.run(c.manufacturer, label, r.id);
+          r.label = label;
           const k = `${r.manufacturer}→${c.manufacturer}`;
           const e = renames.get(k) ?? { from: r.manufacturer ?? "", to: c.manufacturer, count: 0 };
           e.count++;
