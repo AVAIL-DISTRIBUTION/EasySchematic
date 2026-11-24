@@ -7,8 +7,8 @@
 
 /** Port sections in the order the standard requires; "(…)" suffixes are allowed, e.g. "Video Inputs (Front)". */
 export const BLOCK_SECTIONS = [
-  "Video Inputs", "Video Outputs", "Audio Inputs", "Audio Outputs", "Speaker Outputs", "RF",
-  "Network", "Dante", "AVB", "Serial", "IR", "Relays", "Digital I/O", "Control", "Sync",
+  "Video Inputs", "Video Outputs", "Audio Inputs", "Audio Outputs", "Audio I/O", "Speaker Outputs", "RF",
+  "Network", "Telephony", "Dante", "AVB", "Serial", "IR", "Relays", "Digital I/O", "Control", "Sync",
   "Expansion", "USB", "Configuration", "Power",
 ] as const;
 
@@ -100,6 +100,7 @@ const TWO_WAY_RE = /\b(trrs|headset|pass[- ]?thru|pass[- ]?through|in\/out|i\/o)
 
 /** The note a configurable HDBaseT input/output carries. */
 export const CONFIGURABLE_NOTE = "configurable input/output";
+const CONFIGURABLE_RE = /\bconfigurable\b/i;
 
 /**
  * true when the standard wants this port input or output but it is marked bidirectional
@@ -109,6 +110,8 @@ export const CONFIGURABLE_NOTE = "configurable input/output";
 export function wrongBidirectional(port: PortLike): boolean {
   if (!PHYSICAL_DIRECTION_SIGNALS.has(str(port.signalType)) || port.direction !== "bidirectional") return false;
   if (str(port.signalType) === "hdbaset") return false;
+  // An analog audio port configurable as input or output (v1.8), noted so.
+  if (str(port.signalType) === "analog-audio" && CONFIGURABLE_RE.test(str((port as Obj).notes))) return false;
   const text = `${str(port.label)} ${str((port as Obj).notes)}`;
   return !PARTYLINE_RE.test(text) && !TWO_WAY_RE.test(text);
 }
@@ -164,7 +167,10 @@ export function sectionByPurpose(port: PortLike, directionHint?: "input" | "outp
   // HDBaseT / DTP / XTP port configurable as input or output (DTP3 I/O, XTP I/O).
   if (sig === "hdbaset" && port.direction === "bidirectional" && !directionHint) return "Video Inputs (Configurable)";
   if (VIDEO_SIGNALS.has(sig)) return dir === "input" ? "Video Inputs" : dir === "output" ? "Video Outputs" : null;
+  // Analog audio port configurable as input or output (v1.8): Audio I/O.
+  if (sig === "analog-audio" && port.direction === "bidirectional" && CONFIGURABLE_RE.test(str((port as Obj).notes))) return "Audio I/O";
   if (AUDIO_SIGNALS.has(sig)) return dir === "input" ? "Audio Inputs" : dir === "output" ? "Audio Outputs" : null;
+  if (sig === "pots") return "Telephony";
   if (sig === "speaker-level") return dir === "output" ? "Speaker Outputs" : dir === "input" ? "Audio Inputs" : null;
   // Fiber: a duplex link is data (SFP uplink, AVoIP, NAV); a one-way link carries AV like HDBaseT (4.1).
   if (sig === "fiber") return dir === "input" ? "Video Inputs" : dir === "output" ? "Video Outputs" : port.direction === "bidirectional" ? "Network" : null;

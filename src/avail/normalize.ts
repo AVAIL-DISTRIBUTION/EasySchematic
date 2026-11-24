@@ -26,6 +26,7 @@
  *     front-panel ports get "(Front)"; ports ordered by the standard's section order.
  */
 import { BLOCK_SECTIONS } from "./blockLint";
+import { ABBREVIATIONS } from "./labels";
 import categoryPlanJson from "../../docs/avail/category-plan.json";
 import { canonicalFamily, familyInfo } from "./slotFamilies";
 import { BIDIRECTIONAL_SIGNALS, CONFIGURABLE_NOTE, directionFromLabel, SIGNAL_CONNECTORS, sectionBase, targetSection } from "./sections";
@@ -57,17 +58,6 @@ type PortLike = Obj & { id?: unknown; label?: unknown; signalType?: unknown; dir
 // Python-style part number (the linter's rule): 60-1885-52.
 const SKU_RE = /^\p{Nd}{2}-\p{Nd}{3,4}-\p{Nd}{2}(?=\n?$)/u;
 
-/** Abbreviations kept in capitals (key: upper case → written form). */
-const ABBREVIATIONS = new Map(
-  [
-    "HDMI", "USB", "LAN", "WAN", "DTP", "DTP2", "DTP3", "XTP", "IR", "DSP", "AEC", "SDI", "DP", "DVI", "VGA", "AV", "AVB", "SFP", "SFP+",
-    "AES", "AES67", "XLR", "TRS", "RCA", "CEC", "EDID", "HDCP", "GPIO", "I/O", "DC", "AC", "PC", "TV", "RF", "HD", "ID", "IP", "LED",
-    "OOB", "KVM", "DMX", "MIDI", "NDI", "MADI", "ADAT", "PTZ", "VC", "HDBT", "HDBASET", "RS-232", "RS-422", "RS-485", "RS232",
-    "RS422", "RS485", "EXP", "ACP", "SPDIF", "S/PDIF", "OSD", "UHD", "4K", "8K", "BNC", "PSU", "PGM", "PVW", "AUX", "L", "R",
-    "IPCP", "HID", "TX", "RX", "COM", "DMP", "VISCA", "RS", "RJ", "ARC", "TOSLINK", "GPU", "UTP", "SD", "CCU", "NHD", "IEC",
-    "PAL", "NTSC", "TC", "PWR", "MGMT", "PA", "DHCP", "SNMP", "SIP", "VOIP", "POTS",
-  ].map((a) => [a, a] as [string, string]).concat([["POE", "PoE"], ["POE+", "PoE+"], ["POE++", "PoE++"], ["EBUS", "eBUS"], ["EARC", "eARC"]]),
-);
 // "AUX", "PGM", "PVW" read as abbreviations on panels; everything else below is a plain word.
 const WORDS = new Set(
   `in out input inputs output outputs line mic power audio video left right main program preview monitor loop thru through
