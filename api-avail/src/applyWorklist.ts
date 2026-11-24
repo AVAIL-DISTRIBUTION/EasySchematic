@@ -7,6 +7,9 @@
  * (library/avail) are skipped — their file is the source. Afterwards every template's level is
  * recomputed against the library, and each line N is checked against Issue N: a false positive is
  * confirmed when the issue is gone under the current rules, an applied line when its fix removed it.
+ *
+ * Follow-ups (worklistFollowups.ts, tools/avail/incoming/worklist-followups.json) are applied after
+ * the solutions, with the same rules: curated templates skipped, written only on a data change.
  */
 import type Database from "better-sqlite3";
 import { rowToTemplate, templateToRow, type TemplateRow } from "../../api/src/db";
@@ -15,6 +18,7 @@ import { findVendor } from "../../src/avail/library";
 import { AVAIL_LIBRARY_SOURCE } from "./importAvail";
 import { BUMP_LIBRARY_VERSION, relintAll, slotContext } from "./templateMeta";
 import { applyActions, parseSolution, type SolutionLine } from "./worklistSolutions";
+import { applyFollowups, followupsById, type FollowupsFile } from "./worklistFollowups";
 
 export interface WorklistRowInput {
   "Template id"?: string;
@@ -49,7 +53,7 @@ export interface ApplyWorklistReport {
   /** Actions that could not be applied (port not found, unknown connector, …). */
   actionsSkipped: { templateId: string; model: string; reason: string }[];
   /** Lines (or parts) that are free text: for a person. */
-  manual: { templateId: string; model: string; n: number; text: string }[];
+  manual: { templateId: string; model: string; n: number; text: string; followup?: boolean }[];
   falsePositiveGone: number;
   /** False positives whose issue is still reported under the current rules. */
   falsePositiveRemaining: LineCheck[];
@@ -57,6 +61,17 @@ export interface ApplyWorklistReport {
   /** Applied lines whose issue is still there (the fix was partial or about something else). */
   appliedRemaining: LineCheck[];
   noData: number;
+  followups: {
+    operations: number;
+    templatesChanged: number;
+    applied: number;
+    /** Templates already as in the follow-ups file. */
+    alreadyApplied: number;
+    skipped: { templateId: string; model: string; reason: string }[];
+    missingTemplates: string[];
+    curatedSkipped: string[];
+    notDone: string[];
+  };
   levelsBefore: Record<string, Record<BlockLevel, number>>;
   levelsAfter: Record<string, Record<BlockLevel, number>>;
 }
@@ -84,7 +99,7 @@ function levelsByVendor(sqlite: Database.Database): Record<string, Record<BlockL
 export function applyWorklist(
   sqlite: Database.Database,
   rows: WorklistRowInput[],
-  options: { dryRun?: boolean; updatedBy?: string } = {},
+  options: { dryRun?: boolean; updatedBy?: string; followups?: FollowupsFile } = {},
 ): ApplyWorklistReport {
   const updatedBy = options.updatedBy ?? "worklist";
   const report: ApplyWorklistReport = {
@@ -103,6 +118,16 @@ export function applyWorklist(
     appliedGone: 0,
     appliedRemaining: [],
     noData: 0,
+    followups: {
+      operations: options.followups?.operations.length ?? 0,
+      templatesChanged: 0,
+      applied: 0,
+      alreadyApplied: 0,
+      skipped: [],
+      missingTemplates: [],
+      curatedSkipped: [],
+      notDone: options.followups?.notDone ?? [],
+    },
     levelsBefore: levelsByVendor(sqlite),
     levelsAfter: {},
   };
@@ -117,6 +142,7 @@ export function applyWorklist(
      ON CONFLICT(template_id) DO UPDATE SET updated_by = excluded.updated_by, updated_at = excluded.updated_at`,
   );
 
+  const followupIds = new Set(options.followups?.operations.map((o) => o.id) ?? []);
   const parsed = rows.map((r) => ({ row: r, id: (r["Template id"] ?? "").trim(), lines: parseSolution(r.Solution ?? "") }));
 
   const run = sqlite.transaction(() => {
@@ -126,7 +152,7 @@ export function applyWorklist(
         report.lines[l.kind]++;
         if (l.kind === "no-data") report.noData++;
         if (l.kind === "manual" || l.unparsed.length) {
-          report.manual.push({ templateId: id, model, n: l.n, text: l.kind === "manual" ? l.text : l.unparsed.join("; ") });
+          report.manual.push({ templateId: id, model, n: l.n, text: l.kind === "manual" ? l.text : l.unparsed.join("; "), followup: followupIds.has(id) });
         }
       }
       const actions = lines.filter((l) => l.kind === "applied").flatMap((l) => l.actions);
@@ -155,7 +181,31 @@ export function applyWorklist(
       noteMeta.run(id, updatedBy);
       report.templatesChanged++;
     }
-    if (report.templatesChanged) sqlite.prepare(BUMP_LIBRARY_VERSION).run();
+    const f = report.followups;
+    for (const [id, ops] of options.followups ? followupsById(options.followups) : []) {
+      const model = ops[0].model ?? id;
+      const dbRow = getRow.get(id) as (TemplateRow & { avail_source: string | null }) | undefined;
+      if (!dbRow) {
+        f.missingTemplates.push(`${model} [${id}]`);
+        continue;
+      }
+      if (dbRow.avail_source === AVAIL_LIBRARY_SOURCE) {
+        f.curatedSkipped.push(`${model} [${id}]`);
+        continue;
+      }
+      const res = applyFollowups(rowToTemplate(dbRow) as unknown as Record<string, unknown>, ops);
+      for (const reason of res.skipped) f.skipped.push({ templateId: id, model, reason });
+      const next = templateToRow({ ...(res.template as never as Parameters<typeof templateToRow>[0]), id, sortOrder: dbRow.sort_order }) as Record<string, unknown>;
+      if (!res.applied.length || !columns.some((c) => ((dbRow as unknown as Record<string, unknown>)[c] ?? null) !== (next[c] ?? null))) {
+        if (!res.skipped.length) f.alreadyApplied++;
+        continue;
+      }
+      f.applied += res.applied.length;
+      update.run(next);
+      noteMeta.run(id, updatedBy);
+      f.templatesChanged++;
+    }
+    if (report.templatesChanged || f.templatesChanged) sqlite.prepare(BUMP_LIBRARY_VERSION).run();
 
     // Check every line against its issue with the current rules and data.
     const ctx = slotContext(sqlite);
@@ -202,6 +252,7 @@ export function formatApplyWorklistReport(r: ApplyWorklistReport, source: string
     `False positives: gone under the current rules ${r.falsePositiveGone}, still reported ${r.falsePositiveRemaining.length}`,
     `Applied lines: issue gone ${r.appliedGone}, issue still there ${r.appliedRemaining.length}`,
     `Templates not in this database: ${r.missingTemplates.length}; curated (edit the library file instead): ${r.curatedSkipped.length}`,
+    `Follow-ups: ${r.followups.operations} operations; templates changed ${r.followups.templatesChanged} (already as in the file: ${r.followups.alreadyApplied}); operations applied ${r.followups.applied}, not applied ${r.followups.skipped.length}`,
     "",
     `Levels by vendor (our vendors):  before → after`,
     ...vendors.map((v) => `  ${v.padEnd(w)}  ${total(r.levelsBefore[v] ?? { A: 0, B: 0, FIX: 0 }).padEnd(26)} → ${total(r.levelsAfter[v] ?? { A: 0, B: 0, FIX: 0 })}`),
@@ -210,8 +261,8 @@ export function formatApplyWorklistReport(r: ApplyWorklistReport, source: string
     `False positives still reported (rule or data to look at):`,
     ...(r.falsePositiveRemaining.length ? r.falsePositiveRemaining.map((x) => `  ${x.model} [${x.templateId}] #${x.n}: ${x.issue} — ${x.text.slice(0, 140)}`) : ["  -"]),
     "",
-    `Manual (not applied):`,
-    ...(r.manual.length ? r.manual.map((x) => `  ${x.model} [${x.templateId}] #${x.n}: ${x.text.slice(0, 200)}`) : ["  -"]),
+    `Manual (not applied from the solution text; [follow-up] = the template has follow-ups in the file):`,
+    ...(r.manual.length ? r.manual.map((x) => `  ${x.followup ? "[follow-up] " : ""}${x.model} [${x.templateId}] #${x.n}: ${x.text.slice(0, 200)}`) : ["  -"]),
     "",
     `Actions not applied:`,
     ...(r.actionsSkipped.length ? r.actionsSkipped.map((x) => `  ${x.model} [${x.templateId}]: ${x.reason}`) : ["  -"]),
@@ -219,6 +270,10 @@ export function formatApplyWorklistReport(r: ApplyWorklistReport, source: string
     `Applied, but the issue is still there:`,
     ...(r.appliedRemaining.length ? r.appliedRemaining.map((x) => `  ${x.model} [${x.templateId}] #${x.n}: ${x.issue}`) : ["  -"]),
   ];
+  if (r.followups.skipped.length) lines.push("", "Follow-ups not applied:", ...r.followups.skipped.map((x) => `  ${x.model} [${x.templateId}]: ${x.reason}`));
+  if (r.followups.missingTemplates.length) lines.push("", "Follow-ups: templates not in this database:", ...r.followups.missingTemplates.map((m) => `  ${m}`));
+  if (r.followups.curatedSkipped.length) lines.push("", "Follow-ups: curated templates, skipped:", ...r.followups.curatedSkipped.map((m) => `  ${m}`));
+  if (r.followups.notDone.length) lines.push("", "Decided for a later step (not done now):", ...r.followups.notDone.map((m) => `  ${m}`));
   if (r.missingTemplates.length) lines.push("", "Templates not in this database:", ...r.missingTemplates.map((m) => `  ${m}`));
   if (r.curatedSkipped.length) lines.push("", "Curated templates (library/avail), skipped:", ...r.curatedSkipped.map((m) => `  ${m}`));
   return lines.join("\n") + "\n";

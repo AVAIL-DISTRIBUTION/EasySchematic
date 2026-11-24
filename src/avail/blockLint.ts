@@ -43,7 +43,7 @@ const POWER_PASSTHROUGH_RE = /loop|thru|out/iu;
 /** Power outputs that are what the device is for: 12 V supplies, tally and lamp outputs (v1.8). */
 const POWER_OUTPUT_LABEL_RE = /\b(12\s?v|24\s?v|48\s?v|tally|lamp)\b/i;
 /** Device types whose job is to deliver power: a power output is right there (v1.8). */
-const POWER_SOURCE_TYPES = new Set(["power-distribution", "power-supply", "24vdc-power-supply", "pdu", "ups"]);
+const POWER_SOURCE_TYPES = new Set(["power-distribution", "power-supply", "24vdc-power-supply", "pdu", "ups", "antenna-distribution"]);
 // Python's \b is Unicode-aware: a letter or digit of any script before "dtp" is not a boundary.
 const HDBASET_RE = /(?<![\p{L}\p{N}_])(dtp|xtp|hdbaset)/u;
 const GENERIC_PREFIX = `${GENERIC_VENDOR} `;
@@ -51,11 +51,12 @@ const GENERIC_PREFIX = `${GENERIC_VENDOR} `;
 const USB_BUS_POWER_RE = /bus-powered \(USB\)/i;
 /**
  * Notes of the port that powers a device without its own power port (standard 3.1): USB or
- * PoE, a bus (eBUS, ACP, DCP, VCH), phantom power, a battery, or a passive device (v1.8).
+ * PoE, a bus (eBUS, ACP, DCP, VCH), phantom power, a battery, a passive device, or power from
+ * the host device over its link cable (expansion mics, HDBaseT PoH receivers, adapters) (v1.8).
  */
-const BUS_POWER_RE = /bus-powered \((?:USB|eBUS|ACP|DCP|VCH)\)|(?<!\bno )\bPoE\b|\bphantom\b|\bbattery\b|\bpassive\b/i;
-/** Powered from elsewhere with no figure of its own to publish: bus, phantom, battery, passive. */
-const NO_POWER_FIGURE_RE = /bus-powered \((?:eBUS|ACP|DCP|VCH)\)|\bphantom\b|\bbattery\b|\bpassive\b/i;
+const BUS_POWER_RE = /bus-powered \((?:USB|eBUS|ACP|DCP|VCH)\)|(?<!\bno )\bPoE\b|\bphantom\b|\bbattery\b|\bpassive\b|\bpowered by host\b/i;
+/** Powered from elsewhere with no figure of its own to publish: bus, phantom, battery, passive, host. */
+const NO_POWER_FIGURE_RE = /bus-powered \((?:eBUS|ACP|DCP|VCH)\)|\bphantom\b|\bbattery\b|\bpassive\b|\bpowered by host\b/i;
 const GENERIC_MODEL_RE = /^GEN-[\p{Lu}\p{N}]+(?:-[\p{Lu}\p{N}]+)*$/u;
 
 /** modelNumber of a Generic block: "Generic Room PC" → "GEN-ROOM-PC". */

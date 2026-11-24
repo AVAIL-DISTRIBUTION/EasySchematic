@@ -1,5 +1,6 @@
 /**
- * CLI: apply the engineers' worklist solutions (applyWorklist.ts).
+ * CLI: apply the engineers' worklist solutions (applyWorklist.ts), then the follow-ups of
+ * tools/avail/incoming/worklist-followups.json (built into the bundle).
  *
  *   npm run apply:worklist -- --dry-run [--file <worklist.xlsx>]
  *   npm run apply:worklist [-- --file <worklist.xlsx>]
@@ -16,6 +17,7 @@ import { D1DatabaseShim } from "./d1";
 import { applyWorklist, formatApplyWorklistReport } from "./applyWorklist";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { syncLintLevels } from "./templateMeta";
+import { WORKLIST_FOLLOWUPS } from "./worklistFollowups";
 import { readWorklist, worklistPath } from "./worklistInput";
 
 let values: { "dry-run"?: boolean; file?: string };
@@ -32,7 +34,7 @@ const db = new D1DatabaseShim(path.join(config.dataDir, "easyschematic.sqlite"))
 try {
   applyAllMigrations(db.sqlite, config, (m) => console.error(m));
   const file = worklistPath(values.file);
-  const report = applyWorklist(db.sqlite, readWorklist(file), { dryRun: values["dry-run"] });
+  const report = applyWorklist(db.sqlite, readWorklist(file), { dryRun: values["dry-run"], followups: WORKLIST_FOLLOWUPS });
   if (!values["dry-run"]) syncLintLevels(db.sqlite);
   process.stdout.write(formatApplyWorklistReport(report, file));
 } catch (err) {

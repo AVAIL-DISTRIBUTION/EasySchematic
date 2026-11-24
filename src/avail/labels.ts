@@ -11,7 +11,7 @@ export const ABBREVIATIONS = new Map(
     "OOB", "KVM", "DMX", "MIDI", "NDI", "MADI", "ADAT", "PTZ", "VC", "HDBT", "HDBASET", "RS-232", "RS-422", "RS-485", "RS232",
     "RS422", "RS485", "EXP", "ACP", "SPDIF", "S/PDIF", "OSD", "UHD", "4K", "8K", "BNC", "PSU", "PGM", "PVW", "AUX", "L", "R",
     "IPCP", "HID", "TX", "RX", "COM", "DMP", "VISCA", "RS", "RJ", "ARC", "TOSLINK", "GPU", "UTP", "SD", "CCU", "NHD", "IEC",
-    "PAL", "NTSC", "TC", "PWR", "MGMT", "PA", "DHCP", "SNMP", "SIP", "VOIP", "POTS",
+    "PAL", "NTSC", "TC", "PWR", "MGMT", "PA", "DHCP", "SNMP", "SIP", "VOIP", "POTS", "DX", "ME", "EBU", "PD", "TB", "TB3", "TB4",
   ].map((a) => [a, a] as [string, string]).concat([["POE", "PoE"], ["POE+", "PoE+"], ["POE++", "PoE++"], ["EBUS", "eBUS"], ["EARC", "eARC"]]),
 );
 
@@ -26,6 +26,7 @@ export function onlyAbbreviations(label: string): boolean {
   if (!tokens.some((t) => LATIN_WORD.test(t))) return false;
   return tokens.every((t) => {
     if (!/[A-Za-z]/.test(t)) return true; // numbers: 1, 232
+    if (/^\d+(?:\.\d+)?(?:V|VDC|VAC|W|A|MA|MM|GB|TB|HZ|KHZ|MHZ|GHZ)$/i.test(t)) return true; // values: 12VDC, 5V
     if (ABBREVIATIONS.has(t.toUpperCase())) return true;
     return t.split(/[/-]/).filter(Boolean).every((w) => !/[A-Za-z]/.test(w) || ABBREVIATIONS.has(w.toUpperCase()) || w.length === 1);
   });

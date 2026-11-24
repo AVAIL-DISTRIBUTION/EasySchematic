@@ -43,6 +43,20 @@ describe("no power port: the powering port's notes say how it is powered", () =>
     }
     expect(without("balanced").errors).toContain("no power port");
   });
+  it("powered by host: on any port, no power figure needed", () => {
+    for (const n of ["powered by host", "powered by host (PoH)"]) {
+      const l = without(n);
+      expect(l.errors, n).not.toContain("no power port");
+      expect(l.warnings, n).not.toContain("no powerDrawW/voltage (or poeDrawW)");
+    }
+  });
+});
+
+describe("labels: more panel abbreviations and values", () => {
+  it("DX, ME, EBU, PD, TB3 and number+unit tokens", () => {
+    for (const l of ["DX 1", "ME 1", "AES/EBU", "USB PD", "TB3", "TB4", "12VDC", "5V DC"]) expect(onlyAbbreviations(l), l).toBe(true);
+    expect(onlyAbbreviations("12VDC POWER")).toBe(false);
+  });
 });
 
 describe("power outputs", () => {
@@ -51,6 +65,7 @@ describe("power outputs", () => {
   it("allowed for PDUs and power supplies, and for 12 V / tally / lamp outputs", () => {
     expect(out("Outlet 1", "power-distribution")).not.toContain('"Outlet 1": power is not an input');
     expect(out("Outlet 1", "power-supply")).not.toContain('"Outlet 1": power is not an input');
+    expect(out("DC Out 1", "antenna-distribution")).not.toContain('"DC Out 1": power is not an input');
     for (const l of ["12V Power 1", "Tally Power", "Lamp"]) expect(out(l), l).not.toContain(`"${l}": power is not an input`);
     expect(out("Aux Power")).toContain('"Aux Power": power is not an input');
   });

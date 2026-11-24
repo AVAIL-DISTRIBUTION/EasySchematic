@@ -13,6 +13,8 @@ COPY api-avail/package.json api-avail/package-lock.json ./api-avail/
 RUN cd api-avail && npm ci
 COPY src ./src
 COPY docs/avail ./docs/avail
+# Worklist follow-ups (worklist-followups.json) are bundled into apply:worklist.
+COPY tools/avail/incoming/worklist-followups.json ./tools/avail/incoming/
 COPY api/src ./api/src
 COPY api-avail ./api-avail
 RUN cd api-avail && npm run build && npm prune --omit=dev
