@@ -9,6 +9,7 @@
     "normalize:library": "node --enable-source-maps dist/normalize-library.mjs",
     "import:avail": "node --enable-source-maps dist/import-avail.mjs",
     "apply:vendor-decisions": "node --enable-source-maps dist/apply-vendor-decisions.mjs",
-    "apply:generic-plan": "node --enable-source-maps dist/apply-generic-plan.mjs"
+    "apply:generic-plan": "node --enable-source-maps dist/apply-generic-plan.mjs",
+    "export:worklist": "node --enable-source-maps dist/export-worklist.mjs"
   }
 }

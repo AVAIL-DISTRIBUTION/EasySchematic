@@ -38,6 +38,7 @@ import { HEADER_COLOR_SWATCH_FALLBACK, headerColorAfterRevert, normalizeHeaderCo
 import { buildDeviceTemplate, buildTemplatePreset, type PortDraft } from "../deviceTemplateBuild";
 import { installedSlotsToDefinitions, slotOwnedPortIds } from "../slotDefinitions";
 import { AvailTemplateEditBar } from "../avail/LibraryUi";
+import { acceptedFamilies } from "../avail/slotFamilies";
 import { carriesPowerCapacity } from "../deviceTypeCategories";
 import { editorPortsMatch, visibleSaveActions, SAVE_ACTION_LABELS, SAVE_ACTION_TITLES, type SaveActionId } from "../deviceEditorActions";
 import { visiblePortRowControls, PORT_ROW_CONTROL_TITLES, type PortRowControlId } from "../portRowControls";
@@ -383,7 +384,7 @@ export default function DeviceEditor() {
     setHiddenPorts(node.data.hiddenPorts ?? []);
     // The store's ports are what Apply would leave untouched; carried-over drafts are not.
     baselinePortsRef.current = { ports: synced, hiddenPorts: node.data.hiddenPorts ?? [] };
-  }, [editingNodeId, portSignature]);
+  }, [editingNodeId, portSignature, syncNonce]); // syncNonce: AVAIL Normalize → form
   /* eslint-enable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
 
   // Warm the community library when the editor opens so template-backed lookups
@@ -2060,7 +2061,12 @@ export default function DeviceEditor() {
         </div>
 
         {/* AVAIL: library template edit session (live linter, Save to library) */}
-        <AvailTemplateEditBar nodeId={deviceSessionId} build={buildDeviceData as () => Record<string, unknown> | null} onSaved={close} />
+        <AvailTemplateEditBar
+          nodeId={deviceSessionId}
+          build={buildDeviceData as () => Record<string, unknown> | null}
+          onSaved={close}
+          onFormReload={() => setSyncNonce((n) => n + 1)}
+        />
 
         {/* Footer */}
         <div className="px-4 py-3 border-t border-[var(--color-border)] flex items-center gap-2">
@@ -3707,7 +3713,9 @@ function SlotEditSection({
       {installedSlots.map((slot) => {
         // Use slotFamily from the slot itself (works for both top-level and nested)
         const family = slot.slotFamily ?? slotDefs.find((d) => d.id === slot.slotId)?.slotFamily;
-        const familyCards = family ? getCardsByFamily(family, customTemplates) : [];
+        // AVAIL: a slot may accept several families (slotFamilies).
+        const accepted = acceptedFamilies(slot.slotFamily ? slot : slotDefs.find((d) => d.id === slot.slotId) ?? slot);
+        const familyCards = family ? getCardsByFamily(accepted.length ? accepted : family, customTemplates) : [];
         const isNested = !!slot.parentSlotId;
 
         // Count connections to this slot's ports (including descendant ports for parent slots).

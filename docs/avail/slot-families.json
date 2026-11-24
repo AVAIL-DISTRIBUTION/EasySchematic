@@ -1,0 +1,212 @@
+{
+ "version": 1,
+ "note": "Семейство называет тип слота, а не плату: <vendor>-<platform>-<slot-type> строчными; одно семейство на один физический формат; отраслевые форм-факторы — стандартным именем (sfp, qsfp, sd-card, ops, intel-sdm). aliases — прежние имена (нормализатор переименовывает); alsoAccepts — какие ещё семейства принимает слот; category — категория шасси и плат.",
+ "families": [
+  {
+   "name": "extron-xtp-2",
+   "vendor": "Extron",
+   "platform": "XTP II CrossPoint frames",
+   "category": "AV distribution / XTP Systems"
+  },
+  {
+   "name": "extron-quantum-ultra",
+   "vendor": "Extron",
+   "platform": "Quantum Ultra (first generation) frames",
+   "category": "Processing / Videowall Processors"
+  },
+  {
+   "name": "extron-quantum-ultra-2",
+   "vendor": "Extron",
+   "platform": "Quantum Ultra II frames",
+   "category": "Processing / Videowall Processors",
+   "alsoAccepts": [
+    "extron-quantum-ultra"
+   ],
+   "note": "Quantum Ultra II is compatible with all Quantum Ultra input and output cards; Ultra II-only cards are extron-quantum-ultra-2",
+   "source": "https://www.extron.com/product/quantumultra2"
+  },
+  {
+   "name": "extron-fox3-matrix",
+   "vendor": "Extron",
+   "platform": "FOX3 Matrix frames",
+   "category": "AV distribution / Fiber Optics"
+  },
+  {
+   "name": "extron-fox3-matrix-24",
+   "vendor": "Extron",
+   "platform": "FOX3 Matrix 24x frames",
+   "category": "AV distribution / Fiber Optics"
+  },
+  {
+   "name": "extron-fox3-powercage",
+   "vendor": "Extron",
+   "platform": "PowerCage 401 enclosure (FOX3 boards)",
+   "category": "AV distribution / Fiber Optics"
+  },
+  {
+   "name": "extron-cubby",
+   "vendor": "Extron",
+   "platform": "Cable Cubby",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "name": "ah-dlive-io",
+   "vendor": "Allen & Heath",
+   "platform": "dLive and Avantis I/O Port (M-DL cards)",
+   "category": "Audio Products / Mixers",
+   "aliases": [
+    "AH-dLive/Avantis-IO"
+   ],
+   "note": "dLive and Avantis share the I/O Port; M-DL-ADAPT takes iLive/GLD cards",
+   "source": "https://support.allen-heath.com/hc/en-gb/articles/40487771409937-M-DL-DANT64-M-DL-DANT128-Fitting-Note"
+  },
+  {
+   "name": "ah-sq-io",
+   "vendor": "Allen & Heath",
+   "platform": "SQ and AHM I/O Port (M-SQ cards)",
+   "category": "Audio Products / Mixers",
+   "aliases": [
+    "AH-dLive/SQ-IO",
+    "AH-SQ/AHM-IO",
+    "ah-sq-slink"
+   ],
+   "note": "SQ and AHM share the I/O Port; the M-SQ-SLINK card fits it (the built-in SLink is a port, not a slot). SQ cards in dLive or vice versa: not documented",
+   "source": "https://www.allen-heath.com/content/uploads/2023/06/SQ-Dante-V2-Cut-Sheet.pdf"
+  },
+  {
+   "name": "ah-ilive-gld-io",
+   "vendor": "Allen & Heath",
+   "platform": "iLive and GLD I/O Port (M- cards)",
+   "category": "Audio Products / Mixers",
+   "aliases": [
+    "ah-gld-m"
+   ]
+  },
+  {
+   "name": "ah-dx32-module",
+   "vendor": "Allen & Heath",
+   "platform": "DX32 expander module slot",
+   "category": "Audio Products / Interfaces",
+   "aliases": [
+    "AH-DX32-Modules"
+   ],
+   "source": "https://www.allen-heath.com/content/uploads/2023/06/DX32-Datasheet-2.pdf"
+  },
+  {
+   "name": "yamaha-my",
+   "vendor": "Yamaha",
+   "platform": "Mini-YGDAI (MY) slot: CL, QL, RIVAGE PM",
+   "category": "Audio Products / Mixers"
+  },
+  {
+   "name": "yamaha-hy",
+   "vendor": "Yamaha",
+   "platform": "HY slot: RIVAGE PM DSP-RX/EX",
+   "category": "Audio Products / Mixers"
+  },
+  {
+   "name": "yamaha-py",
+   "vendor": "Yamaha",
+   "platform": "PY slot: DM7",
+   "category": "Audio Products / Mixers"
+  },
+  {
+   "name": "yamaha-tf-ny",
+   "vendor": "Yamaha",
+   "platform": "TF series expansion slot (NY64-D)",
+   "category": "Audio Products / Mixers",
+   "aliases": [
+    "Audio Interface Card"
+   ],
+   "note": "TF Rack: Expansion slots: 1 (for NY64-D) — not an MY slot",
+   "source": "https://usa.yamaha.com/products/proaudio/mixers/tf-rack/specs.html"
+  },
+  {
+   "name": "qsc-core-io",
+   "vendor": "QSC",
+   "platform": "Q-SYS Core 510i / I/O Frame I/O card slot (Type 2)",
+   "category": "Audio Products / DSP",
+   "aliases": [
+    "CIML4",
+    "CIML4-HP",
+    "COL4",
+    "CODP4",
+    "CAES4",
+    "CDN64",
+    "CIAES16"
+   ],
+   "note": "Any combination of Q-SYS Type 2 I/O cards in slots A-H; Type 2 is not physically compatible with older cards",
+   "source": "https://help.qsys.com/q-sys_8.0/Content/Hardware/Cores/Core_510i.htm"
+  },
+  {
+   "name": "biamp-tesira-server-card",
+   "vendor": "Biamp",
+   "platform": "Tesira SERVER / SERVER-IO card slot",
+   "category": "Audio Products / DSP",
+   "aliases": [
+    "Tesria IO",
+    "Tesira IO"
+   ],
+   "note": "I/O and network cards share the slots, with per-slot rules (network cards in slots 11-13)",
+   "source": "https://support.biamp.com/Tesira/Miscellaneous/Tesira_IO_card_order"
+  },
+  {
+   "name": "sony-brc-brbk",
+   "vendor": "Sony",
+   "platform": "BRC built-in card slot (BRBK boards)",
+   "category": "Videocameras / PTZ cameras",
+   "aliases": [
+    "Sony Interface Board"
+   ]
+  },
+  {
+   "name": "ops",
+   "vendor": "Intel",
+   "platform": "Open Pluggable Specification (OPS) slot",
+   "category": "Displays / Standalone Displays",
+   "aliases": [
+    "OPS"
+   ],
+   "note": "industry form factor: standard name"
+  },
+  {
+   "name": "intel-sdm",
+   "vendor": "Intel",
+   "platform": "Smart Display Module slot (SDM-S, SDM-L, RPi CM4)",
+   "category": "Displays / Standalone Displays",
+   "aliases": [
+    "Intel SDM"
+   ],
+   "note": "industry form factor",
+   "source": "https://www.sharpdisplays.eu/p/aps/en/products/slotincomputing.xhtml"
+  },
+  {
+   "name": "sfp",
+   "vendor": "Generic",
+   "platform": "SFP / SFP+ cage",
+   "category": "Networking / Switches",
+   "note": "industry form factor"
+  },
+  {
+   "name": "qsfp",
+   "vendor": "Generic",
+   "platform": "QSFP cage",
+   "category": "Networking / Switches",
+   "note": "industry form factor"
+  },
+  {
+   "name": "sd-card",
+   "vendor": "Generic",
+   "platform": "SD card slot",
+   "category": "Integration Tools / Tools",
+   "note": "industry form factor; media, BoQ category"
+  },
+  {
+   "name": "microsd-card",
+   "vendor": "Generic",
+   "platform": "microSD card slot",
+   "category": "Integration Tools / Tools",
+   "note": "industry form factor; media, BoQ category"
+  }
+ ]
+}

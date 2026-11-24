@@ -12,7 +12,7 @@ import { parseArgs } from "node:util";
 import { D1DatabaseShim } from "./d1";
 import { formatNormalizeReport, normalizeLibrary } from "./normalizeLibrary";
 import { applyAllMigrations, configFromEnv } from "./server";
-import { syncLintLevels } from "./templateMeta";
+import { relintAll, syncLintLevels } from "./templateMeta";
 
 let dryRun = false;
 try {
@@ -29,6 +29,7 @@ try {
   applyAllMigrations(db.sqlite, config, (m) => console.log(m));
   syncLintLevels(db.sqlite);
   process.stdout.write(formatNormalizeReport(normalizeLibrary(db.sqlite, { dryRun })));
+  if (!dryRun) relintAll(db.sqlite);
 } catch (err) {
   console.error(`normalize failed: ${err instanceof Error ? err.message : String(err)}`);
   process.exitCode = 1;

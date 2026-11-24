@@ -181,7 +181,7 @@ describe("normalizeBlock: sections", () => {
   it("ambiguous → unchanged and manual", () => {
     const cases: Partial<P>[] = [
       { section: "Back of unit", signalType: "analog-audio", direction: "bidirectional" },
-      { section: "Rear", signalType: "genlock", direction: "input" },
+      { section: "Rear", signalType: "custom", direction: "input" },
       { section: "Rear", signalType: "usb", label: "USB-C (DP Alt)", direction: "input" },
       { section: "Rear", signalType: "contact-closure", direction: "bidirectional" },
     ];
@@ -203,6 +203,12 @@ describe("normalizeBlock: sections", () => {
       [{ signalType: "gigaace", direction: "bidirectional", label: "gigaACE" }, "Expansion"],
       [{ signalType: "ydif", direction: "output", label: "YDIF Out" }, "Expansion"],
       [{ signalType: "dxlink", direction: "bidirectional", label: "DX A" }, "Expansion"],
+      [{ signalType: "genlock", direction: "input", label: "Ref In" }, "Sync"],
+      [{ signalType: "wordclock", direction: "output", label: "WC Out" }, "Sync"],
+      [{ signalType: "timecode", direction: "bidirectional", label: "LTC" }, "Sync"],
+      [{ signalType: "bluetooth", direction: "bidirectional", label: "Bluetooth" }, "RF"],
+      [{ signalType: "sensor", direction: "input", label: "Sensor" }, "Control"],
+      [{ signalType: "hdbaset", direction: "bidirectional", label: "DTP3 I/O 1" }, "Video Inputs (Configurable)"],
     ];
     for (const [c, want] of cases) {
       const r = normalizeBlock(block({ ports: [port("x", { section: "", ...c })] }));

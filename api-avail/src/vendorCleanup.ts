@@ -19,7 +19,7 @@
  */
 import type Database from "better-sqlite3";
 import { rowToTemplate, templateToRow, type TemplateRow } from "../../api/src/db";
-import { GENERIC_VENDOR } from "../../src/avail/library";
+import { defaultCategoryFor, GENERIC_VENDOR } from "../../src/avail/library";
 import { labelWithManufacturer } from "../../src/avail/normalize";
 import { completeness, genericTemplate, VendorRules } from "../../src/avail/vendorDecisions";
 import { AVAIL_LIBRARY_SOURCE } from "./importAvail";
@@ -62,6 +62,8 @@ export interface VendorCleanupReport {
   dropped: Record<string, number>;
   noManufacturer: number;
   deletedTotal: number;
+  /** Every template of a vendor with a scope rule (Sony, Netgear-AV): kept, retyped or deleted. */
+  scopeDecisions: { vendor: string; id: string; label: string; deviceType: string; action: string }[];
   /** Deleted templates that a person had marked verified or draft. */
   deletedReviewed: { id: string; label: string; status: string }[];
   remainingByVendor: Record<string, number>;
@@ -104,6 +106,7 @@ export function applyVendorDecisions(
     noManufacturer: 0,
     deletedTotal: 0,
     deletedReviewed: [],
+    scopeDecisions: [],
     remainingByVendor: {},
   };
 
@@ -111,6 +114,10 @@ export function applyVendorDecisions(
   const update = sqlite.prepare(
     `UPDATE templates SET ${columns.map((c) => `${c} = @${c}`).join(", ")}, version = version + 1, updated_at = datetime('now') WHERE id = @id`,
   );
+  const retypeStmt = sqlite.prepare(
+    "UPDATE templates SET device_type = ?, category = COALESCE(?, category), version = version + 1, updated_at = datetime('now') WHERE id = ?",
+  );
+  const scoped = new Set(Object.keys(rules.decisions.scope));
   const renameStmt = sqlite.prepare("UPDATE templates SET manufacturer = ?, label = ?, version = version + 1, updated_at = datetime('now') WHERE id = ?");
   const delMeta = sqlite.prepare("DELETE FROM avail_template_meta WHERE template_id = ?");
   const delTemplate = sqlite.prepare("DELETE FROM templates WHERE id = ?");
@@ -153,6 +160,7 @@ export function applyVendorDecisions(
         remove(r);
       } else if (c.kind === "scope") {
         inc(report.scopeDeleted, c.manufacturer);
+        report.scopeDecisions.push({ vendor: c.manufacturer, id: r.id, label: r.label, deviceType: r.device_type, action: `deleted: ${c.reason}` });
         remove(r);
       } else if (c.kind === "generic") {
         const list = genericByType.get(r.device_type) ?? [];
@@ -171,9 +179,19 @@ export function applyVendorDecisions(
           renames.set(k, e);
           r.manufacturer = c.manufacturer;
         }
+        if (c.deviceType && c.deviceType !== r.device_type) {
+          retypeStmt.run(c.deviceType, defaultCategoryFor(c.deviceType), r.id);
+          if (scoped.has(c.manufacturer)) {
+            report.scopeDecisions.push({ vendor: c.manufacturer, id: r.id, label: r.label, deviceType: r.device_type, action: `retyped → ${c.deviceType}` });
+          }
+          r.device_type = c.deviceType;
+        } else if (scoped.has(c.manufacturer)) {
+          report.scopeDecisions.push({ vendor: c.manufacturer, id: r.id, label: r.label, deviceType: r.device_type, action: "kept" });
+        }
         kept.push(r);
       }
     }
+    report.scopeDecisions.sort((a, b) => a.vendor.localeCompare(b.vendor) || a.label.localeCompare(b.label));
     report.renamed = [...renames.values()].sort((a, b) => b.count - a.count);
 
     // ---- Generic: a new "Generic <type>" only for types that have no Generic template yet.
@@ -253,6 +271,10 @@ export function formatVendorCleanupReport(r: VendorCleanupReport): string {
     `Deleted, manufacturer not decided: ${total(r.dropped)} (${Object.keys(r.dropped).length} manufacturers; top: ${top(r.dropped, 10) || "-"})`,
     `Deleted, no manufacturer: ${r.noManufacturer}`,
   ];
+  if (r.scopeDecisions.length) {
+    lines.push("", "Scope decisions (every template of a vendor with a scope):");
+    for (const d of r.scopeDecisions) lines.push(`  ${d.vendor.padEnd(11)} ${d.label} [${d.deviceType}]: ${d.action}`);
+  }
   if (r.deletedReviewed.length) {
     lines.push(`Deleted although reviewed (verified/draft): ${r.deletedReviewed.length}`);
     for (const d of r.deletedReviewed) lines.push(`  ${d.status.padEnd(8)} ${d.label} [${d.id}]`);

@@ -14,6 +14,7 @@
  */
 import { findCategory, findVendor, GENERIC_VENDOR } from "./library";
 import { BLOCK_SECTIONS, suggestSection, wrongBidirectional } from "./sections";
+import { slotLibraryWarnings, type SlotLibraryContext } from "./slotFamilies";
 
 
 export type BlockLevel = "A" | "B" | "FIX";
@@ -86,9 +87,11 @@ function sectionBase(s: string): string {
 
 /**
  * Lints one device block: a library template (DeviceTemplate) or the data of a
- * device node on a schematic (DeviceData). Never throws on malformed input.
+ * device node on a schematic (DeviceData). Never throws on malformed input. With `library`
+ * (slotLibraryContext of the whole library) it also warns about slots no card fits and
+ * cards no chassis takes.
  */
-export function lintBlock(block: object): BlockLintResult {
+export function lintBlock(block: object, library?: SlotLibraryContext): BlockLintResult {
   const d = asObj(block);
   const E: string[] = [];
   const W: string[] = [];
@@ -142,7 +145,8 @@ export function lintBlock(block: object): BlockLintResult {
         break;
       }
     }
-    const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive";
+    // A card in a slot is powered by its chassis (standard "Slots and cards").
+    const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive" || truthy(d.slotFamily);
     // A USB bus-powered device draws a published wattage at the bus voltage: powerDrawW is enough.
     const usbPowered = asArray(d.ports).some((p) => typeof asObj(p).notes === "string" && USB_BUS_POWER_RE.test(asObj(p).notes as string));
     const powerKnown = truthy(d.powerDrawW) && (truthy(d.voltage) || usbPowered);
@@ -159,7 +163,7 @@ export function lintBlock(block: object): BlockLintResult {
   // notes of the port that powers it say so ("bus-powered (USB)" or "PoE").
   // A PoE source (poeBudgetW) needs its own power input whatever its port notes say.
   const busPowered = !truthy(d.poeBudgetW) && ports.some((p) => p.direction !== "output" && typeof p.notes === "string" && BUS_POWER_RE.test(p.notes));
-  if (!ports.some((p) => p.signalType === "power") && !poe && !truthy(d.slots) && !busPowered) {
+  if (!ports.some((p) => p.signalType === "power") && !poe && !truthy(d.slots) && !busPowered && !truthy(d.slotFamily)) {
     if (deviceType !== "speaker" && deviceType !== "antenna") E.push("no power port");
   }
   const order: number[] = [];
@@ -192,6 +196,8 @@ export function lintBlock(block: object): BlockLintResult {
     if (HDBASET_RE.test(lower) && sig !== "hdbaset" && sig !== "power") W.push(`${tag}: HDBaseT/DTP/XTP must be hdbaset`);
   }
   if (order.some((v, i) => i > 0 && v < order[i - 1])) W.push("sections are not in the standard order");
+  // Slots and cards against the library (only when the caller knows the library).
+  if (library) W.push(...slotLibraryWarnings(d, library));
 
   const level: BlockLevel = E.length ? "FIX" : W.length ? "B" : "A";
   return { level, errors: E, warnings: W };

@@ -13,7 +13,8 @@
     "normalize:library": "tsx src/normalizeCli.ts",
     "import:avail": "tsx src/importAvailCli.ts",
     "apply:vendor-decisions": "tsx src/vendorCleanupCli.ts",
-    "apply:generic-plan": "tsx src/genericPlanCli.ts"
+    "apply:generic-plan": "tsx src/genericPlanCli.ts",
+    "export:worklist": "tsx src/worklistCli.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.11",

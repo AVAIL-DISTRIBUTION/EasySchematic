@@ -9,6 +9,7 @@
 import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel, type BlockLintResult } from "../../src/avail/blockLint";
+import { slotLibraryContext, type SlotLibraryContext } from "../../src/avail/slotFamilies";
 
 export const TEMPLATE_STATUSES = ["verified", "draft", "raw", "hidden"] as const;
 export type TemplateStatus = (typeof TEMPLATE_STATUSES)[number];
@@ -31,7 +32,12 @@ export interface TemplateMeta {
   /** Why the status was last changed automatically; null after a manual change. */
   statusReason: string | null;
   statusChangedAt: string | null;
+  /** How the template was last approved: in the Review card or with bulk Approve. */
+  approvedVia: ApprovalMethod | null;
+  approvedAt: string | null;
 }
+
+export type ApprovalMethod = "review" | "bulk";
 
 export interface TemplateMetaRow {
   template_id: string;
@@ -45,6 +51,8 @@ export interface TemplateMetaRow {
   status_reason?: string | null;
   status_changed_at?: string | null;
   source_hash?: string | null;
+  approved_via?: ApprovalMethod | null;
+  approved_at?: string | null;
 }
 
 export function metaFromRow(r: TemplateMetaRow): TemplateMeta {
@@ -58,17 +66,61 @@ export function metaFromRow(r: TemplateMetaRow): TemplateMeta {
     updatedAt: r.updated_at,
     statusReason: r.status_reason ?? null,
     statusChangedAt: r.status_changed_at ?? null,
+    approvedVia: r.approved_via ?? null,
+    approvedAt: r.approved_at ?? null,
   };
 }
 
 /** Every template with its status; templates without a meta row come back as raw. */
 export const SELECT_META = `SELECT t.id AS template_id, COALESCE(m.status, 'raw') AS status, m.source, m.upstream_id,
-       m.lint_level, m.updated_by, m.updated_at, m.status_reason, m.status_changed_at
+       m.lint_level, m.updated_by, m.updated_at, m.status_reason, m.status_changed_at,
+       m.approved_via, m.approved_at
   FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id`;
 
-/** Standard level of a stored template row. */
-export function lintRow(row: TemplateRow): BlockLevel {
-  return lintBlock(rowToTemplate(row)).level;
+/** Slots and cards of the whole library, for the linter's slot checks. */
+export function slotContextOfRows(rows: { slot_family: string | null; slots: string | null }[]): SlotLibraryContext {
+  return slotLibraryContext(
+    rows.map((r) => ({ slotFamily: r.slot_family, slots: r.slots ? (JSON.parse(r.slots) as { slotFamily?: string; slotFamilies?: string[] }[]) : null })),
+  );
+}
+
+const SLOT_ROWS = "SELECT slot_family, slots FROM templates WHERE flagged_for_deletion = 0";
+
+export function slotContext(sqlite: Database.Database): SlotLibraryContext {
+  return slotContextOfRows(sqlite.prepare(SLOT_ROWS).all() as { slot_family: string | null; slots: string | null }[]);
+}
+
+/** Standard level of a stored template row (with the library's slot context when given). */
+export function lintRow(row: TemplateRow, library?: SlotLibraryContext): BlockLevel {
+  return lintBlock(rowToTemplate(row), library).level;
+}
+
+/**
+ * Re-lints every template against the current library (slot context changes when cards or
+ * chassis are added or removed) and stores lint_level. Statuses are not changed: this is not
+ * a save. Returns how many levels changed.
+ */
+export function relintAll(sqlite: Database.Database): number {
+  const ctx = slotContext(sqlite);
+  const rows = sqlite
+    .prepare("SELECT t.*, m.lint_level AS avail_level FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id")
+    .all() as (TemplateRow & { avail_level: BlockLevel | null })[];
+  const upsert = sqlite.prepare(
+    `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at)
+     VALUES (?, 'raw', ?, ?, 'lint', datetime('now'))
+     ON CONFLICT(template_id) DO UPDATE SET lint_level = excluded.lint_level, linted_version = excluded.linted_version`,
+  );
+  let changed = 0;
+  sqlite.transaction(() => {
+    for (const row of rows) {
+      const level = lintRow(row, ctx);
+      if (level !== row.avail_level) {
+        upsert.run(row.id, level, row.version);
+        changed++;
+      }
+    }
+  })();
+  return changed;
 }
 
 /** Roll the library ETag (library_meta.version) so clients refetch GET /templates. */
@@ -104,6 +156,7 @@ export function syncLintLevels(sqlite: Database.Database): SyncResult {
     )
     .all() as (TemplateRow & { avail_status: TemplateStatus | null })[];
   if (stale.length === 0) return { linted: 0, demoted: [] };
+  const ctx = slotContext(sqlite);
   const upsert = sqlite.prepare(
     `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at)
      VALUES (?, 'raw', ?, ?, 'lint', datetime('now'))
@@ -117,7 +170,7 @@ export function syncLintLevels(sqlite: Database.Database): SyncResult {
   const demoted: string[] = [];
   sqlite.transaction(() => {
     for (const row of stale) {
-      const level = lintRow(row);
+      const level = lintRow(row, ctx);
       upsert.run(row.id, level, row.version);
       if (row.avail_status === "verified" && level !== "A") {
         demote.run(demotionReason(level, row.version), row.id);
@@ -159,24 +212,28 @@ export async function setTemplateStatus(
   templateId: string,
   status: TemplateStatus,
   updatedBy: string,
+  via: ApprovalMethod = "review",
 ): Promise<SetStatusResult> {
   const row = await db.prepare("SELECT * FROM templates WHERE id = ?").bind(templateId).first<TemplateRow>();
   if (!row) return { ok: false, reason: "not_found" };
-  const lint = lintBlock(rowToTemplate(row));
+  const { results: slotRows } = await db.prepare(SLOT_ROWS).all<{ slot_family: string | null; slots: string | null }>();
+  const lint = lintBlock(rowToTemplate(row), slotContextOfRows(slotRows));
   if (status === "verified" && lint.level !== "A") return { ok: false, reason: "not_level_a", lint };
   await db.batch([
     db
       .prepare(
         `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at,
-           status_reason, status_changed_at)
-         VALUES (?, ?, ?, ?, ?, datetime('now'), NULL, datetime('now'))
+           status_reason, status_changed_at, approved_via, approved_at)
+         VALUES (?, ?, ?, ?, ?, datetime('now'), NULL, datetime('now'), ?, CASE WHEN ? = 'verified' THEN datetime('now') END)
          ON CONFLICT(template_id) DO UPDATE SET status = excluded.status, lint_level = excluded.lint_level,
            linted_version = excluded.linted_version, updated_by = excluded.updated_by, updated_at = excluded.updated_at,
            status_reason = NULL,
            status_changed_at = CASE WHEN avail_template_meta.status = excluded.status
-             THEN avail_template_meta.status_changed_at ELSE excluded.status_changed_at END`,
+             THEN avail_template_meta.status_changed_at ELSE excluded.status_changed_at END,
+           approved_via = CASE WHEN excluded.status = 'verified' THEN excluded.approved_via ELSE avail_template_meta.approved_via END,
+           approved_at = CASE WHEN excluded.status = 'verified' THEN excluded.approved_at ELSE avail_template_meta.approved_at END`,
       )
-      .bind(templateId, status, lint.level, row.version, updatedBy),
+      .bind(templateId, status, lint.level, row.version, updatedBy, status === "verified" ? via : null, status),
     db.prepare(BUMP_LIBRARY_VERSION),
   ]);
   const meta = await getTemplateMeta(db, templateId);

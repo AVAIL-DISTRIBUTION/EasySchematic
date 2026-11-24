@@ -8,6 +8,7 @@ import type {
   SignalType,
   SlotDefinition,
 } from "./types";
+import { acceptedFamilies } from "./avail/slotFamilies";
 import { getCardsByFamily, getTemplateById } from "./templateApi";
 import { applySlotOverride, dropBakedCardPorts, splitSlotOverrides } from "./slotDefinitions";
 
@@ -328,7 +329,7 @@ function carryOverCards(
   const lost: { slotLabel: string; cardLabel: string }[] = [];
   for (const oldSlot of oldDevice.slots ?? []) {
     if (!oldSlot.cardTemplateId) continue;
-    const target = slots.find((s) => !s.occupiedBy && s.slot.slotFamily === oldSlot.slotFamily);
+    const target = slots.find((s) => !s.occupiedBy && !!oldSlot.slotFamily && acceptedFamilies(s.slot).includes(oldSlot.slotFamily));
     if (!target) {
       lost.push({ slotLabel: oldSlot.label, cardLabel: oldSlot.cardLabel ?? "(unknown card)" });
       continue;
@@ -393,7 +394,7 @@ function autoInstallCards(
 
     let best: { slot: AvailableSlot; card: DeviceTemplate; score: number; satisfiedHandles: string[] } | null = null;
     for (const slot of emptySlots) {
-      const candidates = getCardsByFamily(slot.slot.slotFamily, customTemplates);
+      const candidates = getCardsByFamily(acceptedFamilies(slot.slot), customTemplates);
       for (const card of candidates) {
         const { score, satisfiedHandles } = scoreCardCandidate(card, slot.slot, unmappedEntries);
         if (score === 0) continue;

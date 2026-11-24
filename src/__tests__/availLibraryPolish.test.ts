@@ -39,7 +39,7 @@ describe("Normalize preview", () => {
       label: "Extron X", manufacturer: "Extron", modelNumber: "1", deviceType: "switcher", category: "AV distribution / Switchers",
       ports: [
         { id: "p1", label: "HDMI Out", signalType: "hdmi", direction: "bidirectional", section: "Rear", connectorType: "hdmi" },
-        { id: "p2", label: "Ref", signalType: "genlock", direction: "input", section: "Rear", connectorType: "bnc" },
+        { id: "p2", label: "Ref", signalType: "custom", direction: "input", section: "Rear", connectorType: "bnc" },
       ],
     });
     const lines = changes.map((c) => describeChange(c));
@@ -56,7 +56,8 @@ describe("section hint", () => {
   it("what the normalizer would choose, including an inferred direction", () => {
     expect(suggestSection({ label: "HDMI Out 2", signalType: "hdmi", direction: "bidirectional", section: "Back" })).toBe("Video Outputs");
     expect(suggestSection({ label: "Mic In", signalType: "analog-audio", direction: "input", section: "" })).toBe("Audio Inputs");
-    expect(suggestSection({ label: "Ref", signalType: "genlock", direction: "input", section: "Rear" })).toBeNull();
+    expect(suggestSection({ label: "Ref", signalType: "custom", direction: "input", section: "Rear" })).toBeNull();
+    expect(suggestSection({ label: "Ref In", signalType: "genlock", direction: "input", section: "Rear" })).toBe("Sync");
     expect(suggestSection({ label: "HDMI In", signalType: "hdmi", direction: "input", section: "Video Inputs" })).toBeNull();
   });
 });

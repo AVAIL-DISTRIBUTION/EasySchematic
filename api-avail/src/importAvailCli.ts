@@ -20,7 +20,7 @@ import { D1DatabaseShim } from "./d1";
 import { formatImportAvailReport, importAvailLibrary, type AvailLibraryFile } from "./importAvail";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { parseSeedMode, seedLibrary } from "./seed";
-import { syncLintLevels } from "./templateMeta";
+import { relintAll, syncLintLevels } from "./templateMeta";
 
 const USAGE = "usage: npm run import:avail [-- --dry-run] [-- --dir <library/avail>]";
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -61,6 +61,10 @@ try {
   syncLintLevels(db.sqlite);
   const report = importAvailLibrary(db.sqlite, files, { dryRun: values["dry-run"], hidden });
   process.stdout.write(formatImportAvailReport(report, dir));
+  if (!report.dryRun) {
+    syncLintLevels(db.sqlite);
+    relintAll(db.sqlite);
+  }
   if (report.invalid > 0) process.exitCode = 1;
 } catch (err) {
   console.error(`import:avail failed: ${err instanceof Error ? err.message : String(err)}`);

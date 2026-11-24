@@ -8,7 +8,7 @@
 /** Port sections in the order the standard requires; "(…)" suffixes are allowed, e.g. "Video Inputs (Front)". */
 export const BLOCK_SECTIONS = [
   "Video Inputs", "Video Outputs", "Audio Inputs", "Audio Outputs", "Speaker Outputs", "RF",
-  "Network", "Dante", "AVB", "Serial", "IR", "Relays", "Digital I/O", "Control",
+  "Network", "Dante", "AVB", "Serial", "IR", "Relays", "Digital I/O", "Control", "Sync",
   "Expansion", "USB", "Configuration", "Power",
 ] as const;
 
@@ -57,6 +57,28 @@ const LOCATION_SECTIONS = new Set(["", "back of unit", "rear", "back", "rear pan
 const FRONT_SECTIONS = new Set(["front of unit", "front", "front panel"]);
 const DIRECTION_SECTIONS: Record<string, "input" | "output"> = { inputs: "input", input: "input", in: "input", outputs: "output", output: "output", out: "output" };
 
+/** Reference and time signals: the Sync section. */
+const SYNC_SIGNALS = new Set(["genlock", "wordclock", "timecode"]);
+
+/**
+ * Connector that follows from the signal type without doubt (v3). Signals with several
+ * usual connectors (analog audio, USB, GPIO, power, IR, RF, AES, serial…) are not here.
+ */
+export const SIGNAL_CONNECTORS: Readonly<Record<string, string>> = {
+  hdmi: "hdmi",
+  sdi: "bnc",
+  ethernet: "rj45",
+  dante: "rj45",
+  avb: "rj45",
+  hdbaset: "rj45",
+  slink: "rj45",
+  displayport: "displayport",
+  dvi: "dvi",
+  vga: "vga",
+  genlock: "bnc",
+  wordclock: "bnc",
+};
+
 /** Proprietary audio / console buses: Expansion (4.1). dxlink is Allen & Heath DX ("DX Link"), not AMX DXLink. */
 const BUS_SIGNALS = new Set(["gigaace", "slink", "dx5", "dsnake", "dcp", "ydif", "dxlink", "fibreace"]);
 
@@ -76,18 +98,24 @@ const PARTYLINE_RE = /\b(partyline|party line|intercom)\b/i;
 /** Ports that really carry both ways on one connector: a TRRS headset jack, a pass-through tunnel, "In/Out". */
 const TWO_WAY_RE = /\b(trrs|headset|pass[- ]?thru|pass[- ]?through|in\/out|i\/o)\b/i;
 
+/** The note a configurable HDBaseT input/output carries. */
+export const CONFIGURABLE_NOTE = "configurable input/output";
+
 /**
  * true when the standard wants this port input or output but it is marked bidirectional
- * (4.3). Partyline intercom and ports that carry both ways on one connector are exempt.
+ * (4.3). Partyline intercom, ports that carry both ways on one connector, and HDBaseT ports
+ * configurable as input or output (v3: allowed, noted) are exempt.
  */
 export function wrongBidirectional(port: PortLike): boolean {
   if (!PHYSICAL_DIRECTION_SIGNALS.has(str(port.signalType)) || port.direction !== "bidirectional") return false;
+  if (str(port.signalType) === "hdbaset") return false;
   const text = `${str(port.label)} ${str((port as Obj).notes)}`;
   return !PARTYLINE_RE.test(text) && !TWO_WAY_RE.test(text);
 }
 
 export type DirectionInference =
   | { direction: "input" | "output"; arc?: boolean }
+  | { configurable: true }
   | { manual: string }
   | null;
 
@@ -99,9 +127,16 @@ export type DirectionInference =
  * (not such a signal, not bidirectional, partyline, or a real two-way port).
  */
 export function directionFromLabel(port: PortLike): DirectionInference {
-  if (!wrongBidirectional(port)) return null;
   const sig = str(port.signalType);
   const label = str(port.label);
+  if (sig === "hdbaset" && port.direction === "bidirectional") {
+    // An HDBaseT port that says In or Out is that; one that says neither is configurable (v3).
+    const o = OUT_WORDS.test(label);
+    const i = IN_WORDS.test(label);
+    if (o !== i) return { direction: o ? "output" : "input" };
+    return { configurable: true };
+  }
+  if (!wrongBidirectional(port)) return null;
   if (sig === "hdmi" && ARC_RE.test(label)) return { direction: "input", arc: true };
   const out = OUT_WORDS.test(label);
   const inn = IN_WORDS.test(label);
@@ -122,16 +157,21 @@ export function suggestSection(port: PortLike): string | null {
 }
 
 /** Standard section for a port by what it carries; null when that is not unambiguous. */
-export function sectionByPurpose(port: PortLike, directionHint?: "input" | "output"): Section | null {
+export function sectionByPurpose(port: PortLike, directionHint?: "input" | "output"): Section | `${Section} (${string})` | null {
   const sig = str(port.signalType);
   const dir = directionHint ?? (port.direction === "input" || port.direction === "output" ? port.direction : null);
   const label = str(port.label).toLowerCase();
+  // HDBaseT / DTP / XTP port configurable as input or output (DTP3 I/O, XTP I/O).
+  if (sig === "hdbaset" && port.direction === "bidirectional" && !directionHint) return "Video Inputs (Configurable)";
   if (VIDEO_SIGNALS.has(sig)) return dir === "input" ? "Video Inputs" : dir === "output" ? "Video Outputs" : null;
   if (AUDIO_SIGNALS.has(sig)) return dir === "input" ? "Audio Inputs" : dir === "output" ? "Audio Outputs" : null;
   if (sig === "speaker-level") return dir === "output" ? "Speaker Outputs" : dir === "input" ? "Audio Inputs" : null;
   // Fiber: a duplex link is data (SFP uplink, AVoIP, NAV); a one-way link carries AV like HDBaseT (4.1).
   if (sig === "fiber") return dir === "input" ? "Video Inputs" : dir === "output" ? "Video Outputs" : port.direction === "bidirectional" ? "Network" : null;
-  if (sig === "dmx" || sig === "midi") return "Control";
+  if (sig === "dmx" || sig === "midi" || sig === "sensor") return "Control";
+  // Reference and time signals (genlock, word clock, timecode): Sync (v3).
+  if (SYNC_SIGNALS.has(sig)) return "Sync";
+  if (sig === "bluetooth") return "RF";
   if (BUS_SIGNALS.has(sig)) return "Expansion";
   if (sig === "rf") return "RF";
   if (sig === "dante" || sig === "aes67") return "Dante";

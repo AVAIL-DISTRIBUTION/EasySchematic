@@ -12,6 +12,7 @@
  * and the server additionally checks the request Origin. Both must pass before
  * any command runs.
  */
+import { acceptedFamilies } from "./avail/slotFamilies";
 import { useEffect } from "react";
 import type { Connection } from "@xyflow/react";
 import { useSchematicStore } from "./store";
@@ -352,7 +353,7 @@ function installCardCore(p: InstallCardParams) {
         `search_templates to load the full library) first.`,
     );
   }
-  const compat = validateCardForSlot(slot.slotFamily, card.slotFamily);
+  const compat = validateCardForSlot(acceptedFamilies(slot), card.slotFamily);
   if (!compat.ok) throw new CommandError(compat.error);
   if (!card.id) throw new CommandError(`Card template "${cardTemplateId}" has no id and cannot be installed.`);
   st().swapCard(deviceId, slotId, card.id);
@@ -740,7 +741,7 @@ export const handlers: Record<CommandType, (params: Record<string, unknown>) => 
     // install_card's getTemplateById prefers the library copy, so the listed-vs-
     // installed card could differ. This can't corrupt state — install_card re-checks
     // the slot family and re-reads the slot, so a wrong-family resolution just rejects.
-    const cards = getCardsByFamily(slot.slotFamily, st().customTemplates)
+    const cards = getCardsByFamily(acceptedFamilies(slot), st().customTemplates)
       .filter((t) => Boolean(t.id))
       .map((t) => ({
         templateId: t.id!,

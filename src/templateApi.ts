@@ -32,7 +32,7 @@ export function getBundledTemplates(): DeviceTemplate[] {
 /** Bundled templates as a floor under whatever the API returned. Used so a freshly-added
  *  card in src/devices/* shows up in slot pickers and lookups even before its row lands
  *  in D1. D1 wins on ID conflict (lets prod overrides shadow bundled defaults). */
-function effectiveTemplates(): DeviceTemplate[] {
+export function effectiveTemplates(): DeviceTemplate[] {
   const bundled = fallbackData as DeviceTemplate[];
   if (!cached) return bundled;
   const cachedIds = new Set(cached.map((t) => t.id).filter((id): id is string => !!id));
@@ -57,12 +57,12 @@ export function getTemplateById(id: string, extra: DeviceTemplate[] = []): Devic
   return effectiveTemplates().find((t) => t.id === id) ?? extra.find((t) => t.id === id);
 }
 
-/** Return all card templates that belong to a given slot family, merging bundled and caller-supplied extras. */
-export function getCardsByFamily(family: string, extra: DeviceTemplate[] = []): DeviceTemplate[] {
-  return [
-    ...effectiveTemplates().filter((t) => t.slotFamily === family),
-    ...extra.filter((t) => t.slotFamily === family),
-  ];
+/** Return all card templates that belong to a given slot family (or any of a slot's accepted
+ *  families — AVAIL), merging bundled and caller-supplied extras. */
+export function getCardsByFamily(family: string | readonly string[], extra: DeviceTemplate[] = []): DeviceTemplate[] {
+  const families = typeof family === "string" ? [family] : family;
+  const fits = (t: DeviceTemplate) => !!t.slotFamily && families.includes(t.slotFamily);
+  return [...effectiveTemplates().filter(fits), ...extra.filter(fits)];
 }
 
 // ==================== AUTH & DRAFTS ====================

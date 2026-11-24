@@ -101,6 +101,19 @@ docker compose exec api npm run apply:vendor-decisions                 # зап�
 затирает то, что записали нормализатор и чистки: пока шаблон в источнике не менялся
 (`avail_template_meta.source_hash`), локальная строка остаётся как есть.
 
+### Шаг 1.7: нормализатор v3, Sony, слоты
+
+```bash
+./backup.sh                                                          # обязательно первым
+./update.sh                                                          # новый образ (миграция 9004)
+docker compose exec api npm run import:avail                         # скрыть сетевые переходники, Quantum Ultra II
+docker compose exec api npm run apply:vendor-decisions -- --dry-run  # решения по всем шаблонам Sony
+docker compose exec api npm run apply:vendor-decisions
+docker compose exec api npm run normalize:library -- --dry-run       # уровни, пары, семейства без плат
+docker compose exec api npm run normalize:library
+docker compose exec -T api npm run -s export:worklist > worklist.csv # список ручной работы для инженеров
+```
+
 ### Generic-вендор и нормализатор v2
 
 `docs/avail/generic-plan.json` приводит Generic к проверенному набору (переименования без брендов,

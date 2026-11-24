@@ -86,7 +86,7 @@ describe("avail_template_meta", () => {
     const cols = (api.db.sqlite.prepare("PRAGMA table_info(avail_template_meta)").all() as { name: string }[]).map((c) => c.name);
     expect(cols).toEqual([
       "template_id", "status", "source", "upstream_id", "lint_level", "updated_by", "updated_at", "linted_version",
-      "status_reason", "status_changed_at", "source_hash",
+      "status_reason", "status_changed_at", "source_hash", "approved_via", "approved_at",
     ]);
     const templateCols = (api.db.sqlite.prepare("PRAGMA table_info(templates)").all() as { name: string }[]).map((c) => c.name);
     expect(templateCols.some((c) => c.includes("status") || c.includes("avail") || c.includes("lint"))).toBe(false);
@@ -327,6 +327,19 @@ describe("GET /templates — filtered by status", () => {
   });
 });
 
+describe("approval method", () => {
+  it("review for a single PUT; kept when the status later changes", async () => {
+    insertTemplate(cleanTemplate("rev-1"));
+    await put("rev-1", { status: "verified" }, { Cookie: session("moderator") });
+    expect(meta("rev-1")).toMatchObject({ status: "verified", approved_via: "review" });
+    await put("rev-1", { status: "draft" }, BEARER);
+    expect(meta("rev-1")).toMatchObject({ status: "draft", approved_via: "review" });
+    insertTemplate(cleanTemplate("rev-2"));
+    await put("rev-2", { status: "draft" }, BEARER);
+    expect(meta("rev-2")).toMatchObject({ approved_via: null, approved_at: null });
+  });
+});
+
 describe("POST /avail/templates/status/batch", () => {
   const batch = (body: unknown, headers: Record<string, string> = {}) =>
     req("/avail/templates/status/batch", { method: "POST", headers: { "Content-Type": "application/json", ...headers }, body: JSON.stringify(body) });
@@ -356,7 +369,9 @@ describe("POST /avail/templates/status/batch", () => {
       { id: "bulk-b", label: "Extron DTP3 T 203", reason: "not_level_a", level: "B", errors: [], warnings: ["no searchTerms"] },
       { id: "nope", label: null, reason: "not_found" },
     ]);
-    expect(meta("bulk-a1")).toMatchObject({ status: "verified", updated_by: "lead@avail-int.com" });
+    expect(meta("bulk-a1")).toMatchObject({ status: "verified", updated_by: "lead@avail-int.com", approved_via: "bulk" });
+    expect(meta("bulk-a1")!.approved_at).toBeTruthy();
+    expect(await json(req("/avail/templates/bulk-a1/status"))).toMatchObject({ approvedVia: "bulk" });
     expect(meta("bulk-b")?.status ?? "raw").not.toBe("verified");
   });
 });

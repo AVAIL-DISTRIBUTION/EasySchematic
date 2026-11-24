@@ -220,7 +220,10 @@ export interface Port {
 export interface SlotDefinition {
   id: string;
   label: string;               // "Slot 1", "VFC Slot A"
-  slotFamily: string;           // e.g. "disguise-vfc", "yamaha-my"
+  slotFamily: string;
+  /** AVAIL: further families this slot accepts besides slotFamily (e.g. a newer chassis that
+   *  also takes the previous generation's cards). Absent means slotFamily only. */
+  slotFamilies?: string[];           // e.g. "disguise-vfc", "yamaha-my"
   defaultCardId?: string;       // pre-populated when placed on canvas
   /** When true, an empty instance of this slot is hidden on the canvas node.
    *  Default false — preserves the existing "(empty)" rendering for active expansion slots.
@@ -235,7 +238,9 @@ export interface SlotDefinition {
 export interface InstalledSlot {
   slotId: string;
   label: string;
-  slotFamily?: string;          // denormalized for UI card lookup (especially nested slots)
+  slotFamily?: string;
+  /** AVAIL: further families this slot accepts (copied from the slot definition). */
+  slotFamilies?: string[];          // denormalized for UI card lookup (especially nested slots)
   parentSlotId?: string;        // links to parent slot for nested cards (e.g. SFP in a network module)
   cardTemplateId?: string;      // undefined = empty slot
   cardLabel?: string;           // denormalized for display/pack list

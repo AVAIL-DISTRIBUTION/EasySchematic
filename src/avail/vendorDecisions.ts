@@ -21,7 +21,15 @@ export interface VendorDecisions {
   newSupportedVendors: string[];
   rename: Record<string, string>;
   generic: string[];
-  scope: Record<string, { keepDeviceTypes?: string[]; keepModelPattern?: string; note?: string }>;
+  scope: Record<string, ScopeRule>;
+}
+
+export interface ScopeRule {
+  keepDeviceTypes?: string[];
+  keepModelPattern?: string;
+  /** Models of these device types matching modelPattern are really deviceType (e.g. Sony BRC camera → ptz-camera). */
+  retype?: { fromDeviceTypes: string[]; modelPattern: string; deviceType: string };
+  note?: string;
 }
 
 export const VENDOR_DECISIONS = decisionsJson as unknown as VendorDecisions;
@@ -29,7 +37,7 @@ export const VENDOR_DECISIONS = decisionsJson as unknown as VendorDecisions;
 const key = (s: string) => s.trim().replace(/\s+/g, " ").toLowerCase();
 
 export type Classification =
-  | { kind: "keep"; manufacturer: string; renamed: boolean }
+  | { kind: "keep"; manufacturer: string; renamed: boolean; /** set when the scope retypes the template */ deviceType?: string }
   | { kind: "scope"; manufacturer: string; reason: string }
   | { kind: "generic"; manufacturer: string }
   | { kind: "drop"; manufacturer: string }
@@ -46,7 +54,10 @@ export class VendorRules {
   private readonly rename = new Map<string, string>();
   private readonly keep = new Map<string, string>();
   private readonly generic = new Set<string>();
-  private readonly scope = new Map<string, { keepDeviceTypes?: Set<string>; keepModelPattern?: RegExp }>();
+  private readonly scope = new Map<
+    string,
+    { keepDeviceTypes?: Set<string>; keepModelPattern?: RegExp; retype?: { from: Set<string>; pattern: RegExp; deviceType: string } }
+  >();
 
   readonly decisions: VendorDecisions;
 
@@ -60,6 +71,9 @@ export class VendorRules {
       this.scope.set(key(vendor), {
         keepDeviceTypes: rule.keepDeviceTypes ? new Set(rule.keepDeviceTypes) : undefined,
         keepModelPattern: rule.keepModelPattern ? new RegExp(rule.keepModelPattern, "i") : undefined,
+        retype: rule.retype
+          ? { from: new Set(rule.retype.fromDeviceTypes), pattern: new RegExp(rule.retype.modelPattern, "i"), deviceType: rule.retype.deviceType }
+          : undefined,
       });
     }
   }
@@ -82,21 +96,26 @@ export class VendorRules {
     if (this.generic.has(key(raw)) || this.generic.has(k)) return { kind: "generic", manufacturer: raw };
     if (!this.keep.has(k)) return { kind: "drop", manufacturer: raw };
     const rule = this.scope.get(k);
-    if (rule?.keepDeviceTypes && !rule.keepDeviceTypes.has(t.deviceType ?? "")) {
+    const label = (t.label ?? "").trim();
+    // The label without the brand in any spelling: "NETGEAR M4350-16V4C" → "M4350-16V4C".
+    const spellings = [manufacturer, raw, ...(findVendor(manufacturer)?.aliases ?? [])].map(key).sort((a, b) => b.length - a.length);
+    const hit = spellings.find((sp) => label.toLowerCase().startsWith(sp + " "));
+    const bare = hit ? label.slice(hit.length + 1) : label;
+    const models = [t.modelNumber ?? "", label, bare].map((m) => m.trim());
+    let deviceType = t.deviceType ?? "";
+    let retyped: string | undefined;
+    if (rule?.retype && rule.retype.from.has(deviceType) && models.some((m) => rule.retype!.pattern.test(m))) {
+      deviceType = retyped = rule.retype.deviceType;
+    }
+    if (rule?.keepDeviceTypes && !rule.keepDeviceTypes.has(deviceType)) {
       return { kind: "scope", manufacturer, reason: `deviceType ${t.deviceType ?? "?"} is outside the ${manufacturer} scope` };
     }
     if (rule?.keepModelPattern) {
-      const label = (t.label ?? "").trim();
-      // The label without the brand in any spelling: "NETGEAR M4350-16V4C" → "M4350-16V4C".
-      const spellings = [manufacturer, raw, ...(findVendor(manufacturer)?.aliases ?? [])].map(key).sort((a, b) => b.length - a.length);
-      const hit = spellings.find((sp) => label.toLowerCase().startsWith(sp + " "));
-      const bare = hit ? label.slice(hit.length + 1) : label;
-      const candidates = [t.modelNumber ?? "", label, bare];
-      if (!candidates.some((c) => rule.keepModelPattern!.test(c.trim()))) {
+      if (!models.some((c) => rule.keepModelPattern!.test(c))) {
         return { kind: "scope", manufacturer, reason: `model ${t.modelNumber || label} is outside the ${manufacturer} scope` };
       }
     }
-    return { kind: "keep", manufacturer, renamed: manufacturer !== raw };
+    return { kind: "keep", manufacturer, renamed: manufacturer !== raw, ...(retyped ? { deviceType: retyped } : {}) };
   }
 }
 

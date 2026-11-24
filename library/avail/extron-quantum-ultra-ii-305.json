@@ -32,27 +32,42 @@
     {
       "id": "slot-1",
       "label": "Slot 1",
-      "slotFamily": "extron-quantum-ultra-2"
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
     },
     {
       "id": "slot-2",
       "label": "Slot 2",
-      "slotFamily": "extron-quantum-ultra-2"
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
     },
     {
       "id": "slot-3",
       "label": "Slot 3",
-      "slotFamily": "extron-quantum-ultra-2"
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
     },
     {
       "id": "slot-4",
       "label": "Slot 4",
-      "slotFamily": "extron-quantum-ultra-2"
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
     },
     {
       "id": "slot-5",
       "label": "Slot 5",
-      "slotFamily": "extron-quantum-ultra-2"
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
     }
   ],
   "ports": [

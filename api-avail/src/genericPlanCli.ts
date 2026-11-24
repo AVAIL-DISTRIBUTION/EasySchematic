@@ -18,7 +18,7 @@ import { D1DatabaseShim } from "./d1";
 import { applyGenericPlan, formatGenericPlanReport } from "./genericPlan";
 import { libraryIds } from "./libraryDir";
 import { applyAllMigrations, configFromEnv } from "./server";
-import { syncLintLevels } from "./templateMeta";
+import { relintAll, syncLintLevels } from "./templateMeta";
 
 const USAGE = "usage: npm run apply:generic-plan [-- --dry-run]";
 
@@ -36,7 +36,10 @@ const db = new D1DatabaseShim(path.join(config.dataDir, "easyschematic.sqlite"))
 try {
   applyAllMigrations(db.sqlite, config, (m) => console.log(m));
   const report = applyGenericPlan(db.sqlite, { dryRun, libraryIds: libraryIds() });
-  if (!dryRun) syncLintLevels(db.sqlite);
+  if (!dryRun) {
+    syncLintLevels(db.sqlite);
+    relintAll(db.sqlite);
+  }
   process.stdout.write(formatGenericPlanReport(report));
 } catch (err) {
   console.error(`apply:generic-plan failed: ${err instanceof Error ? err.message : String(err)}`);

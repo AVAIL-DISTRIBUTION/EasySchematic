@@ -4,6 +4,81 @@
       "id": "c0a80101-009f-4000-8000-000000000159",
       "label": "Shure AD4Q",
       "reason": "Duplicate of Shure AD4Q c0a80101-01af-4000-8000-000000000431, which is more complete (12 ports vs 9)"
+    },
+    {
+      "id": "5446890d-54d2-48af-8f98-bbc77b314359",
+      "label": "Generic 13A Power Bar (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "7db44979-3a3e-4e96-b375-6b987cc9d1ae",
+      "label": "Generic 13A Cable Twofer (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "8c26aed5-27a6-40c9-b9ad-588844ad8cbf",
+      "label": "Generic 13A to IEC Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "8d03efe7-fe8a-4cfc-b6ff-197367248aff",
+      "label": "Generic 13A to powerCON Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "97af1e52-cede-4d6c-9bbc-c6c4a88475ea",
+      "label": "Generic 13A to TRUE1 Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "affece4d-79a9-4bab-9f9c-469225824f7b",
+      "label": "Generic Edison 5-15 Break-In (NA)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "82d1c976-6abf-4ab5-84fc-2e26182a3f02",
+      "label": "Generic Edison 5-15 Twofer (NA)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "0c0bb9eb-5be4-4c0a-9bff-41a8f9e63765",
+      "label": "Generic CEE16 to IEC Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "4f52c21a-53b2-4bab-bc57-b2d045248fae",
+      "label": "Generic CEE16 to powerCON Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "118fc6b5-f484-415d-9d95-ecffcd2f79f7",
+      "label": "Generic CEE16 to TRUE1 Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "5c8d8189-70b6-4112-9cd7-6e60c426ba4a",
+      "label": "Generic Edison to IEC Adapter (NA)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "0ceb8085-02f2-4f57-8723-159207602409",
+      "label": "Generic IEC to 13A Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "f14b88eb-a911-44d8-be36-7848b056865a",
+      "label": "Generic powerCON to CEE16 Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "f3d1d390-414f-4181-a4ee-513115ed8fb3",
+      "label": "Generic TRUE1 to 13A Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "a60c9cca-0a31-4777-8775-49c839ce5dcf",
+      "label": "Generic TRUE1 to CEE16 Adapter (UK/EU)",
+      "reason": "Mains power adapter: a BoQ item, not a schematic block"
     }
   ]
 }
