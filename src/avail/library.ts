@@ -32,6 +32,8 @@ export interface Taxonomy {
 export interface Vendor {
   /** Canonical name: the only allowed value of `manufacturer`. */
   name: string;
+  /** true — the AVAIL portfolio; false — supported vendor outside it (vendor-decisions.json). */
+  portfolio: boolean;
   aliases: string[];
   scope?: string;
 }

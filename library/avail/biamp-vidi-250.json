@@ -35,7 +35,7 @@
       "direction": "bidirectional",
       "connectorType": "usb-c",
       "section": "USB",
-      "notes": "USB 3.0 video/data; bus-powered (< 10 W)"
+      "notes": "USB 3.0 video/data; bus-powered (USB), < 10 W"
     }
   ]
 }

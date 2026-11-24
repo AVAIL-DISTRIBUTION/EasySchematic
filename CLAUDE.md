@@ -55,8 +55,12 @@ PR всегда открываем в `master` нашего форка, **ник
 - `docs/avail/avail-taxonomy.json` — категории учётной системы (Odoo) + Other / Generic;
   `category` шаблона = путь листовой категории, на схеме — только `schematic=true`;
   `deviceTypeDefaults` — категория по умолчанию для типа устройства (`null` — без категории);
-- `docs/avail/avail-vendors.json` — вендоры портфеля и их синонимы; `manufacturer` =
-  каноническое `name`, всё вне портфеля — `Generic`.
+- `docs/avail/avail-vendors.json` — вендоры и их синонимы; `manufacturer` = каноническое
+  `name`, всё вне списка — `Generic`. Два уровня: `portfolio: true` (19, портфель AVAIL) и
+  `portfolio: false` (11 поддерживаемых вне портфеля); линтер принимает оба;
+- `docs/avail/vendor-decisions.json` — решения о вендорах (keep / rename / scope / generic,
+  остальное удаляется); правила — `src/avail/vendorDecisions.ts`, применяет
+  `npm run apply:vendor-decisions`, их же соблюдает `import:upstream`.
 
 Соответствие проверяет линтер — уровень блока A / B / FIX, ошибки (E) и
 рекомендации (W):
@@ -70,6 +74,10 @@ PR всегда открываем в `master` нашего форка, **ник
 | `tools/avail/avail_block_lint.py` | архив: Python-версия v0.2 (до справочников), не поддерживается |
 | `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
 | `tools/avail/incoming/avail-biamp-templates.json` | 4 шаблона Biamp из пилота (исходник) |
+| `src/avail/vendorDecisions.ts` | правила решений о вендорах: `VendorRules.classify`, `genericTemplate` («Generic <тип>»), `completeness` |
+
+Питание по шине (стандарт 3.1): устройство с питанием по USB или PoE без порта питания
+проходит линтер, если в notes питающего порта написано «bus-powered (USB)» или «PoE».
 
 ### Курируемая библиотека
 
@@ -142,7 +150,9 @@ Editor upstream на временной копии шаблона из базы 
 (пользователь должен один раз войти).
 
 Импорт сырья (`api-avail/src/importUpstream.ts`, CLI `npm run import:upstream`): тянет
-публичный `GET /templates` с api.easyschematic.live, приводит `manufacturer` к
+публичный `GET /templates` с api.easyschematic.live, пропускает то, что по
+`vendor-decisions.json` не берём (вне keep/rename/generic, вне scope, без производителя;
+бренды из generic — только как «Generic <тип>» и только если такого Generic ещё нет), приводит `manufacturer` к
 каноническому имени, ставит `category` по `deviceTypeDefaults`, считает `lint_level`,
 пишет со статусом `raw`. Один шаблон на пару производитель+модель (`modelNumber`, иначе
 `label`); `verified`/`draft` не трогает, `hidden` обновляет, оставляя скрытым; повторный
@@ -175,6 +185,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
 | `src/importAvail.ts`, `src/importAvailCli.ts` | загрузка курируемой библиотеки `library/avail` (`npm run import:avail`); в образе — `/app/library`, `AVAIL_LIBRARY_DIR` |
+| `src/vendorCleanup.ts`, `src/vendorCleanupCli.ts` | чистка библиотеки по `vendor-decisions.json` (`npm run apply:vendor-decisions [-- --dry-run]`), одна транзакция, `library/avail` не трогает; новый «Generic <тип>» — только для типов без Generic, существующие Generic не перезаписываются; отчёт перечисляет итоговые Generic (новые — с исходным шаблоном) |
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
@@ -283,7 +294,7 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 | Фаза | Содержание |
 |------|------------|
 | 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
-| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано); курируемая библиотека `library/avail` (21 шаблон уровня A), редактирование шаблонов из ревью, английский интерфейс (сделано) |
+| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано); курируемая библиотека `library/avail` (23 шаблона уровня A), редактирование шаблонов из ревью, английский интерфейс; решения о вендорах и чистка библиотеки (сделано) |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |
 | 4 | **Интеграция Claude** — помощь в проектировании через Claude |

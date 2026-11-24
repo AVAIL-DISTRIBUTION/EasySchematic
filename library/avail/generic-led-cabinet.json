@@ -1,9 +1,9 @@
 {
   "id": "e662c75f-0b71-428c-9ded-eaf8065b72d4",
-  "label": "Absen Clear Cobalt CL0.7 MicroLED",
-  "shortName": "Clear Cobalt CL0.7 MicroLED",
-  "manufacturer": "Absen",
-  "modelNumber": "CL0.7",
+  "label": "Generic LED Cabinet",
+  "shortName": "LED Cabinet",
+  "manufacturer": "Generic",
+  "modelNumber": "GEN-LED-CABINET",
   "deviceType": "led-cabinet",
   "category": "Displays / LED",
   "auxiliaryData": [
@@ -12,19 +12,11 @@
       "position": "header"
     }
   ],
-  "referenceUrl": "https://www.absen.com/product/data-visualization/clear-cobalt-series",
   "searchTerms": [
-    "cl0.7",
-    "clear cobalt",
-    "microled",
     "led cabinet",
-    "absen"
+    "led-cabinet",
+    "generic"
   ],
-  "heightMm": 338,
-  "widthMm": 600,
-  "depthMm": 40,
-  "weightKg": 6.8,
-  "powerDrawW": 140,
   "ports": [
     {
       "id": "p1795168780111-46-0",
@@ -32,8 +24,8 @@
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "inheritsSignal": false,
-      "section": "Network"
+      "section": "Network",
+      "notes": "Receiving card data input from the LED processor"
     },
     {
       "id": "p1795168780111-46-1",
@@ -41,8 +33,8 @@
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "inheritsSignal": false,
-      "section": "Network"
+      "section": "Network",
+      "notes": "Data loop-through to the next cabinet"
     },
     {
       "id": "p1795168780111-46-2",
@@ -50,7 +42,8 @@
       "signalType": "power",
       "direction": "input",
       "connectorType": "powercon-true1",
-      "section": "Power"
+      "section": "Power",
+      "notes": "Mains input"
     },
     {
       "id": "p1795168780111-46-3",
@@ -58,7 +51,8 @@
       "signalType": "power",
       "direction": "output",
       "connectorType": "powercon-true1",
-      "section": "Power"
+      "section": "Power",
+      "notes": "Mains loop-through to the next cabinet"
     }
   ]
 }

@@ -1,20 +1,25 @@
 {
- "version": 1,
+ "version": 2,
+ "note": "portfolio: true — вендоры портфеля AVAIL; false — поддерживаемые вендоры вне портфеля (решения о вендорах: vendor-decisions.json). Линтер принимает оба уровня.",
  "vendors": [
   {
    "name": "Extron",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "Shure",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "Televic",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "WyreStorm",
+   "portfolio": true,
    "aliases": [
     "Wyrestorm",
     "WYRESTORM"
@@ -22,26 +27,31 @@
   },
   {
    "name": "Biamp",
+   "portfolio": true,
    "aliases": [
     "Biamp Systems"
    ]
   },
   {
    "name": "Renkus-Heinz",
+   "portfolio": true,
    "aliases": [
     "Renkus Heinz"
    ]
   },
   {
    "name": "Powersoft",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "Martin Audio",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "tvONE",
+   "portfolio": true,
    "aliases": [
     "TV One",
     "tv one",
@@ -50,25 +60,30 @@
   },
   {
    "name": "Datapath",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "Lumens",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "Vaddio",
+   "portfolio": true,
    "aliases": [
     "Legrand Vaddio"
    ]
   },
   {
    "name": "Sony",
+   "portfolio": true,
    "aliases": [],
    "scope": "только системные видеокамеры"
   },
   {
    "name": "Sharp",
+   "portfolio": true,
    "aliases": [
     "Sharp NEC",
     "Sharp/NEC",
@@ -77,10 +92,12 @@
   },
   {
    "name": "Digital Projection",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "NETGEAR",
+   "portfolio": true,
    "aliases": [
     "Netgear",
     "Netgear-AV",
@@ -90,16 +107,82 @@
   },
   {
    "name": "Audinate",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "Xilica",
+   "portfolio": true,
    "aliases": []
   },
   {
    "name": "Generic",
+   "portfolio": true,
    "aliases": [],
    "scope": "всё нужное в проекте, но не из портфеля AVAIL"
+  },
+  {
+   "name": "Yamaha",
+   "portfolio": false,
+   "aliases": [
+    "Yamaha Pro Audio"
+   ]
+  },
+  {
+   "name": "Allen & Heath",
+   "portfolio": false,
+   "aliases": [
+    "Allen and Heath"
+   ]
+  },
+  {
+   "name": "QSC",
+   "portfolio": false,
+   "aliases": []
+  },
+  {
+   "name": "Yealink",
+   "portfolio": false,
+   "aliases": []
+  },
+  {
+   "name": "Bose Professional",
+   "portfolio": false,
+   "aliases": [
+    "Bose"
+   ]
+  },
+  {
+   "name": "Chief",
+   "portfolio": false,
+   "aliases": []
+  },
+  {
+   "name": "RF Venue",
+   "portfolio": false,
+   "aliases": []
+  },
+  {
+   "name": "MA Lighting",
+   "portfolio": false,
+   "aliases": []
+  },
+  {
+   "name": "Mipro",
+   "portfolio": false,
+   "aliases": []
+  },
+  {
+   "name": "Middle Atlantic",
+   "portfolio": false,
+   "aliases": []
+  },
+  {
+   "name": "Chauvet Professional",
+   "portfolio": false,
+   "aliases": [
+    "Chauvet"
+   ]
   }
  ]
 }

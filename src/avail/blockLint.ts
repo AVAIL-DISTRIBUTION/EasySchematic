@@ -45,6 +45,9 @@ const POWER_PASSTHROUGH_RE = /loop|thru|out/iu;
 // Python's \b is Unicode-aware: a letter or digit of any script before "dtp" is not a boundary.
 const HDBASET_RE = /(?<![\p{L}\p{N}_])(dtp|xtp|hdbaset)/u;
 const GENERIC_PREFIX = `${GENERIC_VENDOR} `;
+/** Notes of the port that powers a bus-powered device: "bus-powered (USB)" or "PoE". */
+const USB_BUS_POWER_RE = /bus-powered \(USB\)/i;
+const BUS_POWER_RE = /bus-powered \(USB\)|(?<!\bno )\bPoE\b/i;
 const GENERIC_MODEL_RE = /^GEN-[\p{Lu}\p{N}]+(?:-[\p{Lu}\p{N}]+)*$/u;
 
 /** modelNumber of a Generic block: "Generic Room PC" → "GEN-ROOM-PC". */
@@ -144,7 +147,10 @@ export function lintBlock(block: object): BlockLintResult {
       }
     }
     const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive";
-    if (!poe && !passive && !(truthy(d.powerDrawW) && truthy(d.voltage))) W.push("no powerDrawW/voltage (or poeDrawW)");
+    // A USB bus-powered device draws a published wattage at the bus voltage: powerDrawW is enough.
+    const usbPowered = asArray(d.ports).some((p) => typeof asObj(p).notes === "string" && USB_BUS_POWER_RE.test(asObj(p).notes as string));
+    const powerKnown = truthy(d.powerDrawW) && (truthy(d.voltage) || usbPowered);
+    if (!poe && !passive && !powerKnown) W.push("no powerDrawW/voltage (or poeDrawW)");
     if (!truthy(d.referenceUrl)) W.push("no referenceUrl");
   }
   if (!truthy(d.searchTerms)) W.push("no searchTerms");
@@ -153,7 +159,11 @@ export function lintBlock(block: object): BlockLintResult {
   const ports = asArray(d.ports)
     .map(asObj)
     .filter((p) => !(typeof p.section === "string" && p.section.startsWith("Slot")));
-  if (!ports.some((p) => p.signalType === "power") && !poe && !truthy(d.slots)) {
+  // Bus power (standard 3.1): a device powered over USB or PoE has no power port when the
+  // notes of the port that powers it say so ("bus-powered (USB)" or "PoE").
+  // A PoE source (poeBudgetW) needs its own power input whatever its port notes say.
+  const busPowered = !truthy(d.poeBudgetW) && ports.some((p) => p.direction !== "output" && typeof p.notes === "string" && BUS_POWER_RE.test(p.notes));
+  if (!ports.some((p) => p.signalType === "power") && !poe && !truthy(d.slots) && !busPowered) {
     if (deviceType !== "speaker" && deviceType !== "antenna") E.push("no power port");
   }
   const order: number[] = [];

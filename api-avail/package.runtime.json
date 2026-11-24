@@ -7,6 +7,7 @@
     "start": "node --enable-source-maps dist/server.mjs",
     "import:upstream": "node --enable-source-maps dist/import-upstream.mjs",
     "normalize:library": "node --enable-source-maps dist/normalize-library.mjs",
-    "import:avail": "node --enable-source-maps dist/import-avail.mjs"
+    "import:avail": "node --enable-source-maps dist/import-avail.mjs",
+    "apply:vendor-decisions": "node --enable-source-maps dist/apply-vendor-decisions.mjs"
   }
 }
