@@ -243,6 +243,11 @@ describe("the repository's curated library", () => {
 
   it("every file passes upstream's PUT /templates/:id validation (the Edit flow saves through it) and stays level A", async () => {
     importAvailLibrary(api.db.sqlite, files);
+    // A real library has cards for the curated chassis' slots (else: W "no card in the library fits").
+    const families = new Set(files.flatMap((f) => ((f.template as { slots?: { slotFamily: string }[] }).slots ?? []).map((s) => s.slotFamily)));
+    for (const fam of families) {
+      insertLocal({ id: `card-${fam}`, label: `Card ${fam}`, deviceType: "expansion-card", category: "", slotFamily: fam, ports: [] });
+    }
     for (const f of files) {
       const { id, ...body } = f.template as { id: string };
       const res = await api.fetch(

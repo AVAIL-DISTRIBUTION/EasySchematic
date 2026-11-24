@@ -236,6 +236,7 @@ export function importTemplates(
         report.genericCreated.push(t.label);
       } else {
         t = { ...normalizeTemplate(raw), manufacturer: decision.manufacturer };
+        if (decision.deviceType) t = { ...t, deviceType: decision.deviceType, category: defaultCategoryFor(decision.deviceType) };
       }
       const key = dedupeKey(t);
       if (seenKeys.has(key)) {

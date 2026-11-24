@@ -33,7 +33,7 @@ import {
 } from "./libraryMode";
 import { describeChange, deviceCardRows, portLabelMap, groupByTaxonomy, portsBySection, REVIEW_CHECKLIST, unverifiedBlocks } from "./libraryView";
 import { appliedChanges, normalizeBlock, type NormalizeResult } from "./normalize";
-import { deviceDataToTemplate, editSessionFor, endEditSession } from "./templateEdit";
+import { applyTemplateToDeviceData, deviceDataToTemplate, editSessionFor, endEditSession } from "./templateEdit";
 import { useAvailState, useStartTemplateEdit } from "./useAvail";
 import { useSchematicStore } from "../store";
 import { slotOwnedPortIds } from "../slotDefinitions";
@@ -407,6 +407,13 @@ export function AvailReviewDialog({ template, onClose }: { template: DeviceTempl
           </button>
         </div>
 
+        {status === "verified" && info?.approvedVia && (
+          <div data-testid="avail-approved-via" className="px-4 py-2 border-b border-green-200 bg-green-50 text-xs text-green-900">
+            {info.approvedVia === "bulk"
+              ? `Verified with bulk Approve${info.approvedAt ? ` on ${info.approvedAt} UTC` : ""}: the engineer's checklist was not ticked for this template.`
+              : `Verified in the Review card${info.approvedAt ? ` on ${info.approvedAt} UTC` : ""}.`}
+          </div>
+        )}
         {info?.statusReason && (
           <div className="px-4 py-2 border-b border-amber-200 bg-amber-50 text-xs text-amber-900">
             <span className="font-semibold">Status changed automatically:</span> {info.statusReason}
@@ -492,13 +499,17 @@ export function AvailTemplateEditBar({
   nodeId,
   build,
   onSaved,
+  onFormReload,
 }: {
   nodeId: string | null;
   build: () => Record<string, unknown> | null;
   onSaved: () => void;
+  /** Makes the editor re-read its form from the canvas copy (after Normalize is applied). */
+  onFormReload?: () => void;
 }) {
   const session = editSessionFor(nodeId);
   const addToast = useSchematicStore((s) => s.addToast);
+  const updateDevice = useSchematicStore((s) => s.updateDevice);
   const node = useSchematicStore((s) => (nodeId ? s.nodes.find((n) => n.id === nodeId) : undefined));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -560,11 +571,18 @@ export function AvailTemplateEditBar({
               Discard normalization
             </button>
             <button
-              onClick={() => save(normalized.template as unknown as NonNullable<typeof draft>)}
+              onClick={() => {
+                const data = build();
+                if (!data || !nodeId) return;
+                updateDevice(nodeId, applyTemplateToDeviceData(data, normalized.template) as never);
+                setShowNormalize(false);
+                onFormReload?.();
+              }}
               disabled={busy || appliedChanges(normalized.changes).length === 0}
               className={`${btn} border-blue-600 bg-blue-600 text-white hover:bg-blue-700`}
+              title="Write the normalized values into the form; check them and Save to library"
             >
-              Save normalized to library
+              Apply to form
             </button>
           </>
         ) : (
@@ -615,7 +633,7 @@ function AvailNormalizePreview({ before, result }: { before: BlockLintResult; re
           </ul>
         </>
       )}
-      <div className="text-[var(--color-text-muted)]">The form is not changed. Save normalized writes the normalized version to the library.</div>
+      <div className="text-[var(--color-text-muted)]">Apply to form writes these changes into the form; nothing is saved until Save to library.</div>
     </div>
   );
 }

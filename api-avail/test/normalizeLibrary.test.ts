@@ -71,7 +71,8 @@ describe("normalizeLibrary", () => {
   it("writes a change that leaves fewer E+W even when the level stays the same", () => {
     // A port without connectorType keeps it FIX whatever the normalizer does, but sections get fixed.
     const t = community("s");
-    t.ports.push({ id: "4", label: "HDMI OUT", signalType: "hdmi", direction: "output", section: "Back of unit", connectorType: "" });
+    // analog audio: several usual connectors, the normalizer does not pick one
+    t.ports.push({ id: "4", label: "AUDIO OUT", signalType: "analog-audio", direction: "output", section: "Back of unit", connectorType: "" });
     insert(t);
     const r = normalizeLibrary(api.db.sqlite);
     expect(r).toMatchObject({ processed: 1, improved: 1, fewerIssuesSameLevel: 1, sameLevelNotWritten: 0, transitions: { "FIX→FIX": 1 } });
@@ -94,12 +95,12 @@ describe("normalizeLibrary", () => {
 
   it("reports unresolved sections by signalType + direction", () => {
     const t = community("u");
-    t.ports.push({ id: "5", label: "Ref", signalType: "genlock", direction: "input", section: "Rear", connectorType: "bnc" });
-    t.ports.push({ id: "6", label: "WC", signalType: "genlock", direction: "input", section: "", connectorType: "bnc" });
+    t.ports.push({ id: "5", label: "Ref", signalType: "custom", direction: "input", section: "Rear", connectorType: "bnc" });
+    t.ports.push({ id: "6", label: "WC", signalType: "custom", direction: "input", section: "", connectorType: "bnc" });
     insert(t);
     const r = normalizeLibrary(api.db.sqlite, { dryRun: true });
-    expect(r.unresolvedSections).toEqual([{ reason: "genlock + input", count: 2 }]);
-    expect(formatNormalizeReport(r)).toContain("Unresolved port sections by signalType + direction (top 30):\n   1. genlock + input: 2");
+    expect(r.unresolvedSections).toEqual([{ reason: "custom + input", count: 2 }]);
+    expect(formatNormalizeReport(r)).toContain("Unresolved port sections by signalType + direction (top 30):\n   1. custom + input: 2");
   });
 
   it("leaves verified and hidden templates and other vendors alone", () => {

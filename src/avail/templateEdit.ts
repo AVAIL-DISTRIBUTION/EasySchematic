@@ -72,3 +72,18 @@ export function editSessionFor(nodeId: string | null | undefined): EditSession |
 export function endEditSession(nodeId: string): void {
   sessions.delete(nodeId);
 }
+
+/**
+ * Device data with a (normalized) template's editor fields written over it, for the Normalize
+ * button: the canvas copy takes the normalized values and the editor re-reads its form. Node-only
+ * fields (templateId, hidden ports, notes…) are kept; a field the template no longer has is removed.
+ */
+export function applyTemplateToDeviceData(data: Obj, template: Obj): Obj {
+  const out: Obj = { ...data };
+  for (const k of EDITOR_TEMPLATE_FIELDS) {
+    if (template[k] === undefined || template[k] === null || template[k] === "") delete out[k];
+    else out[k] = template[k];
+  }
+  if (Array.isArray(template.ports)) out.ports = template.ports;
+  return out;
+}

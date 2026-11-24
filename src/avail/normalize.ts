@@ -26,7 +26,9 @@
  *     front-panel ports get "(Front)"; ports ordered by the standard's section order.
  */
 import { BLOCK_SECTIONS } from "./blockLint";
-import { BIDIRECTIONAL_SIGNALS, directionFromLabel, sectionBase, targetSection } from "./sections";
+import categoryPlanJson from "../../docs/avail/category-plan.json";
+import { canonicalFamily, familyInfo } from "./slotFamilies";
+import { BIDIRECTIONAL_SIGNALS, CONFIGURABLE_NOTE, directionFromLabel, SIGNAL_CONNECTORS, sectionBase, targetSection } from "./sections";
 
 export { BIDIRECTIONAL_SIGNALS, sectionByPurpose } from "./sections";
 import { defaultCategoryFor, findCategory, findVendor, normalizeManufacturer } from "./library";
@@ -109,6 +111,28 @@ export function labelWithManufacturer(label: string, manufacturer: string, origi
   return hit ? `${manufacturer}${label.slice(hit.length)}` : `${manufacturer} ${label}`;
 }
 
+const CATEGORY_PLAN = new Map(
+  (categoryPlanJson as { templates: { id: string; category: string }[] }).templates.map((e) => [e.id, e.category]),
+);
+
+/** Category docs/avail/category-plan.json gives this template id, if any. */
+export function plannedCategory(id: string): string | undefined {
+  return id ? CATEGORY_PLAN.get(id) : undefined;
+}
+
+/** Category of a card's slot family, or of a chassis' first slot family with one (registry). */
+function familyCategory(t: Obj): { family: string; category: string } | null {
+  const families = [
+    typeof t.slotFamily === "string" ? t.slotFamily : "",
+    ...(Array.isArray(t.slots) ? (t.slots as Obj[]).map((s) => (s && typeof s.slotFamily === "string" ? s.slotFamily : "")) : []),
+  ].filter(Boolean);
+  for (const f of families) {
+    const c = familyInfo(f)?.category;
+    if (c && findCategory(c)?.leaf) return { family: f, category: c };
+  }
+  return null;
+}
+
 /** Lint condition for an all-caps label: ≥2 Latin words and no lower case. */
 export function isCapsLabel(label: string): boolean {
   const words = label.split(/[\s/()-]+/).filter((w) => /[A-Za-z]{2,}/.test(w));
@@ -156,15 +180,59 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
   }
   if (!man) changes.push({ field: "manufacturer", note: "no manufacturer: label and shortName are not normalized", manual: true });
 
+  // --- slot families (standard "Slots and cards"): old names → registry name; extra accepted families
+  if (typeof t.slotFamily === "string" && t.slotFamily) {
+    const fam = canonicalFamily(t.slotFamily);
+    if (fam !== t.slotFamily) {
+      changes.push({ field: "slotFamily", from: t.slotFamily, to: fam, note: "slot family from docs/avail/slot-families.json" });
+      t.slotFamily = fam;
+    }
+  }
+  if (Array.isArray(t.slots)) {
+    t.slots = (t.slots as unknown[]).map((raw, i) => {
+      if (!raw || typeof raw !== "object") return raw;
+      const slot = { ...(raw as Obj) };
+      const where = `slots[${str(slot.id) || i}]`;
+      if (typeof slot.slotFamily === "string" && slot.slotFamily) {
+        const fam = canonicalFamily(slot.slotFamily);
+        if (fam !== slot.slotFamily) {
+          changes.push({ field: `${where}.slotFamily`, from: slot.slotFamily, to: fam, note: "slot family from docs/avail/slot-families.json" });
+          slot.slotFamily = fam;
+        }
+        const extra = familyInfo(fam)?.alsoAccepts ?? [];
+        const current = Array.isArray(slot.slotFamilies) ? (slot.slotFamilies as unknown[]).filter((f): f is string => typeof f === "string").map(canonicalFamily) : [];
+        const next = [...new Set([...current, ...extra])].filter((f) => f !== fam);
+        const before = Array.isArray(slot.slotFamilies) ? slot.slotFamilies : undefined;
+        if (next.length && JSON.stringify(next) !== JSON.stringify(before)) {
+          changes.push({ field: `${where}.slotFamilies`, from: before ?? null, to: next, note: `the ${fam} slot also accepts these families` });
+          slot.slotFamilies = next;
+        }
+      }
+      return slot;
+    });
+  }
+
   // --- category
+  const planned = plannedCategory(str(t.id));
   const cat = findCategory(str(t.category));
-  if (cat?.leaf && !cat.schematic) {
+  if (planned && planned !== t.category) {
+    changes.push({ field: "category", from: t.category ?? null, to: planned, note: "docs/avail/category-plan.json" });
+    t.category = planned;
+  } else if (planned) {
+    // already as planned
+  } else if (cat?.leaf && !cat.schematic) {
     // A valid BoQ-only category (schematic=false) is a deliberate decision: not replaced.
     changes.push({ field: "category", from: t.category, note: `category "${cat.path}" is BoQ-only (schematic=false): kept, decide whether the item belongs on schematics`, manual: true });
   } else if (!cat || !cat.leaf) {
+    // A card or a chassis takes the category of its slot family (cards = their chassis'),
+    // then deviceTypeDefaults (also a BoQ-only default when there is no category at all).
+    const famCat = familyCategory(t);
     const def = defaultCategoryFor(str(t.deviceType));
     const defCat = findCategory(def);
-    if (def && defCat?.leaf && defCat.schematic) {
+    if (famCat) {
+      changes.push({ field: "category", from: t.category ?? null, to: famCat.category, note: `category of slot family ${famCat.family}` });
+      t.category = famCat.category;
+    } else if (def && defCat?.leaf && (defCat.schematic || !str(t.category))) {
       changes.push({ field: "category", from: t.category ?? null, to: def, note: `deviceTypeDefaults for "${str(t.deviceType)}"` });
       t.category = def;
     } else {
@@ -240,6 +308,13 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
       const inferred = directionFromLabel(port);
       if (inferred && "manual" in inferred) {
         changes.push({ field: `${where}.direction`, from: port.direction, note: inferred.manual, manual: true });
+      } else if (inferred && "configurable" in inferred) {
+        const notes = str(port.notes);
+        if (!notes.toLowerCase().includes(CONFIGURABLE_NOTE)) {
+          const next = notes ? `${notes}; ${CONFIGURABLE_NOTE}` : CONFIGURABLE_NOTE;
+          changes.push({ field: `${where}.notes`, from: notes || null, to: next, note: "HDBaseT port configurable as input or output (v3)" });
+          port.notes = next;
+        }
       } else if (inferred) {
         changes.push({
           field: `${where}.direction`,
@@ -252,6 +327,12 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
           const notes = str(port.notes);
           if (!/audio return/i.test(notes)) port.notes = notes ? `${notes}; (e)ARC: audio return to the source` : "(e)ARC: audio return to the source";
         }
+      }
+
+      // connector, where the signal leaves no doubt (v3)
+      if (!str(port.connectorType) && SIGNAL_CONNECTORS[sig]) {
+        changes.push({ field: `${where}.connectorType`, from: port.connectorType ?? null, to: SIGNAL_CONNECTORS[sig], note: `connector from the signal type ${sig}` });
+        port.connectorType = SIGNAL_CONNECTORS[sig];
       }
 
       // section

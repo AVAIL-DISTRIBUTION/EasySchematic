@@ -12,6 +12,7 @@ import { rowToTemplate, templateToRow, type TemplateRow } from "../../api/src/db
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { findVendor, VENDORS } from "../../src/avail/library";
 import { normalizeBlock } from "../../src/avail/normalize";
+import { slotLibraryContext, slotLibraryWarnings } from "../../src/avail/slotFamilies";
 import { BUMP_LIBRARY_VERSION, type TemplateStatus } from "./templateMeta";
 
 const RANK: Record<BlockLevel, number> = { FIX: 0, B: 1, A: 2 };
@@ -41,6 +42,10 @@ export interface NormalizeLibraryReport {
   topReasons: { reason: string; count: number }[];
   /** Most frequent "requires manual fix" notes of the normalizer. */
   topManual: { reason: string; count: number }[];
+  /** Slot families of our vendors' chassis that no card in the library fits: the list of cards to add. */
+  slotFamiliesWithoutCards: { family: string; vendor: string; hosts: number }[];
+  /** Card families no chassis in the library takes. */
+  cardFamiliesWithoutHosts: { family: string; cards: number }[];
   /** Ports whose section stays unresolved, by "signalType + direction" (top 30). */
   unresolvedSections: { reason: string; count: number }[];
   levelsAfter: Record<BlockLevel, number>;
@@ -77,6 +82,8 @@ export function normalizeLibrary(
     topReasons: [],
     topManual: [],
     unresolvedSections: [],
+    slotFamiliesWithoutCards: [],
+    cardFamiliesWithoutHosts: [],
     levelsAfter: { A: 0, B: 0, FIX: 0 },
   };
   const reasons = new Map<string, number>();
@@ -104,6 +111,16 @@ export function normalizeLibrary(
        updated_by = excluded.updated_by, updated_at = excluded.updated_at`,
   );
 
+  // Slot context: the families as they will be after normalization (old names renamed).
+  const ctx = slotLibraryContext(
+    (sqlite.prepare("SELECT slot_family, slots FROM templates WHERE flagged_for_deletion = 0").all() as { slot_family: string | null; slots: string | null }[]).map((r) => {
+      const t = normalizeBlock({ slotFamily: r.slot_family ?? undefined, slots: r.slots ? JSON.parse(r.slots) : undefined, label: "", ports: [] }).template as {
+        slotFamily?: string;
+        slots?: { slotFamily?: string; slotFamilies?: string[] }[];
+      };
+      return { slotFamily: t.slotFamily ?? null, slots: t.slots ?? null };
+    }),
+  );
   const run = sqlite.transaction(() => {
     let wrote = false;
     for (const row of rows) {
@@ -114,9 +131,9 @@ export function normalizeLibrary(
       stats.processed++;
 
       const template = rowToTemplate(row);
-      const before = lintBlock(template);
+      const before = lintBlock(template, ctx);
       const { template: normalized, changes } = normalizeBlock(template);
-      const after = lintBlock(normalized);
+      const after = lintBlock(normalized, ctx);
       const key = `${before.level}→${after.level}`;
       report.transitions[key] = (report.transitions[key] ?? 0) + 1;
       for (const c of changes) {
@@ -130,8 +147,14 @@ export function normalizeLibrary(
       }
 
       const issues = (l: { errors: string[]; warnings: string[] }) => l.errors.length + l.warnings.length;
+      // Decided changes — slot families (which cards fit), categories (category plan, BoQ
+      // defaults: one error may replace another), notes — are written whenever they do not make
+      // the template worse.
+      const slotChange = changes.some((c) => !c.manual && /^(slots\[|slotFamily|category$|ports\[.*\]\.notes$)/.test(c.field));
       const improves =
-        RANK[after.level] > RANK[before.level] || (RANK[after.level] === RANK[before.level] && issues(after) < issues(before));
+        RANK[after.level] > RANK[before.level] ||
+        (RANK[after.level] === RANK[before.level] && issues(after) < issues(before)) ||
+        (slotChange && RANK[after.level] >= RANK[before.level] && issues(after) <= issues(before));
       if (improves && after.level === before.level) report.fewerIssuesSameLevel++;
       const final = improves ? after : before;
       if (improves) {
@@ -160,6 +183,36 @@ export function normalizeLibrary(
   report.topReasons = top(reasons, 10);
   report.topManual = top(manual, 5);
   report.unresolvedSections = top(unresolved, 30);
+
+  // Slots and cards after the run (families renamed by the normalizer).
+  const after = (sqlite.prepare("SELECT manufacturer, slot_family, slots FROM templates WHERE flagged_for_deletion = 0").all() as {
+    manufacturer: string | null;
+    slot_family: string | null;
+    slots: string | null;
+  }[]).map((r) => {
+    const t = normalizeBlock({ slotFamily: r.slot_family ?? undefined, slots: r.slots ? JSON.parse(r.slots) : undefined, label: "", ports: [] }).template as {
+      slotFamily?: string;
+      slots?: { slotFamily?: string; slotFamilies?: string[] }[];
+    };
+    return { manufacturer: r.manufacturer, slotFamily: t.slotFamily ?? null, slots: t.slots ?? null };
+  });
+  const finalCtx = slotLibraryContext(after);
+  const emptyFamilies = new Map<string, { vendor: string; hosts: number }>();
+  const lonelyCards = new Map<string, number>();
+  for (const t of after) {
+    const vendor = findVendor(t.manufacturer)?.name;
+    if (vendor && t.slots) {
+      for (const w of slotLibraryWarnings({ slots: t.slots }, finalCtx)) {
+        const fam = /"([^"]+)"/.exec(w)?.[1] ?? "?";
+        const e = emptyFamilies.get(fam) ?? { vendor, hosts: 0 };
+        e.hosts++;
+        emptyFamilies.set(fam, e);
+      }
+    }
+    if (t.slotFamily && !finalCtx.familiesWithHosts.has(t.slotFamily)) lonelyCards.set(t.slotFamily, (lonelyCards.get(t.slotFamily) ?? 0) + 1);
+  }
+  report.slotFamiliesWithoutCards = [...emptyFamilies].map(([family, e]) => ({ family, ...e })).sort((a, b) => a.vendor.localeCompare(b.vendor) || a.family.localeCompare(b.family));
+  report.cardFamiliesWithoutHosts = [...lonelyCards].map(([family, cards]) => ({ family, cards })).sort((a, b) => a.family.localeCompare(b.family));
   return report;
 }
 
@@ -181,6 +234,11 @@ export function formatNormalizeReport(r: NormalizeLibraryReport): string {
     ``,
     `Needs a manual fix (top 5):`,
     ...r.topManual.map((x) => `  - ${x.reason}: ${x.count}`),
+    ``,
+    `Slot families without cards (the list of cards to add later; chassis with such slots):`,
+    ...(r.slotFamiliesWithoutCards.length ? r.slotFamiliesWithoutCards.map((x) => `  ${x.vendor.padEnd(14)} ${x.family}: ${x.hosts}`) : ["  -"]),
+    `Card families no chassis takes:`,
+    ...(r.cardFamiliesWithoutHosts.length ? r.cardFamiliesWithoutHosts.map((x) => `  ${x.family}: ${x.cards} cards`) : ["  -"]),
     ``,
     `Unresolved port sections by signalType + direction (top 30):`,
     ...r.unresolvedSections.map((x, i) => `  ${String(i + 1).padStart(2)}. ${x.reason}: ${x.count}`),

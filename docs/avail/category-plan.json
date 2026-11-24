@@ -1,0 +1,239 @@
+{
+ "version": 1,
+ "rule": "Категория по смыслу для шаблонов, у которых тип устройства не определяет категорию (controller, мелкие типы, стойки, камеры с неточным deviceType). Применяет нормализатор по id. disputed — категория не назначена, решает человек.",
+ "templates": [
+  {
+   "id": "11075238-5055-471e-97b9-70407ff4e0fc",
+   "label": "Extron EBDB",
+   "category": "Control Systems / eBUS",
+   "why": "eBUS distribution hub"
+  },
+  {
+   "id": "32901522-8118-40cb-a96e-15ee8d5234c3",
+   "label": "Extron EBDB MINI",
+   "category": "Control Systems / eBUS",
+   "why": "eBUS distribution hub"
+  },
+  {
+   "id": "57d45a2e-a911-4d72-9dc2-4e43e4aa1d88",
+   "label": "Extron ECM DIO8",
+   "category": "Control Systems / eBUS",
+   "why": "eBUS digital I/O module"
+  },
+  {
+   "id": "8a18d4c6-21e8-4d01-ae93-e855c1018aa0",
+   "label": "Extron ECM S10",
+   "category": "Control Systems / eBUS",
+   "why": "eBUS partition sensor set"
+  },
+  {
+   "id": "8102a555-6033-4b9c-a833-8d91f42899d4",
+   "label": "Extron OCS 100C",
+   "category": "Control Systems / eBUS",
+   "why": "occupancy sensor on eBUS"
+  },
+  {
+   "id": "cdb2ac01-d08e-44f3-a5b3-c7233551ddc7",
+   "label": "Extron OCS 100W",
+   "category": "Control Systems / eBUS",
+   "why": "occupancy sensor on eBUS"
+  },
+  {
+   "id": "813c4db2-ecfe-45d7-954d-7c51e56bc29d",
+   "label": "Extron IPA T RLY4",
+   "category": "Control Systems / IP Link Control Proc",
+   "why": "IP Link accessory (relays)"
+  },
+  {
+   "id": "393c11c5-6fd2-4582-ac4f-cf9e0ee0ba4b",
+   "label": "Extron IPL EXP 200",
+   "category": "Control Systems / IP Link Control Proc",
+   "why": "IP Link expansion processor"
+  },
+  {
+   "id": "125a7a0c-7cd4-415f-b413-dae2b6816325",
+   "label": "Extron IPL EXP S5",
+   "category": "Control Systems / IP Link Control Proc",
+   "why": "IP Link expansion processor"
+  },
+  {
+   "id": "bbb09ae9-5efc-497f-a5fd-0ec9faf82af3",
+   "label": "Extron HD CTL 100",
+   "category": "Control Systems / Processors",
+   "why": "workspace controller"
+  },
+  {
+   "id": "e3bfdc0d-5284-40c4-a487-26a7fe5206bf",
+   "label": "Extron WC PRO 150 OCS",
+   "category": "Control Systems / Processors",
+   "why": "workspace controller"
+  },
+  {
+   "id": "0b80a8a5-1783-4340-9f66-bf5597ceffd0",
+   "label": "Extron WC PRO 160",
+   "category": "Control Systems / Processors",
+   "why": "workspace controller"
+  },
+  {
+   "id": "bf285b9a-a10c-4219-ae29-250ed367d89d",
+   "label": "Extron PPC 25",
+   "category": "Audio Products / Control",
+   "why": "priority paging controller"
+  },
+  {
+   "id": "c63a13e7-98d8-4e49-83f7-b2446cafeccf",
+   "label": "Powersoft WM Touch",
+   "category": "Audio Products / Control",
+   "why": "wall touch control for Powersoft amplifiers"
+  },
+  {
+   "id": "237c19b4-ee79-4c2e-ab33-c7ad093eada4",
+   "label": "Yamaha DCP4V4S",
+   "category": "Audio Products / Control",
+   "why": "digital control panel"
+  },
+  {
+   "id": "3a300631-f16d-457b-98f4-e00a5cc0b9d3",
+   "label": "Yamaha DM7 Control",
+   "category": "Audio Products / Mixers",
+   "why": "DM7 control surface"
+  },
+  {
+   "id": "486f809f-18fd-4529-a1de-b4621ad6a511",
+   "label": "Wyrestorm NHD-CTL-PRO-V2 Controller",
+   "category": "AV distribution / AVoIP",
+   "why": "NetworkHD AVoIP controller"
+  },
+  {
+   "id": "7988c319-8841-4726-999c-42f38df86377",
+   "label": "QSC Q-SYS QIO-GP8x8",
+   "category": "Control Systems / Processors",
+   "why": "Q-SYS control I/O peripheral"
+  },
+  {
+   "id": "423ff7b2-69c8-43ba-8ac8-1436f58caba1",
+   "label": "QSC Q-SYS QIO-LVR4",
+   "category": "Control Systems / Processors",
+   "why": "Q-SYS control I/O peripheral"
+  },
+  {
+   "id": "320c5e35-4e79-49ee-afa1-ef5130eab4ec",
+   "label": "QSC Qsys QIO S-4",
+   "category": "Control Systems / Processors",
+   "why": "Q-SYS control I/O peripheral"
+  },
+  {
+   "id": "3b4200c6-840c-46d0-85b5-587441ecc0bc",
+   "label": "MA Lighting GrandMA3 Node",
+   "category": "Lighting equipment / Consoles",
+   "why": "grandMA3 console network node"
+  },
+  {
+   "id": "863d54e3-22b5-46bc-9e47-f833e01be587",
+   "label": "Televic Confidea CHT G4",
+   "category": "Audio Products / Discussion Systems",
+   "why": "charging tray of the Confidea discussion system"
+  },
+  {
+   "id": "095bf87a-75b1-45e2-abea-ab38112acce8",
+   "label": "Lumens DC193 Document Camera",
+   "category": "Videocameras / Document cameras",
+   "why": "document camera"
+  },
+  {
+   "id": "763351e0-76bd-4351-a5f6-c10ae4a8ac12",
+   "label": "Lumens - PS760",
+   "category": "Videocameras / Document cameras",
+   "why": "visualizer (document camera)"
+  },
+  {
+   "id": "bfe3ab75-7f96-4b6b-8884-b72172a11b20",
+   "label": "Vaddio EasyIP 10",
+   "category": "Videocameras / PTZ cameras",
+   "why": "PTZ camera filed as camera"
+  },
+  {
+   "id": "6b248cf1-fdca-4869-8c83-d0a4b85cd129",
+   "label": "Vaddio RoboSHOT 12E HDBT",
+   "category": "Videocameras / PTZ cameras",
+   "why": "PTZ camera filed as camera"
+  },
+  {
+   "id": "985c0fea-d0c7-4fcf-af5b-8a791a0d4045",
+   "label": "Chief NW1F1218 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "4ab38911-9987-4f55-9ace-ee86acac6260",
+   "label": "Chief NW1F1223 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "c8ae0715-1f77-4df2-8cfd-2b3526b922d6",
+   "label": "Chief NW1F2018 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "e3b32d10-f08e-428e-9321-544416413778",
+   "label": "Chief NW1F2023 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "94642506-db2e-4ac0-9645-ba8847c43e2f",
+   "label": "Chief NW1F2818 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "36c68c78-53bf-4bf6-817a-96caa7facffe",
+   "label": "Chief NW1F2823 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "bc4a66c1-181b-429d-9f9d-3df30064c568",
+   "label": "Chief NW1F2828 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "4df126f3-f302-4f09-87b3-8872b7e3dcc1",
+   "label": "Chief NW1F3618 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "ad91f838-5010-4f4a-97de-66da801c2a74",
+   "label": "Chief NW1F3623 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  },
+  {
+   "id": "20f02d3d-1467-42cf-a3a3-df1dbb4fd02c",
+   "label": "Chief NW1F3628 W1 Rack",
+   "category": "Integration Tools / Racks",
+   "why": "rack (BoQ-only category, schematic=false)"
+  }
+ ],
+ "disputed": [
+  {
+   "id": "7b11ed6d-e5e2-4afd-b4e2-299b34d280c8",
+   "label": "Extron TLCA 1",
+   "why": "TouchLink control adapter: Touch panels or Processors?"
+  },
+  {
+   "id": "eaba5d09-cc84-45bc-a552-96aa2b39ab15",
+   "label": "Wyrestorm TS-280-EU",
+   "why": "purpose unclear from the template (RS-232/RS-422 ports, 12 V)"
+  },
+  {
+   "id": "5c09954a-8eb1-4847-abed-af197fd4a6e0",
+   "label": "Chauvet Professional RDMX Splitter 8",
+   "why": "DMX splitter: the lighting taxonomy has only Consoles and Fixtures"
+  }
+ ]
+}

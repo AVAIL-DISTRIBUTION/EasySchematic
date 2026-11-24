@@ -70,10 +70,16 @@
   "Sony": {
    "keepDeviceTypes": [
     "ptz-camera",
-    "camera",
     "ptz-controller"
    ],
-   "note": "только системные видеокамеры"
+   "retype": {
+    "fromDeviceTypes": [
+     "camera"
+    ],
+    "modelPattern": "^(BRC|SRG|ILME-FR7|FR7)",
+    "deviceType": "ptz-camera"
+   },
+   "note": "только PTZ-камеры и пульты управления PTZ (RM-IP); PTZ-модели, записанные как camera (BRC, SRG, FR7), становятся ptz-camera; камкордеры и студийные камеры (PXW, HXC, HDC, ILCE, FX) удаляются"
   },
   "Netgear-AV": {
    "keepModelPattern": "^(M4250|M4350|GSM42|GSM43|XSM43)",

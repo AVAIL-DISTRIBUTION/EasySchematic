@@ -12,7 +12,7 @@ import { applyMigrations, type MigrationResult } from "./migrate";
 import { parseSeedMode, seedLibrary, type SeedResult } from "./seed";
 import { installMailStub } from "./mail";
 import { registerAvailRoutes } from "./routes";
-import { syncLintLevels } from "./templateMeta";
+import { relintAll, syncLintLevels } from "./templateMeta";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
@@ -134,6 +134,9 @@ export function createApiServer(config: ApiConfig): ApiServer {
   const synced = syncLintLevels(db.sqlite);
   if (synced.linted > 0) log(`lint levels updated: ${synced.linted} templates`);
   if (synced.demoted.length > 0) log(`verified below level A, moved to draft: ${synced.demoted.join(", ")}`);
+  // Levels depend on the whole library (slots and cards): bring every stored level up to date.
+  const relinted = relintAll(db.sqlite);
+  if (relinted > 0) log(`lint levels re-checked against the library: ${relinted} changed`);
 
   const bindings = {
     easyschematic_db: db as unknown as D1Database,

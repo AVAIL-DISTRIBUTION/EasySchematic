@@ -183,19 +183,21 @@ export type CardForSlotResult =
  * too) and the card template's `slotFamily` (present only on expansion-card templates).
  */
 export function validateCardForSlot(
-  slotFamily: string | undefined,
+  slotFamily: string | readonly string[] | undefined,
   cardSlotFamily: string | undefined,
 ): CardForSlotResult {
+  // AVAIL: a slot may accept several families (slotFamily + slotFamilies).
+  const accepted = typeof slotFamily === "string" ? [slotFamily] : (slotFamily ?? []).filter(Boolean);
   if (!cardSlotFamily) {
     return { ok: false, error: "That template is not an expansion card (it has no slot family)." };
   }
-  if (!slotFamily) {
+  if (accepted.length === 0 || !accepted[0]) {
     return { ok: false, error: "That slot has no slot family, so no card can be matched to it." };
   }
-  if (slotFamily !== cardSlotFamily) {
+  if (!accepted.includes(cardSlotFamily)) {
     return {
       ok: false,
-      error: `Card slot family "${cardSlotFamily}" does not fit slot family "${slotFamily}".`,
+      error: `Card slot family "${cardSlotFamily}" does not fit slot family "${accepted.join('" or "')}".`,
     };
   }
   return { ok: true };

@@ -123,7 +123,7 @@ export function registerAvailRoutes(app: UpstreamApp): void {
     const updated: string[] = [];
     const failed: { id: string; label: string | null; reason: "not_found" | "not_level_a"; level?: string; errors?: string[]; warnings?: string[] }[] = [];
     for (const id of [...new Set(ids as string[])]) {
-      const result = await setTemplateStatus(db, id, status, by);
+      const result = await setTemplateStatus(db, id, status, by, "bulk");
       if (result.ok) {
         updated.push(id);
         continue;

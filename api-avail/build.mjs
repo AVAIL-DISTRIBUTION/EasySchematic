@@ -14,10 +14,11 @@ const common = {
   logLevel: "info",
 };
 
-// The API server and the CLIs run in the image: import:upstream, normalize:library, import:avail, apply:vendor-decisions, apply:generic-plan.
+// The API server and the CLIs run in the image: import:upstream, normalize:library, import:avail, apply:vendor-decisions, apply:generic-plan, export:worklist.
 await build({ ...common, entryPoints: ["src/main.ts"], outfile: "dist/server.mjs" });
 await build({ ...common, entryPoints: ["src/importCli.ts"], outfile: "dist/import-upstream.mjs" });
 await build({ ...common, entryPoints: ["src/normalizeCli.ts"], outfile: "dist/normalize-library.mjs" });
 await build({ ...common, entryPoints: ["src/importAvailCli.ts"], outfile: "dist/import-avail.mjs" });
 await build({ ...common, entryPoints: ["src/vendorCleanupCli.ts"], outfile: "dist/apply-vendor-decisions.mjs" });
 await build({ ...common, entryPoints: ["src/genericPlanCli.ts"], outfile: "dist/apply-generic-plan.mjs" });
+await build({ ...common, entryPoints: ["src/worklistCli.ts"], outfile: "dist/export-worklist.mjs" });

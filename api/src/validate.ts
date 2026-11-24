@@ -358,6 +358,11 @@ export function validateTemplate(body: unknown): ValidationResult {
       if ((slot.id as string).includes("/")) return { ok: false, error: `${name} has an id containing "/", which is reserved for sub-slots` };
       const familyErr = slotFieldError(slot.slotFamily, "slot family");
       if (familyErr) return { ok: false, error: `${name} ${familyErr}` };
+      // AVAIL: optional further families the slot accepts.
+      if (slot.slotFamilies != null && (!Array.isArray(slot.slotFamilies) || slot.slotFamilies.length > 10 ||
+          !slot.slotFamilies.every((f) => typeof f === "string" && f.trim() !== "" && f.length <= 100))) {
+        return { ok: false, error: `${name} has invalid extra slot families` };
+      }
       if (slot.defaultCardId != null && typeof slot.defaultCardId !== "string") {
         return { ok: false, error: `${name} has an invalid default card` };
       }

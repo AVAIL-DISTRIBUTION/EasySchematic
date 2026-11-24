@@ -15,6 +15,7 @@ import { parseArgs } from "node:util";
 import { D1DatabaseShim } from "./d1";
 import { DEFAULT_UPSTREAM_URL, fetchUpstreamTemplates, formatImportReport, importTemplates } from "./importUpstream";
 import { applyAllMigrations, configFromEnv } from "./server";
+import { relintAll, syncLintLevels } from "./templateMeta";
 
 const USAGE = "usage: npm run import:upstream [-- --dry-run] [-- --url <url>] [-- --file <templates.json>]";
 
@@ -44,6 +45,10 @@ try {
   if (!Array.isArray(templates)) throw new Error(`${origin}: expected a JSON array of templates`);
   const report = importTemplates(db.sqlite, templates, { dryRun: values["dry-run"] });
   process.stdout.write(formatImportReport(report, origin));
+  if (!report.dryRun) {
+    syncLintLevels(db.sqlite);
+    relintAll(db.sqlite);
+  }
 } catch (err) {
   console.error(`import failed: ${err instanceof Error ? err.message : String(err)}`);
   process.exitCode = 1;

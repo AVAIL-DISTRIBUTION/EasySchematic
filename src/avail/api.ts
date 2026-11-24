@@ -57,6 +57,9 @@ export interface TemplateStatusInfo {
   lintLevel: string | null;
   statusReason: string | null;
   statusChangedAt: string | null;
+  approvedVia?: "review" | "bulk" | null;
+  approvedAt?: string | null;
+  updatedBy?: string | null;
 }
 
 /** GET /avail/templates/:id/status; null when unknown or unreachable. */

@@ -18,7 +18,7 @@ import { parseArgs } from "node:util";
 import { D1DatabaseShim } from "./d1";
 import { libraryIds } from "./libraryDir";
 import { applyAllMigrations, configFromEnv } from "./server";
-import { syncLintLevels } from "./templateMeta";
+import { relintAll, syncLintLevels } from "./templateMeta";
 import { applyVendorDecisions, formatVendorCleanupReport } from "./vendorCleanup";
 
 const USAGE = "usage: npm run apply:vendor-decisions [-- --dry-run]";
@@ -38,7 +38,10 @@ try {
   applyAllMigrations(db.sqlite, config, (m) => console.log(m));
   const ids = libraryIds();
   const report = applyVendorDecisions(db.sqlite, { dryRun, libraryIds: ids });
-  if (!dryRun) syncLintLevels(db.sqlite);
+  if (!dryRun) {
+    syncLintLevels(db.sqlite);
+    relintAll(db.sqlite);
+  }
   process.stdout.write(formatVendorCleanupReport(report));
 } catch (err) {
   console.error(`apply:vendor-decisions failed: ${err instanceof Error ? err.message : String(err)}`);

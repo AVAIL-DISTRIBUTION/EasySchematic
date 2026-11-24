@@ -176,6 +176,21 @@ BoQ-категорию `schematic=false` не трогает), шапка `auxil
 записывает те, у кого стало меньше E+W при не меньшем уровне; статус не меняет. Отчёт —
 переходы уровней, топ причин и разбивка нерешённых секций по «signalType + direction».
 
+v3 (шаг 1.7): секция Sync (genlock, word clock, timecode); HDBaseT `bidirectional` = «configurable
+input/output»; разъём из сигнала, где однозначно; переименование семейств слотов и `slotFamilies` по
+справочнику `docs/avail/slot-families.json`; категория платы/шасси по семейству; категории по смыслу
+по id — `docs/avail/category-plan.json`. Решённые изменения (семейства, категории, notes)
+записываются, если не ухудшают шаблон. Линтер с контекстом библиотеки (`slotLibraryContext`)
+предупреждает о слоте без плат и плате без шасси; уровни в базе пересчитывает `relintAll` (старт API
+и CLI); плата питается от шасси. Отчёт normalize:library — семейства без плат (список наполнения).
+Слот принимает `slotFamily` + `slotFamilies` (тип `SlotDefinition`/`InstalledSlot`, хелперы
+`src/avail/slotFamilies.ts`; точки подключения — `templateApi.getCardsByFamily`, `DeviceEditor`,
+`mcpBridge`, `mcp/validation`, `deviceSwap`, `store`, `api/src/validate.ts`).
+
+`npm run export:worklist` (`api-avail/src/worklist.ts`) — CSV для инженеров: шаблоны наших вендоров
+B и FIX с топ-3 замечаниями, по вендорам. Способ утверждения (`approved_via` review/bulk,
+`approved_at`, миграция 9004) показывается в карточке Review.
+
 Generic-вендор приводится к проверенному набору планом `docs/avail/generic-plan.json`
 (`npm run apply:generic-plan [-- --dry-run]`, `api-avail/src/genericPlan.ts`): переименования в
 «Generic <тип или назначение>» без брендов, смена deviceType/категории (сетевые переходники и
