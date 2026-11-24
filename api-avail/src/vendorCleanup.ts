@@ -4,12 +4,10 @@
  *
  *   rename   manufacturer → canonical spelling (Yamaha Pro Audio → Yamaha, Netgear → NETGEAR);
  *   scope    Sony outside keepDeviceTypes, NETGEAR outside keepModelPattern → deleted;
- *   generic  brands we do not carry: per deviceType the most complete template becomes
- *            "Generic <type>" (same id, so schematics keep their link), the others are
- *            deleted. No duplicates: when a class-level Generic of that type ("Generic …")
- *            is already at least as complete, all of them go; when it is less complete, its
- *            row takes the new data (keeping its id). Curated-library Generics are never
- *            overwritten;
+ *   generic  brands we do not carry: for a deviceType without any Generic template, the most
+ *            complete branded one becomes "Generic <type>" (same id, so schematics keep their
+ *            link) and the others are deleted; where a Generic of that type exists, all the
+ *            branded ones are deleted. An existing Generic is never overwritten;
  *   drop     manufacturers outside keep/rename/generic, and templates without one → deleted
  *            (templates + avail_template_meta).
  *
@@ -33,8 +31,14 @@ export interface CreatedGeneric {
   deviceType: string;
   /** Branded template it was made from. */
   from: string;
-  /** Existing, less complete Generic of the type whose row took the new data (no duplicate). */
-  replaced?: string;
+}
+
+export interface FinalGeneric {
+  id: string;
+  label: string;
+  deviceType: string;
+  /** Set for a Generic created by this run: the branded template it was made from. */
+  from?: string;
 }
 
 export interface VendorCleanupReport {
@@ -45,8 +49,10 @@ export interface VendorCleanupReport {
   renamed: { from: string; to: string; count: number }[];
   scopeDeleted: Record<string, number>;
   genericCreated: CreatedGeneric[];
-  /** deviceTypes where an existing Generic was already as complete: nothing created. */
+  /** deviceTypes that already had a Generic: nothing created, the branded templates deleted. */
   genericKeptExisting: string[];
+  /** Every Generic template after the run, new ones with their source. */
+  genericFinal: FinalGeneric[];
   /** Branded templates folded into Generic (deleted), per manufacturer. */
   genericMerged: Record<string, number>;
   /** Deleted: manufacturer not decided, per manufacturer. */
@@ -89,6 +95,7 @@ export function applyVendorDecisions(
     scopeDeleted: {},
     genericCreated: [],
     genericKeptExisting: [],
+    genericFinal: [],
     genericMerged: {},
     dropped: {},
     noManufacturer: 0,
@@ -162,42 +169,41 @@ export function applyVendorDecisions(
     }
     report.renamed = [...renames.values()].sort((a, b) => b.count - a.count);
 
-    // ---- Generic: one per deviceType, no duplicates with existing Generic templates
+    // ---- Generic: a new "Generic <type>" only for types that have no Generic template yet.
+    // Existing Generic templates (any, class-level or a product filed under Generic) are never
+    // overwritten with branded data.
+    const genericTypes = new Set(kept.filter((k) => k.manufacturer === GENERIC_VENDOR).map((k) => k.device_type));
     for (const [deviceType, candidates] of [...genericByType].sort(([a], [b]) => a.localeCompare(b))) {
-      const scored = candidates
-        .map((r) => ({ r, generic: genericTemplate(rowToTemplate(r) as unknown as Record<string, unknown>) }))
-        .map((x) => ({ ...x, score: completeness(x.generic) }))
-        .sort((a, b) => b.score - a.score || a.r.id.localeCompare(b.r.id));
-      const best = scored[0];
-      // Class-level Generic templates of this type ("Generic Display"); product templates
-      // filed under Generic (an SFP module, "Trolley TV") are other things and not compared.
-      // Both sides are scored in their Generic form, so the conversion itself gives no edge.
-      const existing = kept
-        .filter((k) => k.manufacturer === GENERIC_VENDOR && k.device_type === deviceType && k.label.startsWith(`${GENERIC_VENDOR} `))
-        .map((k) => ({ k, score: completeness(genericTemplate(rowToTemplate(k) as unknown as Record<string, unknown>)) }))
-        .sort((a, b) => b.score - a.score);
-      for (const x of scored) inc(report.genericMerged, x.r.manufacturer ?? "?");
-
-      if (existing.length && existing[0].score >= best.score) {
+      for (const r of candidates) inc(report.genericMerged, r.manufacturer ?? "?");
+      if (genericTypes.has(deviceType)) {
         report.genericKeptExisting.push(deviceType);
-        for (const x of scored) remove(x.r);
+        for (const r of candidates) remove(r);
         continue;
       }
-      // The more complete data wins; an existing Generic keeps its id (schematics link to it).
-      const replace = existing.find((e) => !isProtected(e.k));
-      const targetId = replace ? replace.k.id : best.r.id;
-      const from = `${best.r.manufacturer} ${best.r.model_number ?? best.r.label}`.trim();
-      update.run(templateToRow({ ...(best.generic as never as Parameters<typeof templateToRow>[0]), id: targetId, sortOrder: (replace?.k ?? best.r).sort_order }));
-      noteMeta.run(targetId, updatedBy, `vendor-decisions: Generic made from ${from}`);
-      report.genericCreated.push({
-        id: targetId,
-        label: String(best.generic.label),
-        deviceType,
-        from,
-        ...(replace ? { replaced: `${replace.k.label} [${replace.k.id}]` } : {}),
-      });
-      for (const x of scored) if (x.r.id !== targetId) remove(x.r);
+      const best = candidates
+        .map((r) => ({ r, generic: genericTemplate(rowToTemplate(r) as unknown as Record<string, unknown>) }))
+        .map((x) => ({ ...x, score: completeness(x.generic) }))
+        .sort((a, b) => b.score - a.score || a.r.id.localeCompare(b.r.id))[0];
+      const mn = best.r.model_number;
+      const from = mn && !best.r.label.includes(mn) ? `${best.r.label} (${mn})` : best.r.label;
+      update.run(templateToRow({ ...(best.generic as never as Parameters<typeof templateToRow>[0]), id: best.r.id, sortOrder: best.r.sort_order }));
+      noteMeta.run(best.r.id, updatedBy, `vendor-decisions: Generic made from ${from}`);
+      report.genericCreated.push({ id: best.r.id, label: String(best.generic.label), deviceType, from });
+      genericTypes.add(deviceType);
+      for (const r of candidates) if (r.id !== best.r.id) remove(r);
     }
+
+    // Every Generic template after the cleanup, the new ones with their source (dry run too).
+    const created = new Map(report.genericCreated.map((g) => [g.id, g]));
+    const generics = sqlite
+      .prepare("SELECT id, label, device_type FROM templates WHERE manufacturer = ? ORDER BY device_type, label")
+      .all(GENERIC_VENDOR) as { id: string; label: string; device_type: string }[];
+    report.genericFinal = generics.map((g) => ({
+      id: g.id,
+      label: g.label,
+      deviceType: g.device_type,
+      ...(created.has(g.id) ? { from: created.get(g.id)!.from } : {}),
+    }));
 
     const remaining = sqlite.prepare("SELECT manufacturer, COUNT(*) AS n FROM templates GROUP BY manufacturer ORDER BY n DESC").all() as {
       manufacturer: string | null;
@@ -236,14 +242,19 @@ export function formatVendorCleanupReport(r: VendorCleanupReport): string {
     `Deleted by scope: ${total(r.scopeDeleted)}${total(r.scopeDeleted) ? ` (${top(r.scopeDeleted)})` : ""}`,
     `Folded into Generic: ${total(r.genericMerged)} branded templates (${top(r.genericMerged)})`,
     `Generic templates created: ${r.genericCreated.length}`,
-    ...r.genericCreated.map((g) => `  ${g.label} [${g.id}] from ${g.from}${g.replaced ? `, written over the less complete ${g.replaced}` : ""}`),
-    `Types where an existing Generic was kept: ${r.genericKeptExisting.length ? r.genericKeptExisting.join(", ") : "-"}`,
+    `Types that already had a Generic (branded templates deleted): ${r.genericKeptExisting.length ? r.genericKeptExisting.join(", ") : "-"}`,
     `Deleted, manufacturer not decided: ${total(r.dropped)} (${Object.keys(r.dropped).length} manufacturers; top: ${top(r.dropped, 10) || "-"})`,
     `Deleted, no manufacturer: ${r.noManufacturer}`,
   ];
   if (r.deletedReviewed.length) {
     lines.push(`Deleted although reviewed (verified/draft): ${r.deletedReviewed.length}`);
     for (const d of r.deletedReviewed) lines.push(`  ${d.status.padEnd(8)} ${d.label} [${d.id}]`);
+  }
+  const newCount = r.genericFinal.filter((g) => g.from).length;
+  lines.push("", `Generic templates after the run: ${r.genericFinal.length} (new ${newCount}, marked NEW with their source)`);
+  const w = Math.max(10, ...r.genericFinal.map((g) => g.deviceType.length));
+  for (const g of r.genericFinal) {
+    lines.push(`  ${g.from ? "NEW" : "   "} ${g.deviceType.padEnd(w)}  ${g.label} [${g.id}]${g.from ? ` ← ${g.from}` : ""}`);
   }
   lines.push("", "Remaining by vendor:", ...Object.entries(r.remainingByVendor).map(([k, n]) => `  ${k.padEnd(24)} ${n}`));
   return lines.join("\n") + "\n";

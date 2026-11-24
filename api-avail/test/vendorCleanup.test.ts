@@ -97,21 +97,27 @@ describe("applyVendorDecisions", () => {
     expect(r.genericMerged).toEqual({ Samsung: 2, Logitech: 1 });
   });
 
-  it("generic: no duplicates — a more complete existing Generic stays, a less complete one takes the new data", () => {
-    insert("gen-display", { manufacturer: "Generic", label: "Generic Display", modelNumber: "N/A", ports: [HDMI, POWER], heightMm: 1, widthMm: 1, depthMm: 1, weightKg: 1 });
-    insert("sm", { manufacturer: "Samsung", label: "Samsung QM55C", ports: [POWER] });
+  it("generic: an existing Generic is never overwritten; types that have one get no new Generic", () => {
+    // Existing Generic templates, even poorer ones and product templates filed under Generic.
     insert("gen-mic", { manufacturer: "Generic", label: "Generic Microphone", deviceType: "wired-mic", ports: [] });
-    insert("lg-mic", { manufacturer: "Logitech", label: "Logitech Mic Pod", deviceType: "wired-mic", ports: [HDMI, POWER] });
+    insert("trolley-tv", { manufacturer: "Generic", label: "Trolley TV", deviceType: "tv", ports: [] });
+    insert("lg-mic", { manufacturer: "Logitech", label: "Logitech Mic Pod", deviceType: "wired-mic", ports: [HDMI, POWER], heightMm: 10 });
+    insert("sm-tv", { manufacturer: "Samsung", label: "Samsung QM65R", deviceType: "tv", ports: [HDMI, POWER] });
+    insert("sm-disp", { manufacturer: "Samsung", label: "Samsung QM55C", ports: [HDMI, POWER] });
+    const before = { mic: row("gen-mic"), tv: row("trolley-tv") };
     const r = applyVendorDecisions(api.db.sqlite);
-    expect(r.genericKeptExisting).toEqual(["display"]);
-    expect(row("sm")).toBeUndefined();
-    expect(row("gen-display")!.label).toBe("Generic Display");
-    // Less complete existing Generic: its row (and id) takes the Logitech-derived data.
-    expect(r.genericCreated).toEqual([expect.objectContaining({ id: "gen-mic", label: "Generic Wired Mic", replaced: "Generic Microphone [gen-mic]" })]);
-    expect(row("gen-mic")).toMatchObject({ label: "Generic Wired Mic", model_number: "GEN-WIRED-MIC" });
+    expect(r.genericKeptExisting).toEqual(["tv", "wired-mic"]);
+    expect(row("gen-mic")).toEqual(before.mic);
+    expect(row("trolley-tv")).toEqual(before.tv);
     expect(row("lg-mic")).toBeUndefined();
-    const labels = (api.db.sqlite.prepare("SELECT label FROM templates WHERE manufacturer = 'Generic'").all() as { label: string }[]).map((x) => x.label);
-    expect(new Set(labels).size).toBe(labels.length);
+    expect(row("sm-tv")).toBeUndefined();
+    // Only the type without a Generic got one.
+    expect(r.genericCreated).toEqual([{ id: "sm-disp", label: "Generic Display", deviceType: "display", from: "Samsung QM55C" }]);
+    expect(r.genericFinal).toEqual([
+      { id: "sm-disp", label: "Generic Display", deviceType: "display", from: "Samsung QM55C" },
+      { id: "trolley-tv", label: "Trolley TV", deviceType: "tv" },
+      { id: "gen-mic", label: "Generic Microphone", deviceType: "wired-mic" },
+    ]);
   });
 
   it("never touches the curated library (by id or by meta source)", () => {
@@ -123,9 +129,10 @@ describe("applyVendorDecisions", () => {
     expect(r.protectedCount).toBe(3);
     expect(row("lib-by-id")!.manufacturer).toBe("Absen");
     expect(row("lib-by-source")!.manufacturer).toBe("Crestron");
-    // A weaker curated Generic is not overwritten: the brand template becomes its own Generic.
+    // The curated Generic Display counts as an existing Generic: no new one, the brand goes.
     expect(row("lib-generic")!.label).toBe("Generic Display");
-    expect(r.genericCreated).toEqual([expect.objectContaining({ id: "sm" })]);
+    expect(r.genericCreated).toEqual([]);
+    expect(row("sm")).toBeUndefined();
   });
 
   it("reports deleted templates that a person had reviewed", () => {
@@ -136,7 +143,7 @@ describe("applyVendorDecisions", () => {
   it("dry run writes nothing; the report lists every section", () => {
     insert("jbl", { manufacturer: "JBL" });
     insert("y", { manufacturer: "Yamaha Pro Audio" });
-    insert("sm", { manufacturer: "Samsung" });
+    insert("sm", { manufacturer: "Samsung", modelNumber: "M-sm" });
     const r = applyVendorDecisions(api.db.sqlite, { dryRun: true });
     expect(r.deletedTotal).toBe(1);
     expect(count()).toBe(3);
@@ -145,6 +152,10 @@ describe("applyVendorDecisions", () => {
     for (const s of ["dry run, nothing written", "Renamed: 1", "Deleted by scope: 0", "Generic templates created: 1", "Deleted, manufacturer not decided: 1", "Deleted, no manufacturer: 0", "Remaining by vendor:"]) {
       expect(text).toContain(s);
     }
+    // The dry run already lists the resulting Generic templates, new ones with their source.
+    expect(r.genericFinal).toEqual([{ id: "sm", label: "Generic Display", deviceType: "display", from: "X sm (M-sm)" }]);
+    expect(text).toContain("Generic templates after the run: 1 (new 1, marked NEW with their source)");
+    expect(text).toMatch(/NEW display\s+Generic Display \[sm\] ← X sm \(M-sm\)/);
   });
 
   it("is idempotent: a second run changes nothing", () => {
@@ -186,13 +197,14 @@ describe("after the cleanup", () => {
     expect(after.map((r) => r.id)).toEqual(["ext", "gen-mic", "sm1"]);
 
     const r = importTemplates(api.db.sqlite, source);
-    // gen-mic took the Logitech data: the source's own "Generic Microphone" must not overwrite it.
-    expect(r).toMatchObject({ inserted: 0, skippedProtected: 1 });
+    // sm1 was made into Generic Display: the source's Samsung data must not come back over it.
+    expect(r).toMatchObject({ inserted: 0, skippedProtected: 0 });
     expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 1, scope: 2, genericExists: 3 });
     expect(api.db.sqlite.prepare("SELECT id, manufacturer, label FROM templates ORDER BY id").all()).toEqual(after);
     expect(row("sm1")).toMatchObject({ label: "Generic Display", manufacturer: "Generic" });
-    expect(row("gen-mic")).toMatchObject({ label: "Generic Wired Mic" });
-    expect(meta("gen-mic")).toMatchObject({ source: "vendor-decisions", upstream_id: null });
+    expect(row("gen-mic")).toMatchObject({ label: "Generic Microphone" }); // existing Generic, never overwritten
+    expect(row("lg-mic")).toBeUndefined();
+    expect(meta("sm1")).toMatchObject({ source: "vendor-decisions", upstream_id: null });
   });
 
   it("a saved schematic whose template was deleted still opens, unchanged", async () => {

@@ -190,10 +190,8 @@ export function importTemplates(
   );
   const upsertMeta = sqlite.prepare(META_UPSERT);
 
-  // deviceTypes that already have a class-level Generic ("Generic Display").
-  const genericTypes = new Set(
-    local.filter((r) => r.manufacturer === GENERIC_VENDOR && r.label.startsWith(`${GENERIC_VENDOR} `)).map((r) => r.device_type),
-  );
+  // deviceTypes that already have a Generic template (same rule as apply:vendor-decisions).
+  const genericTypes = new Set(local.filter((r) => r.manufacturer === GENERIC_VENDOR).map((r) => r.device_type));
 
   const seenKeys = new Set<string>();
   const claimed = new Set<string>();

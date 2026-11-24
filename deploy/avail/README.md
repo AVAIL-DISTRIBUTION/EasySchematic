@@ -85,14 +85,14 @@ docker compose exec api npm run import:avail                # запись
 
 `docs/avail/vendor-decisions.json` решает, каких производителей библиотека держит: переименовывает
 к основному написанию, оставляет у Sony только системные камеры и у NETGEAR только AV Line,
-сводит бренды из списка generic в «Generic <тип>» (по одному на тип), удаляет остальных и
+сводит бренды из списка generic в «Generic <тип>» (только для типов, где Generic ещё нет; существующие Generic не перезаписываются), удаляет остальных и
 шаблоны без производителя (строки `templates` и `avail_template_meta`). Шаблоны `library/avail`
 не трогаются; сохранённые схемы открываются (блок хранит свои данные). Всё в одной транзакции.
 
 ```bash
 ./backup.sh                                                            # обязательно перед записью
 docker compose exec api npm run import:avail                           # чтобы library/avail был в базе
-docker compose exec api npm run apply:vendor-decisions -- --dry-run    # отчёт без записи
+docker compose exec api npm run apply:vendor-decisions -- --dry-run    # отчёт без записи + итоговые Generic (NEW ← исходный шаблон)
 docker compose exec api npm run apply:vendor-decisions                 # запись
 ```
 
