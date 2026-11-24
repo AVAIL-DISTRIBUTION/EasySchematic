@@ -12,6 +12,7 @@
     "apply:generic-plan": "node --enable-source-maps dist/apply-generic-plan.mjs",
     "export:worklist": "node --enable-source-maps dist/export-worklist.mjs",
     "apply:worklist": "node --enable-source-maps dist/apply-worklist.mjs",
-    "export:vendor-requests": "node --enable-source-maps dist/export-vendor-requests.mjs"
+    "export:vendor-requests": "node --enable-source-maps dist/export-vendor-requests.mjs",
+    "apply:vendor-responses": "node --enable-source-maps dist/apply-vendor-responses.mjs"
   }
 }

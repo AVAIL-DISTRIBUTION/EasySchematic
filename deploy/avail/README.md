@@ -101,6 +101,18 @@ docker compose exec api npm run apply:vendor-decisions                 # зап�
 затирает то, что записали нормализатор и чистки: пока шаблон в источнике не менялся
 (`avail_template_meta.source_hash`), локальная строка остаётся как есть.
 
+### Шаг 1.8b: ответы вендоров
+
+```bash
+./backup.sh                                                              # обязательно первым; откат — восстановление из бэкапа
+./update.sh                                                              # новый образ (vendor-responses.json в /app/incoming)
+docker compose exec api npm run apply:vendor-responses -- --dry-run      # удалено по вендорам, обновлено, уровни до/после
+docker compose exec api npm run apply:vendor-responses
+docker compose exec api npm run apply:vendor-responses -- --dry-run      # повтор: «Deleted: 0 … updated: 0»
+```
+
+Если в файле есть шаблон из `library/avail`, команда останавливается без записи (STOPPED, код 1).
+
 ### Шаг 1.8a: решения инженеров по worklist
 
 ```bash

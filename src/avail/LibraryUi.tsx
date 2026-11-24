@@ -13,10 +13,12 @@ import { lintBlock, type BlockLintResult } from "./blockLint";
 import {
   changeTemplatesStatus,
   changeTemplateStatus,
+  fetchTemplateNotes,
   fetchTemplateStatus,
   saveLibraryTemplate,
   type BatchStatusResult,
   type StatusChangeError,
+  type TemplateNote,
   type TemplateStatusInfo,
 } from "./api";
 import {
@@ -359,6 +361,7 @@ export function AvailReviewDialog({ template, onClose }: { template: DeviceTempl
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<StatusChangeError | null>(null);
   const [info, setInfo] = useState<TemplateStatusInfo | null>(null);
+  const [notes, setNotes] = useState<TemplateNote[]>([]);
   const edit = useStartTemplateEdit();
   const allChecked = checked.every(Boolean);
   const canVerify = lint.level === "A" && allChecked;
@@ -367,6 +370,7 @@ export function AvailReviewDialog({ template, onClose }: { template: DeviceTempl
     if (!template.id) return;
     let live = true;
     void fetchTemplateStatus(template.id).then((s) => live && setInfo(s));
+    void fetchTemplateNotes(template.id).then((n) => live && setNotes(n));
     return () => {
       live = false;
     };
@@ -418,6 +422,19 @@ export function AvailReviewDialog({ template, onClose }: { template: DeviceTempl
           <div className="px-4 py-2 border-b border-amber-200 bg-amber-50 text-xs text-amber-900">
             <span className="font-semibold">Status changed automatically:</span> {info.statusReason}
             {info.statusChangedAt ? ` (${info.statusChangedAt} UTC)` : ""}
+          </div>
+        )}
+
+        {notes.length > 0 && (
+          <div data-testid="avail-template-notes" className="px-4 py-2 border-b border-[var(--color-border)] text-xs text-[var(--color-text)]">
+            <div className="font-semibold text-[var(--color-text-heading)]">Notes</div>
+            <ul className="mt-1 flex flex-col gap-1">
+              {notes.map((n) => (
+                <li key={n.id}>
+                  {n.body} <span className="text-[var(--color-text-muted)]">({n.authorName}, {n.createdAt} UTC)</span>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 

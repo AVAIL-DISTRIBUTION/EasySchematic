@@ -72,6 +72,23 @@ export async function fetchTemplateStatus(templateId: string): Promise<TemplateS
   }
 }
 
+export interface TemplateNote {
+  id: string;
+  body: string;
+  authorName: string;
+  createdAt: string;
+}
+
+/** GET /templates/:id/notes (upstream moderator notes; vendor answers land here); [] when not allowed or unreachable. */
+export async function fetchTemplateNotes(templateId: string): Promise<TemplateNote[]> {
+  try {
+    const res = await fetch(`${apiUrl()}/templates/${encodeURIComponent(templateId)}/notes`, { credentials: "include" });
+    return res.ok ? ((await res.json()) as TemplateNote[]) : [];
+  } catch {
+    return [];
+  }
+}
+
 /** The stored template, fresh from the database (GET /templates/:id, not the cached library). */
 export async function fetchLibraryTemplate(templateId: string): Promise<DeviceTemplate> {
   const res = await fetch(`${apiUrl()}/templates/${encodeURIComponent(templateId)}`, { credentials: "include", cache: "no-store" });

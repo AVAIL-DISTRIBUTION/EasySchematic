@@ -83,7 +83,7 @@ function issueMessage(issue: string): string {
   return issue.replace(/^[EW]\s+/, "").trim();
 }
 
-function levelsByVendor(sqlite: Database.Database): Record<string, Record<BlockLevel, number>> {
+export function levelsByVendor(sqlite: Database.Database): Record<string, Record<BlockLevel, number>> {
   const ctx = slotContext(sqlite);
   const out: Record<string, Record<BlockLevel, number>> = {};
   for (const r of sqlite.prepare("SELECT * FROM templates WHERE flagged_for_deletion = 0").all() as TemplateRow[]) {
