@@ -187,6 +187,20 @@ input/output»; разъём из сигнала, где однозначно; �
 `src/avail/slotFamilies.ts`; точки подключения — `templateApi.getCardsByFamily`, `DeviceEditor`,
 `mcpBridge`, `mcp/validation`, `deviceSwap`, `store`, `api/src/validate.ts`).
 
+Решения инженеров по worklist (шаг 1.8a): `npm run apply:worklist [-- --dry-run] [-- --file <xlsx>]`
+(`api-avail/src/applyWorklist.ts`, разбор — `worklistSolutions.ts`, чтение xlsx без зависимостей —
+`xlsx.ts`; файл по умолчанию `tools/avail/incoming/Library_worklist_engineers_solutions.xlsx`, в образе
+`/app/incoming`). Структурированное (`поле = значение`, «Old» → «New», порты, добавленные порты)
+применяется, свободный текст — в отчёт «вручную», «ложное срабатывание» не меняет шаблон и
+проверяется линтером; статусы не меняются; повторный запуск — без изменений. `npm run -s
+export:vendor-requests` — CSV «нет данных» по вендорам для писем. После решений apply:worklist применяет
+доработки `tools/avail/incoming/worklist-followups.json` (`api-avail/src/worklistFollowups.ts`, встроены в бандл):
+`portNote` (пометки питания 3.1 по группам ложных срабатываний: bus-powered, passive, PoE, phantom, battery,
+powered by host), `set` (slotFamily платы по шасси, артикул, poeDrawW = максимум класса только в пустое поле),
+`splitPort` (комбо-порт → порты с общим `exclusiveGroup`), `addSlots` (QSFP по даташиту); `notDone` — решения на
+шаг 1.8 (платы Yamaha PY, стойки Chief), выводятся в отчёт. SD-карты и кабель AOC скрыты через `library/hidden.json`. Источники инженеров —
+`tools/avail/sources/` (extron-blocks-v4.csv, biamp-blocks.csv).
+
 `npm run export:worklist` (`api-avail/src/worklist.ts`) — CSV для инженеров: шаблоны наших вендоров
 B и FIX с топ-3 замечаниями, по вендорам. Способ утверждения (`approved_via` review/bulk,
 `approved_at`, миграция 9004) показывается в карточке Review.

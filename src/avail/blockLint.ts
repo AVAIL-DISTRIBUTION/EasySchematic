@@ -13,6 +13,7 @@
  *   FIX — at least one error; B — no errors, some warnings; A — clean.
  */
 import { findCategory, findVendor, GENERIC_VENDOR } from "./library";
+import { onlyAbbreviations } from "./labels";
 import { BLOCK_SECTIONS, suggestSection, wrongBidirectional } from "./sections";
 import { slotLibraryWarnings, type SlotLibraryContext } from "./slotFamilies";
 
@@ -39,12 +40,23 @@ const STRIP_RE = new RegExp(`^[${WS}]+|[${WS}]+$`, "gu");
 const WORD_SPLIT_RE = new RegExp(`[${WS}/()-]+`, "u");
 const HAS_LATIN_WORD_RE = /[A-Za-z]{2,}/;
 const POWER_PASSTHROUGH_RE = /loop|thru|out/iu;
+/** Power outputs that are what the device is for: 12 V supplies, tally and lamp outputs (v1.8). */
+const POWER_OUTPUT_LABEL_RE = /\b(12\s?v|24\s?v|48\s?v|tally|lamp)\b/i;
+/** Device types whose job is to deliver power: a power output is right there (v1.8). */
+const POWER_SOURCE_TYPES = new Set(["power-distribution", "power-supply", "24vdc-power-supply", "pdu", "ups", "antenna-distribution"]);
 // Python's \b is Unicode-aware: a letter or digit of any script before "dtp" is not a boundary.
 const HDBASET_RE = /(?<![\p{L}\p{N}_])(dtp|xtp|hdbaset)/u;
 const GENERIC_PREFIX = `${GENERIC_VENDOR} `;
 /** Notes of the port that powers a bus-powered device: "bus-powered (USB)" or "PoE". */
 const USB_BUS_POWER_RE = /bus-powered \(USB\)/i;
-const BUS_POWER_RE = /bus-powered \(USB\)|(?<!\bno )\bPoE\b/i;
+/**
+ * Notes of the port that powers a device without its own power port (standard 3.1): USB or
+ * PoE, a bus (eBUS, ACP, DCP, VCH), phantom power, a battery, a passive device, or power from
+ * the host device over its link cable (expansion mics, HDBaseT PoH receivers, adapters) (v1.8).
+ */
+const BUS_POWER_RE = /bus-powered \((?:USB|eBUS|ACP|DCP|VCH)\)|(?<!\bno )\bPoE\b|\bphantom\b|\bbattery\b|\bpassive\b|\bpowered by host\b/i;
+/** Powered from elsewhere with no figure of its own to publish: bus, phantom, battery, passive, host. */
+const NO_POWER_FIGURE_RE = /bus-powered \((?:eBUS|ACP|DCP|VCH)\)|\bphantom\b|\bbattery\b|\bpassive\b|\bpowered by host\b/i;
 const GENERIC_MODEL_RE = /^GEN-[\p{Lu}\p{N}]+(?:-[\p{Lu}\p{N}]+)*$/u;
 
 /** modelNumber of a Generic block: "Generic Room PC" → "GEN-ROOM-PC". */
@@ -139,7 +151,8 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
   const poe = truthy(d.poeDrawW);
   const deviceType = d.deviceType;
   if (!generic) {
-    for (const f of ["heightMm", "widthMm", "depthMm", "weightKg"]) {
+    // A card in a slot has no dimensions or weight of its own to plan a rack with (v1.8).
+    for (const f of truthy(d.slotFamily) ? [] : ["heightMm", "widthMm", "depthMm", "weightKg"]) {
       if (!truthy(d[f])) {
         W.push(`no ${f}`);
         break;
@@ -149,7 +162,8 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
     const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive" || truthy(d.slotFamily);
     // A USB bus-powered device draws a published wattage at the bus voltage: powerDrawW is enough.
     const usbPowered = asArray(d.ports).some((p) => typeof asObj(p).notes === "string" && USB_BUS_POWER_RE.test(asObj(p).notes as string));
-    const powerKnown = truthy(d.powerDrawW) && (truthy(d.voltage) || usbPowered);
+    const otherPowered = asArray(d.ports).some((p) => typeof asObj(p).notes === "string" && NO_POWER_FIGURE_RE.test(asObj(p).notes as string));
+    const powerKnown = (truthy(d.powerDrawW) && (truthy(d.voltage) || usbPowered)) || otherPowered;
     if (!poe && !passive && !powerKnown) W.push("no powerDrawW/voltage (or poeDrawW)");
     if (!truthy(d.referenceUrl)) W.push("no referenceUrl");
   }
@@ -162,7 +176,11 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
   // Bus power (standard 3.1): a device powered over USB or PoE has no power port when the
   // notes of the port that powers it say so ("bus-powered (USB)" or "PoE").
   // A PoE source (poeBudgetW) needs its own power input whatever its port notes say.
-  const busPowered = !truthy(d.poeBudgetW) && ports.some((p) => p.direction !== "output" && typeof p.notes === "string" && BUS_POWER_RE.test(p.notes));
+  // PoE comes in on an input (a PoE source needs its own power); phantom power arrives on a mic's
+  // output, a battery or a bus can be noted on any port.
+  const busPowered =
+    !truthy(d.poeBudgetW) &&
+    ports.some((p) => typeof p.notes === "string" && (NO_POWER_FIGURE_RE.test(p.notes) || (p.direction !== "output" && BUS_POWER_RE.test(p.notes))));
   if (!ports.some((p) => p.signalType === "power") && !poe && !truthy(d.slots) && !busPowered && !truthy(d.slotFamily)) {
     if (deviceType !== "speaker" && deviceType !== "antenna") E.push("no power port");
   }
@@ -182,13 +200,17 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
       E.push(sec ? `${tag}: section "${sec}" is not in the vocabulary${use}` : `${tag}: no section${use}`);
     } else order.push(idx);
     const words = l.split(WORD_SPLIT_RE).filter((w) => HAS_LATIN_WORD_RE.test(w));
-    if (words.length >= 2 && l === l.toUpperCase()) W.push(`${tag}: label in all caps`);
+    // Abbreviations and numbers only ("IPCP LAN", "COM 1", "RS-232/IR") are how the panel reads.
+    if (words.length >= 2 && l === l.toUpperCase() && !onlyAbbreviations(l)) W.push(`${tag}: label in all caps`);
     if (pyLen(l) > 28) W.push(`${tag}: label longer than 28 characters`);
     if (typeof sig === "string" && BIDIR.has(sig) && p.direction !== "bidirectional") {
       W.push(`${tag}: ${sig} must be bidirectional` + (sig === "dante" ? " (Dante channels are not ports)" : ""));
     }
     if (wrongBidirectional(p)) W.push(`${tag}: ${String(sig)} must be input or output, not bidirectional`);
-    if (sig === "power" && p.direction !== "input" && !POWER_PASSTHROUGH_RE.test(l)) E.push(`${tag}: power is not an input`);
+    if (sig === "power" && p.direction !== "input" && !POWER_PASSTHROUGH_RE.test(l) && !POWER_OUTPUT_LABEL_RE.test(l) &&
+        !POWER_SOURCE_TYPES.has(String(deviceType))) {
+      E.push(`${tag}: power is not an input`);
+    }
     if (sig === "rs422" && l.includes("232")) E.push(`${tag}: RS-232 marked as rs422`);
     const lower = l.toLowerCase();
     if (lower.includes("relay") && sig !== "contact-closure") W.push(`${tag}: a relay must be contact-closure`);

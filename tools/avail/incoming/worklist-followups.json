@@ -1,0 +1,1262 @@
+{
+ "version": 1,
+ "rule": "Доработки по worklist после PR #11: пометки питания для оставшихся ложных срабатываний (по тексту инженеров), семейства слотов у плат, разделение комбо-порта, артикул Black/White, QSFP-слоты коммутаторов. Применяет apply:worklist после решений; повторный запуск ничего не меняет.",
+ "operations": [
+  {
+   "id": "3c554c90-0ed2-4128-93e1-a65756a6858a",
+   "model": "Biamp SCM-1",
+   "op": "set",
+   "field": "slotFamily",
+   "value": "biamp-tesira-server-card",
+   "why": "card of Tesira SERVER / SERVER-IO: powered by the chassis slot"
+  },
+  {
+   "id": "cac677f0-b833-48e8-b52d-b996f6ae4345",
+   "model": "Biamp TCM-XEX Expansion Ceiling Mic 1",
+   "op": "portNote",
+   "port": "AVB",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: expansion-микрофон питается от базового TCM-X/TTM-X по кабелю расширения; отдельный порт питания не нужен"
+  },
+  {
+   "id": "249a2d87-f923-4481-8620-3a2e51d2d8fb",
+   "model": "Biamp TTM-XEX Expansion Table Mic",
+   "op": "portNote",
+   "port": "AVB",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: expansion-микрофон питается от базового TTM-X по кабелю расширения; отдельный порт питания не нужен"
+  },
+  {
+   "id": "eac86080-07bd-46e8-8bdc-12bfdb68cdf3",
+   "model": "Extron ACP 100",
+   "op": "portNote",
+   "port": "eBUS / ACP In",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "5e5da2b4-19bc-4415-8bbb-8e988a885e4a",
+   "model": "Extron ACP 105 D",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "32f1d23c-8df4-48fd-8507-a2f5e3eb9707",
+   "model": "Extron ACP 105 EU",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "2193fbc7-af0e-49cf-9bc4-9da55be5096c",
+   "model": "Extron ACP 105 MK",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "5c5cf9b8-c24e-4337-a46c-f84c313df170",
+   "model": "Extron ACP 106 D",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "13c14060-6270-4a60-a329-1e2066171091",
+   "model": "Extron ACP 106 EU",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "290bcf19-6010-4a78-afb6-9553f4d83545",
+   "model": "Extron ACP 106 MK",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "bd128af5-ccdc-4569-ae11-27efd23a2df2",
+   "model": "Extron ACP VC1 D",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "30d0ad45-0ecc-4e3e-ba5e-80fdb9a2ad55",
+   "model": "Extron ACP VC1 EU",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "662469e1-2230-45d2-9e1b-d0d0b1711430",
+   "model": "Extron ACP VC1 MK",
+   "op": "portNote",
+   "port": "ACP Bus 1",
+   "note": "bus-powered (ACP)",
+   "why": "bus: ложное срабатывание: панель ACP питается от DMP 128 Plus по шине ACP (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "e04b37d9-ffce-4ba2-a34d-78e18cb17e34",
+   "model": "Extron AXI 02 AT",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "e04b37d9-ffce-4ba2-a34d-78e18cb17e34",
+   "model": "Extron AXI 02 AT",
+   "op": "portNote",
+   "port": "Dante / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "e04b37d9-ffce-4ba2-a34d-78e18cb17e34",
+   "model": "Extron AXI 02 AT",
+   "op": "portNote",
+   "port": "Dante / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "32901522-8118-40cb-a96e-15ee8d5234c3",
+   "model": "Extron EBDB MINI",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: eBUS Distribution Hub — пассивный разветвитель шины eBUS (питание проходит от контроллера) — питание не требуется (искл"
+  },
+  {
+   "id": "9725136e-4fe4-4b99-8cc7-2d4805ff6787",
+   "model": "Extron EBP 103 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "fb5a7698-4f4c-431d-b6d1-ac2ecce751d4",
+   "model": "Extron EBP 104 EU",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "435f781b-3178-4961-9097-ecb4df238024",
+   "model": "Extron EBP 104 MK",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "d4603363-d0c9-46fd-9d3e-36d0c0ea521a",
+   "model": "Extron EBP 105 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "5a940344-cb8a-4aee-bc8c-f8e0eee3b0d4",
+   "model": "Extron EBP 105 EU",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "6e88770f-e839-421b-9734-dcaf5a97f561",
+   "model": "Extron EBP 105 MK",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "92022019-e079-494b-b080-4deeaffc0a07",
+   "model": "Extron EBP 105P EU",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "5ba38873-e719-4220-89cd-bb99287a9ada",
+   "model": "Extron EBP 106 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "ff8f9892-638b-496b-9de0-0025f43b9b5e",
+   "model": "Extron EBP 106 EU",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "13589a75-a522-45d0-bd77-7007b920c22f",
+   "model": "Extron EBP 106 MK",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "234cb452-013d-4d46-9165-805f1ec1ce3b",
+   "model": "Extron EBP 106P D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "b931833a-72bb-46d9-9f56-13960d6f8be2",
+   "model": "Extron EBP 108 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "1bb704f6-9f83-4fbd-8c4e-d08b8f67feea",
+   "model": "Extron EBP 108 EU",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "61f02807-c5d1-43f1-b232-183ebc4b032a",
+   "model": "Extron EBP 108 MK",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "ae473d91-3db8-4c83-9140-8edb3f53ed2b",
+   "model": "Extron EBP 110 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "68503e74-7aec-42ab-91c1-a94825779f62",
+   "model": "Extron EBP 110 EU",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "b032da9b-c4bf-4130-8eaf-3803590f49fe",
+   "model": "Extron EBP 110 MK",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "94c3340e-1985-497f-9fee-6d65d3d357b6",
+   "model": "Extron EBP 111 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "879d1a95-46b3-4c03-8c93-621afd35d407",
+   "model": "Extron EBP 200",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "5e4dd5a1-da19-4ba5-81c7-6bdc909188cb",
+   "model": "Extron EBP 50",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "943952f0-5a61-4564-bc22-2af478e99759",
+   "model": "Extron EBP NAV D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "45de0a6e-02dc-4a4e-8279-ac4c7b8c3c32",
+   "model": "Extron EBP VC1 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "4bc9d00a-b450-4100-ba60-adbe2c0229b2",
+   "model": "Extron EBP VC1 EU",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "7d852ae7-ce23-4b40-877b-6f7849b8d1a5",
+   "model": "Extron EBP VC2 D",
+   "op": "portNote",
+   "port": "eBUS 1",
+   "note": "bus-powered (eBUS)",
+   "why": "bus: ложное срабатывание: панель питается по шине eBUS (12 V DC от контроллера) через порт eBUS; отдельный порт не нужен, порт eBUS — signalType"
+  },
+  {
+   "id": "80d902c7-c837-444d-abc9-9521fd287789",
+   "model": "Extron NBP 100",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "80d902c7-c837-444d-abc9-9521fd287789",
+   "model": "Extron NBP 100",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "80d902c7-c837-444d-abc9-9521fd287789",
+   "model": "Extron NBP 100",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "42ce8d98-f23a-4aa4-afe7-3658fcff7b5e",
+   "model": "Extron NBP 104 EU",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE",
+   "why": "poe: ложное срабатывание: карта питается от слота шасси — питание от слота шасси"
+  },
+  {
+   "id": "6b4f56db-edfb-4628-b2a6-f59b711ddfbd",
+   "model": "Extron NBP 110",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "6b4f56db-edfb-4628-b2a6-f59b711ddfbd",
+   "model": "Extron NBP 110",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "6b4f56db-edfb-4628-b2a6-f59b711ddfbd",
+   "model": "Extron NBP 110",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "a084726c-2526-4a1c-b9f3-b2ab2739e8b2",
+   "model": "Extron NBP 1200C Black",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "a084726c-2526-4a1c-b9f3-b2ab2739e8b2",
+   "model": "Extron NBP 1200C Black",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "a084726c-2526-4a1c-b9f3-b2ab2739e8b2",
+   "model": "Extron NBP 1200C Black",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "f559f114-d313-4c2e-b061-78ca1a7d8a8b",
+   "model": "Extron NBP 1200C Br Alum",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "f559f114-d313-4c2e-b061-78ca1a7d8a8b",
+   "model": "Extron NBP 1200C Br Alum",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "f559f114-d313-4c2e-b061-78ca1a7d8a8b",
+   "model": "Extron NBP 1200C Br Alum",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "2125fb65-b53a-4393-a876-5254b96f55f2",
+   "model": "Extron NBP 200",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "2125fb65-b53a-4393-a876-5254b96f55f2",
+   "model": "Extron NBP 200",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "2125fb65-b53a-4393-a876-5254b96f55f2",
+   "model": "Extron NBP 200",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "3fe740bd-bcbc-438e-8dbd-7cb10704d401",
+   "model": "Extron NBP 50",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "3fe740bd-bcbc-438e-8dbd-7cb10704d401",
+   "model": "Extron NBP 50",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "3fe740bd-bcbc-438e-8dbd-7cb10704d401",
+   "model": "Extron NBP 50",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "e923ce16-a65a-4ac7-95fb-bdcd4aa05fc9",
+   "model": "Extron NBP VC1 D",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "e923ce16-a65a-4ac7-95fb-bdcd4aa05fc9",
+   "model": "Extron NBP VC1 D",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "e923ce16-a65a-4ac7-95fb-bdcd4aa05fc9",
+   "model": "Extron NBP VC1 D",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "c1210b55-7ee9-49b6-8f24-47d6cf359f7b",
+   "model": "Extron NBP VC2 D",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "c1210b55-7ee9-49b6-8f24-47d6cf359f7b",
+   "model": "Extron NBP VC2 D",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "c1210b55-7ee9-49b6-8f24-47d6cf359f7b",
+   "model": "Extron NBP VC2 D",
+   "op": "portNote",
+   "port": "Ethernet / PoE",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "0243fbab-4a00-4a31-8b2b-7c2a0b6ff747",
+   "model": "Extron NetPA 204 POE",
+   "op": "portNote",
+   "port": "Dante / PoE",
+   "note": "PoE++ 802.3bt",
+   "why": "poe: ложное срабатывание: питание PoE++ 802.3bt по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "7b11ed6d-e5e2-4afd-b4e2-299b34d280c8",
+   "model": "Extron TLCA 1",
+   "op": "portNote",
+   "port": "USB Micro-B (Host)",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: TouchLink Control Port Expansion Adapter питается от панели TouchLink; отдельный порт питания не нужен"
+  },
+  {
+   "id": "4f124197-108f-489a-8bb0-2704d3eb5c23",
+   "model": "Extron VC 50",
+   "op": "portNote",
+   "port": "Volume Control",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: VC 50 — пассивный регулятор громкости (потенциометр) — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "81d93378-13ce-4ba6-be1b-0e356cfaf048",
+   "model": "Extron WFA 100 EU",
+   "op": "portNote",
+   "port": "USB-A (Plug)",
+   "note": "bus-powered (USB)",
+   "why": "usb: ложное срабатывание: USB Wi-Fi/Bluetooth адаптер питается от USB-порта хоста"
+  },
+  {
+   "id": "bbb0f439-d83b-4c0a-943a-51ae7415d52b",
+   "model": "Extron WFA 100 US",
+   "op": "portNote",
+   "port": "USB-A (Plug)",
+   "note": "bus-powered (USB)",
+   "why": "usb: ложное срабатывание: USB Wi-Fi/Bluetooth адаптер питается от USB-порта хоста"
+  },
+  {
+   "id": "4e235297-4451-4aff-ab5a-25b5787e2abd",
+   "model": "Extron Cable Cubby 1202 Black",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "80aeb194-2445-4ad8-9b49-b7df8c8dc7df",
+   "model": "Extron Cable Cubby 1202 Blr Alum",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "eea42afc-bb10-4778-984b-7f7bbde9236e",
+   "model": "Extron Cable Cubby 1202 US AC Black",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "b8ced497-830e-415f-a8f3-176acaa8bcca",
+   "model": "Extron Cable Cubby 1402 Black",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "6a43fae0-de31-4133-bb10-e5510068bed9",
+   "model": "Extron Cable Cubby 1402 Black US AC",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "cb0b8ce0-3c24-48af-9da1-de7e0ab4af81",
+   "model": "Extron Cable Cubby 1402 Br Alum",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "4f14bf92-ab49-4248-8f02-94ac4b0b246b",
+   "model": "Extron Cable Cubby 500 Black No AC",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "1318c3fc-3781-4dc7-9b50-46161296f4c0",
+   "model": "Extron Cable Cubby 500 Br Alum No AC",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "99cfe322-af6d-462a-ba98-d8d32be2ccce",
+   "model": "Extron Cable Cubby 500 CCB",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "f0d5b1bc-9794-44f5-a1c2-886472fcf522",
+   "model": "Extron Cable Cubby 500 US AC Black",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "8be41ae6-c2a8-42bf-804d-f4355203ab99",
+   "model": "Extron Cable Cubby 700 Black",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "7bb85f52-78a4-4c91-ad4c-e0810b2a1861",
+   "model": "Extron Cable Cubby 700 Br Alum",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "ffbe285d-8213-4f8e-a463-33665e1c71e3",
+   "model": "Extron Cable Cubby 700 US AC Black",
+   "op": "portNote",
+   "port": "Power",
+   "note": "passive",
+   "why": "passive: не применимо: пассивное устройство — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "883a8971-8916-4cd0-962b-096c278da474",
+   "model": "Generic 4G/5G Wireless Access Point",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 25.5,
+   "onlyIfEmpty": true,
+   "why": "PoE+ 802.3at: class maximum, actual draw not published"
+  },
+  {
+   "id": "883a8971-8916-4cd0-962b-096c278da474",
+   "model": "Generic 4G/5G Wireless Access Point",
+   "op": "portNote",
+   "port": "LAN 1",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "883a8971-8916-4cd0-962b-096c278da474",
+   "model": "Generic 4G/5G Wireless Access Point",
+   "op": "portNote",
+   "port": "LAN 1",
+   "note": "PoE+ 802.3at",
+   "why": "poe: ложное срабатывание: питание PoE+ 802.3at по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "54fcb3e4-92b6-4553-a5bc-8873a1cfcd30",
+   "model": "Generic BNC Patch Panel (6-Port)",
+   "op": "portNote",
+   "port": "Port 1",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: BNC патч-панель — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "58b7cbe3-0000-47a9-983c-4d68bf448522",
+   "model": "Generic Floor Box",
+   "op": "portNote",
+   "port": "USB A",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: напольный лючок; если есть розетки — добавить AC In (проходной) — питание не требуется (исключить такие типы из правила"
+  },
+  {
+   "id": "97dcc6be-b889-4e71-b423-357c08bcfe73",
+   "model": "Generic HDMI Passthrough Wall Plate",
+   "op": "portNote",
+   "port": "HDMI Front In",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: HDMI проходная панель — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "bf9adbff-5573-40ce-ba0e-e8c1293a1d90",
+   "model": "Generic HDMI to Mini HDMI Adapter",
+   "op": "portNote",
+   "port": "HDMI",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: переходник — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "96826721-3327-4d50-b301-703b6f4b5d0a",
+   "model": "Generic Keyboard",
+   "op": "portNote",
+   "port": "USB Receiver",
+   "note": "bus-powered (USB)",
+   "why": "usb: ложное срабатывание: USB-клавиатура питается от хоста"
+  },
+  {
+   "id": "b771d5af-e744-4360-99d0-1a44451a0104",
+   "model": "Generic MTP-12 to 12x LC Breakout",
+   "op": "portNote",
+   "port": "MTP 12",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: оптический breakout MTP→LC — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "bacd1609-5f91-4bfb-8fb4-04d785a169f6",
+   "model": "Generic Mini HDMI to HDMI Adapter",
+   "op": "portNote",
+   "port": "HDMI mini",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: переходник — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "c2ddbcec-a981-4959-a021-8d9950aefc93",
+   "model": "Generic Passive HDMI to VGA Adapter",
+   "op": "portNote",
+   "port": "HDMI In",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: пассивный адаптер, питание от +5 В HDMI-источника — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "25816fff-12f7-41a0-bb34-bf318004de54",
+   "model": "Generic Socapex to speakON Break-In (4-ch)",
+   "op": "portNote",
+   "port": "Ch 1",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: Socapex-разветвитель — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "1dc3b3d6-6157-466b-9ffb-361746cf6419",
+   "model": "Generic Socapex to speakON Break-Out (4-ch)",
+   "op": "portNote",
+   "port": "Trunk In",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: Socapex-разветвитель — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "14b5151b-aaf2-489f-9e80-510a2e81f841",
+   "model": "Generic Subwoofer",
+   "op": "portNote",
+   "port": "Audio Input",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: пассивный сабвуфер (вход speaker-level); если шаблон активный — добавить AC Power (powercon) — питание не требуется (ис"
+  },
+  {
+   "id": "5d212cf3-d9c8-406c-8b8b-65c11b1aca0f",
+   "model": "Generic Thunderbolt to DisplayPort Adapter",
+   "op": "portNote",
+   "port": "TB In",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: адаптер питается от порта Thunderbolt хоста"
+  },
+  {
+   "id": "01e1b853-3eb3-46ca-a828-5468d495bd52",
+   "model": "Generic USB to HDMI Adapter",
+   "op": "portNote",
+   "port": "IN",
+   "note": "bus-powered (USB)",
+   "why": "usb: ложное срабатывание: USB-адаптер питается от хоста"
+  },
+  {
+   "id": "d0de7a07-bce1-487b-bf28-8ba014a9c73d",
+   "model": "Generic USB-C Passthrough Wall Plate",
+   "op": "portNote",
+   "port": "USB C Front In",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: проходная панель USB-C — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "14c80a40-2257-454a-bbe5-e17cebf5b01e",
+   "model": "Generic Wired Microphone",
+   "op": "portNote",
+   "port": "XLR Out",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: динамический микрофон — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "9436ea50-0879-4dd0-8a6b-6506c5954650",
+   "model": "Generic speakON Break-In",
+   "op": "portNote",
+   "port": "speakON2 In 1",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: speakON break-in — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "4235997d-684c-4eeb-bd44-38738e824c7d",
+   "model": "Generic speakON Break-Out",
+   "op": "portNote",
+   "port": "speakON4 In",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: speakON break-out — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "c63a13e7-98d8-4e49-83f7-b2446cafeccf",
+   "model": "Powersoft WM Touch",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE 802.3af: class maximum, actual draw not published"
+  },
+  {
+   "id": "c63a13e7-98d8-4e49-83f7-b2446cafeccf",
+   "model": "Powersoft WM Touch",
+   "op": "portNote",
+   "port": "RJ45",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "c63a13e7-98d8-4e49-83f7-b2446cafeccf",
+   "model": "Powersoft WM Touch",
+   "op": "portNote",
+   "port": "RJ45",
+   "note": "PoE 802.3af",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "9ee4798c-9476-420e-82ed-13e531ec4eb3",
+   "model": "Sharp AOC USB-C 7M",
+   "op": "portNote",
+   "port": "USB-C (M)",
+   "note": "bus-powered (USB)",
+   "why": "usb: ложное срабатывание: активный оптический USB-C кабель питается от портов — не блок схемы — питание не требуется (исключить такие типы из пра"
+  },
+  {
+   "id": "53157703-6a83-41c2-8954-aa24d51cfd50",
+   "model": "Shure Beta 52A",
+   "op": "portNote",
+   "port": "XLR Out",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: динамический микрофон — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "c0a80101-01b2-4000-8000-000000000434",
+   "model": "Shure Beta 87A",
+   "op": "portNote",
+   "port": "XLR Out",
+   "note": "phantom +48 V",
+   "why": "phantom: ложное срабатывание: конденсаторный микрофон, фантомное питание +48 V через XLR-выход; отдельный порт питания не нужен"
+  },
+  {
+   "id": "c0a80101-01b1-4000-8000-000000000433",
+   "model": "Shure KSM32",
+   "op": "portNote",
+   "port": "XLR Out",
+   "note": "phantom +48 V",
+   "why": "phantom: ложное срабатывание: конденсаторный микрофон, фантомное питание +48 V через XLR-выход; отдельный порт питания не нужен"
+  },
+  {
+   "id": "a403bec6-a0f6-4fbe-a9bf-d91f7e3ef304",
+   "model": "Shure MX202B/C",
+   "op": "portNote",
+   "port": "XLR Out",
+   "note": "phantom +48 V",
+   "why": "phantom: ложное срабатывание: конденсаторный микрофон, фантомное питание +48 V через XLR-выход; отдельный порт питания не нужен"
+  },
+  {
+   "id": "c0a80101-01b3-4000-8000-000000000435",
+   "model": "Shure MX412",
+   "op": "portNote",
+   "port": "XLR Out",
+   "note": "phantom +48 V",
+   "why": "phantom: ложное срабатывание: конденсаторный микрофон, фантомное питание +48 V через XLR-выход; отдельный порт питания не нужен"
+  },
+  {
+   "id": "c0a80101-01b4-4000-8000-000000000436",
+   "model": "Shure MX418",
+   "op": "portNote",
+   "port": "XLR Out",
+   "note": "phantom +48 V",
+   "why": "phantom: ложное срабатывание: конденсаторный микрофон, фантомное питание +48 V через XLR-выход; отдельный порт питания не нужен"
+  },
+  {
+   "id": "174b7f95-9097-4d8b-bec9-47e25485d387",
+   "model": "Shure MX418D/C",
+   "op": "portNote",
+   "port": "XLR OUT (Audio + Logic)",
+   "note": "phantom +48 V",
+   "why": "phantom: ложное срабатывание: конденсаторный микрофон, фантомное питание +48 V через XLR-выход; отдельный порт питания не нужен"
+  },
+  {
+   "id": "77ee36c7-4aa1-4742-95de-194152029059",
+   "model": "Shure MXCW-640",
+   "op": "portNote",
+   "port": "Mic / Headphone 1 (TRRS 3,5mm Female)",
+   "note": "battery",
+   "why": "battery: ложное срабатывание: батарейное питание — АКБ SB930 Li-Ion; зарядка micro-USB 5 В, до 10 Вт"
+  },
+  {
+   "id": "141f6381-2556-429d-876a-b4a5b77af418",
+   "model": "Shure MXN-AMP",
+   "op": "portNote",
+   "port": "Dante / PoE+ In",
+   "note": "PoE (802.3af / 802.3at)",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af class 0 / PoE+ 802.3at class 4 по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке запо"
+  },
+  {
+   "id": "bd79c648-25f9-4401-8089-d959e827f77b",
+   "model": "Shure MXWAPX",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE class 3: class maximum, actual draw not published"
+  },
+  {
+   "id": "bd79c648-25f9-4401-8089-d959e827f77b",
+   "model": "Shure MXWAPX",
+   "op": "portNote",
+   "port": "LAN 1",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "bd79c648-25f9-4401-8089-d959e827f77b",
+   "model": "Shure MXWAPX",
+   "op": "portNote",
+   "port": "LAN 1",
+   "note": "PoE class 3",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af class 3 по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "5e4c0200-5045-4af2-958b-adaf9480306b",
+   "model": "Shure MXWAPXD2",
+   "op": "set",
+   "field": "poeDrawW",
+   "value": 12.95,
+   "onlyIfEmpty": true,
+   "why": "PoE class 3: class maximum, actual draw not published"
+  },
+  {
+   "id": "5e4c0200-5045-4af2-958b-adaf9480306b",
+   "model": "Shure MXWAPXD2",
+   "op": "portNote",
+   "port": "Network/Dante",
+   "note": "PoE: actual draw not published",
+   "why": "standard 3.1"
+  },
+  {
+   "id": "5e4c0200-5045-4af2-958b-adaf9480306b",
+   "model": "Shure MXWAPXD2",
+   "op": "portNote",
+   "port": "Network/Dante",
+   "note": "PoE class 3",
+   "why": "poe: ложное срабатывание: питание PoE 802.3af class 3 по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "f880b61c-37ce-4861-bb84-469b1fc7e171",
+   "model": "Shure SM57",
+   "op": "portNote",
+   "port": "Analog Output 1",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: динамический микрофон — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "88b321e0-be75-4967-8133-68d773c1f3b8",
+   "model": "Shure SM58",
+   "op": "portNote",
+   "port": "Analog Output 1",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: динамический микрофон — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "956c4c5b-3cca-407f-aa1f-a168782d54f9",
+   "model": "Shure SM7dB",
+   "op": "portNote",
+   "port": "OUT",
+   "note": "phantom +48 V",
+   "why": "phantom: ложное срабатывание: конденсаторный микрофон, фантомное питание +48 V через XLR-выход; отдельный порт питания не нужен"
+  },
+  {
+   "id": "95c06055-0f6a-480f-bcce-3b152d96f81c",
+   "model": "Shure ULXD1 Bodypack Transmitter",
+   "op": "portNote",
+   "port": "Mic In (TA4M)",
+   "note": "battery",
+   "why": "battery: не применимо: батарейное питание (2× AA или SB900 Li-Ion) — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "c65522b9-0087-4ab0-95ac-f30fec7fc7d4",
+   "model": "Televic Lingua ID Mike",
+   "op": "portNote",
+   "port": "Plixus 1",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: микрофон питается от пульта/делегатского блока; отдельный порт питания не нужен"
+  },
+  {
+   "id": "29b9a87d-2869-46eb-8469-0d323f427206",
+   "model": "Televic Mike PLM 402 F",
+   "op": "portNote",
+   "port": "USB C",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: микрофон питается от пульта/делегатского блока; отдельный порт питания не нужен"
+  },
+  {
+   "id": "b27d7c06-bf86-47f5-a814-26efaf2a9499",
+   "model": "Wyrestorm APO-SKY-MIC Ceiling Microphone",
+   "op": "portNote",
+   "port": "PREVIOUS",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: питается от COM-MIC-HUB / APO-VX20-UC по CAT6; отдельный порт питания не нужен"
+  },
+  {
+   "id": "f7c9515f-c616-4478-b055-a267dc64ddbf",
+   "model": "Wyrestorm EX-35-8K HDMI Extender (RX)",
+   "op": "portNote",
+   "port": "HDBT In 1",
+   "note": "powered by host (PoH)",
+   "why": "host: ложное срабатывание: EX-35-8K-RX питается по PoC от передатчика (11,4 Вт на пару)"
+  },
+  {
+   "id": "7bf70970-5089-49f1-bb61-47e73f86e1a5",
+   "model": "Wyrestorm RX-35-POH HDBaseT Receiver",
+   "op": "portNote",
+   "port": "HDBT In 1",
+   "note": "powered by host",
+   "why": "host: не применимо: питание по кабелю от TX — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "b4a613bf-c47e-401e-adc3-6ac97505c074",
+   "model": "Wyrestorm RXV-35-SCL Scaling HDBaseT Receiver",
+   "op": "portNote",
+   "port": "HDBT In 1",
+   "note": "powered by host",
+   "why": "host: не применимо: питание по кабелю от TX — поля оставить пустыми, исключить из правила"
+  },
+  {
+   "id": "c0a80101-00c4-4000-8000-000000000196",
+   "model": "Chauvet Professional Freedom Flex H4",
+   "op": "portNote",
+   "port": "DMX In",
+   "note": "battery",
+   "why": "battery: ложное срабатывание: батарейное питание — Freedom Flex H4 — аккумуляторный беспроводной прибор (зарядка от кейса/зарядного устройства)"
+  },
+  {
+   "id": "42053bbf-71bb-470f-b8c8-55a72b7603b4",
+   "model": "QSC NV-1-H-WE",
+   "op": "portNote",
+   "port": "OUT 1",
+   "note": "PoE",
+   "why": "poe: ложное срабатывание: питание PoE по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "d6a39a5b-3bdf-41e6-89af-6fcb60edd859",
+   "model": "RF Venue D-ARCB Diversity Architectural Antenna",
+   "op": "portNote",
+   "port": "DIVERSITY ANTENNA A",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: активная антенна питается по коаксиалу (bias-T) от ресивера/дистрибьютора антенн"
+  },
+  {
+   "id": "fec0880f-ca9e-4437-a041-82b9547f82a2",
+   "model": "Yamaha CXS18XLF",
+   "op": "portNote",
+   "port": "Input",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: пассивный сабвуфер/громкоговоритель — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "237c19b4-ee79-4c2e-ab33-c7ad093eada4",
+   "model": "Yamaha DCP4V4S",
+   "op": "portNote",
+   "port": "Port 1",
+   "note": "bus-powered (DCP)",
+   "why": "bus: ложное срабатывание: DCP4V4S питается от DME/MTX/PA по кабелю DCP (CAT5, RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "031b4fe6-123a-45f9-9e9a-3d83801415e0",
+   "model": "Yamaha VXC8S",
+   "op": "portNote",
+   "port": "In",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: пассивный сабвуфер/громкоговоритель — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "02ce211c-ce4b-452f-a337-8ac28842a80c",
+   "model": "Yamaha VXS10S",
+   "op": "portNote",
+   "port": "In 1",
+   "note": "passive",
+   "why": "passive: ложное срабатывание: пассивный сабвуфер/громкоговоритель — питание не требуется (исключить такие типы из правила)"
+  },
+  {
+   "id": "9702f6fd-5fd7-4f88-98bd-18bfaa7d4b0b",
+   "model": "Yamaha XM-CS-700 Table Microphone",
+   "op": "portNote",
+   "port": "EXP Mic",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: XM-CS-700 питается от CS-700 по кабелю расширения микрофона; отдельный порт питания не нужен"
+  },
+  {
+   "id": "09db1468-39fe-4f39-8313-235fb5ca095a",
+   "model": "Yealink MTouch Plus",
+   "op": "portNote",
+   "port": "MCore",
+   "note": "PoE",
+   "why": "poe: ложное срабатывание: питание PoE по LAN-порту (RJ-45), отдельный порт питания не нужен; на блоке заполнить poeDrawW"
+  },
+  {
+   "id": "d0ed8efe-ff41-4349-9e66-d3d8623c0fec",
+   "model": "Yealink VCH51",
+   "op": "portNote",
+   "port": "VCH",
+   "note": "bus-powered (VCH)",
+   "why": "bus: ложное срабатывание: VCH51 питается от MeetingBar/MCore по кабелю VCH (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "bf09c363-687f-4584-8aea-a6188009389b",
+   "model": "Yealink VCH51 Pro",
+   "op": "portNote",
+   "port": "VCH",
+   "note": "bus-powered (VCH)",
+   "why": "bus: ложное срабатывание: VCH51 питается от MeetingBar/MCore по кабелю VCH (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "3926c5dc-8415-4103-8fba-e1b4398daf2f",
+   "model": "Yealink VCM35 Pro",
+   "op": "portNote",
+   "port": "VCH1",
+   "note": "powered by host",
+   "why": "host: ложное срабатывание: VCM35 питается от кодека по кабелю (RJ-45); отдельный порт питания не нужен"
+  },
+  {
+   "id": "ebd9deed-12ab-4975-84cc-75b491acaa87",
+   "model": "Yealink VCM36-W",
+   "op": "portNote",
+   "port": "USB-C (pairing)",
+   "note": "battery",
+   "why": "battery: ложное срабатывание: батарейное питание — беспроводной микрофон, встроенный АКБ (зарядка от базы)"
+  },
+  {
+   "id": "d675c8b7-6d14-4ba3-8e4a-0dc0dc5c4bb4",
+   "model": "Extron DTP3 IN2004 DI/DO",
+   "op": "splitPort",
+   "port": "HDMI In 4 (or DTP3)",
+   "into": [
+    {
+     "label": "HDMI In 4",
+     "signalType": "hdmi",
+     "direction": "input",
+     "connectorType": "hdmi",
+     "section": "Video Inputs"
+    },
+    {
+     "label": "DTP3 In 4",
+     "signalType": "hdbaset",
+     "direction": "input",
+     "connectorType": "rj45",
+     "section": "Video Inputs"
+    }
+   ],
+   "exclusiveGroup": "input-4",
+   "why": "input 4 is HDMI or DTP3: two jacks, one signal path (engineers)"
+  },
+  {
+   "id": "ea6c90c6-f2f5-462d-9126-9054848d634c",
+   "model": "Extron DTP3 R 201 D, Black",
+   "op": "set",
+   "field": "modelNumber",
+   "value": "60-2072-52",
+   "why": "60-2072-53 is the White version; Black is 60-2072-52 (Extron CSV)"
+  },
+  {
+   "id": "055d33d5-0a14-4037-aa41-99cff4650a41",
+   "model": "Netgear-AV M4350-16V4C",
+   "op": "addSlots",
+   "family": "qsfp",
+   "labels": [
+    "Port 17",
+    "Port 18",
+    "Port 19",
+    "Port 20"
+   ],
+   "why": "4 QSFP28 cages (NETGEAR M4350 datasheet: ports 17-20)"
+  },
+  {
+   "id": "86d46a8b-beba-4941-a3ae-527186d0767e",
+   "model": "Netgear-AV M4350-40X4C",
+   "op": "addSlots",
+   "family": "qsfp",
+   "labels": [
+    "Port 41",
+    "Port 42",
+    "Port 43",
+    "Port 44"
+   ],
+   "why": "4 QSFP28 cages (NETGEAR M4350 datasheet: ports 41-44)"
+  }
+ ],
+ "notDone": [
+  "Chief NW1F1218 W1 Rack: no port for the marker",
+  "Chief NW1F1223 W1 Rack: no port for the marker",
+  "Chief NW1F2018 W1 Rack: no port for the marker",
+  "Chief NW1F2023 W1 Rack: no port for the marker",
+  "Chief NW1F2818 W1 Rack: no port for the marker",
+  "Chief NW1F2823 W1 Rack: no port for the marker",
+  "Chief NW1F2828 W1 Rack: no port for the marker",
+  "Chief NW1F3618 W1 Rack: no port for the marker",
+  "Chief NW1F3623 W1 Rack: no port for the marker",
+  "Chief NW1F3628 W1 Rack: no port for the marker",
+  "Generic Touch Controller [c4880934-35ec-430c-b2fb-e733b867911d]: PoE over LAN per engineers, but the template has no LAN port (add the port from the datasheet)",
+  "Yamaha PY-MIDI-GPI: PY card — slot family not set (decision: PY cards are step 1.8)",
+  "Yamaha PY64-D: PY card — slot family not set (decision: PY cards are step 1.8)",
+  "Yamaha PY64-MD: PY card — slot family not set (decision: PY cards are step 1.8)",
+  "Yamaha PY8-AE: PY card — slot family not set (decision: PY cards are step 1.8)"
+ ]
+}

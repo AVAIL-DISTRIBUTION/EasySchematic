@@ -13,6 +13,8 @@ COPY api-avail/package.json api-avail/package-lock.json ./api-avail/
 RUN cd api-avail && npm ci
 COPY src ./src
 COPY docs/avail ./docs/avail
+# Worklist follow-ups (worklist-followups.json) are bundled into apply:worklist.
+COPY tools/avail/incoming/worklist-followups.json ./tools/avail/incoming/
 COPY api/src ./api/src
 COPY api-avail ./api-avail
 RUN cd api-avail && npm run build && npm prune --omit=dev
@@ -25,7 +27,8 @@ ENV NODE_ENV=production \
     DATA_DIR=/data \
     MIGRATIONS_DIR=/app/migrations \
     AVAIL_MIGRATIONS_DIR=/app/migrations-avail \
-    AVAIL_LIBRARY_DIR=/app/library/avail
+    AVAIL_LIBRARY_DIR=/app/library/avail \
+    AVAIL_WORKLIST_FILE=/app/incoming/Library_worklist_engineers_solutions.xlsx
 WORKDIR /app
 COPY --from=builder /app/api-avail/node_modules ./node_modules
 COPY --from=builder /app/api-avail/dist ./dist
@@ -33,6 +36,8 @@ COPY api/migrations ./migrations
 COPY api-avail/migrations ./migrations-avail
 # Curated library for `npm run import:avail` (library/avail + library/hidden.json).
 COPY library ./library
+# Engineers' worklist solutions for `npm run apply:worklist` / `export:vendor-requests`.
+COPY tools/avail/incoming ./incoming
 # Scripts for `docker compose exec api npm run import:upstream` and the like.
 COPY api-avail/package.runtime.json ./package.json
 RUN mkdir -p /data && chown node:node /data

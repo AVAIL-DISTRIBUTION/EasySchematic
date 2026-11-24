@@ -101,6 +101,21 @@ docker compose exec api npm run apply:vendor-decisions                 # зап�
 затирает то, что записали нормализатор и чистки: пока шаблон в источнике не менялся
 (`avail_template_meta.source_hash`), локальная строка остаётся как есть.
 
+### Шаг 1.8a: решения инженеров по worklist
+
+```bash
+./backup.sh                                                              # обязательно первым
+./update.sh                                                              # новый образ (файл решений в /app/incoming)
+docker compose exec api npm run apply:worklist -- --dry-run              # решения + доработки (follow-ups), ложные, уровни по вендорам
+docker compose exec api npm run apply:worklist
+docker compose exec api npm run import:avail -- --dry-run                # скрыть SD-карты и кабель AOC (library/hidden.json)
+docker compose exec api npm run import:avail
+docker compose exec api npm run normalize:library -- --dry-run
+docker compose exec api npm run normalize:library
+docker compose exec -T api npm run -s export:vendor-requests > vendor-requests.csv   # письма вендорам
+docker compose exec -T api npm run -s export:worklist > worklist.csv     # обновлённый список работы
+```
+
 ### Шаг 1.7: нормализатор v3, Sony, слоты
 
 ```bash

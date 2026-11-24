@@ -79,6 +79,41 @@
       "id": "a60c9cca-0a31-4777-8775-49c839ce5dcf",
       "label": "Generic TRUE1 to CEE16 Adapter (UK/EU)",
       "reason": "Mains power adapter: a BoQ item, not a schematic block"
+    },
+    {
+      "id": "sd-sdhc-32",
+      "label": "Generic SDHC Card (32 GB)",
+      "reason": "Storage media: a BoQ item, not a schematic block (worklist, step 1.8a); kept for schematics that reference it"
+    },
+    {
+      "id": "sd-sdxc-128",
+      "label": "Generic SDXC Card (128 GB)",
+      "reason": "Storage media: a BoQ item, not a schematic block (worklist, step 1.8a); kept for schematics that reference it"
+    },
+    {
+      "id": "sd-sdxc-256",
+      "label": "Generic SDXC Card (256 GB)",
+      "reason": "Storage media: a BoQ item, not a schematic block (worklist, step 1.8a); kept for schematics that reference it"
+    },
+    {
+      "id": "sd-sdxc-512",
+      "label": "Generic SDXC Card (512 GB)",
+      "reason": "Storage media: a BoQ item, not a schematic block (worklist, step 1.8a); kept for schematics that reference it"
+    },
+    {
+      "id": "sd-microsdxc-128",
+      "label": "Generic microSDXC Card (128 GB)",
+      "reason": "Storage media: a BoQ item, not a schematic block (worklist, step 1.8a); kept for schematics that reference it"
+    },
+    {
+      "id": "sd-microsdxc-256",
+      "label": "Generic microSDXC Card (256 GB)",
+      "reason": "Storage media: a BoQ item, not a schematic block (worklist, step 1.8a); kept for schematics that reference it"
+    },
+    {
+      "id": "9ee4798c-9476-420e-82ed-13e531ec4eb3",
+      "label": "Sharp AOC USB-C 7M",
+      "reason": "Cable: shown as a connection and in the BoM, not a schematic block (worklist, step 1.8a)"
     }
   ]
 }

@@ -9,6 +9,7 @@
 !api-avail
 !docs/avail
 !library
+!tools/avail/incoming
 **/node_modules
 api-avail/dist
 api-avail/data
