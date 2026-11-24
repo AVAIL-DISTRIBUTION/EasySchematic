@@ -1,0 +1,706 @@
+{
+  "version": 1,
+  "note": "Шаблоны, удалённые из библиотеки AVAIL (ответы вендоров и др.). import:upstream их не загружает; apply:vendor-responses удаляет их из базы. Меняется PR-ом.",
+  "templates": [
+    {
+      "id": "983d1a62-1126-4df4-b1f5-0b0116120921",
+      "vendor": "Allen & Heath",
+      "model": "AR84 Expander",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "16dbc95a-ceec-4b95-b18c-90e4caf6cdda",
+      "vendor": "Allen & Heath",
+      "model": "GLD80",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "83f253d1-101f-42f7-a191-9321557bd799",
+      "vendor": "Allen & Heath",
+      "model": "Qu-5/Qu-5D",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-0095-4000-8000-000000000149",
+      "vendor": "Allen & Heath",
+      "model": "SQ-5",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "1cc88180-2b3e-4e31-afe9-7834a49430bf",
+      "vendor": "Allen & Heath",
+      "model": "SQ-6",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "9cfc869e-6850-47da-8700-20bbf41ab6ed",
+      "vendor": "Allen & Heath",
+      "model": "SQ-Rack",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "557523b5-2019-437a-a300-71d31bde47e5",
+      "vendor": "Allen & Heath",
+      "model": "ZED-18",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "a7c9ea53-c981-426e-bc42-8fc42b7ad2f1",
+      "vendor": "Bose Professional",
+      "model": "PowerShare PS404D",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "abdfa77a-8ea1-4c40-b57a-dd18d12ae249",
+      "vendor": "Bose Professional",
+      "model": "PowerShareX PSX4804D",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-020d-4000-8000-000000000525",
+      "vendor": "Chauvet Professional",
+      "model": "Color STRIKE M",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-020b-4000-8000-000000000523",
+      "vendor": "Chauvet Professional",
+      "model": "Maverick MK3 Spot",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-020c-4000-8000-000000000524",
+      "vendor": "Chauvet Professional",
+      "model": "Rogue Outcast 2X Wash",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-0010-4000-8000-000000000016",
+      "vendor": "Extron",
+      "model": "DSC 301 HD",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-002d-4000-8000-000000000045",
+      "vendor": "Extron",
+      "model": "DTP R HD2 4K",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "ea6c90c6-f2f5-462d-9126-9054848d634c",
+      "vendor": "Extron",
+      "model": "DTP3 R 201 D, Black",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "70001f3c-a07f-4fe5-9a19-8a6cb0794704",
+      "vendor": "Extron",
+      "model": "TLI Pro 101",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "9cc476b0-ae28-423d-a3b0-32b064a6458e",
+      "vendor": "Lumens",
+      "model": "Cam Connect Pro",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "095bf87a-75b1-45e2-abea-ab38112acce8",
+      "vendor": "Lumens",
+      "model": "DC193 Document Camera",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "6fa38d13-922a-4c0a-8f4f-c9781681e8e3",
+      "vendor": "Lumens",
+      "model": "LC100 CaptureVision System",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c5aef974-a9ed-400c-8924-def5b6cdc2b1",
+      "vendor": "Lumens",
+      "model": "LC300",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "6725faec-7cc6-4c84-8341-adb86c14742e",
+      "vendor": "Lumens",
+      "model": "OIP D50C",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "093b7fd5-2fbf-43ea-8740-c44e37033d7a",
+      "vendor": "Lumens",
+      "model": "OIP D50E",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "bded7ac7-1186-4ba5-b134-d4da7bd84ebc",
+      "vendor": "Lumens",
+      "model": "OIP N60D Dante AV-H",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "763351e0-76bd-4351-a5f6-c10ae4a8ac12",
+      "vendor": "Lumens",
+      "model": "PS760",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "ab5b7e4e-e5b7-4ac7-bc04-85047e46eb7a",
+      "vendor": "Lumens",
+      "model": "VC TR60A Dante AV-H 4K",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "4a3f240c-63e7-40e2-9980-8b033c1818b7",
+      "vendor": "Lumens",
+      "model": "VC-A71P-HN",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-01f6-4000-8000-000000000502",
+      "vendor": "MA Lighting",
+      "model": "MA NPU",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-01f7-4000-8000-000000000503",
+      "vendor": "MA Lighting",
+      "model": "MA onPC command wing",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-01f5-4000-8000-000000000501",
+      "vendor": "MA Lighting",
+      "model": "grandMA2 full-size",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "adf03392-9d79-4f67-bd38-393e143c0a04",
+      "vendor": "Martin Audio",
+      "model": "O-LINE",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "f505dea8-b1f9-48ca-aac0-01e82262ab10",
+      "vendor": "Martin Audio",
+      "model": "VIA2004",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "7c6afa44-91bd-414c-8d3e-ef62b704360e",
+      "vendor": "Martin Audio",
+      "model": "VIA2502",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "e1aab957-be38-47de-9862-3c6b0a7893d4",
+      "vendor": "Martin Audio",
+      "model": "VIA5002",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "419deb89-1892-44b6-bc7e-77f31a3a5d16",
+      "vendor": "Martin Audio",
+      "model": "VIA5004",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "12740178-bd1e-4f26-932a-e778ec381c17",
+      "vendor": "Mipro",
+      "model": "ACT 312",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "1d08e2c9-01be-41d9-8dc5-084d5ca1df28",
+      "vendor": "Mipro",
+      "model": "ACT 343",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "47ba3829-f914-425b-bcd7-a1b4a64fce7a",
+      "vendor": "Mipro",
+      "model": "ACT 525",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "b57bfd13-f9f0-4dba-9bfa-c63f7533003c",
+      "vendor": "Mipro",
+      "model": "ACT 545",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "4f846feb-97ee-448b-b35b-6d9a9b0dec32",
+      "vendor": "Mipro",
+      "model": "ACT-828 + DANTE",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "98b4d4c6-41b1-43e4-bcae-b4413993d775",
+      "vendor": "Mipro",
+      "model": "ACT-848 + DANTE",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "6914b485-e472-45e9-a553-dfa824525ab7",
+      "vendor": "Mipro",
+      "model": "AD 708",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "0ea873d4-2f88-4d4a-92d9-0feadb3fb6aa",
+      "vendor": "Mipro",
+      "model": "AT 70W",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "d7604adf-c90b-4eb5-a011-6e85abb0027b",
+      "vendor": "Mipro",
+      "model": "AT90W",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "a00eea6b-d725-4597-96a5-3c40689c5b3e",
+      "vendor": "QSC",
+      "model": "AC-C4T",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "498cc247-4bc3-4c73-b18a-f0f5c03fd447",
+      "vendor": "QSC",
+      "model": "AD-C6T-ZB",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "42053bbf-71bb-470f-b8c8-55a72b7603b4",
+      "vendor": "QSC",
+      "model": "NV-1-H-WE",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-00b0-4000-8000-000000000176",
+      "vendor": "QSC",
+      "model": "PLD 4.5",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "29643fd3-5781-4604-9463-fdb424e06898",
+      "vendor": "QSC",
+      "model": "Q-SYS CX-Q 2K4",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "64d265a7-c65d-41b3-ba21-244fb6f47d48",
+      "vendor": "QSC",
+      "model": "Q-SYS CX-Q 4K4",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "f9119230-b2d8-4b2d-891d-96a6c26ae4bb",
+      "vendor": "QSC",
+      "model": "QIO-L24o",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "f65f7d19-dd15-4765-8863-2af4ea47d9b7",
+      "vendor": "QSC",
+      "model": "SPA4-100",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "1304ab6c-47f6-4172-8814-de1f52b407b7",
+      "vendor": "RF Venue",
+      "model": "4 ZONE",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "65d73cad-5753-4276-b923-3b1020a21a20",
+      "vendor": "RF Venue",
+      "model": "4 ZONE-Network",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "579dd2cd-ce05-4c55-87a8-345f7d3f35e5",
+      "vendor": "RF Venue",
+      "model": "DISTRO5 HDR",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "1a17cdb4-2c55-4f6b-bad9-c4412b9717e2",
+      "vendor": "RF Venue",
+      "model": "DISTRO9 HDR",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "42c2c30a-fab3-40b9-b2af-49ba25170212",
+      "vendor": "RF Venue",
+      "model": "Diversity Fin",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "9ee4798c-9476-420e-82ed-13e531ec4eb3",
+      "vendor": "Sharp",
+      "model": "AOC USB-C 7M",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "4096a640-e45d-4f1d-be39-b0448a8bf33b",
+      "vendor": "Sharp",
+      "model": "LC-50LBU591U 50-inch Roku TV",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "441c5fe4-eab2-46c5-b012-41be1af96797",
+      "vendor": "Sharp",
+      "model": "P701U",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "d6e2017c-08cc-4e04-b737-b7e7eaf5675a",
+      "vendor": "Sharp",
+      "model": "PN-L652B Touch",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "39919e04-b6e7-43d7-af3c-8fcf50b2d88d",
+      "vendor": "Sharp",
+      "model": "PN-L862B Touch",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "282f2efe-e022-459f-aa07-84ddd6017d61",
+      "vendor": "Sharp",
+      "model": "PN-M752",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "4bb416ee-3eda-4041-99b7-1da28b5539a0",
+      "vendor": "Sharp",
+      "model": "PN-M862",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "f284c168-4196-4978-92c9-165d2b3cad2f",
+      "vendor": "Sharp",
+      "model": "PN-M982",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "a68f79b5-2887-46fd-9772-cb8485adf270",
+      "vendor": "Sharp",
+      "model": "PN-ME432",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "53157703-6a83-41c2-8954-aa24d51cfd50",
+      "vendor": "Shure",
+      "model": "Beta 52A",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "3d203e86-1adb-4ada-90ca-51f4d02e2496",
+      "vendor": "Shure",
+      "model": "IntelliMix Room Kit – IntelliMix Bar Pro",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "0864254c-7983-4cd8-a814-d40e03fa461c",
+      "vendor": "Shure",
+      "model": "MXA910 Ceiling Array Microphone",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "63497edb-6edd-465e-87f3-f32a9ba3a6ad",
+      "vendor": "Shure",
+      "model": "MXN5W-C Networked Ceiling Loudspeaker",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "086c0c3c-573a-4384-8915-855a946a0755",
+      "vendor": "Shure",
+      "model": "MXWNDX",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "ce68d3c5-9119-4aaf-81c6-2ceb938bd9f9",
+      "vendor": "Shure",
+      "model": "PA-805 Passive Dual Band Directional Antenna",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-01b0-4000-8000-000000000432",
+      "vendor": "Shure",
+      "model": "PSM 1000 P10T",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "84dcfbda-a9e8-476a-925c-4d409e48e05c",
+      "vendor": "Shure",
+      "model": "PSM900 P9T",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "e71f493c-0cd9-4db7-a289-d47b116f9314",
+      "vendor": "Shure",
+      "model": "SLXD14+/85M Receiver",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "d1bb4d24-3cee-437d-b0bb-c3d2f85837b5",
+      "vendor": "Shure",
+      "model": "SLXD4Q+",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "efaaef75-4d37-4021-a9db-499e0269eb0f",
+      "vendor": "Shure",
+      "model": "ULXD4Q",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c4e39e4a-5ec3-45fb-a84c-19bf948487ce",
+      "vendor": "Sony",
+      "model": "AM7",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "f33a07bf-60e5-4bc8-a922-ff97a507bc2f",
+      "vendor": "Sony",
+      "model": "RM-IP500 PTZ Camera Remote Controller",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "e2ef0658-9512-4fef-abd5-bc5567c2e437",
+      "vendor": "Vaddio",
+      "model": "ConferenceSHOT 10",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "04478453-ba35-411d-b20a-9c016e0177c8",
+      "vendor": "Vaddio",
+      "model": "Easy IP 10",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "d94cafdf-1f17-4ffb-8090-17aa9443ffff",
+      "vendor": "Vaddio",
+      "model": "EasyIP Mixer",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-01aa-4000-8000-000000000426",
+      "vendor": "Yamaha",
+      "model": "CS-R3",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c0a80101-01ab-4000-8000-000000000427",
+      "vendor": "Yamaha",
+      "model": "CS-R5",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "9702f6fd-5fd7-4f88-98bd-18bfaa7d4b0b",
+      "vendor": "Yamaha",
+      "model": "XM-CS-700 Table Microphone",
+      "reason": "EoL equipment - delete",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "f5375b5b-b704-40cb-b3ae-9b631091eee3",
+      "vendor": "Yealink",
+      "model": "BYOD-BOX",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "43239c21-1f91-4798-ab1d-14cac6cc7e42",
+      "vendor": "Yealink",
+      "model": "CTP25",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "6243d83d-4a10-4438-bd79-361ccfe661a5",
+      "vendor": "Yealink",
+      "model": "DE300",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c38408fd-a6d9-4a9a-86e8-3b4e16ea6a52",
+      "vendor": "Yealink",
+      "model": "EN300",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "5ae31cdc-a798-4a9c-b127-1c0a13630130",
+      "vendor": "Yealink",
+      "model": "MCore 4",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "170b636b-8913-4e15-9c77-88d2df763fcc",
+      "vendor": "Yealink",
+      "model": "MCore Pro MS",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "09db1468-39fe-4f39-8313-235fb5ca095a",
+      "vendor": "Yealink",
+      "model": "MTouch Plus",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "929dbfde-0043-426b-8c71-de86632240d4",
+      "vendor": "Yealink",
+      "model": "MeetingBar A40",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "96a34a8a-5ebd-4967-bf2f-b18c09b9fbb7",
+      "vendor": "Yealink",
+      "model": "MeetingBar A50",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "0714a423-75a4-4511-b208-23a2e1fe11b7",
+      "vendor": "Yealink",
+      "model": "RCH240",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "b1fd4eab-9416-4770-8e34-12367c5b3bd0",
+      "vendor": "Yealink",
+      "model": "Roomcast E2",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "c16ec97a-8433-4768-96f4-d448f7f9fdbf",
+      "vendor": "Yealink",
+      "model": "SmartVision 80",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "d0ed8efe-ff41-4349-9e66-d3d8623c0fec",
+      "vendor": "Yealink",
+      "model": "VCH51",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "bf09c363-687f-4584-8aea-a6188009389b",
+      "vendor": "Yealink",
+      "model": "VCH51 Pro",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "3926c5dc-8415-4103-8fba-e1b4398daf2f",
+      "vendor": "Yealink",
+      "model": "VCM35 Pro",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "ebd9deed-12ab-4975-84cc-75b491acaa87",
+      "vendor": "Yealink",
+      "model": "VCM36-W",
+      "reason": "Ignore. Remove from the database",
+      "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    }
+  ]
+}

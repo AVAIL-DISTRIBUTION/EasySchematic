@@ -205,6 +205,16 @@ powered by host), `set` (slotFamily платы по шасси, артикул, 
 B и FIX с топ-3 замечаниями, по вендорам. Способ утверждения (`approved_via` review/bulk,
 `approved_at`, миграция 9004) показывается в карточке Review.
 
+Ответы вендоров (шаг 1.8b): `npm run apply:vendor-responses [-- --dry-run] [-- --file <json>]`
+(`api-avail/src/vendorResponses.ts`; файл по умолчанию `tools/avail/incoming/vendor-responses.json`, в образе
+`AVAIL_VENDOR_RESPONSES_FILE=/app/incoming/vendor-responses.json`). `delete` — шаблон удаляется целиком
+(templates + avail_template_meta; template_notes каскадом), id удалённых — в `docs/avail/deleted-templates.json`
+(vendor, model, reason), их не загружает `import:upstream`. `update` — поля `set` пишутся как в файле
+(только размеры, вес, мощность, PoE, напряжение, referenceUrl, modelNumber; неподходящее — в отчёт),
+`note` — заметка модератора upstream (`template_notes`, автор — системный пользователь
+`avail-vendor-responses`, заблокирован), видна в карточке Review. Статусы не меняются, уровни пересчитываются.
+Шаблон из `library/avail` в файле — остановка без записи, код выхода 1. Повтор — без изменений.
+
 Generic-вендор приводится к проверенному набору планом `docs/avail/generic-plan.json`
 (`npm run apply:generic-plan [-- --dry-run]`, `api-avail/src/genericPlan.ts`): переименования в
 «Generic <тип или назначение>» без брендов, смена deviceType/категории (сетевые переходники и
@@ -236,6 +246,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/importAvail.ts`, `src/importAvailCli.ts` | загрузка курируемой библиотеки `library/avail` (`npm run import:avail`); в образе — `/app/library`, `AVAIL_LIBRARY_DIR` |
 | `src/genericPlan.ts`, `src/genericPlanCli.ts` | Generic-вендор по `docs/avail/generic-plan.json` (`npm run apply:generic-plan [-- --dry-run]`), одна транзакция, `library/avail` не трогает |
 | `src/vendorCleanup.ts`, `src/vendorCleanupCli.ts` | чистка библиотеки по `vendor-decisions.json` (`npm run apply:vendor-decisions [-- --dry-run]`), одна транзакция, `library/avail` не трогает; новый «Generic <тип>» — только для типов без Generic, существующие Generic не перезаписываются; отчёт перечисляет итоговые Generic (новые — с исходным шаблоном) |
+| `src/vendorResponses.ts`, `src/vendorResponsesCli.ts` | ответы вендоров (`npm run apply:vendor-responses [-- --dry-run]`): удаление по `docs/avail/deleted-templates.json`, данные и заметки, одна транзакция, `library/avail` не трогает |
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |

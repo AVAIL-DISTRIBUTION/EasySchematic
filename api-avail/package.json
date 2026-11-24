@@ -16,7 +16,8 @@
     "apply:generic-plan": "tsx src/genericPlanCli.ts",
     "export:worklist": "tsx src/worklistCli.ts",
     "apply:worklist": "tsx src/applyWorklistCli.ts",
-    "export:vendor-requests": "tsx src/vendorRequestsCli.ts"
+    "export:vendor-requests": "tsx src/vendorRequestsCli.ts",
+    "apply:vendor-responses": "tsx src/vendorResponsesCli.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.11",

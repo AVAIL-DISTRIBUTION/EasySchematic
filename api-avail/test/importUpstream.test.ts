@@ -199,7 +199,7 @@ describe("importTemplates", () => {
     expect(r.ourVendors).toMatchObject({ Wyrestorm: 1, Sharp: 1, Yamaha: 1, Extron: 0 });
     expect(r.otherVendors).toEqual({ templates: 0, manufacturers: 0 });
     expect(r).toMatchObject({ imported: 3, noManufacturer: 0, noCategory: 1 });
-    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 2, scope: 0, genericExists: 0, genericPlan: 0 });
+    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 2, scope: 0, genericExists: 0, genericPlan: 0, deleted: 0 });
     expect(r.levels.A + r.levels.B + r.levels.FIX).toBe(3);
 
     const text = formatImportReport(r, "https://api.easyschematic.live/templates");

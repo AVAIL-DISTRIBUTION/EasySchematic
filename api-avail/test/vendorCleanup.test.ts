@@ -206,7 +206,7 @@ describe("after the cleanup", () => {
     const r = importTemplates(api.db.sqlite, source);
     // sm1 was made into Generic Display: the source's Samsung data must not come back over it.
     expect(r).toMatchObject({ inserted: 0, skippedProtected: 0 });
-    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 1, scope: 2, genericExists: 3, genericPlan: 0 });
+    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 1, scope: 2, genericExists: 3, genericPlan: 0, deleted: 0 });
     expect(api.db.sqlite.prepare("SELECT id, manufacturer, label FROM templates ORDER BY id").all()).toEqual(after);
     expect(row("sm1")).toMatchObject({ label: "Generic Display", manufacturer: "Generic" });
     expect(row("gen-mic")).toMatchObject({ label: "Generic Microphone" }); // existing Generic, never overwritten
