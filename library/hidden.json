@@ -1,9 +1,9 @@
 {
   "hidden": [
     {
-      "id": "c0a80101-01af-4000-8000-000000000431",
+      "id": "c0a80101-009f-4000-8000-000000000159",
       "label": "Shure AD4Q",
-      "reason": "Duplicate of Shure AD4Q c0a80101-009f-4000-8000-000000000159 (second instance in the built-in library)"
+      "reason": "Duplicate of Shure AD4Q c0a80101-01af-4000-8000-000000000431, which is more complete (12 ports vs 9)"
     }
   ]
 }

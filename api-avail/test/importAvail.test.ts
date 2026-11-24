@@ -193,6 +193,23 @@ describe("importAvailLibrary", () => {
     expect(importAvailLibrary(api.db.sqlite, [], { hidden }).hidden[0]).toEqual({ id: "dup-2", action: "already-hidden" });
   });
 
+  it("library/hidden.json: a template it hid earlier and no longer lists goes back to raw", () => {
+    insertLocal({ ...tpl("ad4q-1"), modelNumber: "AD4Q-1" });
+    insertLocal({ ...tpl("ad4q-2"), modelNumber: "AD4Q-2" });
+    importAvailLibrary(api.db.sqlite, [], { hidden: [{ id: "ad4q-2", reason: "dup" }] });
+    expect(meta("ad4q-2")).toMatchObject({ status: "hidden" });
+    // The decision is swapped: hide the other instance.
+    const r = importAvailLibrary(api.db.sqlite, [], { hidden: [{ id: "ad4q-1", reason: "dup, less complete" }] });
+    expect(r.hidden).toEqual([{ id: "ad4q-1", action: "hidden" }, { id: "ad4q-2", action: "unhidden" }]);
+    expect(meta("ad4q-1")).toMatchObject({ status: "hidden" });
+    expect(meta("ad4q-2")).toMatchObject({ status: "raw", status_reason: "library/hidden.json: no longer listed" });
+    // A template hidden by a moderator (other reason) is not touched.
+    insertLocal({ ...tpl("mod-hidden"), modelNumber: "MH" });
+    api.db.sqlite.prepare("INSERT INTO avail_template_meta (template_id, status, status_reason) VALUES ('mod-hidden', 'hidden', NULL)").run();
+    importAvailLibrary(api.db.sqlite, [], { hidden: [{ id: "ad4q-1", reason: "dup" }] });
+    expect(meta("mod-hidden")).toMatchObject({ status: "hidden" });
+  });
+
   it("the report lists every file with its action", () => {
     const text = formatImportAvailReport(importAvailLibrary(api.db.sqlite, [file(tpl("avail-dtp3"))]), "library/avail");
     expect(text).toContain("Files: 1; inserted 1, updated 0, unchanged 0, invalid 0");

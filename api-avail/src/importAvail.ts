@@ -13,7 +13,8 @@
  *       hidden             → stays hidden;
  *       verified           → stays verified when the data did not actually change,
  *                            else draft with status_reason "library file changed".
- * library/hidden.json: listed templates that exist become hidden (reason recorded).
+ * library/hidden.json: listed templates that exist become hidden (reason recorded); a
+ * template it hid earlier and no longer lists goes back to raw.
  *
  * Idempotent: a second run with the same files changes nothing.
  */
@@ -25,6 +26,8 @@ import { productKey, type HiddenEntry, type LibraryEntry } from "../../src/avail
 import { BUMP_LIBRARY_VERSION, type TemplateMetaRow, type TemplateStatus } from "./templateMeta";
 
 export const AVAIL_LIBRARY_SOURCE = "avail-library";
+/** status_reason of templates hidden by library/hidden.json. */
+export const HIDDEN_REASON_PREFIX = "library/hidden.json:";
 
 export interface AvailLibraryFile extends LibraryEntry {
   /** Exact file content: its sha-256 decides whether the file changed since the last load. */
@@ -46,7 +49,7 @@ export interface ImportAvailRow {
 export interface ImportAvailReport {
   dryRun: boolean;
   rows: ImportAvailRow[];
-  hidden: { id: string; action: "hidden" | "already-hidden" | "missing" }[];
+  hidden: { id: string; action: "hidden" | "already-hidden" | "missing" | "unhidden" }[];
   inserted: number;
   updated: number;
   unchanged: number;
@@ -119,6 +122,10 @@ export function importAvailLibrary(
        updated_by = excluded.updated_by, updated_at = excluded.updated_at, source_hash = excluded.source_hash,
        status_reason = CASE WHEN @status_changed = 1 THEN excluded.status_reason ELSE avail_template_meta.status_reason END,
        status_changed_at = CASE WHEN @status_changed = 1 THEN excluded.status_changed_at ELSE avail_template_meta.status_changed_at END`,
+  );
+  const unhideMeta = sqlite.prepare(
+    `UPDATE avail_template_meta SET status = 'raw', updated_by = ?, updated_at = datetime('now'), status_reason = ?,
+       status_changed_at = datetime('now') WHERE template_id = ?`,
   );
   const hideMeta = sqlite.prepare(
     `INSERT INTO avail_template_meta (template_id, status, updated_by, updated_at, status_reason, status_changed_at)
@@ -197,8 +204,20 @@ export function importAvailLibrary(
         report.hidden.push({ id: h.id, action: "already-hidden" });
         continue;
       }
-      hideMeta.run(h.id, updatedBy, `library/hidden.json: ${h.reason}`);
+      hideMeta.run(h.id, updatedBy, `${HIDDEN_REASON_PREFIX} ${h.reason}`);
       report.hidden.push({ id: h.id, action: "hidden" });
+      changed = true;
+    }
+
+    // Hidden earlier by library/hidden.json but no longer listed: back to raw (unverified).
+    const listed = new Set((options.hidden ?? []).map((h) => h.id));
+    const stale = sqlite
+      .prepare(`SELECT template_id FROM avail_template_meta WHERE status = 'hidden' AND status_reason LIKE '${HIDDEN_REASON_PREFIX}%'`)
+      .all() as { template_id: string }[];
+    for (const { template_id } of stale) {
+      if (listed.has(template_id)) continue;
+      unhideMeta.run(updatedBy, `${HIDDEN_REASON_PREFIX} no longer listed`, template_id);
+      report.hidden.push({ id: template_id, action: "unhidden" });
       changed = true;
     }
 

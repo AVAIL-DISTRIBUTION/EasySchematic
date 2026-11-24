@@ -81,6 +81,23 @@ docker compose exec api npm run import:avail                # запись
 
 После `./update.sh` (новый образ = новая версия библиотеки) — повторить `import:avail`.
 
+### Чистка по решениям о вендорах
+
+`docs/avail/vendor-decisions.json` решает, каких производителей библиотека держит: переименовывает
+к основному написанию, оставляет у Sony только системные камеры и у NETGEAR только AV Line,
+сводит бренды из списка generic в «Generic <тип>» (по одному на тип), удаляет остальных и
+шаблоны без производителя (строки `templates` и `avail_template_meta`). Шаблоны `library/avail`
+не трогаются; сохранённые схемы открываются (блок хранит свои данные). Всё в одной транзакции.
+
+```bash
+./backup.sh                                                            # обязательно перед записью
+docker compose exec api npm run import:avail                           # чтобы library/avail был в базе
+docker compose exec api npm run apply:vendor-decisions -- --dry-run    # отчёт без записи
+docker compose exec api npm run apply:vendor-decisions                 # запись
+```
+
+Откат — восстановление из бэкапа. Повторный `import:upstream` удалённое не возвращает.
+
 ## Роли: модераторы и админы
 
 Утверждать шаблоны (карточка ревью в библиотеке) могут модераторы и админы. Роль хранится

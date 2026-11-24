@@ -1,0 +1,84 @@
+{
+ "version": 1,
+ "decidedBy": "Dmitri Martakov",
+ "date": "2026-11-25",
+ "rule": "Производитель не из keep/generic/rename — шаблоны удаляются полностью, import:upstream их больше не загружает.",
+ "keep": [
+  "Extron",
+  "Yamaha",
+  "Generic",
+  "Allen & Heath",
+  "Martin Audio",
+  "Shure",
+  "QSC",
+  "WyreStorm",
+  "Biamp",
+  "NETGEAR",
+  "Sony",
+  "Yealink",
+  "Sharp",
+  "Lumens",
+  "Powersoft",
+  "Bose Professional",
+  "Chief",
+  "RF Venue",
+  "MA Lighting",
+  "Mipro",
+  "Middle Atlantic",
+  "Vaddio",
+  "Chauvet Professional",
+  "Audinate",
+  "Televic",
+  "Datapath",
+  "Digital Projection",
+  "Renkus-Heinz"
+ ],
+ "newSupportedVendors": [
+  "Yamaha",
+  "Allen & Heath",
+  "QSC",
+  "Yealink",
+  "Bose Professional",
+  "Chief",
+  "RF Venue",
+  "MA Lighting",
+  "Mipro",
+  "Middle Atlantic",
+  "Chauvet Professional"
+ ],
+ "rename": {
+  "Yamaha Pro Audio": "Yamaha",
+  "Allen and Heath": "Allen & Heath",
+  "Bose": "Bose Professional",
+  "Chauvet": "Chauvet Professional"
+ },
+ "generic": [
+  "Samsung",
+  "SAMSUNG",
+  "Logitech",
+  "L'Acoustics",
+  "L-Acoustics",
+  "Pixera",
+  "Apple",
+  "NovaStar",
+  "Novastar",
+  "Absen",
+  "ASUS"
+ ],
+ "genericRule": "Внутри каждого deviceType один самый полный шаблон (уровень линтера, порты с разъёмами, физика) становится «Generic <тип>» (manufacturer Generic, modelNumber GEN-<ТИП>, без ссылок и брендовых searchTerms); остальные удаляются. Если Generic того же типа уже есть — остаётся более полный.",
+ "scope": {
+  "Sony": {
+   "keepDeviceTypes": [
+    "ptz-camera",
+    "camera",
+    "ptz-controller"
+   ],
+   "note": "только системные видеокамеры"
+  },
+  "NETGEAR": {
+   "keepModelPattern": "^(M4250|M4350|GSM42|GSM43|XSM43)",
+   "note": "только AV Line"
+  }
+ },
+ "none": "Шаблоны без производителя (152) удаляются."
+}
