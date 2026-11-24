@@ -800,6 +800,19 @@
   "computer": "Other / Generic",
   "mouse": "Other / Generic",
   "keyboard": "Other / Generic",
-  "dock": "Other / Generic"
+  "dock": "Other / Generic",
+  "power-distribution": "Integration Tools / PSU",
+  "expansion-chassis": "Audio Products / Interfaces",
+  "antenna-combination": "Microphones / Wireless microphones",
+  "personal-monitor": "Audio Products / Mixers",
+  "floor-box": "Connectivity / Architectural",
+  "camera-ccu": "Videocameras / Camera controls",
+  "cable-accessory": "Connectivity / Cables & Adapters",
+  "storage-media": "Integration Tools / Tools",
+  "expansion-card": null,
+  "controller": null,
+  "dmx-node": null,
+  "dmx-splitter": null,
+  "battery": null
  }
 }

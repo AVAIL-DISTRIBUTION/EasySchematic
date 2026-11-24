@@ -61,23 +61,45 @@ describe("normalizeLibrary", () => {
 
     const r = normalizeLibrary(api.db.sqlite);
     expect(r).toMatchObject({ processed: 2, improved: 2, transitions: { "FIX→B": 2 } });
-    expect(r.byVendor.WyreStorm).toMatchObject({ processed: 2, written: 2, fixToB: 2 });
-    expect(row("a")).toMatchObject({ manufacturer: "WyreStorm", label: "WyreStorm NHD-a", category: "AV distribution / AVoIP", version: 2 });
+    expect(r.byVendor.Wyrestorm).toMatchObject({ processed: 2, written: 2, fixToB: 2 });
+    expect(row("a")).toMatchObject({ manufacturer: "Wyrestorm", label: "Wyrestorm NHD-a", category: "AV distribution / AVoIP", version: 2 });
     expect(JSON.parse(row("a").ports as string).map((p: { section: string }) => p.section)).toEqual(["Video Inputs", "Network", "Power"]);
     expect(meta("a")).toMatchObject({ status: "raw", lint_level: "B", linted_version: 2, updated_by: "normalize" });
     expect(meta("d")).toMatchObject({ status: "draft", lint_level: "B" });
   });
 
-  it("does not write when the level stays the same", () => {
-    // A port without connectorType keeps it FIX whatever the normalizer does.
+  it("writes a change that leaves fewer E+W even when the level stays the same", () => {
+    // A port without connectorType keeps it FIX whatever the normalizer does, but sections get fixed.
     const t = community("s");
     t.ports.push({ id: "4", label: "HDMI OUT", signalType: "hdmi", direction: "output", section: "Back of unit", connectorType: "" });
     insert(t);
-    const before = row("s");
     const r = normalizeLibrary(api.db.sqlite);
-    expect(r).toMatchObject({ processed: 1, improved: 0, sameLevelNotWritten: 1, transitions: { "FIX→FIX": 1 } });
-    expect(row("s")).toEqual(before);
+    expect(r).toMatchObject({ processed: 1, improved: 1, fewerIssuesSameLevel: 1, sameLevelNotWritten: 0, transitions: { "FIX→FIX": 1 } });
+    expect(row("s")).toMatchObject({ version: 2 });
+    expect(meta("s")).toMatchObject({ lint_level: "FIX", linted_version: 2 });
     expect(r.topReasons).toContainEqual({ reason: "E no connectorType", count: 1 });
+    expect(formatNormalizeReport(r)).toContain("fewer E+W at the same level 1");
+  });
+
+  it("does not write when E+W does not go down", () => {
+    // The only issue is one the normalizer cannot fix: a port without a connector.
+    const t = community("n");
+    insert(t);
+    normalizeLibrary(api.db.sqlite);
+    const stable = row("n");
+    const r = normalizeLibrary(api.db.sqlite);
+    expect(r).toMatchObject({ improved: 0 });
+    expect(row("n")).toEqual(stable);
+  });
+
+  it("reports unresolved sections by signalType + direction", () => {
+    const t = community("u");
+    t.ports.push({ id: "5", label: "Ref", signalType: "genlock", direction: "input", section: "Rear", connectorType: "bnc" });
+    t.ports.push({ id: "6", label: "WC", signalType: "genlock", direction: "input", section: "", connectorType: "bnc" });
+    insert(t);
+    const r = normalizeLibrary(api.db.sqlite, { dryRun: true });
+    expect(r.unresolvedSections).toEqual([{ reason: "genlock + input", count: 2 }]);
+    expect(formatNormalizeReport(r)).toContain("Unresolved port sections by signalType + direction (top 30):\n   1. genlock + input: 2");
   });
 
   it("leaves verified and hidden templates and other vendors alone", () => {
@@ -95,7 +117,7 @@ describe("normalizeLibrary", () => {
     const before = row("a");
     const version = api.db.sqlite.prepare("SELECT version FROM library_meta").get();
     const r = normalizeLibrary(api.db.sqlite, { dryRun: true });
-    expect(r).toMatchObject({ dryRun: true, improved: 1, byVendor: { WyreStorm: { fixToB: 1, written: 0 } } });
+    expect(r).toMatchObject({ dryRun: true, improved: 1, byVendor: { Wyrestorm: { fixToB: 1, written: 0 } } });
     expect(row("a")).toEqual(before);
     expect(api.db.sqlite.prepare("SELECT version FROM library_meta").get()).toEqual(version);
   });
@@ -114,7 +136,7 @@ describe("normalizeLibrary", () => {
     const text = formatNormalizeReport(normalizeLibrary(api.db.sqlite, { dryRun: true }));
     expect(text).toContain("dry run, nothing written");
     expect(text).toContain("Transitions: FIX→B 1");
-    expect(text).toMatch(/WyreStorm +1 +1 +0 +0/);
+    expect(text).toMatch(/Wyrestorm +1 +1 +0 +0/);
     expect(text).toContain("Top 10 remaining reasons:");
   });
 

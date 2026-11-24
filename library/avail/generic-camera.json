@@ -1,0 +1,49 @@
+{
+  "id": "4ea63491-b165-49c8-bac1-98b95031a06c",
+  "label": "Generic Camera",
+  "shortName": "Camera",
+  "manufacturer": "Generic",
+  "modelNumber": "GEN-CAMERA",
+  "deviceType": "camera",
+  "category": "Videocameras / USB cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "camera",
+    "usb camera",
+    "conference camera",
+    "generic"
+  ],
+  "ports": [
+    {
+      "id": "hdmi",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "usb",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB video (UVC) and control"
+    },
+    {
+      "id": "pwr",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External power supply"
+    }
+  ]
+}

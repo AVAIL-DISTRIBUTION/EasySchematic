@@ -11,9 +11,9 @@
   "Martin Audio",
   "Shure",
   "QSC",
-  "WyreStorm",
+  "Wyrestorm",
   "Biamp",
-  "NETGEAR",
+  "Netgear-AV",
   "Sony",
   "Yealink",
   "Sharp",
@@ -75,7 +75,7 @@
    ],
    "note": "только системные видеокамеры"
   },
-  "NETGEAR": {
+  "Netgear-AV": {
    "keepModelPattern": "^(M4250|M4350|GSM42|GSM43|XSM43)",
    "note": "только AV Line"
   }

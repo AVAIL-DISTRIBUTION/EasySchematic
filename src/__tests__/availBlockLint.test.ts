@@ -84,9 +84,11 @@ describe("reference data (docs/avail)", () => {
   it("normalizeManufacturer: aliases and case to the canonical name, others trimmed", () => {
     expect(normalizeManufacturer("Biamp Systems")).toBe("Biamp");
     expect(normalizeManufacturer("biamp")).toBe("Biamp");
-    expect(normalizeManufacturer("  Netgear-AV ")).toBe("NETGEAR");
+    expect(normalizeManufacturer("  NETGEAR AV ")).toBe("Netgear-AV");
+    expect(normalizeManufacturer("NETGEAR")).toBe("Netgear-AV");
+    expect(normalizeManufacturer("WyreStorm")).toBe("Wyrestorm");
     expect(normalizeManufacturer("NEC")).toBe("Sharp");
-    expect(normalizeManufacturer("tv  one")).toBe("tvONE");
+    expect(normalizeManufacturer("tvONE")).toBe("TV One");
     expect(normalizeManufacturer("Blackmagic  Design ")).toBe("Blackmagic Design");
     expect(normalizeManufacturer("Martin")).toBe("Martin"); // lighting, not Martin Audio
     expect(normalizeManufacturer("")).toBeUndefined();
@@ -122,7 +124,7 @@ describe("lintBlock: card, physics and port rules (v0.2)", () => {
   it("section order and vocabulary", () => {
     const [hdmi, dtp, rs232, power] = clean().ports;
     expect(lintBlock({ ...clean(), ports: [power, hdmi, dtp, rs232] }).warnings).toContain("sections are not in the standard order");
-    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain('"HDMI In": section "Rear" is not in the vocabulary');
+    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain('"HDMI In": section "Rear" is not in the vocabulary; use "Video Inputs"');
   });
 
   it("keeps the v0.2 Python semantics: [] and 0 are missing, Unicode \\b, code-point length", () => {
@@ -226,12 +228,13 @@ describe("engineer blocks (tools/avail/fixtures/engineer-blocks.json)", () => {
     for (const r of rows) expect(r.errors.some((e) => e.startsWith('category "')), r.label).toBe(true);
   });
 
-  it("vendors: Netgear alias, ASUS and Absen outside the portfolio", () => {
+  it("vendors: Netgear and WyreStorm aliases (accounting-system spellings), ASUS and Absen outside the portfolio", () => {
     const msgs = rows.flatMap((r) => r.warnings).filter((w) => w.startsWith("manufacturer"));
     expect(msgs.sort()).toEqual([
       'manufacturer "ASUS" is not in avail-vendors.json (outside the portfolio use Generic)',
       'manufacturer "Absen" is not in avail-vendors.json (outside the portfolio use Generic)',
-      'manufacturer "Netgear" is an alias, use "NETGEAR"',
+      'manufacturer "Netgear" is an alias, use "Netgear-AV"',
+      'manufacturer "WyreStorm" is an alias, use "Wyrestorm"',
     ]);
   });
 });

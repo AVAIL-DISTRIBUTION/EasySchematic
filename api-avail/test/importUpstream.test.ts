@@ -196,19 +196,51 @@ describe("importTemplates", () => {
       up("e", { manufacturer: "Yamaha Pro Audio", deviceType: "frame" }),
       up("f", { manufacturer: undefined, deviceType: "frame" }),
     ]);
-    expect(r.ourVendors).toMatchObject({ WyreStorm: 1, Sharp: 1, Yamaha: 1, Extron: 0 });
+    expect(r.ourVendors).toMatchObject({ Wyrestorm: 1, Sharp: 1, Yamaha: 1, Extron: 0 });
     expect(r.otherVendors).toEqual({ templates: 0, manufacturers: 0 });
     expect(r).toMatchObject({ imported: 3, noManufacturer: 0, noCategory: 1 });
-    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 2, scope: 0, genericExists: 0 });
+    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 2, scope: 0, genericExists: 0, genericPlan: 0 });
     expect(r.levels.A + r.levels.B + r.levels.FIX).toBe(3);
 
     const text = formatImportReport(r, "https://api.easyschematic.live/templates");
     expect(text).toContain("Imported: 3; new 3, updated 0, unchanged 0");
     expect(text).toContain("AVAIL vendors: 3");
-    expect(text).toMatch(/ {2}WyreStorm +1\n/);
-    expect(text).toContain("Skipped by vendor decisions: no manufacturer 1, manufacturer not decided 2, outside scope 0, Generic of the type exists 0");
+    expect(text).toMatch(/ {2}Wyrestorm +1\n/);
+    expect(text).toContain("Skipped by vendor decisions: no manufacturer 1, manufacturer not decided 2, outside scope 0, Generic of the type exists 0, deleted by the Generic plan 0");
     expect(text).toContain("No category: 1");
     expect(text).toMatch(/Standard levels: A \d+ \/ B \d+ \/ FIX \d+/);
+  });
+});
+
+describe("importTemplates: local improvements survive a re-import", () => {
+  it("a row edited after import (normalize, cleanup) is kept while the source is unchanged", () => {
+    importTemplates(api.db.sqlite, [up("a")]);
+    // e.g. normalize:library: new label, version + 1
+    api.db.sqlite.prepare("UPDATE templates SET label = 'Biamp a (normalized)', version = version + 1 WHERE id = 'a'").run();
+    const r = importTemplates(api.db.sqlite, [up("a")]);
+    expect(r).toMatchObject({ updated: 0, unchanged: 1, keptLocal: 1 });
+    expect(template("a")!.label).toBe("Biamp a (normalized)");
+  });
+
+  it("a changed source template replaces the row", () => {
+    importTemplates(api.db.sqlite, [up("a")]);
+    api.db.sqlite.prepare("UPDATE templates SET label = 'Biamp a (normalized)', version = version + 1 WHERE id = 'a'").run();
+    const r = importTemplates(api.db.sqlite, [up("a", { label: "Biamp a v2", version: 4 })]);
+    expect(r).toMatchObject({ updated: 1, keptLocal: 0 });
+    expect(template("a")!.label).toBe("Biamp a v2");
+  });
+
+  it("rows imported before hashes were kept: a locally edited one (version above the source) is kept and gets the hash", () => {
+    importTemplates(api.db.sqlite, [up("a"), up("b")]);
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET source_hash = NULL").run();
+    api.db.sqlite.prepare("UPDATE templates SET label = 'Biamp a (normalized)', version = 5 WHERE id = 'a'").run();
+    api.db.sqlite.prepare("UPDATE templates SET label = 'stale b' WHERE id = 'b'").run(); // same version as the source
+    const r = importTemplates(api.db.sqlite, [up("a"), up("b")]);
+    expect(r).toMatchObject({ keptLocal: 1, updated: 1 });
+    expect(template("a")!.label).toBe("Biamp a (normalized)");
+    expect(template("b")!.label).toBe("Biamp b");
+    const hashes = api.db.sqlite.prepare("SELECT source_hash FROM avail_template_meta WHERE template_id IN ('a', 'b')").all() as { source_hash: string | null }[];
+    expect(hashes.every((h) => typeof h.source_hash === "string" && h.source_hash.length === 64)).toBe(true);
   });
 });
 
@@ -225,10 +257,10 @@ describe("importTemplates: vendor decisions", () => {
     expect(template("ah")!.manufacturer).toBe("Allen & Heath");
     expect(template("bo")!.manufacturer).toBe("Bose Professional");
     expect(template("ch")!.manufacturer).toBe("Chauvet Professional");
-    expect(template("ng")!.manufacturer).toBe("NETGEAR");
+    expect(template("ng")!.manufacturer).toBe("Netgear-AV");
   });
 
-  it("scope: Sony only system cameras, NETGEAR only AV Line models", () => {
+  it("scope: Sony only system cameras, Netgear-AV only AV Line models", () => {
     const r = importTemplates(api.db.sqlite, [
       up("s1", { manufacturer: "Sony", deviceType: "ptz-camera" }),
       up("s2", { manufacturer: "Sony", deviceType: "tv" }),

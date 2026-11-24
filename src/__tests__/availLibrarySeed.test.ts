@@ -39,7 +39,7 @@ describe("library file names", () => {
     expect(slug("Extron DTP3 T 203")).toBe("extron-dtp3-t-203");
     expect(slug("Biamp TesiraFORTÉ X 400")).toBe("biamp-tesiraforte-x-400");
     expect(slug("Biamp Parlé TCM-XA")).toBe("biamp-parle-tcm-xa");
-    expect(slug("NETGEAR M4250-26G4XF-PoE+")).toBe("netgear-m4250-26g4xf-poe");
+    expect(slug("Netgear-AV M4250-26G4XF-PoE+")).toBe("netgear-av-m4250-26g4xf-poe");
     expect(libraryFileName({ label: "Shure SLXD4QDAN+A" })).toBe("shure-slxd4qdan-a.json");
   });
 });

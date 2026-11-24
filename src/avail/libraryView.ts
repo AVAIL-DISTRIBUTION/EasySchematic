@@ -155,3 +155,34 @@ export function deviceCardRows(t: {
     t.referenceUrl ? { label: "Manufacturer page", value: t.referenceUrl, href: t.referenceUrl } : { label: "Manufacturer page", value: dash },
   ];
 }
+
+/** Short form of a value in a change list: strings quoted, long values cut. */
+function shortValue(v: unknown): string {
+  if (v === undefined || v === null || v === "") return "—";
+  const text = typeof v === "string" ? `"${v}"` : JSON.stringify(v);
+  return text.length > 60 ? `${text.slice(0, 57)}…` : text;
+}
+
+/**
+ * One normalizer change as a line: "HDMI Out › section: "Rear" → "Video Inputs" (section from …)".
+ * Port ids are shown as the port's label when `portLabels` knows it.
+ */
+export function describeChange(
+  c: { field: string; from?: unknown; to?: unknown; note: string; manual?: boolean },
+  portLabels: ReadonlyMap<string, string> = new Map(),
+): string {
+  const m = /^ports\[(.*)\]\.(\w+)$/.exec(c.field);
+  const field = m && portLabels.has(m[1]) ? `${portLabels.get(m[1])} › ${m[2]}` : c.field;
+  if (c.manual || c.to === undefined) return `${field}: ${c.note}`;
+  return `${field}: ${shortValue(c.from)} → ${shortValue(c.to)} (${c.note})`;
+}
+
+/** Port id → label, for describeChange. */
+export function portLabelMap(ports: unknown): Map<string, string> {
+  const out = new Map<string, string>();
+  if (!Array.isArray(ports)) return out;
+  for (const p of ports as { id?: unknown; label?: unknown }[]) {
+    if (typeof p?.id === "string" && typeof p.label === "string" && p.label) out.set(p.id, `"${p.label}"`);
+  }
+  return out;
+}

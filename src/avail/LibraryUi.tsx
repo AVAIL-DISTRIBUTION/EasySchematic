@@ -11,14 +11,28 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { lintBlock, type BlockLintResult } from "./blockLint";
 import {
+  changeTemplatesStatus,
   changeTemplateStatus,
   fetchTemplateStatus,
   saveLibraryTemplate,
+  type BatchStatusResult,
   type StatusChangeError,
   type TemplateStatusInfo,
 } from "./api";
-import { blockStatus, notifyLibraryChanged, setShowUnverified, statusBadge, statusOfTemplate, type TemplateStatus } from "./libraryMode";
-import { deviceCardRows, groupByTaxonomy, portsBySection, REVIEW_CHECKLIST, unverifiedBlocks } from "./libraryView";
+import {
+  blockStatus,
+  clearSelection,
+  isSelected,
+  notifyLibraryChanged,
+  setSelectMode,
+  setShowUnverified,
+  statusBadge,
+  statusOfTemplate,
+  toggleSelected,
+  type TemplateStatus,
+} from "./libraryMode";
+import { describeChange, deviceCardRows, portLabelMap, groupByTaxonomy, portsBySection, REVIEW_CHECKLIST, unverifiedBlocks } from "./libraryView";
+import { appliedChanges, normalizeBlock, type NormalizeResult } from "./normalize";
 import { deviceDataToTemplate, editSessionFor, endEditSession } from "./templateEdit";
 import { useAvailState, useStartTemplateEdit } from "./useAvail";
 import { useSchematicStore } from "../store";
@@ -58,7 +72,7 @@ const smallBtn =
 
 /** Library list item extras: status badge and, for moderators, Review and Edit. */
 export function AvailTemplateExtras({ template }: { template: DeviceTemplate }) {
-  const { active, moderator } = useAvailState();
+  const { active, moderator, selectMode } = useAvailState();
   const [reviewing, setReviewing] = useState(false);
   const edit = useStartTemplateEdit();
   if (!active) return null;
@@ -67,6 +81,17 @@ export function AvailTemplateExtras({ template }: { template: DeviceTemplate }) 
   const stop = (e: React.SyntheticEvent) => e.stopPropagation();
   return (
     <span className="flex items-center gap-1">
+      {moderator && selectMode && template.id && (
+        <input
+          type="checkbox"
+          aria-label={`Select ${template.label}`}
+          checked={isSelected(template.id)}
+          onChange={(e) => toggleSelected(template.id!, e.target.checked)}
+          onClick={stop}
+          onMouseDown={stop}
+          className="cursor-pointer"
+        />
+      )}
       <AvailStatusBadge status={status} />
       {moderator && template.id && (
         <>
@@ -100,18 +125,104 @@ export function AvailTemplateExtras({ template }: { template: DeviceTemplate }) 
   );
 }
 
-/** "Show unverified" in the library panel; remembered in the browser. */
+/** "Show unverified" in the library panel (remembered in the browser); for moderators, Select + Approve. */
 export function AvailLibraryToggle() {
-  const { active, showUnverified, moderator } = useAvailState();
+  const { active, showUnverified, moderator, selectMode, selected } = useAvailState();
+  const [busy, setBusy] = useState(false);
+  const [result, setResult] = useState<BatchStatusResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
   if (!active) return null;
+  const label = "flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)] cursor-pointer select-none";
+
+  const approve = async () => {
+    setBusy(true);
+    setError(null);
+    try {
+      const r = await changeTemplatesStatus(selected, "verified");
+      setResult(r);
+      clearSelection();
+      notifyLibraryChanged();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
-    <label
-      className="flex items-center gap-1.5 px-1 text-[10px] text-[var(--color-text-muted)] cursor-pointer select-none"
-      title={moderator ? "Also list raw and hidden templates" : "Also list raw templates (not checked by AVAIL)"}
-    >
-      <input type="checkbox" checked={showUnverified} onChange={(e) => setShowUnverified(e.target.checked)} className="cursor-pointer" />
-      Show unverified
-    </label>
+    <div className="flex items-center gap-3 px-1 flex-wrap">
+      <label className={label} title={moderator ? "Also list raw and hidden templates" : "Also list raw templates (not checked by AVAIL)"}>
+        <input type="checkbox" checked={showUnverified} onChange={(e) => setShowUnverified(e.target.checked)} className="cursor-pointer" />
+        Show unverified
+      </label>
+      {moderator && (
+        <label className={label} title="Select templates to approve them together">
+          <input type="checkbox" checked={selectMode} onChange={(e) => setSelectMode(e.target.checked)} className="cursor-pointer" />
+          Select
+        </label>
+      )}
+      {moderator && selectMode && (
+        <button
+          onClick={approve}
+          disabled={busy || selected.length === 0}
+          className="text-[10px] rounded px-1.5 py-px border border-green-600 bg-green-600 text-white hover:bg-green-700 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+          title="Verify the selected templates; the server checks level A for each"
+        >
+          {selected.length === 1 ? "Approve 1 template" : `Approve ${selected.length} templates`}
+        </button>
+      )}
+      {error && <span className="text-[10px] text-red-700">{error}</span>}
+      {result && createPortal(<AvailBulkResultDialog result={result} onClose={() => setResult(null)} />, document.body)}
+    </div>
+  );
+}
+
+/** Outcome of a bulk Approve: how many were verified, and every template that was not, with why. */
+export function AvailBulkResultDialog({ result, onClose }: { result: BatchStatusResult; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30" onClick={onClose} onMouseDown={(e) => e.stopPropagation()}>
+      <div
+        data-testid="avail-bulk-result"
+        className="bg-white border border-[var(--color-border)] rounded-lg shadow-2xl w-[640px] max-w-[95vw] max-h-[85vh] flex flex-col cursor-default text-xs"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="px-4 py-3 border-b border-[var(--color-border)] flex items-center">
+          <h2 className="text-sm font-semibold text-[var(--color-text-heading)] flex-1">Approve</h2>
+          <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-[var(--color-text-heading)] text-lg leading-none cursor-pointer" title="Close">
+            &times;
+          </button>
+        </div>
+        <div className="px-4 py-3 overflow-y-auto flex flex-col gap-2">
+          <div className="text-green-800">
+            {result.updated.length === 1 ? "1 template verified." : `${result.updated.length} templates verified.`}
+          </div>
+          {result.failed.length > 0 && (
+            <>
+              <div className="font-semibold text-red-700">
+                {result.failed.length === 1 ? "1 template was not verified:" : `${result.failed.length} templates were not verified:`}
+              </div>
+              <ul className="flex flex-col gap-2">
+                {result.failed.map((f) => (
+                  <li key={f.id} className="border border-red-200 bg-red-50 rounded p-2">
+                    <div className="font-semibold">{f.label ?? f.id}</div>
+                    {f.reason === "not_found" ? (
+                      <div>Template not found.</div>
+                    ) : (
+                      <>
+                        <div>Standard level {f.level}: verified needs level A.</div>
+                        {[...(f.errors ?? []).map((m) => `E ${m}`), ...(f.warnings ?? []).map((m) => `W ${m}`)].map((m, i) => (
+                          <div key={i} className="text-red-700">{m}</div>
+                        ))}
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -400,21 +511,26 @@ export function AvailTemplateEditBar({
     return deviceDataToTemplate(data, session.original, slotOwnedPortIds(slots));
   }, [session, build, node]);
   const lint = useMemo(() => (draft ? lintBlock(draft) : null), [draft]);
+  const [showNormalize, setShowNormalize] = useState(false);
+  const normalized = useMemo(
+    () => (showNormalize && draft ? normalizeBlock(draft as unknown as Record<string, unknown>) : null),
+    [showNormalize, draft],
+  );
 
   if (!session || !draft || !lint) return null;
 
-  const save = async () => {
+  const save = async (template: NonNullable<typeof draft>) => {
     setBusy(true);
     setError(null);
     try {
-      await saveLibraryTemplate(session.templateId, draft);
+      await saveLibraryTemplate(session.templateId, template);
       if (nodeId) endEditSession(nodeId);
       const info = await fetchTemplateStatus(session.templateId);
       notifyLibraryChanged();
       if (info?.statusReason && info.status === "draft") {
         addToast(`Saved to the library. ${info.statusReason}. The template is now a draft.`, "info");
       } else {
-        addToast(`Saved to the library: level ${info?.lintLevel ?? lint.level}, status ${info?.status ?? "unchanged"}.`, "success");
+        addToast(`Saved to the library: level ${info?.lintLevel ?? lintBlock(template).level}, status ${info?.status ?? "unchanged"}.`, "success");
       }
       onSaved();
     } catch (e) {
@@ -424,6 +540,7 @@ export function AvailTemplateEditBar({
     }
   };
 
+  const btn = "px-3 py-1.5 rounded text-xs border cursor-pointer disabled:opacity-40";
   return (
     <div data-testid="avail-template-edit-bar" className="px-4 py-2 border-t border-blue-200 bg-blue-50 text-xs flex flex-col gap-1.5">
       <div className="text-blue-900">
@@ -434,16 +551,71 @@ export function AvailTemplateEditBar({
       {lint.level !== "A" && (
         <div className="text-amber-900">A verified template saved below level A becomes a draft.</div>
       )}
+      {normalized && <AvailNormalizePreview before={lint} result={normalized} />}
       {error && <div className="text-red-700 font-semibold">{error}</div>}
-      <div className="flex justify-end">
-        <button
-          onClick={save}
-          disabled={busy}
-          className="px-3 py-1.5 rounded text-xs border border-blue-600 bg-blue-600 text-white hover:bg-blue-700 cursor-pointer disabled:opacity-40"
-        >
-          Save to library
-        </button>
+      <div className="flex justify-end gap-2">
+        {normalized ? (
+          <>
+            <button onClick={() => setShowNormalize(false)} disabled={busy} className={`${btn} border-gray-300 text-gray-700 hover:bg-gray-50`}>
+              Discard normalization
+            </button>
+            <button
+              onClick={() => save(normalized.template as unknown as NonNullable<typeof draft>)}
+              disabled={busy || appliedChanges(normalized.changes).length === 0}
+              className={`${btn} border-blue-600 bg-blue-600 text-white hover:bg-blue-700`}
+            >
+              Save normalized to library
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={() => setShowNormalize(true)}
+              disabled={busy}
+              className={`${btn} border-blue-300 text-blue-700 hover:bg-blue-100`}
+              title="Run the normalizer on this template and show the changes before saving"
+            >
+              Normalize
+            </button>
+            <button onClick={() => save(draft)} disabled={busy} className={`${btn} border-blue-600 bg-blue-600 text-white hover:bg-blue-700`}>
+              Save to library
+            </button>
+          </>
+        )}
       </div>
+    </div>
+  );
+}
+
+/** What the normalizer would change in the edited template, and the linter after it. */
+function AvailNormalizePreview({ before, result }: { before: BlockLintResult; result: NormalizeResult<Record<string, unknown>> }) {
+  const after = useMemo(() => lintBlock(result.template), [result]);
+  const labels = useMemo(() => portLabelMap(result.template.ports), [result]);
+  const applied = appliedChanges(result.changes);
+  const manual = result.changes.filter((c) => c.manual);
+  return (
+    <div data-testid="avail-normalize-preview" className="border border-blue-200 bg-white rounded p-2 flex flex-col gap-1">
+      <div className="font-semibold text-[var(--color-text-heading)]">
+        {applied.length === 0 ? "The normalizer has nothing to change." : `Normalizer: ${applied.length} changes`}
+        <span className="font-normal text-[var(--color-text-muted)]">
+          {" "}
+          (level {before.level} → {after.level}, E {before.errors.length} → {after.errors.length}, W {before.warnings.length} → {after.warnings.length})
+        </span>
+      </div>
+      {applied.length > 0 && (
+        <ul className="list-disc pl-5 max-h-32 overflow-y-auto">
+          {applied.map((c, i) => <li key={i}>{describeChange(c, labels)}</li>)}
+        </ul>
+      )}
+      {manual.length > 0 && (
+        <>
+          <div className="text-amber-900">Needs a person:</div>
+          <ul className="list-disc pl-5 max-h-24 overflow-y-auto text-amber-900">
+            {manual.map((c, i) => <li key={i}>{describeChange(c, labels)}</li>)}
+          </ul>
+        </>
+      )}
+      <div className="text-[var(--color-text-muted)]">The form is not changed. Save normalized writes the normalized version to the library.</div>
     </div>
   );
 }

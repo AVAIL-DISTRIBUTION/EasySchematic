@@ -7,6 +7,8 @@
  *   PUT /avail/templates/:id/status           { "status": "verified" | "draft" | "raw" | "hidden" }
  *                                             moderator/admin session or ADMIN_TOKEN bearer;
  *                                             verified only at standard level A (else 400 + lint)
+ *   POST /avail/templates/status/batch        { "ids": [...], "status": "verified" } moderator/admin;
+ *                                             per template; { updated, failed: [{ id, label, reason, level, errors, warnings }] }
  *
  *   GET /avail/library/templates[?include=raw,hidden]   the library filtered by status
  *   GET /avail/library/summary[?include=raw,hidden]
@@ -32,6 +34,9 @@ type UpstreamApp = typeof UpstreamAppValue;
 export const AVAIL_LIBRARY_HEADER = "X-Avail-Library";
 
 const registered = new WeakSet<object>();
+
+/** Most templates one bulk status request may change. */
+export const MAX_BATCH = 500;
 
 /** Statuses GET /templates returns for an `include` query; null + error when not allowed. */
 export function libraryStatuses(
@@ -95,6 +100,39 @@ export function registerAvailRoutes(app: UpstreamApp): void {
       },
       400,
     );
+  });
+
+  // Bulk status change (library "Approve" for several templates). Each template is checked on
+  // its own: verified only at level A; failures come back with the reason, the rest are set.
+  app.post("/avail/templates/status/batch", async (c) => {
+    const auth = requireModeratorOrToken(c);
+    if (!auth) return c.json({ error: "Moderator access required" }, 403);
+    let body: unknown;
+    try {
+      body = await c.req.json();
+    } catch {
+      return c.json({ error: "Invalid JSON" }, 400);
+    }
+    const { ids, status } = (body ?? {}) as { ids?: unknown; status?: unknown };
+    if (!isTemplateStatus(status)) return c.json({ error: `status must be one of ${TEMPLATE_STATUSES.join(", ")}` }, 400);
+    if (!Array.isArray(ids) || ids.length === 0 || ids.length > MAX_BATCH || !ids.every((id) => typeof id === "string" && id !== "")) {
+      return c.json({ error: `ids must be 1 to ${MAX_BATCH} template ids` }, 400);
+    }
+    const by = auth === "token" ? "admin-token" : auth.email;
+    const db = c.env.easyschematic_db;
+    const updated: string[] = [];
+    const failed: { id: string; label: string | null; reason: "not_found" | "not_level_a"; level?: string; errors?: string[]; warnings?: string[] }[] = [];
+    for (const id of [...new Set(ids as string[])]) {
+      const result = await setTemplateStatus(db, id, status, by);
+      if (result.ok) {
+        updated.push(id);
+        continue;
+      }
+      const label = (await db.prepare("SELECT label FROM templates WHERE id = ?").bind(id).first<{ label: string }>())?.label ?? null;
+      if (result.reason === "not_found") failed.push({ id, label, reason: "not_found" });
+      else failed.push({ id, label, reason: "not_level_a", level: result.lint.level, errors: result.lint.errors, warnings: result.lint.warnings });
+    }
+    return c.json({ status, updated, failed });
   });
 
   for (const [path, shape] of [

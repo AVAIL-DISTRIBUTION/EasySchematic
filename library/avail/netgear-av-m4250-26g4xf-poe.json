@@ -1,8 +1,8 @@
 {
   "id": "1d2accea-72b6-456b-ab50-5f5738e699e0",
-  "label": "NETGEAR M4250-26G4XF-PoE+",
-  "shortName": "GSM4230PX",
-  "manufacturer": "NETGEAR",
+  "label": "Netgear-AV M4250-26G4XF-PoE+",
+  "shortName": "M4250-26G4XF-PoE+",
+  "manufacturer": "Netgear-AV",
   "modelNumber": "GSM4230PX",
   "deviceType": "network-switch",
   "category": "Networking / Switches",
@@ -20,7 +20,8 @@
     "av line",
     "poe+ switch",
     "managed switch",
-    "netgear"
+    "netgear",
+    "netgear-av"
   ],
   "heightMm": 43.2,
   "widthMm": 440,

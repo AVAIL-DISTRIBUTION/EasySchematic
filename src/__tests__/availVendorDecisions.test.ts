@@ -15,6 +15,15 @@ describe("avail-vendors.json: portfolio and supported vendors", () => {
     expect(VENDORS.filter((v) => !v.portfolio).map((v) => v.name).sort()).toEqual([...VENDOR_DECISIONS.newSupportedVendors].sort());
   });
 
+  it("canonical names are the accounting system's spellings; the vendor's own are aliases", () => {
+    expect(findVendor("WyreStorm")?.name).toBe("Wyrestorm");
+    expect(findVendor("NETGEAR")?.name).toBe("Netgear-AV");
+    expect(findVendor("NETGEAR AV")?.name).toBe("Netgear-AV");
+    expect(findVendor("tvONE")?.name).toBe("TV One");
+    expect(VENDOR_DECISIONS.keep).toEqual(expect.arrayContaining(["Wyrestorm", "Netgear-AV"]));
+    expect(Object.keys(VENDOR_DECISIONS.scope)).toEqual(["Sony", "Netgear-AV"]);
+  });
+
   it("rename map entries are aliases of the supported vendors", () => {
     for (const [from, to] of Object.entries(VENDOR_DECISIONS.rename)) expect(findVendor(from)?.name, from).toBe(to);
   });
@@ -41,16 +50,18 @@ describe("VendorRules.classify", () => {
     expect(rules.classify({})).toEqual({ kind: "none" });
   });
 
-  it("portfolio vendors are kept even when the keep list omits them (tvONE, Xilica)", () => {
-    expect(VENDOR_DECISIONS.keep).not.toContain("tvONE");
-    expect(rules.classify({ manufacturer: "TV One" })).toMatchObject({ kind: "keep", manufacturer: "tvONE" });
+  it("portfolio vendors are kept even when the keep list omits them (TV One, Xilica)", () => {
+    expect(VENDOR_DECISIONS.keep).not.toContain("TV One");
+    expect(rules.classify({ manufacturer: "tvONE" })).toMatchObject({ kind: "keep", manufacturer: "TV One" });
     expect(rules.classify({ manufacturer: "Xilica" }).kind).toBe("keep");
   });
 
-  it("scope: Sony device types, NETGEAR model pattern (model number, label, label without the brand)", () => {
+  it("scope: Sony device types, Netgear-AV model pattern (model number, label, label without the brand in any spelling)", () => {
     expect(rules.classify({ manufacturer: "Sony", deviceType: "ptz-camera" }).kind).toBe("keep");
     expect(rules.classify({ manufacturer: "Sony", deviceType: "tv" }).kind).toBe("scope");
-    expect(rules.classify({ manufacturer: "Netgear", modelNumber: "GSM4230PX", label: "M4250-26G4XF-PoE+" })).toMatchObject({ kind: "keep", manufacturer: "NETGEAR" });
+    expect(rules.classify({ manufacturer: "Netgear", modelNumber: "GSM4230PX", label: "M4250-26G4XF-PoE+" })).toMatchObject({ kind: "keep", manufacturer: "Netgear-AV" });
+    expect(rules.classify({ manufacturer: "Netgear-AV", modelNumber: "VSM4320C", label: "NETGEAR M4350-16V4C" }).kind).toBe("keep");
+    expect(rules.classify({ manufacturer: "Netgear-AV", modelNumber: "VSM4320C", label: "Netgear-AV M4350-16V4C" }).kind).toBe("keep");
     expect(rules.classify({ manufacturer: "NETGEAR", modelNumber: "VSM4320C", label: "NETGEAR M4350-16V4C" }).kind).toBe("keep");
     expect(rules.classify({ manufacturer: "NETGEAR", modelNumber: "WAX610", label: "NETGEAR WAX610" }).kind).toBe("scope");
   });

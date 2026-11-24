@@ -25,7 +25,7 @@ Nov 20, 2026 · @Dmitri Martakov · v0.4 draft (Nov 23, 2026: таксономи
 | model | То же, что label | Extron DTP3 T 203 | обязательно |
 | modelNumber | Артикул производителя (part number). Если отдельного артикула нет — код модели | 60-1885-52; VC-TR61 | обязательно |
 | shortName | Модель без производителя, не артикул | DTP3 T 203 | обязательно |
-| manufacturer | Каноническое имя из справочника вендоров [avail-vendors.json](avail-vendors.json); синонимы приводятся к нему (Biamp Systems → Biamp, Netgear → NETGEAR). Производитель вне портфеля AVAIL — Generic | Extron, Biamp, NETGEAR | обязательно |
+| manufacturer | Каноническое имя из справочника вендоров [avail-vendors.json](avail-vendors.json); синонимы приводятся к нему (Biamp Systems → Biamp, NETGEAR → Netgear-AV). Если написание в учётной системе отличается от написания производителя, основным считается написание учётной системы. Производитель вне портфеля AVAIL — Generic | Extron, Biamp, Netgear-AV | обязательно |
 | deviceType | Из словаря EasySchematic; один тип на класс продукта | hdbaset-extender, audio-dsp, touch-screen | обязательно |
 | category | Путь листовой категории из таксономии [avail-taxonomy.json](avail-taxonomy.json). Для блоков на схеме — только категории с schematic=true | AV distribution / Extenders | обязательно |
 | auxiliaryData | Одна строка в шапке: {{deviceType}} | header: {{deviceType}} | обязательно |
@@ -38,8 +38,8 @@ Nov 20, 2026 · @Dmitri Martakov · v0.4 draft (Nov 23, 2026: таксономи
 Категории и вендоры берутся только из справочников в репозитории; справочник меняется PR-ом, блоки под него — следом.
 
 - **Таксономия** — [avail-taxonomy.json](avail-taxonomy.json). Это категории учётной системы AVAIL (Odoo) плюс наша Other / Generic. В category записывается полный путь листовой категории (leaf=true): «Audio Products / DSP», а не «DSP» и не «Audio Products». Категории с schematic=false (кабели, крепёж, лицензии, ПО, аксессуары) — позиции только для BoQ/BoM, блоком на схеме они не бывают. deviceTypeDefaults задаёт категорию по умолчанию для типа устройства; null — категорию выбирает инженер.
-- **Вендоры** — [avail-vendors.json](avail-vendors.json). manufacturer пишется ровно как name; aliases — написания, которые встречаются в источниках и приводятся к name. scope уточняет, какая линейка вендора у нас в портфеле. Два уровня: `portfolio: true` — портфель AVAIL, `portfolio: false` — поддерживаемые вендоры вне портфеля; линтер принимает оба.
-- **Решения о вендорах** — [vendor-decisions.json](vendor-decisions.json): кого библиотека держит (keep), как пишется (rename), в каких границах (scope: Sony — только системные камеры, NETGEAR — только AV Line), какие бренды сводятся в Generic (generic: «Generic <тип>» создаётся только для deviceType, у которых Generic ещё нет; существующий Generic не перезаписывается) и что удаляется (всё остальное и шаблоны без производителя). Вендоры портфеля из avail-vendors.json сохраняются всегда, даже если их нет в keep. Применяет `npm run apply:vendor-decisions`, import:upstream соблюдает те же правила.
+- **Вендоры** — [avail-vendors.json](avail-vendors.json). manufacturer пишется ровно как name; aliases — написания, которые встречаются в источниках и приводятся к name. Если написание в учётной системе отличается от написания производителя, основным считается написание учётной системы: Wyrestorm (у производителя — WyreStorm), Netgear-AV (NETGEAR), TV One (tvONE); написание производителя остаётся в aliases. scope уточняет, какая линейка вендора у нас в портфеле. Два уровня: `portfolio: true` — портфель AVAIL, `portfolio: false` — поддерживаемые вендоры вне портфеля; линтер принимает оба.
+- **Решения о вендорах** — [vendor-decisions.json](vendor-decisions.json): кого библиотека держит (keep), как пишется (rename), в каких границах (scope: Sony — только системные камеры, Netgear-AV — только AV Line), какие бренды сводятся в Generic (generic: «Generic <тип>» создаётся только для deviceType, у которых Generic ещё нет; существующий Generic не перезаписывается) и что удаляется (всё остальное и шаблоны без производителя). Вендоры портфеля из avail-vendors.json сохраняются всегда, даже если их нет в keep. Применяет `npm run apply:vendor-decisions`, import:upstream соблюдает те же правила.
 
 ### 2.2 Generic
 
@@ -128,6 +128,8 @@ Generic — вендор для всего, что нужно в проекте,
 | Видео, аналоговое аудио, акустика, IR, tally, реле | input или output, по факту |
 | LAN, Dante, AVB, USB-данные, RS-232/422/485, Digital I/O, шины | bidirectional |
 | Питание | input |
+
+Для видео (HDMI, DP, SDI, DVI, VGA, HDBaseT), аналогового аудио, акустики и IR `bidirectional` — ошибка данных (линтер: W). Нормализатор выводит направление из подписи: In / Input / Mic / Line In / Rx → input; Out / Output / Loop / Thru / Monitor / Tx → output. Если подпись не говорит ни того, ни другого (или говорит оба), направление не угадывается — «сверить с панелью». Исключения: HDMI с eARC/ARC — input, возврат звука в notes; двухпроводный интерком (partyline), разъём TRRS / headset, проброс по линии (pass-thru) и порты «In/Out», «I/O» действительно двунаправленные.
 
 ### 4.4 Типы сигналов (обязательно)
 
@@ -225,7 +227,7 @@ notes заполняется там, где разъём или режим не�
 
 Формальные правила проверяет линтер `src/avail/blockLint.ts`, человек проверяет только то, что машина проверить не может: совпадение с реальной панелью.
 
-**Линтер.** Запуск: `npm run avail:lint -- <файл.json> --verbose`. Принимает и сохранённую схему, и архив устройств. С v0.3 он сверяет category с таксономией, manufacturer — со справочником вендоров и применяет правила Generic; первая версия на Python (`tools/avail/avail_block_lint.py`, v0.2) оставлена как архив. Категория вне таксономии, не лист или с schematic=false — ошибка (E): блок с ней не поднимется выше FIX.
+**Линтер.** Запуск: `npm run avail:lint -- <файл.json> --verbose`. В ошибках «no section» и «section … is not in the vocabulary» линтер подсказывает секцию, если нормализатор её знает (`; use "Video Outputs"`). Принимает и сохранённую схему, и архив устройств. С v0.3 он сверяет category с таксономией, manufacturer — со справочником вендоров и применяет правила Generic; первая версия на Python (`tools/avail/avail_block_lint.py`, v0.2) оставлена как архив. Категория вне таксономии, не лист или с schematic=false — ошибка (E): блок с ней не поднимется выше FIX.
 
 **Статус в библиотеке.** Уровень A — условие для статуса verified: утвердить шаблон ниже уровня A нельзя. raw — непроверенное сырьё (импорт), draft — в работе у инженера, hidden — скрыт из библиотеки.
 

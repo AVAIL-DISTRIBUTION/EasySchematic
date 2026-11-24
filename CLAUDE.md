@@ -56,7 +56,8 @@ PR всегда открываем в `master` нашего форка, **ник
   `category` шаблона = путь листовой категории, на схеме — только `schematic=true`;
   `deviceTypeDefaults` — категория по умолчанию для типа устройства (`null` — без категории);
 - `docs/avail/avail-vendors.json` — вендоры и их синонимы; `manufacturer` = каноническое
-  `name`, всё вне списка — `Generic`. Два уровня: `portfolio: true` (19, портфель AVAIL) и
+  `name`, всё вне списка — `Generic`. Основное написание — как в учётной системе (Wyrestorm,
+  Netgear-AV, TV One), написание производителя — в `aliases`. Два уровня: `portfolio: true` (19, портфель AVAIL) и
   `portfolio: false` (11 поддерживаемых вне портфеля); линтер принимает оба;
 - `docs/avail/vendor-decisions.json` — решения о вендорах (keep / rename / scope / generic,
   остальное удаляется); правила — `src/avail/vendorDecisions.ts`, применяет
@@ -156,18 +157,37 @@ Editor upstream на временной копии шаблона из базы 
 каноническому имени, ставит `category` по `deviceTypeDefaults`, считает `lint_level`,
 пишет со статусом `raw`. Один шаблон на пару производитель+модель (`modelNumber`, иначе
 `label`); `verified`/`draft` не трогает, `hidden` обновляет, оставляя скрытым; повторный
-запуск ничего не меняет. На сервере: `docker compose exec api npm run import:upstream`
+запуск ничего не меняет. Локальные улучшения переживают повторный импорт: пока шаблон в
+источнике не менялся (`source_hash` в `avail_template_meta`; для строк, импортированных до
+хешей, — локальная версия выше версии источника), строка не перезаписывается. На сервере: `docker compose exec api npm run import:upstream`
 (`-- --dry-run` — только отчёт).
 
 Автонормализатор (`src/avail/normalize.ts`, чистая функция `normalizeBlock(template) →
 {template, changes}`): секции → словарь стандарта (по имени или по типу сигнала и
 направлению) и порядок секций, `manufacturer`/`label`/`shortName`, подписи из капса,
-`bidirectional` для LAN/Dante/AVB/serial/GPIO/шин, `category` по `deviceTypeDefaults`,
-шапка `auxiliaryData` → одна строка `{{deviceType}}`, удаление `color`. Ничего не
-выдумывает: неоднозначное не меняет, а пишет в `changes` с `manual: true`. CLI
-`npm run normalize:library [-- --dry-run]` (`api-avail/src/normalizeLibrary.ts`) прогоняет
-шаблоны наших вендоров со статусом raw/draft и записывает только те, у кого вырос уровень;
-статус не меняет.
+`bidirectional` для LAN/Dante/AVB/serial/GPIO/шин, `category` по `deviceTypeDefaults` (валидную
+BoQ-категорию `schematic=false` не трогает), шапка `auxiliaryData` → одна строка `{{deviceType}}`,
+удаление `color`; v2: направление видео/аналогового аудио/акустики/IR из подписи вместо
+`bidirectional` (стандарт 4.3), секции для speaker-level input, fiber, DMX/MIDI, фирменных шин
+(gigaACE, SLink, DX, dSNAKE, DCP, YDIF, fibreACE). Логика секций — `src/avail/sections.ts`
+(её же использует линтер для подсказки «use "<секция>"»). Ничего не выдумывает: неоднозначное
+не меняет, а пишет в `changes` с `manual: true`. CLI `npm run normalize:library [-- --dry-run]`
+(`api-avail/src/normalizeLibrary.ts`) прогоняет шаблоны наших вендоров со статусом raw/draft и
+записывает те, у кого стало меньше E+W при не меньшем уровне; статус не меняет. Отчёт —
+переходы уровней, топ причин и разбивка нерешённых секций по «signalType + direction».
+
+Generic-вендор приводится к проверенному набору планом `docs/avail/generic-plan.json`
+(`npm run apply:generic-plan [-- --dry-run]`, `api-avail/src/genericPlan.ts`): переименования в
+«Generic <тип или назначение>» без брендов, смена deviceType/категории (сетевые переходники и
+SD-карты — BoQ-категории), удаление брендового под Generic и дублей. Generic Mini PC, LED Cabinet,
+Audio DSP, Camera, Conference System — в `library/avail`. `import:upstream` не возвращает
+удалённые планом id и не перезаписывает строки, записанные чистками (meta source
+`vendor-decisions` / `generic-plan`).
+
+В редакторе шаблона (Edit) есть Normalize: список изменений нормализатора и линтер после них,
+сохранение нормализованной версии. Массовое утверждение: в библиотеке модератор включает
+Select, отмечает шаблоны и жмёт Approve; `POST /avail/templates/status/batch` проверяет
+уровень A по каждому и возвращает не прошедшие с причинами.
 
 ## API на нашем сервере (api-avail/)
 
@@ -185,6 +205,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
 | `src/importAvail.ts`, `src/importAvailCli.ts` | загрузка курируемой библиотеки `library/avail` (`npm run import:avail`); в образе — `/app/library`, `AVAIL_LIBRARY_DIR` |
+| `src/genericPlan.ts`, `src/genericPlanCli.ts` | Generic-вендор по `docs/avail/generic-plan.json` (`npm run apply:generic-plan [-- --dry-run]`), одна транзакция, `library/avail` не трогает |
 | `src/vendorCleanup.ts`, `src/vendorCleanupCli.ts` | чистка библиотеки по `vendor-decisions.json` (`npm run apply:vendor-decisions [-- --dry-run]`), одна транзакция, `library/avail` не трогает; новый «Generic <тип>» — только для типов без Generic, существующие Generic не перезаписываются; отчёт перечисляет итоговые Generic (новые — с исходным шаблоном) |
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
