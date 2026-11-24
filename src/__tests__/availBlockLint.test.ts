@@ -122,7 +122,7 @@ describe("lintBlock: card, physics and port rules (v0.2)", () => {
   it("section order and vocabulary", () => {
     const [hdmi, dtp, rs232, power] = clean().ports;
     expect(lintBlock({ ...clean(), ports: [power, hdmi, dtp, rs232] }).warnings).toContain("sections are not in the standard order");
-    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain('"HDMI In": section "Rear" is not in the vocabulary');
+    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain('"HDMI In": section "Rear" is not in the vocabulary; use "Video Inputs"');
   });
 
   it("keeps the v0.2 Python semantics: [] and 0 are missing, Unicode \\b, code-point length", () => {

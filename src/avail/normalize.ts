@@ -10,7 +10,8 @@
  *
  * What it does:
  *   - manufacturer → canonical vendor name; category from deviceTypeDefaults when the
- *     current one is not a schematic leaf of the taxonomy;
+ *     current one is missing or not a leaf of the taxonomy (a BoQ-only leaf, schematic=false,
+ *     is a decision and is kept);
  *   - header (auxiliaryData) → the single row {{deviceType}}; color is removed (the
  *     header color will come from the category);
  *   - label starts with the canonical manufacturer; shortName = model (label without the
@@ -18,11 +19,16 @@
  *   - port labels in all caps → standard form (words capitalized, abbreviations upper),
  *     only when every word is known;
  *   - LAN / Dante / AVB / serial / GPIO / buses → direction bidirectional;
+ *   - video / analog audio / speaker level / IR marked bidirectional → direction from the
+ *     label (In / Out / Loop / Mic / Rx / Tx…), HDMI (e)ARC → input; otherwise manual;
  *   - port sections → the standard's vocabulary (by section name, or by signal type and
  *     direction for "Back/Front of unit", "Inputs", empty and other ad-hoc sections),
  *     front-panel ports get "(Front)"; ports ordered by the standard's section order.
  */
 import { BLOCK_SECTIONS } from "./blockLint";
+import { BIDIRECTIONAL_SIGNALS, directionFromLabel, sectionBase, targetSection } from "./sections";
+
+export { BIDIRECTIONAL_SIGNALS, sectionByPurpose } from "./sections";
 import { defaultCategoryFor, findCategory, findVendor, normalizeManufacturer } from "./library";
 
 export interface NormalizeChange {
@@ -34,6 +40,8 @@ export interface NormalizeChange {
   note: string;
   /** true — not changed: no unambiguous fix ("needs a manual fix"). */
   manual?: boolean;
+  /** For an unresolved port section: the port's signal type and direction (report breakdown). */
+  port?: { signalType: string; direction: string };
 }
 
 export interface NormalizeResult<T> {
@@ -41,49 +49,11 @@ export interface NormalizeResult<T> {
   changes: NormalizeChange[];
 }
 
-type Section = (typeof BLOCK_SECTIONS)[number];
 type Obj = Record<string, unknown>;
 type PortLike = Obj & { id?: unknown; label?: unknown; signalType?: unknown; direction?: unknown; section?: unknown };
 
 // Python-style part number (the linter's rule): 60-1885-52.
 const SKU_RE = /^\p{Nd}{2}-\p{Nd}{3,4}-\p{Nd}{2}(?=\n?$)/u;
-
-/** Signal types the standard (4.3) wants bidirectional; same set as the linter's. */
-export const BIDIRECTIONAL_SIGNALS = new Set(["ethernet", "dante", "avb", "serial", "rs422", "gpio", "ebus", "extron-exp", "thunderbolt"]);
-
-const VIDEO_SIGNALS = new Set(["sdi", "hdmi", "displayport", "hdbaset", "composite", "s-video", "vga", "dvi", "component-video", "dxlink"]);
-const AUDIO_SIGNALS = new Set(["analog-audio", "aes", "spdif", "madi", "adat"]);
-const NETWORK_SIGNALS = new Set(["ethernet", "ndi", "st2110", "srt", "rtmp", "rtsp", "mpeg-ts"]);
-const POWER_SIGNALS = new Set(["power", "power-l1", "power-l2", "power-l3", "power-neutral", "power-ground"]);
-
-/** Section names seen in community templates (lower case) → the standard's section. */
-const SECTION_ALIASES: Record<string, Section> = {
-  "video in": "Video Inputs", "video input": "Video Inputs", "video inputs": "Video Inputs", "hdmi in": "Video Inputs", "hdmi inputs": "Video Inputs",
-  "video out": "Video Outputs", "video output": "Video Outputs", "video outputs": "Video Outputs", "hdmi out": "Video Outputs", "hdmi outputs": "Video Outputs",
-  "audio in": "Audio Inputs", "audio input": "Audio Inputs", "audio inputs": "Audio Inputs", "analog inputs": "Audio Inputs", "analog audio inputs": "Audio Inputs",
-  "mic inputs": "Audio Inputs", "mic/line inputs": "Audio Inputs", "line inputs": "Audio Inputs", "mic/line in": "Audio Inputs",
-  "audio out": "Audio Outputs", "audio output": "Audio Outputs", "audio outputs": "Audio Outputs", "analog outputs": "Audio Outputs",
-  "analog audio outputs": "Audio Outputs", "line outputs": "Audio Outputs", "line out": "Audio Outputs",
-  "speaker out": "Speaker Outputs", "speaker outputs": "Speaker Outputs", "amplifier outputs": "Speaker Outputs", "amp outputs": "Speaker Outputs",
-  "rf": "RF", "antenna": "RF", "antennas": "RF",
-  "network": "Network", "lan": "Network", "ethernet": "Network",
-  "dante": "Dante", "dante network": "Dante", "dante/aes67": "Dante", "aes67": "Dante",
-  "avb": "AVB", "avb/milan": "AVB", "milan": "AVB",
-  "serial": "Serial", "serial control": "Serial", "rs-232": "Serial", "rs232": "Serial",
-  "ir": "IR", "ir out": "IR", "ir outputs": "IR",
-  "relays": "Relays", "relay": "Relays", "relay outputs": "Relays",
-  "gpio": "Digital I/O", "digital i/o": "Digital I/O", "logic i/o": "Digital I/O",
-  "control": "Control", "ctrl": "Control", "control i/o": "Control",
-  "expansion": "Expansion",
-  "usb": "USB",
-  "configuration": "Configuration", "config": "Configuration",
-  "power": "Power",
-};
-
-/** Sections that only say where the port is, or which way it points: placed by purpose. */
-const LOCATION_SECTIONS = new Set(["", "back of unit", "rear", "back", "rear panel", "back panel", "connections", "ports"]);
-const FRONT_SECTIONS = new Set(["front of unit", "front", "front panel"]);
-const DIRECTION_SECTIONS: Record<string, "input" | "output"> = { inputs: "input", input: "input", in: "input", outputs: "output", output: "output", out: "output" };
 
 /** Abbreviations kept in capitals (key: upper case → written form). */
 const ABBREVIATIONS = new Map(
@@ -157,61 +127,6 @@ export function standardCaseLabel(label: string): string | null {
   return unknown ? null : out;
 }
 
-/** Standard section for a port by what it carries; null when that is not unambiguous. */
-export function sectionByPurpose(port: PortLike, directionHint?: "input" | "output"): Section | null {
-  const sig = str(port.signalType);
-  const dir = directionHint ?? (port.direction === "input" || port.direction === "output" ? port.direction : null);
-  const label = str(port.label).toLowerCase();
-  if (VIDEO_SIGNALS.has(sig)) return dir === "input" ? "Video Inputs" : dir === "output" ? "Video Outputs" : null;
-  if (AUDIO_SIGNALS.has(sig)) return dir === "input" ? "Audio Inputs" : dir === "output" ? "Audio Outputs" : null;
-  if (sig === "speaker-level") return dir === "output" ? "Speaker Outputs" : null;
-  if (sig === "rf") return "RF";
-  if (sig === "dante" || sig === "aes67") return "Dante";
-  if (sig === "avb") return "AVB";
-  if (NETWORK_SIGNALS.has(sig)) return "Network";
-  if (sig === "serial" || sig === "rs422" || sig === "rs485") return "Serial";
-  if (sig === "ir") return "IR";
-  if (sig === "contact-closure") return dir === "output" ? "Relays" : dir === "input" ? "Control" : null;
-  if (sig === "gpio") return "Digital I/O";
-  if (sig === "tally" || sig === "control-voltage") return "Control";
-  if (sig === "ebus" || sig === "extron-exp" || sig === "cresnet") return "Expansion";
-  if (sig === "usb") {
-    if (/\b(dp|alt|video|display)\b/.test(label)) return null; // USB-C with video: Video Inputs or USB — datasheet
-    if (/\b(config|service|setup|console)\b/.test(label)) return "Configuration";
-    return "USB";
-  }
-  if (POWER_SIGNALS.has(sig)) return "Power";
-  return null;
-}
-
-function sectionBase(section: string): string {
-  return section.replace(/\s*\([^)]*\)\s*$/, "").trim();
-}
-
-function sectionSuffix(section: string): string {
-  const m = /\(([^)]*)\)\s*$/.exec(section);
-  return m ? ` (${m[1].trim()})` : "";
-}
-
-/** The section a port should have, or a reason why it cannot be decided. */
-function targetSection(port: PortLike): { section: string; front: boolean } | { manual: string } | null {
-  const raw = str(port.section).trim();
-  if (raw.startsWith("Slot")) return null; // card slot ports belong to the card
-  const base = sectionBase(raw);
-  if ((BLOCK_SECTIONS as readonly string[]).includes(base)) return null; // already standard
-  const key = base.toLowerCase();
-  const suffix = sectionSuffix(raw);
-
-  const alias = SECTION_ALIASES[key];
-  if (alias) return { section: alias + suffix, front: false };
-
-  const front = FRONT_SECTIONS.has(key);
-  const directionHint = DIRECTION_SECTIONS[key];
-  const bySignal = sectionByPurpose(port, directionHint);
-  if (bySignal) return { section: bySignal + (LOCATION_SECTIONS.has(key) || front || directionHint ? "" : suffix), front };
-  return { manual: `section "${raw}": signal type "${str(port.signalType)}" and direction do not determine the section` };
-}
-
 /**
  * Normalizes one block. Works on library templates (DeviceTemplate) and on the data of
  * device nodes; unknown fields are carried over untouched.
@@ -231,7 +146,10 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
 
   // --- category
   const cat = findCategory(str(t.category));
-  if (!cat || !cat.leaf || !cat.schematic) {
+  if (cat?.leaf && !cat.schematic) {
+    // A valid BoQ-only category (schematic=false) is a deliberate decision: not replaced.
+    changes.push({ field: "category", from: t.category, note: `category "${cat.path}" is BoQ-only (schematic=false): kept, decide whether the item belongs on schematics`, manual: true });
+  } else if (!cat || !cat.leaf) {
     const def = defaultCategoryFor(str(t.deviceType));
     const defCat = findCategory(def);
     if (def && defCat?.leaf && defCat.schematic) {
@@ -310,11 +228,34 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
         changes.push({ field: `${where}.direction`, from: port.direction, to: "bidirectional", note: `${sig} is bidirectional by the standard (4.3)` });
         port.direction = "bidirectional";
       }
+      // physical-direction signals (video, analog audio, speaker level, IR): never bidirectional
+      const inferred = directionFromLabel(port);
+      if (inferred && "manual" in inferred) {
+        changes.push({ field: `${where}.direction`, from: port.direction, note: inferred.manual, manual: true });
+      } else if (inferred) {
+        changes.push({
+          field: `${where}.direction`,
+          from: port.direction,
+          to: inferred.direction,
+          note: inferred.arc ? "HDMI with (e)ARC is an input; the audio return goes in notes" : `${sig} direction from the label`,
+        });
+        port.direction = inferred.direction;
+        if (inferred.arc) {
+          const notes = str(port.notes);
+          if (!/audio return/i.test(notes)) port.notes = notes ? `${notes}; (e)ARC: audio return to the source` : "(e)ARC: audio return to the source";
+        }
+      }
 
       // section
       const target = targetSection(port);
       if (target && "manual" in target) {
-        changes.push({ field: `${where}.section`, from: port.section ?? null, note: target.manual, manual: true });
+        changes.push({
+          field: `${where}.section`,
+          from: port.section ?? null,
+          note: target.manual,
+          manual: true,
+          port: { signalType: str(port.signalType), direction: str(port.direction) },
+        });
       } else if (target) {
         changes.push({ field: `${where}.section`, from: port.section ?? null, to: target.section, note: "section from the standard's vocabulary" });
         port.section = target.section;

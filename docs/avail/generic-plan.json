@@ -1,0 +1,627 @@
+{
+ "version": 1,
+ "date": "2026-11-26",
+ "rule": "Всё под Generic — «Generic <тип или назначение>» по-английски, без брендов; брендовое под Generic и дубли удаляются. Generic Mini PC, Generic LED Cabinet, Generic Audio DSP, Generic Camera, Generic Conference System — курируемая библиотека (library/avail), здесь их нет.",
+ "templates": [
+  {
+   "id": "883a8971-8916-4cd0-962b-096c278da474",
+   "was": "Generic 4G/5G Wireless Access Point",
+   "action": "rename",
+   "label": "Generic 4G/5G Wireless Access Point"
+  },
+  {
+   "id": "5446890d-54d2-48af-8f98-bbc77b314359",
+   "was": "13A Power Bar [UK-EU]",
+   "action": "rename",
+   "label": "Generic 13A Power Bar (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "7db44979-3a3e-4e96-b375-6b987cc9d1ae",
+   "was": "Generic 13A Cable Twofer [UK-EU]",
+   "action": "rename",
+   "label": "Generic 13A Cable Twofer (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "8c26aed5-27a6-40c9-b9ad-588844ad8cbf",
+   "was": "Generic 13A to IEC Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic 13A to IEC Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "8d03efe7-fe8a-4cfc-b6ff-197367248aff",
+   "was": "Generic 13A to PowerCON Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic 13A to powerCON Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "97af1e52-cede-4d6c-9bbc-c6c4a88475ea",
+   "was": "Generic 13A to TRUE1 Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic 13A to TRUE1 Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "affece4d-79a9-4bab-9f9c-469225824f7b",
+   "was": "Generic 5-15 12/3 Edison Break In [NA]",
+   "action": "rename",
+   "label": "Generic Edison 5-15 Break-In (NA)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "82d1c976-6abf-4ab5-84fc-2e26182a3f02",
+   "was": "Generic 5-15 Edison Twofer [NA]",
+   "action": "rename",
+   "label": "Generic Edison 5-15 Twofer (NA)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "0c0bb9eb-5be4-4c0a-9bff-41a8f9e63765",
+   "was": "Generic CEE16 to IEC Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic CEE16 to IEC Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "4f52c21a-53b2-4bab-bc57-b2d045248fae",
+   "was": "Generic CEE16 to PowerCON Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic CEE16 to powerCON Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "118fc6b5-f484-415d-9d95-ecffcd2f79f7",
+   "was": "Generic CEE16 to TRUE1 Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic CEE16 to TRUE1 Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "5c8d8189-70b6-4112-9cd7-6e60c426ba4a",
+   "was": "Generic Edison to IEC Adapter [NA]",
+   "action": "rename",
+   "label": "Generic Edison to IEC Adapter (NA)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "0ceb8085-02f2-4f57-8723-159207602409",
+   "was": "Generic IEC to 13A Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic IEC to 13A Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "f14b88eb-a911-44d8-be36-7848b056865a",
+   "was": "Generic PowerCON to CEE16 Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic powerCON to CEE16 Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "f3d1d390-414f-4181-a4ee-513115ed8fb3",
+   "was": "Generic TRUE1 to 13A Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic TRUE1 to 13A Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "a60c9cca-0a31-4777-8775-49c839ce5dcf",
+   "was": "Generic TRUE1 to CEE16 Adapter [UK-EU]",
+   "action": "rename",
+   "label": "Generic TRUE1 to CEE16 Adapter (UK/EU)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "bf9adbff-5573-40ce-ba0e-e8c1293a1d90",
+   "was": "HDMI - HDMI mini convertor",
+   "action": "rename",
+   "label": "Generic HDMI to Mini HDMI Adapter"
+  },
+  {
+   "id": "bacd1609-5f91-4bfb-8fb4-04d785a169f6",
+   "was": "HDMI mini - HDMI convertor",
+   "action": "rename",
+   "label": "Generic Mini HDMI to HDMI Adapter"
+  },
+  {
+   "id": "5d212cf3-d9c8-406c-8b8b-65c11b1aca0f",
+   "was": "TB (M) → DP (F) Adapter",
+   "action": "rename",
+   "label": "Generic Thunderbolt to DisplayPort Adapter"
+  },
+  {
+   "id": "9436ea50-0879-4dd0-8a6b-6506c5954650",
+   "was": "speaKON Break-In",
+   "action": "rename",
+   "label": "Generic speakON Break-In",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "4235997d-684c-4eeb-bd44-38738e824c7d",
+   "was": "speaKON Break-Out",
+   "action": "rename",
+   "label": "Generic speakON Break-Out",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "8a7237b9-e2df-4133-a65b-1b4d9a5cb0d0",
+   "was": "Generic Audio Amplifier",
+   "action": "rename",
+   "label": "Generic Audio Amplifier"
+  },
+  {
+   "id": "2a8758f9-5cc0-4436-8383-d77ce4765668",
+   "was": "Generic Ecler AURA-4B300",
+   "action": "delete",
+   "reason": "Branded product filed under Generic (Ecler AURA-4B300)"
+  },
+  {
+   "id": "810bfe76-b8c9-4a80-8450-eb13929d3776",
+   "was": "Antenna",
+   "action": "rename",
+   "label": "Generic Antenna"
+  },
+  {
+   "id": "f1ab0067-36e0-4ad6-98aa-0ea7ca9ad0d3",
+   "was": "Audio De-Embeder",
+   "action": "rename",
+   "label": "Generic Audio De-Embedder"
+  },
+  {
+   "id": "25816fff-12f7-41a0-bb34-bf318004de54",
+   "was": "Socapex speaKON4 Break-In (4-ch)",
+   "action": "rename",
+   "label": "Generic Socapex to speakON Break-In (4-ch)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "1dc3b3d6-6157-466b-9ffb-361746cf6419",
+   "was": "Socapex speaKON4 Break-out (4-ch)",
+   "action": "rename",
+   "label": "Generic Socapex to speakON Break-Out (4-ch)",
+   "category": "Connectivity / Cables & Adapters"
+  },
+  {
+   "id": "e7b27253-b5fb-4127-af92-3e457c9ca332",
+   "was": "1U Desktop rack",
+   "action": "rename",
+   "label": "Generic Rack PC (1U)"
+  },
+  {
+   "id": "18e017c9-8895-4320-a733-a96587bd6189",
+   "was": "Class PC",
+   "action": "delete",
+   "reason": "Duplicate computer: the set is Desktop, Laptop, Mini PC, Rack PC"
+  },
+  {
+   "id": "d46b0b5b-f864-4b69-87ed-f47a90ed6b86",
+   "was": "Classroom PC (Self-Built)",
+   "action": "rename",
+   "label": "Generic Desktop PC"
+  },
+  {
+   "id": "b5f9371d-3684-431c-8280-2fbada77e10c",
+   "was": "Generic Class PC",
+   "action": "delete",
+   "reason": "Duplicate computer: the set is Desktop, Laptop, Mini PC, Rack PC"
+  },
+  {
+   "id": "35f92a5a-879a-40af-afb2-70ef7e06a6b7",
+   "was": "PC w/ Decklink 4K",
+   "action": "delete",
+   "reason": "Duplicate computer (desktop with a capture card; Decklink is a brand)"
+  },
+  {
+   "id": "10d6ab7d-5ae2-4f0e-b0d1-ac3f583b86c4",
+   "was": "User Laptop",
+   "action": "rename",
+   "label": "Generic Laptop"
+  },
+  {
+   "id": "c7ad8f6f-352c-4556-bd5a-29c3dc74e7a4",
+   "was": "Zoom PC",
+   "action": "delete",
+   "reason": "Duplicate computer (a mini PC; Zoom is a brand)"
+  },
+  {
+   "id": "4d8abe0f-21ef-42f3-a5d8-11f8b2db072f",
+   "was": "Generic 43\" UHD Commercial Display",
+   "action": "delete",
+   "reason": "Duplicate of Generic Display (filed as a converter)"
+  },
+  {
+   "id": "e305bfb1-05e6-4c94-8ee5-e3cca2d323ff",
+   "was": "Generic 4K PTZ Camera (SDI/HDMI/LAN)",
+   "action": "rename",
+   "label": "Generic PTZ Camera (SDI/HDMI/LAN)",
+   "deviceType": "ptz-camera",
+   "category": "Videocameras / PTZ cameras"
+  },
+  {
+   "id": "97dcc6be-b889-4e71-b423-357c08bcfe73",
+   "was": "Generic HDMI Passthrough Wall Plate",
+   "action": "rename",
+   "label": "Generic HDMI Passthrough Wall Plate"
+  },
+  {
+   "id": "c2ddbcec-a981-4959-a021-8d9950aefc93",
+   "was": "Generic Passive HDMI to VGA Adapter",
+   "action": "rename",
+   "label": "Generic Passive HDMI to VGA Adapter"
+  },
+  {
+   "id": "d2c8e1cb-5008-47bd-8236-f9dafe3812e1",
+   "was": "Generic SDI to HDMI Converter",
+   "action": "rename",
+   "label": "Generic SDI to HDMI Converter"
+  },
+  {
+   "id": "d0de7a07-bce1-487b-bf28-8ba014a9c73d",
+   "was": "Generic USB C Passthrough Wall Plate (Generic)",
+   "action": "rename",
+   "label": "Generic USB-C Passthrough Wall Plate"
+  },
+  {
+   "id": "a24c3979-7535-414c-81ec-68c4b8dbc4d7",
+   "was": "PoE Injector",
+   "action": "rename",
+   "label": "Generic PoE Injector"
+  },
+  {
+   "id": "01e1b853-3eb3-46ca-a828-5468d495bd52",
+   "was": "USB to HDMI (DisplayLink)",
+   "action": "rename",
+   "label": "Generic USB to HDMI Adapter"
+  },
+  {
+   "id": "308e05bc-8716-4b0b-89c6-62d4f91074af",
+   "was": "Displayport 1:2 DA",
+   "action": "rename",
+   "label": "Generic DisplayPort 1x2 DA"
+  },
+  {
+   "id": "b771d5af-e744-4360-99d0-1a44451a0104",
+   "was": "MTP-12 Breakout to 12-LC",
+   "action": "rename",
+   "label": "Generic MTP-12 to 12x LC Breakout"
+  },
+  {
+   "id": "4ea2741a-0907-4965-a9d1-56847f6da03b",
+   "was": "Generic Display",
+   "action": "rename",
+   "label": "Generic Display"
+  },
+  {
+   "id": "sfp-1g-t",
+   "was": "1000BASE-T SFP (Copper)",
+   "action": "rename",
+   "label": "Generic SFP 1000BASE-T (Copper)",
+   "category": "Networking / Switches"
+  },
+  {
+   "id": "sfp-10g-lr",
+   "was": "10GBASE-LR SFP+ (SM Fiber)",
+   "action": "rename",
+   "label": "Generic SFP+ 10GBASE-LR (SM Fiber)",
+   "category": "Networking / Switches"
+  },
+  {
+   "id": "sfp-10g-sr",
+   "was": "10GBASE-SR SFP+ (MM Fiber)",
+   "action": "rename",
+   "label": "Generic SFP+ 10GBASE-SR (MM Fiber)",
+   "category": "Networking / Switches"
+  },
+  {
+   "id": "sfp-10g-t",
+   "was": "10GBASE-T SFP+ (Copper)",
+   "action": "rename",
+   "label": "Generic SFP+ 10GBASE-T (Copper)",
+   "category": "Networking / Switches"
+  },
+  {
+   "id": "sfp-25g-sr",
+   "was": "25GBASE-SR SFP28 (MM Fiber)",
+   "action": "rename",
+   "label": "Generic SFP28 25GBASE-SR (MM Fiber)",
+   "category": "Networking / Switches"
+  },
+  {
+   "id": "qsfp-40g-lr4",
+   "was": "40GBASE-LR4 QSFP+ (SM Fiber)",
+   "action": "rename",
+   "label": "Generic QSFP+ 40GBASE-LR4 (SM Fiber)",
+   "category": "Networking / Switches"
+  },
+  {
+   "id": "qsfp-40g-sr4",
+   "was": "40GBASE-SR4 QSFP+ (MM Fiber)",
+   "action": "rename",
+   "label": "Generic QSFP+ 40GBASE-SR4 (MM Fiber)",
+   "category": "Networking / Switches"
+  },
+  {
+   "id": "afceba33-c749-40a8-9916-f18030dfc697",
+   "was": "Generic External Storage",
+   "action": "rename",
+   "label": "Generic External Storage"
+  },
+  {
+   "id": "58b7cbe3-0000-47a9-983c-4d68bf448522",
+   "was": "Floor box",
+   "action": "rename",
+   "label": "Generic Floor Box",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "id": "dfb34a0e-9a98-4951-9124-d134be4e1859",
+   "was": "Generic Modem",
+   "action": "rename",
+   "label": "Generic Modem"
+  },
+  {
+   "id": "aeabe0a4-57df-40d8-a2d4-eefe3ad0186d",
+   "was": "SW-130-TX-UK In-Wall HDBaseT Transmitter",
+   "action": "delete",
+   "reason": "Branded product filed under Generic (WyreStorm SW-130-TX-UK)"
+  },
+  {
+   "id": "2467ebd6-7731-4295-817c-50207c63b3a9",
+   "was": "HDMI 4K Splitter 1 in 4 Out",
+   "action": "rename",
+   "label": "Generic HDMI Splitter 1x4"
+  },
+  {
+   "id": "ebc61ecf-da73-4a22-9cb9-362ead20cf7c",
+   "was": "HDMI Splitter 1 in 2 out",
+   "action": "rename",
+   "label": "Generic HDMI Splitter 1x2"
+  },
+  {
+   "id": "96826721-3327-4d50-b301-703b6f4b5d0a",
+   "was": "Generic Keyboard",
+   "action": "rename",
+   "label": "Generic Keyboard"
+  },
+  {
+   "id": "d6836a2e-0cc0-4401-afb1-995c87229c31",
+   "was": "Generic KVM Extender",
+   "action": "rename",
+   "label": "Generic KVM Extender"
+  },
+  {
+   "id": "53807c8f-674f-413b-8bca-9e91708c30d0",
+   "was": "LED Cabinet",
+   "action": "delete",
+   "reason": "Duplicate of Generic LED Cabinet (curated library)"
+  },
+  {
+   "id": "145d7a55-1f8a-4bb6-8a39-debe350c4daf",
+   "was": "Generic Blinder 2 Lite Linear PAR 36 [NA]",
+   "action": "rename",
+   "label": "Generic Blinder 2-Lite Linear (PAR36)"
+  },
+  {
+   "id": "6dafea18-0a7c-4067-adc5-840d2dbc4f23",
+   "was": "Generic Blinder 4 Lite Linear PAR 36 [NA]",
+   "action": "rename",
+   "label": "Generic Blinder 4-Lite Linear (PAR36)"
+  },
+  {
+   "id": "1d81a50d-38be-47de-a5ec-163a6a2faf9d",
+   "was": "Generic Blinder 4 Lite Square PAR 36 [NA]",
+   "action": "rename",
+   "label": "Generic Blinder 4-Lite Square (PAR36)"
+  },
+  {
+   "id": "59595f68-8ae0-4414-bd74-404a9aaebc19",
+   "was": "Generic LED Processor",
+   "action": "rename",
+   "label": "Generic LED Processor"
+  },
+  {
+   "id": "c8db1ca3-9d4e-458b-ad4d-656f1af3f98e",
+   "was": "Generic Media Player",
+   "action": "rename",
+   "label": "Generic Media Player"
+  },
+  {
+   "id": "0aa49147-2c07-406b-833a-c5f9775bbfa7",
+   "was": "Generic Monitor",
+   "action": "rename",
+   "label": "Generic Monitor"
+  },
+  {
+   "id": "dd9642dc-c863-4ca0-a070-4bdbe2829cbd",
+   "was": "10 RJ45 / 2-SFP+ Switch",
+   "action": "delete",
+   "reason": "Duplicate switch: the set is 8 with SFP, 16, 24 ports"
+  },
+  {
+   "id": "6395bb1b-6bdb-4617-ae3c-c12a1bc83a02",
+   "was": "16 PORT GIGABIT SWITCH",
+   "action": "rename",
+   "label": "Generic 16-Port Switch"
+  },
+  {
+   "id": "0cfa15d6-aedb-4f7e-9505-edaecd3e4b2f",
+   "was": "24 PORT GIGABIT SWITCH",
+   "action": "rename",
+   "label": "Generic 24-Port Switch"
+  },
+  {
+   "id": "6d67e79b-246f-4bb7-9eb1-45e6f65d6465",
+   "was": "8-RJ45 / 1-SFP Switch",
+   "action": "delete",
+   "reason": "Duplicate of Generic 8-Port Switch with SFP"
+  },
+  {
+   "id": "9f1cfbcb-e89a-4f00-9a01-b20b55b9dd31",
+   "was": "Generic 8-port Switch with SFP",
+   "action": "rename",
+   "label": "Generic 8-Port Switch with SFP"
+  },
+  {
+   "id": "309dda7a-2647-461f-a477-b47220dcf5a8",
+   "was": "Generic ELC Switch 8GB",
+   "action": "delete",
+   "reason": "Branded product filed under Generic (ELC dmXLAN Switch 8GB)"
+  },
+  {
+   "id": "54fcb3e4-92b6-4553-a5bc-8873a1cfcd30",
+   "was": "BNC Patch Panel 6 ports",
+   "action": "rename",
+   "label": "Generic BNC Patch Panel (6-Port)"
+  },
+  {
+   "id": "da4bef2b-189b-48e5-a393-8c58b51a5e02",
+   "was": "Generic 12V Power Supply",
+   "action": "rename",
+   "label": "Generic 12V Power Supply"
+  },
+  {
+   "id": "78b06a4a-8009-48b2-9272-dcba43607bd8",
+   "was": "Projector",
+   "action": "rename",
+   "label": "Generic Projector"
+  },
+  {
+   "id": "53333e5b-72ad-4445-800e-191520d85480",
+   "was": "Generic PTZ Camera",
+   "action": "delete",
+   "reason": "Duplicate: replaced by Generic PTZ Camera (SDI/HDMI/LAN); this one was made from a USB camera with one port"
+  },
+  {
+   "id": "929b4d93-7ef3-4db1-b117-b92a80c391e3",
+   "was": "Electric Projection Screen",
+   "action": "rename",
+   "label": "Generic Projection Screen (Electric)"
+  },
+  {
+   "id": "f9402e50-af04-4850-bb58-2d2422eb54cd",
+   "was": "Ceiling Speaker",
+   "action": "rename",
+   "label": "Generic Ceiling Speaker"
+  },
+  {
+   "id": "fdd53d68-1c10-458d-816f-b7b797204de0",
+   "was": "Generic Speaker (Passive)",
+   "action": "rename",
+   "label": "Generic Speaker (Passive)"
+  },
+  {
+   "id": "932d0d5e-29e7-441a-884c-648282cdb5e1",
+   "was": "Generic Speaker (Powered)",
+   "action": "rename",
+   "label": "Generic Speaker (Powered)"
+  },
+  {
+   "id": "sd-sdhc-32",
+   "was": "SDHC Card (32 GB)",
+   "action": "rename",
+   "label": "Generic SDHC Card (32 GB)",
+   "category": "Integration Tools / Tools"
+  },
+  {
+   "id": "sd-sdxc-128",
+   "was": "SDXC Card (128 GB)",
+   "action": "rename",
+   "label": "Generic SDXC Card (128 GB)",
+   "category": "Integration Tools / Tools"
+  },
+  {
+   "id": "sd-sdxc-256",
+   "was": "SDXC Card (256 GB)",
+   "action": "rename",
+   "label": "Generic SDXC Card (256 GB)",
+   "category": "Integration Tools / Tools"
+  },
+  {
+   "id": "sd-sdxc-512",
+   "was": "SDXC Card (512 GB)",
+   "action": "rename",
+   "label": "Generic SDXC Card (512 GB)",
+   "category": "Integration Tools / Tools"
+  },
+  {
+   "id": "sd-microsdxc-128",
+   "was": "microSDXC Card (128 GB)",
+   "action": "rename",
+   "label": "Generic microSDXC Card (128 GB)",
+   "category": "Integration Tools / Tools"
+  },
+  {
+   "id": "sd-microsdxc-256",
+   "was": "microSDXC Card (256 GB)",
+   "action": "rename",
+   "label": "Generic microSDXC Card (256 GB)",
+   "category": "Integration Tools / Tools"
+  },
+  {
+   "id": "14b5151b-aaf2-489f-9e80-510a2e81f841",
+   "was": "Generic Subwoofer",
+   "action": "rename",
+   "label": "Generic Subwoofer"
+  },
+  {
+   "id": "bb355f8e-13da-49a9-92be-965b82703cee",
+   "was": "Grille de Brassage SDI 64x64 (REGV-MATRIX)",
+   "action": "rename",
+   "label": "Generic SDI Router 64x64",
+   "deviceType": "router",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "id": "cbdd3fb5-ae66-48fc-9911-4b5ce9e3f46e",
+   "was": "HDMI Switch 2 in 1 out",
+   "action": "rename",
+   "label": "Generic HDMI Switcher 2x1"
+  },
+  {
+   "id": "d5f43272-23a5-498c-b4e9-0336241493f0",
+   "was": "Melangeur Video (Vision Switcher)",
+   "action": "rename",
+   "label": "Generic Vision Switcher",
+   "category": "Processing / Videomixers"
+  },
+  {
+   "id": "c4880934-35ec-430c-b2fb-e733b867911d",
+   "was": "Generic Touch Controller",
+   "action": "rename",
+   "label": "Generic Touch Controller"
+  },
+  {
+   "id": "e72c5bd4-ce67-4182-9717-1f30c9c9f487",
+   "was": "Generic Touch Screen",
+   "action": "rename",
+   "label": "Generic Touch Screen"
+  },
+  {
+   "id": "d56e7a9c-7c69-43d0-a3e0-f630375974d1",
+   "was": "Generic Trolley TV",
+   "action": "rename",
+   "label": "Generic TV"
+  },
+  {
+   "id": "76bd4c2f-ed6a-444b-bef0-e6aca728a13e",
+   "was": "Generic USB Extender",
+   "action": "rename",
+   "label": "Generic USB Extender"
+  },
+  {
+   "id": "650c5ab7-be8a-4245-8114-84662cc2dea0",
+   "was": "Generic Video Bar",
+   "action": "rename",
+   "label": "Generic Video Bar"
+  },
+  {
+   "id": "14c80a40-2257-454a-bbe5-e17cebf5b01e",
+   "was": "Generic Microphone",
+   "action": "rename",
+   "label": "Generic Wired Microphone"
+  }
+ ]
+}

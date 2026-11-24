@@ -199,14 +199,14 @@ describe("importTemplates", () => {
     expect(r.ourVendors).toMatchObject({ WyreStorm: 1, Sharp: 1, Yamaha: 1, Extron: 0 });
     expect(r.otherVendors).toEqual({ templates: 0, manufacturers: 0 });
     expect(r).toMatchObject({ imported: 3, noManufacturer: 0, noCategory: 1 });
-    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 2, scope: 0, genericExists: 0 });
+    expect(r.skipped).toEqual({ noManufacturer: 1, notDecided: 2, scope: 0, genericExists: 0, genericPlan: 0 });
     expect(r.levels.A + r.levels.B + r.levels.FIX).toBe(3);
 
     const text = formatImportReport(r, "https://api.easyschematic.live/templates");
     expect(text).toContain("Imported: 3; new 3, updated 0, unchanged 0");
     expect(text).toContain("AVAIL vendors: 3");
     expect(text).toMatch(/ {2}WyreStorm +1\n/);
-    expect(text).toContain("Skipped by vendor decisions: no manufacturer 1, manufacturer not decided 2, outside scope 0, Generic of the type exists 0");
+    expect(text).toContain("Skipped by vendor decisions: no manufacturer 1, manufacturer not decided 2, outside scope 0, Generic of the type exists 0, deleted by the Generic plan 0");
     expect(text).toContain("No category: 1");
     expect(text).toMatch(/Standard levels: A \d+ \/ B \d+ \/ FIX \d+/);
   });

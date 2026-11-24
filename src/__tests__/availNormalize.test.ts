@@ -102,6 +102,12 @@ describe("normalizeBlock: card", () => {
     expect(r.template.category).toBe("Cameras");
     expect(field(r.changes, "category")[0]).toMatchObject({ manual: true });
   });
+
+  it("a BoQ-only leaf (schematic=false) is a decision: kept, flagged", () => {
+    const r = normalizeBlock(block({ category: "Connectivity / Cables & Adapters", deviceType: "adapter" }));
+    expect(r.template.category).toBe("Connectivity / Cables & Adapters");
+    expect(field(r.changes, "category")[0]).toMatchObject({ manual: true, note: expect.stringContaining("BoQ-only") });
+  });
 });
 
 describe("normalizeBlock: port labels", () => {
@@ -175,7 +181,7 @@ describe("normalizeBlock: sections", () => {
   it("ambiguous → unchanged and manual", () => {
     const cases: Partial<P>[] = [
       { section: "Back of unit", signalType: "analog-audio", direction: "bidirectional" },
-      { section: "Rear", signalType: "fiber", direction: "output" },
+      { section: "Rear", signalType: "genlock", direction: "input" },
       { section: "Rear", signalType: "usb", label: "USB-C (DP Alt)", direction: "input" },
       { section: "Rear", signalType: "contact-closure", direction: "bidirectional" },
     ];
@@ -183,6 +189,24 @@ describe("normalizeBlock: sections", () => {
       const r = normalizeBlock(block({ ports: [port("x", c)] }));
       expect(r.template.ports[0].section, JSON.stringify(c)).toBe(c.section);
       expect(field(r.changes, "ports[x].section")[0], JSON.stringify(c)).toMatchObject({ manual: true });
+    }
+  });
+
+  it("new pairs: speaker input, fiber, DMX / MIDI, proprietary buses", () => {
+    const cases: [Partial<P>, string][] = [
+      [{ signalType: "speaker-level", direction: "input", label: "Speaker In" }, "Audio Inputs"],
+      [{ signalType: "fiber", direction: "input", label: "Fiber In 1", connectorType: "lc" }, "Video Inputs"],
+      [{ signalType: "fiber", direction: "output", label: "Fiber Out 1", connectorType: "lc" }, "Video Outputs"],
+      [{ signalType: "fiber", direction: "bidirectional", label: "SFP+ 1", connectorType: "sfp" }, "Network"],
+      [{ signalType: "dmx", direction: "output", label: "DMX Out" }, "Control"],
+      [{ signalType: "midi", direction: "input", label: "MIDI In" }, "Control"],
+      [{ signalType: "gigaace", direction: "bidirectional", label: "gigaACE" }, "Expansion"],
+      [{ signalType: "ydif", direction: "output", label: "YDIF Out" }, "Expansion"],
+      [{ signalType: "dxlink", direction: "bidirectional", label: "DX A" }, "Expansion"],
+    ];
+    for (const [c, want] of cases) {
+      const r = normalizeBlock(block({ ports: [port("x", { section: "", ...c })] }));
+      expect(r.template.ports[0].section, JSON.stringify(c)).toBe(want);
     }
   });
 
@@ -240,3 +264,61 @@ describe("normalizeBlock improves the lint level", () => {
     expect(appliedChanges(r.changes).length).toBeGreaterThan(0);
   });
 });
+
+describe("normalizeBlock: direction of physical signals (v2)", () => {
+  const dir = (c: Partial<P>) => {
+    const r = normalizeBlock(block({ ports: [port("x", { section: "", direction: "bidirectional", ...c })] }));
+    return { port: r.template.ports[0] as P & { notes?: string }, changes: field(r.changes, "ports[x].direction") };
+  };
+
+  it("from the label: In / Input / Mic / Rx → input; Out / Output / Loop / Thru / Monitor / Tx → output", () => {
+    for (const label of ["HDMI In 1", "Input 3", "Mic 2", "Line In", "HDBaseT Rx"]) expect(dir({ label }).port.direction, label).toBe("input");
+    for (const label of ["HDMI Out", "Output 2", "HDMI Loop", "SDI Thru", "Monitor", "HDBaseT Tx"]) expect(dir({ label }).port.direction, label).toBe("output");
+    for (const signalType of ["analog-audio", "speaker-level", "ir", "sdi", "displayport", "vga", "dvi", "hdbaset"]) {
+      expect(dir({ signalType, label: "Out 1" }).port.direction, signalType).toBe("output");
+    }
+  });
+
+  it("the section follows from the inferred direction", () => {
+    expect(dir({ label: "HDMI Out 2" }).port.section).toBe("Video Outputs");
+    expect(dir({ signalType: "analog-audio", label: "Mic/Line In 4" }).port.section).toBe("Audio Inputs");
+  });
+
+  it("HDMI with eARC / ARC stays an input; the audio return goes in notes", () => {
+    const r = dir({ label: "HDMI 1 (eARC)" });
+    expect(r.port.direction).toBe("input");
+    expect(r.port.notes).toBe("(e)ARC: audio return to the source");
+    expect(dir({ label: "HDMI ARC", notes: "audio return to the TV" } as Partial<P>).port.notes).toBe("audio return to the TV");
+  });
+
+  it("not inferable → unchanged, \"check against the panel\"", () => {
+    for (const label of ["HDMI", "Audio 1", "In/Out"]) {
+      const r = dir({ signalType: label === "HDMI" ? "hdmi" : "analog-audio", label });
+      expect(r.port.direction, label).toBe("bidirectional");
+      if (label !== "In/Out") expect(r.changes[0], label).toMatchObject({ manual: true, note: expect.stringContaining("check against the panel") });
+    }
+  });
+
+  it("exempt: partyline intercom, TRRS / headset, pass-through, In/Out; other signals untouched", () => {
+    for (const c of [
+      { signalType: "analog-audio", label: "Partyline 1" },
+      { signalType: "analog-audio", label: "Mobile (TRRS)" },
+      { signalType: "ir", label: "IR Pass-Thru TP Tx 1" },
+      { signalType: "analog-audio", label: "Audio In/Out" },
+      { signalType: "usb", label: "USB Out" },
+    ]) {
+      const r = dir(c);
+      expect(r.port.direction, c.label).toBe("bidirectional");
+      expect(r.changes, c.label).toEqual([]);
+    }
+  });
+
+  it("the linter warns about bidirectional physical signals and hints the section", () => {
+    const bad = { ...block(), ports: [port("x", { label: "HDMI Out", direction: "bidirectional", section: "Rear" })] };
+    const lint = lintBlock(bad);
+    expect(lint.warnings).toContain('"HDMI Out": hdmi must be input or output, not bidirectional');
+    expect(lint.errors).toContain('"HDMI Out": section "Rear" is not in the vocabulary; use "Video Outputs"');
+    expect(lintBlock({ ...block(), ports: [port("y", { label: "Thing", signalType: "custom", section: "" })] }).errors).toContain('"Thing": no section');
+  });
+});
+

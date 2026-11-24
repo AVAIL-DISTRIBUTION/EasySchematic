@@ -326,3 +326,37 @@ describe("GET /templates — filtered by status", () => {
     expect(libraryStatuses("nope", true)).toMatchObject({ status: 400 });
   });
 });
+
+describe("POST /avail/templates/status/batch", () => {
+  const batch = (body: unknown, headers: Record<string, string> = {}) =>
+    req("/avail/templates/status/batch", { method: "POST", headers: { "Content-Type": "application/json", ...headers }, body: JSON.stringify(body) });
+
+  it("moderators and admins only", async () => {
+    expect((await batch({ ids: ["x"], status: "verified" })).status).toBe(403);
+    expect((await batch({ ids: ["x"], status: "verified" }, { Cookie: session("user") })).status).toBe(403);
+  });
+
+  it("validates status and ids", async () => {
+    const mod = { Cookie: session("moderator") };
+    expect((await batch({ ids: ["x"], status: "approved" }, mod)).status).toBe(400);
+    expect((await batch({ ids: [], status: "verified" }, mod)).status).toBe(400);
+    expect((await batch({ ids: [1], status: "verified" }, mod)).status).toBe(400);
+    expect((await batch({ ids: Array.from({ length: 501 }, (_, i) => `t${i}`), status: "verified" }, mod)).status).toBe(400);
+  });
+
+  it("approves the level-A templates and returns the others with reasons", async () => {
+    insertTemplate(cleanTemplate("bulk-a1"));
+    insertTemplate({ ...cleanTemplate("bulk-a2"), modelNumber: "60-1885-99" });
+    insertTemplate({ ...cleanTemplate("bulk-b"), searchTerms: [] });
+    const res = await batch({ ids: ["bulk-a1", "bulk-b", "bulk-a2", "nope", "bulk-a1"], status: "verified" }, { Cookie: session("moderator", "lead@avail-int.com") });
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as { updated: string[]; failed: { id: string; reason: string; level?: string; warnings?: string[]; label: string | null }[] };
+    expect(body.updated).toEqual(["bulk-a1", "bulk-a2"]);
+    expect(body.failed).toEqual([
+      { id: "bulk-b", label: "Extron DTP3 T 203", reason: "not_level_a", level: "B", errors: [], warnings: ["no searchTerms"] },
+      { id: "nope", label: null, reason: "not_found" },
+    ]);
+    expect(meta("bulk-a1")).toMatchObject({ status: "verified", updated_by: "lead@avail-int.com" });
+    expect(meta("bulk-b")?.status ?? "raw").not.toBe("verified");
+  });
+});

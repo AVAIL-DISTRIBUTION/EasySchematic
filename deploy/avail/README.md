@@ -98,6 +98,21 @@ docker compose exec api npm run apply:vendor-decisions                 # зап�
 
 Откат — восстановление из бэкапа. Повторный `import:upstream` удалённое не возвращает.
 
+### Generic-вендор и нормализатор v2
+
+`docs/avail/generic-plan.json` приводит Generic к проверенному набору (переименования без брендов,
+дубли и брендовое под Generic — удаляются). Три пересобранных Generic (Audio DSP, Camera,
+Conference System) приходят из `library/avail` через `import:avail`.
+
+```bash
+./backup.sh                                                          # обязательно перед записью
+docker compose exec api npm run import:avail                         # пересобранные Generic
+docker compose exec api npm run apply:generic-plan -- --dry-run      # отчёт: переименования, удаления
+docker compose exec api npm run apply:generic-plan
+docker compose exec api npm run normalize:library -- --dry-run       # уровни до/после, разбивка нерешённых секций
+docker compose exec api npm run normalize:library
+```
+
 ## Роли: модераторы и админы
 
 Утверждать шаблоны (карточка ревью в библиотеке) могут модераторы и админы. Роль хранится

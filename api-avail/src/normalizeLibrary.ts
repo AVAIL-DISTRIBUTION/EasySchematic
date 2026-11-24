@@ -2,8 +2,9 @@
  * Runs the block normalizer (src/avail/normalize.ts) over the library templates of our
  * vendors (avail-vendors.json, Generic included) that are raw or draft.
  *
- * A template is written only when normalization raises its standard level
- * (FIX → B, FIX → A, B → A); its status stays as it was — a human approves.
+ * A template is written when normalization leaves it with fewer lint errors + warnings
+ * (E+W) and does not lower its level — a raised level always counts; its status stays as
+ * it was — a human approves.
  * Written templates get version + 1 (like an upstream save) and a fresh lint level.
  */
 import type Database from "better-sqlite3";
@@ -27,17 +28,21 @@ export interface VendorStats {
 export interface NormalizeLibraryReport {
   dryRun: boolean;
   processed: number;
-  /** Templates whose level went up (written, unless dry run). */
+  /** Templates with fewer E+W and no lower level (written, unless dry run). */
   improved: number;
+  /** Of those, the ones whose level stayed the same (fewer E+W only). */
+  fewerIssuesSameLevel: number;
   /** "FIX→B", "B→A", "FIX→FIX", … (level before → level after normalization). */
   transitions: Record<string, number>;
-  /** Normalization changed something but the level stayed: not written. */
+  /** Normalization changed something but E+W did not go down: not written. */
   sameLevelNotWritten: number;
   byVendor: Record<string, VendorStats>;
   /** Most frequent lint messages left after the run (E/W, port names masked). */
   topReasons: { reason: string; count: number }[];
   /** Most frequent "requires manual fix" notes of the normalizer. */
   topManual: { reason: string; count: number }[];
+  /** Ports whose section stays unresolved, by "signalType + direction" (top 30). */
+  unresolvedSections: { reason: string; count: number }[];
   levelsAfter: Record<BlockLevel, number>;
 }
 
@@ -65,15 +70,18 @@ export function normalizeLibrary(
     dryRun: !!options.dryRun,
     processed: 0,
     improved: 0,
+    fewerIssuesSameLevel: 0,
     transitions: {},
     sameLevelNotWritten: 0,
     byVendor: Object.fromEntries(VENDORS.map((v) => [v.name, { processed: 0, written: 0, fixToB: 0, fixToA: 0, bToA: 0 }])),
     topReasons: [],
     topManual: [],
+    unresolvedSections: [],
     levelsAfter: { A: 0, B: 0, FIX: 0 },
   };
   const reasons = new Map<string, number>();
   const manual = new Map<string, number>();
+  const unresolved = new Map<string, number>();
 
   const rows = sqlite
     .prepare(
@@ -112,12 +120,19 @@ export function normalizeLibrary(
       const key = `${before.level}→${after.level}`;
       report.transitions[key] = (report.transitions[key] ?? 0) + 1;
       for (const c of changes) {
+        if (c.manual && c.port) {
+          const k = `${c.port.signalType || "(none)"} + ${c.port.direction || "(none)"}`;
+          unresolved.set(k, (unresolved.get(k) ?? 0) + 1);
+        }
         if (!c.manual) continue;
         const k = c.note.replace(/"[^"]*"/g, '"…"');
         manual.set(k, (manual.get(k) ?? 0) + 1);
       }
 
-      const improves = RANK[after.level] > RANK[before.level];
+      const issues = (l: { errors: string[]; warnings: string[] }) => l.errors.length + l.warnings.length;
+      const improves =
+        RANK[after.level] > RANK[before.level] || (RANK[after.level] === RANK[before.level] && issues(after) < issues(before));
+      if (improves && after.level === before.level) report.fewerIssuesSameLevel++;
       const final = improves ? after : before;
       if (improves) {
         report.improved++;
@@ -144,6 +159,7 @@ export function normalizeLibrary(
 
   report.topReasons = top(reasons, 10);
   report.topManual = top(manual, 5);
+  report.unresolvedSections = top(unresolved, 30);
   return report;
 }
 
@@ -153,7 +169,7 @@ export function formatNormalizeReport(r: NormalizeLibraryReport): string {
   const transitions = Object.entries(r.transitions).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(", ");
   return [
     `Normalization of our vendors' templates (raw/draft)${r.dryRun ? " (dry run, nothing written)" : ""}`,
-    `Processed: ${r.processed}; level raised: ${r.improved}${r.dryRun ? "" : " (written)"}; changed without a level change (not written): ${r.sameLevelNotWritten}`,
+    `Processed: ${r.processed}; improved: ${r.improved}${r.dryRun ? "" : " (written)"} (level raised ${r.improved - r.fewerIssuesSameLevel}, fewer E+W at the same level ${r.fewerIssuesSameLevel}); changed without fewer E+W (not written): ${r.sameLevelNotWritten}`,
     `Transitions: ${transitions || "-"}`,
     `Levels after: A ${r.levelsAfter.A} / B ${r.levelsAfter.B} / FIX ${r.levelsAfter.FIX}`,
     ``,
@@ -165,5 +181,8 @@ export function formatNormalizeReport(r: NormalizeLibraryReport): string {
     ``,
     `Needs a manual fix (top 5):`,
     ...r.topManual.map((x) => `  - ${x.reason}: ${x.count}`),
+    ``,
+    `Unresolved port sections by signalType + direction (top 30):`,
+    ...r.unresolvedSections.map((x, i) => `  ${String(i + 1).padStart(2)}. ${x.reason}: ${x.count}`),
   ].join("\n") + "\n";
 }

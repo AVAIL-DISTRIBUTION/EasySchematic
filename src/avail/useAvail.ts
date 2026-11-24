@@ -7,6 +7,8 @@ import { startEditSession } from "./templateEdit";
 import { useSchematicStore } from "../store";
 import {
   getRole,
+  getSelected,
+  isSelectMode,
   getShowUnverified,
   getVersion,
   isAvailLibrary,
@@ -24,6 +26,8 @@ export function useAvailState() {
     showUnverified: getShowUnverified(),
     role: getRole(),
     moderator: isModerator(),
+    selectMode: isSelectMode(),
+    selected: getSelected(),
   };
 }
 

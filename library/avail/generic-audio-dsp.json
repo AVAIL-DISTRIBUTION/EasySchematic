@@ -1,0 +1,130 @@
+{
+  "id": "badbda01-9a8a-43ce-ae19-8ea868697e55",
+  "label": "Generic Audio DSP",
+  "shortName": "Audio DSP",
+  "manufacturer": "Generic",
+  "modelNumber": "GEN-AUDIO-DSP",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "audio dsp",
+    "dsp",
+    "audio processor",
+    "generic"
+  ],
+  "ports": [
+    {
+      "id": "in1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, mic/line, phantom power"
+    },
+    {
+      "id": "in2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, mic/line, phantom power"
+    },
+    {
+      "id": "in3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, mic/line, phantom power"
+    },
+    {
+      "id": "in4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, mic/line, phantom power"
+    },
+    {
+      "id": "out1",
+      "label": "Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, balanced line level"
+    },
+    {
+      "id": "out2",
+      "label": "Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, balanced line level"
+    },
+    {
+      "id": "out3",
+      "label": "Line Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, balanced line level"
+    },
+    {
+      "id": "out4",
+      "label": "Line Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole 3.5 mm captive screw, balanced line level"
+    },
+    {
+      "id": "lan",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Control and configuration"
+    },
+    {
+      "id": "dante",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 audio network"
+    },
+    {
+      "id": "usb",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB audio to a PC / UC host"
+    },
+    {
+      "id": "pwr",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

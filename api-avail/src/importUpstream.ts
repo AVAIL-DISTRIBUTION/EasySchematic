@@ -19,7 +19,8 @@
  * outside a vendor's scope (Sony, NETGEAR) are skipped; kept ones get the canonical
  * manufacturer; a brand folded into Generic is imported only as "Generic <type>" and only
  * when no Generic of that type exists. So a repeated import after apply:vendor-decisions
- * does not bring back what the cleanup removed.
+ * does not bring back what the cleanup removed. Ids deleted by docs/avail/generic-plan.json
+ * are skipped too, and rows written by either cleanup are not overwritten.
  *
  * Status rules: verified and draft templates are never touched; hidden ones get the
  * new data but stay hidden; everything else becomes raw. A second run with the same
@@ -30,10 +31,13 @@ import { templateToRow, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { defaultCategoryFor, findVendor, GENERIC_VENDOR, normalizeManufacturer, VENDORS } from "../../src/avail/library";
 import { genericTemplate, VendorRules } from "../../src/avail/vendorDecisions";
+import { GENERIC_PLAN_SOURCE, plannedDeletions } from "./genericPlan";
 import { PROTECTED_STATUSES, type TemplateMetaRow, type TemplateStatus } from "./templateMeta";
 
 /** meta.source of templates written by apply:vendor-decisions (vendorCleanup.ts). */
 export const VENDOR_DECISIONS_SOURCE = "vendor-decisions";
+/** Rows written by our cleanups: import:upstream does not overwrite them. */
+const WRITTEN_SOURCES = new Set([VENDOR_DECISIONS_SOURCE, GENERIC_PLAN_SOURCE]);
 
 export const DEFAULT_UPSTREAM_URL = "https://api.easyschematic.live/templates";
 export const UPSTREAM_SOURCE = "easyschematic.live";
@@ -72,7 +76,7 @@ export interface ImportReport {
   noCategory: number;
   levels: Record<BlockLevel, number>;
   /** Skipped by vendor decisions. */
-  skipped: { noManufacturer: number; notDecided: number; scope: number; genericExists: number };
+  skipped: { noManufacturer: number; notDecided: number; scope: number; genericExists: number; genericPlan: number };
   /** "Generic <type>" templates created from brands folded into Generic. */
   genericCreated: string[];
   dryRun: boolean;
@@ -85,6 +89,8 @@ export interface ImportOptions {
   updatedBy?: string;
   /** Vendor decisions; defaults to docs/avail/vendor-decisions.json. */
   rules?: VendorRules;
+  /** Ids deleted by docs/avail/generic-plan.json: never imported again. */
+  planDeleted?: Set<string>;
 }
 
 function isUpstreamTemplate(v: unknown): v is UpstreamTemplate {
@@ -144,11 +150,12 @@ export function importTemplates(
     noManufacturer: 0,
     noCategory: 0,
     levels: { A: 0, B: 0, FIX: 0 },
-    skipped: { noManufacturer: 0, notDecided: 0, scope: 0, genericExists: 0 },
+    skipped: { noManufacturer: 0, notDecided: 0, scope: 0, genericExists: 0, genericPlan: 0 },
     genericCreated: [],
     dryRun: !!options.dryRun,
   };
   const rules = options.rules ?? new VendorRules();
+  const planDeleted = options.planDeleted ?? plannedDeletions();
   const otherManufacturers = new Set<string>();
 
   // ---- local state
@@ -203,6 +210,7 @@ export function importTemplates(
         report.invalid++;
         return;
       }
+      if (planDeleted.has(raw.id)) return void report.skipped.genericPlan++;
       const decision = rules.classify(raw);
       if (decision.kind === "none") return void report.skipped.noManufacturer++;
       if (decision.kind === "drop") return void report.skipped.notDecided++;
@@ -231,8 +239,8 @@ export function importTemplates(
       }
       if (existing) claimed.add(existing.id);
       const existingStatus: TemplateStatus | undefined = existing ? meta.get(existing.id)?.status : undefined;
-      // Written by apply:vendor-decisions (a Generic made from a brand): not the source's any more.
-      const writtenByDecisions = existing ? meta.get(existing.id)?.source === VENDOR_DECISIONS_SOURCE : false;
+      // Written by apply:vendor-decisions or apply:generic-plan: not the source's any more.
+      const writtenByDecisions = existing ? WRITTEN_SOURCES.has(meta.get(existing.id)?.source ?? "") : false;
       if (writtenByDecisions || (existingStatus && PROTECTED_STATUSES.includes(existingStatus))) {
         report.skippedProtected++;
         return;
@@ -321,7 +329,7 @@ export function formatImportReport(r: ImportReport, origin: string): string {
   return [
     `Template import: ${origin}${r.dryRun ? " (dry run, nothing written)" : ""}`,
     `Received: ${r.received} (invalid ${r.invalid}, manufacturer + model duplicates ${r.duplicates})`,
-    `Skipped by vendor decisions: no manufacturer ${r.skipped.noManufacturer}, manufacturer not decided ${r.skipped.notDecided}, outside scope ${r.skipped.scope}, Generic of the type exists ${r.skipped.genericExists}`,
+    `Skipped by vendor decisions: no manufacturer ${r.skipped.noManufacturer}, manufacturer not decided ${r.skipped.notDecided}, outside scope ${r.skipped.scope}, Generic of the type exists ${r.skipped.genericExists}, deleted by the Generic plan ${r.skipped.genericPlan}`,
     `Generic created: ${r.genericCreated.length ? r.genericCreated.join(", ") : "-"}`,
     `Imported: ${r.imported}; new ${r.inserted}, updated ${r.updated}, unchanged ${r.unchanged}`,
     `Not touched (verified/draft, written by vendor decisions): ${r.skippedProtected}; kept hidden: ${r.keptHidden}`,

@@ -170,6 +170,44 @@ export function libraryQuery(): string {
   return isModerator() ? "?include=raw,hidden" : "?include=raw";
 }
 
+// ---- selection for bulk actions (moderators)
+
+let selectMode = false;
+let selected = new Set<string>();
+
+export function isSelectMode(): boolean {
+  return selectMode;
+}
+
+export function setSelectMode(value: boolean): void {
+  if (value === selectMode) return;
+  selectMode = value;
+  if (!value) selected = new Set();
+  emit();
+}
+
+export function isSelected(templateId: string): boolean {
+  return selected.has(templateId);
+}
+
+export function toggleSelected(templateId: string, value = !selected.has(templateId)): void {
+  if (value === selected.has(templateId)) return;
+  selected = new Set(selected);
+  if (value) selected.add(templateId);
+  else selected.delete(templateId);
+  emit();
+}
+
+export function getSelected(): string[] {
+  return [...selected];
+}
+
+export function clearSelection(): void {
+  if (selected.size === 0) return;
+  selected = new Set();
+  emit();
+}
+
 /** Test helper: back to a fresh page load. */
 export function resetForTests(): void {
   active = read(KEY_MODE) === "1";
@@ -177,6 +215,8 @@ export function resetForTests(): void {
   role = null;
   statuses = new Map();
   statusesLoaded = false;
+  selectMode = false;
+  selected = new Set();
   listeners.clear();
   reloaders.clear();
 }

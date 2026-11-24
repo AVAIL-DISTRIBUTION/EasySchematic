@@ -1,0 +1,77 @@
+{
+  "id": "5c2dceac-9be4-400c-9941-c48da42db23d",
+  "label": "Generic Conference System",
+  "shortName": "Conference System",
+  "manufacturer": "Generic",
+  "modelNumber": "GEN-CONFERENCE-SYSTEM",
+  "deviceType": "conference-system",
+  "category": "Audio Products / Discussion Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "conference system",
+    "discussion system",
+    "central unit",
+    "delegate units",
+    "generic"
+  ],
+  "ports": [
+    {
+      "id": "line-in",
+      "label": "Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line input (floor / program audio)"
+    },
+    {
+      "id": "line-out",
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line output to the PA / DSP"
+    },
+    {
+      "id": "lan",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Control and configuration"
+    },
+    {
+      "id": "units1",
+      "label": "Delegate Units 1",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Daisy-chain of delegate and chairman units"
+    },
+    {
+      "id": "units2",
+      "label": "Delegate Units 2",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Daisy-chain of delegate and chairman units"
+    },
+    {
+      "id": "pwr",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

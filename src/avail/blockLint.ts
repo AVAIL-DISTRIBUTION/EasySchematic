@@ -13,6 +13,7 @@
  *   FIX — at least one error; B — no errors, some warnings; A — clean.
  */
 import { findCategory, findVendor, GENERIC_VENDOR } from "./library";
+import { BLOCK_SECTIONS, suggestSection, wrongBidirectional } from "./sections";
 
 
 export type BlockLevel = "A" | "B" | "FIX";
@@ -23,12 +24,7 @@ export interface BlockLintResult {
   warnings: string[];
 }
 
-/** Port sections in the order the standard requires; "(…)" suffixes are allowed, e.g. "Video Inputs (Front)". */
-export const BLOCK_SECTIONS = [
-  "Video Inputs", "Video Outputs", "Audio Inputs", "Audio Outputs", "Speaker Outputs", "RF",
-  "Network", "Dante", "AVB", "Serial", "IR", "Relays", "Digital I/O", "Control",
-  "Expansion", "USB", "Configuration", "Power",
-] as const;
+export { BLOCK_SECTIONS };
 
 /** Signal types that must be direction "bidirectional". */
 const BIDIR = new Set(["ethernet", "dante", "avb", "serial", "rs422", "gpio", "ebus", "extron-exp", "thunderbolt"]);
@@ -175,15 +171,19 @@ export function lintBlock(block: object): BlockLintResult {
     if (!truthy(p.connectorType)) E.push(`${tag}: no connectorType`);
     const b = sectionBase(sec);
     const idx = (BLOCK_SECTIONS as readonly string[]).indexOf(b);
-    if (!sec) E.push(`${tag}: no section`);
-    else if (idx < 0) E.push(`${tag}: section "${sec}" is not in the vocabulary`);
-    else order.push(idx);
+    if (!sec || idx < 0) {
+      // Hint: the section the normalizer would give it, when it can tell.
+      const hint = suggestSection(p);
+      const use = hint ? `; use "${hint}"` : "";
+      E.push(sec ? `${tag}: section "${sec}" is not in the vocabulary${use}` : `${tag}: no section${use}`);
+    } else order.push(idx);
     const words = l.split(WORD_SPLIT_RE).filter((w) => HAS_LATIN_WORD_RE.test(w));
     if (words.length >= 2 && l === l.toUpperCase()) W.push(`${tag}: label in all caps`);
     if (pyLen(l) > 28) W.push(`${tag}: label longer than 28 characters`);
     if (typeof sig === "string" && BIDIR.has(sig) && p.direction !== "bidirectional") {
       W.push(`${tag}: ${sig} must be bidirectional` + (sig === "dante" ? " (Dante channels are not ports)" : ""));
     }
+    if (wrongBidirectional(p)) W.push(`${tag}: ${String(sig)} must be input or output, not bidirectional`);
     if (sig === "power" && p.direction !== "input" && !POWER_PASSTHROUGH_RE.test(l)) E.push(`${tag}: power is not an input`);
     if (sig === "rs422" && l.includes("232")) E.push(`${tag}: RS-232 marked as rs422`);
     const lower = l.toLowerCase();

@@ -88,3 +88,31 @@ export async function saveLibraryTemplate(templateId: string, template: Omit<Dev
   const body = (await res.json().catch(() => ({}))) as { error?: string };
   throw new Error(body.error ?? `HTTP ${res.status}`);
 }
+
+export interface BatchStatusFailure {
+  id: string;
+  label: string | null;
+  reason: "not_found" | "not_level_a";
+  level?: string;
+  errors?: string[];
+  warnings?: string[];
+}
+
+export interface BatchStatusResult {
+  status: TemplateStatus;
+  updated: string[];
+  failed: BatchStatusFailure[];
+}
+
+/** POST /avail/templates/status/batch: the server checks every template (verified only at level A). */
+export async function changeTemplatesStatus(ids: string[], status: TemplateStatus): Promise<BatchStatusResult> {
+  const res = await fetch(`${apiUrl()}/avail/templates/status/batch`, {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ids, status }),
+  });
+  const body = (await res.json().catch(() => ({}))) as Partial<BatchStatusResult> & { error?: string };
+  if (!res.ok) throw new Error(body.error ?? `HTTP ${res.status}`);
+  return { status, updated: body.updated ?? [], failed: body.failed ?? [] };
+}
