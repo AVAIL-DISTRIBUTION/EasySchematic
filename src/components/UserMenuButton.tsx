@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { checkSession, logout } from "../templateApi";
 import { clearCache } from "../cloudCache";
 import LoginDialog from "./LoginDialog";
+import { isAvailBuild } from "../avail/brand";
 
 interface User {
   id: string;
@@ -87,6 +88,7 @@ export default function UserMenuButton() {
           <div className="px-3 py-2 border-b" style={{ borderColor: "var(--color-border)" }}>
             <p className="text-xs truncate" style={{ color: "var(--color-text-muted)" }}>{user.email}</p>
           </div>
+          {!isAvailBuild() && (
           <a
             href="https://devices.easyschematic.live"
             target="_blank"
@@ -97,6 +99,7 @@ export default function UserMenuButton() {
           >
             Device Library ↗
           </a>
+          )}
           <button
             onClick={handleLogout}
             className="w-full text-left px-3 py-2 text-xs text-red-500 hover:bg-red-50 transition-colors cursor-pointer"

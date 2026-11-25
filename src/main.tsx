@@ -5,6 +5,8 @@ import "./index.css";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import { initServiceWorkerUpdates } from "./sw-register";
 import AuthErrorNotice from "./avail/AuthErrorNotice.tsx";
+import AuthGate from "./avail/AuthGate.tsx";
+import { isAvailBuild } from "./avail/brand";
 
 initServiceWorkerUpdates();
 
@@ -28,6 +30,18 @@ function shouldShowLanding(): boolean {
 }
 
 function Root() {
+  // AVAIL build: no landing page — sign in with Google, then straight to the editor.
+  if (isAvailBuild()) {
+    return (
+      <AuthGate>
+        <ReactFlowProvider>
+          <Suspense fallback={null}>
+            <App />
+          </Suspense>
+        </ReactFlowProvider>
+      </AuthGate>
+    );
+  }
   if (shouldShowLanding()) {
     return (
       <Suspense fallback={null}>
