@@ -36,60 +36,58 @@
     "description": "Dante Audio DSP Matrix Processor w/ 24 AEC",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "5530db7c-633c-4694-ac6a-b33eff7902a4",
-      "label": "Extron XMP 240 C AT",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "XMP 240 C AT",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Expansion",
-      "signalType": "extron-exp",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "Proprietary Extron EXP digital-audio expansion bus on shielded CAT6 (16ch in / 16ch out, 24-bit/48 kHz, up to 10m). Modeled as `aes` SignalType — closest semantic match for proprietary digital audio over CAT cable; no Extron-specific bus type exists in src/types.ts.",
-      "id": "port-0"
-    },
-    {
-      "label": "Dante 1",
-      "signalType": "dante",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "Gigabit RJ-45 in a multi-port Dante switch (redundant ring or daisy chain).",
-      "id": "port-1"
-    },
-    {
-      "label": "Dante 2",
-      "signalType": "dante",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "Gigabit RJ-45 in a multi-port Dante switch (redundant ring or daisy chain).",
-      "id": "port-2"
-    },
-    {
-      "label": "LAN",
+      "id": "vx-60-1836-01-1",
+      "label": "Control LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 9.8,
-      "notes": "PoE 802.3af, gigabit. Acts as control + power source when not using the 12V DC barrel.",
-      "id": "port-3"
+      "notes": "PoE 802.3af, gigabit. Acts as control + power source when not using the 12V DC barrel."
     },
     {
+      "id": "vx-60-1836-01-2",
+      "label": "Dante 1 (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Gigabit RJ-45 in a multi-port Dante switch (redundant ring or daisy chain)."
+    },
+    {
+      "id": "vx-60-1836-01-3",
+      "label": "Dante 2 (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Gigabit RJ-45 in a multi-port Dante switch (redundant ring or daisy chain)."
+    },
+    {
+      "id": "vx-60-1836-01-4",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
-      "id": "port-4"
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1836-01-5",
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Proprietary Extron EXP digital-audio expansion bus on shielded CAT6 (16ch in / 16ch out, 24-bit/48 kHz, up to 10m). Modeled as `aes` SignalType — closest semantic match for proprietary digital audio over CAT cable; no Extron-specific bus type exists in src/types.ts."
     },
     {
       "label": "USB",
@@ -98,16 +96,16 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for configuration (USB 2.0).",
-      "id": "port-5"
+      "id": "vx-60-1836-01-s1"
     },
     {
-      "label": "DC Power",
+      "id": "vx-60-1836-01-6",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
-      "id": "port-6"
+      "connectorType": "phoenix",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
     }
   ]
 }

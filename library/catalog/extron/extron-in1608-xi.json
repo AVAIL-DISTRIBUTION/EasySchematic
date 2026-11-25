@@ -34,214 +34,243 @@
     "description": "Standard Model",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "dc59af83-282d-4c71-8db6-5fd23809b27a",
-      "label": "Extron IN1608 xi",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Scaler Switchers Eng.vssx",
+      "label": "IN1608 xi",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Input 1 VGA",
+      "id": "vx-60-1238-81-1",
+      "label": "RGBHV In 1",
       "signalType": "vga",
       "direction": "input",
-      "connectorType": "db15",
-      "id": "port-0",
+      "connectorType": "vga",
       "section": "Video Inputs"
     },
     {
-      "label": "Input 2 VGA",
+      "id": "vx-60-1238-81-2",
+      "label": "RGBHV In 2",
       "signalType": "vga",
       "direction": "input",
-      "connectorType": "db15",
-      "id": "port-1",
+      "connectorType": "vga",
       "section": "Video Inputs"
     },
     {
-      "label": "Input 3 HDMI",
+      "id": "vx-60-1238-81-3",
+      "label": "HDMI In 3",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-2",
       "section": "Video Inputs"
     },
     {
-      "label": "Input 4 HDMI",
+      "id": "vx-60-1238-81-4",
+      "label": "HDMI In 4",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-3",
       "section": "Video Inputs"
     },
     {
-      "label": "Input 5 HDMI",
+      "id": "vx-60-1238-81-5",
+      "label": "HDMI In 5",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-4",
       "section": "Video Inputs"
     },
     {
-      "label": "Input 6 HDMI",
+      "id": "vx-60-1238-81-6",
+      "label": "HDMI In 6",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-5",
       "section": "Video Inputs"
     },
     {
-      "label": "Input 7 DTP",
+      "id": "vx-60-1238-81-7",
+      "label": "DTP In 7",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
-      "id": "port-6",
       "section": "Video Inputs"
     },
     {
-      "label": "Input 8 DTP",
+      "id": "vx-60-1238-81-8",
+      "label": "DTP In 8",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
-      "id": "port-7",
       "section": "Video Inputs"
     },
     {
-      "label": "Output A HDMI",
+      "id": "vx-60-1238-81-9",
+      "label": "HDMI Out 1",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-16",
       "section": "Video Outputs"
     },
     {
-      "label": "Output B HDMI",
+      "id": "vx-60-1238-81-10",
+      "label": "HDMI Out 2",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-17",
       "section": "Video Outputs"
     },
     {
-      "label": "Output C DTP/HDBaseT",
+      "id": "vx-60-1238-81-11",
+      "label": "DTP Out 3",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "id": "port-18",
       "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1238-81-12",
       "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-8"
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1238-81-13",
       "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-9"
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1238-81-14",
       "label": "Audio In 3",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-10"
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1238-81-15",
       "label": "Audio In 4",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-11"
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1238-81-16",
       "label": "Audio In 5",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-12"
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1238-81-17",
       "label": "Audio In 6",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-13"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Mic/Line 1",
+      "id": "vx-60-1238-81-18",
+      "label": "Mic/Line In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-14"
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Mic/Line 2",
+      "id": "vx-60-1238-81-19",
+      "label": "Mic/Line In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-15"
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Audio Out 1",
+      "id": "vx-60-1238-81-20",
+      "label": "Audio Out 1-2",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-19"
+      "notes": "5-pole captive screw; channels 1-2"
     },
     {
+      "id": "vx-60-1238-81-21",
       "label": "Audio Out 2",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-20"
+      "notes": "L/R; 5-pole captive screw"
     },
     {
-      "label": "RS-232",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-21"
-    },
-    {
+      "id": "vx-60-1238-81-22",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Control",
-      "id": "port-22"
+      "section": "Network"
     },
     {
-      "label": "USB Config",
-      "signalType": "usb",
+      "id": "vx-60-1238-81-23",
+      "label": "RS-232/IR (In 7)",
+      "signalType": "serial",
       "direction": "bidirectional",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-23"
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
     },
     {
+      "id": "vx-60-1238-81-24",
+      "label": "RS-232/IR (In 8)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-81-25",
+      "label": "RS-232/IR (Out 3)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-81-26",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-81-27",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-24"
+      "connectorType": "iec"
     }
   ]
 }

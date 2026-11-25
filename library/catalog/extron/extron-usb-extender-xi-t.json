@@ -35,34 +35,33 @@
     "rackUnits": 1,
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "3d894b8f-2c2c-4edc-9b2a-2f31ae5bfdfb",
-      "label": "Extron USB Extender xi T",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Extenders Eng.vssx",
+      "label": "USB Extender xi T",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "id": "tpl-0",
-      "label": "USB Host (USB-B)",
+      "id": "vx-60-1964-12-1",
+      "label": "USB",
       "signalType": "usb",
-      "direction": "input",
-      "section": "USB",
-      "connectorType": "usb-b"
-    },
-    {
-      "id": "tpl-1",
-      "label": "CAT 6",
-      "signalType": "ethernet",
       "direction": "bidirectional",
-      "section": "USB",
-      "connectorType": "rj45"
+      "connectorType": "usb-b",
+      "section": "USB"
     },
     {
-      "id": "tpl-2",
-      "label": "Power 12VDC",
+      "id": "vx-60-1964-12-2",
+      "label": "Network USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1964-12-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
       "section": "Power",

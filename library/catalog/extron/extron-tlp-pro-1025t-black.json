@@ -36,33 +36,22 @@
     "description": "10\" Tabletop TouchLink® Pro Touchpanel - Black",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "230f76ae-6eed-48d8-a36e-8af8b4943e6b",
-      "label": "Extron TLP Pro 1025T Black",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1025T Black",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN / PoE",
+      "id": "vx-60-1565-12-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 11.5,
-      "notes": "PoE 802.3af class 3",
-      "id": "port-0"
-    },
-    {
-      "label": "USB",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
-      "id": "port-1"
+      "notes": "PoE 802.3af class 3"
     }
   ]
 }

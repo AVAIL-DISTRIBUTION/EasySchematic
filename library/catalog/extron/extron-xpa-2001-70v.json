@@ -35,58 +35,49 @@
     "description": "One Channel Amp, 200 watts at 70 volts",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "089846fb-1a70-44fb-a74e-e293a569b057",
-      "label": "Extron XPA 2001-70V",
-      "match": "model-name",
-      "status": "raw",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "XPA 2001-70V",
+      "match": "part-number",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Line L (Summed)",
+      "id": "vx-60-850-01-1",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Line R (Summed)",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Speaker",
+      "id": "vx-60-850-01-2",
+      "label": "Speaker Out",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Audio Outputs"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     },
     {
-      "label": "Remote",
-      "signalType": "custom",
+      "id": "vx-60-850-01-3",
+      "label": "Control",
+      "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "other",
-      "section": "Control",
-      "notes": "Combined 3.5mm 5-pole captive screw — pin 4 GND / pin 5 standby (older XPA series convention).",
-      "id": "port-3",
-      "inheritsSignal": false
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "AC Power",
+      "id": "vx-60-850-01-4",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-4",
-      "gender": "male"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
     }
   ]
 }

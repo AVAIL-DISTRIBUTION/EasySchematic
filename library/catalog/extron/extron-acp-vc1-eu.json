@@ -33,31 +33,40 @@
     "description": "Audio Control Panel with Volume and Mute - Flex55 and EU",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "30d0ad45-0ecc-4e3e-ba5e-80fdb9a2ad55",
-      "label": "Extron ACP VC1 EU",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Control Panels Eng.vssx",
+      "label": "ACP VC1 EU",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1861-31-1",
       "label": "ACP Bus 1",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "id": "port-0",
-      "notes": "bus-powered (ACP)"
+      "notes": "bus-powered (ACP) (4-pole captive screw)"
     },
     {
+      "id": "vx-60-1861-31-2",
       "label": "ACP Bus 2",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "id": "port-1"
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "avail-extron-60-1861-31-dc12",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw — Extron convention, verify"
     }
   ]
 }

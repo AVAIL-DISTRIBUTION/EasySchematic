@@ -33,38 +33,30 @@
     "description": "SMP 401 Remote Control Panel - Decorator-Style",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "cc848449-610c-4af6-b189-028c34bc74c5",
-      "label": "Extron RCP 401 D",
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - H264 Eng.vssx",
+      "label": "RCP 401 D",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "USB-C Host (to SMP 401)",
+      "id": "vx-60-1868-01-1",
+      "label": "USB-C",
       "signalType": "usb",
       "direction": "bidirectional",
       "connectorType": "usb-c",
-      "section": "Control",
-      "id": "port-0"
+      "section": "USB"
     },
     {
-      "label": "USB Storage",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-1"
-    },
-    {
+      "id": "vx-60-1868-01-2",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
+      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-2"
+      "notes": "2-pole captive screw"
     }
   ]
 }

@@ -34,56 +34,55 @@
     "description": "8K HDMI Audio Embedder, Distribution Amplifier",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "5e551297-6235-4fe4-a610-966706498bb3",
-      "label": "Extron DA2 HD 8K AI",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Misc Eng.vssx",
+      "label": "DA2 HD 8K AI",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In",
+      "id": "vx-60-1870-13-1",
+      "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1870-13-2",
       "label": "HDMI Out 1",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-2"
+      "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1870-13-3",
       "label": "HDMI Out 2",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-3"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio In (to embed)",
+      "id": "vx-60-1870-13-4",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "Balanced/unbalanced stereo line-level on a 5-pole 3.5mm captive screw.",
-      "id": "port-1"
+      "notes": "Balanced/unbalanced stereo line-level on a 5-pole 3.5mm captive screw. (5-pole captive screw)"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1870-13-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
-      "id": "port-4"
+      "connectorType": "barrel",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
     }
   ]
 }

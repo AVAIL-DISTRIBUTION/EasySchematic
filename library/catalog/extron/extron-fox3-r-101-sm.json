@@ -35,49 +35,47 @@
     "description": "Fiber Optic Receiver for HDMI",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "89025ebd-1fd4-4f36-b799-bd0f6c8301f5",
-      "label": "Extron FOX3 R 101 SM",
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 Receivers Eng.vssx",
+      "label": "FOX3 R 101 SM",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Fiber",
+      "id": "vx-60-1957-22-1",
+      "label": "Fiber In",
       "signalType": "fiber",
       "direction": "input",
       "connectorType": "lc",
       "section": "Video Inputs",
-      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
-      "id": "port-0"
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
     },
     {
+      "id": "vx-60-1957-22-2",
+      "label": "Fiber Out",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1957-22-3",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-c",
-      "section": "Control",
-      "notes": "Front panel USB-C config (USB 2.0 High Speed, Ethernet-over-USB).",
-      "id": "port-2"
-    },
-    {
-      "label": "DC 12V",
+      "id": "vx-60-1957-22-4",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC/24W Extron Everlast PSU (100-240 VAC input).",
-      "id": "port-3"
+      "connectorType": "barrel",
+      "notes": "External 12VDC/24W Extron Everlast PSU (100-240 VAC input)."
     }
   ]
 }

@@ -35,47 +35,46 @@
     "description": "Two Output 4K/60 HDMI Distribution Amplifier",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "0e148fd8-2a1d-4de5-9fcd-c4ee9162834f",
-      "label": "Extron DA2 HD 4K PLUS",
+      "kind": "stencil",
+      "from": "Extron DA Engineering Drawings/DA - HDMI DA Eng.vssx",
+      "label": "",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In",
+      "id": "vx-60-1607-01-1",
+      "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1607-01-2",
       "label": "HDMI Out 1",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1607-01-3",
       "label": "HDMI Out 2",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-2"
+      "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1607-01-4",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3.5mm 3-pole captive screw (Tx/Rx/GND).",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "3.5mm 3-pole captive screw (Tx/Rx/GND)."
     },
     {
       "label": "USB Config",
@@ -84,16 +83,16 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for PCS configuration (USB 2.0).",
-      "id": "port-4"
+      "id": "vx-60-1607-01-s1"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1607-01-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC PSU brick (100-240 VAC input).",
-      "id": "port-5"
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU brick (100-240 VAC input)."
     }
   ]
 }

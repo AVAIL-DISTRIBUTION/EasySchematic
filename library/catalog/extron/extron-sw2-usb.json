@@ -35,94 +35,104 @@
     "description": "Two Input USB Switcher",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "a19de995-d442-46f1-8067-da8e9fd24c5e",
-      "label": "Extron SW2 USB",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "SW2 USB",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "RS-232",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-6"
-    },
-    {
+      "id": "vx-60-952-02-1",
       "label": "RS-232 (Pass-Through)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-7"
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Contact Closure",
+      "id": "vx-60-952-02-2",
+      "label": "RS-232 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-952-02-3",
+      "label": "RS-232 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-952-02-4",
+      "label": "Contact In 2",
       "signalType": "contact-closure",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-8"
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "USB Host In 1",
+      "id": "vx-60-952-02-5",
+      "label": "USB 1",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
       "connectorType": "usb-b",
-      "section": "USB",
-      "id": "port-0"
+      "section": "USB"
     },
     {
-      "label": "USB Host In 2",
+      "id": "vx-60-952-02-6",
+      "label": "USB 2",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
       "connectorType": "usb-b",
-      "section": "USB",
-      "id": "port-1"
+      "section": "USB"
     },
     {
-      "label": "USB Device Out 1",
+      "id": "vx-60-952-02-7",
+      "label": "USB 3",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-2"
+      "section": "USB"
     },
     {
-      "label": "USB Device Out 2",
+      "id": "vx-60-952-02-8",
+      "label": "USB 4",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-3"
+      "section": "USB"
     },
     {
-      "label": "USB Device Out 3",
+      "id": "vx-60-952-02-9",
+      "label": "USB 5",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-4"
+      "section": "USB"
     },
     {
-      "label": "USB Device Out 4",
+      "id": "vx-60-952-02-10",
+      "label": "USB 6",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-5"
+      "section": "USB"
     },
     {
+      "id": "vx-60-952-02-11",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-9"
+      "connectorType": "phoenix"
     }
   ]
 }

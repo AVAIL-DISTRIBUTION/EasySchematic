@@ -35,206 +35,200 @@
     "description": "12-Input 4K/60 HDMI, DisplayPort, and 12G-SDI Seamless Switcher",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "ba617a33-587e-4619-89a4-8110226f8ecf",
-      "label": "Extron ISS 612",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Scalers Eng.vssx",
+      "label": "ISS 612",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1685-01-1",
       "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-0",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1685-01-2",
       "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-1",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1685-01-3",
       "label": "HDMI In 3",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-2",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1685-01-4",
       "label": "HDMI In 4",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-3",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1685-01-5",
       "label": "HDMI In 5",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-4",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1685-01-6",
       "label": "HDMI In 6",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-5",
       "section": "Video Inputs"
     },
     {
-      "label": "DisplayPort In 1",
+      "id": "vx-60-1685-01-7",
+      "label": "DisplayPort In 7",
       "signalType": "displayport",
       "direction": "input",
       "connectorType": "displayport",
-      "id": "port-6",
       "section": "Video Inputs"
     },
     {
-      "label": "DisplayPort In 2",
+      "id": "vx-60-1685-01-8",
+      "label": "DisplayPort In 8",
       "signalType": "displayport",
       "direction": "input",
       "connectorType": "displayport",
-      "id": "port-7",
       "section": "Video Inputs"
     },
     {
-      "label": "SDI In 1",
+      "id": "vx-60-1685-01-9",
+      "label": "SDI In 9",
       "signalType": "sdi",
       "direction": "input",
       "connectorType": "bnc",
-      "id": "port-8",
       "section": "Video Inputs"
     },
     {
-      "label": "SDI In 2",
+      "id": "vx-60-1685-01-10",
+      "label": "SDI In 10",
       "signalType": "sdi",
       "direction": "input",
       "connectorType": "bnc",
-      "id": "port-9",
       "section": "Video Inputs"
     },
     {
-      "label": "SDI In 3",
+      "id": "vx-60-1685-01-11",
+      "label": "SDI In 11",
       "signalType": "sdi",
       "direction": "input",
       "connectorType": "bnc",
-      "id": "port-10",
       "section": "Video Inputs"
     },
     {
-      "label": "SDI In 4",
+      "id": "vx-60-1685-01-12",
+      "label": "SDI In 12",
       "signalType": "sdi",
       "direction": "input",
       "connectorType": "bnc",
-      "id": "port-11",
       "section": "Video Inputs"
     },
     {
-      "label": "HDMI Out 1",
+      "id": "vx-60-1685-01-13",
+      "label": "SDI Out 1A",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1685-01-14",
+      "label": "HDMI Program Out 1B",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-12",
       "section": "Video Outputs"
     },
     {
-      "label": "HDMI Out 2",
+      "id": "vx-60-1685-01-15",
+      "label": "SDI Out 2A",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1685-01-16",
+      "label": "HDMI Program Out 2B",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-13",
       "section": "Video Outputs"
     },
     {
-      "label": "SDI Out 1",
-      "signalType": "sdi",
-      "direction": "output",
-      "connectorType": "bnc",
-      "id": "port-14",
-      "section": "Video Outputs"
-    },
-    {
-      "label": "SDI Out 2",
-      "signalType": "sdi",
-      "direction": "output",
-      "connectorType": "bnc",
-      "id": "port-15",
-      "section": "Video Outputs"
-    },
-    {
-      "label": "Audio Program Out",
+      "id": "vx-60-1685-01-17",
+      "label": "Audio Out (Preview)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-16",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Audio Preview Out",
+      "id": "vx-60-1685-01-18",
+      "label": "Audio Out (Program)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-17",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "RS-232",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-20"
-    },
-    {
+      "id": "vx-60-1685-01-19",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Control",
-      "id": "port-21"
+      "section": "Network"
     },
     {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-22"
+      "id": "vx-60-1685-01-20",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Genlock In",
+      "id": "vx-60-1685-01-21",
+      "label": "Genlock",
       "signalType": "genlock",
       "direction": "input",
       "connectorType": "bnc",
-      "section": "Sync",
-      "id": "port-18"
+      "section": "Sync"
     },
     {
+      "id": "vx-60-1685-01-22",
       "label": "Genlock Loop",
       "signalType": "genlock",
       "direction": "output",
       "connectorType": "bnc",
-      "section": "Sync",
-      "id": "port-19"
+      "section": "Sync"
     },
     {
+      "id": "vx-60-1685-01-23",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-23"
+      "connectorType": "iec"
     }
   ]
 }

@@ -32,31 +32,40 @@
     "description": "Audio Control Panel with Volume and Mute - Decorator-Style",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "bd128af5-ccdc-4569-ae11-27efd23a2df2",
-      "label": "Extron ACP VC1 D",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Control Panels Eng.vssx",
+      "label": "ACP VC1 D",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1861-01-1",
       "label": "ACP Bus 1",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "id": "port-0",
-      "notes": "bus-powered (ACP)"
+      "notes": "bus-powered (ACP) (4-pole captive screw)"
     },
     {
+      "id": "vx-60-1861-01-2",
       "label": "ACP Bus 2",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "id": "port-1"
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "avail-extron-60-1861-01-dc12",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw — Extron convention, verify"
     }
   ]
 }

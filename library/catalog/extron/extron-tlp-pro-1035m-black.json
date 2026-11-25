@@ -30,11 +30,44 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 31.3,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black",
     "rackFormSource": "Non-rack",
     "description": "10.1\" Wall Mount TouchLink Pro Touchpanel - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1035M Black",
+      "match": "part-number",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "vx-60-1998-02-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1998-02-2",
+      "label": "Digital In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1998-02-3",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    }
+  ]
 }

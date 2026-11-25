@@ -33,38 +33,30 @@
     "description": "Remote Control Panel - MK Mount",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "7f89d03b-7f77-4c30-b855-49907cbb7f62",
-      "label": "Extron RCP 101 MK",
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - H264 Eng.vssx",
+      "label": "RCP 101 MK",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "USB Host (to SMP)",
+      "id": "vx-60-1598-22-1",
+      "label": "USB",
       "signalType": "usb",
       "direction": "bidirectional",
       "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-0"
+      "section": "USB"
     },
     {
-      "label": "USB Storage",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-1"
-    },
-    {
+      "id": "vx-60-1598-22-2",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
+      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-2"
+      "notes": "2-pole captive screw"
     }
   ]
 }

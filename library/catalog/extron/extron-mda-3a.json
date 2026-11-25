@@ -34,59 +34,58 @@
     "description": "Three Output Stereo Audio Distribution Amplifier",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "dd520a24-492a-4369-9d0a-182738d1b113",
-      "label": "Extron MDA 3A",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Misc Eng.vssx",
+      "label": "MDA 3A",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-440-01-1",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
-      "id": "port-0"
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw. (L/R; 5-pole captive screw)"
     },
     {
-      "label": "Audio Out 1 (Stereo)",
+      "id": "vx-60-440-01-2",
+      "label": "Audio Out 1",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
-      "id": "port-1"
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw. (L/R; 5-pole captive screw)"
     },
     {
-      "label": "Audio Out 2 (Stereo)",
+      "id": "vx-60-440-01-3",
+      "label": "Audio Out 2",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
-      "id": "port-2"
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw. (L/R; 5-pole captive screw)"
     },
     {
-      "label": "Audio Out 3 (Stereo)",
+      "id": "vx-60-440-01-4",
+      "label": "Audio Out 3",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
-      "id": "port-3"
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw. (L/R; 5-pole captive screw)"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-440-01-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC, 0.5A PSU brick (6W).",
-      "id": "port-4"
+      "connectorType": "barrel",
+      "notes": "External 12VDC, 0.5A PSU brick (6W)."
     }
   ]
 }

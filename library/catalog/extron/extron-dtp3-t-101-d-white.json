@@ -34,46 +34,37 @@
     "description": "4K/60 DTP3 Transmitter for HDMI – Decorator-Style Wallplate, White",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "8db98f5b-cc86-4c20-8622-04a3fd0fc24d",
-      "label": "Extron DTP3 T 101 D White",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 101 D White",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1902-53-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "DTP3 Out (RJ-45 to Rx)",
+      "id": "vx-60-1902-53-2",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "USB-C Config (Rear)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-c",
-      "section": "Control",
-      "id": "port-2"
-    },
-    {
-      "label": "Power 12VDC",
+      "id": "vx-60-1902-53-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-3"
+      "connectorType": "barrel"
     }
   ]
 }

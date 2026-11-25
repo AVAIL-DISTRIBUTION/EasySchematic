@@ -35,103 +35,88 @@
     "description": "Two Input 4K/60 HDMI Switcher with Integrated DTP2 Transmitter and HDMI Output",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "ffae1c3a-1180-4245-94a4-162fa6008ad9",
-      "label": "Extron DTP2 T 212",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP2 Switchers Eng.vssx",
+      "label": "DTP2 T 212",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1587-52-1",
       "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1587-52-2",
       "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-1"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Out (loop)",
+      "id": "vx-60-1587-52-3",
+      "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-3"
+      "section": "Video Outputs"
     },
     {
-      "label": "DTP Out (RJ-45 to Rx)",
+      "id": "vx-60-1587-52-4",
+      "label": "DTP/HDBT Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-4"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1587-52-5",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-2"
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 (3-pole)",
+      "id": "vx-60-1587-52-6",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-5"
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
     },
     {
-      "label": "USB Mini-B (Front Config)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-6"
-    },
-    {
-      "label": "RS-232/IR Pass-Through",
+      "id": "vx-60-1587-52-7",
+      "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-7",
-      "notes": "5-pole"
+      "section": "Serial",
+      "notes": "5-pole (3-pole captive screw)"
     },
     {
-      "label": "Contact Closure",
+      "id": "vx-60-1587-52-8",
+      "label": "Contact/Tally",
       "signalType": "contact-closure",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-8"
+      "notes": "contact inputs and tally outputs; 8-pole captive screw"
     },
     {
-      "label": "Tally Out",
-      "signalType": "tally",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-9"
-    },
-    {
-      "label": "Power 12VDC",
+      "id": "vx-60-1587-52-9",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-10"
+      "connectorType": "barrel"
     }
   ]
 }

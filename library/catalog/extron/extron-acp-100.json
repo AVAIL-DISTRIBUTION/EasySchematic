@@ -32,32 +32,31 @@
     "description": "Audio Control Panel with Volume and 6 Control Buttons – US 2-Gang",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "eac86080-07bd-46e8-8bdc-12bfdb68cdf3",
-      "label": "Extron ACP 100",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Control Panels Eng.vssx",
+      "label": "ACP 100",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "eBUS / ACP In",
+      "id": "vx-60-1643-03-1",
+      "label": "ACP Bus 1",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "notes": "Extron ACP differential bus on a 4-pole 3.5mm captive screw — bus-powered (+12VDC) and bus-controlled. Daisy-chain to other ACP panels via the loop port.; bus-powered (ACP)",
-      "id": "port-0"
+      "notes": "Extron ACP differential bus on a 4-pole 3.5mm captive screw — bus-powered (+12VDC) and bus-controlled. Daisy-chain to other ACP panels via the loop port.; bus-powered (ACP) (4-pole captive screw)"
     },
     {
-      "label": "eBUS / ACP Loop Out",
+      "id": "vx-60-1643-03-2",
+      "label": "ACP Bus 2",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "notes": "Loop-through to the next ACP panel in a daisy chain.",
-      "id": "port-1"
+      "notes": "Loop-through to the next ACP panel in a daisy chain. (4-pole captive screw)"
     }
   ]
 }

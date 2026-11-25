@@ -28,15 +28,23 @@
   "powerDrawW": 17.1,
   "voltage": "12V DC",
   "thermalBtuh": 8.1,
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-maap"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "slotFamilies": [
       "extron-cubby-maap"
     ],
     "description": "Cable Cubby 100 For MAAP/Cables/Retractor, Black",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "slotsSource": "variant: extron/extron-cable-cubby-100-eu-ac.json"
   },
   "ports": []
 }

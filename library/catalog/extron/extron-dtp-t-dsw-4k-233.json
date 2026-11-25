@@ -36,104 +36,97 @@
     "description": "Three Input Multi-Format Switcher with Integrated DTP Transmitter and Audio Embedding - 230 feet (70 m)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "d73ec42b-9e91-4ede-85d0-d6b698cac024",
-      "label": "Extron DTP T DSW 4K 233",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Switchers Eng.vssx",
+      "label": "DTP T DSW 4K 233",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In",
-      "signalType": "hdmi",
-      "direction": "input",
-      "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
-    },
-    {
-      "label": "DisplayPort In",
-      "signalType": "displayport",
-      "direction": "input",
-      "connectorType": "displayport",
-      "section": "Video Inputs",
-      "id": "port-1"
-    },
-    {
-      "label": "VGA In",
+      "id": "vx-60-1487-12-1",
+      "label": "RGBHV In 1",
       "signalType": "vga",
       "direction": "input",
       "connectorType": "vga",
-      "section": "Video Inputs",
-      "id": "port-2"
+      "section": "Video Inputs"
     },
     {
-      "label": "DTP Out (RJ-45)",
+      "id": "vx-60-1487-12-2",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1487-12-3",
+      "label": "DisplayPort In 3",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1487-12-4",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-4"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1487-12-5",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-3"
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 Switcher Control",
+      "id": "vx-60-1487-12-6",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-5",
-      "notes": "3-pole"
+      "section": "Serial",
+      "notes": "3-pole (RS-232 and IR on one connector; 3-pole captive screw)"
     },
     {
-      "label": "Contact Closure (4-pole)",
-      "signalType": "contact-closure",
-      "direction": "input",
+      "id": "vx-60-1487-12-7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-6"
+      "section": "Serial",
+      "notes": "over DTP (3-pole captive screw)"
     },
     {
-      "label": "Tally Out (4-pole)",
+      "id": "vx-60-1487-12-8",
+      "label": "Tally Out",
       "signalType": "tally",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-7"
+      "notes": "4-pole captive screw"
     },
     {
-      "label": "USB Config (Mini-B Front)",
-      "signalType": "usb",
+      "id": "vx-60-1487-12-9",
+      "label": "Contact In",
+      "signalType": "contact-closure",
       "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-8"
-    },
-    {
-      "label": "RS-232/IR Pass-Through",
-      "signalType": "serial",
-      "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-9",
-      "notes": "over DTP"
+      "notes": "4-pole captive screw"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1487-12-10",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-10"
+      "connectorType": "barrel"
     }
   ]
 }

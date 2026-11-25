@@ -37,38 +37,37 @@
     "description": "Twisted Pair Extender for USB Peripherals",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "91333770-5624-492b-8688-f6d3e97d08b8",
-      "label": "Extron USB Extender Plus T",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Extenders Eng.vssx",
+      "label": "USB Extender Plus T",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "USB Host (USB-B)",
+      "id": "vx-60-1471-12-1",
+      "label": "USB 1",
       "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-b",
-      "section": "USB",
-      "id": "port-0"
-    },
-    {
-      "label": "USB Extension (CATx to Rx)",
-      "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "USB",
-      "id": "port-1"
+      "section": "USB"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1471-12-2",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1471-12-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "barrel"
     }
   ]
 }

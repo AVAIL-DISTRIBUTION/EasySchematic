@@ -35,102 +35,123 @@
     "description": "Four Input 4K/60 HDMI Switcher with Integrated DTP2 Transmitter",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "d92db894-c529-4db7-b207-dcc0582ad90d",
-      "label": "Extron DTP2 T 204",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP2 Switchers Eng.vssx",
+      "label": "DTP2 T 204",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1626-52-1",
       "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1626-52-2",
       "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-1"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1626-52-3",
       "label": "HDMI In 3",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-2"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1626-52-4",
       "label": "HDMI In 4",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-3"
+      "section": "Video Inputs"
     },
     {
-      "label": "DTP Out (RJ-45 to Rx)",
+      "id": "vx-60-1626-52-5",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-4"
+      "section": "Video Outputs"
     },
     {
-      "label": "RS-232 (3-pole)",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-5"
-    },
-    {
-      "label": "USB Mini-B (Front Config)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-6"
-    },
-    {
+      "id": "vx-60-1626-52-6",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Control",
-      "id": "port-7"
+      "section": "Network"
     },
     {
-      "label": "Contact Closure",
+      "id": "vx-60-1626-52-7",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1626-52-8",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1626-52-9",
+      "label": "Contact/Tally 2",
       "signalType": "contact-closure",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-8"
+      "notes": "contact inputs and tally outputs; 5-pole captive screw"
     },
     {
-      "label": "Tally Out",
-      "signalType": "tally",
-      "direction": "output",
+      "id": "vx-60-1626-52-10",
+      "label": "Contact/Tally 4",
+      "signalType": "contact-closure",
+      "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-9"
+      "notes": "contact inputs and tally outputs; 4-pole captive screw"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1626-52-11",
+      "label": "Contact/Tally 5",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "contact inputs and tally outputs; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1626-52-12",
+      "label": "Contact/Tally 6",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "contact inputs and tally outputs; 4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1626-52-13",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-10"
+      "connectorType": "barrel"
     }
   ]
 }

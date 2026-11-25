@@ -36,33 +36,39 @@
     "description": "5.5\" Wall Mount TouchLink Pro Touchpanel - White",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "2fe0987e-e6a4-4222-8383-3cc6065dd43a",
-      "label": "Extron TLP Pro 535M",
-      "match": "model-name",
-      "status": "raw",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 535M White",
+      "match": "part-number",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN / PoE",
+      "id": "vx-60-1993-03-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 6.5,
-      "notes": "PoE 802.3af class 3",
-      "id": "port-0"
+      "notes": "PoE 802.3af class 3"
     },
     {
-      "label": "Digital Input",
+      "id": "vx-60-1993-03-2",
+      "label": "Digital In",
       "signalType": "gpio",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "1 configurable digital input (0-30VDC range, programmable pull-up) on a 3.5mm 2-pole captive screw.",
-      "id": "port-2"
+      "section": "Digital I/O",
+      "notes": "1 configurable digital input (0-30VDC range, programmable pull-up) on a 3.5mm 2-pole captive screw."
+    },
+    {
+      "id": "vx-60-1993-03-3",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
     },
     {
       "label": "USB Config",
@@ -71,7 +77,7 @@
       "connectorType": "usb-micro",
       "section": "Configuration",
       "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed.",
-      "id": "port-1"
+      "id": "vx-60-1993-03-s1"
     }
   ]
 }

@@ -36,22 +36,30 @@
     "description": "Two Input USB 10G Switcher",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "56b7207c-2325-448d-b354-b1e027b78384",
-      "label": "Extron SW2 USB Pro",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "SW2 USB Pro",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1833-01-1",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1833-01-2",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-6"
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
       "label": "USB-C Config (Front)",
@@ -59,71 +67,63 @@
       "direction": "input",
       "connectorType": "usb-c",
       "section": "Control",
-      "id": "port-7"
+      "id": "vx-60-1833-01-s1"
     },
     {
-      "label": "LAN",
-      "signalType": "ethernet",
+      "id": "vx-60-1833-01-3",
+      "label": "USB-C 1",
+      "signalType": "usb",
       "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Control",
-      "id": "port-8"
-    },
-    {
-      "label": "USB-C Host In 1",
-      "signalType": "usb",
-      "direction": "input",
       "connectorType": "usb-c",
-      "section": "USB",
-      "id": "port-0"
+      "section": "USB"
     },
     {
-      "label": "USB-C Host In 2",
+      "id": "vx-60-1833-01-4",
+      "label": "USB-C 2",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
       "connectorType": "usb-c",
-      "section": "USB",
-      "id": "port-1"
+      "section": "USB"
     },
     {
-      "label": "USB-C Device Out",
+      "id": "vx-60-1833-01-5",
+      "label": "USB-C 3",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-c",
-      "section": "USB",
-      "id": "port-2"
+      "section": "USB"
     },
     {
-      "label": "USB-A 3.2 Device Out",
+      "id": "vx-60-1833-01-6",
+      "label": "USB 1",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-3"
+      "section": "USB"
     },
     {
-      "label": "USB-A 2.0 HID Out 1",
+      "id": "vx-60-1833-01-7",
+      "label": "USB 2",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-4"
+      "section": "USB"
     },
     {
-      "label": "USB-A 2.0 HID Out 2",
+      "id": "vx-60-1833-01-8",
+      "label": "USB 3",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-5"
+      "section": "USB"
     },
     {
+      "id": "vx-60-1833-01-9",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-9"
+      "connectorType": "phoenix"
     }
   ]
 }

@@ -41,22 +41,21 @@
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
     "portsSource": {
-      "kind": "db",
-      "from": "42ce8d98-f23a-4aa4-afe7-3658fcff7b5e",
-      "label": "Extron NBP 104 EU",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP 104 EU",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Ethernet / PoE",
+      "id": "vx-60-2050-01-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "id": "port-0",
       "notes": "PoE"
     }
   ]

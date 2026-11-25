@@ -35,46 +35,54 @@
     "description": "DTP3 Transmitter for 4K/60 HDMI and USB Data",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "9395beff-0831-4ef6-9eb3-d79213a36d80",
-      "label": "Extron DTP3 T 301",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 301",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1773-52-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Out (loop)",
+      "id": "vx-60-1773-52-2",
+      "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-3"
+      "section": "Video Outputs"
     },
     {
-      "label": "DTP3 Out (RJ-45 to Rx)",
+      "id": "vx-60-1773-52-3",
+      "label": "DTP3 Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-4"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1773-52-4",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-1"
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1773-52-5",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
       "label": "USB-C Config (Front)",
@@ -82,31 +90,23 @@
       "direction": "input",
       "connectorType": "usb-c",
       "section": "Control",
-      "id": "port-5"
+      "id": "vx-60-1773-52-s1"
     },
     {
-      "label": "RS-232 (Pass-through)",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-6"
-    },
-    {
-      "label": "USB-B Host In",
+      "id": "vx-60-1773-52-6",
+      "label": "USB",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
       "connectorType": "usb-b",
-      "section": "USB",
-      "id": "port-2"
+      "section": "USB"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1773-52-7",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-7"
+      "connectorType": "barrel"
     }
   ]
 }

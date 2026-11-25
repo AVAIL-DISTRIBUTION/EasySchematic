@@ -38,62 +38,61 @@
     "description": "Twisted Pair Extender for USB Peripherals – HID",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "3a5e896a-b776-4458-bb73-27ea6a92a6cd",
-      "label": "Extron USB Extender Plus R HID",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/Retired USB Products/Retired USB - Extenders Eng.vssx",
+      "label": "USB Extender Plus R HID",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "USB Extension (CATx from Tx)",
+      "id": "vx-60-1539-13-1",
+      "label": "USB 1",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1539-13-2",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1539-13-3",
+      "label": "USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1539-13-4",
+      "label": "USB 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1539-13-5",
+      "label": "USB 5",
+      "signalType": "usb",
+      "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "USB",
-      "id": "port-0"
+      "section": "USB"
     },
     {
-      "label": "USB Device 1 (USB-A 2.0)",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-1"
-    },
-    {
-      "label": "USB Device 2 (USB-A 2.0)",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-2"
-    },
-    {
-      "label": "USB Device 3 (USB-A 2.0)",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-3"
-    },
-    {
-      "label": "USB Device 4 (USB-A 2.0)",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-4"
-    },
-    {
-      "label": "Power 12VDC",
+      "id": "vx-60-1539-13-6",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-5"
+      "connectorType": "barrel"
     }
   ]
 }

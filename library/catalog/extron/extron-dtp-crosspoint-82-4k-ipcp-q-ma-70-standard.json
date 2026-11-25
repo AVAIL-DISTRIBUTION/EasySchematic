@@ -37,491 +37,463 @@
     "description": "100 Watt 70 V Mono Amp, AV LAN",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "f6f4c721-e143-4d0b-b2a5-be041404139e",
-      "label": "Extron DTP CrossPoint 82 4K IPCP Q MA 70",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - CrossPoint 4K Eng.vssx",
+      "label": "DTP CrossPoint 82 4K IPCP Q MA 70",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI Input 1",
+      "id": "vx-60-1583-93-1",
+      "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
-      "id": "port-0"
+      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched."
     },
     {
-      "label": "HDMI Input 2",
+      "id": "vx-60-1583-93-2",
+      "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
-      "id": "port-1"
+      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched."
     },
     {
-      "label": "HDMI Input 3",
+      "id": "vx-60-1583-93-3",
+      "label": "HDMI In 3",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
-      "id": "port-2"
+      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched."
     },
     {
-      "label": "HDMI Input 4",
+      "id": "vx-60-1583-93-4",
+      "label": "HDMI In 4",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
-      "id": "port-3"
+      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched."
     },
     {
-      "label": "HDMI Input 5",
+      "id": "vx-60-1583-93-5",
+      "label": "HDMI In 5",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
-      "id": "port-4"
+      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched."
     },
     {
-      "label": "HDMI Input 6",
+      "id": "vx-60-1583-93-6",
+      "label": "HDMI In 6",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched.",
-      "id": "port-5"
+      "notes": "HDMI 1.4, HDCP 1.4. Up to 4K @ 30Hz or UHD/4K @ 60Hz with 4:2:0 chroma subsampling. De-embedded audio (PCM only) feeds the audio matrix; multi-channel bitstream formats (Dolby Atmos, DTS-HD, etc.) pass through to HDMI outputs untouched."
     },
     {
-      "label": "DTP/XTP Input 1",
+      "id": "vx-60-1583-93-7",
+      "label": "DTP In 7",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
       "section": "Video Inputs",
-      "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required.",
-      "id": "port-6"
+      "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required."
     },
     {
-      "label": "DTP/XTP Input 2",
+      "id": "vx-60-1583-93-8",
+      "label": "DTP In 8",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
       "section": "Video Inputs",
-      "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required.",
-      "id": "port-7"
+      "notes": "Configurable DTP or XTP RJ-45 input. DTP carries HDMI + embedded audio + analog audio + RS-232 + IR + remote power up to 330ft (100m) on shielded CATx; XTP mode adds digital embedded audio (no remote power). Shielded twisted pair required."
     },
     {
-      "label": "Scaled DTP/XTP/HDBT Output 1",
-      "signalType": "hdbaset",
-      "direction": "output",
-      "connectorType": "rj45",
-      "section": "Video Outputs (Scaled)",
-      "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft).",
-      "id": "port-8"
-    },
-    {
-      "label": "Scaled DTP/XTP/HDBT Output 2",
-      "signalType": "hdbaset",
-      "direction": "output",
-      "connectorType": "rj45",
-      "section": "Video Outputs (Scaled)",
-      "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft).",
-      "id": "port-9"
-    },
-    {
-      "label": "HDMI Out 1 (Mirror)",
+      "id": "vx-60-1583-93-9",
+      "label": "HDMI Out 1A",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs (Scaled)",
-      "notes": "Buffered HDMI mirror of a scaled DTP output, for local monitoring. Same routing as the paired RJ-45 output (typically scaled outputs 5 and 6 in the panel labeling).; buffered mirror",
-      "id": "port-10"
+      "section": "Video Outputs",
+      "notes": "Buffered HDMI mirror of a scaled DTP output, for local monitoring. Same routing as the paired RJ-45 output (typically scaled outputs 5 and 6 in the panel labeling).; buffered mirror"
     },
     {
-      "label": "HDMI Out 2 (Mirror)",
+      "id": "vx-60-1583-93-10",
+      "label": "HDMI Out 2A",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs (Scaled)",
-      "notes": "Buffered HDMI mirror of a scaled DTP output, for local monitoring. Same routing as the paired RJ-45 output (typically scaled outputs 5 and 6 in the panel labeling).; buffered mirror",
-      "id": "port-11"
+      "section": "Video Outputs",
+      "notes": "Buffered HDMI mirror of a scaled DTP output, for local monitoring. Same routing as the paired RJ-45 output (typically scaled outputs 5 and 6 in the panel labeling).; buffered mirror"
     },
     {
-      "label": "Audio Input 1 (Stereo Line)",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
-      "id": "port-12"
-    },
-    {
-      "label": "Audio Input 2 (Stereo Line)",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
-      "id": "port-13"
-    },
-    {
-      "label": "Audio Input 3 (Stereo Line)",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
-      "id": "port-14"
-    },
-    {
-      "label": "Audio Input 4 (Stereo Line)",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
-      "id": "port-15"
-    },
-    {
-      "label": "Audio Input 5 (Stereo Line)",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
-      "id": "port-16"
-    },
-    {
-      "label": "Audio Input 6 (Stereo Line)",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain.",
-      "id": "port-17"
-    },
-    {
-      "label": "Mic/Line Input 1",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
-      "id": "port-18"
-    },
-    {
-      "label": "Mic/Line Input 2",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
-      "id": "port-19"
-    },
-    {
-      "label": "Mic/Line Input 3",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
-      "id": "port-20"
-    },
-    {
-      "label": "Mic/Line Input 4",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power.",
-      "id": "port-21"
-    },
-    {
-      "label": "Audio Output 1 (Stereo Line)",
-      "signalType": "analog-audio",
+      "id": "vx-60-1583-93-11",
+      "label": "DTP Out 1B",
+      "signalType": "hdbaset",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Audio Outputs",
-      "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced.",
-      "id": "port-22"
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft)."
     },
     {
-      "label": "Audio Output 2 (Stereo Line)",
-      "signalType": "analog-audio",
+      "id": "vx-60-1583-93-12",
+      "label": "DTP Out 2B",
+      "signalType": "hdbaset",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Audio Outputs",
-      "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced.",
-      "id": "port-23"
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Configurable DTP / XTP / HDBaseT output with Vector 4K seamless scaling. Carries HDMI + embedded audio + bidirectional RS-232 + IR over shielded CATx (DTP/XTP up to 330ft, HDBT mode up to 330ft)."
     },
     {
-      "label": "S/PDIF Output",
+      "id": "vx-60-1583-93-13",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain."
+    },
+    {
+      "id": "vx-60-1583-93-14",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain."
+    },
+    {
+      "id": "vx-60-1583-93-15",
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain."
+    },
+    {
+      "id": "vx-60-1583-93-16",
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain."
+    },
+    {
+      "id": "vx-60-1583-93-17",
+      "label": "Audio In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain."
+    },
+    {
+      "id": "vx-60-1583-93-18",
+      "label": "Audio In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced analog line-level input on 3.5mm 5-pole captive screw. +4dBu nominal, +21dBu max balanced. -18 to +24 dB input gain."
+    },
+    {
+      "id": "vx-60-1583-93-19",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power."
+    },
+    {
+      "id": "vx-60-1583-93-20",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power."
+    },
+    {
+      "id": "vx-60-1583-93-21",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power."
+    },
+    {
+      "id": "vx-60-1583-93-22",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line balanced/unbalanced input on 3.5mm 3-pole captive screw. -60 dBV mic / +4 dBu line / -10 dBV consumer. -18 to +80 dB input gain. +48VDC switchable phantom power."
+    },
+    {
+      "id": "vx-60-1583-93-23",
+      "label": "S/PDIF Out 2",
       "signalType": "spdif",
       "direction": "output",
       "connectorType": "rca",
       "section": "Audio Outputs",
-      "notes": "S/PDIF digital audio output on coaxial RCA. 75 ohm impedance.",
-      "id": "port-24"
+      "notes": "S/PDIF digital audio output on coaxial RCA. 75 ohm impedance."
     },
     {
-      "label": "Amp Out (70V Mono)",
+      "id": "vx-60-1583-93-24",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced."
+    },
+    {
+      "id": "vx-60-1583-93-25",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Variable stereo balanced/unbalanced analog line-level output on 3.5mm 5-pole captive screw. >+21 dBu max balanced, +15 dBu max unbalanced."
+    },
+    {
+      "id": "vx-60-1583-93-26",
+      "label": "Speaker Out",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Speaker Outputs",
-      "notes": "Class D mono 70V power amplifier output. 100W rms @ 70V, 50Ω minimum load impedance. 80Hz 12dB/oct high-pass filter. 5mm 2-pole captive screw.",
-      "id": "port-53"
+      "notes": "Class D mono 70V power amplifier output. 100W rms @ 70V, 50Ω minimum load impedance. 80Hz 12dB/oct high-pass filter. 5mm 2-pole captive screw."
     },
     {
-      "label": "LAN (Switcher)",
+      "id": "vx-60-1583-93-27",
+      "label": "AV LAN 1 1",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100Base-T half/full-duplex Ethernet for switcher control + web UI + SIS protocol. Default 192.168.254.254. Independent from the IPCP control processor's Ethernet ports.",
-      "id": "port-26"
+      "notes": "10/100Base-T half/full-duplex Ethernet for switcher control + web UI + SIS protocol. Default 192.168.254.254. Independent from the IPCP control processor's Ethernet ports."
     },
     {
-      "label": "IPCP LAN 1",
+      "id": "vx-60-1583-93-28",
+      "label": "AV LAN 2 2",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100/1000Base-T network switch port on the integrated IPCP Pro xi control processor. 3-port unmanaged switch (LAN + 2x AV LAN). Default 192.168.254.250.",
-      "id": "port-37"
+      "notes": "10/100/1000Base-T network switch port on the integrated IPCP Pro xi control processor. 3-port unmanaged switch (LAN + 2x AV LAN). Default 192.168.254.250."
     },
     {
-      "label": "IPCP LAN 2",
+      "id": "vx-60-1583-93-29",
+      "label": "AV LAN 3 3",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100/1000Base-T network switch port on the integrated IPCP Pro xi control processor. 3-port unmanaged switch (LAN + 2x AV LAN). Default 192.168.254.250.",
-      "id": "port-38"
+      "notes": "10/100/1000Base-T network switch port on the integrated IPCP Pro xi control processor. 3-port unmanaged switch (LAN + 2x AV LAN). Default 192.168.254.250."
     },
     {
-      "label": "IPCP LAN 3",
+      "id": "vx-60-1583-93-30",
+      "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100/1000Base-T network switch port on the integrated IPCP Pro xi control processor. 3-port unmanaged switch (LAN + 2x AV LAN). Default 192.168.254.250.",
-      "id": "port-39"
+      "notes": "10/100/1000Base-T network switch port on the integrated IPCP Pro xi control processor. 3-port unmanaged switch (LAN + 2x AV LAN). Default 192.168.254.250."
     },
     {
-      "label": "RS-232 (Switcher)",
+      "id": "vx-60-1583-93-31",
+      "label": "RS-232/IR (In 7)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "notes": "Bidirectional RS-232 control for the switcher matrix on 3.5mm 3-pole captive screw. 9600-115200 baud. Independent from any IPCP control-processor serial ports.",
-      "id": "port-28"
+      "notes": "Bidirectional RS-232 control for the switcher matrix on 3.5mm 3-pole captive screw. 9600-115200 baud. Independent from any IPCP control-processor serial ports. (RS-232 and IR on one connector; 5-pole captive screw)"
     },
     {
-      "label": "RS-232 Pass-Thru TP Tx 1",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Serial (TP Tx)",
-      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
-      "id": "port-29"
-    },
-    {
-      "label": "RS-232 Pass-Thru TP Tx 2",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Serial (TP Tx)",
-      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
-      "id": "port-31"
-    },
-    {
-      "label": "RS-232 Pass-Thru TP Rx 1",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Serial (TP Rx)",
-      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
-      "id": "port-33"
-    },
-    {
-      "label": "RS-232 Pass-Thru TP Rx 2",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Serial (TP Rx)",
-      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5).",
-      "id": "port-35"
-    },
-    {
-      "label": "IPCP RS-232/422/485 Port 1",
+      "id": "vx-60-1583-93-32",
+      "label": "RS-232/IR (In 8)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "notes": "Bidirectional RS-232 / RS-422 / RS-485 (software-selectable) on 3.5mm 5-pole captive. Hardware + software flow control. 300-115200 baud.",
-      "id": "port-40"
+      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5). (RS-232 and IR on one connector; 5-pole captive screw)"
     },
     {
-      "label": "IPCP RS-232 Port 2",
+      "id": "vx-60-1583-93-33",
+      "label": "RS-232/IR (Out 1B)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "notes": "Bidirectional RS-232 on 3.5mm 3-pole captive. Software flow control. 300-115200 baud.",
-      "id": "port-41"
+      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5). (RS-232 and IR on one connector; 5-pole captive screw)"
     },
     {
-      "label": "IPCP RS-232 Port 3",
+      "id": "vx-60-1583-93-34",
+      "label": "RS-232/IR (Out 2B)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "notes": "Bidirectional RS-232 on 3.5mm 3-pole captive. Software flow control. 300-115200 baud.",
-      "id": "port-42"
+      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5). (RS-232 and IR on one connector; 5-pole captive screw)"
     },
     {
-      "label": "IR Pass-Thru TP Tx 1",
-      "signalType": "ir",
+      "id": "vx-60-1583-93-35",
+      "label": "COM 1",
+      "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "IR (TP Tx)",
-      "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
-      "id": "port-30"
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 1=Tx, 2=Rx, 3=Gnd. Shares the same 5-pole captive with the matching IR pass-thru port (pins 4-5). (5-pole captive screw)"
     },
     {
-      "label": "IR Pass-Thru TP Tx 2",
-      "signalType": "ir",
+      "id": "vx-60-1583-93-36",
+      "label": "COM 2",
+      "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "IR (TP Tx)",
-      "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote source-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
-      "id": "port-32"
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 / RS-422 / RS-485 (software-selectable) on 3.5mm 5-pole captive. Hardware + software flow control. 300-115200 baud. (3-pole captive screw)"
     },
     {
-      "label": "IR Pass-Thru TP Rx 1",
-      "signalType": "ir",
+      "id": "vx-60-1583-93-37",
+      "label": "COM 3",
+      "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "IR (TP Rx)",
-      "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
-      "id": "port-34"
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on 3.5mm 3-pole captive. Software flow control. 300-115200 baud. (3-pole captive screw)"
     },
     {
-      "label": "IR Pass-Thru TP Rx 2",
-      "signalType": "ir",
+      "id": "vx-60-1583-93-38",
+      "label": "RS-232",
+      "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "IR (TP Rx)",
-      "notes": "IR (TTL 0-5V, 30-60kHz) pass-through over the DTP/XTP/HDBT TP link (to remote sink-side endpoints). Pin 3=Gnd, 4=IR Tx, 5=IR Rx. Shares the same 5-pole captive with the matching RS-232 pass-thru port (pins 1-3).",
-      "id": "port-36"
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on 3.5mm 3-pole captive. Software flow control. 300-115200 baud. (3-pole captive screw)"
     },
     {
-      "label": "IPCP IR/Serial 1",
+      "id": "vx-60-1583-93-39",
+      "label": "IR/S Out 1",
       "signalType": "ir",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "IR",
-      "notes": "Programmable IR (carrier or non-carrier, 30-300kHz) or unidirectional RS-232 ±5V output on 3.5mm captive. Per-channel modeled — both ports share a single 5-pole captive screw block.",
-      "id": "port-43"
+      "notes": "Programmable IR (carrier or non-carrier, 30-300kHz) or unidirectional RS-232 ±5V output on 3.5mm captive. Per-channel modeled — both ports share a single 5-pole captive screw block. (IR or one-way RS-232; 2-pole captive screw)"
     },
     {
-      "label": "IPCP IR/Serial 2",
+      "id": "vx-60-1583-93-40",
+      "label": "IR/S Out 2",
       "signalType": "ir",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "IR",
-      "notes": "Programmable IR (carrier or non-carrier, 30-300kHz) or unidirectional RS-232 ±5V output on 3.5mm captive. Per-channel modeled — both ports share a single 5-pole captive screw block.",
-      "id": "port-44"
+      "notes": "Programmable IR (carrier or non-carrier, 30-300kHz) or unidirectional RS-232 ±5V output on 3.5mm captive. Per-channel modeled — both ports share a single 5-pole captive screw block. (IR or one-way RS-232; 2-pole captive screw)"
     },
     {
-      "label": "IPCP Relay 1",
+      "id": "vx-60-1583-93-41",
+      "label": "Relay 1",
       "signalType": "contact-closure",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive.",
-      "id": "port-49"
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive. (3-pole captive screw)"
     },
     {
-      "label": "IPCP Relay 2",
+      "id": "vx-60-1583-93-42",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive."
+    },
+    {
+      "id": "vx-60-1583-93-43",
+      "label": "Relay 3",
       "signalType": "contact-closure",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive.",
-      "id": "port-50"
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive. (3-pole captive screw)"
     },
     {
-      "label": "IPCP Relay 3",
+      "id": "vx-60-1583-93-44",
+      "label": "Relay 4",
       "signalType": "contact-closure",
       "direction": "output",
-      "connectorType": "phoenix",
       "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive.",
-      "id": "port-51"
-    },
-    {
-      "label": "IPCP Relay 4",
-      "signalType": "contact-closure",
-      "direction": "output",
       "connectorType": "phoenix",
-      "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive.",
-      "id": "port-52"
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1A max) on 3.5mm 6-pole captive. Per-channel modeled — 4 relays share a single 6-pole captive."
     },
     {
-      "label": "IPCP Digital I/O 1",
+      "id": "vx-60-1583-93-45",
+      "label": "Digital I/O 1",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive.",
-      "id": "port-45"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive."
     },
     {
-      "label": "IPCP Digital I/O 2",
+      "id": "vx-60-1583-93-46",
+      "label": "Digital I/O 2",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive.",
-      "id": "port-46"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive."
     },
     {
-      "label": "IPCP Digital I/O 3",
+      "id": "vx-60-1583-93-47",
+      "label": "Digital I/O 3",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive.",
-      "id": "port-47"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive."
     },
     {
-      "label": "IPCP Digital I/O 4",
+      "id": "vx-60-1583-93-48",
+      "label": "Digital I/O 4",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive.",
-      "id": "port-48"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output on 3.5mm 5-pole captive. Input: 0-24 VDC, 29kΩ impedance, programmable 1kΩ pullup to +5V. Output: 250mA sink from 24V max. Per-channel modeled — 4 channels share a single 5-pole captive."
     },
     {
-      "label": "EXP Bus",
+      "id": "vx-60-1583-93-49",
+      "label": "EXP",
       "signalType": "extron-exp",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Expansion",
-      "notes": "Extron proprietary EXP audio expansion bus on RJ-45. 16ch Tx + 16ch Rx, 24-bit/48kHz uncompressed. Links a second Extron DSP for I/O expansion. Shielded CAT 6 up to 10m. Modeled as `aes` + `rj45` per project convention (no `extron-exp` SignalType).",
-      "id": "port-25"
+      "notes": "Extron proprietary EXP audio expansion bus on RJ-45. 16ch Tx + 16ch Rx, 24-bit/48kHz uncompressed. Links a second Extron DSP for I/O expansion. Shielded CAT 6 up to 10m. Modeled as `aes` + `rj45` per project convention (no `extron-exp` SignalType)."
+    },
+    {
+      "id": "vx-60-1583-93-50",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "5-pole captive screw"
     },
     {
       "label": "USB (Front)",
@@ -530,16 +502,16 @@
       "connectorType": "usb-mini",
       "section": "USB",
       "notes": "Front-panel USB Mini-B for direct switcher configuration via PC. USB 2.0 low speed.",
-      "id": "port-27"
+      "id": "vx-60-1583-93-s1"
     },
     {
-      "label": "AC Mains",
+      "id": "vx-60-1583-93-51",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal universal-input PSU. 100-240 VAC, 50-60 Hz, IEC C14 inlet.",
-      "id": "port-54"
+      "connectorType": "iec",
+      "notes": "Internal universal-input PSU. 100-240 VAC, 50-60 Hz, IEC C14 inlet."
     }
   ]
 }

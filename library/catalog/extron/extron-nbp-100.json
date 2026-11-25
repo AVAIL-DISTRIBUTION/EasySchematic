@@ -34,22 +34,21 @@
     "description": "Network Button Panel with 6 Buttons - US 2-Gang",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "80d902c7-c837-444d-abc9-9521fd287789",
-      "label": "Extron NBP 100",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP 100",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Ethernet / PoE",
+      "id": "vx-60-1794-01-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "id": "port-0",
       "notes": "PoE: actual draw not published; PoE 802.3af"
     }
   ]

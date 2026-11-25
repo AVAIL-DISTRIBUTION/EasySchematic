@@ -35,62 +35,55 @@
     "description": "HDMI 4K/60 DTP2 Receiver with Audio De-Embedding",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "3577b45b-8c45-4695-9781-4160e1b7154a",
-      "label": "Extron DTP2 R 211",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP2 Receivers Eng.vssx",
+      "label": "DTP2 R 211",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "DTP In (RJ-45 from Tx)",
+      "id": "vx-60-1631-63-1",
+      "label": "DTP2 In",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1631-63-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio Out (Stereo)",
+      "id": "vx-60-1631-63-3",
+      "label": "Audio Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-2"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "RS-232 (3-pole)",
+      "id": "vx-60-1631-63-4",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
     },
     {
-      "label": "IR Control (5-pole)",
-      "signalType": "ir",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-4"
-    },
-    {
-      "label": "Power 12VDC",
+      "id": "vx-60-1631-63-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-5"
+      "connectorType": "barrel"
     }
   ]
 }

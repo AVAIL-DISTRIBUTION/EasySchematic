@@ -33,88 +33,89 @@
     "description": "HDMI 4K/60 DTP2 Receiver and Switcher with Audio De-Embedding",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "09b6fb17-fe8f-4ab9-b8c7-5f2c2033e1a6",
-      "label": "Extron DTP2 R 212",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP2 Receivers Eng.vssx",
+      "label": "DTP2 R 212",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "DTP In (RJ-45 from Tx)",
-      "signalType": "hdbaset",
-      "direction": "input",
-      "connectorType": "rj45",
-      "section": "Video Inputs",
-      "id": "port-0"
-    },
-    {
-      "label": "HDMI In (local)",
+      "id": "vx-60-1588-52-1",
+      "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-1"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1588-52-2",
+      "label": "DTP2 In 2",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1588-52-3",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-2"
+      "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1588-52-4",
       "label": "Audio Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-3",
-      "notes": "Stereo, fixed/variable"
+      "notes": "Stereo, fixed/variable (5-pole captive screw)"
     },
     {
-      "label": "USB Mini-B (Front Config)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-4"
-    },
-    {
+      "id": "vx-60-1588-52-5",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Control",
-      "id": "port-5"
+      "section": "Network"
     },
     {
-      "label": "RS-232 (3-pole)",
+      "id": "vx-60-1588-52-6",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-6"
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 3-pole captive screw"
     },
     {
-      "label": "RS-232/IR Pass-Through",
+      "id": "vx-60-1588-52-7",
+      "label": "RS-232 (Display)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-7",
-      "notes": "5-pole"
+      "section": "Serial",
+      "notes": "5-pole (3-pole captive screw)"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1588-52-8",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1588-52-9",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-8"
+      "connectorType": "barrel"
     }
   ]
 }

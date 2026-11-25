@@ -37,71 +37,67 @@
     "description": "Four Ch PoE Dante Amplifier - Up to 20 Watts/Ch",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "0243fbab-4a00-4a31-8b2b-7c2a0b6ff747",
-      "label": "Extron NetPA 204 POE",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "NetPA 204 POE",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-2047-01-1",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-2047-01-2",
       "label": "Speaker Out 1",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     },
     {
+      "id": "vx-60-2047-01-3",
       "label": "Speaker Out 2",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     },
     {
+      "id": "vx-60-2047-01-4",
       "label": "Speaker Out 3",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-3",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     },
     {
+      "id": "vx-60-2047-01-5",
       "label": "Speaker Out 4",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-4",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     },
     {
-      "label": "Dante / PoE",
+      "id": "vx-60-2047-01-6",
+      "label": "Dante (PoE++)",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "id": "port-0",
-      "notes": "PoE++ 802.3bt"
-    },
-    {
-      "label": "Mute Control",
-      "signalType": "contact-closure",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-5"
-    },
-    {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-c",
-      "section": "Control",
-      "id": "port-6"
+      "section": "Dante",
+      "notes": "PoE++ 802.3bt (Extron AT (Dante))"
     }
   ]
 }

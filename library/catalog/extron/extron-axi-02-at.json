@@ -35,46 +35,38 @@
     "description": "Two Output Dante Audio Interface",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "e04b37d9-ffce-4ba2-a34d-78e18cb17e34",
-      "label": "Extron AXI 02 AT",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "AXI 02 AT",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In 1",
+      "id": "vx-60-1753-01-1",
+      "label": "Audio Out 1-2",
       "signalType": "analog-audio",
-      "direction": "input",
+      "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw; channels 1-2"
     },
     {
-      "label": "Audio In 2",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "S/PDIF In (Coax)",
+      "id": "vx-60-1753-01-2",
+      "label": "S/PDIF Out",
       "signalType": "spdif",
-      "direction": "input",
+      "direction": "output",
       "connectorType": "rca",
-      "id": "port-2",
-      "section": "Audio Inputs"
+      "section": "Audio Outputs"
     },
     {
-      "label": "Dante / PoE",
+      "id": "vx-60-1753-01-3",
+      "label": "Dante (PoE)",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "id": "port-3",
+      "section": "Dante",
       "notes": "PoE: actual draw not published; PoE 802.3af"
     }
   ]

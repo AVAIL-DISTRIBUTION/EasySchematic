@@ -35,64 +35,49 @@
     "description": "Two Channel Amp - 60 Watts at 8 ohms",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "bfcf8130-8d54-4e99-8842-08d30797e248",
-      "label": "Extron XPA 1002",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "XPA 1002",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In 1",
+      "id": "vx-60-849-01-1",
+      "label": "Audio In 1-2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
     },
     {
-      "label": "Audio In 2",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Speaker Out 1",
+      "id": "vx-60-849-01-2",
+      "label": "Speaker Out 1-2",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 1-2"
     },
     {
-      "label": "Speaker Out 2",
-      "signalType": "speaker-level",
-      "direction": "output",
+      "id": "vx-60-849-01-3",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "id": "port-3",
-      "section": "Speaker Outputs"
+      "section": "Digital I/O",
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Remote Control",
-      "signalType": "contact-closure",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Combined 3.5mm 5-pole captive screw — pin 4 GND / pin 5 standby (older XPA series convention).",
-      "id": "port-4"
-    },
-    {
+      "id": "vx-60-849-01-4",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-5"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
     }
   ]
 }

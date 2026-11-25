@@ -35,64 +35,49 @@
     "description": "Two Channel Amp - 400 Watts/Ch",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "f39e82c5-bfd8-4d3b-bdfb-d02680e76503",
-      "label": "Extron XPA 4002",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "XPA 4002",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In 1",
+      "id": "vx-60-1244-01-1",
+      "label": "Audio In 1-2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
     },
     {
-      "label": "Audio In 2",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Speaker Out 1",
+      "id": "vx-60-1244-01-2",
+      "label": "Speaker Out 1-2",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 1-2"
     },
     {
-      "label": "Speaker Out 2",
-      "signalType": "speaker-level",
-      "direction": "output",
+      "id": "vx-60-1244-01-3",
+      "label": "Control",
+      "signalType": "gpio",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "id": "port-3",
-      "section": "Speaker Outputs"
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
     },
     {
-      "label": "Standby Control",
-      "signalType": "contact-closure",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
-      "id": "port-4"
-    },
-    {
+      "id": "vx-60-1244-01-4",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-5"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
     }
   ]
 }
