@@ -27,9 +27,33 @@
   "weightKg": 0.17,
   "unitCost": 1096,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Beamtracking pendant microphone, black",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_devio_dcm1_nov18_1941.pdf"
+    },
+    "portsMissing": "Pendant mic to plenum box uses a custom 2-pin connector inside the product (not modelled). Panel labels of the two RJ-45 jacks are not given."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Devio Link (To SCR)",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Proprietary Devio audio network and control to SCR-20/SCR-25, up to 15 m; phantom powered from SCR-20/SCR-25 (powered by host), < 1 W"
+    },
+    {
+      "id": "p2",
+      "label": "Devio Link (Daisy-chain)",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "To a second DCM-1 plenum box (max two mics per chain), up to 15 m; not compatible with DTM-1"
+    }
+  ]
 }

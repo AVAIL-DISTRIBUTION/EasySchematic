@@ -29,9 +29,33 @@
   "poeDrawW": 15.4,
   "unitCost": 1800,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Devio UCX Beamtracking™ ceiling microphone, black surface mount",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf"
+    },
+    "portsMissing": "Install manual used as the data sheet (no separate sheet on the page). Network protocol on the Control port is not named (Devio UCX audio and control)."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Control (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "To a Devio UCX PoE+ port: network audio and control; PoE 802.3af class 3, 13 W"
+    },
+    {
+      "id": "p2",
+      "label": "Mic In 2 (DCM-XEX)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Optional DCM-XEX expansion mic, up to 10 m; Mic In 1 takes the included microphone"
+    }
+  ]
 }

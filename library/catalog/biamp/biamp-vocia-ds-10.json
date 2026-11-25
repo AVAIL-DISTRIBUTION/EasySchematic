@@ -28,10 +28,34 @@
   "poeDrawW": 7,
   "unitCost": 2332,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "paging-station",
     "description": "Vocia Desktop-mounted Paging Station, 10 Buttons with gooseneck microphone",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_ds-10_sep20_8920.pdf"
+    },
+    "portsMissing": "The DS sheet does not name the Auxiliary connector; RJ-45 follows from the VAM-1 sheet (connects to DS-4/10 over CAT5e/6) and matches the WS/EWS Auxiliary RJ45. No aux 24V DC input is listed for DS (PoE only)."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Auxiliary",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rj45",
+      "notes": "Not Ethernet: VAM-1 / VPSI-1 accessory port; balanced line in -10 dB, PTT, RS-232 57600 (VTP), 12V DC out 50 mA"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Network (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "CobraNet audio, control and power; PoE 802.3af class 2"
+    }
+  ]
 }

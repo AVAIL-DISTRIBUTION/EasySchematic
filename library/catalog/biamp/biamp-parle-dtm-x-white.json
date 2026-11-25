@@ -29,9 +29,33 @@
   "poeDrawW": 15.4,
   "unitCost": 1500,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Devio UCX Beamtracking tabletop microphone, white",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_parle-dtm-x-xex_install_jul26_14055.pdf"
+    },
+    "portsMissing": "Install manual used as the data sheet. PoE class/power and the mic-link protocol are not stated; mic link typed avb to mate with the Parlé XEX expansion convention (TCM-XA level A)."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Network Control (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "To Devio UCX 2000/3000 PoE+ port 3 or 4: audio and control; PoE 802.3af class 3 (card), class not stated in the guide"
+    },
+    {
+      "id": "p2",
+      "label": "Mic 2 (DTM-XEX)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Optional DTM-XEX expansion mic, up to 10 m; Mic 1 takes the included microphone"
+    }
+  ]
 }

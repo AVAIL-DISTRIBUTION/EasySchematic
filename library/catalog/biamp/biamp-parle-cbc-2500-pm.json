@@ -32,7 +32,8 @@
     "status": "awaiting-ports",
     "description": "Ceiling mounted audio conference bar - pole mount",
     "notes": "Характеристики с сайта по артикулу 920-01996-00001; [AVAIL] from Biamp documentation: PS-12-60 or 60 W USB-C PD",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: DC connector type is not named in the CBC sheet (only 'External Power Supply 12VDC'); barrel assumed as for the ABC/VBC bars (install guide: power and USB cables screw into the port jacks). The install guides mention an optional audio cable, but the sheet lists only USB-C under Interfaces, so no audio port is modelled."
   },
   "ports": []
 }

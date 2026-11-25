@@ -27,9 +27,24 @@
   "weightKg": 0.34,
   "unitCost": 1635,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Expansion AVB Beamtracking ceiling microphone, black surface mount",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Parle_TCM-XEX_Oct25_v1_13620.pdf"
+    },
+    "portsMissing": "Power is 'Custom/Proprietary' from the host; typed avb to mate with the TCM-X/TCM-XA expansion port."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic Link",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Pre-attached 2 m cable, RJ-45; proprietary digital protocol to the TCM-XEX port of a TCM-X/TCM-XA, up to 10 m; powered by host (Power: Custom/Proprietary)"
+    }
+  ]
 }
