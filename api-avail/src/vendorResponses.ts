@@ -30,7 +30,8 @@ export interface VendorResponses {
 
 export interface DeletedTemplatesFile {
   version: number;
-  templates: { id: string; vendor: string; model: string; reason: string; source?: string }[];
+  /** partNumber: also matched by vendor + part number (import:catalog removes such rows, step 1.9). */
+  templates: { id: string; vendor: string; model: string; partNumber?: string; reason: string; source?: string }[];
 }
 
 export const DELETED_TEMPLATES = deletedJson as unknown as DeletedTemplatesFile;

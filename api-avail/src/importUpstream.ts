@@ -37,13 +37,15 @@ import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { defaultCategoryFor, findVendor, GENERIC_VENDOR, normalizeManufacturer, VENDORS } from "../../src/avail/library";
 import { genericTemplate, VendorRules } from "../../src/avail/vendorDecisions";
 import { GENERIC_PLAN_SOURCE, plannedDeletions } from "./genericPlan";
+import { AVAIL_CATALOG_SOURCE } from "./importCatalog";
 import { deletedTemplateIds } from "./vendorResponses";
 import { PROTECTED_STATUSES, type TemplateMetaRow, type TemplateStatus } from "./templateMeta";
 
 /** meta.source of templates written by apply:vendor-decisions (vendorCleanup.ts). */
 export const VENDOR_DECISIONS_SOURCE = "vendor-decisions";
 /** Rows written by our cleanups: import:upstream does not overwrite them. */
-const WRITTEN_SOURCES = new Set([VENDOR_DECISIONS_SOURCE, GENERIC_PLAN_SOURCE]);
+// Also the product catalog (import:catalog): its data is ours, not the public library's.
+const WRITTEN_SOURCES = new Set([VENDOR_DECISIONS_SOURCE, GENERIC_PLAN_SOURCE, AVAIL_CATALOG_SOURCE]);
 
 export const DEFAULT_UPSTREAM_URL = "https://api.easyschematic.live/templates";
 export const UPSTREAM_SOURCE = "easyschematic.live";

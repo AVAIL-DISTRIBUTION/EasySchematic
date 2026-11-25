@@ -701,6 +701,14 @@
       "model": "VCM36-W",
       "reason": "Ignore. Remove from the database",
       "source": "vendor-data-requests.xlsx (vendor answers, 2026-11)"
+    },
+    {
+      "id": "avail-biamp-910-00071",
+      "vendor": "Biamp",
+      "model": "SQT-1",
+      "partNumber": "910-00071",
+      "reason": "Sound masking (Sonet Qt): not for the AVAIL library; removed from the catalog and the database (step 1.9)",
+      "source": "step 1.9, library/catalog"
     }
   ]
 }
