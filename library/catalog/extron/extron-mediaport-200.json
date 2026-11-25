@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1488-01",
+  "label": "Extron MediaPort 200",
+  "shortName": "MediaPort 200",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1488-01",
+  "deviceType": "capture-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mediaport200",
+  "searchTerms": [
+    "60-1488-01",
+    "mediaport 200",
+    "extron",
+    "mediaport",
+    "200"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 216,
+  "weightKg": 1.4,
+  "powerDrawW": 18.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 59.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "HDMI and Audio to USB Scaling Bridge",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

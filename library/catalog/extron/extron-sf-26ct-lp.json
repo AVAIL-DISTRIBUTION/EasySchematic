@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-60-1881-03",
+  "label": "Extron SF 26CT LP",
+  "shortName": "SF 26CT LP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1881-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf26ctlp",
+  "searchTerms": [
+    "60-1881-03",
+    "sf 26ct lp",
+    "extron",
+    "26ct"
+  ],
+  "heightMm": 120,
+  "widthMm": 270,
+  "depthMm": 270,
+  "weightKg": 3.9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "SoundField XD Low Profile 6.5\" Two-Way Ceiling Speaker with 4.2\" Composite Back, Complete Pair",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

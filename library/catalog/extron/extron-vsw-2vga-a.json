@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-758-01",
+  "label": "Extron VSW 2VGA A",
+  "shortName": "VSW 2VGA A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-758-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vsw2vgaa",
+  "searchTerms": [
+    "60-758-01",
+    "vsw 2vga a",
+    "extron",
+    "vsw",
+    "2vga"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.3,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Two Input VGA and Stereo Audio Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

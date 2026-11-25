@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00907-00004",
+  "label": "Biamp IP8-1153/66W",
+  "shortName": "IP8-1153/66W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00907-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00907-00004",
+  "searchTerms": [
+    "930-00907-00004",
+    "ip8-1153/66w",
+    "biamp",
+    "ip8-1153",
+    "66w"
+  ],
+  "heightMm": 991,
+  "widthMm": 561,
+  "depthMm": 668,
+  "weightKg": 47.6,
+  "unitCost": 4840,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 15-Inch 3-Way 60 X 60 White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

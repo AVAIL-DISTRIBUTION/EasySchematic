@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1421-13",
+  "label": "Extron DTP T HWP 4K 231 D (White)",
+  "shortName": "DTP T HWP 4K 231 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1421-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpthwp231d",
+  "searchTerms": [
+    "60-1421-13",
+    "dtp t hwp 4k 231 d",
+    "extron",
+    "dtp",
+    "hwp",
+    "231"
+  ],
+  "heightMm": 71,
+  "widthMm": 43,
+  "depthMm": 48,
+  "weightKg": 0.1,
+  "powerDrawW": 3,
+  "voltage": "12V DC",
+  "thermalBtuh": 10,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "DTP Transmitter for HDMI - Decorator-Style Wallplate, White - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

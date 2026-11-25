@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00890-00004",
+  "label": "Biamp R.5-96MAXB",
+  "shortName": "R.5-96MAXB",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00890-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00890-00004",
+  "searchTerms": [
+    "930-00890-00004",
+    "r.5-96maxb",
+    "biamp",
+    "5-96maxb"
+  ],
+  "heightMm": 406,
+  "widthMm": 406,
+  "depthMm": 411,
+  "weightKg": 21.3,
+  "unitCost": 3082,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 12-Inch High Output 90 X 60 Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

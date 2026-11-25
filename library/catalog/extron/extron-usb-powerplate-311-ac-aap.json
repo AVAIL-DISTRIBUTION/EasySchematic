@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-60-1938-02",
+  "label": "Extron USB PowerPlate 311 AC AAP",
+  "shortName": "USB PowerPlate 311 AC AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1938-02",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbpp300",
+  "searchTerms": [
+    "60-1938-02",
+    "usb powerplate 311 ac aap",
+    "extron",
+    "usb",
+    "powerplate",
+    "311",
+    "aap"
+  ],
+  "heightMm": 15,
+  "widthMm": 63,
+  "depthMm": 41,
+  "weightKg": 0.5,
+  "powerDrawW": 50.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.4,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "USB-C+USB-A PowerPlate AC AAP",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

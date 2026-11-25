@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-922-01",
+  "label": "Extron DVI DA4",
+  "shortName": "DVI DA4",
+  "manufacturer": "Extron",
+  "modelNumber": "60-922-01",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dvidaseries",
+  "searchTerms": [
+    "60-922-01",
+    "dvi da4",
+    "extron",
+    "dvi",
+    "da4"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 76,
+  "weightKg": 1.3,
+  "powerDrawW": 4.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 16.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Output DVI",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

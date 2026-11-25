@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1515-93a",
+  "label": "Extron DTP CrossPoint 84 4K IPCP Q MA 70 (LinkLicense)",
+  "shortName": "DTP CrossPoint 84 4K IPCP Q MA 7…",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1515-93A",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpcp4k84",
+  "searchTerms": [
+    "60-1515-93a",
+    "dtp crosspoint 84 4k ipcp q ma 7…",
+    "extron",
+    "dtp",
+    "crosspoint",
+    "ipcp"
+  ],
+  "heightMm": 89,
+  "widthMm": 442,
+  "depthMm": 389,
+  "weightKg": 6.4,
+  "powerDrawW": 136,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 356,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "LinkLicense",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "100 Watt 70 V Mono Amp, AV LAN, LL UI Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1298-01",
+  "label": "Extron XTP PI 400",
+  "shortName": "XTP PI 400",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1298-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtppi400",
+  "searchTerms": [
+    "60-1298-01",
+    "xtp pi 400",
+    "extron",
+    "xtp",
+    "400"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 241,
+  "weightKg": 0.9,
+  "powerDrawW": 55,
+  "powerCapacityW": 55,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 187,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Port XTP Power Injector",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

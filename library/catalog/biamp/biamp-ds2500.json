@@ -1,0 +1,29 @@
+{
+  "id": "avail-biamp-910-00810",
+  "label": "Biamp DS2500",
+  "shortName": "DS2500",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00810",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00810",
+  "searchTerms": [
+    "910-00810",
+    "ds2500",
+    "biamp"
+  ],
+  "unitCost": 316,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "70V window, door, wall masker for SCIF / secure rooms",
+    "notes": "Эмиттер звуковой маскировки",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

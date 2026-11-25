@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00443-00001",
+  "label": "Biamp Tesira EX-UBT",
+  "shortName": "Tesira EX-UBT",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00443-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00443-00001",
+  "searchTerms": [
+    "920-00443-00001",
+    "tesira ex-ubt",
+    "biamp",
+    "tesira",
+    "ex-ubt"
+  ],
+  "heightMm": 24,
+  "widthMm": 64,
+  "depthMm": 106,
+  "weightKg": 0.1,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 1060,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "PoE AVB/USB expander with Bluetooth® wireless technology",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

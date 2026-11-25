@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00653-00001",
+  "label": "Biamp REVAMP2120T (Regional -00001)",
+  "shortName": "REVAMP2120T",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00653-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00653-00001",
+  "searchTerms": [
+    "920-00653-00001",
+    "revamp2120t",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 239,
+  "weightKg": 6.1,
+  "powerDrawW": 300,
+  "voltage": "115-230V AC",
+  "unitCost": 746,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Regional -00001",
+    "description": "2 Channel class D amplifier 2 x 120 Watts (70/100 Volts or RMS @ 4 Ohms) or in bridge mode 1 x 240 Watts (70/100 Volts or RMS @ 8 Ohms), convection cooled, 1 U, 19\" rackmount",
+    "notes": "Та же модель под другим артикулом: 920-00653-00002; [AVAIL] regional versions, confirmed by AVAIL",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

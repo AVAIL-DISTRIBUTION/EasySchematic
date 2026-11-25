@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-726-63",
+  "label": "Extron WPD 110 A",
+  "shortName": "WPD 110 A",
+  "manufacturer": "Extron",
+  "modelNumber": "70-726-63",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpdavseries",
+  "searchTerms": [
+    "70-726-63",
+    "wpd 110 a",
+    "extron",
+    "wpd",
+    "110"
+  ],
+  "heightMm": 104,
+  "widthMm": 41,
+  "depthMm": 7,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "HDMI and Stereo Audio Pass-Through Wallplate - Decorator-Style; White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1378-01",
+  "label": "Extron PC 101",
+  "shortName": "PC 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1378-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/pc101",
+  "searchTerms": [
+    "60-1378-01",
+    "pc 101",
+    "extron",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 102,
+  "weightKg": 0.4,
+  "powerDrawW": 1.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 2.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "AC Power Controller",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

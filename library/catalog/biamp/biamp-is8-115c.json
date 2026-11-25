@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00903",
+  "label": "Biamp IS8-115C",
+  "shortName": "IS8-115C",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00903",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00903",
+    "is8-115c",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 419,
+  "depthMm": 593,
+  "weightKg": 32.7,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 15-Inch Subwoofer Configured-to-Order",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-616-12",
+  "label": "Extron One HDMI Female to Female on Pigtail (AAP, Black)",
+  "shortName": "One HDMI Female to Female on Pig…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-616-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap1hdmif1hdmif10",
+  "searchTerms": [
+    "70-616-12",
+    "one hdmi female to female on pig…",
+    "extron",
+    "one",
+    "hdmi",
+    "female"
+  ],
+  "heightMm": 17,
+  "widthMm": 89,
+  "depthMm": 1,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP, Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: One HDMI Female to Female on Pigtail",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-00434",
+  "label": "Biamp Devio DTM-1",
+  "shortName": "Devio DTM-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00434",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00434",
+  "searchTerms": [
+    "910-00434",
+    "devio dtm-1",
+    "biamp",
+    "devio",
+    "dtm-1"
+  ],
+  "heightMm": 56,
+  "widthMm": 130,
+  "depthMm": 121,
+  "weightKg": 0.27,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Beamtracking tabletop microphone",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

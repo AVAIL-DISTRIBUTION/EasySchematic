@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-901-0277",
+  "label": "Biamp Vocia AM-600c",
+  "shortName": "Vocia AM-600c",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0277",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0277",
+  "searchTerms": [
+    "901.0277",
+    "910-10293",
+    "vocia am-600c",
+    "biamp",
+    "vocia",
+    "am-600c"
+  ],
+  "unitCost": 1342,
+  "slotFamily": "biamp-vocia-va-8600",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-10293",
+    "deviceTypeSource": "card (biamp-vocia-va-8600)",
+    "description": "Vocia Amplifier Module, factory installed, 100 to 600 Watt, with standards-compliant ground fault detection, for use in Vocia VA-8600c (EN54-16 certified)",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+  },
+  "ports": []
+}

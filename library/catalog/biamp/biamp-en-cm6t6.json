@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01611",
+  "label": "Biamp EN-CM6T6",
+  "shortName": "EN-CM6T6",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01611",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01611",
+  "searchTerms": [
+    "910-01611",
+    "en-cm6t6",
+    "biamp"
+  ],
+  "heightMm": 220,
+  "widthMm": 220,
+  "depthMm": 137,
+  "weightKg": 1.42,
+  "unitCost": 85,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5” built-in ceiling speaker equipped with a high efficiency full range speaker and a multi tap 100 volt transformer (1.5-3-6 watts), all certified according EN 54-24.",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

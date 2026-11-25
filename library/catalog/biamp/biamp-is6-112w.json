@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-10886-00004",
+  "label": "Biamp IS6-112W",
+  "shortName": "IS6-112W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10886-00004",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10886-00004",
+  "searchTerms": [
+    "930-10886-00004",
+    "is6-112w",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 533,
+  "weightKg": 29,
+  "unitCost": 1982,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 12-Inch Subwoofer White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

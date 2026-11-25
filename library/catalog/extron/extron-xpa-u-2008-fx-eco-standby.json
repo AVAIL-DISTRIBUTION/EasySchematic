@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-2025-02",
+  "label": "Extron XPA U 2008 FX (ECO Standby)",
+  "shortName": "XPA U 2008 FX",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2025-02",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau2008fx",
+  "searchTerms": [
+    "60-2025-02",
+    "xpa u 2008 fx",
+    "extron",
+    "xpa",
+    "2008"
+  ],
+  "heightMm": 44,
+  "widthMm": 440,
+  "depthMm": 419,
+  "weightKg": 5.9,
+  "powerDrawW": 311.7,
+  "voltage": "100V AC",
+  "thermalBtuh": 381,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "ECO Standby",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "8 Ch Flexible Output Amp w/ ECO Standby, 200 Watts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

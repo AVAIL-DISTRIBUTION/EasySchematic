@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01493-20000",
+  "label": "Biamp SUB2400-W",
+  "shortName": "SUB2400-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01493-20000",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01493-20000",
+  "searchTerms": [
+    "920-01493-20000",
+    "sub2400-w",
+    "biamp"
+  ],
+  "heightMm": 700,
+  "widthMm": 352,
+  "depthMm": 450,
+  "weightKg": 29.2,
+  "unitCost": 935,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Passive 2 x 10\" subwoofer, 4 ohms or 16 ohms / 600 watts, plywood construction with structured paint, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

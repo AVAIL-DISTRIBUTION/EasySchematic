@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1600-24",
+  "label": "Extron FOX3 SR 201 SM (Uncompressed)",
+  "shortName": "FOX3 SR 201 SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1600-24",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3sr201",
+  "searchTerms": [
+    "60-1600-24",
+    "fox3 sr 201 sm",
+    "extron",
+    "fox3",
+    "201"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 203,
+  "weightKg": 0.84,
+  "powerDrawW": 21.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 59,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Uncompressed",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Scaling Receiver for HDMI, Audio, and Control",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

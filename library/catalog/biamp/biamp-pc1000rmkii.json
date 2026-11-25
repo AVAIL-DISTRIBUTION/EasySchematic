@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01453-00002",
+  "label": "Biamp PC1000RMKII",
+  "shortName": "PC1000RMKII",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01453-00002",
+  "deviceType": "media-player",
+  "category": "Audio Products / Sources",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01453-00002",
+  "searchTerms": [
+    "920-01453-00002",
+    "pc1000rmkii",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 303,
+  "weightKg": 4.5,
+  "voltage": "230V AC",
+  "unitCost": 350,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-player",
+    "description": "Media Player, CD/MP3 from Disc, SD-card or USB memory stick, RS232 control, IR remote included, 1U, 19\"",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

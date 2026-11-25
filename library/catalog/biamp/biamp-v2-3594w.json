@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01312-20000",
+  "label": "Biamp V2-3594W",
+  "shortName": "V2-3594W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01312-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01312-20000",
+  "searchTerms": [
+    "920-01312-20000",
+    "v2-3594w",
+    "biamp"
+  ],
+  "heightMm": 823,
+  "widthMm": 467,
+  "depthMm": 404,
+  "weightKg": 27,
+  "unitCost": 1692,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way 15-Inch 90 X 40 White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

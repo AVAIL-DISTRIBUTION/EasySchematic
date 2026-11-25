@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-42-141-23",
+  "label": "Extron FF 220T",
+  "shortName": "FF 220T",
+  "manufacturer": "Extron",
+  "modelNumber": "42-141-23",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ff220t",
+  "searchTerms": [
+    "42-141-23",
+    "ff 220t",
+    "extron",
+    "220t"
+  ],
+  "heightMm": 83,
+  "widthMm": 603,
+  "depthMm": 603,
+  "weightKg": 3.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Full-Range Flat Field® Speakers with 600 x 600 mm Low Profile Enclosure and 70/100V Transformer, Pair",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

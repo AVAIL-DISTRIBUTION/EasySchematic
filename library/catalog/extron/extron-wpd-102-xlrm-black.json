@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-70-1103-02",
+  "label": "Extron WPD 102 XLRM (Black)",
+  "shortName": "WPD 102 XLRM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1103-02",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpd102",
+  "searchTerms": [
+    "70-1103-02",
+    "wpd 102 xlrm",
+    "extron",
+    "wpd",
+    "102",
+    "xlrm"
+  ],
+  "heightMm": 106,
+  "widthMm": 43,
+  "depthMm": 36,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Pass-Through Wallplate with Two XLR Connectors - Decorator-Style; Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

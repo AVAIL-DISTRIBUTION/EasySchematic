@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00852-00001",
+  "label": "Biamp IS6-212B",
+  "shortName": "IS6-212B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00852-00001",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00852-00001",
+  "searchTerms": [
+    "930-00852-00001",
+    "is6-212b",
+    "biamp"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 533,
+  "weightKg": 45.8,
+  "unitCost": 2862,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power Dual 12-Inch Subwoofer Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

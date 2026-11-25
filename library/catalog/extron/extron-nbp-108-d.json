@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1818-01",
+  "label": "Extron NBP 108 D",
+  "shortName": "NBP 108 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1818-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbp108d",
+  "searchTerms": [
+    "60-1818-01",
+    "nbp 108 d",
+    "extron",
+    "nbp",
+    "108"
+  ],
+  "heightMm": 105,
+  "widthMm": 45,
+  "depthMm": 57,
+  "weightKg": 0.1,
+  "powerDrawW": 1.9,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 6.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Network Button Panel with 8 Buttons - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

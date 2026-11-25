@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-60-1748-10",
+  "label": "Extron TLCA 1",
+  "shortName": "TLCA 1",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1748-10",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlca1",
+  "searchTerms": [
+    "60-1748-10",
+    "tlca 1",
+    "extron",
+    "tlca"
+  ],
+  "heightMm": 12,
+  "widthMm": 46,
+  "depthMm": 23,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "TouchLink Control Port Expansion Adapter",
+    "notes": "[AVAIL] powered by the host device / bus — no own power input",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

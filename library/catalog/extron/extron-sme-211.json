@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1763-01",
+  "label": "Extron SME 211",
+  "shortName": "SME 211",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1763-01",
+  "deviceType": "streaming-encoder",
+  "category": "Streaming and Recording / Streaming AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sme211",
+  "searchTerms": [
+    "60-1763-01",
+    "sme 211",
+    "extron",
+    "sme",
+    "211"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 216,
+  "weightKg": 1.1,
+  "powerDrawW": 23,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 50,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Streaming Media Encoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

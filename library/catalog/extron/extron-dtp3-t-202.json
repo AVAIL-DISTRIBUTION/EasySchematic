@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1869-62",
+  "label": "Extron DTP3 T 202",
+  "shortName": "DTP3 T 202",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1869-62",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t202",
+  "searchTerms": [
+    "60-1869-62",
+    "dtp3 t 202",
+    "extron",
+    "dtp3",
+    "202"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.27,
+  "powerDrawW": 7.16,
+  "voltage": "12V DC",
+  "thermalBtuh": 23.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "4K/60 HDMI DTP3 Transmitter with Input Loop-Through and Audio Embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

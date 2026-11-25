@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1684-01",
+  "label": "Extron ISS 608",
+  "shortName": "ISS 608",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1684-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iss608",
+  "searchTerms": [
+    "60-1684-01",
+    "iss 608",
+    "extron",
+    "iss",
+    "608"
+  ],
+  "heightMm": 89,
+  "widthMm": 444,
+  "depthMm": 324,
+  "weightKg": 3.9,
+  "powerDrawW": 59.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 176,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "Eight Input HDMI & DisplayPort 4K/60 Seamless Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

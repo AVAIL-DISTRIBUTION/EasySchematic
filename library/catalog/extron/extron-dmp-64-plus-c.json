@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1823-01",
+  "label": "Extron DMP 64 Plus C",
+  "shortName": "DMP 64 Plus C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1823-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dmp64plus",
+  "searchTerms": [
+    "60-1823-01",
+    "dmp 64 plus c",
+    "extron",
+    "dmp",
+    "plus"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 1.07,
+  "powerDrawW": 15,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 38.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "6x4 Digital Matrix Processor w/ AEC",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

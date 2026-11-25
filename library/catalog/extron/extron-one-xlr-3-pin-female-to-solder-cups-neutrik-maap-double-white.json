@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-296-21",
+  "label": "Extron One XLR 3-pin Female to Solder Cups - Neutrik (MAAP Double, White)",
+  "shortName": "One XLR 3-pin Female to Solder C…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-296-21",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in9365d",
+  "searchTerms": [
+    "70-296-21",
+    "one xlr 3-pin female to solder c…",
+    "extron",
+    "one",
+    "xlr",
+    "3-pin",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP Double, White",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Double Space MAAP - White: One XLR 3-pin Female to Solder Cups - Neutrik",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

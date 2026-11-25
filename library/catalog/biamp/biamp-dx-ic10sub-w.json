@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00101",
+  "label": "Biamp DX-IC10SUB-W",
+  "shortName": "DX-IC10SUB-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00101",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00101",
+  "searchTerms": [
+    "910-00101",
+    "dx-ic10sub-w",
+    "biamp"
+  ],
+  "heightMm": 360,
+  "widthMm": 360,
+  "depthMm": 263,
+  "weightKg": 10,
+  "unitCost": 520,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10” High Output In-Ceiling Subwoofer w/ Internal Crossover. 8 Ohm or 70V/100V operation, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

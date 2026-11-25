@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-103-14",
+  "label": "Extron Two XLR 3-pin Female to Solder Cups (AAP Double, Black)",
+  "shortName": "Two XLR 3-pin Female to Solder C…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-103-14",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap1xlr3fsc",
+  "searchTerms": [
+    "70-103-14",
+    "two xlr 3-pin female to solder c…",
+    "extron",
+    "two",
+    "xlr",
+    "3-pin",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP Double, Black",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - Black: Two XLR 3-pin Female to Solder Cups",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

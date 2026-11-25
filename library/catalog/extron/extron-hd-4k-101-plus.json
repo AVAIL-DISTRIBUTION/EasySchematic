@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1621-01",
+  "label": "Extron HD 4K 101 Plus",
+  "shortName": "HD 4K 101 Plus",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1621-01",
+  "deviceType": "hdmi-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hd4k101plus",
+  "searchTerms": [
+    "60-1621-01",
+    "hd 4k 101 plus",
+    "extron",
+    "101",
+    "plus"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 0.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 1.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "4K/60 HDMI Cable Equalizer",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

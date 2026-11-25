@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-01737-00002",
+  "label": "Biamp Modena Hub+",
+  "shortName": "Modena Hub+",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01737-00002",
+  "deviceType": "wireless-presentation",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01737-00001",
+  "searchTerms": [
+    "920-01737-00002",
+    "modena hub+",
+    "biamp",
+    "modena",
+    "hub+"
+  ],
+  "heightMm": 51,
+  "widthMm": 160,
+  "depthMm": 132,
+  "weightKg": 1.1,
+  "voltage": "12V DC",
+  "unitCost": 1272,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Wireless presentation hub with integrated WiFi access point",
+    "notes": "Характеристики с сайта по артикулу 920-01737-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

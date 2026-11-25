@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1993-03",
+  "label": "Extron TLP Pro 535M (White)",
+  "shortName": "TLP Pro 535M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1993-03",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro535m",
+  "searchTerms": [
+    "60-1993-03",
+    "tlp pro 535m",
+    "extron",
+    "tlp",
+    "pro",
+    "535m"
+  ],
+  "heightMm": 83,
+  "widthMm": 152,
+  "depthMm": 30,
+  "weightKg": 0.32,
+  "powerDrawW": 7.2,
+  "voltage": "9V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 31.8,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "5.5\" Wall Mount TouchLink Pro Touchpanel - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

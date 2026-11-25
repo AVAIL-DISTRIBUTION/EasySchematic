@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-02274-00002",
+  "label": "Biamp PS-AE-3",
+  "shortName": "PS-AE-3",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02274-00002",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-02274-00001",
+  "searchTerms": [
+    "920-02274-00002",
+    "ps-ae-3",
+    "biamp"
+  ],
+  "heightMm": 64,
+  "widthMm": 127,
+  "depthMm": 317,
+  "weightKg": 1.7,
+  "voltage": "100-240V AC",
+  "unitCost": 759,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Active emitter power supply",
+    "notes": "Характеристики с сайта по артикулу 920-02274-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

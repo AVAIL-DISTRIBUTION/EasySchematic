@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1501-01",
+  "label": "Extron NetPA 1001-70V AT",
+  "shortName": "NetPA 1001-70V AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1501-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpa1001at",
+  "searchTerms": [
+    "60-1501-01",
+    "netpa 1001-70v at",
+    "extron",
+    "netpa",
+    "1001-70v"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 1.2,
+  "powerDrawW": 22.7,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 35,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "One Channel Dante Amp, 100 watts at 70 volts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

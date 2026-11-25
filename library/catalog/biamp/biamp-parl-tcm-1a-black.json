@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00493-10000",
+  "label": "Biamp Parlé TCM-1A Black",
+  "shortName": "Parlé TCM-1A Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00493-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00493-10000",
+  "searchTerms": [
+    "920-00493-10000",
+    "parlé tcm-1a black",
+    "biamp",
+    "parl",
+    "tcm-1a",
+    "black"
+  ],
+  "heightMm": 51,
+  "widthMm": 63,
+  "depthMm": 63,
+  "weightKg": 0.2,
+  "voltage": "PoE+ 802.3at",
+  "unitCost": 2565,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "AVB Beamtracking ceiling microphone with PoE+ amplifier, black pendant",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

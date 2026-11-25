@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-1171-01",
+  "label": "Extron XTP CP 4i 12G-SDI",
+  "shortName": "XTP CP 4i 12G-SDI",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1171-01",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpcp12gsdi",
+  "searchTerms": [
+    "70-1171-01",
+    "xtp cp 4i 12g-sdi",
+    "extron",
+    "xtp",
+    "12g-sdi"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "Four Input Board, 12G-SDI with SDI and HDMI Local Outputs",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1778-14",
+  "label": "Extron FOX3 T 331 SM (Uncompressed)",
+  "shortName": "FOX3 T 331 SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1778-14",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t331",
+  "searchTerms": [
+    "60-1778-14",
+    "fox3 t 331 sm",
+    "extron",
+    "fox3",
+    "331"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1.1,
+  "powerDrawW": 27.2,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 80.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Uncompressed",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Transmitter for DisplayPort, USB HID, Audio, Control, and 3D Sync",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

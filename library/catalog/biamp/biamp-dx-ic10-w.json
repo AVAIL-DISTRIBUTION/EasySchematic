@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00100",
+  "label": "Biamp DX-IC10-W",
+  "shortName": "DX-IC10-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00100",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00100",
+  "searchTerms": [
+    "910-00100",
+    "dx-ic10-w",
+    "biamp"
+  ],
+  "heightMm": 360,
+  "widthMm": 360,
+  "depthMm": 263,
+  "weightKg": 10.73,
+  "unitCost": 560,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10” High Output Coaxial In-Ceiling Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

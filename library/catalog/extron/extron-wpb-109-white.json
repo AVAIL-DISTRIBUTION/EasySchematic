@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-60-1371-21",
+  "label": "Extron WPB 109 (White)",
+  "shortName": "WPB 109",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1371-21",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpb109",
+  "searchTerms": [
+    "60-1371-21",
+    "wpb 109",
+    "extron",
+    "wpb",
+    "109"
+  ],
+  "heightMm": 114,
+  "widthMm": 71,
+  "depthMm": 41,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "One-Gang Wallplate with Computer Video, HDMI, and Stereo Audio Connectors - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-biamp-910-01937",
+  "label": "Biamp Evoko Naso Power Supply",
+  "shortName": "Evoko Naso Power Supply",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01937",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01937",
+  "searchTerms": [
+    "910-01937",
+    "evoko naso power supply",
+    "biamp",
+    "evoko",
+    "naso",
+    "power",
+    "supply"
+  ],
+  "heightMm": 20,
+  "widthMm": 40,
+  "depthMm": 180,
+  "powerDrawW": 60,
+  "powerCapacityW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 64,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Power supply for Naso Room Manager (needed if device is not powered using Power over Ethernet (PoE))",
+    "notes": "[AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp); [AVAIL] default PSU power 60 W (AVAIL decision; not published by Biamp)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

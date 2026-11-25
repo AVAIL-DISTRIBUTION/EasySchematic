@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00925-20000",
+  "label": "Biamp Desono C-IC6 White",
+  "shortName": "Desono C-IC6 White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00925-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00925-20000",
+  "searchTerms": [
+    "920-00925-20000",
+    "desono c-ic6 white",
+    "biamp",
+    "desono",
+    "c-ic6",
+    "white"
+  ],
+  "heightMm": 277,
+  "widthMm": 277,
+  "depthMm": 150,
+  "weightKg": 3.5,
+  "unitCost": 276,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "In-Ceiling, Indoor 6.5\" Coaxial Loudspeaker, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

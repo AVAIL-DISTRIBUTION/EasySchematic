@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-098-11",
+  "label": "Extron Two 3.5 mm Stereo Mini Jack to Solder Tabs",
+  "shortName": "Two 3.5 mm Stereo Mini Jack to S…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-098-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2mjsc",
+  "searchTerms": [
+    "70-098-11",
+    "two 3.5 mm stereo mini jack to s…",
+    "extron",
+    "two",
+    "stereo",
+    "mini",
+    "jack"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two 3.5 mm Stereo Mini Jack to Solder Tabs",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

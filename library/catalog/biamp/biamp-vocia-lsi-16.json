@@ -1,0 +1,42 @@
+{
+  "id": "avail-biamp-910-00245",
+  "label": "Biamp Vocia LSI-16",
+  "shortName": "Vocia LSI-16",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00245",
+  "deviceType": "frame",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00245",
+  "searchTerms": [
+    "910-00245",
+    "vocia lsi-16",
+    "biamp",
+    "vocia",
+    "lsi-16"
+  ],
+  "heightMm": 44.5,
+  "widthMm": 483,
+  "depthMm": 254,
+  "weightKg": 2.9,
+  "powerDrawW": 15,
+  "voltage": "24V DC / PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2565,
+  "_avail": {
+    "status": "awaiting-ports",
+    "slotFamilies": [
+      "biamp-vocia-lsi-16"
+    ],
+    "description": "Vocia Life Safety Interface, with 4 discrete inputs and support for Vocia IM-16 Interface Module",
+    "notes": "Слот для модуля IM-16",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-vocia-lsi-16\""
+  },
+  "ports": []
+}

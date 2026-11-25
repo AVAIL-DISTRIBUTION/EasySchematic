@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-2072-53",
+  "label": "Extron DTP3 R 201 D, White",
+  "shortName": "DTP3 R 201 D, White",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2072-53",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3r201d",
+  "searchTerms": [
+    "60-2072-53",
+    "dtp3 r 201 d, white",
+    "extron",
+    "dtp3",
+    "201",
+    "white"
+  ],
+  "heightMm": 71,
+  "widthMm": 43,
+  "depthMm": 48,
+  "powerDrawW": 7.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 20.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "HDMI 4K/60 Wallplate Rx, White - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

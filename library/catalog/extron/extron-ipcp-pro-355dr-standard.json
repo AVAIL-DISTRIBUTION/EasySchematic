@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1433-01",
+  "label": "Extron IPCP Pro 355DR (Standard)",
+  "shortName": "IPCP Pro 355DR",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1433-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro355dr",
+  "searchTerms": [
+    "60-1433-01",
+    "ipcp pro 355dr",
+    "extron",
+    "ipcp",
+    "pro",
+    "355dr"
+  ],
+  "heightMm": 90,
+  "widthMm": 160,
+  "depthMm": 58,
+  "weightKg": 0.3,
+  "powerDrawW": 8.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 9.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Standard",
+    "rackFormSource": "Non-rack",
+    "description": "IP Link® Pro Control Processor, DIN Rail",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

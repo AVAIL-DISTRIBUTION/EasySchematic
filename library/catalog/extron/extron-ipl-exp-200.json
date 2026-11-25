@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1908-01",
+  "label": "Extron IPL EXP 200",
+  "shortName": "IPL EXP 200",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1908-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iplexp200",
+  "searchTerms": [
+    "60-1908-01",
+    "ipl exp 200",
+    "extron",
+    "ipl",
+    "exp",
+    "200"
+  ],
+  "heightMm": 42,
+  "widthMm": 109,
+  "depthMm": 114,
+  "weightKg": 0.2,
+  "powerDrawW": 1.7,
+  "voltage": "48V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 5.8,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Control System I/O Expansion Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

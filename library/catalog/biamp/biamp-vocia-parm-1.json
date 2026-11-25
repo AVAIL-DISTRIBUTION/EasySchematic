@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-901-0269",
+  "label": "Biamp Vocia PARM-1",
+  "shortName": "Vocia PARM-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0269",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0269",
+  "searchTerms": [
+    "901.0269",
+    "910-00299",
+    "vocia parm-1",
+    "biamp",
+    "vocia",
+    "parm-1"
+  ],
+  "unitCost": 479,
+  "slotFamily": "biamp-vocia-va-8600",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-00299",
+    "deviceTypeSource": "card (biamp-vocia-va-8600)",
+    "description": "Vocia Page Active Relay Module Card, Factory Installed",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+  },
+  "ports": []
+}

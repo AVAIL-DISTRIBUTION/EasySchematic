@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00493-20000",
+  "label": "Biamp Parlé TCM-1A White",
+  "shortName": "Parlé TCM-1A White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00493-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00493-20000",
+  "searchTerms": [
+    "920-00493-20000",
+    "parlé tcm-1a white",
+    "biamp",
+    "parl",
+    "tcm-1a",
+    "white"
+  ],
+  "heightMm": 51,
+  "widthMm": 63,
+  "depthMm": 63,
+  "weightKg": 0.2,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2565,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "AVB Beamtracking ceiling microphone with PoE+ amplifier, white pendant",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

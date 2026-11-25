@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-70-1177-01",
+  "label": "Extron VCM 110 AAP",
+  "shortName": "VCM 110 AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1177-01",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vcm110aap",
+  "searchTerms": [
+    "70-1177-01",
+    "vcm 110 aap",
+    "extron",
+    "vcm",
+    "110",
+    "aap"
+  ],
+  "heightMm": 33,
+  "widthMm": 35,
+  "depthMm": 25,
+  "weightKg": 0.1,
+  "powerDrawW": 0.04,
+  "thermalBtuh": 0.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Volume & Mute Controller – AAP – Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

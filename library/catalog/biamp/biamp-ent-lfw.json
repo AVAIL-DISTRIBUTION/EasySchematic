@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-01392-00002",
+  "label": "Biamp ENT-LFW",
+  "shortName": "ENT-LFW",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-01392-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-01392-00002",
+  "searchTerms": [
+    "930-01392-00002",
+    "ent-lfw",
+    "biamp"
+  ],
+  "heightMm": 1129,
+  "widthMm": 140,
+  "depthMm": 187,
+  "weightKg": 11.3,
+  "unitCost": 2682,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "ENTASYS Low Frequency Column Loudspeaker, White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1005-32",
+  "label": "Extron MLC 62 RS EU (Black)",
+  "shortName": "MLC 62 RS EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1005-32",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc62eu",
+  "searchTerms": [
+    "60-1005-32",
+    "mlc 62 rs eu",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 106,
+  "widthMm": 47,
+  "depthMm": 37,
+  "weightKg": 0.5,
+  "powerDrawW": 2.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 7,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "MediaLink® Controller for EU Junction Boxes - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

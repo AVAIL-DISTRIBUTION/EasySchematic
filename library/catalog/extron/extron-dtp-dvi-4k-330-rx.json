@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1360-13",
+  "label": "Extron DTP DVI 4K 330 Rx",
+  "shortName": "DTP DVI 4K 330 Rx",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1360-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpdvi330rx",
+  "searchTerms": [
+    "60-1360-13",
+    "dtp dvi 4k 330 rx",
+    "extron",
+    "dtp",
+    "dvi",
+    "330"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.3,
+  "powerDrawW": 3.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 10.3,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Long Distance DVI Twisted Pair Receiver - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

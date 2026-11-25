@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-2041-01",
+  "label": "Extron DMP 44 xi",
+  "shortName": "DMP 44 xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2041-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dmp44xi",
+  "searchTerms": [
+    "60-2041-01",
+    "dmp 44 xi",
+    "extron",
+    "dmp"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.2,
+  "powerDrawW": 4.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.7,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "4x4 Digital Matrix Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": "avail-extron-60-1386-01",
+  "label": "Extron XTP II CrossPoint 6400 Frame",
+  "shortName": "XTP II CrossPoint 6400 Frame",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1386-01",
+  "deviceType": "frame",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicp6400",
+  "searchTerms": [
+    "60-1386-01",
+    "xtp ii crosspoint 6400 frame",
+    "extron",
+    "xtp",
+    "crosspoint",
+    "6400",
+    "frame"
+  ],
+  "heightMm": 890,
+  "widthMm": 432,
+  "depthMm": 445,
+  "weightKg": 82,
+  "powerDrawW": 500,
+  "voltage": "200-240V AC",
+  "thermalBtuh": 942,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "20U Full rack",
+    "rackUnits": 20,
+    "slotFamilies": [
+      "extron-xtp-2"
+    ],
+    "description": "Modular Digital Matrix Switchers from 4x4 to 64x64 with SpeedSwitch Technology, North America NEMA L6-20 Power Plug",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

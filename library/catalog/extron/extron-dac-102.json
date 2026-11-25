@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1811-01",
+  "label": "Extron DAC 102",
+  "shortName": "DAC 102",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1811-01",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dac102",
+  "searchTerms": [
+    "60-1811-01",
+    "dac 102",
+    "extron",
+    "dac",
+    "102"
+  ],
+  "heightMm": 34,
+  "widthMm": 61,
+  "depthMm": 58,
+  "weightKg": 0.1,
+  "powerDrawW": 1.1,
+  "voltage": "5V DC",
+  "thermalBtuh": 3.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Two Channel Digital to Analog Audio Converter",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

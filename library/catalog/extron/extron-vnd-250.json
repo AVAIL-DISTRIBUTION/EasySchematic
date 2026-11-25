@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1275-01",
+  "label": "Extron VND 250",
+  "shortName": "VND 250",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1275-01",
+  "deviceType": "streaming-decoder",
+  "category": "Streaming and Recording / Streaming AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vnmatrix250",
+  "searchTerms": [
+    "60-1275-01",
+    "vnd 250",
+    "extron",
+    "vnd",
+    "250"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 253,
+  "weightKg": 1.1,
+  "powerDrawW": 16.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 54.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Decoder for HDMI, Audio, USB Keyboard and Mouse",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

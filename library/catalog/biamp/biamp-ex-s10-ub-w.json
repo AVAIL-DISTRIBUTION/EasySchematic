@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01819-20000",
+  "label": "Biamp EX-S10-UB-W",
+  "shortName": "EX-S10-UB-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01819-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01819-20000",
+  "searchTerms": [
+    "920-01819-20000",
+    "ex-s10-ub-w",
+    "biamp"
+  ],
+  "heightMm": 548,
+  "widthMm": 309,
+  "depthMm": 355,
+  "weightKg": 15.2,
+  "unitCost": 1024,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10” Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included indexing u-bracket and weather cover, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

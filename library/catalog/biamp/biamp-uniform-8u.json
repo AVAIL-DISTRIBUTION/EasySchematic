@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-910-01870",
+  "label": "Biamp Uniform 8U",
+  "shortName": "Uniform 8U",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01870",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01870",
+  "searchTerms": [
+    "910-01870",
+    "uniform 8u",
+    "biamp",
+    "uniform"
+  ],
+  "heightMm": 94,
+  "widthMm": 76,
+  "depthMm": 15,
+  "weightKg": 0.08,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 4,
+  "unitCost": 700,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8-button E Ink control pad with Ethernet, 1 bidirectional RS-232 port, 2 unidirectional RS-232 ports, 3 GPIO; PoE (IEEE 802.3at Class 1, 4W)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

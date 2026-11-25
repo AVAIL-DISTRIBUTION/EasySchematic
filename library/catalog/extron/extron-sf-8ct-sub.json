@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-1941-03",
+  "label": "Extron SF 8CT SUB",
+  "shortName": "SF 8CT SUB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1941-03",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf8ctsub",
+  "searchTerms": [
+    "60-1941-03",
+    "sf 8ct sub",
+    "extron",
+    "8ct",
+    "sub"
+  ],
+  "heightMm": 367,
+  "widthMm": 324,
+  "depthMm": 324,
+  "weightKg": 7.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "SoundField 8\" In-Ceiling Subwoofer - Individual",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

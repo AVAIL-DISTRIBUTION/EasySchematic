@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00558-10000",
+  "label": "Biamp ENT203B",
+  "shortName": "ENT203B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00558-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00558-10000",
+  "searchTerms": [
+    "920-00558-10000",
+    "ent203b",
+    "biamp"
+  ],
+  "heightMm": 263,
+  "widthMm": 118,
+  "depthMm": 190,
+  "weightKg": 4.1,
+  "unitCost": 510,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "ENTASYS 200 Column, 2-Way 3 LF Drivers, Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

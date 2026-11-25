@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00662-00002",
+  "label": "Biamp MA60",
+  "shortName": "MA60",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00662-00002",
+  "deviceType": "power-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00662-00001",
+  "searchTerms": [
+    "920-00662-00002",
+    "ma60",
+    "biamp"
+  ],
+  "heightMm": 89,
+  "widthMm": 216,
+  "depthMm": 250,
+  "weightKg": 2.6,
+  "powerDrawW": 100,
+  "voltage": "100-240V AC",
+  "unitCost": 469,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "9.5\" mixing amplifier 70 - 100 volt / 60 watts, 1 mic/line input, 2 stereo line inputs, left to right 4 level priority system, Emergency in, paging mic with chime, 24V override output",
+    "notes": "Характеристики с сайта по артикулу 920-00662-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

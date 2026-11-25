@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-930-00908",
+  "label": "Biamp IP6-1122/xx-CTO",
+  "shortName": "IP6-1122/xx-CTO",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00908",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00908",
+    "ip6-1122/xx-cto",
+    "biamp",
+    "ip6-1122",
+    "xx-cto"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 29.5,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 12-inch Two-Way Installation Loudspeaker",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

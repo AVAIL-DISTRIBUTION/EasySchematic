@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00897-00005",
+  "label": "Biamp W2-2W8T",
+  "shortName": "W2-2W8T",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00897-00005",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00897-00005",
+  "searchTerms": [
+    "930-00897-00005",
+    "w2-2w8t",
+    "biamp"
+  ],
+  "heightMm": 257,
+  "widthMm": 508,
+  "depthMm": 292,
+  "weightKg": 20.14,
+  "unitCost": 2756,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Two-Way 8-Inch \"Wide\" Compact System 70V/100V (Black)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

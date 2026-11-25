@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-60-1381-92a",
+  "label": "Extron DTP CrossPoint 108 4K IPCP Q SA (LinkLicense)",
+  "shortName": "DTP CrossPoint 108 4K IPCP Q SA",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1381-92A",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpcp4k108",
+  "searchTerms": [
+    "60-1381-92a",
+    "dtp crosspoint 108 4k ipcp q sa",
+    "extron",
+    "dtp",
+    "crosspoint",
+    "108",
+    "ipcp"
+  ],
+  "heightMm": 133,
+  "widthMm": 442,
+  "depthMm": 406,
+  "weightKg": 7.7,
+  "powerDrawW": 184,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 499,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "LinkLicense",
+    "rackFormSource": "3U Full rack",
+    "rackUnits": 3,
+    "description": "2 x 50 Watt Stereo Amp, AV LAN, LL UI Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

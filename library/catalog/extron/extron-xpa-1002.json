@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-849-01",
+  "label": "Extron XPA 1002",
+  "shortName": "XPA 1002",
+  "manufacturer": "Extron",
+  "modelNumber": "60-849-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpa1002",
+  "searchTerms": [
+    "60-849-01",
+    "xpa 1002",
+    "extron",
+    "xpa",
+    "1002"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 1.1,
+  "powerDrawW": 29.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 51,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Amp - 60 Watts at 8 ohms",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

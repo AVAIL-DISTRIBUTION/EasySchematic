@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-42-355-01",
+  "label": "Extron WC Pro 160 (LinkLicense)",
+  "shortName": "WC Pro 160",
+  "manufacturer": "Extron",
+  "modelNumber": "42-355-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wcpro160",
+  "searchTerms": [
+    "42-355-01",
+    "wc pro 160",
+    "extron",
+    "pro",
+    "160"
+  ],
+  "heightMm": 25,
+  "widthMm": 165,
+  "depthMm": 76,
+  "weightKg": 0.23,
+  "powerDrawW": 9.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 25.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "LinkLicense",
+    "rackFormSource": "Non-rack",
+    "description": "Workspace Automation Controller with EDID Minder, LL WC Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

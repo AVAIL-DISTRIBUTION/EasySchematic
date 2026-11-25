@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1925-01",
+  "label": "Extron DTP3 CrossPoint 42",
+  "shortName": "DTP3 CrossPoint 42",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1925-01",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3crosspointusb",
+  "searchTerms": [
+    "60-1925-01",
+    "dtp3 crosspoint 42",
+    "extron",
+    "dtp3",
+    "crosspoint"
+  ],
+  "heightMm": 42,
+  "widthMm": 220,
+  "depthMm": 290,
+  "weightKg": 1.5,
+  "powerDrawW": 113.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 162.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4x2 Scaling Presentation Matrix Switchers for HDMI with DTP3 Extension",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

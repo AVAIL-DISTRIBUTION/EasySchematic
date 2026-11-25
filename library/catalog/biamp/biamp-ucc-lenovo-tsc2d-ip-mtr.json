@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00032",
+  "label": "Biamp UCC-Lenovo TSC2D-IP-MTR",
+  "shortName": "UCC-Lenovo TSC2D-IP-MTR",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00032",
+  "deviceType": "mtr-pc",
+  "category": "UC / Video conference systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00021",
+  "searchTerms": [
+    "920-00032",
+    "ucc-lenovo tsc2d-ip-mtr",
+    "biamp",
+    "ucc-lenovo",
+    "tsc2d-ip-mtr"
+  ],
+  "heightMm": 38,
+  "widthMm": 185,
+  "depthMm": 220,
+  "weightKg": 1.01,
+  "powerDrawW": 170,
+  "voltage": "100-240V AC",
+  "unitCost": 7800,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "UC Compute - Lenovo ThinkSmart Dual LAN with Cat5 Based Connection - Microsoft Teams Room",
+    "notes": "Характеристики с сайта по артикулу 920-00021; [AVAIL] Lenovo ThinkSmart Core Gen 2: 170 W adapter; [AVAIL] Lenovo ThinkSmart Core Gen 2 compute unit",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

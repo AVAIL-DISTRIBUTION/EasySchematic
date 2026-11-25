@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1685-01",
+  "label": "Extron ISS 612",
+  "shortName": "ISS 612",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1685-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iss612",
+  "searchTerms": [
+    "60-1685-01",
+    "iss 612",
+    "extron",
+    "iss",
+    "612"
+  ],
+  "heightMm": 89,
+  "widthMm": 444,
+  "depthMm": 324,
+  "weightKg": 3.97,
+  "powerDrawW": 69.8,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 236.3,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "12-Input 4K/60 HDMI, DisplayPort, and 12G-SDI Seamless Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

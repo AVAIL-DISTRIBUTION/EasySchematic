@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00887-00003",
+  "label": "Biamp R.5-66TZ",
+  "shortName": "R.5-66TZ",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00887-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00887-00003",
+  "searchTerms": [
+    "930-00887-00003",
+    "r.5-66tz",
+    "biamp",
+    "5-66tz"
+  ],
+  "heightMm": 406,
+  "widthMm": 406,
+  "depthMm": 411,
+  "weightKg": 16.8,
+  "unitCost": 1596,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 12-Inch Horn Loaded 60 X 60 Grey 70V/100V",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

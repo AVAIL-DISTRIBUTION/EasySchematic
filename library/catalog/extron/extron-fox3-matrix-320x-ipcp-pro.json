@@ -1,0 +1,44 @@
+{
+  "id": "avail-extron-60-1578-12",
+  "label": "Extron FOX3 Matrix 320x IPCP Pro",
+  "shortName": "FOX3 Matrix 320x IPCP Pro",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1578-12",
+  "deviceType": "frame",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix320x",
+  "searchTerms": [
+    "60-1578-12",
+    "fox3 matrix 320x ipcp pro",
+    "extron",
+    "fox3",
+    "matrix",
+    "320x",
+    "ipcp"
+  ],
+  "heightMm": 533,
+  "widthMm": 432,
+  "depthMm": 508,
+  "weightKg": 57,
+  "powerDrawW": 1001,
+  "voltage": "200-240V AC",
+  "thermalBtuh": 3416,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "12U Full rack",
+    "rackUnits": 12,
+    "slotFamilies": [
+      "extron-fox3-matrix"
+    ],
+    "description": "Modular Fiber Optic Matrix Switcher from 8x8 to 320x320",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

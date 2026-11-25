@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1761-12",
+  "label": "Extron XPA U 1002-100V",
+  "shortName": "XPA U 1002-100V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1761-12",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau1002",
+  "searchTerms": [
+    "60-1761-12",
+    "xpa u 1002-100v",
+    "extron",
+    "xpa",
+    "1002-100v"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.5,
+  "powerDrawW": 35.6,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 36,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Amp, 100 watts at 100 volts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

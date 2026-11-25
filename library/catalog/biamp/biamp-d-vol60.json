@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-00668",
+  "label": "Biamp D-VOL60",
+  "shortName": "D-VOL60",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00668",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00668",
+  "searchTerms": [
+    "910-00668",
+    "d-vol60",
+    "biamp"
+  ],
+  "heightMm": 115,
+  "widthMm": 70,
+  "depthMm": 49,
+  "weightKg": 0.41,
+  "powerDrawW": 0.1,
+  "unitCost": 68,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "volume-control",
+    "description": "70 volt,60 watts Decora style volume control, white, with 24V prioirty relais",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

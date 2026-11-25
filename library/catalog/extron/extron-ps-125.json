@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1954-01",
+  "label": "Extron PS 125",
+  "shortName": "PS 125",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1954-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ps125",
+  "searchTerms": [
+    "60-1954-01",
+    "ps 125",
+    "extron",
+    "125"
+  ],
+  "heightMm": 44,
+  "widthMm": 110,
+  "depthMm": 216,
+  "weightKg": 0.5,
+  "powerDrawW": 60,
+  "powerCapacityW": 60,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 34.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "12 VDC, 60 W Rack Mountable Power Supply",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

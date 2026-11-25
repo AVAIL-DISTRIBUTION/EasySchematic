@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-910-01428",
+  "label": "Biamp MPLT62-G Grey 100V",
+  "shortName": "MPLT62-G Grey 100V",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01428",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01428",
+  "searchTerms": [
+    "910-01428",
+    "mplt62-g grey 100v",
+    "biamp",
+    "mplt62-g",
+    "grey",
+    "100v"
+  ],
+  "heightMm": 261,
+  "widthMm": 360,
+  "depthMm": 293,
+  "weightKg": 4.9,
+  "unitCost": 424,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Very high power two-way long throw music projector with 6.5\" HD woofer + 1\" horn driver, 100 volt / 62 watts, aluminum bracket: IP66. NO RUST!",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

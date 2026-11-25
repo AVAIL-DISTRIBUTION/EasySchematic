@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01306",
+  "label": "Biamp TRC400",
+  "shortName": "TRC400",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01306",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01306",
+  "searchTerms": [
+    "910-01306",
+    "trc400",
+    "biamp"
+  ],
+  "heightMm": 95,
+  "widthMm": 114,
+  "depthMm": 95,
+  "weightKg": 4.1,
+  "unitCost": 409,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "Transformer 400W, 4 Ohms",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00571-00003",
+  "label": "Biamp V2-8BT",
+  "shortName": "V2-8BT",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00571-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00571-00003",
+  "searchTerms": [
+    "930-00571-00003",
+    "v2-8bt",
+    "biamp"
+  ],
+  "heightMm": 433,
+  "widthMm": 287,
+  "depthMm": 298,
+  "weightKg": 11.5,
+  "unitCost": 818,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 8-Inch 90 X 70 70V/100V Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

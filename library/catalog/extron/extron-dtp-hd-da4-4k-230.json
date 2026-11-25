@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1437-01",
+  "label": "Extron DTP HD DA4 4K 230",
+  "shortName": "DTP HD DA4 4K 230",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1437-01",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtphdda230",
+  "searchTerms": [
+    "60-1437-01",
+    "dtp hd da4 4k 230",
+    "extron",
+    "dtp",
+    "da4",
+    "230"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 268,
+  "weightKg": 2.2,
+  "powerDrawW": 45.6,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 85.5,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "HDMI to Four Output DTP Twisted Pair Distribution Amplifier - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00568-10000",
+  "label": "Biamp V2-1596B",
+  "shortName": "V2-1596B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00568-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00568-10000",
+  "searchTerms": [
+    "920-00568-10000",
+    "v2-1596b",
+    "biamp"
+  ],
+  "heightMm": 690,
+  "widthMm": 467,
+  "depthMm": 404,
+  "weightKg": 21.7,
+  "unitCost": 1283,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 15-Inch 90 X 60 Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

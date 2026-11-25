@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-02240-00002",
+  "label": "Biamp EasyConnect MPX 200",
+  "shortName": "EasyConnect MPX 200",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02240-00002",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-02240-00001",
+  "searchTerms": [
+    "920-02240-00002",
+    "easyconnect mpx 200",
+    "biamp",
+    "easyconnect",
+    "mpx",
+    "200"
+  ],
+  "powerDrawW": 180,
+  "voltage": "100-240V AC (20V DC adapter)",
+  "unitCost": 2500,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "usb-switch",
+    "description": "4x1 USB-C Host Switching Device for USB and HDMI peripherals",
+    "notes": "Характеристики с сайта по артикулу 920-02240-00001; [AVAIL] from Biamp documentation; [AVAIL] room-mounted (under-table unit) — dimensions optional",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

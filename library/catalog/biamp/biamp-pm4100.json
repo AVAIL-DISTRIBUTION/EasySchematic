@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-01888-00002",
+  "label": "Biamp PM4100",
+  "shortName": "PM4100",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01888-00002",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01888-00001",
+  "searchTerms": [
+    "920-01888-00002",
+    "pm4100",
+    "biamp"
+  ],
+  "heightMm": 37,
+  "widthMm": 218,
+  "depthMm": 70,
+  "weightKg": 0.5,
+  "powerDrawW": 5,
+  "voltage": "12V DC / PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 583,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Half-rack stereo pre-amplifier/mixer with 4 inputs",
+    "notes": "Характеристики с сайта по артикулу 920-01888-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

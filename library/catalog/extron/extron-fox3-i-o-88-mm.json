@@ -1,0 +1,30 @@
+{
+  "id": "avail-extron-70-1107-01",
+  "label": "Extron FOX3 I/O 88 MM",
+  "shortName": "FOX3 I/O 88 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1107-01",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix40x",
+  "searchTerms": [
+    "70-1107-01",
+    "fox3 i/o 88 mm",
+    "extron",
+    "fox3"
+  ],
+  "slotFamily": "extron-fox3-matrix",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-fox3-matrix)",
+    "description": "8x8 Input/Output Board for FOX3 Matrix - Multimode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

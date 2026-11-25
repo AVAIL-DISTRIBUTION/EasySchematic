@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1753-01",
+  "label": "Extron AXI 02 AT",
+  "shortName": "AXI 02 AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1753-01",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi02at",
+  "searchTerms": [
+    "60-1753-01",
+    "axi 02 at",
+    "extron",
+    "axi"
+  ],
+  "heightMm": 42,
+  "widthMm": 55,
+  "depthMm": 113,
+  "weightKg": 0.1,
+  "powerDrawW": 3.2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 10.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Two Output Dante Audio Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

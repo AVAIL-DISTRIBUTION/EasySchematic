@@ -1,0 +1,41 @@
+{
+  "id": "avail-biamp-930-00278-00002",
+  "label": "Biamp Tesira SERVER-IO",
+  "shortName": "Tesira SERVER-IO",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00278-00002",
+  "deviceType": "frame",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00278-00001",
+  "searchTerms": [
+    "930-00278-00002",
+    "tesira server-io",
+    "biamp",
+    "tesira",
+    "server-io"
+  ],
+  "heightMm": 133,
+  "widthMm": 483,
+  "depthMm": 432,
+  "weightKg": 8.2,
+  "powerDrawW": 150,
+  "voltage": "100-240V AC",
+  "unitCost": 8631,
+  "_avail": {
+    "status": "awaiting-ports",
+    "slotFamilies": [
+      "biamp-tesira-server-card"
+    ],
+    "description": "Configurable I/O DSP with up to 48 channels of I/O, 1 DSP-2 card (2 additional DSP-2 cards can be added), no AVB-1 network card",
+    "notes": "Модульный DSP: состав и число слотов задать по даташиту; Характеристики с сайта по артикулу 930-00278-00001; «< 150 W» — максимум для шасси; зависит от набора карт",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

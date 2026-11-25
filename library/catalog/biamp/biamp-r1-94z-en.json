@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00898-00006",
+  "label": "Biamp R1-94Z-EN",
+  "shortName": "R1-94Z-EN",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00898-00006",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00898-00006",
+  "searchTerms": [
+    "930-00898-00006",
+    "r1-94z-en",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 756,
+  "weightKg": 25.2,
+  "unitCost": 3500,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "R1-94Z with EN 54-24 certification",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

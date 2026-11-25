@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1574-14",
+  "label": "Extron MGP 641 xi 5K SDI",
+  "shortName": "MGP 641 xi 5K SDI",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1574-14",
+  "deviceType": "multiviewer",
+  "category": "Processing / Multiviewers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mgp641xi5k",
+  "searchTerms": [
+    "60-1574-14",
+    "mgp 641 xi 5k sdi",
+    "extron",
+    "mgp",
+    "641",
+    "sdi"
+  ],
+  "heightMm": 44,
+  "widthMm": 445,
+  "depthMm": 305,
+  "weightKg": 3.1,
+  "powerDrawW": 144,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 432,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Four-Window HDMI scaling signal processor with 12G-SDI",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

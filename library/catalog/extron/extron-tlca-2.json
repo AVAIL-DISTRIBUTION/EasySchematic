@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-60-1748-20",
+  "label": "Extron TLCA 2",
+  "shortName": "TLCA 2",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1748-20",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlca2",
+  "searchTerms": [
+    "60-1748-20",
+    "tlca 2",
+    "extron",
+    "tlca"
+  ],
+  "heightMm": 12,
+  "widthMm": 46,
+  "depthMm": 23,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "TouchLink Control Port Expansion Adapter - USB-C",
+    "notes": "[AVAIL] powered by the host device / bus — no own power input",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

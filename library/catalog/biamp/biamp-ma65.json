@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-01640-00002",
+  "label": "Biamp MA65",
+  "shortName": "MA65",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01640-00002",
+  "deviceType": "power-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01640-00001",
+  "searchTerms": [
+    "920-01640-00002",
+    "ma65",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 297,
+  "weightKg": 6.4,
+  "powerDrawW": 170,
+  "voltage": "115-230V AC",
+  "unitCost": 502,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Compact mixing amplifier 100 volt / 65 watts, 3 mic + 2 line inputs, chime, 2-level priority, 24V DC/230V mains power, black",
+    "notes": "Характеристики с сайта по артикулу 920-01640-00001; [AVAIL] estimated: width ~ half-rack 1U",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

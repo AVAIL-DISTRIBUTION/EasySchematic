@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-930-00001",
+  "label": "Biamp Community LVH-906C and LVH-906WRC (Custom Color)",
+  "shortName": "Community LVH-906C and LVH-906WRC (Custom Color)",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00001",
+    "community lvh-906c and lvh-906wrc (custom color)",
+    "biamp",
+    "community",
+    "lvh-906c",
+    "and",
+    "lvh-906wrc"
+  ],
+  "heightMm": 948,
+  "widthMm": 797,
+  "depthMm": 775,
+  "weightKg": 113.4,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "LVH-906 or LVH-906WR in custom color",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

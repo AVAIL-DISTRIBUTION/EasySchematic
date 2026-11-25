@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1527-21",
+  "label": "Extron XTP II FR 401 8K MM",
+  "shortName": "XTP II FR 401 8K MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1527-21",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiifr4018k",
+  "searchTerms": [
+    "60-1527-21",
+    "xtp ii fr 401 8k mm",
+    "extron",
+    "xtp",
+    "401"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.64,
+  "powerDrawW": 16.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 51,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "8K XTP II Fiber Optic Receiver with local HDMI Input - Mulitmode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

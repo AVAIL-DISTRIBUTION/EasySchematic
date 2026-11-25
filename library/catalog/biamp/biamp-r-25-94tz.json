@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-01236",
+  "label": "Biamp R.25-94TZ",
+  "shortName": "R.25-94TZ",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01236",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01236",
+  "searchTerms": [
+    "910-01236",
+    "r.25-94tz",
+    "biamp",
+    "25-94tz"
+  ],
+  "heightMm": 287,
+  "widthMm": 287,
+  "depthMm": 338,
+  "weightKg": 10.4,
+  "unitCost": 958,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 8-Inch 90 X 40 Grey 70V/100V",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

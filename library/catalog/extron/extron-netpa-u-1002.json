@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1767-01",
+  "label": "Extron NetPA U 1002",
+  "shortName": "NetPA U 1002",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1767-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpau1002",
+  "searchTerms": [
+    "60-1767-01",
+    "netpa u 1002",
+    "extron",
+    "netpa",
+    "1002"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.7,
+  "powerDrawW": 38,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 44,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Dante Amp, 100 watts at 8 or 4 ohms",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

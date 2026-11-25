@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-10692-20000",
+  "label": "Biamp Apprimo TEC-X 1000 White",
+  "shortName": "Apprimo TEC-X 1000 White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10692-20000",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10692-20000",
+  "searchTerms": [
+    "920-10692-20000",
+    "apprimo tec-x 1000 white",
+    "biamp",
+    "apprimo",
+    "tec-x",
+    "1000",
+    "white"
+  ],
+  "heightMm": 130,
+  "widthMm": 90,
+  "depthMm": 13,
+  "weightKg": 0.16,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15,
+  "unitCost": 712,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Touch-enabled control pad with knob, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

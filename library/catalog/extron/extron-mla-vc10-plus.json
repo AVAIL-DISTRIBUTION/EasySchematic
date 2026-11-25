@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1090-01",
+  "label": "Extron MLA VC10 Plus",
+  "shortName": "MLA VC10 Plus",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1090-01",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlavc10plus",
+  "searchTerms": [
+    "60-1090-01",
+    "mla vc10 plus",
+    "extron",
+    "mla",
+    "vc10",
+    "plus"
+  ],
+  "heightMm": 43,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 3.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 12.3,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Volume Control Module",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

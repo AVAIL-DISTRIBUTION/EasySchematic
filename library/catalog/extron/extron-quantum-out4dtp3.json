@@ -1,0 +1,31 @@
+{
+  "id": "avail-extron-70-1327-01",
+  "label": "Extron Quantum OUT4DTP3",
+  "shortName": "Quantum OUT4DTP3",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1327-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1327-01",
+    "quantum out4dtp3",
+    "extron",
+    "quantum",
+    "out4dtp3"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Four-channel 4K/60 DTP3 Output Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

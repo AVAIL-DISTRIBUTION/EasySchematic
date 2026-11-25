@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1798-13",
+  "label": "Extron UCS SR 501",
+  "shortName": "UCS SR 501",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1798-13",
+  "deviceType": "scaler",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs504",
+  "searchTerms": [
+    "60-1798-13",
+    "ucs sr 501",
+    "extron",
+    "ucs",
+    "501"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1.9,
+  "powerDrawW": 92.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 102.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "One Output Scaling Receiver",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

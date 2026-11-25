@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-10899",
+  "label": "Biamp IS8-218C",
+  "shortName": "IS8-218C",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10899",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-10899",
+    "is8-218c",
+    "biamp"
+  ],
+  "heightMm": 991,
+  "widthMm": 561,
+  "depthMm": 734,
+  "weightKg": 78,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power Dual 18-Inch Subwoofer Configured-to-Order",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

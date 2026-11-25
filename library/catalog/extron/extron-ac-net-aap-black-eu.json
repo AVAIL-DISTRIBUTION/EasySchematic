@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-568-02",
+  "label": "Extron AC Net AAP (Black, EU)",
+  "shortName": "AC Net AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "70-568-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acnetaap",
+  "searchTerms": [
+    "70-568-02",
+    "ac net aap",
+    "extron",
+    "net",
+    "aap"
+  ],
+  "heightMm": 49,
+  "widthMm": 46,
+  "depthMm": 77,
+  "weightKg": 0.5,
+  "voltage": "220-240V AC",
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black, EU",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "One EU Unswitched AC Outlet, One Configurable Phone or Network Connection Point, Includes RJ-11 / 45 Jacks - Triple Space AAP - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

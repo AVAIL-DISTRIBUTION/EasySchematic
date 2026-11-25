@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-42-360-03",
+  "label": "Extron CA 43T LP (White, Single)",
+  "shortName": "CA 43T LP",
+  "manufacturer": "Extron",
+  "modelNumber": "42-360-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca43t",
+  "searchTerms": [
+    "42-360-03",
+    "ca 43t lp",
+    "extron",
+    "43t"
+  ],
+  "heightMm": 430,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 4.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Low Profile Mount, Single, White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

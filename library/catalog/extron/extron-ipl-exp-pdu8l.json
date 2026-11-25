@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1928-01",
+  "label": "Extron IPL EXP PDU8L",
+  "shortName": "IPL EXP PDU8L",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1928-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iplexppdu8l",
+  "searchTerms": [
+    "60-1928-01",
+    "ipl exp pdu8l",
+    "extron",
+    "ipl",
+    "exp",
+    "pdu8l"
+  ],
+  "heightMm": 42,
+  "widthMm": 109,
+  "depthMm": 203,
+  "weightKg": 1,
+  "powerDrawW": 1.6,
+  "voltage": "240V AC",
+  "thermalBtuh": 5.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Control System Power Expansion Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

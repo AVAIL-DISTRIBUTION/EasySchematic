@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-00251",
+  "label": "Biamp Vocia DS-4",
+  "shortName": "Vocia DS-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00251",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00251",
+  "searchTerms": [
+    "910-00251",
+    "vocia ds-4",
+    "biamp",
+    "vocia",
+    "ds-4"
+  ],
+  "heightMm": 54,
+  "widthMm": 241,
+  "depthMm": 187,
+  "weightKg": 1.4,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 2215,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "paging-station",
+    "description": "Vocia Desktop-mounted Paging Station, 4 Buttons with gooseneck microphone",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

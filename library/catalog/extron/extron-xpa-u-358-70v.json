@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1759-02",
+  "label": "Extron XPA U 358-70V",
+  "shortName": "XPA U 358-70V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1759-02",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau358",
+  "searchTerms": [
+    "60-1759-02",
+    "xpa u 358-70v",
+    "extron",
+    "xpa",
+    "358-70v"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 54.5,
+  "voltage": "100V AC",
+  "thermalBtuh": 67,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Eight Channel Amp, 35 watts at 70 volts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

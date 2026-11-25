@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00426-00002",
+  "label": "Biamp TesiraLUX IDH-1",
+  "shortName": "TesiraLUX IDH-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00426-00002",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00426-00001",
+  "searchTerms": [
+    "920-00426-00002",
+    "tesiralux idh-1",
+    "biamp",
+    "tesiralux",
+    "idh-1"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 264,
+  "weightKg": 1.8,
+  "voltage": "100-240V AC",
+  "unitCost": 2565,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "AVB video encoder; includes one HDMI 2.0 port and one DisplayPort 1.2 port. Accepts 8 channels of embedded PCM audio and includes 2 mic/line level analog inputs",
+    "notes": "Характеристики с сайта по артикулу 920-00426-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

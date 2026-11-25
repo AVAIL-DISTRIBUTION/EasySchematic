@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-00275",
+  "label": "Biamp Impera Connect-X MP6",
+  "shortName": "Impera Connect-X MP6",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00275",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00275",
+  "searchTerms": [
+    "910-00275",
+    "impera connect-x mp6",
+    "biamp",
+    "impera",
+    "connect-x",
+    "mp6"
+  ],
+  "heightMm": 22,
+  "widthMm": 127.2,
+  "depthMm": 92.2,
+  "weightKg": 0.11,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 4,
+  "unitCost": 424,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Ethernet connected multi-port control extender, 1 bidirectional RS-232, 2 unidirectional RS-232/IR, 3 GPIO",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00651-00001",
+  "label": "Biamp REVAMP1120T (Regional -00001)",
+  "shortName": "REVAMP1120T",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00651-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00651-00001",
+  "searchTerms": [
+    "920-00651-00001",
+    "revamp1120t",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 239,
+  "weightKg": 4.6,
+  "powerDrawW": 200,
+  "voltage": "115-230V AC",
+  "unitCost": 653,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Regional -00001",
+    "description": "Class D amplifier 1 x 120 Watts (70/100 Volts or RMS @ 4 Ohms), convection cooled, 1 U, 19\" rackmount",
+    "notes": "Та же модель под другим артикулом: 920-00651-00002; [AVAIL] regional versions, confirmed by AVAIL",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

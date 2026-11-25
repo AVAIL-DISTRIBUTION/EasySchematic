@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-766-53",
+  "label": "Extron WPD 170",
+  "shortName": "WPD 170",
+  "manufacturer": "Extron",
+  "modelNumber": "70-766-53",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpdavseries",
+  "searchTerms": [
+    "70-766-53",
+    "wpd 170",
+    "extron",
+    "wpd",
+    "170"
+  ],
+  "heightMm": 104,
+  "widthMm": 41,
+  "depthMm": 7,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "(2) HDMI and Network Pass-Through Wallplate - Decorator-Style; White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

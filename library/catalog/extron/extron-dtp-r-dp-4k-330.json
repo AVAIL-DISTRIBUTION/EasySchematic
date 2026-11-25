@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1076-63",
+  "label": "Extron DTP R DP 4K 330",
+  "shortName": "DTP R DP 4K 330",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1076-63",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtprdp330",
+  "searchTerms": [
+    "60-1076-63",
+    "dtp r dp 4k 330",
+    "extron",
+    "dtp",
+    "330"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 3.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "DisplayPort Rx w/EDID Minder – 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

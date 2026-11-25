@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1625-01",
+  "label": "Extron DTP T SW4 HD 4K",
+  "shortName": "DTP T SW4 HD 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1625-01",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptsw4hd4k",
+  "searchTerms": [
+    "60-1625-01",
+    "dtp t sw4 hd 4k",
+    "extron",
+    "dtp",
+    "sw4"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 76,
+  "weightKg": 0.3,
+  "powerDrawW": 7.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 26,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input HDMI Switcher with Integrated DTP Transmitter",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

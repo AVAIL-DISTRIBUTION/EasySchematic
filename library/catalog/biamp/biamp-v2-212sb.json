@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-00578",
+  "label": "Biamp V2-212SB",
+  "shortName": "V2-212SB",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00578",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00578",
+  "searchTerms": [
+    "910-00578",
+    "v2-212sb",
+    "biamp"
+  ],
+  "heightMm": 468,
+  "widthMm": 912,
+  "depthMm": 455,
+  "weightKg": 31.8,
+  "unitCost": 1283,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Subwoofer 2 X 12-Inch Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

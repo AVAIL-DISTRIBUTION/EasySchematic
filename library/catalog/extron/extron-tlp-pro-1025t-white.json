@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1565-13",
+  "label": "Extron TLP Pro 1025T (White)",
+  "shortName": "TLP Pro 1025T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1565-13",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1025t",
+  "searchTerms": [
+    "60-1565-13",
+    "tlp pro 1025t",
+    "extron",
+    "tlp",
+    "pro",
+    "1025t"
+  ],
+  "heightMm": 163,
+  "widthMm": 257,
+  "depthMm": 105,
+  "weightKg": 1.36,
+  "powerDrawW": 11.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 34.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "10\" Tabletop TouchLink® Pro Touchpanel - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1627-11",
+  "label": "Extron AXI 22 AT",
+  "shortName": "AXI 22 AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1627-11",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi22at",
+  "searchTerms": [
+    "60-1627-11",
+    "axi 22 at",
+    "extron",
+    "axi"
+  ],
+  "heightMm": 43,
+  "widthMm": 110,
+  "depthMm": 153,
+  "weightKg": 0.3,
+  "powerDrawW": 4.4,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 11.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "2 Input, 2 Output Dante Audio Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

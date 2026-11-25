@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-103-21",
+  "label": "Extron One XLR 3-pin Female to Solder Cup - Neutrik (AAP Double, White)",
+  "shortName": "One XLR 3-pin Female to Solder C…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-103-21",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap1xlr",
+  "searchTerms": [
+    "70-103-21",
+    "one xlr 3-pin female to solder c…",
+    "extron",
+    "one",
+    "xlr",
+    "3-pin",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP Double, White",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - White: One XLR 3-pin Female to Solder Cup - Neutrik",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

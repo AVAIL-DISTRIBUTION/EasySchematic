@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-01241-30000",
+  "label": "Biamp R.35COAX",
+  "shortName": "R.35COAX",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01241-30000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01241-30000",
+  "searchTerms": [
+    "920-01241-30000",
+    "r.35coax",
+    "biamp",
+    "35coax"
+  ],
+  "heightMm": 279,
+  "widthMm": 330,
+  "depthMm": 343,
+  "weightKg": 11.8,
+  "unitCost": 810,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 10-Inch Coax Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

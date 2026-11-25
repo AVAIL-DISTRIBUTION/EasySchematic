@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00906-00006",
+  "label": "Biamp R2-474Z-EN",
+  "shortName": "R2-474Z-EN",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00906-00006",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00906-00006",
+  "searchTerms": [
+    "930-00906-00006",
+    "r2-474z-en",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 781,
+  "weightKg": 43.5,
+  "unitCost": 5014,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "R2-474Z with EN 54-24 certification",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

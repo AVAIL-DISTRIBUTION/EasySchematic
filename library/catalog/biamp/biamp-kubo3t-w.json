@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00683-00004",
+  "label": "Biamp KUBO3T-W",
+  "shortName": "KUBO3T-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00683-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00683-00004",
+  "searchTerms": [
+    "930-00683-00004",
+    "kubo3t-w",
+    "biamp"
+  ],
+  "heightMm": 125,
+  "widthMm": 131,
+  "depthMm": 109,
+  "weightKg": 1.2,
+  "unitCost": 125,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "3\" compact design full range surface mount loudspeaker, 70 - 100 volt / 10 watts or 16 ohms / 40 watts, mounting bracket and safety cable included, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1583-92a",
+  "label": "Extron DTP CrossPoint 82 4K IPCP Q SA (LinkLicense)",
+  "shortName": "DTP CrossPoint 82 4K IPCP Q SA",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1583-92A",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpcp4k82",
+  "searchTerms": [
+    "60-1583-92a",
+    "dtp crosspoint 82 4k ipcp q sa",
+    "extron",
+    "dtp",
+    "crosspoint",
+    "ipcp"
+  ],
+  "heightMm": 89,
+  "widthMm": 442,
+  "depthMm": 389,
+  "weightKg": 6.4,
+  "powerDrawW": 125,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 319,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "LinkLicense",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "2 x 50 Watt Stereo Amp, AV LAN, LL UI Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

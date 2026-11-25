@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1600-11",
+  "label": "Extron FOX3 T 201 MM (Lossless)",
+  "shortName": "FOX3 T 201 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1600-11",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t201",
+  "searchTerms": [
+    "60-1600-11",
+    "fox3 t 201 mm",
+    "extron",
+    "fox3",
+    "201"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 203,
+  "weightKg": 0.84,
+  "powerDrawW": 20,
+  "voltage": "12V DC",
+  "thermalBtuh": 67.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Lossless",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Transmitter for HDMI, Audio, and Control",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

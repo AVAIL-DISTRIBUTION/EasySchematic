@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-00580",
+  "label": "Biamp V2-215SB",
+  "shortName": "V2-215SB",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00580",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00580",
+  "searchTerms": [
+    "910-00580",
+    "v2-215sb",
+    "biamp"
+  ],
+  "heightMm": 468,
+  "widthMm": 950,
+  "depthMm": 518,
+  "weightKg": 42.6,
+  "unitCost": 1751,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Subwoofer 2 X 15-Inch Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

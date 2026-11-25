@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-1309-13",
+  "label": "Extron SM 28T (White, 70/100V, Pair)",
+  "shortName": "SM 28T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1309-13",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sm28",
+  "searchTerms": [
+    "60-1309-13",
+    "sm 28t",
+    "extron",
+    "28t"
+  ],
+  "heightMm": 419,
+  "widthMm": 292,
+  "depthMm": 185,
+  "weightKg": 5.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White, 70/100V, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SpeedMount Two-Way Surface Mount Speakers with 8\" Woofer and 70/100 V Transformer, Pair - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

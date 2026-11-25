@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01586-10000",
+  "label": "Biamp CMX20T-BL",
+  "shortName": "CMX20T-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01586-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01586-10000",
+  "searchTerms": [
+    "920-01586-10000",
+    "cmx20t-bl",
+    "biamp"
+  ],
+  "heightMm": 223,
+  "widthMm": 223,
+  "depthMm": 87,
+  "weightKg": 1.4,
+  "unitCost": 100,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8\" two-way ceiling speaker 70 - 100 volt / 20 watts, 16 ohms / 100 watts, black, with removable logo and quick fit push connector",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

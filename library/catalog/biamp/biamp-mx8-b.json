@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01228",
+  "label": "Biamp MX8-B",
+  "shortName": "MX8-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01228",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01228",
+  "searchTerms": [
+    "910-01228",
+    "mx8-b",
+    "biamp"
+  ],
+  "heightMm": 263,
+  "widthMm": 275,
+  "depthMm": 367,
+  "weightKg": 8,
+  "unitCost": 829,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Monitor 2-Way 8-Inch Coax Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

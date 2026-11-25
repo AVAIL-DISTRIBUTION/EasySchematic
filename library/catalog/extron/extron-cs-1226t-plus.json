@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-42-244-03",
+  "label": "Extron CS 1226T Plus",
+  "shortName": "CS 1226T Plus",
+  "manufacturer": "Extron",
+  "modelNumber": "42-244-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cs1226tplus",
+  "searchTerms": [
+    "42-244-03",
+    "cs 1226t plus",
+    "extron",
+    "1226t",
+    "plus"
+  ],
+  "heightMm": 124,
+  "widthMm": 297,
+  "depthMm": 601,
+  "weightKg": 2.7,
+  "powerDrawW": 60,
+  "thermalBtuh": 204.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "SpeedMount Two-Way Ceiling Speaker Assy with 6.5\" Woofer, Pair",
+    "notes": "[AVAIL] dims from Extron specifications (CS 120P enclosure)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

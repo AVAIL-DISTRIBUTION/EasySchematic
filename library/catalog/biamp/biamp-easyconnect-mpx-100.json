@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-01963-00001",
+  "label": "Biamp EasyConnect MPX 100",
+  "shortName": "EasyConnect MPX 100",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01963-00001",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01963-00001",
+  "searchTerms": [
+    "920-01963-00001",
+    "easyconnect mpx 100",
+    "biamp",
+    "easyconnect",
+    "mpx",
+    "100"
+  ],
+  "heightMm": 37.3,
+  "widthMm": 206,
+  "depthMm": 206,
+  "weightKg": 0.86,
+  "powerDrawW": 150,
+  "voltage": "100-240V AC",
+  "unitCost": 1325,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "usb-switch",
+    "description": "BYOM Switching Device",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

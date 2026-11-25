@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01880",
+  "label": "Biamp Tango",
+  "shortName": "Tango",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01880",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01880",
+  "searchTerms": [
+    "910-01880",
+    "tango",
+    "biamp"
+  ],
+  "heightMm": 35,
+  "widthMm": 220,
+  "depthMm": 70,
+  "weightKg": 0.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15,
+  "unitCost": 1459,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Touch panel controller with 3 bidirectional RS-232 ports, 2 unidirectional RS-232 ports, 4 built-in assignable relays, 8 GPIO; PoE powered (IEEE 802.3at Class 3, 15W)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

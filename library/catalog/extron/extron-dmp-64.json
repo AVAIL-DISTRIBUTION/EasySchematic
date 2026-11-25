@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1054-01",
+  "label": "Extron DMP 64",
+  "shortName": "DMP 64",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1054-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dmp64",
+  "searchTerms": [
+    "60-1054-01",
+    "dmp 64",
+    "extron",
+    "dmp"
+  ],
+  "heightMm": 43,
+  "widthMm": 222,
+  "depthMm": 241,
+  "weightKg": 0.9,
+  "powerDrawW": 13.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 45.8,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "6x4 ProDSP Digital Matrix Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

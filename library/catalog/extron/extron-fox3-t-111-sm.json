@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1957-32",
+  "label": "Extron FOX3 T 111 SM",
+  "shortName": "FOX3 T 111 SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1957-32",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t111",
+  "searchTerms": [
+    "60-1957-32",
+    "fox3 t 111 sm",
+    "extron",
+    "fox3",
+    "111"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 14.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 44,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Lossless 4K/60 Transmitter - Singlemode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

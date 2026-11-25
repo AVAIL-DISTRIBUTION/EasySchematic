@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00010-00001",
+  "label": "Biamp Tesira AMP-450P",
+  "shortName": "Tesira AMP-450P",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00010-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00010-00001",
+  "searchTerms": [
+    "920-00010-00001",
+    "tesira amp-450p",
+    "biamp",
+    "tesira",
+    "amp-450p"
+  ],
+  "heightMm": 30,
+  "widthMm": 195,
+  "depthMm": 120,
+  "weightKg": 0.7,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1028,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4 channel PoE+ conferencing amplifier",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

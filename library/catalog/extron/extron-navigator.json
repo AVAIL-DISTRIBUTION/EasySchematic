@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1534-01",
+  "label": "Extron NAVigator",
+  "shortName": "NAVigator",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1534-01",
+  "deviceType": "av-over-ip",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/navigator",
+  "searchTerms": [
+    "60-1534-01",
+    "navigator",
+    "extron"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 2.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 10.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Entry Level Version for 16 Endpoints",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

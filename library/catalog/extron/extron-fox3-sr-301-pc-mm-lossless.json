@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-70-1190-21",
+  "label": "Extron FOX3 SR 301 PC MM (Lossless)",
+  "shortName": "FOX3 SR 301 PC MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1190-21",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3sr301pc",
+  "searchTerms": [
+    "70-1190-21",
+    "fox3 sr 301 pc mm",
+    "extron",
+    "fox3",
+    "301"
+  ],
+  "slotFamily": "extron-fox3-powercage",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Lossless",
+    "deviceTypeSource": "fiber-transmitter",
+    "description": "PowerCage Fiber Optic Scaling Receiver for HDMI with Embedded Audio, USB, and RS-232",
+    "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

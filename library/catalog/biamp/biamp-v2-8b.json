@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00570-00001",
+  "label": "Biamp V2-8B",
+  "shortName": "V2-8B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00570-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00570-00001",
+  "searchTerms": [
+    "930-00570-00001",
+    "v2-8b",
+    "biamp"
+  ],
+  "heightMm": 433,
+  "widthMm": 287,
+  "depthMm": 298,
+  "weightKg": 11.5,
+  "unitCost": 736,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 8-Inch 90 X 70 Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

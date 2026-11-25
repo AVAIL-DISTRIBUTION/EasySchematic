@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00310-00001",
+  "label": "Biamp Tesira EX-IO",
+  "shortName": "Tesira EX-IO",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00310-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00310-00001",
+  "searchTerms": [
+    "920-00310-00001",
+    "tesira ex-io",
+    "biamp",
+    "tesira",
+    "ex-io"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 197,
+  "weightKg": 1.4,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1808,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Tesira 2 channel mic/line input & 2 channel mic/line output expander PoE+",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

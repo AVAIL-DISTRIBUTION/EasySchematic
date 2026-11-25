@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1515-92",
+  "label": "Extron DTP CrossPoint 84 4K IPCP Q SA (Standard)",
+  "shortName": "DTP CrossPoint 84 4K IPCP Q SA",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1515-92",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpcp4k84",
+  "searchTerms": [
+    "60-1515-92",
+    "dtp crosspoint 84 4k ipcp q sa",
+    "extron",
+    "dtp",
+    "crosspoint",
+    "ipcp"
+  ],
+  "heightMm": 89,
+  "widthMm": 442,
+  "depthMm": 389,
+  "weightKg": 6.4,
+  "powerDrawW": 136,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 356,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Standard",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "2 x 50 Watt Stereo Amp, AV LAN",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1762-01",
+  "label": "Extron XPA U 358C-70V",
+  "shortName": "XPA U 358C-70V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1762-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau358c",
+  "searchTerms": [
+    "60-1762-01",
+    "xpa u 358c-70v",
+    "extron",
+    "xpa",
+    "358c-70v"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 9,
+  "voltage": "100V AC",
+  "thermalBtuh": 31,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Eight Channel Combo Amp - Four Channels at 8 or 4 ohms - Four Channels at 70V",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

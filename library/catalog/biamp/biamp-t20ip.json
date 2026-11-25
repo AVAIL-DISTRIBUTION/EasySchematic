@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01499",
+  "label": "Biamp T20IP",
+  "shortName": "T20IP",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01499",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01499",
+  "searchTerms": [
+    "910-01499",
+    "t20ip",
+    "biamp"
+  ],
+  "heightMm": 53,
+  "widthMm": 112,
+  "depthMm": 58,
+  "weightKg": 0.53,
+  "unitCost": 57,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "8 ohms to 100 volt transformer with different power taps: 20 - 10 - 5 - 2.5 watts, waterproof",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

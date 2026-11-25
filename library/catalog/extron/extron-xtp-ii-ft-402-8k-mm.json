@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1779-11",
+  "label": "Extron XTP II FT 402 8K MM",
+  "shortName": "XTP II FT 402 8K MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1779-11",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiift4028k",
+  "searchTerms": [
+    "60-1779-11",
+    "xtp ii ft 402 8k mm",
+    "extron",
+    "xtp",
+    "402"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.64,
+  "powerDrawW": 17.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 54.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "8K XTP II Fiber Optic Transmitter for HDMI & DisplayPort with Audio Embedding - Multimode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1238-95a",
+  "label": "Extron IN1608 xi IPCP Q SA (LinkLicense)",
+  "shortName": "IN1608 xi IPCP Q SA",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1238-95A",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1608xi",
+  "searchTerms": [
+    "60-1238-95a",
+    "in1608 xi ipcp q sa",
+    "extron",
+    "in1608",
+    "ipcp"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 241,
+  "weightKg": 2.3,
+  "powerDrawW": 42,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 123,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "LinkLicense",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "2 x 50 Watt Stereo Amp, AV LAN, LL UI Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

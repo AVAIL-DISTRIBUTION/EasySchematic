@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-100-14",
+  "label": "Extron Two Shielded RJ-45 Female to Female Barrel for CAT 5e (AAP Double, Black)",
+  "shortName": "Two Shielded RJ-45 Female to Fem…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-100-14",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2srj45",
+  "searchTerms": [
+    "70-100-14",
+    "two shielded rj-45 female to fem…",
+    "extron",
+    "two",
+    "shielded",
+    "rj-45",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP Double, Black",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP – Black: Two Shielded RJ-45 Female to Female Barrel for CAT 5e",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

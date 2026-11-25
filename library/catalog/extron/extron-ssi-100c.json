@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1961-01",
+  "label": "Extron SSI 100C",
+  "shortName": "SSI 100C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1961-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ssi100",
+  "searchTerms": [
+    "60-1961-01",
+    "ssi 100c",
+    "extron",
+    "ssi",
+    "100c"
+  ],
+  "heightMm": 78,
+  "widthMm": 229,
+  "depthMm": 74,
+  "weightKg": 0.45,
+  "powerDrawW": 9.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 25.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "System Status Indicators",
+    "notes": "[AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

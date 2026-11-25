@@ -1,0 +1,44 @@
+{
+  "id": "avail-extron-70-884-05",
+  "label": "Extron VCM 200 EU",
+  "shortName": "VCM 200 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "70-884-05",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vcm200eu",
+  "searchTerms": [
+    "70-884-05",
+    "vcm 200 eu",
+    "extron",
+    "vcm",
+    "200"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 7,
+  "weightKg": 0.1,
+  "powerDrawW": 0.2,
+  "voltage": "10V DC",
+  "thermalBtuh": 0.7,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
+    "description": "Volume and Mute Controller - EU Wall Frame for European Junction Boxes",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

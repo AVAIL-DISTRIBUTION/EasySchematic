@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-42-242-03",
+  "label": "Extron CS 123T",
+  "shortName": "CS 123T",
+  "manufacturer": "Extron",
+  "modelNumber": "42-242-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cs123t",
+  "searchTerms": [
+    "42-242-03",
+    "cs 123t",
+    "extron",
+    "123t"
+  ],
+  "heightMm": 124,
+  "widthMm": 297,
+  "depthMm": 601,
+  "weightKg": 2.72,
+  "powerDrawW": 16,
+  "thermalBtuh": 54.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range SpeedMount Ceiling Speaker System, Pair",
+    "notes": "[AVAIL] dims from Extron specifications (CS 120P enclosure)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

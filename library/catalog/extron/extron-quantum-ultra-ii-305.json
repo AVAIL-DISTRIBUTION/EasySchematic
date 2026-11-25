@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-60-1899-01",
+  "label": "Extron Quantum Ultra II 305",
+  "shortName": "Quantum Ultra II 305",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1899-01",
+  "deviceType": "frame",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "60-1899-01",
+    "quantum ultra ii 305",
+    "extron",
+    "quantum",
+    "ultra",
+    "305"
+  ],
+  "heightMm": 133,
+  "widthMm": 445,
+  "depthMm": 483,
+  "weightKg": 25,
+  "powerDrawW": 760,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 2575,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "3U Full rack",
+    "rackUnits": 3,
+    "slotFamilies": [
+      "extron-quantum-ultra-2"
+    ],
+    "description": "3U, 5-slot Frame for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

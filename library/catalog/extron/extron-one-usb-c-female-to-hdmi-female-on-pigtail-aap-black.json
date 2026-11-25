@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-70-1241-12",
+  "label": "Extron One USB-C Female to HDMI Female on Pigtail (AAP, Black)",
+  "shortName": "One USB-C Female to HDMI Female…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1241-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/1usbcfhdmif-10",
+  "searchTerms": [
+    "70-1241-12",
+    "one usb-c female to hdmi female…",
+    "extron",
+    "one",
+    "usb-c",
+    "female",
+    "hdmi"
+  ],
+  "heightMm": 18,
+  "widthMm": 56,
+  "depthMm": 3,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP, Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: One USB-C Female to HDMI Female on Pigtail",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

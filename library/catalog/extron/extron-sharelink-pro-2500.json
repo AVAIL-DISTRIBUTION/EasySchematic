@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1970-01",
+  "label": "Extron ShareLink Pro 2500",
+  "shortName": "ShareLink Pro 2500",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1970-01",
+  "deviceType": "wireless-presentation",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sharelinkpro2500",
+  "searchTerms": [
+    "60-1970-01",
+    "sharelink pro 2500",
+    "extron",
+    "sharelink",
+    "pro",
+    "2500"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 203,
+  "weightKg": 0.75,
+  "powerDrawW": 24.4,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 61.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4K Dual Screen Wireless Presentation System",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

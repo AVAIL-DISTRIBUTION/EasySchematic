@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-70-1076-62",
+  "label": "Extron AAP SuperPlate 160",
+  "shortName": "AAP SuperPlate 160",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1076-62",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aapsuperplate",
+  "searchTerms": [
+    "70-1076-62",
+    "aap superplate 160",
+    "extron",
+    "aap",
+    "superplate",
+    "160"
+  ],
+  "heightMm": 36,
+  "widthMm": 89,
+  "depthMm": 2,
+  "weightKg": 0.14,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AAP - Double Space - Black: One HDMI, One VGA, One Audio, and One Network",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

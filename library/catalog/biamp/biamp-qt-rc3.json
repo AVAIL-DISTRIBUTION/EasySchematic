@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-00969",
+  "label": "Biamp QT-RC3",
+  "shortName": "QT-RC3",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00969",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00969",
+  "searchTerms": [
+    "910-00969",
+    "qt-rc3",
+    "biamp"
+  ],
+  "heightMm": 104,
+  "widthMm": 48,
+  "depthMm": 56,
+  "weightKg": 0.13,
+  "powerDrawW": 0.1,
+  "unitCost": 286,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "volume-control",
+    "description": "In Room Volume Control with Decora Style Plate for the Qt-300 and Qt-600",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-2092-53",
+  "label": "Extron DTP3 R 331",
+  "shortName": "DTP3 R 331",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2092-53",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3r331",
+  "searchTerms": [
+    "60-2092-53",
+    "dtp3 r 331",
+    "extron",
+    "dtp3",
+    "331"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "powerDrawW": 13.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 23.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "DTP3 Receiver for 4K/60 HDMI and USB Data",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01513-00002",
+  "label": "Biamp ZONE4",
+  "shortName": "ZONE4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01513-00002",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01513-00001",
+  "searchTerms": [
+    "920-01513-00002",
+    "zone4",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 196,
+  "weightKg": 2.75,
+  "powerDrawW": 25,
+  "unitCost": 1219,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Quad zone pre-amplifier: 4 stereo output zones. Inputs: 3 mono mic/line + 4 stereo line inputs",
+    "notes": "Характеристики с сайта по артикулу 920-01513-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

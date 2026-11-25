@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1524-13",
+  "label": "Extron XTP R HD 4K",
+  "shortName": "XTP R HD 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1524-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtprhd4k",
+  "searchTerms": [
+    "60-1524-13",
+    "xtp r hd 4k",
+    "extron",
+    "xtp"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 9.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 30,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "XTP Receiver for HDMI",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

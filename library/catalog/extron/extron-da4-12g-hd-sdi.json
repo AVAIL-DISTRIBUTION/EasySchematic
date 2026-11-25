@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1674-02",
+  "label": "Extron DA4 12G HD-SDI",
+  "shortName": "DA4 12G HD-SDI",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1674-02",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/da412ghdsdi",
+  "searchTerms": [
+    "60-1674-02",
+    "da4 12g hd-sdi",
+    "extron",
+    "da4",
+    "12g",
+    "hd-sdi"
+  ],
+  "heightMm": 25,
+  "widthMm": 110,
+  "depthMm": 76,
+  "weightKg": 0.15,
+  "powerDrawW": 2.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Four Output 12G-SDI Distribution Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

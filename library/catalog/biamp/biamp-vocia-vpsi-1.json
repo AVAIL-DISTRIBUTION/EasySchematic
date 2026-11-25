@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-910-00375",
+  "label": "Biamp Vocia VPSI-1",
+  "shortName": "Vocia VPSI-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00375",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00375",
+  "searchTerms": [
+    "910-00375",
+    "vocia vpsi-1",
+    "biamp",
+    "vocia",
+    "vpsi-1"
+  ],
+  "heightMm": 30,
+  "widthMm": 155,
+  "depthMm": 80,
+  "weightKg": 0.3,
+  "unitCost": 363,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia Paging Station Interface breakout device.",
+    "notes": "[AVAIL] powered from the connected paging station",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

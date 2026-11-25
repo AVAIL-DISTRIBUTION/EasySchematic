@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-00252",
+  "label": "Biamp Vocia DS-10",
+  "shortName": "Vocia DS-10",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00252",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00252",
+  "searchTerms": [
+    "910-00252",
+    "vocia ds-10",
+    "biamp",
+    "vocia",
+    "ds-10"
+  ],
+  "heightMm": 54,
+  "widthMm": 241,
+  "depthMm": 187,
+  "weightKg": 1.4,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 2332,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "paging-station",
+    "description": "Vocia Desktop-mounted Paging Station, 10 Buttons with gooseneck microphone",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

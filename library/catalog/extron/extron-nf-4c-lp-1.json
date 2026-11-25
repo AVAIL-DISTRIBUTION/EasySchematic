@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-2056-13",
+  "label": "Extron NF 4C LP-1",
+  "shortName": "NF 4C LP-1",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2056-13",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nf4clp",
+  "searchTerms": [
+    "60-2056-13",
+    "nf 4c lp-1",
+    "extron",
+    "lp-1"
+  ],
+  "heightMm": 120,
+  "widthMm": 270,
+  "depthMm": 270,
+  "weightKg": 2.5,
+  "powerDrawW": 40.3,
+  "voltage": "PoE++ 802.3bt",
+  "poeDrawW": 60,
+  "thermalBtuh": 137.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "One Powered 4” Ceiling Speaker w/ Dante and DSP",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

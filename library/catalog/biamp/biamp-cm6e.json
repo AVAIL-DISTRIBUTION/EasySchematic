@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01554",
+  "label": "Biamp CM6E",
+  "shortName": "CM6E",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01554",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01554",
+  "searchTerms": [
+    "910-01554",
+    "cm6e",
+    "biamp"
+  ],
+  "heightMm": 205,
+  "widthMm": 205,
+  "depthMm": 70,
+  "weightKg": 0.75,
+  "unitCost": 42,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" dual cone ceiling speaker 100 volt / 6 watts, white, with removable logo",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

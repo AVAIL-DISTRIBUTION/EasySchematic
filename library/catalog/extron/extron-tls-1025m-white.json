@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1566-113",
+  "label": "Extron TLS 1025M (White)",
+  "shortName": "TLS 1025M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1566-113",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tls1025m",
+  "searchTerms": [
+    "60-1566-113",
+    "tls 1025m",
+    "extron",
+    "tls",
+    "1025m"
+  ],
+  "heightMm": 174,
+  "widthMm": 257,
+  "depthMm": 32,
+  "weightKg": 0.92,
+  "powerDrawW": 12.9,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 39.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "10\" Wall Mount TouchLink Scheduling Panel - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

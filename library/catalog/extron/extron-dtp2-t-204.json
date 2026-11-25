@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1626-52",
+  "label": "Extron DTP2 T 204",
+  "shortName": "DTP2 T 204",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1626-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp2t204",
+  "searchTerms": [
+    "60-1626-52",
+    "dtp2 t 204",
+    "extron",
+    "dtp2",
+    "204"
+  ],
+  "heightMm": 43,
+  "widthMm": 222,
+  "depthMm": 114,
+  "weightKg": 0.6,
+  "powerDrawW": 10.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 31.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input 4K/60 HDMI Switcher with Integrated DTP2 Transmitter",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

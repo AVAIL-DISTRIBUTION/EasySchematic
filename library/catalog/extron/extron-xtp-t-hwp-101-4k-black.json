@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1611-12",
+  "label": "Extron XTP T HWP 101 4K (Black)",
+  "shortName": "XTP T HWP 101 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1611-12",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpthwp1014k",
+  "searchTerms": [
+    "60-1611-12",
+    "xtp t hwp 101 4k",
+    "extron",
+    "xtp",
+    "hwp",
+    "101"
+  ],
+  "heightMm": 71,
+  "widthMm": 43,
+  "depthMm": 48,
+  "weightKg": 0.2,
+  "powerDrawW": 2.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "XTP Transmitter for HDMI - Decorator-Style Wallplate - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00656-00001",
+  "label": "Biamp REVAMP4120T (Regional -00001)",
+  "shortName": "REVAMP4120T",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00656-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00656-00001",
+  "searchTerms": [
+    "920-00656-00001",
+    "revamp4120t",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 338,
+  "weightKg": 12.1,
+  "powerDrawW": 525,
+  "voltage": "115-230V AC",
+  "unitCost": 1518,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Regional -00001",
+    "description": "4 Channel class D amplifier 4 x 120 Watts (70/100 Volts or RMS @ 4 Ohms) or in bridge mode 2 x 240 Watts (70/100 Volts or RMS @ 8 Ohms), combined convection and fan cooling, 2 U, 19\" rackmount",
+    "notes": "Та же модель под другим артикулом: 920-00656-00002; [AVAIL] regional versions, confirmed by AVAIL",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

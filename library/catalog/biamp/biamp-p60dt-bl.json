@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00647-10000",
+  "label": "Biamp P60DT-BL",
+  "shortName": "P60DT-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00647-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00647-10000",
+  "searchTerms": [
+    "920-00647-10000",
+    "p60dt-bl",
+    "biamp"
+  ],
+  "heightMm": 276,
+  "widthMm": 276,
+  "depthMm": 264,
+  "weightKg": 3.9,
+  "unitCost": 382,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" two-way, pendant loudspeaker 70-100 volt / 60 watts, 16 ohms / 120 watts, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

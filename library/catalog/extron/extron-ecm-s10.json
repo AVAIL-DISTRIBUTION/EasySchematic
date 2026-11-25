@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1705-03",
+  "label": "Extron ECM S10",
+  "shortName": "ECM S10",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1705-03",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / eBUS",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ecms10",
+  "searchTerms": [
+    "60-1705-03",
+    "ecm s10",
+    "extron",
+    "ecm",
+    "s10"
+  ],
+  "heightMm": 108,
+  "widthMm": 45,
+  "depthMm": 42,
+  "weightKg": 0.07,
+  "powerDrawW": 1,
+  "voltage": "14V DC",
+  "thermalBtuh": 2.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "eBUS Partition Sensor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

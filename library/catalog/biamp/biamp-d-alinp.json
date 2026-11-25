@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00670",
+  "label": "Biamp D-ALINP",
+  "shortName": "D-ALINP",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00670",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00670",
+  "searchTerms": [
+    "910-00670",
+    "d-alinp",
+    "biamp"
+  ],
+  "heightMm": 115,
+  "widthMm": 116,
+  "depthMm": 38,
+  "weightKg": 0.16,
+  "powerDrawW": 0.1,
+  "unitCost": 212,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Active Local Input Panel decora style with MIC and Line input with individual volume control. For use with any device with Line or MIC/LINE input with 24V phantom power.",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00650-00002",
+  "label": "Biamp PREZONE2",
+  "shortName": "PREZONE2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00650-00002",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00650-00001",
+  "searchTerms": [
+    "920-00650-00002",
+    "prezone2",
+    "biamp"
+  ],
+  "heightMm": 89,
+  "widthMm": 430,
+  "depthMm": 290,
+  "weightKg": 3.9,
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 600,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Stereo Pre-Amplifier, 2 stereo source zones, 4 stereo line inputs, 2 mic/line inputs, selective paging, emergency input, 0.5 Watts auto stdby, 2 U19\" rack mounting, black",
+    "notes": "Характеристики с сайта по артикулу 920-00650-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

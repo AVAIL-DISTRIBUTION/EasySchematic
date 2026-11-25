@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-60-1990-01",
+  "label": "Extron Quantum Ultra 610",
+  "shortName": "Quantum Ultra 610",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1990-01",
+  "deviceType": "frame",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "60-1990-01",
+    "quantum ultra 610",
+    "extron",
+    "quantum",
+    "ultra",
+    "610"
+  ],
+  "heightMm": 267,
+  "widthMm": 445,
+  "depthMm": 566,
+  "weightKg": 28,
+  "powerDrawW": 571,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 1941,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "6U Full rack",
+    "rackUnits": 6,
+    "slotFamilies": [
+      "extron-quantum-ultra"
+    ],
+    "description": "6U, 10-slot Frame for Quantum Ultra",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

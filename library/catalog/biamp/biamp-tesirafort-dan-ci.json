@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00447-00002",
+  "label": "Biamp TesiraFORTÉ DAN CI",
+  "shortName": "TesiraFORTÉ DAN CI",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00447-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00447-00001",
+  "searchTerms": [
+    "920-00447-00002",
+    "tesiraforté dan ci",
+    "biamp",
+    "tesirafort",
+    "dan"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 267,
+  "weightKg": 3.63,
+  "powerDrawW": 35,
+  "voltage": "100-240V AC",
+  "unitCost": 5014,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Fixed I/O DSP with 12 analog inputs, 8 analog outputs, 8 channels configurable USB audio, 32 x 32 channels of Dante, and AEC technology (all 12 inputs)",
+    "notes": "Характеристики с сайта по артикулу 920-00447-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

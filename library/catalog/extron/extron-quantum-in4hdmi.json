@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-1117-01",
+  "label": "Extron Quantum IN4HDMI",
+  "shortName": "Quantum IN4HDMI",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1117-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "70-1117-01",
+    "quantum in4hdmi",
+    "extron",
+    "quantum",
+    "in4hdmi"
+  ],
+  "slotFamily": "extron-quantum-ultra",
+  "_avail": {
+    "status": "awaiting-ports",
+    "cardFamilies": [
+      "extron-quantum-ultra",
+      "extron-quantum-ultra-2"
+    ],
+    "deviceTypeSource": "card (extron-quantum-ultra, extron-quantum-ultra-2)",
+    "description": "Four-channel HDMI Input Card for Quantum Ultra",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

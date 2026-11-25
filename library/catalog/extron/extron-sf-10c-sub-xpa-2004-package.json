@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-42-289-02",
+  "label": "Extron SF 10C SUB & XPA 2004 Package",
+  "shortName": "SF 10C SUB & XPA 2004 Package",
+  "manufacturer": "Extron",
+  "modelNumber": "42-289-02",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf10csub",
+  "searchTerms": [
+    "42-289-02",
+    "sf 10c sub & xpa 2004 package",
+    "extron",
+    "10c",
+    "sub",
+    "xpa",
+    "2004"
+  ],
+  "heightMm": 385,
+  "widthMm": 362,
+  "depthMm": 869,
+  "weightKg": 17.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "SF 10C SUB & XPA 2004 - Discount Package",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

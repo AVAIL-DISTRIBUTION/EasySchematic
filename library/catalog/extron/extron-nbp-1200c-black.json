@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-60-1835-01",
+  "label": "Extron NBP 1200C (Black)",
+  "shortName": "NBP 1200C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1835-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbp1200c",
+  "searchTerms": [
+    "60-1835-01",
+    "nbp 1200c",
+    "extron",
+    "nbp",
+    "1200c"
+  ],
+  "heightMm": 113,
+  "widthMm": 269,
+  "depthMm": 116,
+  "weightKg": 1,
+  "powerDrawW": 1.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 5.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Cable Cubby Enclosure with Network Button Panel - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-10262",
+  "label": "Biamp Vocia WR-1",
+  "shortName": "Vocia WR-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-10262",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-10262",
+  "searchTerms": [
+    "910-10262",
+    "vocia wr-1",
+    "biamp",
+    "vocia",
+    "wr-1"
+  ],
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.84,
+  "unitCost": 642,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia Wall-mounted networked PoE BGM control panel",
+    "notes": "[AVAIL] from Biamp documentation; [AVAIL] room-mounted (wall remote (US 2-gang)) — dimensions optional",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

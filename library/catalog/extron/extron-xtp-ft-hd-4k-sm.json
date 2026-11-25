@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1276-12",
+  "label": "Extron XTP FT HD 4K SM",
+  "shortName": "XTP FT HD 4K SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1276-12",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpfthd4k",
+  "searchTerms": [
+    "60-1276-12",
+    "xtp ft hd 4k sm",
+    "extron",
+    "xtp"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 8.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 26.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "XTP Fiber Optic Transmitter for HDMI - Singlemode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

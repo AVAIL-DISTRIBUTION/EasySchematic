@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01493-10000",
+  "label": "Biamp SUB2400-BL",
+  "shortName": "SUB2400-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01493-10000",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01493-10000",
+  "searchTerms": [
+    "920-01493-10000",
+    "sub2400-bl",
+    "biamp"
+  ],
+  "heightMm": 700,
+  "widthMm": 352,
+  "depthMm": 450,
+  "weightKg": 29.2,
+  "unitCost": 935,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Passive 2 x 10\" subwoofer, 4 ohms or 16 ohms / 600 watts, plywood construction with structured paint, black, pole mount adaptor",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

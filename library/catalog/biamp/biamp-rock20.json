@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01472",
+  "label": "Biamp ROCK20",
+  "shortName": "ROCK20",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01472",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01472",
+  "searchTerms": [
+    "910-01472",
+    "rock20",
+    "biamp"
+  ],
+  "heightMm": 260,
+  "widthMm": 200,
+  "depthMm": 280,
+  "weightKg": 3.9,
+  "unitCost": 216,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Rock design outdoor loudspeaker, two-way, 100 volt / 20 watts or 8 ohms / 60 watts",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

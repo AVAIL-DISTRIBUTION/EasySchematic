@@ -1,0 +1,31 @@
+{
+  "id": "avail-biamp-910-01587",
+  "label": "Biamp COLS101",
+  "shortName": "COLS101",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01587",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01587",
+  "searchTerms": [
+    "910-01587",
+    "cols101",
+    "biamp"
+  ],
+  "heightMm": 721,
+  "widthMm": 66,
+  "depthMm": 66,
+  "unitCost": 339,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10 x 2\" slim sound column loudspeaker with 1\" tweeter 70/100 volt / 40 watts or 8 ohms / 60 watts, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

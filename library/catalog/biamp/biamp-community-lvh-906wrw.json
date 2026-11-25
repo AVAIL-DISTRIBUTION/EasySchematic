@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00001-00005",
+  "label": "Biamp Community LVH-906WRW",
+  "shortName": "Community LVH-906WRW",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00001-00005",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001-00005",
+  "searchTerms": [
+    "930-00001-00005",
+    "community lvh-906wrw",
+    "biamp",
+    "community",
+    "lvh-906wrw"
+  ],
+  "heightMm": 948,
+  "widthMm": 797,
+  "depthMm": 775,
+  "weightKg": 95.3,
+  "unitCost": 14692,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Large Format, High Output, Horn Loaded 4 x 12-inch 3-Way, Steerable Vertical Dispersion x 60 Horizontal, Weather-Resistant, White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1449-11",
+  "label": "Extron MPA 601-100V",
+  "shortName": "MPA 601-100V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1449-11",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mpa601",
+  "searchTerms": [
+    "60-1449-11",
+    "mpa 601-100v",
+    "extron",
+    "mpa",
+    "601-100v"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.4,
+  "powerDrawW": 15.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 26,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "One Channel Amp, 60 watts at 100 volts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

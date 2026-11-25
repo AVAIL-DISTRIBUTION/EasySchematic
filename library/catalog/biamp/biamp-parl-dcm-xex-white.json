@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-10117-20000",
+  "label": "Biamp Parlé DCM-XEX White",
+  "shortName": "Parlé DCM-XEX White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10117-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10117-20000",
+  "searchTerms": [
+    "920-10117-20000",
+    "parlé dcm-xex white",
+    "biamp",
+    "parl",
+    "dcm-xex",
+    "white"
+  ],
+  "heightMm": 150,
+  "widthMm": 150,
+  "depthMm": 17,
+  "weightKg": 0.34,
+  "unitCost": 1000,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Expansion Devio UCX Beamtracking ceiling microphone, white surface mount",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

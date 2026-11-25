@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2069-02",
+  "label": "Extron NAV E 522",
+  "shortName": "NAV E 522",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2069-02",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nav-e-522",
+  "searchTerms": [
+    "60-2069-02",
+    "nav e 522",
+    "extron",
+    "nav",
+    "522"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 18.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 57.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G Switching Encoder with USB-C, HDMI and USB Data",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

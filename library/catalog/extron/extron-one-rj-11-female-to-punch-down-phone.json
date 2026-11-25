@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-410-11",
+  "label": "Extron One RJ-11 Female to Punch Down - Phone",
+  "shortName": "One RJ-11 Female to Punch Down -…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-410-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap1rj11fpdbp",
+  "searchTerms": [
+    "70-410-11",
+    "one rj-11 female to punch down -…",
+    "extron",
+    "one",
+    "rj-11",
+    "female",
+    "punch"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: One RJ-11 Female to Punch Down - Phone",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

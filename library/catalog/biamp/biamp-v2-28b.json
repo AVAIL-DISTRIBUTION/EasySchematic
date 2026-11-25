@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00574-00001",
+  "label": "Biamp V2-28B",
+  "shortName": "V2-28B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00574-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00574-00001",
+  "searchTerms": [
+    "930-00574-00001",
+    "v2-28b",
+    "biamp"
+  ],
+  "heightMm": 649,
+  "widthMm": 287,
+  "depthMm": 298,
+  "weightKg": 16.7,
+  "unitCost": 958,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way Dual 8-Inch 90 X 70 Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

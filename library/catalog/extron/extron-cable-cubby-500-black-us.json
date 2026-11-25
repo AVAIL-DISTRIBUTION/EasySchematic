@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1892-02",
+  "label": "Extron Cable Cubby 500 (Black, US)",
+  "shortName": "Cable Cubby 500",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1892-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby500",
+  "searchTerms": [
+    "60-1892-02",
+    "cable cubby 500",
+    "extron",
+    "cable",
+    "cubby",
+    "500"
+  ],
+  "heightMm": 164,
+  "widthMm": 162,
+  "depthMm": 162,
+  "weightKg": 1,
+  "voltage": "125V AC",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black, US",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Black with 2 US AC, 12 A Circuit Breaker, and 2 Outlets Under",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

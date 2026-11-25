@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1512-01",
+  "label": "Extron DMP 128 Plus C",
+  "shortName": "DMP 128 Plus C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1512-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dmp128plus",
+  "searchTerms": [
+    "60-1512-01",
+    "dmp 128 plus c",
+    "extron",
+    "dmp",
+    "128",
+    "plus"
+  ],
+  "heightMm": 43,
+  "widthMm": 442,
+  "depthMm": 241,
+  "weightKg": 2.1,
+  "powerDrawW": 29,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 66.4,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "12x8 ProDSP Digital Matrix Processor with AEC",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

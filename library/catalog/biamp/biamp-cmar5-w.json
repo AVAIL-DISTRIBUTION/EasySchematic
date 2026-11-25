@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01561",
+  "label": "Biamp CMAR5-W",
+  "shortName": "CMAR5-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01561",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01561",
+  "searchTerms": [
+    "910-01561",
+    "cmar5-w",
+    "biamp"
+  ],
+  "heightMm": 152,
+  "widthMm": 152,
+  "depthMm": 55,
+  "weightKg": 0.6,
+  "unitCost": 87,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "5.25\" two-way built-in marine speaker 8 ohms / 50 watts, IP65, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

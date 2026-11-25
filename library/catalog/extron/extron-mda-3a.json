@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-440-01",
+  "label": "Extron MDA 3A",
+  "shortName": "MDA 3A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-440-01",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mda3a",
+  "searchTerms": [
+    "60-440-01",
+    "mda 3a",
+    "extron",
+    "mda"
+  ],
+  "heightMm": 42,
+  "widthMm": 110,
+  "depthMm": 76,
+  "weightKg": 0.3,
+  "powerDrawW": 3.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 12.3,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Three Output Stereo Audio Distribution Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

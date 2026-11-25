@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-1752-02",
+  "label": "Extron SF 26PT (Black, Pair)",
+  "shortName": "SF 26PT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1752-02",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf26pt",
+  "searchTerms": [
+    "60-1752-02",
+    "sf 26pt",
+    "extron",
+    "26pt"
+  ],
+  "heightMm": 295,
+  "widthMm": 229,
+  "depthMm": 229,
+  "weightKg": 4.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SoundField 6.5\" Two-Way Pendant Speaker, Pair - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-60-1310-03",
+  "label": "Extron SF 26CT",
+  "shortName": "SF 26CT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1310-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf26ct",
+  "searchTerms": [
+    "60-1310-03",
+    "sf 26ct",
+    "extron",
+    "26ct"
+  ],
+  "heightMm": 212,
+  "widthMm": 270,
+  "depthMm": 270,
+  "weightKg": 4.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "SoundField XD 6.5\" Two-Way Ceiling Speaker with 8\" Composite Back Can and 70/100 V Transformer, Pair",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

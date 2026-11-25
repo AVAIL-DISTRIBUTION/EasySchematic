@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00883",
+  "label": "Biamp IV6-118SC",
+  "shortName": "IV6-118SC",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00883",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00883",
+    "iv6-118sc",
+    "biamp"
+  ],
+  "heightMm": 508,
+  "widthMm": 714,
+  "depthMm": 713,
+  "weightKg": 60.1,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "IV6-118S Configured-to-Order",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

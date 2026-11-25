@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00417-00002",
+  "label": "Biamp Vocia VA-4300CV",
+  "shortName": "Vocia VA-4300CV",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00417-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00417-00001",
+  "searchTerms": [
+    "920-00417-00002",
+    "vocia va-4300cv",
+    "biamp",
+    "vocia",
+    "va-4300cv"
+  ],
+  "heightMm": 88.9,
+  "widthMm": 483,
+  "depthMm": 444,
+  "weightKg": 10.1,
+  "voltage": "100-240V AC",
+  "unitCost": 7698,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia 4-channel, 300W constant voltage amplifier",
+    "notes": "Характеристики с сайта по артикулу 920-00417-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

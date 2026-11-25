@@ -1,0 +1,31 @@
+{
+  "id": "avail-extron-70-1367-01",
+  "label": "Extron Quantum OUT32AT",
+  "shortName": "Quantum OUT32AT",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1367-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1367-01",
+    "quantum out32at",
+    "extron",
+    "quantum",
+    "out32at"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Dante Audio Output Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

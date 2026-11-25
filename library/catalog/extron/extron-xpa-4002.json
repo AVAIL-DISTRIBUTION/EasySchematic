@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1244-01",
+  "label": "Extron XPA 4002",
+  "shortName": "XPA 4002",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1244-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpa4002",
+  "searchTerms": [
+    "60-1244-01",
+    "xpa 4002",
+    "extron",
+    "xpa",
+    "4002"
+  ],
+  "heightMm": 43,
+  "widthMm": 442,
+  "depthMm": 305,
+  "weightKg": 4.2,
+  "powerDrawW": 94.3,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 151,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Two Channel Amp - 400 Watts/Ch",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1582-12",
+  "label": "Extron XTP T FB 202 4K",
+  "shortName": "XTP T FB 202 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1582-12",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtptfb2024k",
+  "searchTerms": [
+    "60-1582-12",
+    "xtp t fb 202 4k",
+    "extron",
+    "xtp",
+    "202"
+  ],
+  "heightMm": 59,
+  "widthMm": 72,
+  "depthMm": 132,
+  "weightKg": 0.6,
+  "powerDrawW": 7.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 26.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input XTP Transmitter for Floor Boxes",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

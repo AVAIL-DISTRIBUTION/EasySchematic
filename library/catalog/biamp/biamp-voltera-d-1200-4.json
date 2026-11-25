@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-01954-00002",
+  "label": "Biamp Voltera D 1200.4",
+  "shortName": "Voltera D 1200.4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01954-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01954-00001",
+  "searchTerms": [
+    "920-01954-00002",
+    "voltera d 1200.4",
+    "biamp",
+    "voltera",
+    "1200"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 430,
+  "weightKg": 7.7,
+  "voltage": "100-240V AC",
+  "unitCost": 3604,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Four-channel Amplified Loudspeaker Controller, 1200 watt total power with DSP, Dante & AVB",
+    "notes": "Характеристики с сайта по артикулу 920-01954-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

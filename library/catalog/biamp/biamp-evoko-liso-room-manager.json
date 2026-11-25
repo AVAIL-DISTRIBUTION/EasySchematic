@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-910-01969",
+  "label": "Biamp Evoko Liso Room Manager",
+  "shortName": "Evoko Liso Room Manager",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01969",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01969",
+  "searchTerms": [
+    "910-01969",
+    "evoko liso room manager",
+    "biamp",
+    "evoko",
+    "liso",
+    "room",
+    "manager"
+  ],
+  "heightMm": 200,
+  "widthMm": 200,
+  "depthMm": 25,
+  "weightKg": 1.3,
+  "voltage": "12V DC / PoE 802.3af",
+  "unitCost": 1696,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Self-hosted room booking display with mounting kits for standard and glass walls",
+    "notes": "Панель бронирования переговорных",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

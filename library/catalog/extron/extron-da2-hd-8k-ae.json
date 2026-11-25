@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1870-12",
+  "label": "Extron DA2 HD 8K AE",
+  "shortName": "DA2 HD 8K AE",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1870-12",
+  "deviceType": "audio-embedder",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/da2hd8kae",
+  "searchTerms": [
+    "60-1870-12",
+    "da2 hd 8k ae",
+    "extron",
+    "da2"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.25,
+  "powerDrawW": 7,
+  "voltage": "12V DC",
+  "thermalBtuh": 15.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "8K HDMI Audio De-Embedder, Distribution Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

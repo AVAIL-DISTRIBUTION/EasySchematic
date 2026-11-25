@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1866-01",
+  "label": "Extron NetPA U 8001 SUB",
+  "shortName": "NetPA U 8001 SUB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1866-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpau8001sub",
+  "searchTerms": [
+    "60-1866-01",
+    "netpa u 8001 sub",
+    "extron",
+    "netpa",
+    "8001",
+    "sub"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 121,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 72,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Mono Dante Subwoofer Amp, 800 watts at 8 ohms",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

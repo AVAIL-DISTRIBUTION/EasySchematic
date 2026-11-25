@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-60-1170-01",
+  "label": "Extron EBDB",
+  "shortName": "EBDB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1170-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / eBUS",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ebdb",
+  "searchTerms": [
+    "60-1170-01",
+    "ebdb",
+    "extron"
+  ],
+  "heightMm": 42,
+  "widthMm": 109,
+  "depthMm": 114,
+  "weightKg": 0.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "eBUS® Distribution Hub",
+    "notes": "[AVAIL] powered by the host device / bus — no own power input",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

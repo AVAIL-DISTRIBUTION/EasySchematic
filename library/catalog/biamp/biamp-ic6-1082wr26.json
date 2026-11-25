@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00003-00005",
+  "label": "Biamp IC6-1082WR26",
+  "shortName": "IC6-1082WR26",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00003-00005",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00003-00005",
+  "searchTerms": [
+    "930-00003-00005",
+    "ic6-1082wr26",
+    "biamp"
+  ],
+  "heightMm": 476,
+  "widthMm": 264,
+  "depthMm": 270,
+  "weightKg": 8.7,
+  "unitCost": 2120,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output 8-Inch 2-Way 120 X 60 Weather-Resistant Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2091-01",
+  "label": "Extron NAV SD 521",
+  "shortName": "NAV SD 521",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2091-01",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nav-sd-521",
+  "searchTerms": [
+    "60-2091-01",
+    "nav sd 521",
+    "extron",
+    "nav",
+    "521"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 203,
+  "weightKg": 0.9,
+  "powerDrawW": 23,
+  "voltage": "12V DC",
+  "thermalBtuh": 64.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G Switching Scaling Decoder HDMI, USB, Ethernet",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

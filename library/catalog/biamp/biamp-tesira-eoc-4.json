@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-901-0313",
+  "label": "Biamp Tesira EOC-4",
+  "shortName": "Tesira EOC-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0313",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0313",
+  "searchTerms": [
+    "901.0313",
+    "910-00331",
+    "tesira eoc-4",
+    "biamp",
+    "tesira",
+    "eoc-4"
+  ],
+  "unitCost": 422,
+  "slotFamily": "biamp-tesira-ex-mod",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-00331",
+    "deviceTypeSource": "card (biamp-tesira-ex-mod)",
+    "description": "Tesira 4 channel mic/line output card for the EX-MOD",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-tesira-ex-mod\""
+  },
+  "ports": []
+}

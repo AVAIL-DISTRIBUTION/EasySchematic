@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1915-01",
+  "label": "Extron IPCP Pro 355DRQ xi",
+  "shortName": "IPCP Pro 355DRQ xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1915-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro355drqxi",
+  "searchTerms": [
+    "60-1915-01",
+    "ipcp pro 355drq xi",
+    "extron",
+    "ipcp",
+    "pro",
+    "355drq"
+  ],
+  "heightMm": 90,
+  "widthMm": 160,
+  "depthMm": 58,
+  "weightKg": 0.3,
+  "powerDrawW": 10.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 14.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "IPCP Pro xi Quad Core Control Processor - DIN Rail",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

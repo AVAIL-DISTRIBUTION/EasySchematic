@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01821-20000",
+  "label": "Biamp EX-S10SUB-CM-W",
+  "shortName": "EX-S10SUB-CM-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01821-20000",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01821-20000",
+  "searchTerms": [
+    "920-01821-20000",
+    "ex-s10sub-cm-w",
+    "biamp"
+  ],
+  "heightMm": 529,
+  "widthMm": 309,
+  "depthMm": 439,
+  "weightKg": 12.8,
+  "unitCost": 970,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10” Subwoofer Surface Mount Indoor/Outdoor Loudspeaker. 8 Ohm operation, included ClickMount pan-tilt mounting bracket, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

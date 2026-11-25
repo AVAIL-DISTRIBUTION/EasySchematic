@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1182-02",
+  "label": "Extron MLC 64 RS VC D",
+  "shortName": "MLC 64 RS VC D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1182-02",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc64rsvcd",
+  "searchTerms": [
+    "60-1182-02",
+    "mlc 64 rs vc d",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 106,
+  "widthMm": 92,
+  "depthMm": 37,
+  "weightKg": 0.5,
+  "powerDrawW": 1.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 6.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Controller With Volume Control Knob - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00641-00002",
+  "label": "Biamp MASK6C-W",
+  "shortName": "MASK6C-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00641-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00641-00002",
+  "searchTerms": [
+    "930-00641-00002",
+    "mask6c-w",
+    "biamp"
+  ],
+  "heightMm": 328,
+  "widthMm": 198,
+  "depthMm": 190,
+  "weightKg": 4.4,
+  "unitCost": 180,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" design two-way surface mount loudspeaker, 8 ohms / 200 watts, White, CLICKMOUNT bracket and safety cable included (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1633-01",
+  "label": "Extron HD CTL 100",
+  "shortName": "HD CTL 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1633-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hdctl100",
+  "searchTerms": [
+    "60-1633-01",
+    "hd ctl 100",
+    "extron",
+    "ctl",
+    "100"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.5,
+  "powerDrawW": 2.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 4.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Automation Controller",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

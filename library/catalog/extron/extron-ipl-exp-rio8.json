@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1907-01",
+  "label": "Extron IPL EXP RIO8",
+  "shortName": "IPL EXP RIO8",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1907-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iplexprio8",
+  "searchTerms": [
+    "60-1907-01",
+    "ipl exp rio8",
+    "extron",
+    "ipl",
+    "exp",
+    "rio8"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.2,
+  "powerDrawW": 26.9,
+  "voltage": "56V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 26.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Control System I/O Expansion Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

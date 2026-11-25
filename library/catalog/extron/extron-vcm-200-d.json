@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-70-883-02",
+  "label": "Extron VCM 200 D",
+  "shortName": "VCM 200 D",
+  "manufacturer": "Extron",
+  "modelNumber": "70-883-02",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vcm200d",
+  "searchTerms": [
+    "70-883-02",
+    "vcm 200 d",
+    "extron",
+    "vcm",
+    "200"
+  ],
+  "heightMm": 66,
+  "widthMm": 33,
+  "depthMm": 6,
+  "weightKg": 0.1,
+  "powerDrawW": 0.2,
+  "voltage": "10V DC",
+  "thermalBtuh": 0.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Volume and Mute Controller - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

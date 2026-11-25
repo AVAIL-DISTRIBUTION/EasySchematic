@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-01978-00002",
+  "label": "Biamp Parlé N 100",
+  "shortName": "Parlé N 100",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01978-00002",
+  "deviceType": "adapter",
+  "category": "Integration Tools / Adapters",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01978-00001",
+  "searchTerms": [
+    "920-01978-00002",
+    "parlé n 100",
+    "biamp",
+    "parl",
+    "100"
+  ],
+  "heightMm": 37.3,
+  "widthMm": 206,
+  "depthMm": 206,
+  "weightKg": 0.86,
+  "unitCost": 530,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Network Expander for Parlé ABC/VBC",
+    "notes": "Сетевой расширитель для ABC/VBC; Характеристики с сайта по артикулу 920-01978-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

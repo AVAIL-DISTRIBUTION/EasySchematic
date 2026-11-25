@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1885-52",
+  "label": "Extron DTP3 T 203",
+  "shortName": "DTP3 T 203",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1885-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t203",
+  "searchTerms": [
+    "60-1885-52",
+    "dtp3 t 203",
+    "extron",
+    "dtp3",
+    "203"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.98,
+  "powerDrawW": 90.3,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 95.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input 4K/60 Switcher with Integrated DTP3 Transmitter",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-60-1005-52",
+  "label": "Extron MLC 62 RS CC",
+  "shortName": "MLC 62 RS CC",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1005-52",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc62rscc",
+  "searchTerms": [
+    "60-1005-52",
+    "mlc 62 rs cc",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 99,
+  "widthMm": 107,
+  "depthMm": 61,
+  "weightKg": 0.5,
+  "powerDrawW": 2.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 7,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
+    "description": "MediaLink Controller for Cable Cubby Cable Access Enclosures",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

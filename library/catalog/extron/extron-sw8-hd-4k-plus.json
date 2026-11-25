@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1606-01",
+  "label": "Extron SW8 HD 4K PLUS",
+  "shortName": "SW8 HD 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1606-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/swhd4kplusseries",
+  "searchTerms": [
+    "60-1606-01",
+    "sw8 hd 4k plus",
+    "extron",
+    "sw8",
+    "plus"
+  ],
+  "heightMm": 44,
+  "widthMm": 445,
+  "depthMm": 216,
+  "weightKg": 1.1,
+  "powerDrawW": 12.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 40.4,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Eight Input 4K/60 HDMI Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

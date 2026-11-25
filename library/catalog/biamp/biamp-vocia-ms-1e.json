@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00423-00002",
+  "label": "Biamp Vocia MS-1e",
+  "shortName": "Vocia MS-1e",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00423-00002",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00423-00001",
+  "searchTerms": [
+    "920-00423-00002",
+    "vocia ms-1e",
+    "biamp",
+    "vocia",
+    "ms-1e"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 444,
+  "weightKg": 5.4,
+  "powerDrawW": 300,
+  "voltage": "100-240V AC",
+  "unitCost": 8978,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia Enhanced Networked Messaging Processor",
+    "notes": "Характеристики с сайта по артикулу 920-00423-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

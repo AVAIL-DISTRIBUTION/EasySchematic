@@ -1,0 +1,44 @@
+{
+  "id": "avail-extron-60-1882-12",
+  "label": "Extron FOX3 Matrix 840x IPCP Pro",
+  "shortName": "FOX3 Matrix 840x IPCP Pro",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1882-12",
+  "deviceType": "frame",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix840x",
+  "searchTerms": [
+    "60-1882-12",
+    "fox3 matrix 840x ipcp pro",
+    "extron",
+    "fox3",
+    "matrix",
+    "840x",
+    "ipcp"
+  ],
+  "heightMm": 1290,
+  "widthMm": 480,
+  "depthMm": 560,
+  "weightKg": 204,
+  "powerDrawW": 2460.2,
+  "voltage": "200-240V AC",
+  "thermalBtuh": 8396.7,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "29U Full rack",
+    "rackUnits": 29,
+    "slotFamilies": [
+      "extron-fox3-matrix"
+    ],
+    "description": "FOX3 Matrix 840x IPCP Pro",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

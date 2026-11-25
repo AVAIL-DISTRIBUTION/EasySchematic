@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1985-01",
+  "label": "Extron SW2 HD 8K",
+  "shortName": "SW2 HD 8K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1985-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sw2hd8k",
+  "searchTerms": [
+    "60-1985-01",
+    "sw2 hd 8k",
+    "extron",
+    "sw2"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.24,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Two Input 8K HDMI Switcher with Audio De-embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

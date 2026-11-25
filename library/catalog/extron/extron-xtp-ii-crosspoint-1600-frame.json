@@ -1,0 +1,45 @@
+{
+  "id": "avail-extron-60-2031-01",
+  "label": "Extron XTP II CrossPoint 1600 Frame",
+  "shortName": "XTP II CrossPoint 1600 Frame",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2031-01",
+  "deviceType": "frame",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicp1600",
+  "searchTerms": [
+    "60-2031-01",
+    "xtp ii crosspoint 1600 frame",
+    "extron",
+    "xtp",
+    "crosspoint",
+    "1600",
+    "frame"
+  ],
+  "heightMm": 222,
+  "widthMm": 432,
+  "depthMm": 445,
+  "weightKg": 17.7,
+  "powerDrawW": 875,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 986,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "5U Full rack",
+    "rackUnits": 5,
+    "slotFamilies": [
+      "extron-xtp-2"
+    ],
+    "description": "Modular Digital Matrix Switchers from 4x4 to 16x16 with SpeedSwitch® Technology",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

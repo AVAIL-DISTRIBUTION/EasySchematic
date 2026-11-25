@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-103-16",
+  "label": "Extron One XLR 3-pin Female to Solder Cups - Neutrik, One RJ-45 Barrel - CAT 5e",
+  "shortName": "One XLR 3-pin Female to Solder C…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-103-16",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap1xlr3frg45",
+  "searchTerms": [
+    "70-103-16",
+    "one xlr 3-pin female to solder c…",
+    "extron",
+    "one",
+    "xlr",
+    "3-pin",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - Black: One XLR 3-pin Female to Solder Cups - Neutrik, One RJ-45 Barrel - CAT 5e",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

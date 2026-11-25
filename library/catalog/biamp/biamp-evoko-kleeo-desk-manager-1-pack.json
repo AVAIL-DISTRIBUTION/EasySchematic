@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-910-01970",
+  "label": "Biamp Evoko Kleeo Desk Manager 1-pack",
+  "shortName": "Evoko Kleeo Desk Manager 1-pack",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01970",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01970",
+  "searchTerms": [
+    "910-01970",
+    "evoko kleeo desk manager 1-pack",
+    "biamp",
+    "evoko",
+    "kleeo",
+    "desk",
+    "manager"
+  ],
+  "heightMm": 83,
+  "widthMm": 37,
+  "depthMm": 68,
+  "weightKg": 0.1,
+  "voltage": "5V DC",
+  "unitCost": 400,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Evoko Kleeo Desk Manager including a 1-year Workplace Booking License, 1-pack",
+    "notes": "Панель бронирования переговорных; Продаётся упаковкой по 1 шт.; цена в прайсе — за упаковку; Питание по USB-C 5 V 1 A",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

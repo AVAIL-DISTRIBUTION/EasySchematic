@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1494-21",
+  "label": "Extron DXP 84 HD 4K PLUS",
+  "shortName": "DXP 84 HD 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1494-21",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dxphd4kplus",
+  "searchTerms": [
+    "60-1494-21",
+    "dxp 84 hd 4k plus",
+    "extron",
+    "dxp",
+    "plus"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 2.4,
+  "powerDrawW": 26.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 51.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "8x4 4K/60 HDMI with 2 Audio Outputs",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

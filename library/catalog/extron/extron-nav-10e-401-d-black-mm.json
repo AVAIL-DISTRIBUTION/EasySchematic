@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1572-25",
+  "label": "Extron NAV 10E 401 D (Black, MM)",
+  "shortName": "NAV 10E 401 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1572-25",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nav10e401d",
+  "searchTerms": [
+    "60-1572-25",
+    "nav 10e 401 d",
+    "extron",
+    "nav",
+    "10e",
+    "401"
+  ],
+  "heightMm": 69,
+  "widthMm": 134,
+  "depthMm": 50,
+  "weightKg": 0.66,
+  "powerDrawW": 21.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 73.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black, MM",
+    "rackFormSource": "Non-rack",
+    "description": "10G Pro AV over IP Encoder for HDMI and Ethernet, Decorator-Style Wallplate, Black - MM",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

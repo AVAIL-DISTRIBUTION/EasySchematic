@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-42-133-03",
+  "label": "Extron SM 3 (White, Pair)",
+  "shortName": "SM 3",
+  "manufacturer": "Extron",
+  "modelNumber": "42-133-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sm3",
+  "searchTerms": [
+    "42-133-03",
+    "sm 3",
+    "extron"
+  ],
+  "heightMm": 222,
+  "widthMm": 146,
+  "depthMm": 102,
+  "weightKg": 0.9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SpeedMount Compact Full-Range Surface Mount Speakers, Pair - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

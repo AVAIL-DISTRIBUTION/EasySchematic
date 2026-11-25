@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-70-1238-72",
+  "label": "Extron AAP SuperPlate 173",
+  "shortName": "AAP SuperPlate 173",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1238-72",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aapsuperplate",
+  "searchTerms": [
+    "70-1238-72",
+    "aap superplate 173",
+    "extron",
+    "aap",
+    "superplate",
+    "173"
+  ],
+  "heightMm": 36,
+  "widthMm": 89,
+  "depthMm": 2,
+  "weightKg": 0.18,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AAP - Double Space - Black: One HDMI, USB 3 Type-A to Type-B, USB-C, and Network",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

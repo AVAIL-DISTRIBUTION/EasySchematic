@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-02606-20000",
+  "label": "Biamp EX-S10-CM-W",
+  "shortName": "EX-S10-CM-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02606-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01817-20000",
+  "searchTerms": [
+    "920-02606-20000",
+    "ex-s10-cm-w",
+    "biamp"
+  ],
+  "heightMm": 529,
+  "widthMm": 309,
+  "depthMm": 439,
+  "weightKg": 15.2,
+  "unitCost": 1024,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10” Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included ClickMount pan-tilt mounting bracket, white",
+    "notes": "Характеристики с сайта по артикулу 920-01817-20000",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

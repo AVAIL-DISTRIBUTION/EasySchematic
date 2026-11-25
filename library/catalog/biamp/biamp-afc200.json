@@ -1,0 +1,30 @@
+{
+  "id": "avail-biamp-910-01350",
+  "label": "Biamp AFC200",
+  "shortName": "AFC200",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01350",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01350",
+  "searchTerms": [
+    "910-01350",
+    "afc200",
+    "biamp"
+  ],
+  "unitCost": 206,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "Autotransformer 200W",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

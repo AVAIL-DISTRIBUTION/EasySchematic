@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-00552-20000",
+  "label": "Biamp DP8-W",
+  "shortName": "DP8-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00552-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00552-20000",
+  "searchTerms": [
+    "920-00552-20000",
+    "dp8-w",
+    "biamp"
+  ],
+  "heightMm": 450.1,
+  "widthMm": 340.5,
+  "depthMm": 340.5,
+  "weightKg": 7.5,
+  "unitCost": 653,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8-Inch Pendant Loudspeaker, White",
+    "notes": "[AVAIL] estimated: round pendant, depth = diameter",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

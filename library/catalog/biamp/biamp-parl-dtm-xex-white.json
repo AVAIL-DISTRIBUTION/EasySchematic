@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-10118-20000",
+  "label": "Biamp Parlé DTM-XEX White",
+  "shortName": "Parlé DTM-XEX White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10118-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10118-20000",
+  "searchTerms": [
+    "920-10118-20000",
+    "parlé dtm-xex white",
+    "biamp",
+    "parl",
+    "dtm-xex",
+    "white"
+  ],
+  "heightMm": 110,
+  "widthMm": 110,
+  "depthMm": 18,
+  "weightKg": 0.23,
+  "unitCost": 800,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Expansion Devio UCX Beamtracking tabletop microphone, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

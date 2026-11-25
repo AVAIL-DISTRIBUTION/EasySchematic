@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1390-03",
+  "label": "Extron MLC 55 RS",
+  "shortName": "MLC 55 RS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1390-03",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc55rs",
+  "searchTerms": [
+    "60-1390-03",
+    "mlc 55 rs",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 71,
+  "widthMm": 45,
+  "depthMm": 36,
+  "weightKg": 0.1,
+  "powerDrawW": 1.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 3.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink Controller with RS-232 and IR Display Control",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

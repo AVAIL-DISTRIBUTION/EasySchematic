@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00658-00002",
+  "label": "Biamp REVAMP8250",
+  "shortName": "REVAMP8250",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00658-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00658-00001",
+  "searchTerms": [
+    "920-00658-00002",
+    "revamp8250",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 338,
+  "weightKg": 21.7,
+  "powerDrawW": 2200,
+  "voltage": "115-230V AC",
+  "unitCost": 1692,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8 Channel class D amplifier 8 x 250 Watts (RMS @ 4 Ohms), 8 x 350 Watts (Dynamic @ 4 Ohms) or in bridge mode 4 x 500 Watts ( RMS @8 Ohms), fan cooled, 2 U, 19\"",
+    "notes": "Характеристики с сайта по артикулу 920-00658-00001; На сайте высота противоречива: «1U: 44 mm» и «2 Rack units» — проверить по даташиту",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

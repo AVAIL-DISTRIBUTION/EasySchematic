@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-910-00254",
+  "label": "Biamp Vocia WS-10",
+  "shortName": "Vocia WS-10",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00254",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00254",
+  "searchTerms": [
+    "910-00254",
+    "vocia ws-10",
+    "biamp",
+    "vocia",
+    "ws-10"
+  ],
+  "heightMm": 135,
+  "widthMm": 302,
+  "depthMm": 48,
+  "weightKg": 1.2,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 2332,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "paging-station",
+    "description": "Vocia Wall-mounted Paging Station, 10 buttons with hand-held microphone",
+    "notes": "Как у WS-4; доп. вход 24 V DC 6 Вт",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

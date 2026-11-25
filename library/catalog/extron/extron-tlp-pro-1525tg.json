@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1790-12",
+  "label": "Extron TLP Pro 1525TG",
+  "shortName": "TLP Pro 1525TG",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1790-12",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1525tg",
+  "searchTerms": [
+    "60-1790-12",
+    "tlp pro 1525tg",
+    "extron",
+    "tlp",
+    "pro",
+    "1525tg"
+  ],
+  "heightMm": 280,
+  "widthMm": 408,
+  "depthMm": 238,
+  "weightKg": 6.3,
+  "powerDrawW": 23.9,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 76.8,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "15\" Tabletop TouchLink® Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

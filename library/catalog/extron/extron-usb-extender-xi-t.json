@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1964-12",
+  "label": "Extron USB Extender xi T",
+  "shortName": "USB Extender xi T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1964-12",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usb-extender-xi",
+  "searchTerms": [
+    "60-1964-12",
+    "usb extender xi t",
+    "extron",
+    "usb",
+    "extender"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 2.2,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 7.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

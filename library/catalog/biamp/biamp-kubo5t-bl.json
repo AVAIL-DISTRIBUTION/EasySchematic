@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00687-00003",
+  "label": "Biamp KUBO5T-BL",
+  "shortName": "KUBO5T-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00687-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00687-00003",
+  "searchTerms": [
+    "930-00687-00003",
+    "kubo5t-bl",
+    "biamp"
+  ],
+  "heightMm": 155,
+  "widthMm": 164,
+  "depthMm": 136,
+  "weightKg": 2,
+  "unitCost": 172,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "5.25\" compact design two-way surface mount loudspeaker, 70 - 100 volt / 30 watts or 16 ohms / 80 watts, mounting bracket and safety cable included, black (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1487-52",
+  "label": "Extron DTP T DSW 4K 333",
+  "shortName": "DTP T DSW 4K 333",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1487-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptdsw4k333",
+  "searchTerms": [
+    "60-1487-52",
+    "dtp t dsw 4k 333",
+    "extron",
+    "dtp",
+    "dsw",
+    "333"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 7.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 24.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input Multi-Format Switcher with Integrated Long Distance DTP Transmitter and Audio Embedding - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

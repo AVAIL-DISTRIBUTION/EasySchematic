@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-70-1236-02",
+  "label": "Extron One USB A Female to USB B Female on Pigtails (Black)",
+  "shortName": "One USB A Female to USB B Female…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1236-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/maap1usbaf1usbbf10",
+  "searchTerms": [
+    "70-1236-02",
+    "one usb a female to usb b female…",
+    "extron",
+    "one",
+    "usb",
+    "female"
+  ],
+  "heightMm": 18,
+  "widthMm": 56,
+  "depthMm": 3,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "One USB A Female to USB B Female on Pigtail - Single Space MAAP - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

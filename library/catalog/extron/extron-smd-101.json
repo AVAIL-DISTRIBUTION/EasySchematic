@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1305-01",
+  "label": "Extron SMD 101",
+  "shortName": "SMD 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1305-01",
+  "deviceType": "streaming-decoder",
+  "category": "Streaming and Recording / Streaming AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/smd101",
+  "searchTerms": [
+    "60-1305-01",
+    "smd 101",
+    "extron",
+    "smd",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 9.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 30.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "H.264 Decoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

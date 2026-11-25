@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-02618-20000",
+  "label": "Biamp Desono DX-S5-UB-W White",
+  "shortName": "Desono DX-S5-UB-W White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02618-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00332-20000",
+  "searchTerms": [
+    "920-02618-20000",
+    "desono dx-s5-ub-w white",
+    "biamp",
+    "desono",
+    "dx-s5-ub-w",
+    "white"
+  ],
+  "heightMm": 286,
+  "widthMm": 180,
+  "depthMm": 219,
+  "weightKg": 4.7,
+  "unitCost": 270,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "5” high output coaxial surface mount indoor/outdoor loudspeaker w/ HF compression driver. 8 ohm or 70V/100V operation, included aluminum U-bracket & water-tight ClickPlug, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; Характеристики с сайта по артикулу 920-00332-20000",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

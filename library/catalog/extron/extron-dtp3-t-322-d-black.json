@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-2066-52",
+  "label": "Extron DTP3 T 322 D (Black)",
+  "shortName": "DTP3 T 322 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2066-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t322d",
+  "searchTerms": [
+    "60-2066-52",
+    "dtp3 t 322 d",
+    "extron",
+    "dtp3",
+    "322"
+  ],
+  "heightMm": 68,
+  "widthMm": 89,
+  "depthMm": 51,
+  "weightKg": 0.23,
+  "powerDrawW": 7.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 24.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input 4K/60 DTP3 Transmitter for HDMI and USB-C with Data – Decorator-Style Wallplate, Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

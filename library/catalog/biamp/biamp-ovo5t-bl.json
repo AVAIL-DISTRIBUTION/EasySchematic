@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-00297-10001",
+  "label": "Biamp OVO5T-BL",
+  "shortName": "OVO5T-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00297-10001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00297-10000",
+  "searchTerms": [
+    "920-00297-10001",
+    "ovo5t-bl",
+    "biamp"
+  ],
+  "heightMm": 256,
+  "widthMm": 167,
+  "depthMm": 189,
+  "weightKg": 3.1,
+  "unitCost": 127,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Design two-way cabinet speaker, 5.25\" coated paper cone woofer + 1\" silk dome tweeter, 100 volt / 30 watts or 16 ohms / 80 watts, mounting bracket included, black - priced per piece and sold in pairs only",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за упаковку; Характеристики с сайта по артикулу 920-00297-10000",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

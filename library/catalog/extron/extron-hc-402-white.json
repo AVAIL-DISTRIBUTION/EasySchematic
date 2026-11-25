@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-42-285-01",
+  "label": "Extron HC 402 (White)",
+  "shortName": "HC 402",
+  "manufacturer": "Extron",
+  "modelNumber": "42-285-01",
+  "deviceType": "presentation-system",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hc402",
+  "searchTerms": [
+    "42-285-01",
+    "hc 402",
+    "extron",
+    "402"
+  ],
+  "heightMm": 69,
+  "widthMm": 43,
+  "depthMm": 48,
+  "weightKg": 0.1,
+  "powerDrawW": 17.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 57.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "Meeting Collaboration System, Decorator Tx, White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

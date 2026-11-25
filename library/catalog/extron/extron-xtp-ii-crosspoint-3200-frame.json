@@ -1,0 +1,45 @@
+{
+  "id": "avail-extron-60-1981-01",
+  "label": "Extron XTP II CrossPoint 3200 Frame",
+  "shortName": "XTP II CrossPoint 3200 Frame",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1981-01",
+  "deviceType": "frame",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicp3200",
+  "searchTerms": [
+    "60-1981-01",
+    "xtp ii crosspoint 3200 frame",
+    "extron",
+    "xtp",
+    "crosspoint",
+    "3200",
+    "frame"
+  ],
+  "heightMm": 445,
+  "widthMm": 432,
+  "depthMm": 445,
+  "weightKg": 29,
+  "powerDrawW": 185,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 43,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "10U Full rack",
+    "rackUnits": 10,
+    "slotFamilies": [
+      "extron-xtp-2"
+    ],
+    "description": "Modular Digital Matrix Switchers from 4x4 to 32x32 with SpeedSwitch® Technology",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

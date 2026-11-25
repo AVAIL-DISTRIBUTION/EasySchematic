@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-910-01898",
+  "label": "Biamp Apprimo Touch 8i",
+  "shortName": "Apprimo Touch 8i",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01898",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01898",
+  "searchTerms": [
+    "910-01898",
+    "apprimo touch 8i",
+    "biamp",
+    "apprimo",
+    "touch"
+  ],
+  "heightMm": 130,
+  "widthMm": 196,
+  "depthMm": 38,
+  "weightKg": 0.45,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15,
+  "unitCost": 2565,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8\" control panel, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

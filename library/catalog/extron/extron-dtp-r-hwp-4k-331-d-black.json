@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1531-52",
+  "label": "Extron DTP R HWP 4K 331 D (Black)",
+  "shortName": "DTP R HWP 4K 331 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1531-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtprhwp4k331d",
+  "searchTerms": [
+    "60-1531-52",
+    "dtp r hwp 4k 331 d",
+    "extron",
+    "dtp",
+    "hwp",
+    "331"
+  ],
+  "heightMm": 107,
+  "widthMm": 43,
+  "depthMm": 58,
+  "weightKg": 0.15,
+  "powerDrawW": 7.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 14,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Long Distance DTP Receiver for HDMI - Decorator-Style Wallplate, Black - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

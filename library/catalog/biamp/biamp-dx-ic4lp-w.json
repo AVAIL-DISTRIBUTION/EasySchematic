@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00103",
+  "label": "Biamp DX-IC4LP-W",
+  "shortName": "DX-IC4LP-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00103",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00103",
+  "searchTerms": [
+    "910-00103",
+    "dx-ic4lp-w",
+    "biamp"
+  ],
+  "heightMm": 258,
+  "widthMm": 258,
+  "depthMm": 97,
+  "weightKg": 2.66,
+  "unitCost": 220,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4.5” Low-Profile, High Efficiency Coaxial In-Ceiling Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

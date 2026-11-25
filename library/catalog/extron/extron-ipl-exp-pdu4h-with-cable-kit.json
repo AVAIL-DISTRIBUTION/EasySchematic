@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1956-02",
+  "label": "Extron IPL EXP PDU4H (with Cable Kit)",
+  "shortName": "IPL EXP PDU4H",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1956-02",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iplexppdu4h",
+  "searchTerms": [
+    "60-1956-02",
+    "ipl exp pdu4h",
+    "extron",
+    "ipl",
+    "exp",
+    "pdu4h"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 216,
+  "weightKg": 1,
+  "powerDrawW": 1.5,
+  "voltage": "240V AC",
+  "thermalBtuh": 5.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "with Cable Kit",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Control System Power Expansion Interface with Cable Kit",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

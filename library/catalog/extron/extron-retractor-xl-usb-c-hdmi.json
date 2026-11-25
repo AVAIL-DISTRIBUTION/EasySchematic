@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-70-1066-51",
+  "label": "Extron Retractor XL USB-C - HDMI",
+  "shortName": "Retractor XL USB-C - HDMI",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1066-51",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/retractorseries2xl",
+  "searchTerms": [
+    "70-1066-51",
+    "retractor xl usb-c - hdmi",
+    "extron",
+    "retractor",
+    "usb-c",
+    "hdmi"
+  ],
+  "heightMm": 729,
+  "widthMm": 30,
+  "depthMm": 119,
+  "weightKg": 1.6,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-maap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-maap, extron-cc-flex55)",
+    "description": "Extended Length 4K Cable Retraction System for AVEdge, Cable Cubby®, Select TouchLink® Enclosures, and TMK 120 R Kit – USB-C® Male to HDMI Male",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-maap\"; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

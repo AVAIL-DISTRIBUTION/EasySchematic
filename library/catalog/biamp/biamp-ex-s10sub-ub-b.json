@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01823-10000",
+  "label": "Biamp EX-S10SUB-UB-B",
+  "shortName": "EX-S10SUB-UB-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01823-10000",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01823-10000",
+  "searchTerms": [
+    "920-01823-10000",
+    "ex-s10sub-ub-b",
+    "biamp"
+  ],
+  "heightMm": 548,
+  "widthMm": 309,
+  "depthMm": 355,
+  "weightKg": 12.8,
+  "unitCost": 970,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10” Subwoofer Surface Mount Indoor/Outdoor Loudspeaker. 8 Ohm operation, included indexing u-bracket and weather cover, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

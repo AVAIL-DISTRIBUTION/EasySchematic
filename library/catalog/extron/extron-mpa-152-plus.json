@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-844-03",
+  "label": "Extron MPA 152 Plus",
+  "shortName": "MPA 152 Plus",
+  "manufacturer": "Extron",
+  "modelNumber": "60-844-03",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mpa152plus",
+  "searchTerms": [
+    "60-844-03",
+    "mpa 152 plus",
+    "extron",
+    "mpa",
+    "152",
+    "plus"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.3,
+  "powerDrawW": 5.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 13,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Stereo Amp - 15 Watts Per Channel",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

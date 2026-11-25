@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1773-52",
+  "label": "Extron DTP3 T 301",
+  "shortName": "DTP3 T 301",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1773-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t301",
+  "searchTerms": [
+    "60-1773-52",
+    "dtp3 t 301",
+    "extron",
+    "dtp3",
+    "301"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.54,
+  "powerDrawW": 10.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 35.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "DTP3 Transmitter for 4K/60 HDMI and USB Data",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

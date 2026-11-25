@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1471-12",
+  "label": "Extron USB Extender Plus T",
+  "shortName": "USB Extender Plus T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1471-12",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbextenderplus",
+  "searchTerms": [
+    "60-1471-12",
+    "usb extender plus t",
+    "extron",
+    "usb",
+    "extender",
+    "plus"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 1.5,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 5.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Twisted Pair Extender for USB Peripherals",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00408-00002",
+  "label": "Biamp Vocia POTS-1-4",
+  "shortName": "Vocia POTS-1-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00408-00002",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00408-00001",
+  "searchTerms": [
+    "920-00408-00002",
+    "vocia pots-1-4",
+    "biamp",
+    "vocia",
+    "pots-1-4"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 228,
+  "weightKg": 1.1,
+  "powerDrawW": 30,
+  "voltage": "24V DC",
+  "unitCost": 3850,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia POTS interface; allows real-time live direct paging from a POTS system into the Vocia platform; 4-lines",
+    "notes": "Характеристики с сайта по артикулу 920-00408-00001; [AVAIL] from Biamp documentation; [AVAIL] from Biamp documentation",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1661-12",
+  "label": "Extron DTP3 CrossPoint 642 IPCP A",
+  "shortName": "DTP3 CrossPoint 642 IPCP A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1661-12",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3crosspoint642",
+  "searchTerms": [
+    "60-1661-12",
+    "dtp3 crosspoint 642 ipcp a",
+    "extron",
+    "dtp3",
+    "crosspoint",
+    "642",
+    "ipcp"
+  ],
+  "heightMm": 89,
+  "widthMm": 444,
+  "depthMm": 457,
+  "weightKg": 7.03,
+  "powerDrawW": 287,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 538,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "4K/60 Presentation Matrix Switcher with Reversible DTP3 I/O, Control Processor and Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

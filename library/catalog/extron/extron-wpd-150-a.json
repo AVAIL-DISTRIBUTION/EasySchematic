@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-766-33",
+  "label": "Extron WPD 150 A",
+  "shortName": "WPD 150 A",
+  "manufacturer": "Extron",
+  "modelNumber": "70-766-33",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpdavseries",
+  "searchTerms": [
+    "70-766-33",
+    "wpd 150 a",
+    "extron",
+    "wpd",
+    "150"
+  ],
+  "heightMm": 104,
+  "widthMm": 41,
+  "depthMm": 7,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "HDMI, Stereo Audio, and VGA Pass-Through Wallplate - Decorator-Style; White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

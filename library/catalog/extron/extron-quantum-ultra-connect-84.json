@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1898-11",
+  "label": "Extron Quantum Ultra Connect 84",
+  "shortName": "Quantum Ultra Connect 84",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1898-11",
+  "deviceType": "video-wall-controller",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultraconnect",
+  "searchTerms": [
+    "60-1898-11",
+    "quantum ultra connect 84",
+    "extron",
+    "quantum",
+    "ultra",
+    "connect"
+  ],
+  "heightMm": 133,
+  "widthMm": 445,
+  "depthMm": 483,
+  "weightKg": 12.8,
+  "powerDrawW": 121,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 405,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "3U Full rack",
+    "rackUnits": 3,
+    "description": "8 Input, 4 Output 4K Videowall Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

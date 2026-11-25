@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-298-11",
+  "label": "Extron One Neutrik Speakon Male to Solder Tabs - 4 Pole (MAAP Double, Black)",
+  "shortName": "One Neutrik Speakon Male to Sold…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-298-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aapinsmtost4pc",
+  "searchTerms": [
+    "70-298-11",
+    "one neutrik speakon male to sold…",
+    "extron",
+    "one",
+    "neutrik",
+    "speakon",
+    "male"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP Double, Black",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Double Space MAAP - Black: One Neutrik Speakon Male to Solder Tabs - 4 Pole",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

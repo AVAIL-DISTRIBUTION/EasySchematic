@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-1107-03",
+  "label": "Extron FOX3 24x I/O 88 MM",
+  "shortName": "FOX3 24x I/O 88 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1107-03",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix24x",
+  "searchTerms": [
+    "70-1107-03",
+    "fox3 24x i/o 88 mm",
+    "extron",
+    "fox3",
+    "24x"
+  ],
+  "slotFamily": "extron-fox3-matrix-24",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-fox3-matrix-24x)",
+    "description": "8x8 I/O Board - Multimode",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

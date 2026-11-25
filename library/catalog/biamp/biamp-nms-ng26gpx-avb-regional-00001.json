@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-01976-00001",
+  "label": "Biamp NMS-NG26GPX-AVB (Regional -00001)",
+  "shortName": "NMS-NG26GPX-AVB",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01976-00001",
+  "deviceType": "network-switch",
+  "category": "Networking / Switches",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01976-00001",
+  "searchTerms": [
+    "920-01976-00001",
+    "nms-ng26gpx-avb",
+    "biamp"
+  ],
+  "heightMm": 43.2,
+  "widthMm": 440,
+  "depthMm": 400,
+  "weightKg": 5.45,
+  "powerDrawW": 614,
+  "voltage": "100-240V AC",
+  "poeBudgetW": 480,
+  "unitCost": 4134,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Regional -00001",
+    "description": "AVB-enabled Netgear 26-port 1G switch, 24-ports w/ PoE+, 480W",
+    "notes": "Та же модель под другим артикулом: 920-01976-00002; [AVAIL] regional versions, confirmed by AVAIL; [AVAIL] = Netgear M4250-26G4XF-PoE+ (Biamp); dims/power from library/avail/netgear-av-m4250-26g4xf-poe.json",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

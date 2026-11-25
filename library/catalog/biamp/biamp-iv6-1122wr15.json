@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00885-00003",
+  "label": "Biamp IV6-1122WR15",
+  "shortName": "IV6-1122WR15",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00885-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00885-00003",
+  "searchTerms": [
+    "930-00885-00003",
+    "iv6-1122wr15",
+    "biamp"
+  ],
+  "heightMm": 356,
+  "widthMm": 714,
+  "depthMm": 425,
+  "weightKg": 26.8,
+  "unitCost": 6182,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "12-inch two-way, 120 x 15 (Weather-Resistant, Grey)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

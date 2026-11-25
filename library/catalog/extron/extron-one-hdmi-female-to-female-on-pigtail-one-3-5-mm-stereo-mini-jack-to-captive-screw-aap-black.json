@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1017-02",
+  "label": "Extron One HDMI Female to Female on Pigtail, One 3.5 mm Stereo Mini Jack to Captive Screw (AAP, Black)",
+  "shortName": "One HDMI Female to Female on Pig…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1017-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aapohdmif1f10p",
+  "searchTerms": [
+    "70-1017-02",
+    "one hdmi female to female on pig…",
+    "extron",
+    "one",
+    "hdmi",
+    "female"
+  ],
+  "heightMm": 17,
+  "widthMm": 89,
+  "depthMm": 1,
+  "weightKg": 0.15,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP, Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: One HDMI Female to Female on Pigtail, One 3.5 mm Stereo Mini Jack to Captive Screw",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

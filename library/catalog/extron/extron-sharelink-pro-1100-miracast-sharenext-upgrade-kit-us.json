@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-42-295-01",
+  "label": "Extron ShareLink Pro 1100 Miracast & ShareNext Upgrade Kit US",
+  "shortName": "ShareLink Pro 1100 Miracast & Sh…",
+  "manufacturer": "Extron",
+  "modelNumber": "42-295-01",
+  "deviceType": "wireless-presentation",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sharelinkprowfa100",
+  "searchTerms": [
+    "42-295-01",
+    "sharelink pro 1100 miracast & sh…",
+    "extron",
+    "sharelink",
+    "pro",
+    "1100",
+    "miracast"
+  ],
+  "heightMm": 26,
+  "widthMm": 72,
+  "depthMm": 11,
+  "weightKg": 0.01,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Miracast & ShareNext Adapter and Power Supply - US",
+    "notes": "[AVAIL] USB module (26 x 72 x 11 mm, 10 g) — bus-powered, assumption",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

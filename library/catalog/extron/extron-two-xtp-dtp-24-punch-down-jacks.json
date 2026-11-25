@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-1051-12",
+  "label": "Extron Two XTP DTP 24 Punch Down Jacks",
+  "shortName": "Two XTP DTP 24 Punch Down Jacks",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1051-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2xtpftp24pdj",
+  "searchTerms": [
+    "70-1051-12",
+    "two xtp dtp 24 punch down jacks",
+    "extron",
+    "two",
+    "xtp",
+    "dtp",
+    "punch"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

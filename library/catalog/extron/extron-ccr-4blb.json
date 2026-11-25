@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-70-588-02",
+  "label": "Extron CCR 4BLB",
+  "shortName": "CCR 4BLB",
+  "manufacturer": "Extron",
+  "modelNumber": "70-588-02",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ccr4blb",
+  "searchTerms": [
+    "70-588-02",
+    "ccr 4blb",
+    "extron",
+    "ccr",
+    "4blb"
+  ],
+  "heightMm": 35,
+  "widthMm": 89,
+  "depthMm": 20,
+  "weightKg": 0.1,
+  "powerDrawW": 1.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 4.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Four-Button Contact Closure Remote With Customizable Backlit Buttons - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

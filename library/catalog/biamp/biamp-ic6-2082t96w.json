@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00004-00014",
+  "label": "Biamp IC6-2082T96W",
+  "shortName": "IC6-2082T96W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00004-00014",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00004-00014",
+  "searchTerms": [
+    "930-00004-00014",
+    "ic6-2082t96w",
+    "biamp"
+  ],
+  "heightMm": 287,
+  "widthMm": 571,
+  "depthMm": 270,
+  "weightKg": 15.9,
+  "unitCost": 2449,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output Dual 8-Inch 2-Way 90 X 60 70V/100V Indoor White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

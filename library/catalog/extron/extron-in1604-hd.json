@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1457-02",
+  "label": "Extron IN1604 HD",
+  "shortName": "IN1604 HD",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1457-02",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1604",
+  "searchTerms": [
+    "60-1457-02",
+    "in1604 hd",
+    "extron",
+    "in1604"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1,
+  "powerDrawW": 15.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 50.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input HDCP-Compliant Scaler",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

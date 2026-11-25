@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-01519",
+  "label": "Biamp ACPL",
+  "shortName": "ACPL",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01519",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01519",
+  "searchTerms": [
+    "910-01519",
+    "acpl",
+    "biamp"
+  ],
+  "heightMm": 85,
+  "widthMm": 85,
+  "depthMm": 28,
+  "weightKg": 0.09,
+  "powerDrawW": 0.1,
+  "unitCost": 81,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Audio Control Panel with front panel Mic/Line inputs, volume control and power switch for SDQ5PIR",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

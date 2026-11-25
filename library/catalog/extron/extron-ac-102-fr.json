@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1385-06",
+  "label": "Extron AC 102 FR",
+  "shortName": "AC 102 FR",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1385-06",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubbypowermod",
+  "searchTerms": [
+    "60-1385-06",
+    "ac 102 fr",
+    "extron",
+    "102"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 76,
+  "weightKg": 0.8,
+  "voltage": "125V AC",
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AC Module, France",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

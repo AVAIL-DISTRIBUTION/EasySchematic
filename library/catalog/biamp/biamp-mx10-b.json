@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01227",
+  "label": "Biamp MX10-B",
+  "shortName": "MX10-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01227",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01227",
+  "searchTerms": [
+    "910-01227",
+    "mx10-b",
+    "biamp"
+  ],
+  "heightMm": 275,
+  "widthMm": 321,
+  "depthMm": 419,
+  "weightKg": 10,
+  "unitCost": 946,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Monitor 2-Way 10-Inch Coax Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

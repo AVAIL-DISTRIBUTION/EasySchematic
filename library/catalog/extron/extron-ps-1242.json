@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1246-01",
+  "label": "Extron PS 1242",
+  "shortName": "PS 1242",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1246-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/extpowsupplies",
+  "searchTerms": [
+    "70-1246-01",
+    "ps 1242",
+    "extron",
+    "1242"
+  ],
+  "heightMm": 42,
+  "widthMm": 109,
+  "depthMm": 114,
+  "weightKg": 0.4,
+  "powerDrawW": 56,
+  "powerCapacityW": 56,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 23.1,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "12 V, 4.2 A Power Supply featuring ZipClip, Captive Screw",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

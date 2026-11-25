@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-10906-00001",
+  "label": "Biamp R2-52MAX",
+  "shortName": "R2-52MAX",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10906-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10906-00001",
+  "searchTerms": [
+    "930-10906-00001",
+    "r2-52max",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 781,
+  "weightKg": 55.3,
+  "unitCost": 6998,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way Dual 12-Inch, Dual M200Hp Mf Drivers, High Output 50 X 20",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

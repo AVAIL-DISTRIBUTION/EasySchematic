@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1873-01",
+  "label": "Extron MediaPort 300",
+  "shortName": "MediaPort 300",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1873-01",
+  "deviceType": "capture-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mediaport300",
+  "searchTerms": [
+    "60-1873-01",
+    "mediaport 300",
+    "extron",
+    "mediaport",
+    "300"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.73,
+  "powerDrawW": 18.8,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 54.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4K HDMI and Audio to USB Scaling Bridge",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

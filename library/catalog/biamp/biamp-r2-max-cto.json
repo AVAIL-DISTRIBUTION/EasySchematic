@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-10906",
+  "label": "Biamp R2-MAX-CTO",
+  "shortName": "R2-MAX-CTO",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10906",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-10906",
+    "r2-max-cto",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 781,
+  "weightKg": 55.3,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "R2-Max Configured-To-Order (CTO)",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

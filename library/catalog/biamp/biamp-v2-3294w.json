@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01310-20000",
+  "label": "Biamp V2-3294W",
+  "shortName": "V2-3294W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01310-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01310-20000",
+  "searchTerms": [
+    "920-01310-20000",
+    "v2-3294w",
+    "biamp"
+  ],
+  "heightMm": 744,
+  "widthMm": 441,
+  "depthMm": 390,
+  "weightKg": 25.4,
+  "unitCost": 1518,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way 12-Inch 90 X 40 White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

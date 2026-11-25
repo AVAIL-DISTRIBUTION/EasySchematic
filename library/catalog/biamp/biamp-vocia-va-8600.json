@@ -1,0 +1,40 @@
+{
+  "id": "avail-biamp-930-00267-00002",
+  "label": "Biamp Vocia VA-8600",
+  "shortName": "Vocia VA-8600",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00267-00002",
+  "deviceType": "frame",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00267-00001",
+  "searchTerms": [
+    "930-00267-00002",
+    "vocia va-8600",
+    "biamp",
+    "vocia",
+    "va-8600"
+  ],
+  "heightMm": 133,
+  "widthMm": 483,
+  "depthMm": 438,
+  "weightKg": 22.68,
+  "voltage": "100-240V AC",
+  "unitCost": 6415,
+  "_avail": {
+    "status": "awaiting-ports",
+    "slotFamilies": [
+      "biamp-vocia-va-8600"
+    ],
+    "description": "Vocia Multi-channel amplifier with up to 8-channels of modular amplification (amplifier module cards sold separately)",
+    "notes": "Модульный усилитель: до 8 модулей AM-600; Характеристики с сайта по артикулу 930-00267-00001",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+  },
+  "ports": []
+}

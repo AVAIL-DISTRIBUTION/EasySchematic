@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00500-20000",
+  "label": "Biamp Parlé TCM-XEX White",
+  "shortName": "Parlé TCM-XEX White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00500-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00500-20000",
+  "searchTerms": [
+    "920-00500-20000",
+    "parlé tcm-xex white",
+    "biamp",
+    "parl",
+    "tcm-xex",
+    "white"
+  ],
+  "heightMm": 150,
+  "widthMm": 150,
+  "depthMm": 17,
+  "weightKg": 0.34,
+  "unitCost": 1635,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Expansion AVB Beamtracking ceiling microphone, white surface mount",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

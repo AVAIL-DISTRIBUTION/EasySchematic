@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1963-01",
+  "label": "Extron VCA 100",
+  "shortName": "VCA 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1963-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vca100",
+  "searchTerms": [
+    "60-1963-01",
+    "vca 100",
+    "extron",
+    "vca",
+    "100"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 305,
+  "weightKg": 1.5,
+  "powerDrawW": 11.8,
+  "voltage": "100V AC",
+  "thermalBtuh": 40.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Virtual Control Appliance with 5 Virtual Control Processors",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

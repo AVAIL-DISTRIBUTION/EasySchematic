@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00004-00002",
+  "label": "Biamp IC6-2082/26W",
+  "shortName": "IC6-2082/26W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00004-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00004-00002",
+  "searchTerms": [
+    "930-00004-00002",
+    "ic6-2082/26w",
+    "biamp",
+    "ic6-2082",
+    "26w"
+  ],
+  "heightMm": 287,
+  "widthMm": 571,
+  "depthMm": 270,
+  "weightKg": 14.1,
+  "unitCost": 2332,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output Dual 8-Inch 2-Way 120 X 60 Indoor White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

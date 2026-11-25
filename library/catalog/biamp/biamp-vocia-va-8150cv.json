@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00416-00002",
+  "label": "Biamp Vocia VA-8150CV",
+  "shortName": "Vocia VA-8150CV",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00416-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00416-00001",
+  "searchTerms": [
+    "920-00416-00002",
+    "vocia va-8150cv",
+    "biamp",
+    "vocia",
+    "va-8150cv"
+  ],
+  "heightMm": 88.9,
+  "widthMm": 483,
+  "depthMm": 444,
+  "weightKg": 10.9,
+  "voltage": "100-240V AC",
+  "unitCost": 10261,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia 8-channel, 150W constant voltage amplifier",
+    "notes": "Характеристики с сайта по артикулу 920-00416-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

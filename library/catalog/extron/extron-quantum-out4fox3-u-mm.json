@@ -1,0 +1,31 @@
+{
+  "id": "avail-extron-70-1325-03",
+  "label": "Extron Quantum OUT4FOX3 U MM",
+  "shortName": "Quantum OUT4FOX3 U MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1325-03",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1325-03",
+    "quantum out4fox3 u mm",
+    "extron",
+    "quantum",
+    "out4fox3"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Four-channel Uncompressed MM Fiber Output Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

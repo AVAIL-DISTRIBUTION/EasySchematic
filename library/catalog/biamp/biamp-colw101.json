@@ -1,0 +1,31 @@
+{
+  "id": "avail-biamp-910-01591",
+  "label": "Biamp COLW101",
+  "shortName": "COLW101",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01591",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01591",
+  "searchTerms": [
+    "910-01591",
+    "colw101",
+    "biamp"
+  ],
+  "heightMm": 1181,
+  "widthMm": 99,
+  "depthMm": 84,
+  "unitCost": 596,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10 x 3.3\" sound column loudspeaker with 1\" tweeter 70 - 100 volt / 100 watts or 8 ohms / 140 watts, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

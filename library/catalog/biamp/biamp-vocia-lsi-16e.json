@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-10295",
+  "label": "Biamp Vocia LSI-16e",
+  "shortName": "Vocia LSI-16e",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-10295",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-10295",
+  "searchTerms": [
+    "910-10295",
+    "vocia lsi-16e",
+    "biamp",
+    "vocia",
+    "lsi-16e"
+  ],
+  "heightMm": 44.5,
+  "widthMm": 483,
+  "depthMm": 254,
+  "weightKg": 2.9,
+  "powerDrawW": 15,
+  "voltage": "24V DC / PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 3384,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia Life Safety Interface, Enhanced with 20 discrete inputs",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1525-16",
+  "label": "Extron NAV E 111 DTP3",
+  "shortName": "NAV E 111 DTP3",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1525-16",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave111dtp3",
+  "searchTerms": [
+    "60-1525-16",
+    "nav e 111 dtp3",
+    "extron",
+    "nav",
+    "111",
+    "dtp3"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 267,
+  "weightKg": 1.2,
+  "powerDrawW": 50.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 105.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G DTP3 Encoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

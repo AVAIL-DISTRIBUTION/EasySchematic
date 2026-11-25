@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1794-01",
+  "label": "Extron NBP 100",
+  "shortName": "NBP 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1794-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbp100",
+  "searchTerms": [
+    "60-1794-01",
+    "nbp 100",
+    "extron",
+    "nbp",
+    "100"
+  ],
+  "heightMm": 114,
+  "widthMm": 117,
+  "depthMm": 9,
+  "weightKg": 0.5,
+  "powerDrawW": 2.2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 7.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Network Button Panel with 6 Buttons - US 2-Gang",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

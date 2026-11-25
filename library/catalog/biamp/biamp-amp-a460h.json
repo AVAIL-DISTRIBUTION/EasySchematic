@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00438-00002",
+  "label": "Biamp AMP-A460H",
+  "shortName": "AMP-A460H",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00438-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00438-00001",
+  "searchTerms": [
+    "920-00438-00002",
+    "amp-a460h",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 221,
+  "depthMm": 266,
+  "weightKg": 1.91,
+  "powerDrawW": 96,
+  "voltage": "100-240V AC",
+  "unitCost": 1155,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4 channel, 60W half-rack amplifier with mounting bracket",
+    "notes": "Характеристики с сайта по артикулу 920-00438-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-60-1786-03",
+  "label": "Extron Flex55 USB 311 PowerPlate (White)",
+  "shortName": "Flex55 USB 311 PowerPlate",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1786-03",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbpp300",
+  "searchTerms": [
+    "60-1786-03",
+    "flex55 usb 311 powerplate",
+    "extron",
+    "flex55",
+    "usb",
+    "311",
+    "powerplate"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 7,
+  "weightKg": 0.1,
+  "powerDrawW": 50.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.4,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "One USB-C & One USB-A, White",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

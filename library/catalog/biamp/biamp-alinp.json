@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-01521",
+  "label": "Biamp ALINP",
+  "shortName": "ALINP",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01521",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01521",
+  "searchTerms": [
+    "910-01521",
+    "alinp",
+    "biamp"
+  ],
+  "heightMm": 83,
+  "widthMm": 83,
+  "depthMm": 45,
+  "weightKg": 0.11,
+  "powerDrawW": 0.1,
+  "unitCost": 212,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Active Local Input Panel with MIC and Line input with individual volume control. For use with any device with Line or MIC/LINE input with 24V phantom power.",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

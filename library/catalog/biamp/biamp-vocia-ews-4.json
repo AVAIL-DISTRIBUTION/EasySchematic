@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-10282",
+  "label": "Biamp Vocia EWS-4",
+  "shortName": "Vocia EWS-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-10282",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-10282",
+  "searchTerms": [
+    "910-10282",
+    "vocia ews-4",
+    "biamp",
+    "vocia",
+    "ews-4"
+  ],
+  "heightMm": 135,
+  "widthMm": 302,
+  "depthMm": 48,
+  "weightKg": 1.2,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 2215,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "paging-station",
+    "description": "Vocia Emergency Wall-mounted Paging Station, 4 Buttons with hand-held microphone (EN 54-16 certified)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

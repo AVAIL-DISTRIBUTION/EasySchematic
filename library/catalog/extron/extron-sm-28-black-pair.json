@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-60-1309-02",
+  "label": "Extron SM 28 (Black, Pair)",
+  "shortName": "SM 28",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1309-02",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sm28",
+  "searchTerms": [
+    "60-1309-02",
+    "sm 28",
+    "extron"
+  ],
+  "heightMm": 419,
+  "widthMm": 292,
+  "depthMm": 185,
+  "weightKg": 4.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SpeedMount Two-Way Surface Mount Speakers with 8\" Woofer, Pair - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

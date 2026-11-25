@@ -1,0 +1,45 @@
+{
+  "id": "avail-extron-60-1716-06",
+  "label": "Extron FOX3 Matrix 24x no FPC 24io MM",
+  "shortName": "FOX3 Matrix 24x no FPC 24io MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1716-06",
+  "deviceType": "frame",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix24x",
+  "searchTerms": [
+    "60-1716-06",
+    "fox3 matrix 24x no fpc 24io mm",
+    "extron",
+    "fox3",
+    "matrix",
+    "24x",
+    "fpc"
+  ],
+  "heightMm": 89,
+  "widthMm": 432,
+  "depthMm": 330,
+  "weightKg": 7.7,
+  "powerDrawW": 86,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 294,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "slotFamilies": [
+      "extron-fox3-matrix-24"
+    ],
+    "description": "Configured Fiber Optic Matrix Switcher - 24x24 Multimode",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

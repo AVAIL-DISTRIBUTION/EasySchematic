@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00891-00001",
+  "label": "Biamp R.5HP",
+  "shortName": "R.5HP",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00891-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00891-00001",
+  "searchTerms": [
+    "930-00891-00001",
+    "r.5hp",
+    "biamp",
+    "5hp"
+  ],
+  "heightMm": 406,
+  "widthMm": 406,
+  "depthMm": 411,
+  "weightKg": 19.2,
+  "unitCost": 2310,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way 12-Inch Horn Loaded 60 X 40 Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

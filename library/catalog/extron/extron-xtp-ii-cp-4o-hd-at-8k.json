@@ -1,0 +1,31 @@
+{
+  "id": "avail-extron-70-1302-01",
+  "label": "Extron XTP II CP 4o HD AT 8K",
+  "shortName": "XTP II CP 4o HD AT 8K",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1302-01",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicphd8kioboards",
+  "searchTerms": [
+    "70-1302-01",
+    "xtp ii cp 4o hd at 8k",
+    "extron",
+    "xtp"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "Four Output Board, 8K HDMI with Dante Out",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

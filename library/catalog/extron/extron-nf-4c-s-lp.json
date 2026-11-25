@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-70-1360-23",
+  "label": "Extron NF 4C S LP",
+  "shortName": "NF 4C S LP",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1360-23",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nf4clp",
+  "searchTerms": [
+    "70-1360-23",
+    "nf 4c s lp",
+    "extron"
+  ],
+  "heightMm": 120,
+  "widthMm": 270,
+  "depthMm": 270,
+  "weightKg": 2.1,
+  "powerDrawW": 40.3,
+  "voltage": "PoE++ 802.3bt",
+  "poeDrawW": 60,
+  "thermalBtuh": 137.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Two Passive NF 4C S LP",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

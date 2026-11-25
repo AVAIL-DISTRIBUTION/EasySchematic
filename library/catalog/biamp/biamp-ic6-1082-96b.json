@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00003-00003",
+  "label": "Biamp IC6-1082/96B",
+  "shortName": "IC6-1082/96B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00003-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00003-00003",
+  "searchTerms": [
+    "930-00003-00003",
+    "ic6-1082/96b",
+    "biamp",
+    "ic6-1082",
+    "96b"
+  ],
+  "heightMm": 476,
+  "widthMm": 264,
+  "depthMm": 270,
+  "weightKg": 11.3,
+  "unitCost": 1808,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output 8-Inch 2-Way 90 X 60 Indoor Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

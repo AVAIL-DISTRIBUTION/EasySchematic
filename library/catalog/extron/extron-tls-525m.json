@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1561-113",
+  "label": "Extron TLS 525M",
+  "shortName": "TLS 525M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1561-113",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tls525m",
+  "searchTerms": [
+    "60-1561-113",
+    "tls 525m",
+    "extron",
+    "tls",
+    "525m"
+  ],
+  "heightMm": 102,
+  "widthMm": 154,
+  "depthMm": 31,
+  "weightKg": 0.36,
+  "powerDrawW": 6.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 17.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "5\" Wall Mount TouchLink Scheduling Panel - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

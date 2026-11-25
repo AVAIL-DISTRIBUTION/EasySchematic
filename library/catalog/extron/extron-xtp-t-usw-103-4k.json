@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1717-12",
+  "label": "Extron XTP T USW 103 4K",
+  "shortName": "XTP T USW 103 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1717-12",
+  "deviceType": "switcher",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtptusw1034k",
+  "searchTerms": [
+    "60-1717-12",
+    "xtp t usw 103 4k",
+    "extron",
+    "xtp",
+    "usw",
+    "103"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 215,
+  "weightKg": 1.2,
+  "powerDrawW": 16.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 55.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input Multi-Format Switcher with HDMI Output and Integrated XTP Transmitter - 26W Remote Power Capable",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

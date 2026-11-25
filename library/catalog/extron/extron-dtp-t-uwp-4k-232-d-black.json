@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1755-12",
+  "label": "Extron DTP T UWP 4K 232 D (Black)",
+  "shortName": "DTP T UWP 4K 232 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1755-12",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptuwp4k232d",
+  "searchTerms": [
+    "60-1755-12",
+    "dtp t uwp 4k 232 d",
+    "extron",
+    "dtp",
+    "uwp",
+    "232"
+  ],
+  "heightMm": 69,
+  "widthMm": 89,
+  "depthMm": 48,
+  "weightKg": 0.2,
+  "powerDrawW": 3.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input DTP Transmitter for HDMI and VGA with Audio Embedding - Decorator-Style Wallplate, Black - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00087-00002",
+  "label": "Biamp TesiraCONNECT TC-5D",
+  "shortName": "TesiraCONNECT TC-5D",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00087-00002",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00087-00002",
+  "searchTerms": [
+    "920-00087-00002",
+    "tesiraconnect tc-5d",
+    "biamp",
+    "tesiraconnect",
+    "tc-5d"
+  ],
+  "heightMm": 28,
+  "widthMm": 147,
+  "depthMm": 147,
+  "weightKg": 0.7,
+  "powerDrawW": 132,
+  "voltage": "100-240V AC",
+  "unitCost": 2101,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "5-port expansion device with AVB to Dante Bridging",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

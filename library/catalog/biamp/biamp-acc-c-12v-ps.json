@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-910-01929",
+  "label": "Biamp ACC-C-12V-PS",
+  "shortName": "ACC-C-12V-PS",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01929",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01929",
+  "searchTerms": [
+    "910-01929",
+    "acc-c-12v-ps",
+    "biamp"
+  ],
+  "heightMm": 20,
+  "widthMm": 40,
+  "depthMm": 180,
+  "powerDrawW": 60,
+  "powerCapacityW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 47,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "12V power supply",
+    "notes": "[AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp); [AVAIL] default PSU power 60 W (AVAIL decision; not published by Biamp)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

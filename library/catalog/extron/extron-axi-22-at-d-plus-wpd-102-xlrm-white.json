@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1942-23",
+  "label": "Extron AXI 22 AT D Plus & WPD 102 XLRM (White)",
+  "shortName": "AXI 22 AT D Plus & WPD 102 XLRM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1942-23",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi22atdplus",
+  "searchTerms": [
+    "60-1942-23",
+    "axi 22 at d plus & wpd 102 xlrm",
+    "extron",
+    "axi",
+    "plus",
+    "wpd",
+    "102"
+  ],
+  "heightMm": 69,
+  "widthMm": 43,
+  "depthMm": 56,
+  "weightKg": 0.16,
+  "powerDrawW": 4,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 7.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "AXI 22 AT D Plus & WPD 102 XLRM Kit - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

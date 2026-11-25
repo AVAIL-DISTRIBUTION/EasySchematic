@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-448-12",
+  "label": "Extron One XLR 3-pin Male to Solder Cups - Neutrik (MAAP Double, Black)",
+  "shortName": "One XLR 3-pin Male to Solder Cup…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-448-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/maap2xlr3pmscn",
+  "searchTerms": [
+    "70-448-12",
+    "one xlr 3-pin male to solder cup…",
+    "extron",
+    "one",
+    "xlr",
+    "3-pin",
+    "male"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP Double, Black",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Double Space MAAP - Black: One XLR 3-pin Male to Solder Cups - Neutrik",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

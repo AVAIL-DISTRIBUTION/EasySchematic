@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1194-03",
+  "label": "Extron MLC Plus 84 D",
+  "shortName": "MLC Plus 84 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1194-03",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc84plus",
+  "searchTerms": [
+    "60-1194-03",
+    "mlc plus 84 d",
+    "extron",
+    "mlc",
+    "plus"
+  ],
+  "heightMm": 70,
+  "widthMm": 90,
+  "depthMm": 46,
+  "weightKg": 0.2,
+  "powerDrawW": 3.1,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 10.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Plus Controller - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

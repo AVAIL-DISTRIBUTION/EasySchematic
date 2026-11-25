@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1490-22",
+  "label": "Extron eLink 100 T AUS",
+  "shortName": "eLink 100 T AUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1490-22",
+  "deviceType": "hdmi-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/elink100",
+  "searchTerms": [
+    "60-1490-22",
+    "elink 100 t aus",
+    "extron",
+    "elink",
+    "100",
+    "aus"
+  ],
+  "heightMm": 36,
+  "widthMm": 80,
+  "depthMm": 102,
+  "weightKg": 0.1,
+  "powerDrawW": 7.5,
+  "voltage": "5V DC",
+  "thermalBtuh": 24.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Wireless Transmitter for HDMI (AUS)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

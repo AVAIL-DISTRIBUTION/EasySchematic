@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-02260-10002",
+  "label": "Biamp Echo Plus 8EUB",
+  "shortName": "Echo Plus 8EUB",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02260-10002",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-02260-10002",
+  "searchTerms": [
+    "920-02260-10002",
+    "echo plus 8eub",
+    "biamp",
+    "echo",
+    "plus",
+    "8eub"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 17,
+  "weightKg": 0.09,
+  "powerDrawW": 5,
+  "voltage": "12V DC",
+  "unitCost": 636,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8-button control pad with Ethernet, 1 bidirectional RS-232 port, 1 unidirectional RS-232 port, 3 GPIO; EU, black",
+    "notes": "[AVAIL] from Biamp documentation (as Impera Echo; Echo Plus figure not published separately); [AVAIL] estimated as Impera Echo EU",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

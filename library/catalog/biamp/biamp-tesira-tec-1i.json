@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00318-00001",
+  "label": "Biamp Tesira TEC-1i",
+  "shortName": "Tesira TEC-1i",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00318-00001",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00318-00001",
+  "searchTerms": [
+    "920-00318-00001",
+    "tesira tec-1i",
+    "biamp",
+    "tesira",
+    "tec-1i"
+  ],
+  "heightMm": 158,
+  "widthMm": 148,
+  "depthMm": 12.7,
+  "weightKg": 0.2,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 4,
+  "unitCost": 818,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Tesira PoE Ethernet Control in-wall mount",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-2047-01",
+  "label": "Extron NetPA 204 POE",
+  "shortName": "NetPA 204 POE",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2047-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpa204poe",
+  "searchTerms": [
+    "60-2047-01",
+    "netpa 204 poe",
+    "extron",
+    "netpa",
+    "204",
+    "poe"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 76,
+  "weightKg": 0.4,
+  "powerDrawW": 38.7,
+  "voltage": "PoE++ 802.3bt",
+  "poeDrawW": 60,
+  "thermalBtuh": 132,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Ch PoE Dante Amplifier - Up to 20 Watts/Ch",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

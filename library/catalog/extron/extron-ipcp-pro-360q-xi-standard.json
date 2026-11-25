@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-60-1916-01",
+  "label": "Extron IPCP Pro 360Q xi (Standard)",
+  "shortName": "IPCP Pro 360Q xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1916-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro360qxi",
+  "searchTerms": [
+    "60-1916-01",
+    "ipcp pro 360q xi",
+    "extron",
+    "ipcp",
+    "pro",
+    "360q"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.3,
+  "powerDrawW": 90.8,
+  "voltage": "100-240V AC",
+  "poeBudgetW": 30,
+  "thermalBtuh": 289.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Standard",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "IPCP Pro xi Quad Core Control Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1525-12",
+  "label": "Extron NAV E 101",
+  "shortName": "NAV E 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1525-12",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave101",
+  "searchTerms": [
+    "60-1525-12",
+    "nav e 101",
+    "extron",
+    "nav",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 18.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 63.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G HDMI Encoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

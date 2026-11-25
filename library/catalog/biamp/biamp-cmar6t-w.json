@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01562",
+  "label": "Biamp CMAR6T-W",
+  "shortName": "CMAR6T-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01562",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01562",
+  "searchTerms": [
+    "910-01562",
+    "cmar6t-w",
+    "biamp"
+  ],
+  "heightMm": 190,
+  "widthMm": 190,
+  "depthMm": 61,
+  "weightKg": 1.47,
+  "unitCost": 170,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" two-way built-in marine speaker 8 ohms / 60 watts or 100 volt / 20 watts, T20iP 100 volt transformer included, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

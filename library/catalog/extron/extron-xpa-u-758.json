@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1863-01",
+  "label": "Extron XPA U 758",
+  "shortName": "XPA U 758",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1863-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau758",
+  "searchTerms": [
+    "60-1863-01",
+    "xpa u 758",
+    "extron",
+    "xpa",
+    "758"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 9.6,
+  "voltage": "100V AC",
+  "thermalBtuh": 33,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Eight Channel Amp, 75 watts at 8 ohms",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

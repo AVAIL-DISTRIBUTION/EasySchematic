@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1959-11",
+  "label": "Extron FOX3 T 302 MM",
+  "shortName": "FOX3 T 302 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1959-11",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t302",
+  "searchTerms": [
+    "60-1959-11",
+    "fox3 t 302 mm",
+    "extron",
+    "fox3",
+    "302"
+  ],
+  "heightMm": 44,
+  "widthMm": 220,
+  "depthMm": 240,
+  "voltage": "100-240V AC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Lossless 4K/60 Transmitter - Multimode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

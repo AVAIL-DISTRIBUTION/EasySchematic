@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-763-01",
+  "label": "Extron VNM 12 PS",
+  "shortName": "VNM 12 PS",
+  "manufacturer": "Extron",
+  "modelNumber": "70-763-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vnm12ps",
+  "searchTerms": [
+    "70-763-01",
+    "vnm 12 ps",
+    "extron",
+    "vnm"
+  ],
+  "heightMm": 44,
+  "widthMm": 442,
+  "depthMm": 330,
+  "weightKg": 3.9,
+  "powerDrawW": 875,
+  "powerCapacityW": 875,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 2985.5,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "VN-Matrix 12 Unit Power Supply",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

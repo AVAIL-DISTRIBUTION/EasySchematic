@@ -1,0 +1,29 @@
+{
+  "id": "avail-biamp-920-00635-10000",
+  "label": "Biamp MASK2-BL",
+  "shortName": "MASK2-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00635-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00635-10000",
+  "searchTerms": [
+    "920-00635-10000",
+    "mask2-bl",
+    "biamp"
+  ],
+  "unitCost": 81,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "2.5\" compact design surface mount loudspeaker, 8 ohms / 50 watts, wall bracket included, black (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

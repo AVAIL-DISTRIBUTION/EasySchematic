@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-42-351-02",
+  "label": "Extron ShareLink Pro 2500 Miracast & ShareNext Kit EU",
+  "shortName": "ShareLink Pro 2500 Miracast & Sh…",
+  "manufacturer": "Extron",
+  "modelNumber": "42-351-02",
+  "deviceType": "wireless-presentation",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sharelinkpro2500",
+  "searchTerms": [
+    "42-351-02",
+    "sharelink pro 2500 miracast & sh…",
+    "extron",
+    "sharelink",
+    "pro",
+    "2500",
+    "miracast"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 203,
+  "weightKg": 0.75,
+  "powerDrawW": 24.4,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 61.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "ShareLink Pro 2500 w/Miracast, ShareNext, & PS - EU",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

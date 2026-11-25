@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00910-00001",
+  "label": "Biamp IP8-1122/26B",
+  "shortName": "IP8-1122/26B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00910-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00910-00001",
+  "searchTerms": [
+    "930-00910-00001",
+    "ip8-1122/26b",
+    "biamp",
+    "ip8-1122",
+    "26b"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 24.9,
+  "unitCost": 3412,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 12-Inch 2-Way 120 X 60 Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

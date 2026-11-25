@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-00131-00002",
+  "label": "Biamp Parlé ABC 2500",
+  "shortName": "Parlé ABC 2500",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00131-00002",
+  "deviceType": "audio-bar",
+  "category": "UC / Speakerphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00131-00002",
+  "searchTerms": [
+    "920-00131-00002",
+    "parlé abc 2500",
+    "biamp",
+    "parl",
+    "abc",
+    "2500"
+  ],
+  "heightMm": 100,
+  "widthMm": 940,
+  "depthMm": 64,
+  "weightKg": 4.4,
+  "powerDrawW": 60,
+  "voltage": "12V DC / USB-C PD",
+  "unitCost": 1500,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Conferencing audio bar",
+    "notes": "[AVAIL] from Biamp documentation: PS-12-60 or 60 W USB-C PD",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

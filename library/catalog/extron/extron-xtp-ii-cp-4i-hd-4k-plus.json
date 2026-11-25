@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-1112-01",
+  "label": "Extron XTP II CP 4i HD 4K PLUS",
+  "shortName": "XTP II CP 4i HD 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1112-01",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicphd4kplusio",
+  "searchTerms": [
+    "70-1112-01",
+    "xtp ii cp 4i hd 4k plus",
+    "extron",
+    "xtp",
+    "plus"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "Four Input Board, 4K/60 HDMI with Stereo Audio",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

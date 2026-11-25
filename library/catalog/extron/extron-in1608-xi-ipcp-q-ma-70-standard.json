@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1238-96",
+  "label": "Extron IN1608 xi IPCP Q MA 70 (Standard)",
+  "shortName": "IN1608 xi IPCP Q MA 70",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1238-96",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1608xi",
+  "searchTerms": [
+    "60-1238-96",
+    "in1608 xi ipcp q ma 70",
+    "extron",
+    "in1608",
+    "ipcp"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 241,
+  "weightKg": 2.3,
+  "powerDrawW": 42,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 123,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Standard",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "100 Watt 70 V Mono Amp, AV LAN",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

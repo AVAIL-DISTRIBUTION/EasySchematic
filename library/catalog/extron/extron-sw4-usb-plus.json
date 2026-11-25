@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-954-02",
+  "label": "Extron SW4 USB Plus",
+  "shortName": "SW4 USB Plus",
+  "manufacturer": "Extron",
+  "modelNumber": "60-954-02",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/swusbseries",
+  "searchTerms": [
+    "60-954-02",
+    "sw4 usb plus",
+    "extron",
+    "sw4",
+    "usb",
+    "plus"
+  ],
+  "heightMm": 41,
+  "widthMm": 218,
+  "depthMm": 76,
+  "weightKg": 0.9,
+  "powerDrawW": 11,
+  "voltage": "12V DC",
+  "thermalBtuh": 38,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input USB Switcher with Emulation",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

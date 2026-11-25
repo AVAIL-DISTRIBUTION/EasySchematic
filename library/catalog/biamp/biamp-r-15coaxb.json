@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-01234-10000",
+  "label": "Biamp R.15COAXB",
+  "shortName": "R.15COAXB",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01234-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01234-10000",
+  "searchTerms": [
+    "920-01234-10000",
+    "r.15coaxb",
+    "biamp",
+    "15coaxb"
+  ],
+  "heightMm": 229,
+  "widthMm": 258,
+  "depthMm": 259,
+  "weightKg": 7.7,
+  "unitCost": 560,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 6.5-Inch Coax Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

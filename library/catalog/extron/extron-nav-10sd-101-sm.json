@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1572-20",
+  "label": "Extron NAV 10SD 101 (SM)",
+  "shortName": "NAV 10SD 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1572-20",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nav10sd101",
+  "searchTerms": [
+    "60-1572-20",
+    "nav 10sd 101",
+    "extron",
+    "nav",
+    "10sd",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 21,
+  "voltage": "12V DC",
+  "thermalBtuh": 71.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "SM",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "10G HDMI Scaling Decoder - Singlemode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

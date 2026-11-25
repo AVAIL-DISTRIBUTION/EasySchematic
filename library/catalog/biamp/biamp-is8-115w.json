@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00903-00002",
+  "label": "Biamp IS8-115W",
+  "shortName": "IS8-115W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00903-00002",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00903-00002",
+  "searchTerms": [
+    "930-00903-00002",
+    "is8-115w",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 419,
+  "depthMm": 593,
+  "weightKg": 32.7,
+  "unitCost": 2972,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 15-Inch Subwoofer White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1957-22",
+  "label": "Extron FOX3 R 101 SM",
+  "shortName": "FOX3 R 101 SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1957-22",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3r101",
+  "searchTerms": [
+    "60-1957-22",
+    "fox3 r 101 sm",
+    "extron",
+    "fox3",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 17.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 58.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Receiver for HDMI",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00890-00001",
+  "label": "Biamp R.5-66MAX",
+  "shortName": "R.5-66MAX",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00890-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00890-00001",
+  "searchTerms": [
+    "930-00890-00001",
+    "r.5-66max",
+    "biamp",
+    "5-66max"
+  ],
+  "heightMm": 406,
+  "widthMm": 406,
+  "depthMm": 411,
+  "weightKg": 21.3,
+  "unitCost": 3082,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 12-Inch High Output 60 X 60 Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

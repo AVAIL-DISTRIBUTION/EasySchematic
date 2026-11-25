@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1586-52",
+  "label": "Extron DTP2 T 202 FB",
+  "shortName": "DTP2 T 202 FB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1586-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp2t202fb",
+  "searchTerms": [
+    "60-1586-52",
+    "dtp2 t 202 fb",
+    "extron",
+    "dtp2",
+    "202"
+  ],
+  "heightMm": 59,
+  "widthMm": 72,
+  "depthMm": 132,
+  "weightKg": 0.51,
+  "powerDrawW": 8.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 29.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input 4K/60 DTP2 Transmitter for Floor Boxes",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

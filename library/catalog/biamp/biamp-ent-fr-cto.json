@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-01389",
+  "label": "Biamp ENT-FR-CTO",
+  "shortName": "ENT-FR-CTO",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-01389",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-01389",
+    "ent-fr-cto",
+    "biamp"
+  ],
+  "heightMm": 1129,
+  "widthMm": 140,
+  "depthMm": 187,
+  "weightKg": 18.1,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "ENTASYS Full-Range 3-Way Column Loudspeaker, Configured-To-Order",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

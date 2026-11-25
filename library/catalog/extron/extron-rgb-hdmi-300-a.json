@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1074-01",
+  "label": "Extron RGB-HDMI 300 A",
+  "shortName": "RGB-HDMI 300 A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1074-01",
+  "deviceType": "scaler",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/rgbhdmi300a",
+  "searchTerms": [
+    "60-1074-01",
+    "rgb-hdmi 300 a",
+    "extron",
+    "rgb-hdmi",
+    "300"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 9.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 30.8,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "RGB and Stereo Audio to HDMI Scaler",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

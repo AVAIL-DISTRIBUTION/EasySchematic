@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1669-101",
+  "label": "Extron TLSI 201",
+  "shortName": "TLSI 201",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1669-101",
+  "deviceType": "touch-controller",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlsi201",
+  "searchTerms": [
+    "60-1669-101",
+    "tlsi 201",
+    "extron",
+    "tlsi",
+    "201"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 203,
+  "weightKg": 0.77,
+  "powerDrawW": 10.5,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 26.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Interactive Wayfinding Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1690-01",
+  "label": "Extron AXI 016",
+  "shortName": "AXI 016",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1690-01",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi016",
+  "searchTerms": [
+    "60-1690-01",
+    "axi 016",
+    "extron",
+    "axi",
+    "016"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 153,
+  "weightKg": 0.5,
+  "powerDrawW": 7.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 24.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "16 Output Audio Expansion Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

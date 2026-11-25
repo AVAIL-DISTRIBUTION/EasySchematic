@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00511-20000",
+  "label": "Biamp Parlé TTM-XEX White",
+  "shortName": "Parlé TTM-XEX White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00511-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00511-20000",
+  "searchTerms": [
+    "920-00511-20000",
+    "parlé ttm-xex white",
+    "biamp",
+    "parl",
+    "ttm-xex",
+    "white"
+  ],
+  "heightMm": 110,
+  "widthMm": 110,
+  "depthMm": 18,
+  "weightKg": 0.23,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Expansion AVB Beamtracking tabletop microphone, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00840",
+  "label": "Biamp DS1390",
+  "shortName": "DS1390",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00840",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00840",
+  "searchTerms": [
+    "910-00840",
+    "ds1390",
+    "biamp"
+  ],
+  "heightMm": 46,
+  "widthMm": 133,
+  "depthMm": 133,
+  "weightKg": 0.91,
+  "unitCost": 123,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "70V low-profile loudspeaker with clip",
+    "notes": "Эмиттер звуковой маскировки; [AVAIL] estimated: round, depth = diameter",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

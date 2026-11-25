@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-1128-02",
+  "label": "Extron AVEdge 100",
+  "shortName": "AVEdge 100",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1128-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/avedge",
+  "searchTerms": [
+    "70-1128-02",
+    "avedge 100",
+    "extron",
+    "avedge",
+    "100"
+  ],
+  "heightMm": 144,
+  "widthMm": 217,
+  "depthMm": 83,
+  "weightKg": 1.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "AVEdge No AC, Black",
+    "notes": "[AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

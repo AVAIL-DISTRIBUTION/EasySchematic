@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-10863-10000",
+  "label": "Biamp BMA 360D-I Black",
+  "shortName": "BMA 360D-I Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10863-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10863-10000",
+  "searchTerms": [
+    "920-10863-10000",
+    "bma 360d-i black",
+    "biamp",
+    "bma",
+    "360d-i",
+    "black"
+  ],
+  "voltage": "PoE",
+  "unitCost": 5500,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "600 mm Frequency Invariant Beamforming Ceiling Tile Microphone Array Black with Dante and 4 x 15 Watt PoE amplifier",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1889-20",
+  "label": "Extron AC 104 US, Conduit",
+  "shortName": "AC 104 US, Conduit",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1889-20",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubbypowermod",
+  "searchTerms": [
+    "60-1889-20",
+    "ac 104 us, conduit",
+    "extron",
+    "104",
+    "conduit"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 76,
+  "weightKg": 0.7,
+  "voltage": "125V AC",
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "2 US AC Outlets, 12 A Circuit Breaker, and 6’ (1.83 m) Conduit",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

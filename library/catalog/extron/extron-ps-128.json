@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1580-02",
+  "label": "Extron PS 128",
+  "shortName": "PS 128",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1580-02",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ps128",
+  "searchTerms": [
+    "60-1580-02",
+    "ps 128",
+    "extron",
+    "128"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 216,
+  "weightKg": 1.4,
+  "powerDrawW": 96,
+  "powerCapacityW": 96,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 44.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "12 VDC, 96 W Rack Mountable Power Supply",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

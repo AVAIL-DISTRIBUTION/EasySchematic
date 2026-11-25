@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00637-00001",
+  "label": "Biamp MASK4C-BL",
+  "shortName": "MASK4C-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00637-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00637-00001",
+  "searchTerms": [
+    "930-00637-00001",
+    "mask4c-bl",
+    "biamp"
+  ],
+  "heightMm": 238,
+  "widthMm": 144,
+  "depthMm": 144,
+  "weightKg": 2.3,
+  "unitCost": 130,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4.25\" small design two-way surface mount loudspeaker, 8 ohms / 70 watts, Black, CLICKMOUNT bracket and safety cable included (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

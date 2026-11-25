@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1955-01",
+  "label": "Extron XPA U 3502",
+  "shortName": "XPA U 3502",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1955-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau3502",
+  "searchTerms": [
+    "60-1955-01",
+    "xpa u 3502",
+    "extron",
+    "xpa",
+    "3502"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 106.9,
+  "voltage": "100V AC",
+  "thermalBtuh": 66,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Amp, 350 watts at 8 or 4 ohms",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

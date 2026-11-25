@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1696-12",
+  "label": "Extron DTP3 CrossPoint 884 IPCP A",
+  "shortName": "DTP3 CrossPoint 884 IPCP A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1696-12",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3crosspoint884",
+  "searchTerms": [
+    "60-1696-12",
+    "dtp3 crosspoint 884 ipcp a",
+    "extron",
+    "dtp3",
+    "crosspoint",
+    "884",
+    "ipcp"
+  ],
+  "heightMm": 133,
+  "widthMm": 444,
+  "depthMm": 457,
+  "weightKg": 11.68,
+  "powerDrawW": 373.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 646.6,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "3U Full rack",
+    "rackUnits": 3,
+    "description": "4K/60 Presentation Matrix Switcher with Reversible DTP3 I/O, Control Processor and Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

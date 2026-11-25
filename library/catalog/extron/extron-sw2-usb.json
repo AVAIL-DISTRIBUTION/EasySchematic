@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-952-02",
+  "label": "Extron SW2 USB",
+  "shortName": "SW2 USB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-952-02",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/swusbseries",
+  "searchTerms": [
+    "60-952-02",
+    "sw2 usb",
+    "extron",
+    "sw2",
+    "usb"
+  ],
+  "heightMm": 41,
+  "widthMm": 218,
+  "depthMm": 76,
+  "weightKg": 0.9,
+  "powerDrawW": 11,
+  "voltage": "12V DC",
+  "thermalBtuh": 38,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Input USB Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

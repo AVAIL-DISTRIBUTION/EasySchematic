@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1354-23",
+  "label": "Extron MLC Plus 84 MK",
+  "shortName": "MLC Plus 84 MK",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1354-23",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc84plusmk",
+  "searchTerms": [
+    "60-1354-23",
+    "mlc plus 84 mk",
+    "extron",
+    "mlc",
+    "plus"
+  ],
+  "heightMm": 48,
+  "widthMm": 111,
+  "depthMm": 39,
+  "weightKg": 0.2,
+  "powerDrawW": 2.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 8.9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Plus Controller - MK Wallplate",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

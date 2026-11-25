@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-2042-01",
+  "label": "Extron UCS 601",
+  "shortName": "UCS 601",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2042-01",
+  "deviceType": "dock",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs601",
+  "searchTerms": [
+    "60-2042-01",
+    "ucs 601",
+    "extron",
+    "ucs",
+    "601"
+  ],
+  "heightMm": 29,
+  "widthMm": 109,
+  "depthMm": 152,
+  "powerDrawW": 71.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 43.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Pro 4K USB-C 10G Dock",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

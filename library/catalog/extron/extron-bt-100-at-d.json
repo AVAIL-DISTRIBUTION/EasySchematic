@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1691-01",
+  "label": "Extron BT 100 AT D",
+  "shortName": "BT 100 AT D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1691-01",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/bt100atd",
+  "searchTerms": [
+    "60-1691-01",
+    "bt 100 at d",
+    "extron",
+    "100"
+  ],
+  "heightMm": 67,
+  "widthMm": 33,
+  "depthMm": 7,
+  "weightKg": 0.09,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 13.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Bluetooth Dante Audio Interface - Decorator Style White and Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-10263",
+  "label": "Biamp Vocia ELD-1",
+  "shortName": "Vocia ELD-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-10263",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-10263",
+  "searchTerms": [
+    "910-10263",
+    "vocia eld-1",
+    "biamp",
+    "vocia",
+    "eld-1"
+  ],
+  "heightMm": 27,
+  "widthMm": 153,
+  "depthMm": 78,
+  "weightKg": 0.3,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.84,
+  "unitCost": 583,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia End of Line Device, surface-mountable, networked speaker line supervision device",
+    "notes": "[AVAIL] from Biamp documentation; [AVAIL] from Biamp documentation",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

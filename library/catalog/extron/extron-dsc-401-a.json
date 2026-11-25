@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1878-02",
+  "label": "Extron DSC 401 A",
+  "shortName": "DSC 401 A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1878-02",
+  "deviceType": "scaler",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dsc401",
+  "searchTerms": [
+    "60-1878-02",
+    "dsc 401 a",
+    "extron",
+    "dsc",
+    "401"
+  ],
+  "heightMm": 25,
+  "widthMm": 108,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 8.1,
+  "voltage": "12V DC / PoE",
+  "thermalBtuh": 26.7,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "4K/60 HDMI to HDMI Scaler with Audio Embedding and De-Embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

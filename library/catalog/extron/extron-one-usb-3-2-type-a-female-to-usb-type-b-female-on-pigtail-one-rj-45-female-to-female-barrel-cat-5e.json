@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1237-02",
+  "label": "Extron One USB 3.2 Type-A Female to USB Type-B Female on Pigtail, One RJ-45 Female to Female Barrel – CAT 5e",
+  "shortName": "One USB 3.2 Type-A Female to USB…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1237-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usb3afbf10rj45ffb",
+  "searchTerms": [
+    "70-1237-02",
+    "one usb 3.2 type-a female to usb…",
+    "extron",
+    "one",
+    "usb",
+    "type-a",
+    "female"
+  ],
+  "heightMm": 18,
+  "widthMm": 89,
+  "depthMm": 3,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: One USB 3.2 Type-A Female to One USB B Female on Pigtail, One RJ-45 Female to Female Barrel - CAT 5e",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

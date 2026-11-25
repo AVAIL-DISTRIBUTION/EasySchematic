@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1669-01",
+  "label": "Extron TLI Pro 201",
+  "shortName": "TLI Pro 201",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1669-01",
+  "deviceType": "touch-controller",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlipro201",
+  "searchTerms": [
+    "60-1669-01",
+    "tli pro 201",
+    "extron",
+    "tli",
+    "pro",
+    "201"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 203,
+  "weightKg": 0.77,
+  "powerDrawW": 17.3,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 49.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4K TouchLink® Interface",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-42-338-03",
+  "label": "Extron CA 163 PT (White, 8 Ohm, Single)",
+  "shortName": "CA 163 PT",
+  "manufacturer": "Extron",
+  "modelNumber": "42-338-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca163",
+  "searchTerms": [
+    "42-338-03",
+    "ca 163 pt",
+    "extron",
+    "163"
+  ],
+  "heightMm": 1318,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 12.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White, 8 Ohm, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Pan and Tilt Mount, Single, 8 Ohm, White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

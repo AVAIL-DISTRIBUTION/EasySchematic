@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1947-01",
+  "label": "Extron AXI 22 AT D Plus",
+  "shortName": "AXI 22 AT D Plus",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1947-01",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi22atdplus",
+  "searchTerms": [
+    "60-1947-01",
+    "axi 22 at d plus",
+    "extron",
+    "axi",
+    "plus"
+  ],
+  "heightMm": 69,
+  "widthMm": 43,
+  "depthMm": 56,
+  "weightKg": 0.16,
+  "powerDrawW": 4,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 7.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "2x2 Dante Audio Interface, Decorator Style",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

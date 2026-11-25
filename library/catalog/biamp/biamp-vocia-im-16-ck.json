@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-00297",
+  "label": "Biamp Vocia IM-16 CK",
+  "shortName": "Vocia IM-16 CK",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00297",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.biamp.com",
+  "searchTerms": [
+    "910-00297",
+    "vocia im-16 ck",
+    "biamp",
+    "vocia",
+    "im-16"
+  ],
+  "unitCost": 899,
+  "slotFamily": "biamp-vocia-lsi-16",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (biamp-vocia-lsi-16)",
+    "description": "Vocia IM-16 Interface Module Card Kit for LSI-16",
+    "notes": "Нет данных в каталоге products.biamp.com",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-vocia-lsi-16\""
+  },
+  "ports": []
+}

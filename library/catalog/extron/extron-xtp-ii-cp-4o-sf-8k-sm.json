@@ -1,0 +1,31 @@
+{
+  "id": "avail-extron-70-1301-02",
+  "label": "Extron XTP II CP 4o SF 8K SM",
+  "shortName": "XTP II CP 4o SF 8K SM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1301-02",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicpf8kioboards",
+  "searchTerms": [
+    "70-1301-02",
+    "xtp ii cp 4o sf 8k sm",
+    "extron",
+    "xtp"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "XTP II Four Output Board, Scaling, Fiber 8K - Singlemode",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

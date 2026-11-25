@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1667-02",
+  "label": "Extron TLP Pro 300M (Black)",
+  "shortName": "TLP Pro 300M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1667-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro300m",
+  "searchTerms": [
+    "60-1667-02",
+    "tlp pro 300m",
+    "extron",
+    "tlp",
+    "pro",
+    "300m"
+  ],
+  "heightMm": 115,
+  "widthMm": 77,
+  "depthMm": 43,
+  "weightKg": 0.2,
+  "powerDrawW": 4,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "3.5” Portrait Wall Mount TouchLink Pro Touchpanel – Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

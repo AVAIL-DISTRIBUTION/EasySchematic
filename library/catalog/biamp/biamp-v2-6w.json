@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01314-20000",
+  "label": "Biamp V2-6W",
+  "shortName": "V2-6W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01314-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01314-20000",
+  "searchTerms": [
+    "920-01314-20000",
+    "v2-6w",
+    "biamp"
+  ],
+  "heightMm": 395,
+  "widthMm": 249,
+  "depthMm": 258,
+  "weightKg": 8.9,
+  "unitCost": 676,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 6-Inch 90 X 70 White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

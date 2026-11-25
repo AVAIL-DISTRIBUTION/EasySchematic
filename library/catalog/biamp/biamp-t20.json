@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01498",
+  "label": "Biamp T20",
+  "shortName": "T20",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01498",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01498",
+  "searchTerms": [
+    "910-01498",
+    "t20",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 70,
+  "depthMm": 34,
+  "weightKg": 0.3,
+  "unitCost": 23,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "8 ohms to 100 volt transformer with different power taps: 20 - 10 - 5 - 2.5 watts",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

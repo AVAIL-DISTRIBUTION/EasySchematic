@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-617-13",
+  "label": "Extron One HDMI Female to Female on Pigtail (MAAP, White)",
+  "shortName": "One HDMI Female to Female on Pig…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-617-13",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/maap1hdmif1hdmif10",
+  "searchTerms": [
+    "70-617-13",
+    "one hdmi female to female on pig…",
+    "extron",
+    "one",
+    "hdmi",
+    "female"
+  ],
+  "heightMm": 17,
+  "widthMm": 56,
+  "depthMm": 1,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP, White",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - White: One HDMI Female to Female on Pigtail",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

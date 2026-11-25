@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00896-00005",
+  "label": "Biamp W2-218WT",
+  "shortName": "W2-218WT",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00896-00005",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00896-00005",
+  "searchTerms": [
+    "930-00896-00005",
+    "w2-218wt",
+    "biamp"
+  ],
+  "heightMm": 235,
+  "widthMm": 394,
+  "depthMm": 258,
+  "weightKg": 9.7,
+  "unitCost": 1751,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 8-Inch Compact System 70V/100V White)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

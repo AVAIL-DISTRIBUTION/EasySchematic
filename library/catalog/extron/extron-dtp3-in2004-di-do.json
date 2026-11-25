@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1962-03",
+  "label": "Extron DTP3 IN2004 DI/DO",
+  "shortName": "DTP3 IN2004 DI/DO",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1962-03",
+  "deviceType": "scaler",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3in2004",
+  "searchTerms": [
+    "60-1962-03",
+    "dtp3 in2004 di/do",
+    "extron",
+    "dtp3",
+    "in2004"
+  ],
+  "heightMm": 42,
+  "widthMm": 220,
+  "depthMm": 292,
+  "weightKg": 1.2,
+  "powerDrawW": 65.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 155.6,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input 4K/60 Scaler, DTP3 I/O",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

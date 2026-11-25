@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-1736-12",
+  "label": "Extron SF 3PT (Removable Grille, Black, 70/100V, Pair)",
+  "shortName": "SF 3PT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1736-12",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf3pt",
+  "searchTerms": [
+    "60-1736-12",
+    "sf 3pt",
+    "extron",
+    "3pt"
+  ],
+  "heightMm": 174,
+  "widthMm": 135,
+  "depthMm": 135,
+  "weightKg": 1.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Removable Grille, Black, 70/100V, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SoundField 3\" Full-Range Pendant Speaker with 70/100 V Transformer and Removable Grille, Pair - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

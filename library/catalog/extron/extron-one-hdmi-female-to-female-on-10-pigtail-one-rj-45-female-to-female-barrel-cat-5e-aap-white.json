@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1220-03",
+  "label": "Extron One HDMI Female to Female on 10\" Pigtail, One RJ-45 Female to Female Barrel - CAT 5e (AAP, White)",
+  "shortName": "One HDMI Female to Female on 10\"…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1220-03",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hdmiff10_rj45ffbc5",
+  "searchTerms": [
+    "70-1220-03",
+    "one hdmi female to female on 10\"…",
+    "extron",
+    "one",
+    "hdmi",
+    "female"
+  ],
+  "heightMm": 18,
+  "widthMm": 89,
+  "depthMm": 2,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP, White",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - White: One HDMI Female to Female on 10\" Pigtail, One RJ-45 Female to Female Barrel – CAT 5e",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

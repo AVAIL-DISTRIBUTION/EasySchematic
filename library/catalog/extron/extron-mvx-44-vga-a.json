@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-635-21",
+  "label": "Extron MVX 44 VGA A",
+  "shortName": "MVX 44 VGA A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-635-21",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mvx44vga",
+  "searchTerms": [
+    "60-635-21",
+    "mvx 44 vga a",
+    "extron",
+    "mvx",
+    "vga"
+  ],
+  "heightMm": 44,
+  "widthMm": 442,
+  "depthMm": 216,
+  "weightKg": 3.2,
+  "powerDrawW": 30,
+  "voltage": "100V AC",
+  "thermalBtuh": 102.4,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "4x4 VGA and Stereo Audio Matrix Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

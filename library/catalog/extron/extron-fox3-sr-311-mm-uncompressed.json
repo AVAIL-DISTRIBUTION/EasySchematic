@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1732-23",
+  "label": "Extron FOX3 SR 311 MM (Uncompressed)",
+  "shortName": "FOX3 SR 311 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1732-23",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3sr311",
+  "searchTerms": [
+    "60-1732-23",
+    "fox3 sr 311 mm",
+    "extron",
+    "fox3",
+    "311"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1.3,
+  "powerDrawW": 30.3,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 90.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Uncompressed",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Scaling Receiver for HDMI, USB HID, Audio, Control, and 3D Sync",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-10886",
+  "label": "Biamp IS6-112C",
+  "shortName": "IS6-112C",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10886",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10886-00003",
+  "searchTerms": [
+    "930-10886",
+    "is6-112c",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 533,
+  "weightKg": 29,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 12-Inch Subwoofer Configured-to-Order",
+    "notes": "Характеристики с сайта по артикулу 930-10886-00003",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

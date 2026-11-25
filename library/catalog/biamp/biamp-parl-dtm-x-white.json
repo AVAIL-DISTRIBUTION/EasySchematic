@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00029-20000",
+  "label": "Biamp Parlé DTM-X White",
+  "shortName": "Parlé DTM-X White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00029-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00029-20000",
+  "searchTerms": [
+    "920-00029-20000",
+    "parlé dtm-x white",
+    "biamp",
+    "parl",
+    "dtm-x",
+    "white"
+  ],
+  "heightMm": 18,
+  "widthMm": 106,
+  "depthMm": 106,
+  "weightKg": 0.23,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 1500,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Devio UCX Beamtracking tabletop microphone, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

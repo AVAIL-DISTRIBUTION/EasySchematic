@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1365-63",
+  "label": "Extron DTP T HWP 232 D",
+  "shortName": "DTP T HWP 232 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1365-63",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpthwp232d",
+  "searchTerms": [
+    "60-1365-63",
+    "dtp t hwp 232 d",
+    "extron",
+    "dtp",
+    "hwp",
+    "232"
+  ],
+  "heightMm": 69,
+  "widthMm": 89,
+  "depthMm": 48,
+  "weightKg": 0.2,
+  "powerDrawW": 4.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 14,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input DTP Transmitter for HDMI with Audio Embedding - Decorator-Style Wallplate, White - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

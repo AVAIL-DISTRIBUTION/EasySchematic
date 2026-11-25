@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1525-14",
+  "label": "Extron NAV SD 101",
+  "shortName": "NAV SD 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1525-14",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/navsd101",
+  "searchTerms": [
+    "60-1525-14",
+    "nav sd 101",
+    "extron",
+    "nav",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 17.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 58.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G HDMI Scaling Decoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00028-10000",
+  "label": "Biamp Parlé DCM-XA Black",
+  "shortName": "Parlé DCM-XA Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00028-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00028-10000",
+  "searchTerms": [
+    "920-00028-10000",
+    "parlé dcm-xa black",
+    "biamp",
+    "parl",
+    "dcm-xa",
+    "black"
+  ],
+  "heightMm": 30,
+  "widthMm": 172,
+  "depthMm": 132,
+  "weightKg": 0.68,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2400,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Devio UCX Beamtracking™ ceiling microphone, two-channel amplifier, black surface mount",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

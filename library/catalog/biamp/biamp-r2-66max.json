@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-10906-00003",
+  "label": "Biamp R2-66MAX",
+  "shortName": "R2-66MAX",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10906-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10906-00003",
+  "searchTerms": [
+    "930-10906-00003",
+    "r2-66max",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 781,
+  "weightKg": 52.2,
+  "unitCost": 6415,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way Dual 12-Inch High Output 60 X 60",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

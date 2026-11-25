@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-293-22",
+  "label": "Extron One 3.5 mm Stereo Mini Jack to Solder Tabs (MAAP, Silkscreen, White)",
+  "shortName": "One 3.5 mm Stereo Mini Jack to S…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-293-22",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap135smjsc",
+  "searchTerms": [
+    "70-293-22",
+    "one 3.5 mm stereo mini jack to s…",
+    "extron",
+    "one",
+    "stereo",
+    "mini",
+    "jack"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP, Silkscreen, White",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - White: One 3.5 mm Stereo Mini Jack to Solder Tabs, Standard Silkscreen: \"Audio\"",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

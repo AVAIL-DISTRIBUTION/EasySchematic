@@ -1,0 +1,31 @@
+{
+  "id": "avail-biamp-910-01589",
+  "label": "Biamp COLS81",
+  "shortName": "COLS81",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01589",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01589",
+  "searchTerms": [
+    "910-01589",
+    "cols81",
+    "biamp"
+  ],
+  "heightMm": 614,
+  "widthMm": 66,
+  "depthMm": 66,
+  "unitCost": 276,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8 x 2\" slim sound column loudspeaker with 1\" tweeter 70 - 100 volt / 30 watts or 16 ohms / 40 watts, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

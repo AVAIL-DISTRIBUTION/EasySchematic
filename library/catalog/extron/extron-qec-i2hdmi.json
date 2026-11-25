@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-954-01",
+  "label": "Extron QEC I2HDMI",
+  "shortName": "QEC I2HDMI",
+  "manufacturer": "Extron",
+  "modelNumber": "70-954-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumelite",
+  "searchTerms": [
+    "70-954-01",
+    "qec i2hdmi",
+    "extron",
+    "qec",
+    "i2hdmi"
+  ],
+  "slotFamily": "extron-quantum-elite",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "video-wall-controller",
+    "description": "Quantum Elite Two Input HDMI Card",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "new slot family \"extron-quantum-elite\" — no Quantum Elite chassis in the library"
+  },
+  "ports": []
+}

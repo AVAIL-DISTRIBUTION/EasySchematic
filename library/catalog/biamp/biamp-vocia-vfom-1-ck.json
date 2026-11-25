@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-910-00336",
+  "label": "Biamp Vocia VFOM-1 CK",
+  "shortName": "Vocia VFOM-1 CK",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00336",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00336",
+  "searchTerms": [
+    "910-00336",
+    "vocia vfom-1 ck",
+    "biamp",
+    "vocia",
+    "vfom-1"
+  ],
+  "heightMm": 128,
+  "widthMm": 30.7,
+  "depthMm": 118,
+  "weightKg": 0.28,
+  "unitCost": 958,
+  "slotFamily": "biamp-vocia-va-8600",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (biamp-vocia-va-8600)",
+    "description": "Vocia VA-8600 Failover Module, Card Kit",
+    "notes": "Только Card Kit",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+  },
+  "ports": []
+}

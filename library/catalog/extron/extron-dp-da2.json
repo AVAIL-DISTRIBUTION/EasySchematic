@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1221-01",
+  "label": "Extron DP DA2",
+  "shortName": "DP DA2",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1221-01",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dpda2",
+  "searchTerms": [
+    "60-1221-01",
+    "dp da2",
+    "extron",
+    "da2"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 76,
+  "weightKg": 0.2,
+  "powerDrawW": 4.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 14.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Output DisplayPort Distribution Amplifier with EDID Minder®",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

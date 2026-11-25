@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01616",
+  "label": "Biamp EN-MPBD5T10-W",
+  "shortName": "EN-MPBD5T10-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01616",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01616",
+  "searchTerms": [
+    "910-01616",
+    "en-mpbd5t10-w",
+    "biamp"
+  ],
+  "heightMm": 140,
+  "widthMm": 140,
+  "depthMm": 164,
+  "weightKg": 2.32,
+  "unitCost": 233,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "compact bi-directional sound projector, equipped with 2 high efficiency full range drivers and a multi tap 100 volt transformer (1.5-3-6-10 watts), all certified according EN 54-24.",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

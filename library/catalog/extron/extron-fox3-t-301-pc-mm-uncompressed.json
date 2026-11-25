@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-70-1190-13",
+  "label": "Extron FOX3 T 301 PC MM (Uncompressed)",
+  "shortName": "FOX3 T 301 PC MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1190-13",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t301pc",
+  "searchTerms": [
+    "70-1190-13",
+    "fox3 t 301 pc mm",
+    "extron",
+    "fox3",
+    "301"
+  ],
+  "slotFamily": "extron-fox3-powercage",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Uncompressed",
+    "deviceTypeSource": "fiber-transmitter",
+    "description": "PowerCage Fiber Optic Transmitter for HDMI, USB, Audio, and RS-232",
+    "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

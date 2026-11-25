@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-1052-22",
+  "label": "Extron One XTP DTP 24 Punch Down Jack (MAAP Double, White)",
+  "shortName": "One XTP DTP 24 Punch Down Jack",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1052-22",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/maap1xtpftp24pdj",
+  "searchTerms": [
+    "70-1052-22",
+    "one xtp dtp 24 punch down jack",
+    "extron",
+    "one",
+    "xtp",
+    "dtp",
+    "punch"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP Double, White",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Double Space MAAP - White",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

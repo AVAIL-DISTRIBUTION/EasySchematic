@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-70-1299-03",
+  "label": "Extron Cable Cubby F55 UT (Aluminum, No AC)",
+  "shortName": "Cable Cubby F55 UT",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1299-03",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubbyf55ut",
+  "searchTerms": [
+    "70-1299-03",
+    "cable cubby f55 ut",
+    "extron",
+    "cable",
+    "cubby",
+    "f55"
+  ],
+  "heightMm": 62,
+  "widthMm": 267,
+  "depthMm": 109,
+  "weightKg": 1.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Aluminum, No AC",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-flex55"
+    ],
+    "description": "Cable Cubby F55, Aluminum, No AC",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

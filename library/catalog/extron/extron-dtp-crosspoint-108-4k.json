@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1381-01",
+  "label": "Extron DTP CrossPoint 108 4K",
+  "shortName": "DTP CrossPoint 108 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1381-01",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpcp4k108",
+  "searchTerms": [
+    "60-1381-01",
+    "dtp crosspoint 108 4k",
+    "extron",
+    "dtp",
+    "crosspoint",
+    "108"
+  ],
+  "heightMm": 133,
+  "widthMm": 442,
+  "depthMm": 406,
+  "weightKg": 7.7,
+  "powerDrawW": 184,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 499,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "3U Full rack",
+    "rackUnits": 3,
+    "description": "10x8 Seamless 4K Scaling Presentation Matrix Switcher - Preamp Output w/o Amplifier and Control Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

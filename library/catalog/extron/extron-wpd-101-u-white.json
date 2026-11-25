@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-1362-03",
+  "label": "Extron WPD 101 U (White)",
+  "shortName": "WPD 101 U",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1362-03",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpdavseries",
+  "searchTerms": [
+    "70-1362-03",
+    "wpd 101 u",
+    "extron",
+    "wpd",
+    "101"
+  ],
+  "heightMm": 104,
+  "widthMm": 41,
+  "depthMm": 7,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "USB Type-C; White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1238-81",
+  "label": "Extron IN1608 xi",
+  "shortName": "IN1608 xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1238-81",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1608xi",
+  "searchTerms": [
+    "60-1238-81",
+    "in1608 xi",
+    "extron",
+    "in1608"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 241,
+  "weightKg": 2.3,
+  "powerDrawW": 42,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 123,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Standard Model",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

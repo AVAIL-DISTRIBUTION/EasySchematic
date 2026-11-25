@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1076-23",
+  "label": "Extron DTP R DP 4K 230",
+  "shortName": "DTP R DP 4K 230",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1076-23",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtprdp230",
+  "searchTerms": [
+    "60-1076-23",
+    "dtp r dp 4k 230",
+    "extron",
+    "dtp",
+    "230"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 3.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "DisplayPort Rx w/EDID Minder – 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

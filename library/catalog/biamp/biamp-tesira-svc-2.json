@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-901-0305",
+  "label": "Biamp Tesira SVC-2",
+  "shortName": "Tesira SVC-2",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0305",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0305",
+  "searchTerms": [
+    "901.0305",
+    "910-00328",
+    "tesira svc-2",
+    "biamp",
+    "tesira",
+    "svc-2"
+  ],
+  "unitCost": 829,
+  "slotFamily": "biamp-tesira-server-card",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-00328",
+    "deviceTypeSource": "card (biamp-tesira-server)",
+    "description": "Tesira 2 line VoIP telephone interface card",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

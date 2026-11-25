@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01352-00001",
+  "label": "Biamp ALC-3202D",
+  "shortName": "ALC-3202D",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01352-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01352-00001",
+  "searchTerms": [
+    "920-01352-00001",
+    "alc-3202d",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 442,
+  "depthMm": 373,
+  "weightKg": 7.8,
+  "powerDrawW": 1640,
+  "voltage": "100-240V AC",
+  "unitCost": 5300,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Amplified Loudspeaker Controller - 2 Channels X 3200W + DSP Dante",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1615-93a",
+  "label": "Extron IN1808 IPCP Q MA 70 with LinkLicense",
+  "shortName": "IN1808 IPCP Q MA 70 with LinkLic…",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1615-93A",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1808",
+  "searchTerms": [
+    "60-1615-93a",
+    "in1808 ipcp q ma 70 with linklic…",
+    "extron",
+    "in1808",
+    "ipcp",
+    "with",
+    "linklic"
+  ],
+  "heightMm": 89,
+  "widthMm": 444,
+  "depthMm": 267,
+  "weightKg": 3.6,
+  "powerDrawW": 140,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 197,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Control Processor and 70 V Mono Amp, LL UI Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

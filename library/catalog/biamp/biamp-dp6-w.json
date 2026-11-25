@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-00550-20000",
+  "label": "Biamp DP6-W",
+  "shortName": "DP6-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00550-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00550-20000",
+  "searchTerms": [
+    "920-00550-20000",
+    "dp6-w",
+    "biamp"
+  ],
+  "heightMm": 374.2,
+  "widthMm": 285,
+  "depthMm": 285,
+  "weightKg": 5.4,
+  "unitCost": 526,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5-Inch Pendant Loudspeaker, White",
+    "notes": "[AVAIL] estimated: round pendant, depth = diameter",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

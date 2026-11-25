@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1643-03",
+  "label": "Extron ACP 100",
+  "shortName": "ACP 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1643-03",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acp100",
+  "searchTerms": [
+    "60-1643-03",
+    "acp 100",
+    "extron",
+    "acp",
+    "100"
+  ],
+  "heightMm": 114,
+  "widthMm": 117,
+  "depthMm": 8,
+  "weightKg": 0.2,
+  "powerDrawW": 0.5,
+  "thermalBtuh": 1.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Audio Control Panel with Volume and 6 Control Buttons – US 2-Gang",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00560-20000",
+  "label": "Biamp ENT206W",
+  "shortName": "ENT206W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00560-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00560-20000",
+  "searchTerms": [
+    "920-00560-20000",
+    "ent206w",
+    "biamp"
+  ],
+  "heightMm": 506,
+  "widthMm": 118,
+  "depthMm": 190,
+  "weightKg": 6.8,
+  "unitCost": 740,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "ENTASYS 200 Column, 2-Way 6 LF Drivers, White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

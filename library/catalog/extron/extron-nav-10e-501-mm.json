@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1572-01",
+  "label": "Extron NAV 10E 501 (MM)",
+  "shortName": "NAV 10E 501",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1572-01",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nav10e501",
+  "searchTerms": [
+    "60-1572-01",
+    "nav 10e 501",
+    "extron",
+    "nav",
+    "10e",
+    "501"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 23.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 71.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MM",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "10G HDMI, Ethernet, USB Encoder - Multimode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

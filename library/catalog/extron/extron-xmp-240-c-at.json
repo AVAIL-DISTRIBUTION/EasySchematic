@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1836-01",
+  "label": "Extron XMP 240 C AT",
+  "shortName": "XMP 240 C AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1836-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xmp240",
+  "searchTerms": [
+    "60-1836-01",
+    "xmp 240 c at",
+    "extron",
+    "xmp",
+    "240"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 0.9,
+  "powerDrawW": 9.8,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 33.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Dante Audio DSP Matrix Processor w/ 24 AEC",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

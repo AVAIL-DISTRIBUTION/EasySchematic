@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-1162-01",
+  "label": "Extron Quantum OUT4DTP",
+  "shortName": "Quantum OUT4DTP",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1162-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "70-1162-01",
+    "quantum out4dtp",
+    "extron",
+    "quantum",
+    "out4dtp"
+  ],
+  "slotFamily": "extron-quantum-ultra",
+  "_avail": {
+    "status": "awaiting-ports",
+    "cardFamilies": [
+      "extron-quantum-ultra",
+      "extron-quantum-ultra-2"
+    ],
+    "deviceTypeSource": "card (extron-quantum-ultra, extron-quantum-ultra-2)",
+    "description": "Four-channel DTP Output Card for Quantum Ultra",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

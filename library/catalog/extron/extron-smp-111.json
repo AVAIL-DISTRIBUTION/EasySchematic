@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1594-01",
+  "label": "Extron SMP 111",
+  "shortName": "SMP 111",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1594-01",
+  "deviceType": "recorder",
+  "category": "Streaming and Recording / Media processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/smp111",
+  "searchTerms": [
+    "60-1594-01",
+    "smp 111",
+    "extron",
+    "smp",
+    "111"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 216,
+  "weightKg": 1.1,
+  "powerDrawW": 23,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 50,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Single Channel H.264 Streaming Media Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

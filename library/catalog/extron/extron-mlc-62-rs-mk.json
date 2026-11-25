@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1005-23",
+  "label": "Extron MLC 62 RS MK",
+  "shortName": "MLC 62 RS MK",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1005-23",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc62rsmk",
+  "searchTerms": [
+    "60-1005-23",
+    "mlc 62 rs mk",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 106,
+  "widthMm": 47,
+  "depthMm": 37,
+  "weightKg": 0.5,
+  "powerDrawW": 2.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Controller for MK Junction Boxes",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

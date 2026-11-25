@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-910-02278",
+  "label": "Biamp MAX Connect",
+  "shortName": "MAX Connect",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-02278",
+  "deviceType": "wireless-presentation",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-02278",
+  "searchTerms": [
+    "910-02278",
+    "max connect",
+    "biamp",
+    "max",
+    "connect"
+  ],
+  "heightMm": 30,
+  "widthMm": 132,
+  "depthMm": 132,
+  "weightKg": 0.54,
+  "powerDrawW": 7,
+  "unitCost": 2000,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "BYOM Room System",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

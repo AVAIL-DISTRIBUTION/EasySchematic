@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00003-00016",
+  "label": "Biamp IC6-1082WT96",
+  "shortName": "IC6-1082WT96",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00003-00016",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00003-00016",
+  "searchTerms": [
+    "930-00003-00016",
+    "ic6-1082wt96",
+    "biamp"
+  ],
+  "heightMm": 476,
+  "widthMm": 264,
+  "depthMm": 270,
+  "weightKg": 10.5,
+  "unitCost": 2226,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output 8-Inch 2-Way 90 X 60 70V/100V Weather-Resistant Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

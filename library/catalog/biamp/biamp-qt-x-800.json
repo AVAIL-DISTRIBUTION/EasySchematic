@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-00216",
+  "label": "Biamp Qt X 800",
+  "shortName": "Qt X 800",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00216",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00216",
+  "searchTerms": [
+    "910-00216",
+    "qt x 800",
+    "biamp",
+    "800"
+  ],
+  "heightMm": 89,
+  "widthMm": 371.5,
+  "depthMm": 97,
+  "weightKg": 0.68,
+  "voltage": "48V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1272,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "sound-masking",
+    "description": "Qt X Controller, (8) 8 Ohm Outputs",
+    "notes": "Звуковая маскировка; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

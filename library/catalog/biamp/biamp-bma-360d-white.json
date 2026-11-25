@@ -1,0 +1,39 @@
+{
+  "id": "avail-biamp-910-00009",
+  "label": "Biamp BMA 360D White",
+  "shortName": "BMA 360D White",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00009",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00009",
+  "searchTerms": [
+    "910-00009",
+    "bma 360d white",
+    "biamp",
+    "bma",
+    "360d",
+    "white"
+  ],
+  "heightMm": 602,
+  "widthMm": 602,
+  "depthMm": 53,
+  "weightKg": 5,
+  "voltage": "PoE++ 802.3bt",
+  "poeDrawW": 55,
+  "thermalBtuh": 270,
+  "unitCost": 5500,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "24\" Frequency Invariant Beamforming Ceiling Tile Microphone Array White with Dante and 4 x 15 Watt PoE amplifier",
+    "notes": "Питание от PoE++ инжектора; 23 Вт без усилителя, 55 Вт с усилителем 4×15 Вт на 1/3 мощности",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

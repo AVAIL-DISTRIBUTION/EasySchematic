@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00562-20000",
+  "label": "Biamp ENT212W",
+  "shortName": "ENT212W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00562-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00562-20000",
+  "searchTerms": [
+    "920-00562-20000",
+    "ent212w",
+    "biamp"
+  ],
+  "heightMm": 993,
+  "widthMm": 118,
+  "depthMm": 190,
+  "weightKg": 12.7,
+  "unitCost": 1300,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "ENTASYS 200 Column, 2-Way 12 LF Drivers, White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

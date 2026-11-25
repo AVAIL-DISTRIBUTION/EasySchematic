@@ -1,0 +1,29 @@
+{
+  "id": "avail-biamp-910-00811",
+  "label": "Biamp DS2508",
+  "shortName": "DS2508",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00811",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00811",
+  "searchTerms": [
+    "910-00811",
+    "ds2508",
+    "biamp"
+  ],
+  "unitCost": 721,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8 Ohm, window, door, wall masker for SCIF / secure room",
+    "notes": "Эмиттер звуковой маскировки",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

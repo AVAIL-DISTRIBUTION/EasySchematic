@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01500",
+  "label": "Biamp T60",
+  "shortName": "T60",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01500",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01500",
+  "searchTerms": [
+    "910-01500",
+    "t60",
+    "biamp"
+  ],
+  "heightMm": 60,
+  "widthMm": 77,
+  "depthMm": 46,
+  "weightKg": 0.6,
+  "unitCost": 45,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "8 ohms to 100 volt transformer with different power taps: 60 - 30 - 15 - 6 watts",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

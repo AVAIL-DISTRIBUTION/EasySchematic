@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00912-00002",
+  "label": "Biamp IP8-1152/26W",
+  "shortName": "IP8-1152/26W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00912-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00912-00002",
+  "searchTerms": [
+    "930-00912-00002",
+    "ip8-1152/26w",
+    "biamp",
+    "ip8-1152",
+    "26w"
+  ],
+  "heightMm": 782,
+  "widthMm": 419,
+  "depthMm": 510,
+  "weightKg": 30.8,
+  "unitCost": 3632,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 15-Inch 2-Way 120 X 60 White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

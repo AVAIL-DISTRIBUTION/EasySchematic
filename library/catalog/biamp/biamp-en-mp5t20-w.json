@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01615",
+  "label": "Biamp EN-MP5T20-W",
+  "shortName": "EN-MP5T20-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01615",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01615",
+  "searchTerms": [
+    "910-01615",
+    "en-mp5t20-w",
+    "biamp"
+  ],
+  "heightMm": 140,
+  "widthMm": 140,
+  "depthMm": 183,
+  "weightKg": 2.48,
+  "unitCost": 233,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "compact sound projector with a 5.25\" woofer, equipped with a high efficiency full range driver and a multi tap 100 volt transformer (5-10-15-20 watts), all certified according EN 54-24;",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

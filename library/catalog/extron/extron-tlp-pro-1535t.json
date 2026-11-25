@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-2001-02",
+  "label": "Extron TLP Pro 1535T",
+  "shortName": "TLP Pro 1535T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2001-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1535t",
+  "searchTerms": [
+    "60-2001-02",
+    "tlp pro 1535t",
+    "extron",
+    "tlp",
+    "pro",
+    "1535t"
+  ],
+  "heightMm": 220,
+  "widthMm": 366,
+  "depthMm": 125,
+  "powerDrawW": 16.1,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 46.9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "15.6\" Wall Mount TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

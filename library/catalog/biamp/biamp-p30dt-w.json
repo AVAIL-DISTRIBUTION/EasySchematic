@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00904-20000",
+  "label": "Biamp P30DT-W",
+  "shortName": "P30DT-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00904-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00904-20000",
+  "searchTerms": [
+    "920-00904-20000",
+    "p30dt-w",
+    "biamp"
+  ],
+  "heightMm": 233,
+  "widthMm": 233,
+  "depthMm": 223,
+  "weightKg": 2.6,
+  "unitCost": 286,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4.25\" two-way, pendant loudspeaker 70-100 volt / 30 watts, 16 ohms / 50 watts, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

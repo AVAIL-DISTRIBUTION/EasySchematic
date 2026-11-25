@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-01948-00002",
+  "label": "Biamp Voltera A 300.2",
+  "shortName": "Voltera A 300.2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01948-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01948-00001",
+  "searchTerms": [
+    "920-01948-00002",
+    "voltera a 300.2",
+    "biamp",
+    "voltera",
+    "300"
+  ],
+  "heightMm": 44,
+  "widthMm": 220,
+  "depthMm": 290,
+  "weightKg": 2.7,
+  "voltage": "100-240V AC",
+  "unitCost": 1060,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Two-channel, 300-watt analog amplifier",
+    "notes": "Та же модель под другим артикулом: 920-01948-00001; Характеристики с сайта по артикулу 920-01948-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

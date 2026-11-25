@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1525-03",
+  "label": "Extron NAV SD 501",
+  "shortName": "NAV SD 501",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1525-03",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/navsd501",
+  "searchTerms": [
+    "60-1525-03",
+    "nav sd 501",
+    "extron",
+    "nav",
+    "501"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 21.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 65.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G HDMI, Ethernet, and USB Scaling Decoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

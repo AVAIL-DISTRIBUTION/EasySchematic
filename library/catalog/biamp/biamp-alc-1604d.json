@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-01351-00001",
+  "label": "Biamp ALC-1604D",
+  "shortName": "ALC-1604D",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01351-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01351-00001",
+  "searchTerms": [
+    "920-01351-00001",
+    "alc-1604d",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 442,
+  "depthMm": 373,
+  "weightKg": 7.8,
+  "powerDrawW": 823,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 107,
+  "unitCost": 6042,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Amplified Loudspeaker Controller - 4 Channels X 1600W + DSP Dante",
+    "notes": "Потребление и тепло — при 1/8 мощности @ 4 Ом, 115 V",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-587-11",
+  "label": "Extron One 3.5 mm Stereo Mini Jack to Solder Tabs (AAP, Black)",
+  "shortName": "One 3.5 mm Stereo Mini Jack to S…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-587-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap135smjsc",
+  "searchTerms": [
+    "70-587-11",
+    "one 3.5 mm stereo mini jack to s…",
+    "extron",
+    "one",
+    "stereo",
+    "mini",
+    "jack"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP, Black",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: One 3.5 mm Stereo Mini Jack",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

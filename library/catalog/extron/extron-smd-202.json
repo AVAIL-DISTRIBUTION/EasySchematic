@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1306-01",
+  "label": "Extron SMD 202",
+  "shortName": "SMD 202",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1306-01",
+  "deviceType": "streaming-decoder",
+  "category": "Streaming and Recording / Streaming AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/smd202",
+  "searchTerms": [
+    "60-1306-01",
+    "smd 202",
+    "extron",
+    "smd",
+    "202"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 13.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 43.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "H.264 Player and Decoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

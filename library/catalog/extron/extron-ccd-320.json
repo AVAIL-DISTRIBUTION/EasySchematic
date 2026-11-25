@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-70-1278-02",
+  "label": "Extron CCD 320",
+  "shortName": "CCD 320",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1278-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ccdseries",
+  "searchTerms": [
+    "70-1278-02",
+    "ccd 320",
+    "extron",
+    "ccd",
+    "320"
+  ],
+  "heightMm": 49,
+  "widthMm": 201,
+  "depthMm": 196,
+  "weightKg": 4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Cable Cubby Under-table Drawer for 6 AAP Modules",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

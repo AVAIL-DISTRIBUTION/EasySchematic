@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-00089-00002",
+  "label": "Biamp Devio SCX 400",
+  "shortName": "Devio SCX 400",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00089-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00089-00001",
+  "searchTerms": [
+    "920-00089-00002",
+    "devio scx 400",
+    "biamp",
+    "devio",
+    "scx",
+    "400"
+  ],
+  "heightMm": 37.3,
+  "widthMm": 206,
+  "depthMm": 206,
+  "weightKg": 0.86,
+  "powerDrawW": 150,
+  "voltage": "100-240V AC",
+  "unitCost": 4781,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Conference room hub",
+    "notes": "Devio SCX — конференц-хаб на базе Tesira; Характеристики с сайта по артикулу 920-00089-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

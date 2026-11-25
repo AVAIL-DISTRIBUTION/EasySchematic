@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1566-13",
+  "label": "Extron TLP Pro 1025M (White)",
+  "shortName": "TLP Pro 1025M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1566-13",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1025m",
+  "searchTerms": [
+    "60-1566-13",
+    "tlp pro 1025m",
+    "extron",
+    "tlp",
+    "pro",
+    "1025m"
+  ],
+  "heightMm": 174,
+  "widthMm": 257,
+  "depthMm": 32,
+  "weightKg": 0.92,
+  "powerDrawW": 12.9,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 39.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "10\" Wall Mount TouchLink® Pro Touchpanel - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

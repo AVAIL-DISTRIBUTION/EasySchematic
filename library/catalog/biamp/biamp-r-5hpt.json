@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00891-00003",
+  "label": "Biamp R.5HPT",
+  "shortName": "R.5HPT",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00891-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00891-00003",
+  "searchTerms": [
+    "930-00891-00003",
+    "r.5hpt",
+    "biamp",
+    "5hpt"
+  ],
+  "heightMm": 406,
+  "widthMm": 406,
+  "depthMm": 411,
+  "weightKg": 20.6,
+  "unitCost": 2476,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way 12-Inch Horn Loaded 60 X 40 Grey 70V/100V",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

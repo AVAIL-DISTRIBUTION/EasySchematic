@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01622",
+  "label": "Biamp E-VOL120",
+  "shortName": "E-VOL120",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01622",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01622",
+  "searchTerms": [
+    "910-01622",
+    "e-vol120",
+    "biamp"
+  ],
+  "heightMm": 80,
+  "widthMm": 80,
+  "depthMm": 50,
+  "weightKg": 0.4,
+  "powerDrawW": 0.1,
+  "unitCost": 81,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "volume-control",
+    "description": "100 volt, 120 watts Euro volume control, white, with 24V prioirty relais",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1615-01",
+  "label": "Extron IN1808",
+  "shortName": "IN1808",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1615-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1808",
+  "searchTerms": [
+    "60-1615-01",
+    "in1808",
+    "extron"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 267,
+  "weightKg": 2.4,
+  "powerDrawW": 94,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 197,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Standard Model",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

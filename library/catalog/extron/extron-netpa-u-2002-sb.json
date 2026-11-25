@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1757-01",
+  "label": "Extron NetPA U 2002 SB",
+  "shortName": "NetPA U 2002 SB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1757-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpau2002sb",
+  "searchTerms": [
+    "60-1757-01",
+    "netpa u 2002 sb",
+    "extron",
+    "netpa",
+    "2002"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.7,
+  "powerDrawW": 67.2,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 59,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Ch Bridgeable Output Dante Amp, 200/400 Watts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

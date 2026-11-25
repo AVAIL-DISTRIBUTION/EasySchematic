@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-1200-01",
+  "label": "Extron Quantum OUT4HDMI 4K PLUS",
+  "shortName": "Quantum OUT4HDMI 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1200-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1200-01",
+    "quantum out4hdmi 4k plus",
+    "extron",
+    "quantum",
+    "out4hdmi",
+    "plus"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Four-channel 4K/60 HDMI Output Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

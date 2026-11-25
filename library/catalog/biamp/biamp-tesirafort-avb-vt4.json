@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-00452-00002",
+  "label": "Biamp TesiraFORTÉ AVB VT4",
+  "shortName": "TesiraFORTÉ AVB VT4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00452-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00452-00001",
+  "searchTerms": [
+    "920-00452-00002",
+    "tesiraforté avb vt4",
+    "biamp",
+    "tesirafort",
+    "avb",
+    "vt4"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 267,
+  "weightKg": 3.63,
+  "powerDrawW": 35,
+  "voltage": "100-240V AC",
+  "unitCost": 3617,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Fixed I/O DSP with 4 analog inputs, 4 analog outputs, 8 channels configurable USB audio, 128 x 128 channels of AVB, AEC technology (all 4 inputs), 2 channel VoIP, and standard FXO telephone interface",
+    "notes": "Характеристики с сайта по артикулу 920-00452-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

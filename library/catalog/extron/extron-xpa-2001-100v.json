@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-850-11",
+  "label": "Extron XPA 2001-100V",
+  "shortName": "XPA 2001-100V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-850-11",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpa2001",
+  "searchTerms": [
+    "60-850-11",
+    "xpa 2001-100v",
+    "extron",
+    "xpa",
+    "2001-100v"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 1.1,
+  "powerDrawW": 43.7,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 64,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "One Channel Amp, 200 watts at 100 volts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

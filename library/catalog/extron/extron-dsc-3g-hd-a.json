@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1303-01",
+  "label": "Extron DSC 3G-HD A",
+  "shortName": "DSC 3G-HD A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1303-01",
+  "deviceType": "scaler",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dsc3ghda",
+  "searchTerms": [
+    "60-1303-01",
+    "dsc 3g-hd a",
+    "extron",
+    "dsc",
+    "3g-hd"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 220,
+  "weightKg": 0.8,
+  "powerDrawW": 10.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 34.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "3G-SDI to HDMI Scaler with Audio Embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00854",
+  "label": "Biamp IS6-118C",
+  "shortName": "IS6-118C",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00854",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00854",
+    "is6-118c",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 561,
+  "depthMm": 734,
+  "weightKg": 44,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 18-Inch Subwoofer Configured-to-Order",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

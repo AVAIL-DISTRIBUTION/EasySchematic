@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1384-02",
+  "label": "Extron AC+USB 212 UK",
+  "shortName": "AC+USB 212 UK",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1384-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb200",
+  "searchTerms": [
+    "60-1384-02",
+    "ac+usb 212 uk",
+    "extron",
+    "ac+usb",
+    "212"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 102,
+  "weightKg": 1.1,
+  "powerDrawW": 24.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 18.5,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AC+USB Module, UK",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1491-12",
+  "label": "Extron DTP T HD2 4K 230",
+  "shortName": "DTP T HD2 4K 230",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1491-12",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpthd24k230",
+  "searchTerms": [
+    "60-1491-12",
+    "dtp t hd2 4k 230",
+    "extron",
+    "dtp",
+    "hd2",
+    "230"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 6,
+  "voltage": "12V DC",
+  "thermalBtuh": 19.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "HDMI Twisted Pair Transmitter with Input Loop-Through - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

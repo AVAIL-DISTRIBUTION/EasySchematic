@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-613-02",
+  "label": "Extron Two Contact Closure Switch - Momentary, Single Pole, Double Throw with LED - to Solder Tabs",
+  "shortName": "Two Contact Closure Switch - Mom…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-613-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2ccswled2st",
+  "searchTerms": [
+    "70-613-02",
+    "two contact closure switch - mom…",
+    "extron",
+    "two",
+    "contact",
+    "closure",
+    "switch"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two Contact Closure Switch - Momentary, Single Pole, Double Throw with LED - to Solder Tabs",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

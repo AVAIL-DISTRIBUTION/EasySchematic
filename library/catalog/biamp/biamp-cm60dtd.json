@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00633",
+  "label": "Biamp CM60DTD",
+  "shortName": "CM60DTD",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00633",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00633",
+  "searchTerms": [
+    "910-00633",
+    "cm60dtd",
+    "biamp"
+  ],
+  "heightMm": 258,
+  "widthMm": 258,
+  "depthMm": 150,
+  "weightKg": 4,
+  "unitCost": 212,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5” two-way thin edge design ceiling loudspeaker 100-70 volt / 60 watts, 16 ohms / 120 watts, white, front frame integrated neodymium magnets and back can (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; [AVAIL] estimated: back-can depth from product photos",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

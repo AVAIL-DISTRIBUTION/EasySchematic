@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-00437",
+  "label": "Biamp Tesira HD-1",
+  "shortName": "Tesira HD-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00437",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00437",
+  "searchTerms": [
+    "910-00437",
+    "tesira hd-1",
+    "biamp",
+    "tesira",
+    "hd-1"
+  ],
+  "heightMm": 40,
+  "widthMm": 145,
+  "depthMm": 145,
+  "weightKg": 0.4,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.84,
+  "unitCost": 1085,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Tesira Hardware Dialer",
+    "notes": "[AVAIL] from Biamp documentation",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

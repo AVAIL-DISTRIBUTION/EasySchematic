@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-1055-03",
+  "label": "Extron WPD 102 C",
+  "shortName": "WPD 102 C",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1055-03",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpd100series",
+  "searchTerms": [
+    "70-1055-03",
+    "wpd 102 c",
+    "extron",
+    "wpd",
+    "102"
+  ],
+  "heightMm": 114,
+  "widthMm": 69,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Two XTP DTP 24 Couplers Pass-Through Wallplate - Decorator-Style; White",
+    "notes": "[AVAIL] plate 114 x 69 per dealer spec; depth not found",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

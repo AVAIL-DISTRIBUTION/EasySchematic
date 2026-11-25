@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2069-01",
+  "label": "Extron NAV E 222",
+  "shortName": "NAV E 222",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2069-01",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave222",
+  "searchTerms": [
+    "60-2069-01",
+    "nav e 222",
+    "extron",
+    "nav",
+    "222"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 17,
+  "voltage": "12V DC",
+  "thermalBtuh": 53.6,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G USB-C, HDMI Encoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

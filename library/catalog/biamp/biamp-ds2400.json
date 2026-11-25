@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00808",
+  "label": "Biamp DS2400",
+  "shortName": "DS2400",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00808",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00808",
+  "searchTerms": [
+    "910-00808",
+    "ds2400",
+    "biamp"
+  ],
+  "heightMm": 127,
+  "widthMm": 127,
+  "depthMm": 44.45,
+  "weightKg": 0.9,
+  "unitCost": 363,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "70V duct, pipe, conduit, wall masker for SCIF / secure rooms",
+    "notes": "Эмиттер звуковой маскировки",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

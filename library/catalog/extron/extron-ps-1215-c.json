@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1174-01",
+  "label": "Extron PS 1215 C",
+  "shortName": "PS 1215 C",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1174-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/extpowsupplies",
+  "searchTerms": [
+    "70-1174-01",
+    "ps 1215 c",
+    "extron",
+    "1215"
+  ],
+  "heightMm": 42,
+  "widthMm": 55,
+  "depthMm": 114,
+  "weightKg": 0.3,
+  "powerDrawW": 20.2,
+  "powerCapacityW": 20.2,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 11.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "12 V, 1.5 A, Power Supply on Captive Screw",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

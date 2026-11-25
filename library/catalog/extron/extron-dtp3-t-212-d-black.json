@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1714-52",
+  "label": "Extron DTP3 T 212 D (Black)",
+  "shortName": "DTP3 T 212 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1714-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t212d",
+  "searchTerms": [
+    "60-1714-52",
+    "dtp3 t 212 d",
+    "extron",
+    "dtp3",
+    "212"
+  ],
+  "heightMm": 68,
+  "widthMm": 89,
+  "depthMm": 51,
+  "weightKg": 0.25,
+  "powerDrawW": 6.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 21.8,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input 4K/60 DTP3 Transmitter for USB-C and HDMI with Audio Embedding – Decorator-Style Wallplate, Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

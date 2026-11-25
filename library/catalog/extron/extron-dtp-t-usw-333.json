@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1551-52",
+  "label": "Extron DTP T USW 333",
+  "shortName": "DTP T USW 333",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1551-52",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptusw333",
+  "searchTerms": [
+    "60-1551-52",
+    "dtp t usw 333",
+    "extron",
+    "dtp",
+    "usw",
+    "333"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 4.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 14.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input Switcher with Integrated Long Distance DTP Transmitter and Audio Embedding - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

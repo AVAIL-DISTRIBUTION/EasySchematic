@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-01514",
+  "label": "Biamp ZONE4R",
+  "shortName": "ZONE4R",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01514",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01514",
+  "searchTerms": [
+    "910-01514",
+    "zone4r",
+    "biamp"
+  ],
+  "heightMm": 80,
+  "widthMm": 114,
+  "depthMm": 40,
+  "weightKg": 0.14,
+  "powerDrawW": 0.1,
+  "unitCost": 182,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Digital wall control panel for use with ZONE4 for music volume adjustment, MIC volume adjustment and source selection",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

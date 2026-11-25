@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01563",
+  "label": "Biamp CMAR6-W",
+  "shortName": "CMAR6-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01563",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01563",
+  "searchTerms": [
+    "910-01563",
+    "cmar6-w",
+    "biamp"
+  ],
+  "heightMm": 190,
+  "widthMm": 190,
+  "depthMm": 61,
+  "weightKg": 1,
+  "unitCost": 112,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" two-way built-in marine speaker 8 ohms / 60 watts, IP65, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

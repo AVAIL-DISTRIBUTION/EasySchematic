@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1665-01",
+  "label": "Extron OCS 100W",
+  "shortName": "OCS 100W",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1665-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ocs100",
+  "searchTerms": [
+    "60-1665-01",
+    "ocs 100w",
+    "extron",
+    "ocs",
+    "100w"
+  ],
+  "heightMm": 140,
+  "widthMm": 71,
+  "depthMm": 53,
+  "weightKg": 0.1,
+  "powerDrawW": 0.8,
+  "thermalBtuh": 2.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Occupancy Sensor - Wall Mount",
+    "notes": "[AVAIL] powered by the host device / bus — no own power input; [AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

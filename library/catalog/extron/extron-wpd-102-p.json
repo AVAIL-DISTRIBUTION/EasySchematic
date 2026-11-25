@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-1056-33",
+  "label": "Extron WPD 102 P",
+  "shortName": "WPD 102 P",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1056-33",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpd100series",
+  "searchTerms": [
+    "70-1056-33",
+    "wpd 102 p",
+    "extron",
+    "wpd",
+    "102"
+  ],
+  "heightMm": 114,
+  "widthMm": 69,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Two XTP DTP Punch Down Jacks Pass-Through Wallplate - Decorator-Style; White",
+    "notes": "[AVAIL] same decorator plate as WPD 102 C; depth not found",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

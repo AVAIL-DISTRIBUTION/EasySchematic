@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-42-268-01",
+  "label": "Extron HC 404",
+  "shortName": "HC 404",
+  "manufacturer": "Extron",
+  "modelNumber": "42-268-01",
+  "deviceType": "presentation-system",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hc404",
+  "searchTerms": [
+    "42-268-01",
+    "hc 404",
+    "extron",
+    "404"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 22,
+  "voltage": "12V DC",
+  "thermalBtuh": 70.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Meeting Space Collaboration System",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

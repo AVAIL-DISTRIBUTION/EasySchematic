@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-01238-30000",
+  "label": "Biamp R.35-3896",
+  "shortName": "R.35-3896",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01238-30000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01238-30000",
+  "searchTerms": [
+    "920-01238-30000",
+    "r.35-3896",
+    "biamp",
+    "35-3896"
+  ],
+  "heightMm": 279,
+  "widthMm": 330,
+  "depthMm": 343,
+  "weightKg": 15.4,
+  "unitCost": 1050,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way 8-Inch 90 X 60 Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

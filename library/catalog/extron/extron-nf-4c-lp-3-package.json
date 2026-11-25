@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-42-337-33",
+  "label": "Extron NF 4C LP-3 Package",
+  "shortName": "NF 4C LP-3 Package",
+  "manufacturer": "Extron",
+  "modelNumber": "42-337-33",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nf4clp",
+  "searchTerms": [
+    "42-337-33",
+    "nf 4c lp-3 package",
+    "extron",
+    "lp-3",
+    "package"
+  ],
+  "heightMm": 120,
+  "widthMm": 270,
+  "depthMm": 270,
+  "weightKg": 2.5,
+  "powerDrawW": 40.3,
+  "voltage": "PoE++ 802.3bt",
+  "poeDrawW": 60,
+  "thermalBtuh": 137.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "One Powered NF 4C LP and Two Passive NF 4C S LP",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

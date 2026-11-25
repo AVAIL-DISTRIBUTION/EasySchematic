@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00908-00031",
+  "label": "Biamp IP6-1122WR66",
+  "shortName": "IP6-1122WR66",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00908-00031",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00908-00031",
+  "searchTerms": [
+    "930-00908-00031",
+    "ip6-1122wr66",
+    "biamp"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 29.5,
+  "unitCost": 3900,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 12-Inch 2-Way 60 X 60 Weather-Resistant Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1999-03",
+  "label": "Extron TLP Pro 1035T (White)",
+  "shortName": "TLP Pro 1035T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1999-03",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1035t",
+  "searchTerms": [
+    "60-1999-03",
+    "tlp pro 1035t",
+    "extron",
+    "tlp",
+    "pro",
+    "1035t"
+  ],
+  "heightMm": 149,
+  "widthMm": 245,
+  "depthMm": 85,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "10.1\" Tabletop TouchLink Pro Touchpanel - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

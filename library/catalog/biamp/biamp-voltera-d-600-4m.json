@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-01986-00002",
+  "label": "Biamp Voltera D 600.4M",
+  "shortName": "Voltera D 600.4M",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01986-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01986-00001",
+  "searchTerms": [
+    "920-01986-00002",
+    "voltera d 600.4m",
+    "biamp",
+    "voltera",
+    "600"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 430,
+  "weightKg": 7.7,
+  "voltage": "100-240V AC",
+  "unitCost": 3922,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Audio DSP and Amplified Loudspeaker Controller - 4 channels sharing 600W with Dante & AVB",
+    "notes": "Характеристики с сайта по артикулу 920-01986-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1789-12",
+  "label": "Extron TLP Pro 1525MG",
+  "shortName": "TLP Pro 1525MG",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1789-12",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1525mg",
+  "searchTerms": [
+    "60-1789-12",
+    "tlp pro 1525mg",
+    "extron",
+    "tlp",
+    "pro",
+    "1525mg"
+  ],
+  "heightMm": 142,
+  "widthMm": 224,
+  "depthMm": 41,
+  "weightKg": 3.18,
+  "powerDrawW": 20.9,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 66.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "15\" Wall Mount TouchLink® Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

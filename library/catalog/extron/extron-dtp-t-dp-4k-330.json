@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1076-52",
+  "label": "Extron DTP T DP 4K 330",
+  "shortName": "DTP T DP 4K 330",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1076-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptdp330",
+  "searchTerms": [
+    "60-1076-52",
+    "dtp t dp 4k 330",
+    "extron",
+    "dtp",
+    "330"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 3.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Long Distance DisplayPort Twisted Pair Transmitter - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

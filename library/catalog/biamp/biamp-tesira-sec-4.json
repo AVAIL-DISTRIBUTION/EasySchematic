@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-901-0304",
+  "label": "Biamp Tesira SEC-4",
+  "shortName": "Tesira SEC-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0304",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0304",
+  "searchTerms": [
+    "901.0304",
+    "910-00329",
+    "tesira sec-4",
+    "biamp",
+    "tesira",
+    "sec-4"
+  ],
+  "unitCost": 958,
+  "slotFamily": "biamp-tesira-server-card",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-00329",
+    "deviceTypeSource": "card (biamp-tesira-server)",
+    "description": "Tesira 4 channel mic/line input card with acoustic echo cancellation per channel",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

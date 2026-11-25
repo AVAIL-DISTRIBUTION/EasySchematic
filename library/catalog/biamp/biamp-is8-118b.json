@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00902-00001",
+  "label": "Biamp IS8-118B",
+  "shortName": "IS8-118B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00902-00001",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00902-00001",
+  "searchTerms": [
+    "930-00902-00001",
+    "is8-118b",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 561,
+  "depthMm": 734,
+  "weightKg": 44.5,
+  "unitCost": 3632,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 18-Inch Subwoofer Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

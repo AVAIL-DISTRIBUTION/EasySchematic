@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-60-1564-12",
+  "label": "Extron TLP Pro 725C",
+  "shortName": "TLP Pro 725C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1564-12",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro725c",
+  "searchTerms": [
+    "60-1564-12",
+    "tlp pro 725c",
+    "extron",
+    "tlp",
+    "pro",
+    "725c"
+  ],
+  "heightMm": 119,
+  "widthMm": 323,
+  "depthMm": 178,
+  "weightKg": 2.65,
+  "powerDrawW": 8.6,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 24.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "7\" Cable Cubby TouchLink Pro Touchpanel",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

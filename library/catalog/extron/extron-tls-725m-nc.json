@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1563-112",
+  "label": "Extron TLS 725M NC",
+  "shortName": "TLS 725M NC",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1563-112",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tls725m",
+  "searchTerms": [
+    "60-1563-112",
+    "tls 725m nc",
+    "extron",
+    "tls",
+    "725m"
+  ],
+  "heightMm": 128,
+  "widthMm": 184,
+  "depthMm": 30,
+  "weightKg": 0.5,
+  "powerDrawW": 8.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 24.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "7\" Wall Mount TouchLink Scheduling Panel - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

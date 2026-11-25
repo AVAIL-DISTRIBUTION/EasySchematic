@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-382-11",
+  "label": "Extron Two USB 2.0 Type-A Female to USB 2.0 Type-B Female Adapters",
+  "shortName": "Two USB 2.0 Type-A Female to USB…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-382-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2usbafusbbfa",
+  "searchTerms": [
+    "70-382-11",
+    "two usb 2.0 type-a female to usb…",
+    "extron",
+    "two",
+    "usb",
+    "type-a",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two USB 2.0 Type-A Female to USB B Female Adapters",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

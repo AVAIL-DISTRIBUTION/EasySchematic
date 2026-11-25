@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1495-21",
+  "label": "Extron DXP 88 HD 4K PLUS",
+  "shortName": "DXP 88 HD 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1495-21",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dxphd4kplus",
+  "searchTerms": [
+    "60-1495-21",
+    "dxp 88 hd 4k plus",
+    "extron",
+    "dxp",
+    "plus"
+  ],
+  "heightMm": 44,
+  "widthMm": 445,
+  "depthMm": 241,
+  "weightKg": 2.5,
+  "powerDrawW": 30.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 96.8,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "8x8 4K/60 HDMI with 2 Audio Outputs",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

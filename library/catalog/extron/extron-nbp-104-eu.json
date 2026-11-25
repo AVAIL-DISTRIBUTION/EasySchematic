@@ -1,0 +1,45 @@
+{
+  "id": "avail-extron-60-2050-01",
+  "label": "Extron NBP 104 EU",
+  "shortName": "NBP 104 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2050-01",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbp104eu",
+  "searchTerms": [
+    "60-2050-01",
+    "nbp 104 eu",
+    "extron",
+    "nbp",
+    "104"
+  ],
+  "heightMm": 81,
+  "widthMm": 81,
+  "depthMm": 11,
+  "weightKg": 0.1,
+  "powerDrawW": 1.2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 3.9,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
+    "description": "Network Button Panel with 4 Buttons – Flex55 and EU Wall Frame",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

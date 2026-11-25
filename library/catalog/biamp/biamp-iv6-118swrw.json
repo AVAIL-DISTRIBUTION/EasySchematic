@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00883-00005",
+  "label": "Biamp IV6-118SWRW",
+  "shortName": "IV6-118SWRW",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00883-00005",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00883-00005",
+  "searchTerms": [
+    "930-00883-00005",
+    "iv6-118swrw",
+    "biamp"
+  ],
+  "heightMm": 508,
+  "widthMm": 714,
+  "depthMm": 714,
+  "weightKg": 44.9,
+  "unitCost": 5947,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "18-inch subwoofer (Weather-Resistant, White)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2014-01",
+  "label": "Extron MLC Plus 400",
+  "shortName": "MLC Plus 400",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2014-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlcplus400",
+  "searchTerms": [
+    "60-2014-01",
+    "mlc plus 400",
+    "extron",
+    "mlc",
+    "plus",
+    "400"
+  ],
+  "heightMm": 46,
+  "widthMm": 89,
+  "depthMm": 40,
+  "weightKg": 0.34,
+  "powerDrawW": 3.5,
+  "voltage": "48V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 12,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Black, 4\" Touch Surface, 2-Gang",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

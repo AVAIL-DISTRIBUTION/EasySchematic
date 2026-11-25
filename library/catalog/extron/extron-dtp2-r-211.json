@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1631-63",
+  "label": "Extron DTP2 R 211",
+  "shortName": "DTP2 R 211",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1631-63",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp2r211",
+  "searchTerms": [
+    "60-1631-63",
+    "dtp2 r 211",
+    "extron",
+    "dtp2",
+    "211"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.24,
+  "powerDrawW": 6.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 19.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "HDMI 4K/60 DTP2 Receiver with Audio De-Embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

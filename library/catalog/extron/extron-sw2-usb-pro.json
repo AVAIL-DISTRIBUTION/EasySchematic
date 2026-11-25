@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1833-01",
+  "label": "Extron SW2 USB Pro",
+  "shortName": "SW2 USB Pro",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1833-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/swusb",
+  "searchTerms": [
+    "60-1833-01",
+    "sw2 usb pro",
+    "extron",
+    "sw2",
+    "usb",
+    "pro"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 76,
+  "weightKg": 0.9,
+  "powerDrawW": 18.55,
+  "voltage": "12V DC",
+  "thermalBtuh": 19.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Input USB 10G Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

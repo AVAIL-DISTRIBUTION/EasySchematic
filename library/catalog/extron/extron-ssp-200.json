@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1658-01",
+  "label": "Extron SSP 200",
+  "shortName": "SSP 200",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1658-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ssp200",
+  "searchTerms": [
+    "60-1658-01",
+    "ssp 200",
+    "extron",
+    "ssp",
+    "200"
+  ],
+  "heightMm": 43,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1,
+  "powerDrawW": 12,
+  "voltage": "100V AC",
+  "thermalBtuh": 34.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Surround Sound Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

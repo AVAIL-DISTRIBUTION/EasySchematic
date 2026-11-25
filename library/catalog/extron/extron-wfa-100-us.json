@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-1944-01",
+  "label": "Extron WFA 100 US",
+  "shortName": "WFA 100 US",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1944-01",
+  "deviceType": "adapter",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sharelinkprowfa100",
+  "searchTerms": [
+    "60-1944-01",
+    "wfa 100 us",
+    "extron",
+    "wfa",
+    "100"
+  ],
+  "heightMm": 26,
+  "widthMm": 72,
+  "depthMm": 11,
+  "weightKg": 0.01,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "USB to Wi-Fi & Bluetooth Adapter - US",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

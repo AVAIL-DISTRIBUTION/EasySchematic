@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-910-00014",
+  "label": "Biamp Tesira AMP-450BP",
+  "shortName": "Tesira AMP-450BP",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00014",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00014",
+  "searchTerms": [
+    "910-00014",
+    "tesira amp-450bp",
+    "biamp",
+    "tesira",
+    "amp-450bp"
+  ],
+  "heightMm": 30,
+  "widthMm": 195,
+  "depthMm": 120,
+  "weightKg": 0.7,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1028,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4 channel PoE+ conferencing amplifier [includes BPAK]",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1614-01",
+  "label": "Extron DVC RGB-HD A",
+  "shortName": "DVC RGB-HD A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1614-01",
+  "deviceType": "converter",
+  "category": "AV distribution / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dvcrgbhda",
+  "searchTerms": [
+    "60-1614-01",
+    "dvc rgb-hd a",
+    "extron",
+    "dvc",
+    "rgb-hd"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 1.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 4.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "RGB to HDMI Convertor with Audio Embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

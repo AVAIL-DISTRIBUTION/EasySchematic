@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00854-00002",
+  "label": "Biamp IS6-118W",
+  "shortName": "IS6-118W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00854-00002",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00854-00002",
+  "searchTerms": [
+    "930-00854-00002",
+    "is6-118w",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 561,
+  "depthMm": 734,
+  "weightKg": 44,
+  "unitCost": 2586,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 18-Inch Subwoofer White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

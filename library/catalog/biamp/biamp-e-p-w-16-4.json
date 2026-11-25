@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00856-00001",
+  "label": "Biamp E-P-W-16-4",
+  "shortName": "E-P-W-16-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00856-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00856-00001",
+  "searchTerms": [
+    "930-00856-00001",
+    "e-p-w-16-4",
+    "biamp"
+  ],
+  "heightMm": 83,
+  "widthMm": 83,
+  "depthMm": 89,
+  "weightKg": 0.18,
+  "unitCost": 666,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Active Emitters, White, 4 pack, with 4 x 16 ft white plenum rated cables",
+    "notes": "Эмиттер звуковой маскировки; Продаётся упаковкой по 4 шт.; цена в прайсе — за упаковку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

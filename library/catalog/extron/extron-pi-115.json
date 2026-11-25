@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1233-02",
+  "label": "Extron PI 115",
+  "shortName": "PI 115",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1233-02",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/pi115",
+  "searchTerms": [
+    "60-1233-02",
+    "pi 115",
+    "extron",
+    "115"
+  ],
+  "heightMm": 42,
+  "widthMm": 110,
+  "depthMm": 114,
+  "weightKg": 0.3,
+  "powerDrawW": 19.68,
+  "powerCapacityW": 19.68,
+  "voltage": "100-240V AC",
+  "poeBudgetW": 15.4,
+  "thermalBtuh": 67.1,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Single Port Power Injector",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

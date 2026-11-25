@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01455-00002",
+  "label": "Biamp PCR3000RMKIII",
+  "shortName": "PCR3000RMKIII",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01455-00002",
+  "deviceType": "media-player",
+  "category": "Audio Products / Sources",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01455-00002",
+  "searchTerms": [
+    "920-01455-00002",
+    "pcr3000rmkiii",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 305,
+  "weightKg": 4.6,
+  "voltage": "230V AC",
+  "unitCost": 676,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-player",
+    "description": "Versatile DAB+ and FM RDS / CD / USB / SD-card /Bluetooth music source, RS232 control, IR remote included, 1U, 19\"",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

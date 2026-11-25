@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1996-02",
+  "label": "Extron TLP Pro 835M (Black)",
+  "shortName": "TLP Pro 835M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1996-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro835m",
+  "searchTerms": [
+    "60-1996-02",
+    "tlp pro 835m",
+    "extron",
+    "tlp",
+    "pro",
+    "835m"
+  ],
+  "heightMm": 129,
+  "widthMm": 203,
+  "depthMm": 32,
+  "weightKg": 0.68,
+  "powerDrawW": 9.5,
+  "voltage": "9V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 33.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "8\" Wall Mount TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-00666",
+  "label": "Biamp D-VOL120",
+  "shortName": "D-VOL120",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00666",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00666",
+  "searchTerms": [
+    "910-00666",
+    "d-vol120",
+    "biamp"
+  ],
+  "heightMm": 115,
+  "widthMm": 70,
+  "depthMm": 50,
+  "weightKg": 0.41,
+  "powerDrawW": 0.1,
+  "unitCost": 85,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "volume-control",
+    "description": "70 volt, 120 watts Decora style volume control, white, with 24V prioirty relais",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

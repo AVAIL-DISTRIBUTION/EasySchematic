@@ -1,0 +1,31 @@
+{
+  "id": "avail-extron-70-1270-01",
+  "label": "Extron Quantum Expansion IN",
+  "shortName": "Quantum Expansion IN",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1270-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "70-1270-01",
+    "quantum expansion in",
+    "extron",
+    "quantum",
+    "expansion"
+  ],
+  "slotFamily": "extron-quantum-ultra",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-quantum-ultra)",
+    "description": "Expansion Input Card for Quantum Ultra",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

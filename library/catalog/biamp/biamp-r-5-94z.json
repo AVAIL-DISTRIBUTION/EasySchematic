@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00887-00005",
+  "label": "Biamp R.5-94Z",
+  "shortName": "R.5-94Z",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00887-00005",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00887-00005",
+  "searchTerms": [
+    "930-00887-00005",
+    "r.5-94z",
+    "biamp",
+    "5-94z"
+  ],
+  "heightMm": 406,
+  "widthMm": 406,
+  "depthMm": 404.88,
+  "weightKg": 15.9,
+  "unitCost": 1486,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 12-Inch Horn Loaded 90 X 40 Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

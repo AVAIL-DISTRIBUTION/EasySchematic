@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-910-00404",
+  "label": "Biamp Vocia PSKIT-1",
+  "shortName": "Vocia PSKIT-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00404",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00404",
+  "searchTerms": [
+    "910-00404",
+    "vocia pskit-1",
+    "biamp",
+    "vocia",
+    "pskit-1"
+  ],
+  "heightMm": 41,
+  "widthMm": 133,
+  "depthMm": 293,
+  "weightKg": 1,
+  "powerDrawW": 6,
+  "voltage": "24V DC / PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 2101,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "paging-station",
+    "description": "Vocia paging station kit with onboard DSP, memory and up to 999 stored user-configurable page codes",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

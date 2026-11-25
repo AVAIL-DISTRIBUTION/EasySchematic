@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1694-12a",
+  "label": "Extron DTP3 CrossPoint 662 IPCP A LL",
+  "shortName": "DTP3 CrossPoint 662 IPCP A LL",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1694-12A",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3crosspoint662",
+  "searchTerms": [
+    "60-1694-12a",
+    "dtp3 crosspoint 662 ipcp a ll",
+    "extron",
+    "dtp3",
+    "crosspoint",
+    "662",
+    "ipcp"
+  ],
+  "heightMm": 89,
+  "widthMm": 444,
+  "depthMm": 457,
+  "weightKg": 7.03,
+  "powerDrawW": 444,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 611,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "4K/60 Presentation Matrix Switcher with Reversible DTP3 I/O, Control Processor and Amplifier, LL UI Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

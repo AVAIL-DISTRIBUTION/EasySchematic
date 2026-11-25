@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-00050",
+  "label": "Biamp PI-AE",
+  "shortName": "PI-AE",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00050",
+  "deviceType": "converter",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00050",
+  "searchTerms": [
+    "910-00050",
+    "pi-ae",
+    "biamp"
+  ],
+  "heightMm": 32,
+  "widthMm": 70,
+  "depthMm": 95,
+  "weightKg": 0.13,
+  "unitCost": 193,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "poe-injector",
+    "description": "Active emitter power injector",
+    "notes": "[AVAIL] powered from PS-AE-3 power supply (Biamp); [AVAIL] from Biamp PI-AE data sheet",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

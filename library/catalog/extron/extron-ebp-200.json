@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1389-01",
+  "label": "Extron EBP 200",
+  "shortName": "EBP 200",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1389-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / eBUS",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ebp200",
+  "searchTerms": [
+    "60-1389-01",
+    "ebp 200",
+    "extron",
+    "ebp",
+    "200"
+  ],
+  "heightMm": 69,
+  "widthMm": 132,
+  "depthMm": 21,
+  "weightKg": 0.3,
+  "powerDrawW": 0.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 1.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "eBUS Button Panel with 10 Buttons - US 3-Gang",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

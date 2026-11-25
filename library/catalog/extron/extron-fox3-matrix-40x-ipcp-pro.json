@@ -1,0 +1,44 @@
+{
+  "id": "avail-extron-60-1576-12",
+  "label": "Extron FOX3 Matrix 40x IPCP Pro",
+  "shortName": "FOX3 Matrix 40x IPCP Pro",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1576-12",
+  "deviceType": "frame",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix40x",
+  "searchTerms": [
+    "60-1576-12",
+    "fox3 matrix 40x ipcp pro",
+    "extron",
+    "fox3",
+    "matrix",
+    "40x",
+    "ipcp"
+  ],
+  "heightMm": 178,
+  "widthMm": 432,
+  "depthMm": 508,
+  "weightKg": 20,
+  "powerDrawW": 157,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 535,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "4U Full rack",
+    "rackUnits": 4,
+    "slotFamilies": [
+      "extron-fox3-matrix"
+    ],
+    "description": "Modular Fiber Optic Matrix Switcher from 8x8 to 40x40",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

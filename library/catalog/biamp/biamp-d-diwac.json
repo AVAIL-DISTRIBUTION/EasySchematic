@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00669",
+  "label": "Biamp D-DIWAC",
+  "shortName": "D-DIWAC",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00669",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00669",
+  "searchTerms": [
+    "910-00669",
+    "d-diwac",
+    "biamp"
+  ],
+  "heightMm": 115,
+  "widthMm": 70,
+  "depthMm": 20,
+  "weightKg": 0.07,
+  "powerDrawW": 0.1,
+  "unitCost": 206,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Digital decora style wall control with 2 line LCD display. Buttons for source selection and volume control. Standard 2 wire connection.",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

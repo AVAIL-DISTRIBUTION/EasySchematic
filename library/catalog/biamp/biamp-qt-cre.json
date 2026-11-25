@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00714-00002",
+  "label": "Biamp QT-CRE",
+  "shortName": "QT-CRE",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00714-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00714-00001",
+  "searchTerms": [
+    "920-00714-00002",
+    "qt-cre",
+    "biamp"
+  ],
+  "heightMm": 89,
+  "widthMm": 179,
+  "depthMm": 23,
+  "weightKg": 0.32,
+  "powerDrawW": 7,
+  "voltage": "100-240V AC (24V DC adapter)",
+  "unitCost": 3850,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "sound-masking",
+    "description": "Qt Conference Room Edition",
+    "notes": "Звуковая маскировка; в таксономии нет своей категории; Характеристики с сайта по артикулу 920-00714-00001; [AVAIL] from Biamp documentation: system < 7 W",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1958-06",
+  "label": "Extron NAV E 511 (SM)",
+  "shortName": "NAV E 511",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1958-06",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave511",
+  "searchTerms": [
+    "60-1958-06",
+    "nav e 511",
+    "extron",
+    "nav",
+    "511"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 23.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 72.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "SM",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G Fiber HDMI, Ethernet, USB Encoder - Singlemode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

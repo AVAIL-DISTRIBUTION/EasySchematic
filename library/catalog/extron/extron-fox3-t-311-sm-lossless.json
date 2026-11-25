@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1523-12",
+  "label": "Extron FOX3 T 311 SM (Lossless)",
+  "shortName": "FOX3 T 311 SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1523-12",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t311",
+  "searchTerms": [
+    "60-1523-12",
+    "fox3 t 311 sm",
+    "extron",
+    "fox3",
+    "311"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1.1,
+  "powerDrawW": 23.3,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 78.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Lossless",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Transmitter for HDMI, USB HID, Audio, Control, and 3D Sync",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

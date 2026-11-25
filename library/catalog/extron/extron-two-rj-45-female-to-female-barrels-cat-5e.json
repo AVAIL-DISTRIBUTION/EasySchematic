@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-70-100-11",
+  "label": "Extron Two RJ-45 Female to Female Barrels - CAT 5e",
+  "shortName": "Two RJ-45 Female to Female Barre…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-100-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2rj45",
+  "searchTerms": [
+    "70-100-11",
+    "two rj-45 female to female barre…",
+    "extron",
+    "two",
+    "rj-45",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - Black: Two RJ-45 Female to Female Barrels - CAT 5e",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

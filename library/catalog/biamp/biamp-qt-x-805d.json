@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00219-00002",
+  "label": "Biamp Qt X 805D",
+  "shortName": "Qt X 805D",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00219-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00219-00001",
+  "searchTerms": [
+    "920-00219-00002",
+    "qt x 805d",
+    "biamp",
+    "805d"
+  ],
+  "heightMm": 89,
+  "widthMm": 371.5,
+  "depthMm": 97,
+  "weightKg": 0.68,
+  "powerDrawW": 24,
+  "voltage": "100-240V AC",
+  "unitCost": 3180,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "sound-masking",
+    "description": "Qt X Controller, (8) 8 Ohm / Pre amp Outputs, Dante",
+    "notes": "Звуковая маскировка; в таксономии нет своей категории; Характеристики с сайта по артикулу 920-00219-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

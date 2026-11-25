@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1515-01",
+  "label": "Extron DTP CrossPoint 84 4K",
+  "shortName": "DTP CrossPoint 84 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1515-01",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpcp4k84",
+  "searchTerms": [
+    "60-1515-01",
+    "dtp crosspoint 84 4k",
+    "extron",
+    "dtp",
+    "crosspoint"
+  ],
+  "heightMm": 89,
+  "widthMm": 442,
+  "depthMm": 389,
+  "weightKg": 6.4,
+  "powerDrawW": 136,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 356,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "8x4 Seamless Scaling Presentation Matrix Switcher - Preamp Output w/o Amplifier and Control Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

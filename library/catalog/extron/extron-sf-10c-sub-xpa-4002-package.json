@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-42-289-01",
+  "label": "Extron SF 10C SUB & XPA 4002 Package",
+  "shortName": "SF 10C SUB & XPA 4002 Package",
+  "manufacturer": "Extron",
+  "modelNumber": "42-289-01",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf10csub",
+  "searchTerms": [
+    "42-289-01",
+    "sf 10c sub & xpa 4002 package",
+    "extron",
+    "10c",
+    "sub",
+    "xpa",
+    "4002"
+  ],
+  "heightMm": 385,
+  "widthMm": 362,
+  "depthMm": 869,
+  "weightKg": 17.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "SF 10C SUB & XPA 4002 - Discount Package",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

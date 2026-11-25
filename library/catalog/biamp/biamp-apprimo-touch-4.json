@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-910-01874",
+  "label": "Biamp Apprimo Touch 4",
+  "shortName": "Apprimo Touch 4",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01874",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01874",
+  "searchTerms": [
+    "910-01874",
+    "apprimo touch 4",
+    "biamp",
+    "apprimo",
+    "touch"
+  ],
+  "heightMm": 115,
+  "widthMm": 77,
+  "depthMm": 41,
+  "weightKg": 0.16,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 1052,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4\" touch panel, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

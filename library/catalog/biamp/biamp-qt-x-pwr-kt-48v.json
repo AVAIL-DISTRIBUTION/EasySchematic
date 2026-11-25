@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-01847-00002",
+  "label": "Biamp Qt X PWR-KT-48V",
+  "shortName": "Qt X PWR-KT-48V",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01847-00002",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01847-00001",
+  "searchTerms": [
+    "920-01847-00002",
+    "qt x pwr-kt-48v",
+    "biamp",
+    "pwr-kt-48v"
+  ],
+  "heightMm": 20,
+  "widthMm": 40,
+  "depthMm": 180,
+  "powerDrawW": 50,
+  "powerCapacityW": 50,
+  "voltage": "100-240V AC",
+  "unitCost": 159,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "48V Power Supply Kit for Qt X 8XX models",
+    "notes": "Характеристики с сайта по артикулу 920-01847-00001; [AVAIL] from Biamp documentation: PSU, output 48V DC 50 W max; [AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

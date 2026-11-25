@@ -1,0 +1,33 @@
+{
+  "id": "avail-extron-70-312-21",
+  "label": "Extron IN9468 USB 2.0 Type-A",
+  "shortName": "IN9468 USB 2.0 Type-A",
+  "manufacturer": "Extron",
+  "modelNumber": "70-312-21",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in9467",
+  "searchTerms": [
+    "70-312-21",
+    "in9468 usb 2.0 type-a",
+    "extron",
+    "in9468",
+    "usb",
+    "type-a"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - White: One USB 2.0 Type-A Connector to Captive Screw",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1686-01",
+  "label": "Extron DPH 101 4K PLUS",
+  "shortName": "DPH 101 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1686-01",
+  "deviceType": "converter",
+  "category": "AV distribution / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dph1014kplus",
+  "searchTerms": [
+    "60-1686-01",
+    "dph 101 4k plus",
+    "extron",
+    "dph",
+    "101",
+    "plus"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.05,
+  "powerDrawW": 0.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 1.9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "DisplayPort Female to HDMI Female Active Adapter",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

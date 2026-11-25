@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1739-01",
+  "label": "Extron HDP 101 4K",
+  "shortName": "HDP 101 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1739-01",
+  "deviceType": "converter",
+  "category": "AV distribution / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hdp1014k",
+  "searchTerms": [
+    "60-1739-01",
+    "hdp 101 4k",
+    "extron",
+    "hdp",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 1.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 4.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "HDMI Female to DisplayPort Female Converter",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

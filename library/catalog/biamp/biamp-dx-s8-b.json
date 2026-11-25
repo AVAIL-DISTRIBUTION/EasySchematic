@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-02620-10000",
+  "label": "Biamp DX-S8-B",
+  "shortName": "DX-S8-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02620-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00109-10000",
+  "searchTerms": [
+    "920-02620-10000",
+    "dx-s8-b",
+    "biamp"
+  ],
+  "heightMm": 385,
+  "widthMm": 255,
+  "depthMm": 368,
+  "weightKg": 7.71,
+  "unitCost": 410,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8” High Output Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included ClickMount pan-tilt mounting bracket, black (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; Характеристики с сайта по артикулу 920-00109-10000",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

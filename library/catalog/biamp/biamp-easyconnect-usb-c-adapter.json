@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-00218",
+  "label": "Biamp EasyConnect USB-C Adapter",
+  "shortName": "EasyConnect USB-C Adapter",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00218",
+  "deviceType": "adapter",
+  "category": "Integration Tools / Adapters",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00218",
+  "searchTerms": [
+    "910-00218",
+    "easyconnect usb-c adapter",
+    "biamp",
+    "easyconnect",
+    "usb-c",
+    "adapter"
+  ],
+  "unitCost": 106,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Adapter USB-C/HDMI 2.0/65W",
+    "notes": "[AVAIL] room-mounted (cable adapter) — dimensions optional",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

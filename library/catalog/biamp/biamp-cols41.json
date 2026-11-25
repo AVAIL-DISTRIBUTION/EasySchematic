@@ -1,0 +1,31 @@
+{
+  "id": "avail-biamp-910-01588",
+  "label": "Biamp COLS41",
+  "shortName": "COLS41",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01588",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01588",
+  "searchTerms": [
+    "910-01588",
+    "cols41",
+    "biamp"
+  ],
+  "heightMm": 399,
+  "widthMm": 66,
+  "depthMm": 66,
+  "unitCost": 159,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4 x 2\" slim sound column loudspeaker with 1\" tweeter 70 - 100 volt / 20 watts or 8 ohms / 30 watts, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

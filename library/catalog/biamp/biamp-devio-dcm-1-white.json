@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00488-20000",
+  "label": "Biamp Devio DCM-1 White",
+  "shortName": "Devio DCM-1 White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00488-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00488-20000",
+  "searchTerms": [
+    "920-00488-20000",
+    "devio dcm-1 white",
+    "biamp",
+    "devio",
+    "dcm-1",
+    "white"
+  ],
+  "heightMm": 51,
+  "widthMm": 63,
+  "depthMm": 63,
+  "weightKg": 0.17,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Beamtracking pendant microphone, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

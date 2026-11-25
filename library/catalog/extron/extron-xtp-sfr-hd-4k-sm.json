@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1278-32",
+  "label": "Extron XTP SFR HD 4K SM",
+  "shortName": "XTP SFR HD 4K SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1278-32",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpsfrhd4k",
+  "searchTerms": [
+    "60-1278-32",
+    "xtp sfr hd 4k sm",
+    "extron",
+    "xtp",
+    "sfr"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 7.6,
+  "thermalBtuh": 24.6,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "XTP Fiber Optic Scaling Receiver for HDMI - Singlemode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

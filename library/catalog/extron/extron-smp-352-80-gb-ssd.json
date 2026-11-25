@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1634-01",
+  "label": "Extron SMP 352 - 80 GB SSD",
+  "shortName": "SMP 352 - 80 GB SSD",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1634-01",
+  "deviceType": "recorder",
+  "category": "Streaming and Recording / Media processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/smp352",
+  "searchTerms": [
+    "60-1634-01",
+    "smp 352 - 80 gb ssd",
+    "extron",
+    "smp",
+    "352",
+    "ssd"
+  ],
+  "heightMm": 43,
+  "widthMm": 444,
+  "depthMm": 292,
+  "weightKg": 2.7,
+  "powerDrawW": 30,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 96,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Dual Recording – 80 GB SSD",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

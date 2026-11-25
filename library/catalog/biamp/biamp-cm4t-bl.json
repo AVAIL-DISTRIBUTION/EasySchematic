@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-01548-10000",
+  "label": "Biamp CM4T-BL",
+  "shortName": "CM4T-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01548-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01548-10000",
+  "searchTerms": [
+    "920-01548-10000",
+    "cm4t-bl",
+    "biamp"
+  ],
+  "heightMm": 135,
+  "widthMm": 135,
+  "depthMm": 74,
+  "weightKg": 0.69,
+  "unitCost": 42,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4\" ceiling speaker 70 - 100 volt / 6 watts, 16 ohms / 30 watts, spring clips mounting, black, with removable logo",
+    "notes": "Вес на сайте 69 кг — явная ошибка, взят вес соседнего варианта",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

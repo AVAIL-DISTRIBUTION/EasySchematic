@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1562-12",
+  "label": "Extron TLP Pro 725T (Black)",
+  "shortName": "TLP Pro 725T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1562-12",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro725t",
+  "searchTerms": [
+    "60-1562-12",
+    "tlp pro 725t",
+    "extron",
+    "tlp",
+    "pro",
+    "725t"
+  ],
+  "heightMm": 122,
+  "widthMm": 181,
+  "depthMm": 90,
+  "weightKg": 0.79,
+  "powerDrawW": 8.2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 23.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "7\" Tabletop TouchLink® Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

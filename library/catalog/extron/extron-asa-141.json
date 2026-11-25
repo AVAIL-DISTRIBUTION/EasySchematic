@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-804-01",
+  "label": "Extron ASA 141",
+  "shortName": "ASA 141",
+  "manufacturer": "Extron",
+  "modelNumber": "60-804-01",
+  "deviceType": "adapter",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/asa141",
+  "searchTerms": [
+    "60-804-01",
+    "asa 141",
+    "extron",
+    "asa",
+    "141"
+  ],
+  "heightMm": 28,
+  "widthMm": 28,
+  "depthMm": 40,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Passive Audio Summing Adapter with RCA Inputs and Balanced/Unbalanced Output",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

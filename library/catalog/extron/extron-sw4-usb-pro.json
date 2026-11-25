@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1834-01",
+  "label": "Extron SW4 USB Pro",
+  "shortName": "SW4 USB Pro",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1834-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/swusb",
+  "searchTerms": [
+    "60-1834-01",
+    "sw4 usb pro",
+    "extron",
+    "sw4",
+    "usb",
+    "pro"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 76,
+  "weightKg": 0.9,
+  "powerDrawW": 18.55,
+  "voltage": "12V DC",
+  "thermalBtuh": 19.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input USB 10G Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

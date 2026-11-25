@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00901-00003",
+  "label": "Biamp IS8-212WR",
+  "shortName": "IS8-212WR",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00901-00003",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00901-00003",
+  "searchTerms": [
+    "930-00901-00003",
+    "is8-212wr",
+    "biamp"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 553,
+  "weightKg": 40.4,
+  "unitCost": 5200,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power Dual 12-Inch Subwoofer Weather-Resistant Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

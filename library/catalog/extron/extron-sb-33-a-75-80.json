@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1737-14",
+  "label": "Extron SB 33 A 75-80",
+  "shortName": "SB 33 A 75-80",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1737-14",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sb33a",
+  "searchTerms": [
+    "60-1737-14",
+    "sb 33 a 75-80",
+    "extron",
+    "75-80"
+  ],
+  "heightMm": 153,
+  "widthMm": 1626,
+  "depthMm": 98,
+  "weightKg": 7.6,
+  "powerDrawW": 3.7,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 13,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Adjustable Width Sound Bar for 75\" to 80\" Displays",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00923-20000",
+  "label": "Biamp P6-SM White",
+  "shortName": "P6-SM White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00923-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00923-20000",
+  "searchTerms": [
+    "920-00923-20000",
+    "p6-sm white",
+    "biamp",
+    "p6-sm",
+    "white"
+  ],
+  "heightMm": 292,
+  "widthMm": 292,
+  "depthMm": 139,
+  "weightKg": 5,
+  "unitCost": 492,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Pendant, Indoor/Outdoor 6.5\" Coaxial Loudspeaker, Sunshine Profile, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

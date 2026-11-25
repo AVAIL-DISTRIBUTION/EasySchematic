@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1782-03",
+  "label": "Extron AC+USB 311 EU",
+  "shortName": "AC+USB 311 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1782-03",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb300",
+  "searchTerms": [
+    "60-1782-03",
+    "ac+usb 311 eu",
+    "extron",
+    "ac+usb",
+    "311"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 152,
+  "weightKg": 1.1,
+  "powerDrawW": 45,
+  "voltage": "12V DC",
+  "thermalBtuh": 29.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "AC+USB-C+USB-A, EU",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

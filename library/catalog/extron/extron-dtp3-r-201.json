@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1869-63",
+  "label": "Extron DTP3 R 201",
+  "shortName": "DTP3 R 201",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1869-63",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3r201",
+  "searchTerms": [
+    "60-1869-63",
+    "dtp3 r 201",
+    "extron",
+    "dtp3",
+    "201"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.27,
+  "powerDrawW": 7.37,
+  "voltage": "12V DC",
+  "thermalBtuh": 24.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "4K/60 HDMI DTP3 Receiver with Audio De-Embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

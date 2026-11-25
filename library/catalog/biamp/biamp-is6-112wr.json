@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-10886-00005",
+  "label": "Biamp IS6-112WR",
+  "shortName": "IS6-112WR",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10886-00005",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10886-00005",
+  "searchTerms": [
+    "930-10886-00005",
+    "is6-112wr",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 533,
+  "weightKg": 29,
+  "unitCost": 3100,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 12-Inch Subwoofer Weather-Resistant Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

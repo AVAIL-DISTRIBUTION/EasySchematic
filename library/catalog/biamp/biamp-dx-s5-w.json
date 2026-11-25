@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-02616-20000",
+  "label": "Biamp DX-S5-W",
+  "shortName": "DX-S5-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02616-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00107-20000",
+  "searchTerms": [
+    "920-02616-20000",
+    "dx-s5-w",
+    "biamp"
+  ],
+  "heightMm": 280,
+  "widthMm": 180,
+  "depthMm": 292,
+  "weightKg": 4.7,
+  "unitCost": 270,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "5” High Output Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included ClickMount pan-tilt mounting bracket, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; Характеристики с сайта по артикулу 920-00107-20000",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

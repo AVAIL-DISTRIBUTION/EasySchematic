@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-01887-00002",
+  "label": "Biamp AMP-D225H",
+  "shortName": "AMP-D225H",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01887-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01887-00001",
+  "searchTerms": [
+    "920-01887-00002",
+    "amp-d225h",
+    "biamp"
+  ],
+  "heightMm": 37,
+  "widthMm": 218,
+  "depthMm": 70,
+  "weightKg": 0.5,
+  "powerDrawW": 50,
+  "voltage": "24V DC",
+  "unitCost": 583,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "2 channel, 25W half-rack amplifier",
+    "notes": "Характеристики с сайта по артикулу 920-01887-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

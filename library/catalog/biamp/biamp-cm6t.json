@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01557-20000",
+  "label": "Biamp CM6T",
+  "shortName": "CM6T",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01557-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01557-20000",
+  "searchTerms": [
+    "920-01557-20000",
+    "cm6t",
+    "biamp"
+  ],
+  "heightMm": 205,
+  "widthMm": 205,
+  "depthMm": 75,
+  "weightKg": 1.4,
+  "unitCost": 70,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" two-way ceiling speaker 70 - 100 volt / 6 watts, 16 ohms / 60 watts, white, with removable logo and quick fit push connector",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

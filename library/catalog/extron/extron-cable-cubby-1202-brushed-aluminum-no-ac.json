@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-70-1184-08",
+  "label": "Extron Cable Cubby 1202 (Brushed Aluminum, No AC)",
+  "shortName": "Cable Cubby 1202",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1184-08",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby1202",
+  "searchTerms": [
+    "70-1184-08",
+    "cable cubby 1202",
+    "extron",
+    "cable",
+    "cubby",
+    "1202"
+  ],
+  "heightMm": 113,
+  "widthMm": 269,
+  "depthMm": 116,
+  "weightKg": 1.1,
+  "voltage": "125V AC",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Brushed Aluminum, No AC",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Cable Cubby 1202 Brushed Aluminum, AC Module Not Included",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

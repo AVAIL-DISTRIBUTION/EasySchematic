@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-42-359-03",
+  "label": "Extron CA 43T PT (White, Single)",
+  "shortName": "CA 43T PT",
+  "manufacturer": "Extron",
+  "modelNumber": "42-359-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca43t",
+  "searchTerms": [
+    "42-359-03",
+    "ca 43t pt",
+    "extron",
+    "43t"
+  ],
+  "heightMm": 430,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 4.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Pan and Tilt Mount, Single, White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

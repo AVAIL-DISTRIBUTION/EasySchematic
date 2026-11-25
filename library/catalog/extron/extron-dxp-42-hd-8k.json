@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1879-01",
+  "label": "Extron DXP 42 HD 8K",
+  "shortName": "DXP 42 HD 8K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1879-01",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dxp42hd8k",
+  "searchTerms": [
+    "60-1879-01",
+    "dxp 42 hd 8k",
+    "extron",
+    "dxp"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 22.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 68.8,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4x2 8K HDMI Matrix with Audio De-Embedding",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

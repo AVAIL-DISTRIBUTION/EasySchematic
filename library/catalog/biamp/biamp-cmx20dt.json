@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01584",
+  "label": "Biamp CMX20DT",
+  "shortName": "CMX20DT",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01584",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01584",
+  "searchTerms": [
+    "910-01584",
+    "cmx20dt",
+    "biamp"
+  ],
+  "heightMm": 250,
+  "widthMm": 250,
+  "depthMm": 87,
+  "weightKg": 1.45,
+  "unitCost": 112,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8\" two-way thin edge design ceiling speaker 70 - 100 volt / 20 watts, 16 ohms / 100 watts, white, with basket integrated neodymium magnets for a perfect seal, removable logo and quick fix push connector",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

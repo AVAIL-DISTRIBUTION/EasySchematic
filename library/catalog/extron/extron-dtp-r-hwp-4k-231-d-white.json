@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1531-13",
+  "label": "Extron DTP R HWP 4K 231 D (White)",
+  "shortName": "DTP R HWP 4K 231 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1531-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtprhwp4k231d",
+  "searchTerms": [
+    "60-1531-13",
+    "dtp r hwp 4k 231 d",
+    "extron",
+    "dtp",
+    "hwp",
+    "231"
+  ],
+  "heightMm": 107,
+  "widthMm": 43,
+  "depthMm": 58,
+  "weightKg": 0.15,
+  "powerDrawW": 8.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 17.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "DTP Receiver for HDMI - Decorator-Style Wallplate, White - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

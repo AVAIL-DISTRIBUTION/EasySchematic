@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1031-12",
+  "label": "Extron USB HUB4 AAP",
+  "shortName": "USB HUB4 AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1031-12",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbhub4aap",
+  "searchTerms": [
+    "60-1031-12",
+    "usb hub4 aap",
+    "extron",
+    "usb",
+    "hub4",
+    "aap"
+  ],
+  "heightMm": 35,
+  "widthMm": 89,
+  "depthMm": 3,
+  "weightKg": 0.1,
+  "voltage": "12V DC",
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Four-Port USB Hub - AAP Version - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

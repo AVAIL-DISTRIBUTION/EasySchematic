@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1870-01",
+  "label": "Extron DA2 HD 8K L",
+  "shortName": "DA2 HD 8K L",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1870-01",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dahd8klseries",
+  "searchTerms": [
+    "60-1870-01",
+    "da2 hd 8k l",
+    "extron",
+    "da2"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.24,
+  "powerDrawW": 7.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 29.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Two Output 8K HDMI Distribution Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

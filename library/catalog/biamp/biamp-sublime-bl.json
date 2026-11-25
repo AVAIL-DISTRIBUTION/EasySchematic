@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00645-10000",
+  "label": "Biamp SUBLIME-BL",
+  "shortName": "SUBLIME-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00645-10000",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00645-10000",
+  "searchTerms": [
+    "920-00645-10000",
+    "sublime-bl",
+    "biamp"
+  ],
+  "heightMm": 420,
+  "widthMm": 120,
+  "depthMm": 470,
+  "weightKg": 8,
+  "unitCost": 492,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Ultra compact 6.5\" dual coil passive subwoofer, 2 x 8 ohms / 2 x 80 watts, full range loudspeaker level output to satelites, wall bracket included, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

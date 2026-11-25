@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-901-0354",
+  "label": "Biamp Tesira SAC-4",
+  "shortName": "Tesira SAC-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0354",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0354",
+  "searchTerms": [
+    "901.0354",
+    "910-10355",
+    "tesira sac-4",
+    "biamp",
+    "tesira",
+    "sac-4"
+  ],
+  "unitCost": 958,
+  "slotFamily": "biamp-tesira-server-card",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-10355",
+    "deviceTypeSource": "card (biamp-tesira-server)",
+    "description": "Tesira 4 channel mic/line input card with ambient noise compensation per channel",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2034-01",
+  "label": "Extron XPA U 4004 FX",
+  "shortName": "XPA U 4004 FX",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2034-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau4004fx",
+  "searchTerms": [
+    "60-2034-01",
+    "xpa u 4004 fx",
+    "extron",
+    "xpa",
+    "4004"
+  ],
+  "heightMm": 44,
+  "widthMm": 440,
+  "depthMm": 419,
+  "weightKg": 6.4,
+  "powerDrawW": 343.1,
+  "voltage": "100V AC",
+  "thermalBtuh": 260,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Four Channel Flexible Output Amp, 400 Watts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

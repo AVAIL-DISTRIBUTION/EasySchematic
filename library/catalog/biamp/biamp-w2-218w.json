@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00896-00004",
+  "label": "Biamp W2-218W",
+  "shortName": "W2-218W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00896-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00896-00004",
+  "searchTerms": [
+    "930-00896-00004",
+    "w2-218w",
+    "biamp"
+  ],
+  "heightMm": 235,
+  "widthMm": 394,
+  "depthMm": 258,
+  "weightKg": 8.4,
+  "unitCost": 1643,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 8-Inch Compact System (White)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

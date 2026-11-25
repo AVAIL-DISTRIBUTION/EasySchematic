@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00308-00001",
+  "label": "Biamp Tesira EX-IN",
+  "shortName": "Tesira EX-IN",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00308-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00308-00001",
+  "searchTerms": [
+    "920-00308-00001",
+    "tesira ex-in",
+    "biamp",
+    "tesira",
+    "ex-in"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 197,
+  "weightKg": 1.4,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1808,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Tesira 4 channel mic/line input expander PoE+",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

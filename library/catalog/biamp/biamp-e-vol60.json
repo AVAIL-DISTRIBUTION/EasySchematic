@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01625",
+  "label": "Biamp E-VOL60",
+  "shortName": "E-VOL60",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01625",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01625",
+  "searchTerms": [
+    "910-01625",
+    "e-vol60",
+    "biamp"
+  ],
+  "heightMm": 80,
+  "widthMm": 80,
+  "depthMm": 50,
+  "weightKg": 0.35,
+  "powerDrawW": 0.1,
+  "unitCost": 66,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "volume-control",
+    "description": "100 volt, 60 watts Euro volume control, white, with 24V prioirty relais",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

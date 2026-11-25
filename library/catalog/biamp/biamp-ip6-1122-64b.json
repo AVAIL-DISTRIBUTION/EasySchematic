@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00908-00003",
+  "label": "Biamp IP6-1122/64B",
+  "shortName": "IP6-1122/64B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00908-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00908-00003",
+  "searchTerms": [
+    "930-00908-00003",
+    "ip6-1122/64b",
+    "biamp",
+    "ip6-1122",
+    "64b"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 29.5,
+  "unitCost": 2586,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 12-Inch 2-Way 60 X 40 Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

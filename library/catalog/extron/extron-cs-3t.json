@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-1463-03",
+  "label": "Extron CS 3T",
+  "shortName": "CS 3T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1463-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cs3t",
+  "searchTerms": [
+    "60-1463-03",
+    "cs 3t",
+    "extron"
+  ],
+  "heightMm": 76,
+  "widthMm": 262,
+  "depthMm": 262,
+  "weightKg": 2.72,
+  "powerDrawW": 16,
+  "thermalBtuh": 54.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range, Open Back Speaker, Transformer, Pair",
+    "notes": "[AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

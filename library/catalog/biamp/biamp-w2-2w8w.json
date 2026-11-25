@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00897-00007",
+  "label": "Biamp W2-2W8W",
+  "shortName": "W2-2W8W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00897-00007",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00897-00007",
+  "searchTerms": [
+    "930-00897-00007",
+    "w2-2w8w",
+    "biamp"
+  ],
+  "heightMm": 257,
+  "widthMm": 508,
+  "depthMm": 292,
+  "weightKg": 18.3,
+  "unitCost": 2650,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Two-Way 8-Inch \"Wide\" Compact System (White)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

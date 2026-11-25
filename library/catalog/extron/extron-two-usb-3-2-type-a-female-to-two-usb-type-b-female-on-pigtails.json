@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-70-1235-02",
+  "label": "Extron Two USB 3.2 Type-A Female to Two USB Type-B Female on Pigtails",
+  "shortName": "Two USB 3.2 Type-A Female to Two…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1235-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2usbaf2usbbf10",
+  "searchTerms": [
+    "70-1235-02",
+    "two usb 3.2 type-a female to two…",
+    "extron",
+    "two",
+    "usb",
+    "type-a",
+    "female"
+  ],
+  "weightKg": 0.2,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two USB 3.2 Type-A Female to USB Type-B Female on Pigtails",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

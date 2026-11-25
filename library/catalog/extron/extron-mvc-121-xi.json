@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2048-01",
+  "label": "Extron MVC 121 xi",
+  "shortName": "MVC 121 xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2048-01",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mvc121xi",
+  "searchTerms": [
+    "60-2048-01",
+    "mvc 121 xi",
+    "extron",
+    "mvc",
+    "121"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.2,
+  "powerDrawW": 4.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 13,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Three Source Audio Mixer with DSP",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

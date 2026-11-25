@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-02600-20000",
+  "label": "Biamp EX-S6-CM-W",
+  "shortName": "EX-S6-CM-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02600-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01809-20000",
+  "searchTerms": [
+    "920-02600-20000",
+    "ex-s6-cm-w",
+    "biamp"
+  ],
+  "heightMm": 349,
+  "widthMm": 217,
+  "depthMm": 327,
+  "weightKg": 6.5,
+  "unitCost": 540,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5” Coaxial Surface Mount Indoor/Outdoor Loudspeaker. 8 Ohm or 70V/100V operation, included ClickMount pan-tilt mounting bracket, white",
+    "notes": "Характеристики с сайта по артикулу 920-01809-20000",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": "avail-extron-60-1978-12",
+  "label": "Extron FOX3 Matrix 560x IPCP Pro",
+  "shortName": "FOX3 Matrix 560x IPCP Pro",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1978-12",
+  "deviceType": "frame",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix560x",
+  "searchTerms": [
+    "60-1978-12",
+    "fox3 matrix 560x ipcp pro",
+    "extron",
+    "fox3",
+    "matrix",
+    "560x",
+    "ipcp"
+  ],
+  "heightMm": 980,
+  "widthMm": 480,
+  "depthMm": 560,
+  "weightKg": 172,
+  "powerDrawW": 1634.1,
+  "voltage": "200-240V AC",
+  "thermalBtuh": 5577.2,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "21U Full rack",
+    "rackUnits": 21,
+    "slotFamilies": [
+      "extron-fox3-matrix"
+    ],
+    "description": "Modular Fiber Optic Matrix Switcher from 8x8 to 560x560",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

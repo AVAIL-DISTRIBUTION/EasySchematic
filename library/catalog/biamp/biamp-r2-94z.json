@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00906-00005",
+  "label": "Biamp R2-94Z",
+  "shortName": "R2-94Z",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00906-00005",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00906-00005",
+  "searchTerms": [
+    "930-00906-00005",
+    "r2-94z",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 781,
+  "weightKg": 43.5,
+  "unitCost": 4431,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 3-Way Dual 12-Inch High Output Horn Loaded 90 X 40",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

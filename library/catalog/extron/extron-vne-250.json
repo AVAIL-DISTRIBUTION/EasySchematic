@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1274-01",
+  "label": "Extron VNE 250",
+  "shortName": "VNE 250",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1274-01",
+  "deviceType": "streaming-encoder",
+  "category": "Streaming and Recording / Streaming AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vnmatrix250",
+  "searchTerms": [
+    "60-1274-01",
+    "vne 250",
+    "extron",
+    "vne",
+    "250"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 253,
+  "weightKg": 1.1,
+  "powerDrawW": 21.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 72.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Encoder for HDMI, RGB, Audio, USB Keyboard and Mouse",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

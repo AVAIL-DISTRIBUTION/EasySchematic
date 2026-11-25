@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1469-03",
+  "label": "Extron MLC Plus 100",
+  "shortName": "MLC Plus 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1469-03",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlcplus100",
+  "searchTerms": [
+    "60-1469-03",
+    "mlc plus 100",
+    "extron",
+    "mlc",
+    "plus",
+    "100"
+  ],
+  "heightMm": 69,
+  "widthMm": 89,
+  "depthMm": 55,
+  "weightKg": 0.4,
+  "powerDrawW": 5,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 17.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Plus Controller",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

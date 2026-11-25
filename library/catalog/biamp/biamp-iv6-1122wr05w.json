@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00884-00005",
+  "label": "Biamp IV6-1122WR05W",
+  "shortName": "IV6-1122WR05W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00884-00005",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00884-00005",
+  "searchTerms": [
+    "930-00884-00005",
+    "iv6-1122wr05w",
+    "biamp"
+  ],
+  "heightMm": 356,
+  "widthMm": 733,
+  "depthMm": 421,
+  "weightKg": 28.1,
+  "unitCost": 6182,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "12-inch two-way, 120 x 05 (Weather-Resistant, White)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

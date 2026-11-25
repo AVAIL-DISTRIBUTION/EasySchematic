@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1797-02",
+  "label": "Extron UCS SW 313",
+  "shortName": "UCS SW 313",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1797-02",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucssw313",
+  "searchTerms": [
+    "60-1797-02",
+    "ucs sw 313",
+    "extron",
+    "ucs",
+    "313"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 220,
+  "weightKg": 0.9,
+  "powerDrawW": 95.6,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 87.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "3x1 4K/60 Collaboration and Presentation Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

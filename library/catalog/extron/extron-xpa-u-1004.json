@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1760-01",
+  "label": "Extron XPA U 1004",
+  "shortName": "XPA U 1004",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1760-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau1004",
+  "searchTerms": [
+    "60-1760-01",
+    "xpa u 1004",
+    "extron",
+    "xpa",
+    "1004"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.6,
+  "powerDrawW": 64.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 51,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Channel Amp, 100 watts at 8 or 4 ohms",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

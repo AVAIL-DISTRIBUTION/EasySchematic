@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-01307",
+  "label": "Biamp TRC400-8",
+  "shortName": "TRC400-8",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01307",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01307",
+  "searchTerms": [
+    "910-01307",
+    "trc400-8",
+    "biamp"
+  ],
+  "heightMm": 109,
+  "widthMm": 127,
+  "depthMm": 95,
+  "weightKg": 4,
+  "unitCost": 409,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "Tranformer 400W, 8 Ohms",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

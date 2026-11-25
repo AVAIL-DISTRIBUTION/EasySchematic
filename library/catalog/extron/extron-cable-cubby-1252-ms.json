@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1273-01",
+  "label": "Extron Cable Cubby 1252 MS",
+  "shortName": "Cable Cubby 1252 MS",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1273-01",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby1252ms",
+  "searchTerms": [
+    "70-1273-01",
+    "cable cubby 1252 ms",
+    "extron",
+    "cable",
+    "cubby",
+    "1252"
+  ],
+  "heightMm": 110,
+  "widthMm": 279,
+  "depthMm": 144,
+  "weightKg": 2.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Matching Surface Enclosure; Black - AC Module Not Included",
+    "notes": "[AVAIL] dims from Extron specifications (weight not found)",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

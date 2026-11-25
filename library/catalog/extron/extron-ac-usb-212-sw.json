@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1384-05",
+  "label": "Extron AC+USB 212 SW",
+  "shortName": "AC+USB 212 SW",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1384-05",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb200",
+  "searchTerms": [
+    "60-1384-05",
+    "ac+usb 212 sw",
+    "extron",
+    "ac+usb",
+    "212"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 102,
+  "weightKg": 1.1,
+  "powerDrawW": 24.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 18.5,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AC+USB Module, Switzerland",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

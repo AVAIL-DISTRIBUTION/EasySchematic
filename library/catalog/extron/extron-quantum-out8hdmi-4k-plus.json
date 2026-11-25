@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-1370-01",
+  "label": "Extron Quantum OUT8HDMI 4K PLUS",
+  "shortName": "Quantum OUT8HDMI 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1370-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1370-01",
+    "quantum out8hdmi 4k plus",
+    "extron",
+    "quantum",
+    "out8hdmi",
+    "plus"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Eight-channel 4K/60 HDMI Output Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

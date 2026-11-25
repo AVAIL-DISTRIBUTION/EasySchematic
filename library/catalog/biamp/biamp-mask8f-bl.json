@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-01416-10000",
+  "label": "Biamp MASK8F-BL",
+  "shortName": "MASK8F-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01416-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01416-10000",
+  "searchTerms": [
+    "920-01416-10000",
+    "mask8f-bl",
+    "biamp"
+  ],
+  "heightMm": 411,
+  "widthMm": 250,
+  "depthMm": 250,
+  "weightKg": 9,
+  "unitCost": 422,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8\" two-way full range wooden design surface mount loudspeaker, 8 ohms / 300 watts, wall bracket and pole mount tube included, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

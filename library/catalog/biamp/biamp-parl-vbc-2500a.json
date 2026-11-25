@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-01967-00002",
+  "label": "Biamp Parlé VBC 2500a",
+  "shortName": "Parlé VBC 2500a",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01967-00002",
+  "deviceType": "video-bar",
+  "category": "UC / Video conference systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01967-00001",
+  "searchTerms": [
+    "920-01967-00002",
+    "parlé vbc 2500a",
+    "biamp",
+    "parl",
+    "vbc",
+    "2500a"
+  ],
+  "heightMm": 100,
+  "widthMm": 940,
+  "depthMm": 64,
+  "weightKg": 4.4,
+  "powerDrawW": 60,
+  "voltage": "12V DC / USB-C PD",
+  "unitCost": 1900,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Parlé Conferencing Video Bar with ALS port",
+    "notes": "Характеристики с сайта по артикулу 920-01967-00001; [AVAIL] from Biamp documentation: PS-12-60 or 60 W USB-C PD",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": "avail-extron-60-1868-32",
+  "label": "Extron RCP 401 EU",
+  "shortName": "RCP 401 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1868-32",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/rcp401",
+  "searchTerms": [
+    "60-1868-32",
+    "rcp 401 eu",
+    "extron",
+    "rcp",
+    "401"
+  ],
+  "heightMm": 114,
+  "widthMm": 71,
+  "depthMm": 10,
+  "weightKg": 0.5,
+  "powerDrawW": 8.6,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 3.7,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
+    "description": "SMP 401 Remote Control Panel – Flex55 and EU",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

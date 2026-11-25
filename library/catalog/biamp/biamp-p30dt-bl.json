@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00904-10000",
+  "label": "Biamp P30DT-BL",
+  "shortName": "P30DT-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00904-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00904-10000",
+  "searchTerms": [
+    "920-00904-10000",
+    "p30dt-bl",
+    "biamp"
+  ],
+  "heightMm": 233,
+  "widthMm": 233,
+  "depthMm": 223,
+  "weightKg": 2.6,
+  "unitCost": 286,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "4.25\" two-way, pendant loudspeaker 70-100 volt / 30 watts, 16 ohms / 50 watts, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

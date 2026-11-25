@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-01885-20022",
+  "label": "Biamp Echo 8EUW",
+  "shortName": "Echo 8EUW",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01885-20022",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01885-20022",
+  "searchTerms": [
+    "920-01885-20022",
+    "echo 8euw",
+    "biamp",
+    "echo",
+    "8euw"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 17,
+  "weightKg": 0.09,
+  "voltage": "12V DC",
+  "unitCost": 526,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8-button control pad with 1 bidirectional RS-232 port, 1 unidirectional RS-232 port, 3 GPIO; EU, white",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

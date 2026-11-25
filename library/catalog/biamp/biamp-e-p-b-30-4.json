@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-10855-00003",
+  "label": "Biamp E-P-B-30-4",
+  "shortName": "E-P-B-30-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10855-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10855-00003",
+  "searchTerms": [
+    "930-10855-00003",
+    "e-p-b-30-4",
+    "biamp"
+  ],
+  "heightMm": 32,
+  "widthMm": 32,
+  "depthMm": 89,
+  "weightKg": 0.18,
+  "unitCost": 795,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Active Emitters, Black, 4 pack, with 4 x 30 ft black plenum rated cables",
+    "notes": "Эмиттер звуковой маскировки; Продаётся упаковкой по 4 шт.; цена в прайсе — за упаковку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

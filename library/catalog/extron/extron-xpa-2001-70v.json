@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-850-01",
+  "label": "Extron XPA 2001-70V",
+  "shortName": "XPA 2001-70V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-850-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpa2001",
+  "searchTerms": [
+    "60-850-01",
+    "xpa 2001-70v",
+    "extron",
+    "xpa",
+    "2001-70v"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 1.1,
+  "powerDrawW": 42.2,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 59,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "One Channel Amp, 200 watts at 70 volts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

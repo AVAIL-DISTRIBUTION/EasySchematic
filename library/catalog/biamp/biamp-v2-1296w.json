@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-920-00566-20000",
+  "label": "Biamp V2-1296W",
+  "shortName": "V2-1296W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00566-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00566-20000",
+  "searchTerms": [
+    "920-00566-20000",
+    "v2-1296w",
+    "biamp"
+  ],
+  "heightMm": 608,
+  "widthMm": 390,
+  "depthMm": 362,
+  "weightKg": 17.4,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Full-Range 2-Way 12-Inch 90 X 60 White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

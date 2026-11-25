@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2040-02",
+  "label": "Extron NAV SD 121",
+  "shortName": "NAV SD 121",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2040-02",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/navsd121",
+  "searchTerms": [
+    "60-2040-02",
+    "nav sd 121",
+    "extron",
+    "nav",
+    "121"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.38,
+  "powerDrawW": 15.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 51,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "1G HDMI Compact Scaling Decoder",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

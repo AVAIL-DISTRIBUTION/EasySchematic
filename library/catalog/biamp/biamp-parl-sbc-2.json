@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-01869-00002",
+  "label": "Biamp Parlé SBC 2",
+  "shortName": "Parlé SBC 2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01869-00002",
+  "deviceType": "audio-bar",
+  "category": "UC / Speakerphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01869-00001",
+  "searchTerms": [
+    "920-01869-00002",
+    "parlé sbc 2",
+    "biamp",
+    "parl",
+    "sbc"
+  ],
+  "heightMm": 130,
+  "widthMm": 1018,
+  "depthMm": 75,
+  "weightKg": 4.5,
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 320,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Conferencing speaker bar",
+    "notes": "Характеристики с сайта по артикулу 920-01869-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

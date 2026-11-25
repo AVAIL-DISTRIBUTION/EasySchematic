@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-01470-00002",
+  "label": "Biamp REVAMP2600",
+  "shortName": "REVAMP2600",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01470-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01470-00002",
+  "searchTerms": [
+    "920-01470-00002",
+    "revamp2600",
+    "biamp"
+  ],
+  "heightMm": 88,
+  "widthMm": 483,
+  "depthMm": 334,
+  "weightKg": 12.1,
+  "powerDrawW": 1840,
+  "voltage": "230V AC",
+  "unitCost": 899,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "2 Channel class H amplifier 2 x 600 Watts (RMS @ 4 Ohms), 2 x 840 Watts (Dynamic @ 4 Ohms), variable fan cooled, Analogue Devices DSP processor, 2 U, 19\" rackmount",
+    "notes": "[AVAIL] estimated: 2U height",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

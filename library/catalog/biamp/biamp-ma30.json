@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00661-00002",
+  "label": "Biamp MA30",
+  "shortName": "MA30",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00661-00002",
+  "deviceType": "power-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00661-00001",
+  "searchTerms": [
+    "920-00661-00002",
+    "ma30",
+    "biamp"
+  ],
+  "heightMm": 89,
+  "widthMm": 216,
+  "depthMm": 250,
+  "weightKg": 2.4,
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 350,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "9.5\" mixing amplifier 70 - 100 volt / 30 watts, 1 mic/line input, 2 stereo line inputs, left to right 4 level priority system, Emergency in, paging mic with chime, 24V override output",
+    "notes": "Характеристики с сайта по артикулу 920-00661-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

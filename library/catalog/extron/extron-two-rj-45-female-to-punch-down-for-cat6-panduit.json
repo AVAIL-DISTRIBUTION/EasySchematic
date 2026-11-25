@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-491-16",
+  "label": "Extron Two RJ-45 Female to Punch Down for CAT6 – Panduit",
+  "shortName": "Two RJ-45 Female to Punch Down f…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-491-16",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2rj45fpp",
+  "searchTerms": [
+    "70-491-16",
+    "two rj-45 female to punch down f…",
+    "extron",
+    "two",
+    "rj-45",
+    "female",
+    "punch"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two RJ-45 Female to Punch Down for CAT6 – Panduit",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

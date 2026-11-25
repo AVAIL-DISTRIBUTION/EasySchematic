@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-314-13",
+  "label": "Extron One RJ-45 Female to Female Barrel - CAT 5e (MAAP, Black)",
+  "shortName": "One RJ-45 Female to Female Barre…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-314-13",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap1rj45ffbd",
+  "searchTerms": [
+    "70-314-13",
+    "one rj-45 female to female barre…",
+    "extron",
+    "one",
+    "rj-45",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP, Black",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - Black: One RJ-45 Female to Female Barrel - CAT 5e",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

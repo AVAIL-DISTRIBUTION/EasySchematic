@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00039-00002",
+  "label": "Biamp TesiraCONNECT TC-5",
+  "shortName": "TesiraCONNECT TC-5",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00039-00002",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00039-00002",
+  "searchTerms": [
+    "920-00039-00002",
+    "tesiraconnect tc-5",
+    "biamp",
+    "tesiraconnect",
+    "tc-5"
+  ],
+  "heightMm": 28,
+  "widthMm": 147,
+  "depthMm": 147,
+  "weightKg": 0.7,
+  "powerDrawW": 132,
+  "voltage": "100-240V AC",
+  "unitCost": 1575,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "5-port expansion device",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

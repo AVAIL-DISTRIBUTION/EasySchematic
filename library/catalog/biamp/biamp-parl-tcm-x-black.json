@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-00498-10000",
+  "label": "Biamp Parlé TCM-X Black",
+  "shortName": "Parlé TCM-X Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00498-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00498-10000",
+  "searchTerms": [
+    "920-00498-10000",
+    "parlé tcm-x black",
+    "biamp",
+    "parl",
+    "tcm-x",
+    "black"
+  ],
+  "heightMm": 30,
+  "widthMm": 172,
+  "depthMm": 132,
+  "weightKg": 0.62,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2565,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "AVB Beamtracking™ ceiling microphone, black surface mount",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

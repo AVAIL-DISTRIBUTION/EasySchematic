@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-910-02284",
+  "label": "Biamp Apprimo Touch 10 UCX-T",
+  "shortName": "Apprimo Touch 10 UCX-T",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-02284",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-02284",
+  "searchTerms": [
+    "910-02284",
+    "apprimo touch 10 ucx-t",
+    "biamp",
+    "apprimo",
+    "touch",
+    "ucx-t"
+  ],
+  "heightMm": 66.3,
+  "widthMm": 243.6,
+  "depthMm": 154.8,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 25.5,
+  "unitCost": 2600,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10-inch tabletop touch panel for Devio UCX with USB-C input, BYOM Switch, optional 65W USB-C device charging, Wi-Fi 6, PoE+ or USB-C powered",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1958-08",
+  "label": "Extron NAV SD 511 (SM)",
+  "shortName": "NAV SD 511",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1958-08",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/navsd511",
+  "searchTerms": [
+    "60-1958-08",
+    "nav sd 511",
+    "extron",
+    "nav",
+    "511"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 22,
+  "voltage": "12V DC",
+  "thermalBtuh": 65.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "SM",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G Fiber HDMI, Ethernet, USB Scaling Decoder - Singlemode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

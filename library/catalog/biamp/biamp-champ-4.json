@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01537-00002",
+  "label": "Biamp CHAMP-4",
+  "shortName": "CHAMP-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01537-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01537-00002",
+  "searchTerms": [
+    "920-01537-00002",
+    "champ-4",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 442,
+  "depthMm": 359,
+  "weightKg": 7.5,
+  "powerDrawW": 400,
+  "voltage": "230V AC",
+  "unitCost": 550,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High End, very dynamic 4-channel low impedance power amplifier, convection cooled. 4 x 125 watts @ 4 ohms, black 1U 19\" rack mounted",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

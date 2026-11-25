@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1957-41",
+  "label": "Extron FOX3 R 111 MM",
+  "shortName": "FOX3 R 111 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1957-41",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3r111",
+  "searchTerms": [
+    "60-1957-41",
+    "fox3 r 111 mm",
+    "extron",
+    "fox3",
+    "111"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Lossless 4K/60 Receiver - Multimode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

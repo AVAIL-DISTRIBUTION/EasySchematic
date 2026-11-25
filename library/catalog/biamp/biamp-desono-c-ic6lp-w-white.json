@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-10298-20000",
+  "label": "Biamp Desono C-IC6LP-W White",
+  "shortName": "Desono C-IC6LP-W White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10298-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10298-20000",
+  "searchTerms": [
+    "920-10298-20000",
+    "desono c-ic6lp-w white",
+    "biamp",
+    "desono",
+    "c-ic6lp-w",
+    "white"
+  ],
+  "heightMm": 341,
+  "widthMm": 341,
+  "depthMm": 101,
+  "weightKg": 4.12,
+  "unitCost": 307,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" In-Ceiling, Low Profile coaxial loudspeaker, 60W, 8 ohms, RJ45 inputs, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

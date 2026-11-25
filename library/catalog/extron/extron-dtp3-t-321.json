@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2017-52",
+  "label": "Extron DTP3 T 321",
+  "shortName": "DTP3 T 321",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2017-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t321",
+  "searchTerms": [
+    "60-2017-52",
+    "dtp3 t 321",
+    "extron",
+    "dtp3",
+    "321"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 216,
+  "weightKg": 1,
+  "powerDrawW": 102.4,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 87.8,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4K/60 USB-C Tx - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

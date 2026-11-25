@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00904",
+  "label": "Biamp IS8-112C",
+  "shortName": "IS8-112C",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00904",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00904",
+    "is8-112c",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 553,
+  "weightKg": 26.3,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 12-Inch Subwoofer Configured-to-Order",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

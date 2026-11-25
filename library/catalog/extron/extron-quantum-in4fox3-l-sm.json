@@ -1,0 +1,31 @@
+{
+  "id": "avail-extron-70-1324-02",
+  "label": "Extron Quantum IN4FOX3 L SM",
+  "shortName": "Quantum IN4FOX3 L SM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1324-02",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1324-02",
+    "quantum in4fox3 l sm",
+    "extron",
+    "quantum",
+    "in4fox3"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Four-channel Lossless SM Fiber Input Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

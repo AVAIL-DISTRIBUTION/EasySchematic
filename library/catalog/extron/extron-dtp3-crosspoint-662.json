@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1694-01",
+  "label": "Extron DTP3 CrossPoint 662",
+  "shortName": "DTP3 CrossPoint 662",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1694-01",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3crosspoint662",
+  "searchTerms": [
+    "60-1694-01",
+    "dtp3 crosspoint 662",
+    "extron",
+    "dtp3",
+    "crosspoint",
+    "662"
+  ],
+  "heightMm": 89,
+  "widthMm": 444,
+  "depthMm": 457,
+  "weightKg": 7.03,
+  "powerDrawW": 314,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 506,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "4K/60 Presentation Matrix Switcher with Reversible DTP3 I/O, Standard Model",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

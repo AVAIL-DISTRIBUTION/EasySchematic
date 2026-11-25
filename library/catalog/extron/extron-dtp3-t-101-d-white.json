@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1902-53",
+  "label": "Extron DTP3 T 101 D (White)",
+  "shortName": "DTP3 T 101 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1902-53",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t101d",
+  "searchTerms": [
+    "60-1902-53",
+    "dtp3 t 101 d",
+    "extron",
+    "dtp3",
+    "101"
+  ],
+  "heightMm": 71,
+  "widthMm": 43,
+  "depthMm": 48,
+  "weightKg": 0.18,
+  "powerDrawW": 5.04,
+  "voltage": "12V DC",
+  "thermalBtuh": 17.2,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "4K/60 DTP3 Transmitter for HDMI – Decorator-Style Wallplate, White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

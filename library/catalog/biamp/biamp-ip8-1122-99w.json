@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00910-00012",
+  "label": "Biamp IP8-1122/99W",
+  "shortName": "IP8-1122/99W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00910-00012",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00910-00012",
+  "searchTerms": [
+    "930-00910-00012",
+    "ip8-1122/99w",
+    "biamp",
+    "ip8-1122",
+    "99w"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 24.9,
+  "unitCost": 3412,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 12-Inch 2-Way 90 X 90 White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

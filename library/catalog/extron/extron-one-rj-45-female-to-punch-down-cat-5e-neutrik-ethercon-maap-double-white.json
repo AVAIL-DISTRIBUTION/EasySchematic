@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-314-29",
+  "label": "Extron One RJ-45 Female to Punch Down - CAT 5e Neutrik EtherCon (MAAP Double, White)",
+  "shortName": "One RJ-45 Female to Punch Down -…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-314-29",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in9486d",
+  "searchTerms": [
+    "70-314-29",
+    "one rj-45 female to punch down -…",
+    "extron",
+    "one",
+    "rj-45",
+    "female",
+    "punch"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP Double, White",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Double Space MAAP - White: One RJ-45 Female to Punch Down; CAT 5e Neutrik EtherCon",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

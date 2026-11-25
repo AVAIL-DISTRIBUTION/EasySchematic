@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01541",
+  "label": "Biamp CM20DT",
+  "shortName": "CM20DT",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01541",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01541",
+  "searchTerms": [
+    "910-01541",
+    "cm20dt",
+    "biamp"
+  ],
+  "heightMm": 205,
+  "widthMm": 205,
+  "depthMm": 80,
+  "weightKg": 1.24,
+  "unitCost": 98,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "6.5\" two-way thin edge design ceiling speaker 100-70 volt / 20 watts, 16 ohms / 60 watts, white, with basket integrated neodymium magnets for a perfect seal, removable logo and quick fit push connector",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-2027-01",
+  "label": "Extron NetPA U 2008 FX",
+  "shortName": "NetPA U 2008 FX",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2027-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpau2008fx",
+  "searchTerms": [
+    "60-2027-01",
+    "netpa u 2008 fx",
+    "extron",
+    "netpa",
+    "2008"
+  ],
+  "heightMm": 44,
+  "widthMm": 440,
+  "depthMm": 419,
+  "weightKg": 6.6,
+  "powerDrawW": 312.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 384,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Eight Ch Configurable Output Dante Amp, 200 Watts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

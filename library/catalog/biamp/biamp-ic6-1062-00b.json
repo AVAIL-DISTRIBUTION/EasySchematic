@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00002-00001",
+  "label": "Biamp IC6-1062/00B",
+  "shortName": "IC6-1062/00B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00002-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00002-00001",
+  "searchTerms": [
+    "930-00002-00001",
+    "ic6-1062/00b",
+    "biamp",
+    "ic6-1062",
+    "00b"
+  ],
+  "heightMm": 363,
+  "widthMm": 203,
+  "depthMm": 227,
+  "weightKg": 7.3,
+  "unitCost": 1399,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output 6.5-Inch 2-Way 100 X 100 Indoor Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

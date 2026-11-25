@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-737-01",
+  "label": "Extron MIX 301",
+  "shortName": "MIX 301",
+  "manufacturer": "Extron",
+  "modelNumber": "60-737-01",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mix301",
+  "searchTerms": [
+    "60-737-01",
+    "mix 301",
+    "extron",
+    "mix",
+    "301"
+  ],
+  "heightMm": 43,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 2.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Three Channel Line Level Mixer",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

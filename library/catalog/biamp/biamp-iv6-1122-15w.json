@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00885-00002",
+  "label": "Biamp IV6-1122/15W",
+  "shortName": "IV6-1122/15W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00885-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00885-00002",
+  "searchTerms": [
+    "930-00885-00002",
+    "iv6-1122/15w",
+    "biamp",
+    "iv6-1122",
+    "15w"
+  ],
+  "heightMm": 356,
+  "widthMm": 714,
+  "depthMm": 425,
+  "weightKg": 33.2,
+  "unitCost": 4664,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "12-inch two-way, 120 x 15 (Indoor, White)",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

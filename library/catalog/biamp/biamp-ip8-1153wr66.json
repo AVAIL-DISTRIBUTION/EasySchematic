@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00907-00010",
+  "label": "Biamp IP8-1153WR66",
+  "shortName": "IP8-1153WR66",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00907-00010",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00907-00010",
+  "searchTerms": [
+    "930-00907-00010",
+    "ip8-1153wr66",
+    "biamp"
+  ],
+  "heightMm": 991,
+  "widthMm": 561,
+  "depthMm": 668,
+  "weightKg": 47.6,
+  "unitCost": 6600,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 15-Inch 3-Way 60 X 60 Weather-Resistant Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

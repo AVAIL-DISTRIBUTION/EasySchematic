@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1755-53",
+  "label": "Extron DTP T UWP 4K 332 D (White)",
+  "shortName": "DTP T UWP 4K 332 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1755-53",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptuwp4k332d",
+  "searchTerms": [
+    "60-1755-53",
+    "dtp t uwp 4k 332 d",
+    "extron",
+    "dtp",
+    "uwp",
+    "332"
+  ],
+  "heightMm": 69,
+  "widthMm": 89,
+  "depthMm": 48,
+  "weightKg": 0.2,
+  "powerDrawW": 4,
+  "voltage": "12V DC",
+  "thermalBtuh": 13.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "Long Distance Two Input DTP Transmitter for HDMI and VGA with Audio Embedding - Decorator-Style Wallplate, White - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

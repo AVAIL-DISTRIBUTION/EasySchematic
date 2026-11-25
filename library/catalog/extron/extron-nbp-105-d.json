@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1688-01",
+  "label": "Extron NBP 105 D",
+  "shortName": "NBP 105 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1688-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbp105d",
+  "searchTerms": [
+    "60-1688-01",
+    "nbp 105 d",
+    "extron",
+    "nbp",
+    "105"
+  ],
+  "heightMm": 105,
+  "widthMm": 45,
+  "depthMm": 57,
+  "weightKg": 0.1,
+  "powerDrawW": 2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 6.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Network Button Panel with 5 Buttons - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

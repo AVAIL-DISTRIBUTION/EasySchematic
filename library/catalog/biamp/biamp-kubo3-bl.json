@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00683-00001",
+  "label": "Biamp KUBO3-BL",
+  "shortName": "KUBO3-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00683-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00683-00001",
+  "searchTerms": [
+    "930-00683-00001",
+    "kubo3-bl",
+    "biamp"
+  ],
+  "heightMm": 125,
+  "widthMm": 131,
+  "depthMm": 109,
+  "weightKg": 1,
+  "unitCost": 106,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "3\" compact design full range surface mount loudspeaker, 8 ohms / 40 watts, mounting bracket and safety cable included, black (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

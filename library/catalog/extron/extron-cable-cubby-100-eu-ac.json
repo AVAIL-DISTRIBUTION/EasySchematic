@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-60-1592-03",
+  "label": "Extron Cable Cubby 100 EU AC",
+  "shortName": "Cable Cubby 100 EU AC",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1592-03",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby100",
+  "searchTerms": [
+    "60-1592-03",
+    "cable cubby 100 eu ac",
+    "extron",
+    "cable",
+    "cubby",
+    "100"
+  ],
+  "heightMm": 69,
+  "widthMm": 71,
+  "depthMm": 88,
+  "weightKg": 0.5,
+  "powerDrawW": 17.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-maap"
+    ],
+    "description": "Cable Cubby 100 EU AC, Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

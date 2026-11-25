@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1766-12",
+  "label": "Extron NetPA U 1004-100V",
+  "shortName": "NetPA U 1004-100V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1766-12",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpau1004",
+  "searchTerms": [
+    "60-1766-12",
+    "netpa u 1004-100v",
+    "extron",
+    "netpa",
+    "1004-100v"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.7,
+  "powerDrawW": 72.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 77,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Channel Dante Amp, 100 watts at 100 volts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

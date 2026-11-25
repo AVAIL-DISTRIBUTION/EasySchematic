@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1457-01",
+  "label": "Extron IN1604 DTP",
+  "shortName": "IN1604 DTP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1457-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1604",
+  "searchTerms": [
+    "60-1457-01",
+    "in1604 dtp",
+    "extron",
+    "in1604",
+    "dtp"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1,
+  "powerDrawW": 25,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 67,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input HDCP-Compliant Scaler with DTP Extension",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

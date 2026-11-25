@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1737-11",
+  "label": "Extron SB 33 A 46-55",
+  "shortName": "SB 33 A 46-55",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1737-11",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sb33a",
+  "searchTerms": [
+    "60-1737-11",
+    "sb 33 a 46-55",
+    "extron",
+    "46-55"
+  ],
+  "heightMm": 153,
+  "widthMm": 1016,
+  "depthMm": 98,
+  "weightKg": 5.9,
+  "powerDrawW": 3.7,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 13,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Adjustable Width Sound Bar for 46\" to 55\" Displays",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-02265",
+  "label": "Biamp CCA-80 Grey",
+  "shortName": "CCA-80 Grey",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-02265",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-02265",
+  "searchTerms": [
+    "910-02265",
+    "cca-80 grey",
+    "biamp",
+    "cca-80",
+    "grey"
+  ],
+  "heightMm": 396,
+  "widthMm": 377,
+  "depthMm": 499,
+  "weightKg": 14.5,
+  "unitCost": 689,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Constant Coverage Aisle Loudspeaker, 3-way, 8-inch, triaxial, asymmetric horn loaded",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

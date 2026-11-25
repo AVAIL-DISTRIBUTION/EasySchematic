@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-42-375-01",
+  "label": "Extron UCS TR 910 Kit",
+  "shortName": "UCS TR 910 Kit",
+  "manufacturer": "Extron",
+  "modelNumber": "42-375-01",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs910series",
+  "searchTerms": [
+    "42-375-01",
+    "ucs tr 910 kit",
+    "extron",
+    "ucs",
+    "910",
+    "kit"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 1.4,
+  "powerDrawW": 1.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Twisted Pair USB 5Gbps Extender Kit",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

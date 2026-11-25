@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00904-00002",
+  "label": "Biamp IS8-112W",
+  "shortName": "IS8-112W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00904-00002",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00904-00002",
+  "searchTerms": [
+    "930-00904-00002",
+    "is8-112w",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 553,
+  "weightKg": 26.3,
+  "unitCost": 2420,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 12-Inch Subwoofer White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

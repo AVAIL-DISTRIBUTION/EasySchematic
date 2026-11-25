@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1914-01",
+  "label": "Extron IPCP Pro 255Q xi (Standard)",
+  "shortName": "IPCP Pro 255Q xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1914-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro255qxi",
+  "searchTerms": [
+    "60-1914-01",
+    "ipcp pro 255q xi",
+    "extron",
+    "ipcp",
+    "pro",
+    "255q"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.4,
+  "powerDrawW": 10.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 15.8,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Standard",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "IPCP Pro xi Quad Core Control Processor",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

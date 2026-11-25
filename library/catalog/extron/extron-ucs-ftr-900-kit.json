@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-42-298-01",
+  "label": "Extron UCS FTR 900 Kit",
+  "shortName": "UCS FTR 900 Kit",
+  "manufacturer": "Extron",
+  "modelNumber": "42-298-01",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs900",
+  "searchTerms": [
+    "42-298-01",
+    "ucs ftr 900 kit",
+    "extron",
+    "ucs",
+    "ftr",
+    "900",
+    "kit"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 1.3,
+  "powerDrawW": 0.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 3.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Fiber Optic USB 5Gbps Extenders",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

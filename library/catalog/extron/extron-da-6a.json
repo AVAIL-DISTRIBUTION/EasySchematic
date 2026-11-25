@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-692-20",
+  "label": "Extron DA 6A",
+  "shortName": "DA 6A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-692-20",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/da6a",
+  "searchTerms": [
+    "60-692-20",
+    "da 6a",
+    "extron"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.9,
+  "powerDrawW": 8,
+  "voltage": "100V AC",
+  "thermalBtuh": 27.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Six Output Stereo Audio Distribution Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

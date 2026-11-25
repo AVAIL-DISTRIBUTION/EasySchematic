@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1081-01",
+  "label": "Extron IN1606",
+  "shortName": "IN1606",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1081-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1606",
+  "searchTerms": [
+    "60-1081-01",
+    "in1606",
+    "extron"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 241,
+  "weightKg": 2.2,
+  "powerDrawW": 26,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 68.7,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "HDCP-Compliant Scaling Presentation Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

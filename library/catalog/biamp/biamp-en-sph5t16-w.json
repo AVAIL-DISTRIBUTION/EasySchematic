@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01620",
+  "label": "Biamp EN-SPH5T16-W",
+  "shortName": "EN-SPH5T16-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01620",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01620",
+  "searchTerms": [
+    "910-01620",
+    "en-sph5t16-w",
+    "biamp"
+  ],
+  "heightMm": 185,
+  "widthMm": 185,
+  "depthMm": 157,
+  "weightKg": 1.6,
+  "unitCost": 191,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "compact 5.25” sphere loudspeaker equipped with a high efficiency full range speaker and a multi tap 100 volt transformer (4-8-16 watts), all certified according EN 54-24.",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

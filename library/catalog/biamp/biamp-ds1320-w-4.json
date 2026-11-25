@@ -1,0 +1,29 @@
+{
+  "id": "avail-biamp-920-00806-20000",
+  "label": "Biamp DS1320-W-4",
+  "shortName": "DS1320-W-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00806-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00806-20000",
+  "searchTerms": [
+    "920-00806-20000",
+    "ds1320-w-4",
+    "biamp"
+  ],
+  "unitCost": 642,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Active Emitter, White - 4 Pack for use with 8 ohm Qt X output. Cables not included",
+    "notes": "Эмиттер звуковой маскировки; Продаётся упаковкой по 4 шт.; цена в прайсе — за упаковку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

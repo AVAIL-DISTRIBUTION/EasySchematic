@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1910-01a",
+  "label": "Extron IPCP Pro PCS1 xi (LinkLicense)",
+  "shortName": "IPCP Pro PCS1 xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1910-01A",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppropcs1xi",
+  "searchTerms": [
+    "60-1910-01a",
+    "ipcp pro pcs1 xi",
+    "extron",
+    "ipcp",
+    "pro",
+    "pcs1"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 203,
+  "weightKg": 0.6,
+  "powerDrawW": 4.2,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 14.3,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "LinkLicense",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "IPCP Pro xi Power and Device Control Processor w/LinkLicense for User Interfaces",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

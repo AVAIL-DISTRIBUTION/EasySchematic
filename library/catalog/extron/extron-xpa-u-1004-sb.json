@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1301-01",
+  "label": "Extron XPA U 1004 SB",
+  "shortName": "XPA U 1004 SB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1301-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau1004sb",
+  "searchTerms": [
+    "60-1301-01",
+    "xpa u 1004 sb",
+    "extron",
+    "xpa",
+    "1004"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 69.5,
+  "voltage": "100V AC",
+  "thermalBtuh": 67,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Channel Bridgeable Output Amp, 100/200 Watts",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

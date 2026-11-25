@@ -1,0 +1,44 @@
+{
+  "id": "avail-extron-60-1553-12",
+  "label": "Extron FOX3 Matrix 80x IPCP Pro",
+  "shortName": "FOX3 Matrix 80x IPCP Pro",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1553-12",
+  "deviceType": "frame",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix80x",
+  "searchTerms": [
+    "60-1553-12",
+    "fox3 matrix 80x ipcp pro",
+    "extron",
+    "fox3",
+    "matrix",
+    "80x",
+    "ipcp"
+  ],
+  "heightMm": 222,
+  "widthMm": 432,
+  "depthMm": 508,
+  "weightKg": 27,
+  "powerDrawW": 271,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 923,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "5U Full rack",
+    "rackUnits": 5,
+    "slotFamilies": [
+      "extron-fox3-matrix"
+    ],
+    "description": "Modular Fiber Optic Matrix Switcher from 8x8 to 80x80",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

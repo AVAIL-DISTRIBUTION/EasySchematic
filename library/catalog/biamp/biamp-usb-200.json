@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-01882-00002",
+  "label": "Biamp USB 200",
+  "shortName": "USB 200",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01882-00002",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01882-00001",
+  "searchTerms": [
+    "920-01882-00002",
+    "usb 200",
+    "biamp",
+    "usb",
+    "200"
+  ],
+  "heightMm": 23,
+  "widthMm": 64,
+  "depthMm": 95,
+  "weightKg": 0.07,
+  "powerDrawW": 15,
+  "voltage": "5V DC",
+  "unitCost": 293,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "usb-switch",
+    "description": "2x1 USB switch",
+    "notes": "Характеристики с сайта по артикулу 920-01882-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

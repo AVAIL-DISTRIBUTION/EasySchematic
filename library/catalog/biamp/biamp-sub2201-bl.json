@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-910-01492",
+  "label": "Biamp SUB2201-BL",
+  "shortName": "SUB2201-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01492",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01492",
+  "searchTerms": [
+    "910-01492",
+    "sub2201-bl",
+    "biamp"
+  ],
+  "heightMm": 600,
+  "widthMm": 300,
+  "depthMm": 380,
+  "weightKg": 18.5,
+  "unitCost": 723,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Passive 10\" subwoofer, 4 ohms / 250 watts, plywood construction with structured paint, pole mount adaptor, black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1231-12",
+  "label": "Extron XTP T VGA",
+  "shortName": "XTP T VGA",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1231-12",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtptvga",
+  "searchTerms": [
+    "60-1231-12",
+    "xtp t vga",
+    "extron",
+    "xtp",
+    "vga"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 11.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 38.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Universal XTP Transmitter for VGA",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-01871-20000",
+  "label": "Biamp Apprimo Touch 7 White",
+  "shortName": "Apprimo Touch 7 White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01871-20000",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01871-20000",
+  "searchTerms": [
+    "920-01871-20000",
+    "apprimo touch 7 white",
+    "biamp",
+    "apprimo",
+    "touch",
+    "white"
+  ],
+  "heightMm": 120,
+  "widthMm": 180,
+  "depthMm": 41,
+  "weightKg": 0.33,
+  "voltage": "PoE+ 802.3at class 3",
+  "poeDrawW": 15,
+  "unitCost": 1463,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "7\" touch panel, white",
+    "notes": "[AVAIL] from Biamp documentation",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

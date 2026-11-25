@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00855-00003",
+  "label": "Biamp IS6-115WR",
+  "shortName": "IS6-115WR",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00855-00003",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00855-00003",
+  "searchTerms": [
+    "930-00855-00003",
+    "is6-115wr",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 419,
+  "depthMm": 593,
+  "weightKg": 35.4,
+  "unitCost": 3600,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 15-Inch Subwoofer Weather-Resistant Grey",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

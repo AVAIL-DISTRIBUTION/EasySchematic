@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1604-01",
+  "label": "Extron SW4 HD 4K PLUS",
+  "shortName": "SW4 HD 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1604-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/swhd4kplusseries",
+  "searchTerms": [
+    "60-1604-01",
+    "sw4 hd 4k plus",
+    "extron",
+    "sw4",
+    "plus"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 3.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 12.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input 4K/60 HDMI Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

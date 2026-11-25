@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01451-00002",
+  "label": "Biamp PA2240BP",
+  "shortName": "PA2240BP",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01451-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01451-00002",
+  "searchTerms": [
+    "920-01451-00002",
+    "pa2240bp",
+    "biamp"
+  ],
+  "heightMm": 88,
+  "widthMm": 483,
+  "depthMm": 411,
+  "weightKg": 21.7,
+  "powerDrawW": 1050,
+  "voltage": "230V AC",
+  "unitCost": 800,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "2-channel 100 volt power amplifier, 2 x 240 watts bridgeable into 1 x 480 watts with program and priority input per channel, 24V priority output, tone control, 230V AC - 24V DC",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

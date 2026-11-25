@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01353-00001",
+  "label": "Biamp ALC-404D",
+  "shortName": "ALC-404D",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01353-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01353-00001",
+  "searchTerms": [
+    "920-01353-00001",
+    "alc-404d",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 442,
+  "depthMm": 373,
+  "weightKg": 7.3,
+  "powerDrawW": 205,
+  "voltage": "100-240V AC",
+  "unitCost": 3816,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Amplified Loudspeaker Controller - 4 Channels X 400W + DSP Dante",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

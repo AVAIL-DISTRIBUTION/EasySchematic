@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-42-354-01",
+  "label": "Extron WC Pro 150 OCS (LinkLicense)",
+  "shortName": "WC Pro 150 OCS",
+  "manufacturer": "Extron",
+  "modelNumber": "42-354-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wcpro150ocs",
+  "searchTerms": [
+    "42-354-01",
+    "wc pro 150 ocs",
+    "extron",
+    "pro",
+    "150",
+    "ocs"
+  ],
+  "heightMm": 23,
+  "widthMm": 152,
+  "depthMm": 51,
+  "weightKg": 0.24,
+  "powerDrawW": 4.3,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 13.8,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "LinkLicense",
+    "rackFormSource": "Non-rack",
+    "description": "Workspace Automation Controller with Occupancy Sensor, LL WC Upgrade",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

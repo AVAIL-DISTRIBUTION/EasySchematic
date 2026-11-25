@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00002-00004",
+  "label": "Biamp IC6-1062T00W",
+  "shortName": "IC6-1062T00W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00002-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00002-00004",
+  "searchTerms": [
+    "930-00002-00004",
+    "ic6-1062t00w",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 203,
+  "depthMm": 227,
+  "weightKg": 9.1,
+  "unitCost": 1518,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output 6.5-Inch 2-Way 100 X 100 70V/100V Indoor White",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

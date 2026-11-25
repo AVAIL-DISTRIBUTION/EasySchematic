@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-10854-00004",
+  "label": "Biamp E-A-B-30-4",
+  "shortName": "E-A-B-30-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10854-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10854-00004",
+  "searchTerms": [
+    "930-10854-00004",
+    "e-a-b-30-4",
+    "biamp"
+  ],
+  "heightMm": 85,
+  "widthMm": 83,
+  "depthMm": 64,
+  "weightKg": 0.16,
+  "unitCost": 736,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Standard Emitters, Black, 4 pack, with 4 x 30 ft black plenum rated cables",
+    "notes": "Эмиттер звуковой маскировки; Продаётся упаковкой по 4 шт.; цена в прайсе — за упаковку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-01839",
+  "label": "Biamp NPX G1100",
+  "shortName": "NPX G1100",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01839",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01839",
+  "searchTerms": [
+    "910-01839",
+    "npx g1100",
+    "biamp",
+    "npx",
+    "g1100"
+  ],
+  "heightMm": 47,
+  "widthMm": 230,
+  "depthMm": 182,
+  "weightKg": 1.08,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 1924,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "paging-station",
+    "description": "10-button convenience paging station with gooseneck microphone, tabletop or wall mount",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

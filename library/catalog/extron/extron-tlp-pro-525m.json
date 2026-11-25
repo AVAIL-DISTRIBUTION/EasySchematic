@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1561-13",
+  "label": "Extron TLP Pro 525M",
+  "shortName": "TLP Pro 525M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1561-13",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro525m",
+  "searchTerms": [
+    "60-1561-13",
+    "tlp pro 525m",
+    "extron",
+    "tlp",
+    "pro",
+    "525m"
+  ],
+  "heightMm": 102,
+  "widthMm": 154,
+  "depthMm": 31,
+  "weightKg": 0.36,
+  "powerDrawW": 6.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 17.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "5\" Wall Mount Touchlink Pro Touchpanel, White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

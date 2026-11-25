@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00892-00001",
+  "label": "Biamp RMG-200A",
+  "shortName": "RMG-200A",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00892-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00892-00001",
+  "searchTerms": [
+    "930-00892-00001",
+    "rmg-200a",
+    "biamp"
+  ],
+  "heightMm": 248,
+  "widthMm": 448,
+  "depthMm": 635,
+  "weightKg": 9.5,
+  "unitCost": 1575,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Voice Range Announcement System",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

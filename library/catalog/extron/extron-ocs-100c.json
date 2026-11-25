@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1664-01",
+  "label": "Extron OCS 100C",
+  "shortName": "OCS 100C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1664-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ocs100",
+  "searchTerms": [
+    "60-1664-01",
+    "ocs 100c",
+    "extron",
+    "ocs",
+    "100c"
+  ],
+  "heightMm": 114,
+  "widthMm": 114,
+  "depthMm": 36,
+  "weightKg": 0.1,
+  "powerDrawW": 0.8,
+  "thermalBtuh": 2.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Occupancy Sensor - Ceiling Mount",
+    "notes": "[AVAIL] powered by the host device / bus — no own power input; [AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

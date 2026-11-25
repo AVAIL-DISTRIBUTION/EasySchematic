@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1777-22",
+  "label": "Extron FOX3 SR 321 SM (Lossless)",
+  "shortName": "FOX3 SR 321 SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1777-22",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3sr321",
+  "searchTerms": [
+    "60-1777-22",
+    "fox3 sr 321 sm",
+    "extron",
+    "fox3",
+    "321"
+  ],
+  "heightMm": 44,
+  "widthMm": 220,
+  "depthMm": 150,
+  "weightKg": 1.1,
+  "powerDrawW": 29.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 75.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Lossless",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Scaling Receiver for DisplayPort, USB, Audio, Control, and 3D Sync",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

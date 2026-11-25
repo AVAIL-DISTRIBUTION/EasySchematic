@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-00337",
+  "label": "Biamp DC220T-M",
+  "shortName": "DC220T-M",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00337",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00337",
+  "searchTerms": [
+    "910-00337",
+    "dc220t-m",
+    "biamp"
+  ],
+  "heightMm": 596,
+  "widthMm": 596,
+  "depthMm": 107,
+  "weightKg": 7.1,
+  "unitCost": 201,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Commercial 600mm x 600mm Drop Ceiling Speaker, 10W, 8 ohms, 70V/100V transformer, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

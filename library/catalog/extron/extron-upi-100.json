@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-2062-01",
+  "label": "Extron UPI 100",
+  "shortName": "UPI 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2062-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/upi100",
+  "searchTerms": [
+    "60-2062-01",
+    "upi 100",
+    "extron",
+    "upi",
+    "100"
+  ],
+  "heightMm": 42,
+  "widthMm": 109,
+  "depthMm": 114,
+  "weightKg": 0.45,
+  "powerDrawW": 100,
+  "powerCapacityW": 100,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 44.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "100 W Power Inserter for Extron USB-C Products",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

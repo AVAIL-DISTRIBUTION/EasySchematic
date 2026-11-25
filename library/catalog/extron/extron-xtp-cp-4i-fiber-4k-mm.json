@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-985-01",
+  "label": "Extron XTP CP 4i Fiber 4K MM",
+  "shortName": "XTP CP 4i Fiber 4K MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-985-01",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpcpf4kioboards",
+  "searchTerms": [
+    "70-985-01",
+    "xtp cp 4i fiber 4k mm",
+    "extron",
+    "xtp",
+    "fiber"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "Four Input Board, Fiber 4K - Multimode",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name"
+  },
+  "ports": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1491-52",
+  "label": "Extron DTP T HD2 4K 330",
+  "shortName": "DTP T HD2 4K 330",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1491-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtpthd24k330",
+  "searchTerms": [
+    "60-1491-52",
+    "dtp t hd2 4k 330",
+    "extron",
+    "dtp",
+    "hd2",
+    "330"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 5.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 19,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Long Distance HDMI Twisted Pair Transmitter with Input Loop-Through - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

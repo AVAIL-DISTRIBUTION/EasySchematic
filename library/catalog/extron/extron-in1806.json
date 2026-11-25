@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1663-01",
+  "label": "Extron IN1806",
+  "shortName": "IN1806",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1663-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1806",
+  "searchTerms": [
+    "60-1663-01",
+    "in1806",
+    "extron"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 267,
+  "weightKg": 2.4,
+  "powerDrawW": 58.8,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 174,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Six Input 4K/60 Seamless Presentation Switcher",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

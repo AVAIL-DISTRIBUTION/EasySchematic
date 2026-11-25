@@ -1,0 +1,30 @@
+{
+  "id": "avail-biamp-930-00156-00002",
+  "label": "Biamp ENT-750TW",
+  "shortName": "ENT-750TW",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00156-00002",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00156-00002",
+  "searchTerms": [
+    "930-00156-00002",
+    "ent-750tw",
+    "biamp"
+  ],
+  "unitCost": 630,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "ENTASYS 750 Watt External Autoformer, White",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

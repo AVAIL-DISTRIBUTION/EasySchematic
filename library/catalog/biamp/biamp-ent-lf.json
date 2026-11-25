@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-01392-00001",
+  "label": "Biamp ENT-LF",
+  "shortName": "ENT-LF",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-01392-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-01392-00001",
+  "searchTerms": [
+    "930-01392-00001",
+    "ent-lf",
+    "biamp"
+  ],
+  "heightMm": 1129,
+  "widthMm": 140,
+  "depthMm": 187,
+  "weightKg": 11.3,
+  "unitCost": 2682,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "ENTASYS Low Frequency Column Loudspeaker, Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00893-00001",
+  "label": "Biamp RSH-462",
+  "shortName": "RSH-462",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00893-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00893-00001",
+  "searchTerms": [
+    "930-00893-00001",
+    "rsh-462",
+    "biamp"
+  ],
+  "heightMm": 724,
+  "widthMm": 662,
+  "depthMm": 572,
+  "weightKg": 32.34,
+  "unitCost": 4083,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Exponential FocusedArray™ High Level Horn System",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

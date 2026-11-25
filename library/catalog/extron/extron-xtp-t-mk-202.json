@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1358-23",
+  "label": "Extron XTP T MK 202",
+  "shortName": "XTP T MK 202",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1358-23",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtptmk202",
+  "searchTerms": [
+    "60-1358-23",
+    "xtp t mk 202",
+    "extron",
+    "xtp",
+    "202"
+  ],
+  "heightMm": 86,
+  "widthMm": 147,
+  "depthMm": 14,
+  "weightKg": 0.3,
+  "powerDrawW": 8.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 29.9,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input XTP Transmitter for HDMI and VGA - MK Junction Boxes",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

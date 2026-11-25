@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-1999-02",
+  "label": "Extron TLP Pro 1035T (Black)",
+  "shortName": "TLP Pro 1035T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1999-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1035t",
+  "searchTerms": [
+    "60-1999-02",
+    "tlp pro 1035t",
+    "extron",
+    "tlp",
+    "pro",
+    "1035t"
+  ],
+  "heightMm": 149,
+  "widthMm": 245,
+  "depthMm": 85,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "10.1\" Tabletop TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

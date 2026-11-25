@@ -1,0 +1,43 @@
+{
+  "id": "avail-extron-60-2089-02",
+  "label": "Extron Flex55 USB 411 PowerPlate (Black)",
+  "shortName": "Flex55 USB 411 PowerPlate",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2089-02",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbpowerplate400",
+  "searchTerms": [
+    "60-2089-02",
+    "flex55 usb 411 powerplate",
+    "extron",
+    "flex55",
+    "usb",
+    "411",
+    "powerplate"
+  ],
+  "heightMm": 35,
+  "widthMm": 55,
+  "depthMm": 47,
+  "weightKg": 0.5,
+  "powerDrawW": 109.5,
+  "voltage": "5V DC",
+  "thermalBtuh": 40,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "One USB-C & One USB-A, Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

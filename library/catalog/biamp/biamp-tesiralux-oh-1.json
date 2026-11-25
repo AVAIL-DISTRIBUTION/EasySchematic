@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-920-00427-00002",
+  "label": "Biamp TesiraLUX OH-1",
+  "shortName": "TesiraLUX OH-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00427-00002",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00427-00001",
+  "searchTerms": [
+    "920-00427-00002",
+    "tesiralux oh-1",
+    "biamp",
+    "tesiralux",
+    "oh-1"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 264,
+  "weightKg": 1.8,
+  "voltage": "100-240V AC",
+  "unitCost": 2565,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "AVB video decoder; includes one HDMI 2.0 port. 8 channels of embedded PCM audio and includes 2 mic/line level analog outputs.",
+    "notes": "Характеристики с сайта по артикулу 920-00427-00001",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}

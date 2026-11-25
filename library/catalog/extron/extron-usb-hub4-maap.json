@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1030-11",
+  "label": "Extron USB HUB4 MAAP",
+  "shortName": "USB HUB4 MAAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1030-11",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbhub4maap",
+  "searchTerms": [
+    "60-1030-11",
+    "usb hub4 maap",
+    "extron",
+    "usb",
+    "hub4",
+    "maap"
+  ],
+  "heightMm": 36,
+  "widthMm": 56,
+  "depthMm": 3,
+  "weightKg": 0.1,
+  "voltage": "12V DC",
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Four-Port USB Hub - MAAP Version - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

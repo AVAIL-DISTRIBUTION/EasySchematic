@@ -1,0 +1,32 @@
+{
+  "id": "avail-biamp-930-00003-00011",
+  "label": "Biamp IC6-1082T26B",
+  "shortName": "IC6-1082T26B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00003-00011",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00003-00011",
+  "searchTerms": [
+    "930-00003-00011",
+    "ic6-1082t26b",
+    "biamp"
+  ],
+  "heightMm": 476,
+  "widthMm": 264,
+  "depthMm": 270,
+  "weightKg": 13.2,
+  "unitCost": 1925,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Output 8-Inch 2-Way 120 X 60 70V/100V Indoor Black",
+    "source": "biamp-blocks.csv"
+  },
+  "ports": []
+}
