@@ -24,9 +24,41 @@
   "weightKg": 60.1,
   "unitCost": 3850,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "18-inch subwoofer (Indoor, Black)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_iv6-118s_jan21_2473.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive subwoofer, external amplifier; screw terminal block (2 x 2-position)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4, pins 1+/1- in parallel with the terminal strip"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Thru (NL4)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "speakon",
+      "notes": "Second NL4 in parallel: 1+/1- link, 2+/2- pass through"
+    }
+  ]
 }

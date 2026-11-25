@@ -24,9 +24,24 @@
   "weightKg": 13.2,
   "unitCost": 1925,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "High Output 8-Inch 2-Way 90 X 60 70V/100V Indoor White",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_ic6-1082-96_2307.pdf"
+    },
+    "portsMissing": "70 V / 100 V input panel: the data sheet shows it only as a picture, a Thru is not confirmed; check the panel"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 70 V / 100 V autoformer; screw terminal block, 5-position"
+    }
+  ]
 }

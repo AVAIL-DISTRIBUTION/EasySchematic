@@ -24,9 +24,41 @@
   "weightKg": 28.1,
   "unitCost": 6182,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "12-inch two-way, 120 x 05 (Weather-Resistant, White)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_iv6-1122wr_2469.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; screw terminal block (2 x 2-position)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4, pins 1+/1- in parallel with the terminal strip"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Thru (NL4)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "speakon",
+      "notes": "Second NL4 in parallel: 1+/1- link, 2+/2- pass through"
+    }
+  ]
 }

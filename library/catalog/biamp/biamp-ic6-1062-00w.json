@@ -26,9 +26,32 @@
   "weightKg": 7.3,
   "unitCost": 1399,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "High Output 6.5-Inch 2-Way 100 X 100 Indoor White",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_ic6-1062-00_2299.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, low impedance; screw terminal block, 5-position"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Parallel loop-thru on the same block"
+    }
+  ]
 }
