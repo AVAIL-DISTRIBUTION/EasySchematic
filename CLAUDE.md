@@ -76,6 +76,7 @@ PR всегда открываем в `master` нашего форка, **ник
 | `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
 | `tools/avail/incoming/avail-biamp-templates.json` | 4 шаблона Biamp из пилота (исходник) |
 | `src/avail/vendorDecisions.ts` | правила решений о вендорах: `VendorRules.classify`, `genericTemplate` («Generic <тип>»), `completeness` |
+| `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, снимка базы и вариантов (`fill:catalog-ports`) |
 
 Питание по шине (стандарт 3.1): устройство с питанием по USB или PoE без порта питания
 проходит линтер, если в notes питающего порта написано «bus-powered (USB)» или «PoE».
@@ -215,6 +216,31 @@ B и FIX с топ-3 замечаниями, по вендорам. Способ
 `avail-vendor-responses`, заблокирован), видна в карточке Review. Статусы не меняются, уровни пересчитываются.
 Шаблон из `library/avail` в файле — остановка без записи, код выхода 1. Повтор — без изменений.
 
+Каталог (шаг 1.9): `library/catalog/<vendor>/*.json` — карточки Extron и Biamp по артикулам (1789, из
+`avail-products-extron-biamp.xlsx`), `index.json` — список; имя файла = `slug(label)` (при совпадении
+slug — с `-<артикул>`), `id` = `avail-<vendor>-<артикул>`. `_avail` — не схема upstream: вариант,
+альт. артикул, `slotFamilies` шасси, `cardFamilies`, описание, `portsSource` (откуда порты:
+library / db / variant / datasheet), `portsMissing` (чего нет в даташите). Карточку (габариты,
+питание, категория) не перезаписываем — данные каталога авторитетнее. Порты:
+`npm run fill:catalog-ports [-- --dry-run] [-- --db <снимок.sqlite>]` (в `api-avail`;
+`src/avail/catalogPorts.ts`, CLI `fillCatalogPortsCli.ts`) — library/avail, затем снимок базы по
+производителю + артикулу и по названию модели (verified > draft > raw, затем уровень), затем от
+описанного варианта (label без варианта в скобках или цвета в конце); пишет только файлы, порты из
+даташита не трогает; снимок — `tools/avail/incoming/db/easyschematic.sqlite` (не в git). Остаток —
+по даташитам вручную (`portsSource.kind = "datasheet"`), после — повторный fill разносит по
+вариантам. `avail:check-library` проверяет каталог: форма, имена, уникальность, `index.json`;
+уровень любой (FIX допустим), в отчёте — уровни по вендорам. `npm run import:catalog
+[-- --dry-run] [-- --verbose]` (`api-avail/src/importCatalog.ts`, миграция 9005): в базу только
+уровень A; совпадение — прежняя загрузка (source `avail-catalog`), id, производитель + артикул;
+найден — обновить (raw/draft → draft, hidden остаётся, verified — если данные не изменились), нет —
+draft; `_avail` и `rackForm` — в `avail_template_meta.catalog`; library/avail не трогает,
+deleted-templates.json соблюдает (записи с `partNumber` удаляет из базы — Biamp SQT-1);
+`import:upstream` строки каталога не перезаписывает.
+
+Стандарт v0.7 (3.2): габариты и вес обязательны для того, что стоит в шкафу (в т.ч. любой `rackForm`);
+для монтируемого в помещении (`ROOM_MOUNTED_CATEGORIES` / `ROOM_MOUNTED_TYPES` в `blockLint.ts`) —
+нет. Блок без портов и слотов — ошибка «no ports».
+
 Generic-вендор приводится к проверенному набору планом `docs/avail/generic-plan.json`
 (`npm run apply:generic-plan [-- --dry-run]`, `api-avail/src/genericPlan.ts`): переименования в
 «Generic <тип или назначение>» без брендов, смена deviceType/категории (сетевые переходники и
@@ -248,6 +274,8 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/vendorCleanup.ts`, `src/vendorCleanupCli.ts` | чистка библиотеки по `vendor-decisions.json` (`npm run apply:vendor-decisions [-- --dry-run]`), одна транзакция, `library/avail` не трогает; новый «Generic <тип>» — только для типов без Generic, существующие Generic не перезаписываются; отчёт перечисляет итоговые Generic (новые — с исходным шаблоном) |
 | `src/vendorResponses.ts`, `src/vendorResponsesCli.ts` | ответы вендоров (`npm run apply:vendor-responses [-- --dry-run]`): удаление по `docs/avail/deleted-templates.json`, данные и заметки, одна транзакция, `library/avail` не трогает |
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
+| `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из снимка базы (`npm run fill:catalog-ports`), пишет только файлы |
+| `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня A в базу (`npm run import:catalog`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
 | `src/seed.ts` | сид библиотеки из встроенных шаблонов (`src/deviceLibrary.ts`) через `templateToRow` из `api/src/db.ts`, без обращения к easyschematic.live |
@@ -355,7 +383,7 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 | Фаза | Содержание |
 |------|------------|
 | 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
-| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано); курируемая библиотека `library/avail` (23 шаблона уровня A), редактирование шаблонов из ревью, английский интерфейс; решения о вендорах и чистка библиотеки (сделано) |
+| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано); курируемая библиотека `library/avail` (23 шаблона уровня A), редактирование шаблонов из ревью, английский интерфейс; решения о вендорах и чистка библиотеки (сделано); каталог Extron/Biamp `library/catalog` — порты и загрузка уровня A (шаг 1.9) |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |
 | 4 | **Интеграция Claude** — помощь в проектировании через Claude |
