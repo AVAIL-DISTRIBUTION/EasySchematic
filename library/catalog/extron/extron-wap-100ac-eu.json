@@ -34,24 +34,31 @@
     "description": "Wireless Access Point - EU Version",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "8d1d9332-95bd-4eba-9fd2-5b16649e152f",
-      "label": "Extron WAP 100AC EU",
+      "kind": "stencil",
+      "from": "Extron Misc Engineering Drawings/MISC - Wireless Eng.vssx",
+      "label": "WAP 100AC EU",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN",
+      "id": "vx-60-1635-11-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100/1000 Base-T Ethernet with PoE+ input (802.3at, ~16W max). Single port carries data + power.",
-      "poeDrawW": 16,
-      "id": "port-0"
+      "notes": "10/100/1000 Base-T Ethernet with PoE+ input (802.3at, ~16W max). Single port carries data + power."
+    },
+    {
+      "id": "vx-60-1635-11-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-pole captive screw — Extron convention, verify"
     }
   ]
 }

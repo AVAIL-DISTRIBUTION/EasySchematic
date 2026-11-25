@@ -35,58 +35,57 @@
     "rackUnits": 1,
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "6f186096-9427-4fd9-849c-d7af0954982d",
-      "label": "Extron USB Extender XI R",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Extenders Eng.vssx",
+      "label": "USB Extender xi R",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "id": "tpl-0",
-      "label": "CAT 6",
-      "signalType": "ethernet",
+      "id": "vx-60-1964-13-1",
+      "label": "USB 1",
+      "signalType": "usb",
       "direction": "bidirectional",
-      "section": "USB",
-      "connectorType": "rj45"
+      "connectorType": "usb-a",
+      "section": "USB"
     },
     {
-      "id": "tpl-1",
-      "label": "USB Device 1 (USB-A 2.0)",
+      "id": "vx-60-1964-13-2",
+      "label": "USB 2",
       "signalType": "usb",
-      "direction": "output",
-      "section": "USB",
-      "connectorType": "usb-a"
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
     },
     {
-      "id": "tpl-2",
-      "label": "USB Device 2 (USB-A 2.0)",
+      "id": "vx-60-1964-13-3",
+      "label": "USB 3",
       "signalType": "usb",
-      "direction": "output",
-      "section": "USB",
-      "connectorType": "usb-a"
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
     },
     {
-      "id": "tpl-3",
-      "label": "USB Device 3 (USB-A 2.0)",
+      "id": "vx-60-1964-13-4",
+      "label": "USB 4",
       "signalType": "usb",
-      "direction": "output",
-      "section": "USB",
-      "connectorType": "usb-a"
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
     },
     {
-      "id": "tpl-4",
-      "label": "USB Device 4 (USB-A 2.0)",
+      "id": "vx-60-1964-13-5",
+      "label": "USB 5",
       "signalType": "usb",
-      "direction": "output",
-      "section": "USB",
-      "connectorType": "usb-a"
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "USB"
     },
     {
-      "id": "tpl-5",
-      "label": "Power 12VDC",
+      "id": "vx-60-1964-13-6",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
       "section": "Power",

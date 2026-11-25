@@ -37,34 +37,34 @@
     "description": "IPCP Pro xi Control Processor",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "16e99ec8-554c-4bad-9678-c86441635ebe",
-      "label": "Extron IPCP Pro S1 xi",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - IPL IPCP Pro Eng.vssx",
+      "label": "IPL Pro S1 xi",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "id": "tpl-2",
-      "label": "LAN",
+      "id": "vx-60-1979-01-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
-      "section": "Network",
-      "connectorType": "rj45"
+      "connectorType": "rj45",
+      "section": "Network"
     },
     {
-      "id": "tpl-0",
-      "label": "COM 1",
+      "id": "vx-60-1979-01-2",
+      "label": "COM",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "5-pole captive screw"
     },
     {
-      "id": "tpl-1",
-      "label": "12V Power",
+      "id": "vx-60-1979-01-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
       "section": "Power",

@@ -29,66 +29,80 @@
     "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "86140c00-4af1-4310-a3b7-6b89474273e7",
-      "label": "Extron FOX3 T 201 PC SM",
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 PowerCage Eng.vssx",
+      "label": "FOX3 T 201 PC SM",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-70-1224-14-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Loop Out",
+      "id": "vx-70-1224-14-2",
+      "label": "Fiber In 1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1224-14-3",
+      "label": "Fiber In 2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1224-14-4",
+      "label": "HDMI Out (Loop)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "Fiber 1",
+      "id": "vx-70-1224-14-5",
+      "label": "Fiber Out 1",
       "signalType": "fiber",
       "direction": "output",
       "connectorType": "lc",
       "section": "Video Outputs",
-      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
-      "id": "port-4"
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
     },
     {
-      "label": "Fiber 2",
+      "id": "vx-70-1224-14-6",
+      "label": "Fiber Out 2",
       "signalType": "fiber",
       "direction": "output",
       "connectorType": "lc",
       "section": "Video Outputs",
-      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
-      "id": "port-5"
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
     },
     {
+      "id": "vx-70-1224-14-7",
       "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "mini-trs",
-      "section": "Audio Inputs",
-      "notes": "3.5mm mini stereo jack, unbalanced. Accepts HDMI de-embedded or line-level.",
-      "id": "port-2"
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 Pass-through",
+      "id": "vx-70-1224-14-8",
+      "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber.",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber. (3-pole captive screw)"
     }
   ]
 }

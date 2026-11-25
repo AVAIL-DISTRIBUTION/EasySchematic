@@ -35,46 +35,37 @@
     "description": "4K/60 HDMI to HDMI Scaler",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "309b48f2-37f7-4b56-877f-d052c2d8835e",
-      "label": "Extron DSC 401",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Scalers Eng.vssx",
+      "label": "DSC 401",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1878-01-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-0",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1878-01-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-1",
       "section": "Video Outputs"
     },
     {
-      "label": "USB-C Config",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-c",
-      "section": "Control",
-      "id": "port-2"
-    },
-    {
+      "id": "vx-60-1878-01-3",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-3"
+      "connectorType": "phoenix"
     }
   ]
 }

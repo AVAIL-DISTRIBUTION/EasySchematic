@@ -35,38 +35,37 @@
     "description": "HDMI Female to DisplayPort Female Converter",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "205edad6-b5ea-4603-b7c8-19f058910b00",
-      "label": "Extron HDP 101 4K",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Signal Proc Eng.vssx",
+      "label": "HDP 101 4K",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1739-01-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-0",
       "section": "Video Inputs"
     },
     {
-      "label": "DisplayPort Out",
+      "id": "vx-60-1739-01-2",
+      "label": "DisplayPort Out (Display)",
       "signalType": "displayport",
       "direction": "output",
       "connectorType": "displayport",
-      "id": "port-1",
       "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1739-01-3",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "barrel"
     }
   ]
 }

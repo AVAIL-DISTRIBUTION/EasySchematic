@@ -35,93 +35,97 @@
     "description": "Two Channel Dante Amp, 100 watts at 8 or 4 ohms",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "231dcc84-75bf-4098-b248-30df8779de61",
-      "label": "Extron NetPA U 1002",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "NetPA U 1002",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Line 1",
+      "id": "vx-60-1767-01-1",
+      "label": "Mic/Line In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Line 2",
+      "id": "vx-60-1767-01-2",
+      "label": "Mic/Line In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-3",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Line 3",
+      "id": "vx-60-1767-01-3",
+      "label": "Mic/Line In 3",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-4",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Line 4",
+      "id": "vx-60-1767-01-4",
+      "label": "Mic/Line In 4",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-5",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Speaker 1",
+      "id": "vx-60-1767-01-5",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-01-6",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-01-7",
+      "label": "Speaker Out",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-8",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw"
     },
     {
-      "label": "Speaker 2",
-      "signalType": "speaker-level",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "id": "port-9",
-      "section": "Speaker Outputs"
-    },
-    {
+      "id": "vx-60-1767-01-8",
       "label": "Dante",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "notes": "100 Mbps Dante / AES67 audio network port (software-selectable transmission type).",
-      "id": "port-0"
+      "section": "Dante",
+      "notes": "100 Mbps Dante / AES67 audio network port (software-selectable transmission type)."
     },
     {
-      "label": "LAN",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "10/100 Base-T host control / configuration port (separate from Dante).",
-      "id": "port-1"
-    },
-    {
-      "label": "RS-232",
-      "signalType": "serial",
+      "id": "vx-60-1767-01-9",
+      "label": "Remote",
+      "signalType": "gpio",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
-      "id": "port-10",
-      "inheritsSignal": false
+      "section": "Digital I/O",
+      "notes": "5-pole captive screw"
     },
     {
-      "id": "1a249bf9",
+      "id": "vx-60-1767-01-s1",
       "label": "USB",
       "signalType": "usb",
       "connectorType": "usb-mini",
@@ -130,14 +134,13 @@
       "section": "Configuration"
     },
     {
-      "label": "AC Power",
+      "id": "vx-60-1767-01-10",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-11",
-      "gender": "male"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
     }
   ]
 }

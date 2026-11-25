@@ -35,57 +35,58 @@
     "description": "One Channel Dante Amp, 100 watts at 70 volts",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "92053dd3-14b6-46d4-9612-885c70cbe336",
-      "label": "Extron NetPA 1001-70V AT",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "NetPA 1001-70V AT",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In",
+      "id": "vx-60-1501-01-1",
+      "label": "Line Out",
       "signalType": "analog-audio",
-      "direction": "input",
+      "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
     },
     {
+      "id": "vx-60-1501-01-2",
       "label": "Speaker Out (70V)",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     },
     {
-      "label": "Dante / AES67",
+      "id": "vx-60-1501-01-3",
+      "label": "Dante",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "notes": "100 Mbps Dante / AES67 audio network port (software-selectable transmission type).",
-      "id": "port-0"
+      "section": "Dante",
+      "notes": "100 Mbps Dante / AES67 audio network port (software-selectable transmission type)."
     },
     {
-      "label": "Standby Control",
-      "signalType": "contact-closure",
-      "direction": "input",
+      "id": "vx-60-1501-01-4",
+      "label": "Control",
+      "signalType": "gpio",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
-      "id": "port-3"
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
     },
     {
+      "id": "vx-60-1501-01-5",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-4"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
     }
   ]
 }

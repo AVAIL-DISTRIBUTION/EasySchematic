@@ -29,67 +29,87 @@
     "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "a5aedf37-a7fc-40a6-8ee2-93947b77cd23",
-      "label": "Extron FOX3 SR 301 PC SM",
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 PowerCage Eng.vssx",
+      "label": "FOX3 SR 301 PC SM",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Fiber",
+      "id": "vx-70-1190-22-1",
+      "label": "Fiber In 1",
       "signalType": "fiber",
       "direction": "input",
       "connectorType": "lc",
       "section": "Video Inputs",
-      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
-      "id": "port-0"
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
     },
     {
+      "id": "vx-70-1190-22-2",
+      "label": "Fiber In 2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1190-22-3",
+      "label": "Fiber Out 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1190-22-4",
+      "label": "Fiber Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1190-22-5",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "RS-232 Pass-through",
+      "id": "vx-70-1190-22-6",
+      "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber.",
-      "id": "port-2"
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber. (3-pole captive screw)"
     },
     {
+      "id": "vx-70-1190-22-7",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-70-1190-22-8",
       "label": "USB HID 1",
       "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "notes": "USB type A (HID peripheral port — keyboard/mouse). Max 100 mA.",
-      "id": "port-3"
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
     },
     {
+      "id": "vx-70-1190-22-9",
       "label": "USB HID 2",
       "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "notes": "USB type A (second HID port). Max 100 mA.",
-      "id": "port-4"
-    },
-    {
-      "label": "USB 2.0",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "notes": "USB type A (USB 2.0 hub port). Max 500 mA.",
-      "id": "port-5"
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
     }
   ]
 }

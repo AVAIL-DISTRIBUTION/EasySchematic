@@ -35,70 +35,78 @@
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
     "portsSource": {
-      "kind": "db",
-      "from": "ee16be7a-623d-49f7-9c5d-cf2a74deaad7",
-      "label": "Extron USB HUB4 AAP",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "USB HUB4 AAP",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "USB Host In (Mini-B)",
+      "id": "vx-60-1031-12-1",
+      "label": "USB 1",
       "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "USB",
-      "id": "port-0"
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
     },
     {
-      "label": "USB Host In (Captive)",
+      "id": "vx-60-1031-12-2",
+      "label": "USB 2",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1031-12-3",
+      "label": "USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1031-12-4",
+      "label": "USB 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1031-12-5",
+      "label": "USB Mini",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1031-12-6",
+      "label": "USB 5",
+      "signalType": "usb",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "USB",
-      "id": "port-1"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "USB Device Out 1",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-2"
-    },
-    {
-      "label": "USB Device Out 2",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-3"
-    },
-    {
-      "label": "USB Device Out 3",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-4"
-    },
-    {
-      "label": "USB Device Out 4",
-      "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-5"
-    },
-    {
-      "label": "Power",
+      "id": "vx-60-1031-12-7",
+      "label": "Power 1",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-6"
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1031-12-8",
+      "label": "Power 2",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
     }
   ]
 }

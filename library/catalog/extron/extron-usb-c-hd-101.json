@@ -35,38 +35,37 @@
     "description": "USB-C to HDMI Interface",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "09dc4eda-efe1-4445-ab02-a32f48522d44",
-      "label": "Extron USB-C HD 101",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Signal Proc Eng.vssx",
+      "label": "USB-C HD 101",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1883-01-1",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-1",
       "section": "Video Outputs"
     },
     {
-      "label": "USB-C (Laptop)",
+      "id": "vx-60-1883-01-2",
+      "label": "USB",
       "signalType": "usb",
       "direction": "bidirectional",
       "connectorType": "usb-c",
-      "id": "port-0",
       "section": "USB"
     },
     {
+      "id": "vx-60-1883-01-3",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "iec"
     }
   ]
 }

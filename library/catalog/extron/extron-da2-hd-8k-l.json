@@ -34,47 +34,54 @@
     "description": "Two Output 8K HDMI Distribution Amplifier",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "55ed0dfd-8af8-4d85-af62-09ee6063b9e1",
-      "label": "Extron DA2 HD 8K L",
+      "kind": "stencil",
+      "from": "Extron DA Engineering Drawings/DA - HDMI DA Eng.vssx",
+      "label": "DA2 HD 8K L",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In",
+      "id": "vx-60-1870-01-1",
+      "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1870-01-2",
       "label": "HDMI Out 1",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1870-01-3",
       "label": "HDMI Out 2",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-2"
+      "section": "Video Outputs"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1870-01-4",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1870-01-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
-      "id": "port-3"
+      "connectorType": "barrel",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
     }
   ]
 }

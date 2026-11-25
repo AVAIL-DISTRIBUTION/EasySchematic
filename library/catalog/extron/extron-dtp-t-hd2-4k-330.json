@@ -34,63 +34,54 @@
     "description": "Long Distance HDMI Twisted Pair Transmitter with Input Loop-Through - 330 feet (100 m)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "28f65028-a732-418b-acb9-022d4479d237",
-      "label": "Extron DTP T HD2 4K 330",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Transmitters Eng.vssx",
+      "label": "DTP T HD2 4K 330",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1491-52-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1491-52-2",
+      "label": "DTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1491-52-3",
       "label": "HDMI Out (Loop)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "DTP Out (RJ-45)",
-      "signalType": "hdbaset",
-      "direction": "output",
-      "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-2"
-    },
-    {
-      "label": "USB Config (Mini-B Front)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-3"
-    },
-    {
-      "label": "RS-232/IR Pass-Through",
+      "id": "vx-60-1491-52-4",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-4",
-      "notes": "over DTP"
+      "section": "Serial",
+      "notes": "over DTP (RS-232 and IR on one connector; 5-pole captive screw)"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1491-52-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-5"
+      "connectorType": "barrel"
     }
   ]
 }

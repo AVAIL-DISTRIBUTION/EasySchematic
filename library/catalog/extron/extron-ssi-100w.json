@@ -34,60 +34,58 @@
     "notes": "[AVAIL] dims from Extron specifications",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "a902aecf-664e-4f52-a494-62d56e819750",
-      "label": "Extron SSI 100W",
+      "kind": "stencil",
+      "from": "Extron Room Scheduling Engineering Drawings/Room Scheduling - MISC Eng.vssx",
+      "label": "SSI 100W",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN / PoE",
+      "id": "vx-60-1960-01-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power.",
-      "poeDrawW": 12.95,
-      "id": "port-0"
+      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power."
     },
     {
-      "label": "Digital I/O 1",
+      "id": "vx-60-1960-01-2",
+      "label": "Digital In 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw."
+    },
+    {
+      "id": "vx-60-1960-01-3",
+      "label": "Digital In 2",
       "signalType": "gpio",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw.",
-      "id": "port-1"
+      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Digital I/O 2",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O",
-      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw.",
-      "id": "port-2"
-    },
-    {
-      "label": "+24VDC Out",
+      "id": "vx-60-1960-01-4",
+      "label": "+V Out",
       "signalType": "power",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Power",
-      "notes": "+24VDC, 50mA fixed power output for driving a downstream sensor.",
-      "id": "port-3"
+      "notes": "+24VDC, 50mA fixed power output for driving a downstream sensor. (2-pole captive screw)"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1960-01-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
+      "connectorType": "phoenix",
       "section": "Power",
-      "notes": "External 12VDC, 1.5A PSU brick (18W, sold separately) — alternate to PoE.",
-      "id": "port-4"
+      "notes": "2-pole captive screw"
     }
   ]
 }

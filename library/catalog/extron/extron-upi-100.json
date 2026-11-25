@@ -36,30 +36,30 @@
     "description": "100 W Power Inserter for Extron USB-C Products",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "ff4817cf-674c-4d0e-be33-e03282cc70b8",
-      "label": "Extron UPI 100",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "UPI 100",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "AC Power In",
+      "id": "vx-60-2062-01-1",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
       "connectorType": "iec",
-      "section": "Power",
-      "id": "port-0"
+      "section": "Power"
     },
     {
-      "label": "DC Power Out (25V)",
+      "id": "vx-60-2062-01-2",
+      "label": "USB-C Power Out",
       "signalType": "power",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-1"
+      "notes": "2-pole captive screw"
     }
   ]
 }

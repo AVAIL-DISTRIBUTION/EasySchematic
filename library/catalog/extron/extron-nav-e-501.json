@@ -35,104 +35,92 @@
     "description": "1G HDMI, Ethernet, and USB Encoder",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "c703bf99-afde-4047-ac66-0c863d426d99",
-      "label": "Extron NAV E 501",
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Encod Eng.vssx",
+      "label": "NAV E 501",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1525-01-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Loop Out",
+      "id": "vx-60-1525-01-2",
+      "label": "HDMI Out (Loop)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
       "section": "Video Outputs",
-      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through.",
-      "id": "port-1"
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through."
     },
     {
+      "id": "vx-60-1525-01-3",
       "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole 3.5mm captive screw, balanced/unbalanced stereo.",
-      "id": "port-2"
+      "notes": "5-pole 3.5mm captive screw, balanced/unbalanced stereo. (5-pole captive screw)"
     },
     {
-      "label": "NAV",
+      "id": "vx-60-1525-01-4",
+      "label": "NAV 1G (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 23.6,
-      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC).",
-      "id": "port-3"
+      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC)."
     },
     {
-      "label": "EXT",
+      "id": "vx-60-1525-01-5",
+      "label": "EXT 1G",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "Network-extension daisy-chain port (1Gbps). Pass-through for downstream NAV devices.",
-      "id": "port-4"
+      "notes": "Network-extension daisy-chain port (1Gbps). Pass-through for downstream NAV devices."
     },
     {
+      "id": "vx-60-1525-01-6",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Bidirectional RS-232 on a 5-pole 3.5mm captive screw shared with IR. Pin configuration Tx/Rx/Gnd.",
-      "id": "port-6"
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 5-pole 3.5mm captive screw shared with IR. Pin configuration Tx/Rx/Gnd. (5-pole captive screw)"
     },
     {
-      "label": "IR",
+      "id": "vx-60-1525-01-7",
+      "label": "IR In",
       "signalType": "ir",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "TTL-level IR (carrier 30-300 kHz) on a 5-pole 3.5mm captive screw shared with RS-232. Pin configuration S/Gnd.",
-      "id": "port-7"
+      "direction": "input",
+      "section": "IR",
+      "connectorType": "phoenix"
     },
     {
-      "label": "Contact Closure In",
+      "id": "vx-60-1525-01-8",
+      "label": "Contact In",
       "signalType": "contact-closure",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "notes": "Contact closure input on a 2-pole 3.5mm captive screw shared with tally output. Reference ground supplied via Show-Me cable HDMI shell.",
-      "id": "port-8"
+      "notes": "Contact closure input on a 2-pole 3.5mm captive screw shared with tally output. Reference ground supplied via Show-Me cable HDMI shell. (2-pole captive screw)"
     },
     {
-      "label": "Tally Out",
-      "signalType": "tally",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Tally output on a 2-pole 3.5mm captive screw shared with contact closure input. +5VDC supplied via Show-Me cable HDMI shell.",
-      "id": "port-9"
-    },
-    {
+      "id": "vx-60-1525-01-9",
       "label": "USB",
       "signalType": "usb",
       "direction": "bidirectional",
       "connectorType": "usb-c",
       "section": "USB",
-      "notes": "USB 2.0 high-speed extension over the NAV link. Single physical USB-C port configurable as host or device mode.",
-      "id": "port-5"
+      "notes": "USB 2.0 high-speed extension over the NAV link. Single physical USB-C port configurable as host or device mode."
     },
     {
       "label": "USB Config",
@@ -141,16 +129,16 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
-      "id": "port-10"
+      "id": "vx-60-1525-01-s1"
     },
     {
+      "id": "vx-60-1525-01-10",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45.",
-      "id": "port-11"
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45."
     }
   ]
 }

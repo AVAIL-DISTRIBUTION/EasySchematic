@@ -36,41 +36,40 @@
     "description": "1G DTP3 Encoder",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "63eb3520-b18f-49c9-b1d6-3ea33029e1bc",
-      "label": "Extron NAV E 111 DTP3",
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Encod Eng.vssx",
+      "label": "NAV E 111 DTP3",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1525-16-1",
       "label": "DTP3 In",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
       "section": "Video Inputs",
-      "notes": "DTP3 input from a DTP3 Tx wallplate over CAT6 — carries HDMI video, audio (PCM/analog), RS-232, IR, and CEC pass-through. Up to 100m at 4K.",
-      "id": "port-0"
+      "notes": "DTP3 input from a DTP3 Tx wallplate over CAT6 — carries HDMI video, audio (PCM/analog), RS-232, IR, and CEC pass-through. Up to 100m at 4K."
     },
     {
-      "label": "HDMI Loop Out",
+      "id": "vx-60-1525-16-2",
+      "label": "HDMI Out (Loop)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
       "section": "Video Outputs",
-      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through.",
-      "id": "port-1"
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through."
     },
     {
-      "label": "NAV",
+      "id": "vx-60-1525-16-3",
+      "label": "NAV 1G (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "1Gbps Ethernet carrying PURE3 video / audio over IP / AES67 / management.",
-      "id": "port-2"
+      "notes": "1Gbps Ethernet carrying PURE3 video / audio over IP / AES67 / management."
     },
     {
       "label": "USB Config",
@@ -79,16 +78,16 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
-      "id": "port-3"
+      "id": "vx-60-1525-16-s1"
     },
     {
+      "id": "vx-60-1525-16-4",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240VAC mains PSU.",
-      "id": "port-4"
+      "connectorType": "iec",
+      "notes": "Internal 100-240VAC mains PSU."
     }
   ]
 }

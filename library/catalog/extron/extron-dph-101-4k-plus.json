@@ -34,38 +34,37 @@
     "description": "DisplayPort Female to HDMI Female Active Adapter",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "9132e1d9-4b7f-4f8c-8196-72ff6849beb5",
-      "label": "Extron DPH 101 4K PLUS",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Signal Proc Eng.vssx",
+      "label": "DPH 101 4K PLUS",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "DisplayPort In",
+      "id": "vx-60-1686-01-1",
+      "label": "DisplayPort In (Display)",
       "signalType": "displayport",
       "direction": "input",
       "connectorType": "displayport",
-      "id": "port-0",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1686-01-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-1",
       "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1686-01-3",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "barrel"
     }
   ]
 }

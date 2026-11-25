@@ -37,47 +37,45 @@
     "description": "4K TouchLink® Interface",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "747ced80-fc76-4ec0-99f1-82f6636ba0f6",
-      "label": "Extron TLI Pro 201",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - Misc Eng.vssx",
+      "label": "TLI Pro 201",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1669-01-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1669-01-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "LAN / PoE+",
+      "id": "vx-60-1669-01-3",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "poeDrawW": 17.3,
-      "id": "port-2"
+      "section": "Network"
     },
     {
-      "label": "USB Device (Media)",
+      "id": "vx-60-1669-01-4",
+      "label": "Control USB",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-3"
+      "section": "USB"
     }
   ]
 }

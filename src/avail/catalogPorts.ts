@@ -9,6 +9,10 @@
  *   3. a variant of the same model (same label without the variant: "(Black, MM)", or a
  *      trailing colour) that already has ports.
  *
+ * Extron Visio stencils (step 1.10, src/avail/extronStencil.ts) come between 1 and 2: a clean
+ * stencil master with the card's part number gives the ports, the community port of the same
+ * signal and direction lends its notes; curated and datasheet ports are only compared with it.
+ *
  * Only `ports` and `slots` are copied; the card (dimensions, power, category, slotFamily, …)
  * stays as in the catalog — the catalog is the more authoritative data. Ports added by hand
  * from a datasheet (`_avail.portsSource.kind = "datasheet"`, or ports without a portsSource)
@@ -18,18 +22,20 @@
  * reads the files and the snapshot itself.
  */
 import { lintBlock, type BlockLevel } from "./blockLint";
+import { chassisSlotsFromDescription, comparePorts, indexStencils, normalizedPorts, stencilFor, stencilPortsFor, withExtronDcPower } from "./extronStencil";
+import type { StencilBlock } from "./extronVisio";
 import { normalizeManufacturer } from "./library";
 import { slug } from "./libraryFiles";
 
 type Obj = Record<string, unknown>;
 
-export type PortsSourceKind = "library" | "db" | "variant" | "datasheet";
+export type PortsSourceKind = "library" | "stencil" | "db" | "variant" | "datasheet";
 export type TemplateStatusName = "verified" | "draft" | "raw" | "hidden";
 
 /** Where the ports of a catalog file came from (`_avail.portsSource`). */
 export interface PortsSource {
   kind: PortsSourceKind;
-  /** library: file name; db: template id; variant: catalog file; datasheet: document URL. */
+  /** library: file name; stencil: stencil file; db: template id; variant: catalog file; datasheet: document URL. */
   from?: string;
   label?: string;
   /** How the source was found (library, db). */
@@ -49,6 +55,8 @@ export interface CatalogAvail extends Obj {
   portsSource?: PortsSource;
   /** What a datasheet did not tell (step 3): ports or slots left out on purpose. */
   portsMissing?: string;
+  /** Where a chassis got its slots when it had none (step 1.10): "variant: <file>", "description: …". */
+  slotsSource?: string;
 }
 
 export interface CatalogTemplate extends Obj {
@@ -190,8 +198,37 @@ export interface FillRow {
   changed: boolean;
 }
 
+/** What an Extron stencil did for a catalog card (step 1.10). */
+export interface StencilRow {
+  file: string;
+  label: string;
+  partNumber: string;
+  /**
+   * filled — the card had no ports; replaced — community ports gave way to the stencil;
+   * compared — curated or datasheet ports kept, stencil compared; kept — community ports kept,
+   * the stencil would lower the level (draws no connector or power port); skipped — the master
+   * has issues.
+   */
+  action: "filled" | "replaced" | "compared" | "kept" | "skipped";
+  stencil: string;
+  master: string;
+  /** Ports the card had (or the community donor) against the stencil, by signal and direction. */
+  differences: string[];
+  issues: string[];
+  /** Notes / connectors taken from the community ports. */
+  borrowed: number;
+  levelBefore: BlockLevel | "none";
+  levelAfter: BlockLevel;
+}
+
 export interface FillReport {
   rows: FillRow[];
+  /** Extron stencils: one row per catalog card with a stencil master. */
+  stencil: StencilRow[];
+  /** Extron catalog cards whose part number no stencil master has. */
+  stencilMissing: { file: string; label: string; deviceType: string; category: string }[];
+  /** Extron chassis (catalog slotFamilies) without slots: slots set, or why not. */
+  chassis: { file: string; label: string; slots?: number; from?: string; missing?: string }[];
   /** Files whose content changed (only these are written). */
   changed: CatalogFile[];
   /** Chassis whose copied slots took none of the catalog's _avail.slotFamilies: set from the catalog. */
@@ -239,23 +276,84 @@ const clone = <T>(v: T): T => JSON.parse(JSON.stringify(v)) as T;
  */
 export function fillCatalogPorts(
   files: readonly CatalogFile[],
-  sources: { library: readonly PortDonor[]; db: readonly PortDonor[] },
+  sources: { library: readonly PortDonor[]; db: readonly PortDonor[]; stencils?: readonly StencilBlock[] },
 ): FillReport {
   const library = new DonorIndex(sources.library);
   const db = new DonorIndex(sources.db);
+  const stencils = indexStencils(sources.stencils ?? []);
   const result = new Map<string, CatalogTemplate>();
   const slotFamilyFixes: FillReport["slotFamilyFixes"] = [];
+  const stencilRows: StencilRow[] = [];
+  const stencilMissing: FillReport["stencilMissing"] = [];
+  const chassis: FillReport["chassis"] = [];
+  const isExtron = (t: CatalogTemplate) => vendorKey(t.manufacturer) === "extron";
+  // Extron 12 V DC supply on a 2-pole captive screw (decision 2026-11): a card's ports with the rule.
+  const dcPower = (t: CatalogTemplate): CatalogTemplate => {
+    if (!isExtron(t) || hasManualPorts(t) || t._avail?.portsSource?.kind === "library" || !t.ports.length) return t;
+    const ports = withExtronDcPower(t, t.ports);
+    return ports === t.ports ? t : withPorts(t, ports, t.slots, t._avail.portsSource);
+  };
+  const levelBefore = (t: CatalogTemplate): BlockLevel | "none" => (hasPorts(t) ? lintBlock(t).level : "none");
 
-  // Pass 1: manual ports stay; library, then database.
+  // Pass 1: manual ports stay; library, then a clean Extron stencil, then database.
   for (const { file, template: t } of files) {
+    const block = sources.stencils?.length && vendorKey(t.manufacturer) === "extron" ? stencilFor(t, stencils) : undefined;
+    if (sources.stencils?.length && vendorKey(t.manufacturer) === "extron" && !block) {
+      stencilMissing.push({ file, label: t.label, deviceType: t.deviceType, category: String(t.category ?? "") });
+    }
+    // The card before the stencil: ports an earlier run took from the stencil do not count, so
+    // a second run reports the same.
+    const prior = t._avail?.portsSource?.kind === "stencil" ? undefined : hasPorts(t) ? t : undefined;
+    // Level before: the card as it is, or the community block it would get without the stencil.
+    const dbBefore = () => {
+      const h = db.find(t);
+      return h ? lintBlock(withPorts(t, h.donor.ports, h.donor.slots ?? undefined, undefined)).level : "none";
+    };
+    const row = (action: StencilRow["action"], cmp: readonly unknown[], after: CatalogTemplate, borrowed = 0): StencilRow => ({
+      file,
+      label: t.label,
+      partNumber: t.modelNumber,
+      action,
+      stencil: block!.stencil,
+      master: block!.master,
+      differences: comparePorts(cmp, block!.ports),
+      issues: block!.issues,
+      borrowed,
+      levelBefore: prior ? levelBefore(prior) : dbBefore(),
+      levelAfter: lintBlock(after).level,
+    });
     if (hasManualPorts(t)) {
       result.set(file, t);
+      if (block) stencilRows.push(row("compared", t.ports, t));
       continue;
     }
     const lib = library.find(t);
-    const hit = lib ?? db.find(t);
+    const dbHit = db.find(t);
+    if (block && !lib && !block.issues.length && block.ports.length) {
+      const donorPorts = dbHit?.donor.ports ?? [];
+      const { ports, borrowed } = stencilPortsFor({ voltage: t.voltage, ports: donorPorts }, block);
+      const source: PortsSource = { kind: "stencil", from: block.stencil, label: block.model, match: "part-number" };
+      const slots = dbHit?.donor.slots?.length ? clone(dbHit.donor.slots) : undefined;
+      let out = dcPower(withPorts(t, normalizedPorts(t, ports), slots, source));
+      out = withPorts(out, out.ports, slots, { ...source, level: lintBlock(out).level });
+      // The stencil must not lower the level (import:catalog loads level A only): where it draws
+      // less than the community ports (a connector, a power port), they stay, and the card is
+      // listed as "kept" with the differences for an engineer to merge.
+      // The card as it was (ports from a variant, or an earlier run) counts as well.
+      const before = [dbHit && dcPower(withPorts(t, clone(dbHit.donor.ports), slots, { kind: "db" })), prior && dcPower(prior)]
+        .filter((x): x is CatalogTemplate => !!x)
+        .map((x) => LEVEL_RANK[lintBlock(x).level]);
+      if (!before.length || LEVEL_RANK[lintBlock(out).level] <= Math.min(...before)) {
+        result.set(file, out);
+        stencilRows.push(row(dbHit || prior ? "replaced" : "filled", dbHit ? donorPorts : (prior?.ports ?? []), out, borrowed));
+        continue;
+      }
+    }
+    const hit = lib ?? dbHit;
     if (!hit) {
-      result.set(file, withPorts(t, [], undefined, undefined));
+      const out = withPorts(t, [], undefined, undefined);
+      result.set(file, out);
+      if (block) stencilRows.push(row("skipped", [], out));
       continue;
     }
     const { donor, match } = hit;
@@ -274,7 +372,9 @@ export function fillCatalogPorts(
       });
       slotFamilyFixes.push({ file, catalog: want, copied: got });
     }
-    result.set(file, withPorts(t, clone(donor.ports), slots, source));
+    const out = withPorts(t, clone(donor.ports), slots, source);
+    result.set(file, out);
+    if (block) stencilRows.push(row(lib ? "compared" : block.issues.length || !block.ports.length ? "skipped" : "kept", donor.ports, out));
   }
 
   // Pass 2: variants without ports take them from a described variant of the same model.
@@ -285,7 +385,7 @@ export function fillCatalogPorts(
   }
   const rank = (t: CatalogTemplate): number => {
     const k = t._avail.portsSource?.kind;
-    const base = hasManualPorts(t) ? 0 : k === "library" ? 1 : k === "db" ? 2 : 9;
+    const base = hasManualPorts(t) ? 0 : k === "library" ? 1 : k === "stencil" ? 2 : k === "db" ? 3 : 9;
     return base * 10 + LEVEL_RANK[lintBlock(t).level];
   };
   for (const members of groups.values()) {
@@ -302,6 +402,43 @@ export function fillCatalogPorts(
       const source: PortsSource = { kind: "variant", from: donor.file, label: donor.t.label, level: lintBlock(donor.t).level };
       result.set(f, withPorts(t, clone(donor.t.ports), donor.t.slots?.length ? clone(donor.t.slots) : undefined, source));
     }
+  }
+
+  // Extron 12 V DC rule on every card with automatic ports (db, variant; stencil already has it).
+  for (const [f, t] of result) result.set(f, dcPower(t));
+
+  // Extron chassis without slots: the slots of their variants (same model without region, AC
+  // or colour) when all of them agree, else the count from the description, else the reason.
+  const chassisKey = (t: CatalogTemplate) =>
+    variantBase(t.label).replace(/(\s+(us|uk|eu|fr|aus|multi|multi-region|ac|no|usb|power|black|white|brushed|aluminum))+$/g, "");
+  for (const { file } of files) {
+    const t = result.get(file)!;
+    const fams = t._avail.slotFamilies ?? [];
+    if (!isExtron(t) || !fams.length || t.slots?.length || hasManualPorts(t)) continue;
+    const key = chassisKey(t);
+    const sib = [...result.entries()].filter(([g, x]) => g !== file && isExtron(x) && x.slots?.length && !x._avail.slotsSource && chassisKey(x) === key);
+    const shapes = [...new Set(sib.map(([, x]) => JSON.stringify(x.slots)))];
+    let found = shapes.length === 1 && sib.length ? { slots: JSON.parse(shapes[0]) as unknown[], from: `variant: ${sib[0][0]}` } : undefined;
+    let missing: string | undefined;
+    if (!found) {
+      const d = chassisSlotsFromDescription(t);
+      if (d.slots) found = { slots: d.slots, from: d.from! };
+      else missing = d.missing;
+    }
+    if (found) {
+      const out = withPorts(t, t.ports, found.slots, t._avail.portsSource);
+      out._avail = { ...out._avail, slotsSource: found.from };
+      delete out._avail.portsMissing;
+      result.set(file, out);
+    } else if (missing) {
+      result.set(file, { ...t, _avail: { ...t._avail, portsMissing: missing } });
+    }
+  }
+  // Reported from the files, so a second run lists the same chassis.
+  for (const [file, t] of result) {
+    if (!isExtron(t) || !(t._avail.slotFamilies ?? []).length) continue;
+    if (t._avail.slotsSource) chassis.push({ file, label: t.label, slots: t.slots?.length ?? 0, from: String(t._avail.slotsSource) });
+    else if (!t.slots?.length && t._avail.portsMissing) chassis.push({ file, label: t.label, missing: t._avail.portsMissing });
   }
 
   const rows: FillRow[] = [];
@@ -322,7 +459,9 @@ export function fillCatalogPorts(
       changed: isChanged,
     });
   }
-  return { rows, changed, slotFamilyFixes };
+  // Level after the variant pass for the stencil rows.
+  for (const r of stencilRows) r.levelAfter = lintBlock(result.get(r.file)!).level;
+  return { rows, changed, slotFamilyFixes, stencil: stencilRows, stencilMissing, chassis };
 }
 
 /** Series of a product for planning datasheet work: the first word of the model ("DTP3", "Desono"). */
@@ -334,7 +473,7 @@ export function seriesOf(t: { label?: unknown; manufacturer?: unknown }): string
 export function formatFillReport(r: FillReport, files: readonly CatalogFile[], dryRun: boolean): string {
   const lines = [`Catalog ports: ${r.rows.length} files${dryRun ? " (dry run, nothing written)" : ""}; changed ${r.changed.length}`, ""];
   const vendors = [...new Set(r.rows.map((x) => x.vendor))].sort();
-  const kinds: (FillRow["source"])[] = ["library", "db", "variant", "datasheet", "none"];
+  const kinds: (FillRow["source"])[] = ["library", "stencil", "db", "variant", "datasheet", "none"];
   lines.push(`${"vendor".padEnd(10)} ${kinds.map((k) => k.padStart(9)).join(" ")}   A / B / FIX`);
   for (const v of [...vendors, "total"]) {
     const rows = v === "total" ? r.rows : r.rows.filter((x) => x.vendor === v);
@@ -368,4 +507,87 @@ export function formatFillReport(r: FillReport, files: readonly CatalogFile[], d
 /** Catalog file name: "<vendor>/<slug(label)>.json". */
 export function catalogFileName(t: { label?: unknown; manufacturer?: unknown }): string {
   return `${slug(typeof t.manufacturer === "string" ? t.manufacturer : "")}/${slug(typeof t.label === "string" ? t.label : "")}.json`;
+}
+
+/** Markdown report of the Extron stencils against the catalog (step 1.10). */
+export function formatStencilReport(r: FillReport, dryRun: boolean): string {
+  const rows = r.stencil;
+  const by = (a: StencilRow["action"]) => rows.filter((x) => x.action === a);
+  const levels = ["none", "FIX", "B", "A"] as const;
+  const lines = [
+    "# Extron stencils → catalog",
+    "",
+    "Generated by `npm run fill:catalog-ports` (api-avail) from `tools/avail/extron-visio/extron-visio-blocks.json`" +
+      (dryRun ? " — dry run, nothing written." : "."),
+    "",
+    `Extron cards with a stencil master: ${rows.length}; without: ${r.stencilMissing.length}.`,
+    "",
+    "| Action | Cards | Meaning |",
+    "|---|---:|---|",
+    `| filled | ${by("filled").length} | the card had no ports, the stencil's ports are written |`,
+    `| replaced | ${by("replaced").length} | community ports gave way to the stencil (notes kept where the port agrees) |`,
+    `| compared | ${by("compared").length} | curated or datasheet ports kept, compared with the stencil |`,
+    `| kept | ${by("kept").length} | community ports kept: the stencil would lower the level (draws no connector or power port) |`,
+    `| skipped | ${by("skipped").length} | the stencil master has issues: ports from elsewhere or none |`,
+    "",
+    "Levels of these cards before → after (rows: before, columns: after):",
+    "",
+    `| before \\ after | ${levels.slice(1).join(" | ")} |`,
+    `|---|${levels.slice(1).map(() => "---:").join("|")}|`,
+  ];
+  for (const b of levels) {
+    const n = (a: string) => rows.filter((x) => x.levelBefore === b && x.levelAfter === a).length;
+    lines.push(`| ${b} | ${levels.slice(1).map(n).join(" | ")} |`);
+  }
+  const list = (title: string, items: StencilRow[], body: (x: StencilRow) => string) => {
+    lines.push("", `## ${title} (${items.length})`, "");
+    for (const x of items.sort((a, b) => a.label.localeCompare(b.label))) lines.push(`- ${x.label} (${x.partNumber}) — ${body(x)}`);
+  };
+  list("Filled", by("filled"), (x) => `level ${x.levelAfter}`);
+  list("Replaced: community ports against the stencil", by("replaced"), (x) =>
+    `${x.levelBefore} → ${x.levelAfter}; ${x.differences.length ? x.differences.join("; ") : "same ports by signal and direction"}`);
+  list("Compared: curated or datasheet ports kept", by("compared"), (x) =>
+    x.differences.length ? x.differences.join("; ") : "agrees by signal and direction");
+  list("Kept: the stencil would lower the level — merge by hand", by("kept"), (x) =>
+    `level ${x.levelAfter}; ${x.differences.length ? x.differences.join("; ") : "same ports by signal and direction"}`);
+  list("Skipped: stencil master has issues", by("skipped"), (x) => `level ${x.levelAfter}; ${x.issues.slice(0, 4).join("; ")}${x.issues.length > 4 ? "; …" : ""}`);
+  // Why masters were skipped: the issue kinds and the labels behind them.
+  const skipped = by("skipped");
+  const kinds = new Map<string, number>();
+  const labels = new Map<string, number>();
+  for (const x of skipped) {
+    const ks = new Set(x.issues.map((i) => i.split(/[":(]/)[0].trim()));
+    for (const k of ks) kinds.set(k, (kinds.get(k) ?? 0) + 1);
+    for (const i of x.issues) {
+      const m = /^(unknown label|unknown connector|pin-level drawing):? "(.*)"/.exec(i);
+      if (m) labels.set(`${m[1]}: ${m[2]}`, (labels.get(`${m[1]}: ${m[2]}`) ?? 0) + 1);
+    }
+  }
+  const top = (m: Map<string, number>, n: number) => [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, n);
+  lines.push("", "### Skipped: reasons (cards; a card can have several)", "", "| Reason | Cards |", "|---|---:|");
+  for (const [k, n] of top(kinds, 20)) lines.push(`| ${k} | ${n} |`);
+  lines.push("", "Top labels and connectors behind them:", "", "| Issue | Cards |", "|---|---:|");
+  for (const [k, n] of top(labels, 25)) lines.push(`| ${k.replace(/\|/g, "\\|")} | ${n} |`);
+
+  // Extron chassis without slots.
+  if (r.chassis.length) {
+    lines.push("", `## Chassis slots: set by this step or missing (${r.chassis.length})`, "");
+    for (const c of [...r.chassis].sort((a, b) => a.label.localeCompare(b.label))) {
+      lines.push(`- ${c.label} — ${c.slots ? `${c.slots} slots (${c.from})` : `no slots: ${c.missing}`}`);
+    }
+  }
+
+  const missing = r.stencilMissing;
+  const count = (key: (x: (typeof missing)[number]) => string) => {
+    const m = new Map<string, number>();
+    for (const x of missing) m.set(key(x), (m.get(key(x)) ?? 0) + 1);
+    return top(m, 100);
+  };
+  lines.push("", `## Not found in the stencils (${missing.length})`, "", "By device type:", "", "| Device type | Cards |", "|---|---:|");
+  for (const [k, n] of count((x) => x.deviceType)) lines.push(`| ${k} | ${n} |`);
+  lines.push("", "By category:", "", "| Category | Cards |", "|---|---:|");
+  for (const [k, n] of count((x) => x.category || "(none)")) lines.push(`| ${k} | ${n} |`);
+  lines.push("", "Cards:", "");
+  for (const x of [...missing].sort((a, b) => a.file.localeCompare(b.file))) lines.push(`- ${x.label} — ${x.deviceType}`);
+  return lines.join("\n") + "\n";
 }

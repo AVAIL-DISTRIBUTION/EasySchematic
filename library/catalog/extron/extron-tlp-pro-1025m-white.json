@@ -36,33 +36,31 @@
     "description": "10\" Wall Mount TouchLink® Pro Touchpanel - White",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "39b6f1ae-7441-4dda-a2b8-8817a045c133",
-      "label": "Extron TLP Pro 1025M White",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1025M White",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN / PoE",
+      "id": "vx-60-1566-13-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 12.9,
-      "notes": "PoE 802.3af class 3",
-      "id": "port-0"
+      "notes": "PoE 802.3af class 3"
     },
     {
-      "label": "Digital Input",
-      "signalType": "gpio",
+      "id": "vx-60-1566-13-2",
+      "label": "USB",
+      "signalType": "usb",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "1 configurable digital input (0-30VDC range, programmable pull-up) on a 3.5mm 2-pole captive screw.",
-      "id": "port-2"
+      "connectorType": "usb-micro",
+      "section": "USB",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed."
     },
     {
       "label": "USB Config",
@@ -71,7 +69,7 @@
       "connectorType": "usb-micro",
       "section": "Configuration",
       "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed.",
-      "id": "port-1"
+      "id": "vx-60-1566-13-s1"
     }
   ]
 }

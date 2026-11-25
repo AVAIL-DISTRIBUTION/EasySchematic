@@ -32,30 +32,30 @@
     "description": "MediaLink® Controller with RS-232 and IR Display Control for MK Junction Boxes",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "4b29558d-2df6-4ae7-acf7-2dd3db4c46b5",
-      "label": "Extron MLC 55 RS MK",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - MLC Eng.vssx",
+      "label": "MLC 55 RS MK",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Display Control (RS-232)",
+      "id": "vx-60-1390-23-1",
+      "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "id": "port-1"
+      "notes": "3-pole captive screw"
     },
     {
+      "id": "vx-60-1390-23-2",
       "label": "IR Out",
       "signalType": "ir",
       "direction": "output",
-      "connectorType": "phoenix",
       "section": "IR",
-      "id": "port-2"
+      "connectorType": "phoenix"
     },
     {
       "label": "USB Host (Config)",
@@ -63,15 +63,15 @@
       "direction": "input",
       "connectorType": "usb-mini",
       "section": "Configuration (Config)",
-      "id": "port-0"
+      "id": "vx-60-1390-23-s1"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1390-23-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-3"
+      "connectorType": "phoenix"
     }
   ]
 }

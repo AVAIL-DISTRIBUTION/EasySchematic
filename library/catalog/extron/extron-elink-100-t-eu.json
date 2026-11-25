@@ -33,32 +33,39 @@
     "description": "Wireless Transmitter for HDMI (EU)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "0c3554c9-1072-442c-878f-2a34de372bf6",
-      "label": "Extron eLink 100 T EU",
+      "kind": "stencil",
+      "from": "Extron Misc Engineering Drawings/MISC - Wireless Eng.vssx",
+      "label": "eLink 100 T EU",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1490-12-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "Source HDMI input — encoded and transmitted wirelessly to a paired eLink 100 R receiver (no wired video output on the transmitter).",
-      "id": "port-0"
+      "notes": "Source HDMI input — encoded and transmitted wirelessly to a paired eLink 100 R receiver (no wired video output on the transmitter)."
     },
     {
-      "label": "Power (5VDC)",
+      "id": "vx-60-1490-12-2",
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR"
+    },
+    {
+      "id": "vx-60-1490-12-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 5VDC, 2.6A PSU brick (13W).",
-      "id": "port-1"
+      "connectorType": "barrel",
+      "notes": "External 5VDC, 2.6A PSU brick (13W)."
     }
   ]
 }

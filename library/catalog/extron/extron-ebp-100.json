@@ -33,38 +33,40 @@
     "description": "eBUS Button Panel with 6 Buttons - US 2-Gang",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "b66d48f5-ca06-4d98-93f0-c3f2caefc01a",
-      "label": "Extron EBP 100",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - eBus Eng.vssx",
+      "label": "EBP 100",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1388-01-1",
       "label": "eBUS 1",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "id": "port-0"
+      "notes": "4-pole captive screw"
     },
     {
+      "id": "vx-60-1388-01-2",
       "label": "eBUS 2",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "id": "port-1"
+      "notes": "4-pole captive screw"
     },
     {
-      "id": "worklist-3",
-      "label": "Power 12V DC",
+      "id": "avail-extron-60-1388-01-dc12",
+      "label": "12V DC In",
       "signalType": "power",
       "direction": "input",
       "connectorType": "phoenix",
-      "section": "Power"
+      "section": "Power",
+      "notes": "2-pole captive screw — Extron convention, verify"
     }
   ]
 }

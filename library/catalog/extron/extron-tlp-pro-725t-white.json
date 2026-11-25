@@ -36,33 +36,22 @@
     "description": "7\" Tabletop TouchLink® Pro Touchpanel - White",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "63b26d93-53cb-45bd-aa95-b1660dac4dc3",
-      "label": "Extron TLP Pro 725T White",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 725T White",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN / PoE",
+      "id": "vx-60-1562-13-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 8.2,
-      "notes": "PoE 802.3af class 3",
-      "id": "port-0"
-    },
-    {
-      "label": "USB",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
-      "id": "port-1"
+      "notes": "PoE 802.3af class 3"
     }
   ]
 }

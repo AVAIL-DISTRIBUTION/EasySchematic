@@ -35,32 +35,31 @@
     "description": "Virtual Control Appliance with 5 Virtual Control Processors",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "8ee9259e-cd78-4d08-b7c8-9227aa30f51e",
-      "label": "Extron VCA 100",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - VCA.vssx",
+      "label": "VCA 100",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1963-01-1",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100/1000 Base-T host network port.",
-      "id": "port-0"
+      "notes": "10/100/1000 Base-T host network port."
     },
     {
+      "id": "vx-60-1963-01-2",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-1"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
     }
   ]
 }

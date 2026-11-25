@@ -209,7 +209,13 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
 
   // --- ports (ports of card slots are checked with the card, not here)
   // A block with neither ports nor slots has nothing to connect on a schematic (step 1.9).
+  // A chassis (Cable Cubby, frame) may have slots only: its ports come with the cards it takes,
+  // so every slot must name its family (standard 5.1) to be level A.
   if (!truthy(d.ports) && !truthy(d.slots)) E.push("no ports");
+  asArray(d.slots).forEach((s, i) => {
+    const slot = asObj(s);
+    if (!truthy(slot.slotFamily)) W.push(`slot "${str(slot.label) || i + 1}": no slotFamily`);
+  });
   const ports = asArray(d.ports)
     .map(asObj)
     .filter((p) => !(typeof p.section === "string" && p.section.startsWith("Slot")));

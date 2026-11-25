@@ -33,70 +33,71 @@
     "description": "Two Input 4K/60 DTP2 Transmitter for Floor Boxes",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "1a2d16b2-9087-4cce-a8f3-d0f772e7208d",
-      "label": "Extron DTP2 T 202 FB",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP2 Switchers Eng.vssx",
+      "label": "DTP2 T 202 FB",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In",
-      "signalType": "hdmi",
+      "id": "vx-60-1586-52-1",
+      "label": "RGBHV In 1",
+      "signalType": "vga",
       "direction": "input",
-      "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "connectorType": "vga",
+      "section": "Video Inputs"
     },
     {
-      "label": "DisplayPort In",
+      "id": "vx-60-1586-52-2",
+      "label": "DisplayPort In 2",
       "signalType": "displayport",
       "direction": "input",
       "connectorType": "displayport",
-      "section": "Video Inputs",
-      "id": "port-1"
+      "section": "Video Inputs"
     },
     {
-      "label": "DTP Out (RJ-45 to Rx)",
+      "id": "vx-60-1586-52-3",
+      "label": "DTP2/HDBT Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-3"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1586-52-4",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-2"
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 (3-pole)",
+      "id": "vx-60-1586-52-5",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-4"
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
     },
     {
-      "label": "USB Mini-B (Front Config)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-5"
+      "id": "vx-60-1586-52-6",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1586-52-7",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-6"
+      "connectorType": "barrel"
     }
   ]
 }

@@ -34,68 +34,66 @@
     "description": "1G Pro AV over IP Encoder for HDMI and Ethernet, Decorator-Style Wallplate, White",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "24a4131a-7bcc-43d5-98d5-80ef3f5d6959",
-      "label": "Extron NAV E 401 D White",
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Encod Eng.vssx",
+      "label": "NAV E 401 D White",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1525-08-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Loop Out",
+      "id": "vx-60-1525-08-2",
+      "label": "HDMI Out (Loop)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
       "section": "Video Outputs",
-      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through.",
-      "id": "port-1"
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through."
     },
     {
-      "label": "NAV",
+      "id": "vx-60-1525-08-3",
+      "label": "EXT 1G",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 20.1,
-      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC).",
-      "id": "port-2"
+      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC)."
     },
     {
-      "label": "EXT",
+      "id": "vx-60-1525-08-4",
+      "label": "NAV 1G (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "Network-extension daisy-chain port (1Gbps). Pass-through for downstream NAV devices.",
-      "id": "port-3"
+      "notes": "Network-extension daisy-chain port (1Gbps). Pass-through for downstream NAV devices."
     },
     {
+      "id": "vx-60-1525-08-5",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Bidirectional RS-232 on a 5-pole 3.5mm captive screw shared with IR. Pin configuration Tx/Rx/Gnd.",
-      "id": "port-4"
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 5-pole 3.5mm captive screw shared with IR. Pin configuration Tx/Rx/Gnd. (5-pole captive screw)"
     },
     {
-      "label": "IR",
+      "id": "vx-60-1525-08-6",
+      "label": "IR Out",
       "signalType": "ir",
       "direction": "output",
+      "section": "IR",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "TTL-level IR (carrier 30-300 kHz) on a 5-pole 3.5mm captive screw shared with RS-232. Pin configuration S/Gnd.",
-      "id": "port-5"
+      "notes": "TTL-level IR (carrier 30-300 kHz) on a 5-pole 3.5mm captive screw shared with RS-232. Pin configuration S/Gnd."
     },
     {
       "label": "USB Config",
@@ -104,16 +102,16 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
-      "id": "port-6"
+      "id": "vx-60-1525-08-s1"
     },
     {
+      "id": "vx-60-1525-08-7",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45.",
-      "id": "port-7"
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45."
     }
   ]
 }

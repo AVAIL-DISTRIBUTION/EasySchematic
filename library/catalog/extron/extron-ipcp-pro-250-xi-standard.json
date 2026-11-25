@@ -37,17 +37,16 @@
     "description": "IPCP Pro xi Control Processor",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "b68fd64c-54de-4f34-8403-e2d3d876a120",
-      "label": "Extron IPCP Pro 250 xi",
-      "match": "model-name",
-      "status": "raw",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - IPL IPCP Pro Eng.vssx",
+      "label": "IPCP Pro 255Q xi LL",
+      "match": "part-number",
       "level": "A"
     }
   },
   "ports": [
     {
-      "id": "9467d5d7",
+      "id": "vx-60-1911-01-1",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
@@ -55,100 +54,111 @@
       "section": "Network"
     },
     {
-      "id": "tpl-3",
-      "label": "IR/S",
-      "signalType": "ir",
-      "direction": "output",
-      "section": "IR",
-      "connectorType": "phoenix"
-    },
-    {
-      "id": "tpl-4",
-      "label": "Relay 1",
-      "signalType": "contact-closure",
+      "id": "vx-60-1911-01-2",
+      "label": "AV LAN",
+      "signalType": "ethernet",
       "direction": "bidirectional",
-      "section": "Digital I/O",
-      "connectorType": "phoenix",
-      "inheritsSignal": false
+      "connectorType": "rj45",
+      "section": "Network"
     },
     {
-      "id": "tpl-5",
-      "label": "Relay 2",
-      "signalType": "contact-closure",
-      "direction": "bidirectional",
-      "section": "Digital I/O",
-      "connectorType": "phoenix",
-      "inheritsSignal": false
-    },
-    {
-      "id": "6cfcfe1e",
-      "label": "Digital I/O 1",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
-    },
-    {
-      "id": "71c55d0c",
-      "label": "Digital I/O 2",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
-    },
-    {
-      "id": "3f8c68b7",
-      "label": "Digital I/O 3",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
-    },
-    {
-      "id": "0fbd0c11",
-      "label": "Digital I/O 4",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
-    },
-    {
-      "id": "tpl-1",
+      "id": "vx-60-1911-01-3",
       "label": "COM 1",
       "signalType": "serial",
       "direction": "bidirectional",
-      "section": "Control",
-      "connectorType": "phoenix"
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw"
     },
     {
-      "id": "tpl-2",
+      "id": "vx-60-1911-01-4",
       "label": "COM 2",
       "signalType": "serial",
       "direction": "bidirectional",
-      "section": "Control",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1911-01-5",
+      "label": "IR/S Out 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "IR or one-way RS-232; 2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1911-01-6",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1911-01-7",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1911-01-8",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
       "connectorType": "phoenix"
     },
     {
-      "id": "tpl-6",
+      "id": "vx-60-1911-01-9",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1911-01-10",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1911-01-11",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1911-01-12",
+      "label": "Volume Control",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1911-01-13",
       "label": "eBUS",
       "signalType": "ebus",
       "direction": "bidirectional",
-      "section": "Control",
       "connectorType": "phoenix",
-      "inheritsSignal": false
+      "section": "Expansion",
+      "notes": "5-pole captive screw"
     },
     {
-      "id": "tpl-12",
-      "label": "Volume (0-10 VDC)",
-      "signalType": "custom",
-      "direction": "output",
-      "section": "Control",
-      "connectorType": "phoenix",
-      "inheritsSignal": false
-    },
-    {
-      "id": "tpl-11",
-      "label": "DC Power",
+      "id": "vx-60-1911-01-14",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
       "section": "Power",

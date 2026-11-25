@@ -35,54 +35,45 @@
     "description": "RGB to HDMI Convertor with Audio Embedding",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "64cff00c-4b40-4a16-bd4d-2eab86b8e19e",
-      "label": "Extron DVC RGB-HD A",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Signal Proc Eng.vssx",
+      "label": "DVC RGB-HD A",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1614-01-1",
       "label": "VGA In",
       "signalType": "vga",
       "direction": "input",
-      "connectorType": "db15",
-      "id": "port-0",
+      "connectorType": "vga",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1614-01-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-2",
       "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1614-01-3",
       "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "id": "port-1",
       "section": "Audio Inputs"
     },
     {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-3"
-    },
-    {
+      "id": "vx-60-1614-01-4",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-4"
+      "connectorType": "barrel"
     }
   ]
 }

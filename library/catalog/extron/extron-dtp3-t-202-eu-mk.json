@@ -36,47 +36,56 @@
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
     "portsSource": {
-      "kind": "db",
-      "from": "1ac77a33-4d13-4e46-88cf-32b458e590d1",
-      "label": "Extron DTP3 T 202 EU/MK",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 202 EU/MK",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1829-52-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "USB-C In (DP Alt)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-c",
-      "section": "Video Inputs",
-      "id": "port-1"
-    },
-    {
-      "label": "DTP3/HDBaseT Out",
+      "id": "vx-60-1829-52-2",
+      "label": "DTP3/HDBT Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
       "section": "Video Outputs",
-      "id": "port-3",
       "notes": "RJ-45 to Rx"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1829-52-3",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-2"
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1829-52-4",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1829-52-5",
+      "label": "RS-232 (Remote)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
       "label": "USB-C Config (Front)",
@@ -84,23 +93,23 @@
       "direction": "input",
       "connectorType": "usb-c",
       "section": "Control",
-      "id": "port-4"
+      "id": "vx-60-1829-52-s1"
     },
     {
-      "label": "RS-232 (Pass-through)",
-      "signalType": "serial",
+      "id": "vx-60-1829-52-6",
+      "label": "USB-C",
+      "signalType": "usb",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-5"
+      "connectorType": "usb-c",
+      "section": "USB"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1829-52-7",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-6"
+      "connectorType": "barrel"
     }
   ]
 }

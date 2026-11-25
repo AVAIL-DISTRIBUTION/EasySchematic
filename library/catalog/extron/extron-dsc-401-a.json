@@ -35,71 +35,62 @@
     "description": "4K/60 HDMI to HDMI Scaler with Audio Embedding and De-Embedding",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "67bf674f-271e-4807-b766-e2d5409c082f",
-      "label": "Extron DSC 401 A",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Scalers Eng.vssx",
+      "label": "DSC 401 A",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1878-02-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-0",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1878-02-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-1",
       "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1878-02-3",
       "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-2"
+      "section": "Audio Inputs"
     },
     {
+      "id": "vx-60-1878-02-4",
       "label": "Audio Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-3"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "USB-C Config",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-c",
-      "section": "Control",
-      "id": "port-4"
-    },
-    {
-      "label": "LAN",
+      "id": "vx-60-1878-02-5",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Control",
-      "poeDrawW": 8.5,
-      "id": "port-5"
+      "section": "Network"
     },
     {
+      "id": "vx-60-1878-02-6",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-6"
+      "connectorType": "phoenix"
     }
   ]
 }

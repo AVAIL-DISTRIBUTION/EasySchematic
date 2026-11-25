@@ -35,57 +35,65 @@
     "description": "3G-SDI to HDMI Scaler with Audio Embedding",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "6da9e7c1-c1a8-44a6-a6ed-60a96a8b1d94",
-      "label": "Extron DSC 3G-HD A",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Scalers Eng.vssx",
+      "label": "DSC 3G-HD A",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "SDI In",
+      "id": "vx-60-1303-01-1",
+      "label": "3G/HD-SDI In",
       "signalType": "sdi",
       "direction": "input",
       "connectorType": "bnc",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "SDI Loop",
+      "id": "vx-60-1303-01-2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1303-01-3",
+      "label": "3G/HD-SDI Out",
       "signalType": "sdi",
       "direction": "output",
       "connectorType": "bnc",
       "section": "Video Outputs",
-      "notes": "Loop-through of the SDI input (passive).",
-      "id": "port-1"
+      "notes": "Loop-through of the SDI input (passive)."
     },
     {
-      "label": "HDMI/DVI Out",
-      "signalType": "hdmi",
-      "direction": "output",
-      "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-2"
+      "id": "vx-60-1303-01-4",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1303-01-5",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1303-01-6",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
-      "id": "port-4"
+      "connectorType": "barrel",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
     }
   ]
 }

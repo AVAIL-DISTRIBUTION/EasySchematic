@@ -39,22 +39,22 @@
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
     "portsSource": {
-      "kind": "db",
-      "from": "f559f114-d313-4c2e-b061-78ca1a7d8a8b",
-      "label": "Extron NBP 1200C Br Alum",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP 1200C Br Alum",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
-    }
+    },
+    "portsMissing": "number of extron-cubby-aap openings: not drawn in the Extron stencil and not in the description"
   },
   "ports": [
     {
-      "label": "Ethernet / PoE",
+      "id": "vx-60-1835-08-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "id": "port-0",
       "notes": "PoE: actual draw not published; PoE 802.3af"
     }
   ]

@@ -32,77 +32,58 @@
     "description": "Adjustable Width Sound Bar for 90\" to 100\" Displays",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "6f5a4e29-4f3f-4117-9ba5-5829b154afb6",
-      "label": "Extron SB 33 A 90-100",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Speakers pendant and bars Eng.vssx",
+      "label": "SB 33 A 90-100",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In (5-pole Captive)",
+      "id": "vx-60-1737-16-1",
+      "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "Main stereo balanced/unbalanced input on a 5-pole 3.5mm captive screw.",
-      "id": "port-0"
+      "notes": "Main stereo balanced/unbalanced input on a 5-pole 3.5mm captive screw. (5-pole captive screw)"
     },
     {
-      "label": "Audio In (TRS)",
+      "id": "vx-60-1737-16-2",
+      "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
       "section": "Audio Inputs",
-      "notes": "Stereo unbalanced on a 3.5mm TRS mini jack.",
-      "id": "port-1"
+      "notes": "Stereo unbalanced on a 3.5mm TRS mini jack."
     },
     {
-      "label": "Audio In (RCA)",
+      "id": "vx-60-1737-16-3",
+      "label": "Audio In 3",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "rca",
       "section": "Audio Inputs",
-      "notes": "Stereo unbalanced on an RCA pair.",
-      "id": "port-2"
+      "notes": "Stereo unbalanced on an RCA pair. (L/R RCA pair)"
     },
     {
-      "label": "DC Volume Control",
+      "id": "vx-60-1737-16-4",
+      "label": "Volume/Mute Control",
       "signalType": "control-voltage",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "notes": "0-10VDC volume control input on a 3-pole 3.5mm captive screw (+10VDC ref / variable / GND). Modeled as analog-audio per session 4 convention.",
-      "id": "port-3"
+      "notes": "0-10VDC volume control input on a 3-pole 3.5mm captive screw (+10VDC ref / variable / GND). Modeled as analog-audio per session 4 convention. (3-pole captive screw)"
     },
     {
-      "label": "Switched 12VDC Out 1",
-      "signalType": "power",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Power",
-      "notes": "Switched 12VDC peripheral power output (2-pole captive). 2 of 3 internal switched DC outputs are user-accessible.",
-      "id": "port-4"
-    },
-    {
-      "label": "Switched 12VDC Out 2",
-      "signalType": "power",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Power",
-      "notes": "Switched 12VDC peripheral power output (2-pole captive).",
-      "id": "port-5"
-    },
-    {
+      "id": "vx-60-1737-16-5",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC, 4.2A PSU (IEC mains).",
-      "id": "port-6"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC, 4.2A PSU (IEC mains)."
     }
   ]
 }
