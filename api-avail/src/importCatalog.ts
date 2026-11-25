@@ -1,8 +1,9 @@
 /**
  * import:catalog — loads the product catalog (library/catalog/<vendor>/*.json, step 1.9) into
- * the database. Only files at standard level A are loaded; the rest wait in the catalog.
+ * the database. Only files at the minimum level or above are loaded (options.minLevel, CLI
+ * --min-level, default B: A and B go in as draft); FIX files wait in the catalog.
  *
- * Per level A file:
+ * Per loaded file:
  *   - match: the template loaded from this file before (meta source "avail-catalog" +
  *     upstream_id = file id), else the template with the file's id, else the template with
  *     the same manufacturer + part number (modelNumber, also _avail.altPartNumber);
@@ -11,8 +12,8 @@
  *   - deleted for good (docs/avail/deleted-templates.json: by id, or vendor + partNumber) → skipped;
  *   - file unchanged since the last load (same sha-256 in meta.source_hash) → not touched;
  *   - otherwise found → updated, not found → created. Status: new / raw / draft → draft;
- *     hidden stays hidden; verified stays verified when the data did not change, else draft
- *     with status_reason "catalog file changed".
+ *     hidden stays hidden; verified stays verified when the data did not change and the file
+ *     is at level A, else draft with status_reason "catalog file changed" / "level B".
  * The template gets the file without `_avail` and `rackForm`; those go to
  * avail_template_meta.catalog (migration 9005) with the file path.
  *
@@ -38,7 +39,7 @@ import { DELETED_TEMPLATES, type DeletedTemplatesFile } from "./vendorResponses"
 
 export const AVAIL_CATALOG_SOURCE = "avail-catalog";
 
-export type ImportCatalogAction = "inserted" | "updated" | "unchanged" | "below-a" | "curated" | "deleted" | "duplicate" | "invalid";
+export type ImportCatalogAction = "inserted" | "updated" | "unchanged" | "below-min" | "curated" | "deleted" | "duplicate" | "invalid";
 
 export interface ImportCatalogRow {
   file: string;
@@ -54,6 +55,9 @@ export interface ImportCatalogRow {
 
 export interface ImportCatalogReport {
   dryRun: boolean;
+  minLevel: "A" | "B";
+  /** Files in the database after the run (inserted, updated, unchanged), by level. */
+  loadedByLevel: Record<"A" | "B", number>;
   rows: ImportCatalogRow[];
   counts: Record<ImportCatalogAction, number>;
   /** Removed from the database by deleted-templates.json entries with a partNumber. */
@@ -70,6 +74,8 @@ export const SUPERSEDED_REASON = "superseded by catalog";
 
 export interface ImportCatalogOptions {
   dryRun?: boolean;
+  /** Lowest level loaded into the database (default B: A and B load, FIX stays in the catalog). */
+  minLevel?: "A" | "B";
   updatedBy?: string;
   /** Templates of library/avail (id, manufacturer, modelNumber): never touched. */
   curated?: { id: string; manufacturer?: string; modelNumber?: string }[];
@@ -80,6 +86,15 @@ type Row = TemplateRow & Record<string, string | number | null>;
 type Template = Parameters<typeof templateToRow>[0];
 
 class DryRun extends Error {}
+
+const LEVEL_RANK: Record<BlockLevel, number> = { A: 0, B: 1, FIX: 2 };
+
+/** Parses --min-level: "A" or "B" (FIX is never loaded). */
+export function parseMinLevel(v: string | undefined): "A" | "B" {
+  const x = (v ?? "B").toUpperCase();
+  if (x !== "A" && x !== "B") throw new Error(`--min-level must be A or B, got "${v}"`);
+  return x;
+}
 
 const norm = (s: unknown) => (typeof s === "string" ? s.trim().replace(/\s+/g, " ").toLowerCase() : "");
 
@@ -108,8 +123,9 @@ export function splitCatalogTemplate(t: CatalogTemplate, file: string): { templa
 export function importCatalog(sqlite: Database.Database, files: readonly CatalogFileText[], options: ImportCatalogOptions = {}): ImportCatalogReport {
   const updatedBy = options.updatedBy ?? "import:catalog";
   const deletedList = options.deletedList ?? DELETED_TEMPLATES;
-  const counts = { inserted: 0, updated: 0, unchanged: 0, "below-a": 0, curated: 0, deleted: 0, duplicate: 0, invalid: 0 };
-  const report: ImportCatalogReport = { dryRun: !!options.dryRun, rows: [], counts, removed: [], superseded: [] };
+  const counts = { inserted: 0, updated: 0, unchanged: 0, "below-min": 0, curated: 0, deleted: 0, duplicate: 0, invalid: 0 };
+  const minLevel = options.minLevel ?? "B";
+  const report: ImportCatalogReport = { dryRun: !!options.dryRun, minLevel, loadedByLevel: { A: 0, B: 0 }, rows: [], counts, removed: [], superseded: [] };
 
   const curatedIds = new Set((options.curated ?? []).map((c) => c.id));
   const curatedKeys = new Set((options.curated ?? []).map((c) => partKey(c.manufacturer, c.modelNumber)).filter(Boolean));
@@ -205,7 +221,7 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
         report.rows.push({ ...base, action, ...(m ? { status: m.status } : {}), note });
       };
 
-      if (level !== "A") return skip("below-a", `level ${level}: stays in the catalog`);
+      if (LEVEL_RANK[level] > LEVEL_RANK[minLevel]) return skip("below-min", `level ${level}: stays in the catalog (minimum ${minLevel})`);
       if (curatedIds.has(id) || m?.source === AVAIL_LIBRARY_SOURCE || parts.some((k) => curatedKeys.has(k))) {
         return skip("curated", "library/avail has this product");
       }
@@ -232,8 +248,9 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       let status: TemplateStatus = "draft";
       let reason: string | null = null;
       if (before === "hidden") status = "hidden";
-      else if (before === "verified" && !dataChanged) status = "verified";
-      else if (before === "verified") reason = `Catalog file changed (library/catalog/${file.file}); verify again`;
+      else if (before === "verified" && !dataChanged && level === "A") status = "verified";
+      else if (before === "verified" && dataChanged) reason = `Catalog file changed (library/catalog/${file.file}); verify again`;
+      else if (before === "verified") reason = `Catalog file is at level ${level} (library/catalog/${file.file}); verified needs A`;
 
       if (!existing) insertTemplate.run(row);
       else if (dataChanged) updateTemplate.run(row);
@@ -288,6 +305,9 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       } else report.superseded.push({ id: r.id, label: r.label, status, action: "listed", by });
     }
 
+    for (const x of report.rows) {
+      if ((x.action === "inserted" || x.action === "updated" || x.action === "unchanged") && (x.level === "A" || x.level === "B")) report.loadedByLevel[x.level]++;
+    }
     if (changed) sqlite.prepare(BUMP_LIBRARY_VERSION).run();
     if (options.dryRun) throw new DryRun();
   });
@@ -303,15 +323,16 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
 export function formatImportCatalogReport(r: ImportCatalogReport, dir: string, verbose = false): string {
   const c = r.counts;
   const lines = [
-    `Catalog import: ${dir}${r.dryRun ? " (dry run, nothing written)" : ""}`,
+    `Catalog import: ${dir}${r.dryRun ? " (dry run, nothing written)" : ""}; minimum level ${r.minLevel}`,
+    `In the database from the catalog: A ${r.loadedByLevel.A}, B ${r.loadedByLevel.B}`,
     `Files: ${r.rows.length}; inserted ${c.inserted}, updated ${c.updated}, unchanged ${c.unchanged}; ` +
-      `skipped: below level A ${c["below-a"]}, curated ${c.curated}, deleted ${c.deleted}, duplicate ${c.duplicate}, invalid ${c.invalid}`,
+      `skipped: below level ${r.minLevel} ${c["below-min"]}, curated ${c.curated}, deleted ${c.deleted}, duplicate ${c.duplicate}, invalid ${c.invalid}`,
   ];
   const vendors = [...new Set(r.rows.map((x) => x.file.split("/")[0]))].sort();
   for (const v of vendors) {
     const rows = r.rows.filter((x) => x.file.startsWith(`${v}/`));
     const n = (a: ImportCatalogAction) => rows.filter((x) => x.action === a).length;
-    lines.push(`  ${v.padEnd(10)} inserted ${n("inserted")}, updated ${n("updated")}, unchanged ${n("unchanged")}, below A ${n("below-a")}, curated ${n("curated")}, deleted ${n("deleted")}`);
+    lines.push(`  ${v.padEnd(10)} inserted ${n("inserted")}, updated ${n("updated")}, unchanged ${n("unchanged")}, below ${r.minLevel} ${n("below-min")}, curated ${n("curated")}, deleted ${n("deleted")}`);
   }
   if (r.removed.length) {
     lines.push("", "Removed from the database (docs/avail/deleted-templates.json):");
@@ -329,7 +350,7 @@ export function formatImportCatalogReport(r: ImportCatalogReport, dir: string, v
   }
   lines.push("");
   for (const x of r.rows) {
-    if (!verbose && (x.action === "below-a" || x.action === "unchanged")) continue;
+    if (!verbose && (x.action === "below-min" || x.action === "unchanged")) continue;
     const status = x.status ? (x.previousStatus !== undefined ? `${x.previousStatus ?? "new"} → ${x.status}` : x.status) : "";
     lines.push(`  ${x.action.padEnd(9)} ${x.level.padEnd(3)} ${status.padEnd(18)} ${x.file}${x.note ? ` — ${x.note}` : ""}`);
   }

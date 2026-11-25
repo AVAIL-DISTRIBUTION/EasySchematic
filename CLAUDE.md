@@ -237,9 +237,10 @@ library / db / variant / datasheet), `portsMissing` (чего нет в дата
 по даташитам вручную (`portsSource.kind = "datasheet"`), после — повторный fill разносит по
 вариантам. `avail:check-library` проверяет каталог: форма, имена, уникальность, `index.json`;
 уровень любой (FIX допустим), в отчёте — уровни по вендорам. `npm run import:catalog
-[-- --dry-run] [-- --verbose]` (`api-avail/src/importCatalog.ts`, миграция 9005): в базу только
-уровень A; совпадение — прежняя загрузка (source `avail-catalog`), id, производитель + артикул;
-найден — обновить (raw/draft → draft, hidden остаётся, verified — если данные не изменились), нет —
+[-- --dry-run] [-- --verbose] [-- --min-level A|B]` (`api-avail/src/importCatalog.ts`, миграция 9005): в базу
+уровень `--min-level` и выше (по умолчанию B: A и B идут как draft, FIX остаётся в каталоге), в отчёте —
+сколько загружено A и B; совпадение — прежняя загрузка (source `avail-catalog`), id, производитель + артикул;
+найден — обновить (raw/draft → draft, hidden остаётся, verified — если данные не изменились и уровень A), нет —
 draft; `_avail` и `rackForm` — в `avail_template_meta.catalog`; library/avail не трогает,
 deleted-templates.json соблюдает (записи с `partNumber` удаляет из базы — Biamp SQT-1);
 другие шаблоны той же модели (label без варианта/цвета) со статусом raw скрывает с причиной
@@ -327,7 +328,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
 | `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из стенсилов Extron и снимка базы (`npm run fill:catalog-ports`), пишет только файлы и отчёт стенсилов |
 | `src/extronVisioCli.ts` | стенсилы Extron → `tools/avail/extron-visio/extron-visio-blocks.json` (`npm run parse:extron-visio`); zip читает `xlsx.ts` (`readZipText`) |
-| `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня A в базу (`npm run import:catalog`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
+| `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня B и выше в базу (`npm run import:catalog [-- --min-level A|B]`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
 | `src/seed.ts` | сид библиотеки из встроенных шаблонов (`src/deviceLibrary.ts`) через `templateToRow` из `api/src/db.ts`, без обращения к easyschematic.live |

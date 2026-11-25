@@ -2,7 +2,7 @@
  * CLI: load the level A files of the product catalog (library/catalog) into the database;
  * see importCatalog.ts for the rules.
  *
- *   npm run import:catalog -- --dry-run [--verbose] [--dir <library/catalog>]
+ *   npm run import:catalog -- --dry-run [--verbose] [--min-level A|B] [--dir <library/catalog>]
  *   npm run import:catalog
  *
  * On the server, after a backup (the image carries the catalog at /app/library/catalog):
@@ -19,22 +19,25 @@ import path from "node:path";
 import { parseArgs } from "node:util";
 import { catalogDir, readCatalog } from "./catalogFiles";
 import { D1DatabaseShim } from "./d1";
-import { formatImportCatalogReport, importCatalog } from "./importCatalog";
+import { formatImportCatalogReport, importCatalog, parseMinLevel } from "./importCatalog";
 import { libraryDir } from "./libraryDir";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
-const USAGE = "usage: npm run import:catalog [-- --dry-run] [-- --verbose] [-- --dir <library/catalog>]";
+const USAGE = "usage: npm run import:catalog [-- --dry-run] [-- --verbose] [-- --min-level A|B] [-- --dir <library/catalog>]";
 
-let values: { dir?: string; "dry-run"?: boolean; verbose?: boolean };
+let values: { dir?: string; "dry-run"?: boolean; verbose?: boolean; "min-level"?: string };
+let minLevel: "A" | "B";
 try {
   ({ values } = parseArgs({
     options: {
       dir: { type: "string", default: catalogDir() },
       "dry-run": { type: "boolean", default: false },
       verbose: { type: "boolean", default: false },
+      "min-level": { type: "string", default: "B" },
     },
   }));
+  minLevel = parseMinLevel(values["min-level"]);
 } catch (err) {
   console.error(`${err instanceof Error ? err.message : String(err)}\n${USAGE}`);
   process.exit(2);
@@ -53,7 +56,7 @@ try {
 
   applyAllMigrations(db.sqlite, config, (m) => console.log(m));
   syncLintLevels(db.sqlite);
-  const report = importCatalog(db.sqlite, files, { dryRun: values["dry-run"], curated });
+  const report = importCatalog(db.sqlite, files, { dryRun: values["dry-run"], curated, minLevel });
   process.stdout.write(formatImportCatalogReport(report, dir, values.verbose));
   if (!report.dryRun) {
     syncLintLevels(db.sqlite);

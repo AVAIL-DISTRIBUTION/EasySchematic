@@ -10,7 +10,8 @@ import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { templateToRow } from "../../api/src/db";
 import type { CatalogFileText } from "../src/catalogFiles";
-import { AVAIL_CATALOG_SOURCE, importCatalog, partKey } from "../src/importCatalog";
+import { lintBlock } from "../../src/avail/blockLint";
+import { AVAIL_CATALOG_SOURCE, formatImportCatalogReport, importCatalog, parseMinLevel, partKey } from "../src/importCatalog";
 import { configFromEnv, createApiServer, type ApiServer } from "../src/server";
 import type { DeletedTemplatesFile } from "../src/vendorResponses";
 
@@ -82,10 +83,36 @@ describe("import:catalog", () => {
     expect(Object.keys(JSON.parse(row("avail-extron-60-1885-52")!.ports as string)[0])).not.toContain("_avail");
   });
 
-  it("loads only level A: a file without ports stays in the catalog", () => {
-    const r = importCatalog(api.db.sqlite, [file(card("avail-extron-1", { ports: [] }))], { deletedList: NO_DELETED });
-    expect(r.counts["below-a"]).toBe(1);
+  it("loads A and B by default; FIX (a file without ports) stays in the catalog", () => {
+    const b = card("avail-extron-b", { modelNumber: "60-b", label: "Extron DTP3 T 203 B", searchTerms: [] });
+    expect(lintBlock(b).level).toBe("B");
+    const r = importCatalog(
+      api.db.sqlite,
+      [file(card("avail-extron-1", { ports: [] }), "extron/fix.json"), file(b, "extron/b.json"), file(card("avail-extron-60-1885-52"))],
+      { deletedList: NO_DELETED },
+    );
+    expect(r.minLevel).toBe("B");
+    expect(r.rows.map((x) => [x.level, x.action])).toEqual([["FIX", "below-min"], ["B", "inserted"], ["A", "inserted"]]);
+    expect(r.loadedByLevel).toEqual({ A: 1, B: 1 });
+    expect(meta("avail-extron-b")).toMatchObject({ status: "draft", lint_level: "B" });
     expect(row("avail-extron-1")).toBeUndefined();
+    expect(formatImportCatalogReport(r, "library/catalog")).toContain("In the database from the catalog: A 1, B 1");
+  });
+
+  it("--min-level A keeps B in the catalog", () => {
+    const b = card("avail-extron-b", { modelNumber: "60-b", label: "Extron DTP3 T 203 B", searchTerms: [] });
+    const r = importCatalog(api.db.sqlite, [file(b, "extron/b.json")], { deletedList: NO_DELETED, minLevel: "A" });
+    expect(r.rows[0]).toMatchObject({ action: "below-min", note: "level B: stays in the catalog (minimum A)" });
+    expect(row("avail-extron-b")).toBeUndefined();
+    expect(parseMinLevel(undefined)).toBe("B");
+    expect(parseMinLevel("a")).toBe("A");
+    expect(() => parseMinLevel("FIX")).toThrow("--min-level must be A or B");
+  });
+
+  it("a verified template whose catalog file is at level B goes to draft", () => {
+    insertLocal(card("v"), "verified");
+    const r = importCatalog(api.db.sqlite, [file(card("avail-extron-60-1885-52", { searchTerms: [] }))], { deletedList: NO_DELETED });
+    expect(r.rows[0]).toMatchObject({ action: "updated", level: "B", status: "draft", previousStatus: "verified" });
   });
 
   it("updates the template with the same manufacturer + part number, keeping its id", () => {
