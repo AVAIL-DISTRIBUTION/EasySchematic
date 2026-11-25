@@ -90,6 +90,9 @@ docs/src/searchIndex.json
 docs/public/dev/
 
 # DB backups
+# AVAIL: server database snapshots for fill:catalog-ports, archives of the catalog export
+tools/avail/incoming/db/
+library/*.zip
 api/backup-*.sql
 backups/
 
