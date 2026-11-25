@@ -24,13 +24,13 @@
   "widthMm": 145,
   "depthMm": 145,
   "weightKg": 0.4,
-  "voltage": "PoE 802.3af class 1",
-  "poeDrawW": 3.84,
+  "voltage": "PoE 802.3at Class 1",
+  "poeDrawW": 4,
   "unitCost": 1085,
   "_avail": {
     "status": "ports-filled",
     "description": "Tesira Hardware Dialer",
-    "notes": "[AVAIL] from Biamp documentation",
+    "notes": "[AVAIL] from Biamp documentation | PoE from the manufacturer's document (takes precedence over the catalog card): \"Power: PoE (IEEE 802.3at Class 1, 4W)\" — https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_hd-1_aug22_2009.pdf; the card had PoE 802.3af class 1, poeDrawW 3.84",
     "source": "biamp-blocks.csv",
     "portsSource": {
       "kind": "datasheet",

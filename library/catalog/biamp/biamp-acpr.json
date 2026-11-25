@@ -59,7 +59,7 @@
       "direction": "bidirectional",
       "section": "Control",
       "connectorType": "rj45",
-      "notes": "CAT5 to the SDQ5PIR active speaker (control, local input), max 100 m; powered by host (phantom over CAT5)"
+      "notes": "APart speaker link (custom bus): CAT5 to the SDQ5PIR active speaker (control, local input), max 100 m; powered by host (phantom over CAT5)"
     }
   ]
 }

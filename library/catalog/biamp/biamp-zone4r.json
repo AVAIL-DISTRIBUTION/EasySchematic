@@ -41,7 +41,7 @@
       "direction": "bidirectional",
       "section": "Control",
       "connectorType": "phoenix",
-      "notes": "4-pole euroblock: GND, Rx B, Tx A, +12 VDC; CAT5 to ZONE4, max 100 m; powered by host (+12 VDC from ZONE4)"
+      "notes": "APart ZONE4 remote link (custom bus): 4-pole euroblock: GND, Rx B, Tx A, +12 VDC; CAT5 to ZONE4, max 100 m; powered by host (+12 VDC from ZONE4)"
     }
   ]
 }

@@ -41,7 +41,7 @@
       "direction": "bidirectional",
       "section": "Control",
       "connectorType": "phoenix",
-      "notes": "2-pole euroblock, hardwired to AUDIOCONTROL12.8, max 580 m; phantom powered by the host"
+      "notes": "DIWAC 2-wire bus (custom): 2-pole euroblock, hardwired to AUDIOCONTROL12.8, max 580 m; phantom powered by the host"
     }
   ]
 }

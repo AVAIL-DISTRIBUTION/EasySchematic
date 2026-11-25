@@ -25,8 +25,8 @@
   "widthMm": 172,
   "depthMm": 132,
   "weightKg": 0.68,
-  "voltage": "PoE 802.3af class 3",
-  "poeDrawW": 15.4,
+  "voltage": "PoE+ 802.3at Class 4",
+  "poeDrawW": 30,
   "unitCost": 2400,
   "_avail": {
     "status": "ports-filled",
@@ -36,7 +36,8 @@
       "kind": "datasheet",
       "from": "https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf"
     },
-    "portsMissing": "Install manual used as the data sheet. Amp Out connector is not named directly; RJ-45 follows from the CCA adapter (Cat-5 to euroblock), as on the level-A TCM-XA. Card says PoE 802.3af class 3 / 15.4 W, the manual says 802.3at class 4, 30 W - card poeDrawW/voltage should be checked."
+    "portsMissing": "Install manual used as the data sheet. Amp Out connector is not named directly; RJ-45 follows from the CCA adapter (Cat-5 to euroblock), as on the level-A TCM-XA. Card says PoE 802.3af class 3 / 15.4 W, the manual says 802.3at class 4, 30 W - card poeDrawW/voltage should be checked.",
+    "notes": "PoE from the manufacturer's document (takes precedence over the catalog card): \"An IEEE 802.3at Class 4 device requiring 30W of PoE+ power\" — https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf; the card had PoE 802.3af class 3, poeDrawW 15.4"
   },
   "ports": [
     {

@@ -27,7 +27,7 @@
   "widthMm": 172,
   "depthMm": 132,
   "weightKg": 0.68,
-  "poeDrawW": 25.5,
+  "poeDrawW": 30,
   "ports": [
     {
       "id": "tcmxa-spk1",
@@ -54,7 +54,7 @@
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "AVB",
-      "notes": "To a PoE+ switch: AVB and control; PoE+ 802.3at class 4"
+      "notes": "To a PoE+ switch: AVB and control; PoE+ 802.3at Type 2 Class 4, 30 W (Parlé TCM-X install manual: \"The TCM-XA is an IEEE 802.3at Type 2 Class 4 device requiring 30W of PoE power\")"
     },
     {
       "id": "tcmxa-xex",

@@ -42,7 +42,7 @@
       "direction": "bidirectional",
       "section": "Control",
       "connectorType": "phoenix",
-      "notes": "2-pole euroblock, hardwired to PREZONE2, max 580 m; power type not stated"
+      "notes": "DIWAC 2-wire bus (custom): 2-pole euroblock, hardwired to PREZONE2, max 580 m; power type not stated"
     }
   ]
 }

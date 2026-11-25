@@ -25,8 +25,8 @@
   "widthMm": 172,
   "depthMm": 132,
   "weightKg": 0.68,
-  "voltage": "PoE 802.3af class 3",
-  "poeDrawW": 15.4,
+  "voltage": "PoE+ 802.3at Class 4",
+  "poeDrawW": 30,
   "unitCost": 3150,
   "_avail": {
     "status": "ports-filled",
@@ -38,7 +38,8 @@
       "label": "Biamp Parlé TCM-XA",
       "match": "part-number",
       "level": "A"
-    }
+    },
+    "notes": "PoE from the manufacturer's document (takes precedence over the catalog card): \"The TCM-XA is an IEEE 802.3at Type 2 Class 4 device requiring 30W of PoE power\" — https://products.biamp.com/api/media/file/biamp_manual_parle_tcm-x_install_oct25_13614.pdf; the card had PoE 802.3af class 3, poeDrawW 15.4"
   },
   "ports": [
     {
@@ -66,7 +67,7 @@
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "AVB",
-      "notes": "To a PoE+ switch: AVB and control; PoE+ 802.3at class 4"
+      "notes": "To a PoE+ switch: AVB and control; PoE+ 802.3at Type 2 Class 4, 30 W (Parlé TCM-X install manual: \"The TCM-XA is an IEEE 802.3at Type 2 Class 4 device requiring 30W of PoE power\")"
     },
     {
       "id": "tcmxa-xex",
