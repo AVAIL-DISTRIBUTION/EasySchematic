@@ -27,7 +27,8 @@
     "status": "awaiting-ports",
     "description": "Vocia Ambient Noise Compensation Device, surface-mountable, networked ambient microphone input device",
     "notes": "[AVAIL] from Biamp documentation; [AVAIL] room-mounted (wall-mounted noise sensor) — dimensions optional",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Two ambient sense inputs (balanced mic/line, 48 V phantom): the data sheet does not name their connector; Input 1 / Input 2 wait for the panel"
   },
   "ports": []
 }

@@ -28,9 +28,60 @@
   "poeDrawW": 30,
   "unitCost": 2332,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Tesira 4 channel mic/line input expander with AEC and PoE+",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_ex-in_ex-aec_ex-out_ex-io_feb20_1996.pdf"
+    },
+    "portsMissing": "The data sheet does not print the network connector; one RJ-45 AVB port assumed from AVB networking with PoE+ power: check the panel"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    },
+    {
+      "id": "p2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    },
+    {
+      "id": "p3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    },
+    {
+      "id": "p4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    },
+    {
+      "id": "p5",
+      "label": "AVB (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "AVB",
+      "connectorType": "rj45",
+      "notes": "AVB audio, configuration and control; the only power input, PoE+ 802.3at class 4, 30 W"
+    }
+  ]
 }

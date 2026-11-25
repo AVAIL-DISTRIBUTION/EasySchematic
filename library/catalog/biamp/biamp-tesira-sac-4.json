@@ -30,7 +30,8 @@
     "description": "Tesira 4 channel mic/line input card with ambient noise compensation per channel",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsMissing": "The catalog and product page give four balanced mic/line inputs with ambient noise compensation but do not name the input connector; ports wait for a SAC-4 data sheet or the panel"
   },
   "ports": []
 }

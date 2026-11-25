@@ -31,7 +31,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia networked audio output expansion device with 4 line-level output channels. Enhanced to support Vocia ELD-1 & ANC-1. Emergency Message storage.",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Connectors of the 4 line outputs, 4 page active relays, control inputs / outputs and the dual aux 24 V DC inputs are not named in the data sheet; ports wait for the panel"
   },
   "ports": []
 }

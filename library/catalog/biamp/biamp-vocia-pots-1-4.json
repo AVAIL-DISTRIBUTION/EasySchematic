@@ -31,7 +31,8 @@
     "status": "awaiting-ports",
     "description": "Vocia POTS interface; allows real-time live direct paging from a POTS system into the Vocia platform; 4-lines",
     "notes": "Характеристики с сайта по артикулу 920-00408-00001; [AVAIL] from Biamp documentation; [AVAIL] from Biamp documentation",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: One RJ-11 per telephone line is read from the A&E text; whether a separate Set jack exists per line, and the dual 24 V DC power input connectors, are not stated; check the panel"
   },
   "ports": []
 }

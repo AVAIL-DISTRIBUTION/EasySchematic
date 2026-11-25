@@ -29,9 +29,87 @@
   "voltage": "100-240V AC",
   "unitCost": 2650,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "AV interface and host device for Crowd Mics",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/crowd_mics_IT_admin_guide_8856.pdf"
+    },
+    "portsMissing": "External power supply (100-240 V AC): neither document names the DC connector on the ATOM; Power port waits for the panel. The data sheet lists one RJ-45, the IT admin guide two"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0, up to 4K UHD; mirrored with HDMI Out 2; embedded audio"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0, up to 4K UHD; mirrored with HDMI Out 1; embedded audio"
+    },
+    {
+      "id": "p3",
+      "label": "Audio Out (Balanced)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Euroblock, balanced, max +12 dBu"
+    },
+    {
+      "id": "p4",
+      "label": "Audio Out (3.5 mm)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-eighth",
+      "notes": "1/8 in unbalanced"
+    },
+    {
+      "id": "p5",
+      "label": "LAN 1 (Control)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1 Gb; recommended for management (SageVue); independent NIC"
+    },
+    {
+      "id": "p6",
+      "label": "LAN 2 (User)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1 Gb; recommended for the attendee Wi-Fi network; independent NIC"
+    },
+    {
+      "id": "p7",
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0; USB audio output"
+    },
+    {
+      "id": "p8",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0; USB audio output"
+    }
+  ]
 }

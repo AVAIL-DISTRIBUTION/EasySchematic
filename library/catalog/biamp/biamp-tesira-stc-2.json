@@ -30,7 +30,8 @@
     "description": "Tesira 2 line POTS telephone interface card",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsMissing": "2-line analog telephone (POTS) card: the data sheet and catalog do not name the line connector or how many jacks per line; ports wait for the manual or the panel"
   },
   "ports": []
 }

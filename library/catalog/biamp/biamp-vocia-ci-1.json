@@ -30,7 +30,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia Control Interface for use between fire alarm and Vocia LSI-16 or Vocia LSI-16e (EN54-16 certified)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet lists alarm / fault inputs, outputs to the LSI-16 and dual 24 V DC power but names no connector types; ports wait for the panel"
   },
   "ports": []
 }

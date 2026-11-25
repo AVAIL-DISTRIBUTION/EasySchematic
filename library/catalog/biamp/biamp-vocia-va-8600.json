@@ -26,15 +26,158 @@
   "weightKg": 22.68,
   "voltage": "100-240V AC",
   "unitCost": 6415,
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Amp Slot 1",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-2",
+      "label": "Amp Slot 2",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-3",
+      "label": "Amp Slot 3",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-4",
+      "label": "Amp Slot 4",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-5",
+      "label": "Amp Slot 5",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-6",
+      "label": "Amp Slot 6",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-7",
+      "label": "Amp Slot 7",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-8",
+      "label": "Amp Slot 8",
+      "slotFamily": "biamp-vocia-va-8600"
+    },
+    {
+      "id": "slot-10",
+      "label": "Option Slot 10",
+      "slotFamily": "biamp-vocia-va-8600"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "slotFamilies": [
       "biamp-vocia-va-8600"
     ],
     "description": "Vocia Multi-channel amplifier with up to 8-channels of modular amplification (amplifier module cards sold separately)",
     "notes": "Модульный усилитель: до 8 модулей AM-600; Характеристики с сайта по артикулу 930-00267-00001",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_va-8600_jan22_1989.pdf"
+    },
+    "portsMissing": "Mains 110-120 / 220-240 V AC: the data sheet does not name the power inlet; Power port waits for the panel"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 1 (AM-600 in Amp Slot 1): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 2 (AM-600 in Amp Slot 2): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 3 (AM-600 in Amp Slot 3): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 4 (AM-600 in Amp Slot 4): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p5",
+      "label": "Speaker Out 5",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 5 (AM-600 in Amp Slot 5): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p6",
+      "label": "Speaker Out 6",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 6 (AM-600 in Amp Slot 6): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p7",
+      "label": "Speaker Out 7",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 7 (AM-600 in Amp Slot 7): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p8",
+      "label": "Speaker Out 8",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Amp channel 8 (AM-600 in Amp Slot 8): 70 V / 100 V or 4-8 ohm; heavy-duty removable terminal block"
+    },
+    {
+      "id": "p9",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "CobraNet audio and control; redundant pair with LAN 2"
+    },
+    {
+      "id": "p10",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "CobraNet audio and control; redundant pair with LAN 1"
+    }
+  ]
 }

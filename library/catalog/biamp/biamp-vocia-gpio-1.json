@@ -31,7 +31,8 @@
     "status": "awaiting-ports",
     "description": "Vocia General Purpose Input/Output Device. I/O Slave for LSI-16e or for stand-alone logic I/O use. (EN54-16 certified)",
     "notes": "[AVAIL] from Biamp documentation: 24V aux 15 W; [AVAIL] from Biamp documentation",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Connectors of the 16 general purpose inputs, 16 outputs and the dual 24 V DC inputs are not named in the data sheet; ports wait for the panel"
   },
   "ports": []
 }

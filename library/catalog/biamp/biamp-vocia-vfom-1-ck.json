@@ -32,7 +32,8 @@
     "description": "Vocia VA-8600 Failover Module, Card Kit",
     "notes": "Только Card Kit",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\"",
+    "portsMissing": "Failover module: the data sheet says 5.08 mm terminal blocks and a supplied harness but not what each connects; the harness wiring is a drawing only. Ports wait for the manual"
   },
   "ports": []
 }

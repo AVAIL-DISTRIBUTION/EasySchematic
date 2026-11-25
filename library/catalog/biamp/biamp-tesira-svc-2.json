@@ -24,13 +24,27 @@
   "unitCost": 829,
   "slotFamily": "biamp-tesira-server-card",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "altPartNumber": "910-00328",
     "deviceTypeSource": "card (biamp-tesira-server)",
     "description": "Tesira 2 line VoIP telephone interface card",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Tesira_SVC-2_Aug18_13189.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "SIP VoIP, up to 2 lines on one RJ-45"
+    }
+  ]
 }

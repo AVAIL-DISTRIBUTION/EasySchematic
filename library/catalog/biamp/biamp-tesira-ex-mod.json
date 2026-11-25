@@ -35,7 +35,8 @@
     "description": "Tesira Modular expander that is capable of using up to 3 expander cards",
     "notes": "Модульный экспандер на 3 карты EX-MOD; Характеристики с сайта по артикулу 930-00311-00001",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "new slot family \"biamp-tesira-ex-mod\""
+    "libraryNotes": "new slot family \"biamp-tesira-ex-mod\"",
+    "portsMissing": "Partial: Internal universal power supply 100-240 V AC: the data sheet does not name the power inlet; Power port waits for the panel"
   },
   "ports": []
 }

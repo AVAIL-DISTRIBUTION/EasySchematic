@@ -29,7 +29,8 @@
     "status": "awaiting-ports",
     "description": "Vocia Paging Station Interface breakout device.",
     "notes": "[AVAIL] powered from the connected paging station",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Breakout connections (balanced audio, RS-232, PTT, LED driver) are listed without connector types; ports wait for the panel"
   },
   "ports": []
 }

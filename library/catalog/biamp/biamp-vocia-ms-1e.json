@@ -31,7 +31,8 @@
     "status": "awaiting-ports",
     "description": "Vocia Enhanced Networked Messaging Processor",
     "notes": "Характеристики с сайта по артикулу 920-00423-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: RS-232 console port (Vocia Text Protocol) is listed without a connector type; inactive ports are omitted"
   },
   "ports": []
 }

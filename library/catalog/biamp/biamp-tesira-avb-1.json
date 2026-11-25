@@ -30,7 +30,8 @@
     "description": "Tesira AVB network card capable of up to 420x420 channels",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsMissing": "AVB network card: the catalog says it sends and receives audio over an Ethernet network but does not state the connector or how many ports; ports wait for the manual or the panel"
   },
   "ports": []
 }

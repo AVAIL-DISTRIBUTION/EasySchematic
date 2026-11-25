@@ -30,7 +30,8 @@
     "description": "Vocia Amplifier Module, factory installed, 100 to 600 Watt, with standards-compliant ground fault detection, for use in Vocia VA-8600c (EN54-16 certified)",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\"",
+    "portsMissing": "Amplifier module: the sheets give load and power options only; the speaker line terminals are listed for the VA-8600 chassis, the module has no connector of its own in the documents"
   },
   "ports": []
 }

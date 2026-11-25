@@ -24,13 +24,54 @@
   "unitCost": 958,
   "slotFamily": "biamp-tesira-server-card",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "altPartNumber": "910-00329",
     "deviceTypeSource": "card (biamp-tesira-server)",
     "description": "Tesira 4 channel mic/line input card with acoustic echo cancellation per channel",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_sec-4_aug18_11936.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    },
+    {
+      "id": "p2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    },
+    {
+      "id": "p3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    },
+    {
+      "id": "p4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, plug-in barrier strip; +48 V phantom (7 mA/input); AEC per channel"
+    }
+  ]
 }

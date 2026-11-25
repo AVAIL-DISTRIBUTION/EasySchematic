@@ -36,7 +36,8 @@
     "description": "Vocia Life Safety Interface, with 4 discrete inputs and support for Vocia IM-16 Interface Module",
     "notes": "Слот для модуля IM-16",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "new slot family \"biamp-vocia-lsi-16\""
+    "libraryNotes": "new slot family \"biamp-vocia-lsi-16\"",
+    "portsMissing": "Partial: Connectors of the 8 monitored outputs, 8 control inputs, system fault relay, RS-232 and 24 V DC main power are not named in the data sheet; ports wait for the panel"
   },
   "ports": []
 }

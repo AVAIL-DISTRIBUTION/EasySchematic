@@ -30,7 +30,8 @@
     "description": "Tesira DSP card with two DSPs",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsMissing": "Internal DSP card: the data sheet lists no connectors (processing only, installed inside SERVER / SERVER-IO)"
   },
   "ports": []
 }

@@ -28,10 +28,33 @@
   "poeDrawW": 3.84,
   "unitCost": 583,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Vocia End of Line Device, surface-mountable, networked speaker line supervision device",
     "notes": "[AVAIL] from Biamp documentation; [AVAIL] from Biamp documentation",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_eld-1_oct18_11905.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker Line In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Monitored speaker line: 70 V / 100 V or low-Z, transformer coupled; removable terminal block; not powered from the line"
+    },
+    {
+      "id": "p2",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "CobraNet / Vocia network; PoE 802.3af class 1"
+    }
+  ]
 }

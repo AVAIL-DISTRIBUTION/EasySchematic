@@ -31,7 +31,8 @@
     "status": "awaiting-ports",
     "description": "Vocia input device with 8 analog mic/line inputs, allows live audio paging within the Vocia platform",
     "notes": "Характеристики с сайта по артикулу 920-00384-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Connectors of the 8 mic/line inputs, 9 control inputs, 4 relay outputs, status out and the dual 24 V DC power inputs are not named in the data sheet; ports wait for the panel"
   },
   "ports": []
 }

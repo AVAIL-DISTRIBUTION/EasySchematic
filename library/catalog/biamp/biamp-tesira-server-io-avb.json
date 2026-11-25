@@ -36,7 +36,8 @@
     "description": "Configurable I/O DSP with up to 48 channels of I/O, 1 DSP-2 card (2 additional DSP-2 cards can be added), and 1 AVB-1 network card",
     "notes": "Модульный DSP: состав и число слотов задать по даташиту; Характеристики с сайта по артикулу 930-00301-00001; «< 150 W» — максимум для шасси; зависит от набора карт",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsMissing": "Partial: The data sheet names a serial control connection and a 100-240 V AC supply but not their connectors; Serial and Power ports wait for the panel. Slot 13 ships with the AVB-1 card; slot 14 holds the factory SNC-1 card (not in the catalog); DSP slots are internal"
   },
   "ports": []
 }

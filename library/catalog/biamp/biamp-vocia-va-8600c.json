@@ -34,7 +34,8 @@
     "description": "Vocia Multi-channel amplifier with up to 8-channels of modular amplification (amplifier module cards sold separately) (EN54-16 certified)",
     "notes": "Модульный усилитель: до 8 модулей AM-600; Характеристики с сайта по артикулу 930-00281-00001",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "new slot family \"biamp-vocia-va-8600\""
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\"",
+    "portsMissing": "Partial: The VA-8600c data sheet does not name the speaker output connectors (the catalog names terminal blocks only for the VA-8600) or the power inlet; Speaker Out and Power ports wait for the panel"
   },
   "ports": []
 }

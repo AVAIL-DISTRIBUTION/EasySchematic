@@ -24,13 +24,36 @@
   "unitCost": 1925,
   "slotFamily": "biamp-tesira-server-card",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "altPartNumber": "910-00407",
     "deviceTypeSource": "card (biamp-tesira-server)",
     "description": "Tesira 64x64 Dante™ module for use in SERVER or SERVER-IO chassis",
     "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
     "source": "biamp-blocks.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Tesira_Product_Catalog_Aug25_13482.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "64x64 Dante / AES67, primary"
+    },
+    {
+      "id": "p2",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "64x64 Dante / AES67, secondary (redundant)"
+    }
+  ]
 }

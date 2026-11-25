@@ -30,7 +30,8 @@
     "status": "awaiting-ports",
     "description": "Vocia VoIP interface; allows real-time live direct paging from a VoIP system into the Vocia platform; 4-lines",
     "notes": "Характеристики с сайта по артикулу 920-00409-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: The data sheet names only the dual RJ-45 network connection: the network connector of the VoIP card (SIP lines) and the dual 24 V DC power inputs are not described; ports wait for the panel"
   },
   "ports": []
 }

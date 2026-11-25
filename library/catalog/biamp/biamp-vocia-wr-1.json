@@ -24,10 +24,24 @@
   "poeDrawW": 3.84,
   "unitCost": 642,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Vocia Wall-mounted networked PoE BGM control panel",
     "notes": "[AVAIL] from Biamp documentation; [AVAIL] room-mounted (wall remote (US 2-gang)) — dimensions optional",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_wr-1_oct18_1909.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Vocia network; PoE 802.3af class 1"
+    }
+  ]
 }
