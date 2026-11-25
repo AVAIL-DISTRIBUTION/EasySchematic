@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "Medium Power 15-Inch 2-Way 90 X 60 Weather-Resistant Grey",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Weather-resistant: sealed gland nut with 15 ft 14 AWG SJOW cable; passive or biamp is set at the factory, so the number of conductor pairs depends on the order"
   },
   "ports": []
 }
