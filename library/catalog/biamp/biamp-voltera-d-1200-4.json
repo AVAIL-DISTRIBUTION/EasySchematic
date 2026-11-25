@@ -27,10 +27,133 @@
   "voltage": "100-240V AC",
   "unitCost": 3604,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Four-channel Amplified Loudspeaker Controller, 1200 watt total power with DSP, Dante & AVB",
     "notes": "Характеристики с сайта по артикулу 920-01954-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_VolteraD_Sep25_v1_13524.pdf"
+    },
+    "portsMissing": "Which Logic IO connector carries the fixed pins and which the programmable ones is not labelled in the text; the factory reset pinhole is not a port"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Line level, 3-pin terminal block 3.81 mm pitch; failover-to-analog source"
+    },
+    {
+      "id": "p2",
+      "label": "Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Line level, 3-pin terminal block 3.81 mm pitch; failover-to-analog source"
+    },
+    {
+      "id": "p3",
+      "label": "Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Line level, 3-pin terminal block 3.81 mm pitch; failover-to-analog source"
+    },
+    {
+      "id": "p4",
+      "label": "Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Line level, 3-pin terminal block 3.81 mm pitch; failover-to-analog source"
+    },
+    {
+      "id": "p5",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "2.7/4/8/16 ohm, 70 V or 100 V; 2-pin terminal block rated 41 Arms, up to 8 mm2"
+    },
+    {
+      "id": "p6",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "2.7/4/8/16 ohm, 70 V or 100 V; 2-pin terminal block rated 41 Arms, up to 8 mm2"
+    },
+    {
+      "id": "p7",
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "2.7/4/8/16 ohm, 70 V or 100 V; 2-pin terminal block rated 41 Arms, up to 8 mm2"
+    },
+    {
+      "id": "p8",
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "2.7/4/8/16 ohm, 70 V or 100 V; 2-pin terminal block rated 41 Arms, up to 8 mm2"
+    },
+    {
+      "id": "p9",
+      "label": "LAN 1 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1000Base-T: Dante / AES67 / AVB and control (converged, split or redundant); PoE+ keeps the processor up without mains, no audio on PoE alone"
+    },
+    {
+      "id": "p10",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1000Base-T: media port in split mode or redundant port"
+    },
+    {
+      "id": "p11",
+      "label": "Control I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Fixed: pin 1 mute all (in), 2 health (out), 3 sleep status (out), 4 sleep (in); open drain"
+    },
+    {
+      "id": "p12",
+      "label": "Logic I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "4 programmable logic / voltage control pins, assigned in Tesira"
+    },
+    {
+      "id": "p13",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "100-240 V AC, 3-pin IEC C14 inlet for C13 cables"
+    }
+  ]
 }

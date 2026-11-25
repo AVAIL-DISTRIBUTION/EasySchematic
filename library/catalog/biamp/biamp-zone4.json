@@ -28,7 +28,8 @@
     "status": "awaiting-ports",
     "description": "Quad zone pre-amplifier: 4 stereo output zones. Inputs: 3 mono mic/line + 4 stereo line inputs",
     "notes": "Характеристики с сайта по артикулу 920-01513-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet lists 3 balanced mic inputs, 4 stereo line inputs, 4 stereo zone outputs, RS-232 and ZONE4R wall panels over CAT5, but names no connector types; no manual is linked"
   },
   "ports": []
 }

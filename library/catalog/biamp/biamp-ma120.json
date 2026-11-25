@@ -26,10 +26,160 @@
   "voltage": "100-240V AC",
   "unitCost": 596,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "19\" mixing amplifier 70 - 100 volt / 120 watts, 2 mic/line input, 4 stereo line inputs, left to right 4 level priority system, Emergency in, paging mic with chime, 24V override output",
     "notes": "Характеристики с сайта по артикулу 920-00659-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_ma120_feb21_2146.pdf"
+    },
+    "portsMissing": "Not stated: priority-out and mains inlet connector types (set to other), and whether Pre Out and Rec Out share one Euroblock; the mute all and paging contacts are in the input notes, not separate ports"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Emergency In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced 0 dBV line level, isolated; triggered by VOX or potential-free contact on the mute all connection; highest priority"
+    },
+    {
+      "id": "p2",
+      "label": "Paging Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line on Euroblock; paging contact (potential-free) mutes lower priorities and plays chime"
+    },
+    {
+      "id": "p3",
+      "label": "Paging Line In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Line level alternative for the paging input; mic/line switch"
+    },
+    {
+      "id": "p4",
+      "label": "Mic A In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs (Phantom)",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line; +48 V phantom switchable; VOX"
+    },
+    {
+      "id": "p5",
+      "label": "Mic A In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Line level on RCA"
+    },
+    {
+      "id": "p6",
+      "label": "Mic B In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs (Phantom)",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line; +48 V phantom"
+    },
+    {
+      "id": "p7",
+      "label": "Mic B In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Line level on RCA"
+    },
+    {
+      "id": "p8",
+      "label": "Input 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line, RCA pair, mono summed"
+    },
+    {
+      "id": "p9",
+      "label": "Input 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line, RCA pair, mono summed"
+    },
+    {
+      "id": "p10",
+      "label": "Input 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line, RCA pair, mono summed"
+    },
+    {
+      "id": "p11",
+      "label": "Input 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line, RCA pair, mono summed"
+    },
+    {
+      "id": "p12",
+      "label": "Pre Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Line level 0 dBV after master volume; Euroblock"
+    },
+    {
+      "id": "p13",
+      "label": "Rec Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Line level 0 dBV, not affected by front volume; Euroblock (shared with Pre Out not stated)"
+    },
+    {
+      "id": "p14",
+      "label": "Speaker Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "4-pin 0.3 inch (7.6 mm) Euroblock: COM, 4 ohm, 70 V, 100 V; use one tap only"
+    },
+    {
+      "id": "p15",
+      "label": "Priority Out",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "24 V DC, 0.5 A max when priority is active (emergency or paging); overrides volume controls on speaker lines; connector type not stated"
+    },
+    {
+      "id": "p16",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "100-240 V AC mains inlet with power switch and fuse; inlet type not stated"
+    }
+  ]
 }

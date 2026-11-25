@@ -29,7 +29,8 @@
     "status": "awaiting-ports",
     "description": "Compact mixing amplifier 100 volt / 65 watts, 3 mic + 2 line inputs, chime, 2-level priority, 24V DC/230V mains power, black",
     "notes": "Характеристики с сайта по артикулу 920-01640-00001; [AVAIL] estimated: width ~ half-rack 1U",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet lists 3 balanced mic inputs, 2 unbalanced line inputs, pre-amp out / power-amp in, record out and 24 V DC supply, but names connectors only for MIC1 (DIN5 contact) and the MIC1-2 contact Euroblock; the manual PDF has no extractable text"
   },
   "ports": []
 }

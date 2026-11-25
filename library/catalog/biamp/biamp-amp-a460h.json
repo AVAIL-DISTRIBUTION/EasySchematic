@@ -26,10 +26,97 @@
   "voltage": "100-240V AC",
   "unitCost": 1155,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "4 channel, 60W half-rack amplifier with mounting bracket",
     "notes": "Характеристики с сайта по артикулу 920-00438-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_amp-a460h_sep22_2010.pdf"
+    },
+    "portsMissing": "The mains inlet type (IEC C14 or other) is not stated; connector set to other"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line input on a screw-down terminal block; inputs 1-2 share one connector"
+    },
+    {
+      "id": "p2",
+      "label": "Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line input on a screw-down terminal block; inputs 1-2 share one connector"
+    },
+    {
+      "id": "p3",
+      "label": "Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line input on a screw-down terminal block; inputs 3-4 share one connector"
+    },
+    {
+      "id": "p4",
+      "label": "Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line input on a screw-down terminal block; inputs 3-4 share one connector"
+    },
+    {
+      "id": "p5",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "60 W 4/8 ohm; bridged pair 1+2 gives 120 W or 70 V / 100 V; plug-in barrier strip, outputs 1-2 share one connector"
+    },
+    {
+      "id": "p6",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "60 W 4/8 ohm; bridged pair 1+2 gives 120 W or 70 V / 100 V; plug-in barrier strip, outputs 1-2 share one connector"
+    },
+    {
+      "id": "p7",
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "60 W 4/8 ohm; bridged pair 3+4 gives 120 W or 70 V / 100 V; plug-in barrier strip, outputs 3-4 share one connector"
+    },
+    {
+      "id": "p8",
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "60 W 4/8 ohm; bridged pair 3+4 gives 120 W or 70 V / 100 V; plug-in barrier strip, outputs 3-4 share one connector"
+    },
+    {
+      "id": "p9",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "AC power socket, 100-240 V AC; inlet type not stated"
+    }
+  ]
 }

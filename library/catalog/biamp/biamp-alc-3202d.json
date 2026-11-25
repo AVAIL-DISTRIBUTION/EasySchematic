@@ -26,9 +26,105 @@
   "voltage": "100-240V AC",
   "unitCost": 5300,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Amplified Loudspeaker Controller - 2 Channels X 3200W + DSP Dante",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_installation_guide_community_alc_may22_8340.pdf"
+    },
+    "portsMissing": "The front-panel USB / serial service port is reserved for servicing and is not modelled"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line input, 20 kOhm; Ch 1-2 share one 6-pole 3.81 mm Phoenix (MC 1,5/6-ST-3,81)"
+    },
+    {
+      "id": "p2",
+      "label": "Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced line input, 20 kOhm; Ch 1-2 share one 6-pole 3.81 mm Phoenix (MC 1,5/6-ST-3,81)"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Lo-Z (2/4/8 ohm) or 70 V / 100 V by DIP switch; Ch 1-2 share one 4-pole 7.62 mm Phoenix (PC 5/4-STF1-7,62); bridgeable as a pair"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Lo-Z (2/4/8 ohm) or 70 V / 100 V by DIP switch; Ch 1-2 share one 4-pole 7.62 mm Phoenix (PC 5/4-STF1-7,62); bridgeable as a pair"
+    },
+    {
+      "id": "p5",
+      "label": "Ethernet",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "100 Mb control and monitoring (ArmoniaPlus), separate from the Dante port"
+    },
+    {
+      "id": "p6",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Gigabit Dante, 2 x 2 channels"
+    },
+    {
+      "id": "p7",
+      "label": "Alarm (GPO)",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "Fault/alarm contacts, one NO + one NC per channel; 6-pin Phoenix"
+    },
+    {
+      "id": "p8",
+      "label": "Remote Level",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Remote level per channel (Ch 1 or Master, Ch 2) by 10 kOhm linear potentiometer; 6-pin Phoenix"
+    },
+    {
+      "id": "p9",
+      "label": "Remote On/Off",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Remote ON / OFF by 5-24 V DC differential; 4-pole 3.81 mm Phoenix (MC 1,5/4-ST-3,81)"
+    },
+    {
+      "id": "p10",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec-c20",
+      "notes": "IEC C20 inlet (20 A max), 100-240 V AC; region-specific cord provided"
+    }
+  ]
 }

@@ -30,7 +30,8 @@
     "status": "awaiting-ports",
     "description": "Vocia 8-channel, 150W constant voltage amplifier",
     "notes": "Характеристики с сайта по артикулу 920-00416-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet names only the dual RJ-45 CobraNet ports; speaker output, page-active relay, AC and dual 48 V DC connectors are not stated and the installation manual PDF has no extractable text"
   },
   "ports": []
 }
