@@ -1,0 +1,152 @@
+{
+  "id": "avail-extron-60-1488-01",
+  "label": "Extron MediaPort 200",
+  "shortName": "MediaPort 200",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1488-01",
+  "deviceType": "capture-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mediaport200",
+  "searchTerms": [
+    "60-1488-01",
+    "mediaport 200",
+    "extron",
+    "mediaport",
+    "200"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 216,
+  "weightKg": 1.4,
+  "powerDrawW": 18.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 59.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "HDMI and Audio to USB Scaling Bridge",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e4c36b35-8e22-47b5-b915-fe2415b1c2a5",
+      "label": "Extron MediaPort 200",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-1",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "Mic/Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "Stereo Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Mono Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "Mono Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232 + 12VDC",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-8"
+    },
+    {
+      "label": "Digital I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-9"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-10"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-11"
+    },
+    {
+      "label": "USB Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "id": "port-2",
+      "section": "USB"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-12"
+    }
+  ]
+}

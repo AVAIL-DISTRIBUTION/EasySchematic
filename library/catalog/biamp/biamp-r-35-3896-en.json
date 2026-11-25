@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-910-01240",
+  "label": "Biamp R.35-3896-EN",
+  "shortName": "R.35-3896-EN",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01240",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01240",
+  "searchTerms": [
+    "910-01240",
+    "r.35-3896-en",
+    "biamp",
+    "35-3896-en"
+  ],
+  "heightMm": 279,
+  "widthMm": 330,
+  "depthMm": 343,
+  "weightKg": 15.4,
+  "unitCost": 1050,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "R.35-3896 with EN 54-24 certification",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_datasheet_community_r35-3896-en_v3-0_aug2022_9207.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4 Speakon-type, low impedance only"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; 7-position terminal strip, low impedance or 70 V / 100 V"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "avail-extron-60-1962-01",
+  "label": "Extron IN2004",
+  "shortName": "IN2004",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1962-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in2004",
+  "searchTerms": [
+    "60-1962-01",
+    "in2004",
+    "extron"
+  ],
+  "heightMm": 42,
+  "widthMm": 220,
+  "depthMm": 292,
+  "weightKg": 1.2,
+  "powerDrawW": 33.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 102.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input 4K/60 Seamless Scaling Switcher",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c9c76845-0474-4217-841e-8cf4dda45d57",
+      "label": "Extron IN2004",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 1A (Scaled)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 1B (Mirror or Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio In (Stereo, 5-pole)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio Out (Stereo, 5-pole)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232 (Rear, 3-pole)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-8"
+    },
+    {
+      "label": "USB Config (Mini-B Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-9"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-10"
+    },
+    {
+      "label": "Contact Closure",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-11"
+    },
+    {
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-12"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-13"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "id": "avail-extron-60-1054-01",
+  "label": "Extron DMP 64",
+  "shortName": "DMP 64",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1054-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dmp64",
+  "searchTerms": [
+    "60-1054-01",
+    "dmp 64",
+    "extron",
+    "dmp"
+  ],
+  "heightMm": 43,
+  "widthMm": 222,
+  "depthMm": 241,
+  "weightKg": 0.9,
+  "powerDrawW": 13.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 45.8,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "6x4 ProDSP Digital Matrix Processor",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "DMP 64",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1054-01-1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-5",
+      "label": "Mic/Line In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-6",
+      "label": "Mic/Line In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-7",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-8",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-9",
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-10",
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-11",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1054-01-12",
+      "label": "RS-232 (In 6)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-13",
+      "label": "RS-232 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-14",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector. (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-15",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector. (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-16",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector. (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-17",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector. (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-18",
+      "label": "Digital I/O 5",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector. (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1054-01-19",
+      "label": "Digital I/O 6",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector. (4-pole captive screw)"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for configuration (USB 2.0).",
+      "id": "vx-60-1054-01-s1"
+    },
+    {
+      "id": "vx-60-1054-01-20",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
+    }
+  ]
+}

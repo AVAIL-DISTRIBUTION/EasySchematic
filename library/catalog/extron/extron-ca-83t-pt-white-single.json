@@ -1,0 +1,51 @@
+{
+  "id": "avail-extron-42-358-03",
+  "label": "Extron CA 83T PT (White, Single)",
+  "shortName": "CA 83T PT",
+  "manufacturer": "Extron",
+  "modelNumber": "42-358-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca83t",
+  "searchTerms": [
+    "42-358-03",
+    "ca 83t pt",
+    "extron",
+    "83t"
+  ],
+  "heightMm": 757,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 7.7,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Pan and Tilt Mount, Single, White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "70882622-235a-4fe1-8ce7-a05ab5759a24",
+      "label": "Extron CA 83T PT, White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

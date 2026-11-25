@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-930-00904-00002",
+  "label": "Biamp IS8-112W",
+  "shortName": "IS8-112W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00904-00002",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00904-00002",
+  "searchTerms": [
+    "930-00904-00002",
+    "is8-112w",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 553,
+  "weightKg": 26.3,
+  "unitCost": 2420,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High Power 12-Inch Subwoofer White",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_is8-112_nov2023_2432.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive subwoofer, external amplifier; Screw terminal block, 4-position (two blocks); single amp"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 4-position (two blocks); parallel loop-thru"
+    }
+  ]
+}

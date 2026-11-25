@@ -1,0 +1,186 @@
+{
+  "id": "avail-extron-60-1962-03",
+  "label": "Extron DTP3 IN2004 DI/DO",
+  "shortName": "DTP3 IN2004 DI/DO",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1962-03",
+  "deviceType": "scaler",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3in2004",
+  "searchTerms": [
+    "60-1962-03",
+    "dtp3 in2004 di/do",
+    "extron",
+    "dtp3",
+    "in2004"
+  ],
+  "heightMm": 42,
+  "widthMm": 220,
+  "depthMm": 292,
+  "weightKg": 1.2,
+  "powerDrawW": 65.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 155.6,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Input 4K/60 Scaler, DTP3 I/O",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d675c8b7-6d14-4ba3-8e4a-0dc0dc5c4bb4",
+      "label": "Extron DTP3 IN2004 DI/DO",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3",
+      "exclusiveGroup": "input-4"
+    },
+    {
+      "label": "DTP3 In 4",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "id": "port-3-dtp3-in-4",
+      "exclusiveGroup": "input-4"
+    },
+    {
+      "label": "DTP3 In 4 (or HDMI)",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 1A (Scaled)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI Out 1B (Mirror or Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "DTP3 Out (RJ-45)",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio In (Stereo, 5-pole)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-8"
+    },
+    {
+      "label": "Audio Out (Stereo, 5-pole)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-9"
+    },
+    {
+      "label": "RS-232 (Rear, 3-pole)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-10"
+    },
+    {
+      "label": "USB Config (Mini-B Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-11"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-12"
+    },
+    {
+      "label": "Contact Closure",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-13"
+    },
+    {
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-14"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-15"
+    }
+  ]
+}

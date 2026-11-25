@@ -1,0 +1,112 @@
+{
+  "id": "avail-extron-60-1030-11",
+  "label": "Extron USB HUB4 MAAP",
+  "shortName": "USB HUB4 MAAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1030-11",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbhub4maap",
+  "searchTerms": [
+    "60-1030-11",
+    "usb hub4 maap",
+    "extron",
+    "usb",
+    "hub4",
+    "maap"
+  ],
+  "heightMm": 36,
+  "widthMm": 56,
+  "depthMm": 3,
+  "weightKg": 0.1,
+  "voltage": "12V DC",
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Four-Port USB Hub - MAAP Version - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "USB HUB4 MAAP",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1030-11-1",
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1030-11-2",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1030-11-3",
+      "label": "USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1030-11-4",
+      "label": "USB 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1030-11-5",
+      "label": "USB Mini",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1030-11-6",
+      "label": "USB 5",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "USB",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1030-11-7",
+      "label": "Power 1",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1030-11-8",
+      "label": "Power 2",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
+}

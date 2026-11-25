@@ -63,6 +63,42 @@ const BUS_POWER_RE = /bus-powered \((?:USB|eBUS|ACP|DCP|VCH)\)|(?<!\bno )\bPoE\b
 const NO_POWER_FIGURE_RE = /bus-powered \((?:eBUS|ACP|DCP|VCH)\)|\bphantom\b|\bbattery\b|\bpassive\b|\bpowered by host\b/i;
 const GENERIC_MODEL_RE = /^GEN-[\p{Lu}\p{N}]+(?:-[\p{Lu}\p{N}]+)*$/u;
 
+/**
+ * Mounted in the room, never in a rack (standard 3, step 1.9): dimensions and weight are not required.
+ * Categories match as a group ("Displays") or a full leaf path; device types match exactly.
+ */
+export const ROOM_MOUNTED_CATEGORIES = [
+  "Audio Products / Speakers",
+  "Microphones",
+  "Connectivity / Architectural",
+  "Control Systems / Touch panels",
+  "Control Systems / Button Panel",
+  "Videocameras",
+  "Displays",
+  "Projection",
+  "Mounts",
+  "UC / Video conference systems",
+  "UC / Speakerphones",
+] as const;
+export const ROOM_MOUNTED_TYPES = new Set([
+  "speaker", "subwoofer", "wired-mic", "wall-plate", "table-box", "touch-screen", "button-panel",
+  "camera", "ptz-camera", "display", "monitor", "projector", "screen", "video-bar", "antenna",
+]);
+/** rackForm values that put a device in a rack or on a rack shelf. */
+const RACK_FORMS = new Set(["full", "half", "shelf-only"]);
+
+/**
+ * True when the block is mounted in the room (ceiling, wall, table, screen) and cannot stand
+ * in a rack: by category or device type. A block with a rack form (full, half, shelf-only)
+ * stands in a rack whatever its category.
+ */
+export function isRoomMounted(block: { category?: unknown; deviceType?: unknown; rackForm?: unknown }): boolean {
+  if (typeof block.rackForm === "string" && RACK_FORMS.has(block.rackForm)) return false;
+  if (typeof block.deviceType === "string" && ROOM_MOUNTED_TYPES.has(block.deviceType)) return true;
+  const c = typeof block.category === "string" ? block.category.trim() : "";
+  return ROOM_MOUNTED_CATEGORIES.some((m) => c === m || c.startsWith(`${m} /`));
+}
+
 /** modelNumber of a Generic block: "Generic Room PC" → "GEN-ROOM-PC". */
 export function genericModelNumber(label: string): string {
   const cls = label.startsWith(GENERIC_PREFIX) ? label.slice(GENERIC_PREFIX.length) : label;
@@ -156,8 +192,10 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
   const poe = truthy(d.poeDrawW);
   const deviceType = d.deviceType;
   if (!generic) {
-    // A card in a slot has no dimensions or weight of its own to plan a rack with (v1.8).
-    for (const f of truthy(d.slotFamily) ? [] : ["heightMm", "widthMm", "depthMm", "weightKg"]) {
+    // Dimensions and weight plan the rack: required for whatever can stand in a rack or on a
+    // shelf. A card in a slot has none of its own (v1.8); a room-mounted device needs none (v1.9).
+    const rackless = truthy(d.slotFamily) || isRoomMounted(d);
+    for (const f of rackless ? [] : ["heightMm", "widthMm", "depthMm", "weightKg"]) {
       if (!truthy(d[f])) {
         W.push(`no ${f}`);
         break;

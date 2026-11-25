@@ -1,0 +1,137 @@
+{
+  "id": "avail-extron-60-1767-02",
+  "label": "Extron NetPA U 1002-70V",
+  "shortName": "NetPA U 1002-70V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1767-02",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpau1002",
+  "searchTerms": [
+    "60-1767-02",
+    "netpa u 1002-70v",
+    "extron",
+    "netpa",
+    "1002-70v"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.7,
+  "powerDrawW": 38,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 44,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Dante Amp, 100 watts at 70 volts",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "NetPA U 1002-70V",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1767-02-1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-5",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-6",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-7",
+      "label": "Speaker Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-8",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "100 Mbps Dante / AES67 audio network port (software-selectable transmission type)."
+    },
+    {
+      "id": "vx-60-1767-02-9",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1767-02-10",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
+    }
+  ]
+}

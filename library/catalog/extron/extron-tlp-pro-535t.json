@@ -1,0 +1,63 @@
+{
+  "id": "avail-extron-60-1994-02",
+  "label": "Extron TLP Pro 535T",
+  "shortName": "TLP Pro 535T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1994-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro535t",
+  "searchTerms": [
+    "60-1994-02",
+    "tlp pro 535t",
+    "extron",
+    "tlp",
+    "pro",
+    "535t"
+  ],
+  "heightMm": 81,
+  "widthMm": 149,
+  "depthMm": 67,
+  "weightKg": 0.59,
+  "powerDrawW": 11,
+  "voltage": "9V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 29.4,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "5.5\" Tabletop TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 535T Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1994-02-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1994-02-2",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    }
+  ]
+}

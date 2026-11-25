@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-161-11",
+  "label": "Extron Interface AAP",
+  "shortName": "Interface AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "70-161-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/interfaceaap",
+  "searchTerms": [
+    "70-161-11",
+    "interface aap",
+    "extron",
+    "interface",
+    "aap"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Interface Remote Connector Plate, 15-pin HD Female to Female Barrel, 3.5 mm Stereo Audio Jack",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

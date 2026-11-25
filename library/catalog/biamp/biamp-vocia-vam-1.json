@@ -1,0 +1,50 @@
+{
+  "id": "avail-biamp-910-00376",
+  "label": "Biamp Vocia VAM-1",
+  "shortName": "Vocia VAM-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00376",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00376",
+  "searchTerms": [
+    "910-00376",
+    "vocia vam-1",
+    "biamp",
+    "vocia",
+    "vam-1"
+  ],
+  "heightMm": 136.5,
+  "widthMm": 62,
+  "depthMm": 55,
+  "weightKg": 0.25,
+  "voltage": "12V DC",
+  "unitCost": 700,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "paging-station",
+    "description": "Vocia Auxiliary Microphone Paging Station. Slave to DS-4/10, WS-4/10 or for use with Vocia VI-6 paging ports.",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_vam-1_oct18_13235.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "To Host",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rj45",
+      "notes": "Not Ethernet: direct to a paging station Auxiliary port or VI-6 paging port over CAT5e/6, up to 30 m; mic audio -10 dBu, PTT, LEDs; powered by host (12V DC, 50 mA)"
+    }
+  ]
+}

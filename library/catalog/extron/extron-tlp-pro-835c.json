@@ -1,0 +1,65 @@
+{
+  "id": "avail-extron-60-1995-02",
+  "label": "Extron TLP Pro 835C",
+  "shortName": "TLP Pro 835C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1995-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro835c",
+  "searchTerms": [
+    "60-1995-02",
+    "tlp pro 835c",
+    "extron",
+    "tlp",
+    "pro",
+    "835c"
+  ],
+  "heightMm": 132,
+  "widthMm": 311,
+  "depthMm": 178,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "8\" Cable Cubby TouchLink Pro Touchpanel - w/o AC Module",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 835C Black",
+      "match": "part-number",
+      "level": "A"
+    },
+    "portsMissing": "number of extron-cubby-aap openings: not drawn in the Extron stencil and not in the description"
+  },
+  "ports": [
+    {
+      "id": "vx-60-1995-02-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1995-02-2",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    }
+  ]
+}

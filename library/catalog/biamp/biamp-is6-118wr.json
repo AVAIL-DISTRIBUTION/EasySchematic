@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-00854-00003",
+  "label": "Biamp IS6-118WR",
+  "shortName": "IS6-118WR",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00854-00003",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00854-00003",
+  "searchTerms": [
+    "930-00854-00003",
+    "is6-118wr",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 561,
+  "depthMm": 734,
+  "weightKg": 44,
+  "unitCost": 4100,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Medium Power 18-Inch Subwoofer Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_i_series_weather_resistant_2452.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive subwoofer, external amplifier; Sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable; single amp"
+    }
+  ]
+}

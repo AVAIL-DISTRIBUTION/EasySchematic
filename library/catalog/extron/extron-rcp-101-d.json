@@ -1,0 +1,62 @@
+{
+  "id": "avail-extron-60-1598-01",
+  "label": "Extron RCP 101 D",
+  "shortName": "RCP 101 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1598-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/rcp101",
+  "searchTerms": [
+    "60-1598-01",
+    "rcp 101 d",
+    "extron",
+    "rcp",
+    "101"
+  ],
+  "heightMm": 114,
+  "widthMm": 71,
+  "depthMm": 10,
+  "weightKg": 0.5,
+  "powerDrawW": 3.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 1.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Remote Control Panel - Decorator-Style",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - H264 Eng.vssx",
+      "label": "RCP 101 D",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1598-01-1",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1598-01-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

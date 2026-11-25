@@ -1,0 +1,55 @@
+{
+  "id": "avail-extron-60-1689-01",
+  "label": "Extron NBP 110 D",
+  "shortName": "NBP 110 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1689-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbp110d",
+  "searchTerms": [
+    "60-1689-01",
+    "nbp 110 d",
+    "extron",
+    "nbp",
+    "110"
+  ],
+  "heightMm": 105,
+  "widthMm": 45,
+  "depthMm": 57,
+  "weightKg": 0.1,
+  "powerDrawW": 2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 6.5,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Network Button Panel with 10 Buttons - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP 110",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1689-01-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
+}

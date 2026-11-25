@@ -1,0 +1,64 @@
+{
+  "id": "avail-biamp-920-00485-20000",
+  "label": "Biamp Parlé TCM-1 White",
+  "shortName": "Parlé TCM-1 White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00485-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00485-20000",
+  "searchTerms": [
+    "920-00485-20000",
+    "parlé tcm-1 white",
+    "biamp",
+    "parl",
+    "tcm-1",
+    "white"
+  ],
+  "heightMm": 51,
+  "widthMm": 63,
+  "depthMm": 63,
+  "weightKg": 0.2,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2101,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "AVB Beamtracking™ ceiling microphone, white pendant",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "0c12cfcc-e076-400e-b2e9-4ea07794bae0",
+      "label": "Biamp Parlé TCM-1",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "0e4ef28a",
+      "label": "Mic",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    },
+    {
+      "id": "c1ed8af2",
+      "label": "AVB / Control",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    }
+  ]
+}

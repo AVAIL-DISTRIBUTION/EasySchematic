@@ -1,0 +1,88 @@
+{
+  "id": "avail-extron-60-1370-01",
+  "label": "Extron BUC 202",
+  "shortName": "BUC 202",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1370-01",
+  "deviceType": "converter",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/buc202",
+  "searchTerms": [
+    "60-1370-01",
+    "buc 202",
+    "extron",
+    "buc",
+    "202"
+  ],
+  "heightMm": 42,
+  "widthMm": 110,
+  "depthMm": 114,
+  "weightKg": 0.4,
+  "powerDrawW": 2.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 9.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Audio BUC - Balanced and Unbalanced Converter",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3ae7bd4b-348f-483d-b882-e0f574b8e988",
+      "label": "Extron BUC 202",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-4"
+    }
+  ]
+}

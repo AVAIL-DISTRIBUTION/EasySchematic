@@ -1,0 +1,125 @@
+{
+  "id": "avail-extron-60-1524-13",
+  "label": "Extron XTP R HD 4K",
+  "shortName": "XTP R HD 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1524-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtprhd4k",
+  "searchTerms": [
+    "60-1524-13",
+    "xtp r hd 4k",
+    "extron",
+    "xtp"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 9.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 30,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "XTP Receiver for HDMI",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Receivers Eng.vssx",
+      "label": "XTP R HD 4K",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1524-13-1",
+      "label": "XTP In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "Shielded CATx (RJ-45) carrying HDMI/audio/Ethernet/RS-232/IR from an XTP CrossPoint output board. Powered remotely over the same CATx."
+    },
+    {
+      "id": "vx-60-1524-13-2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1524-13-3",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3.5mm 5-pole captive screw, stereo balanced/unbalanced. De-embedded from HDMI or XTP."
+    },
+    {
+      "id": "vx-60-1524-13-4",
+      "label": "S/PDIF Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "notes": "Coaxial S/PDIF digital audio output (de-embedded from HDMI)."
+    },
+    {
+      "id": "vx-60-1524-13-5",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1524-13-6",
+      "label": "RS-232/IR",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector. (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1524-13-7",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "2-pole 3.5mm captive screw — dry-contact relay output for room control (24V/1A typical). (2-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1524-13-8",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "2-pole 3.5mm captive screw — dry-contact relay output for room control (24V/1A typical). (2-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1524-13-9",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-910-10279",
+  "label": "Biamp Vocia CI-1",
+  "shortName": "Vocia CI-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-10279",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-10279",
+  "searchTerms": [
+    "910-10279",
+    "vocia ci-1",
+    "biamp",
+    "vocia",
+    "ci-1"
+  ],
+  "heightMm": 44.5,
+  "widthMm": 483,
+  "depthMm": 254,
+  "weightKg": 2.8,
+  "powerDrawW": 15,
+  "voltage": "24V DC",
+  "unitCost": 1459,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia Control Interface for use between fire alarm and Vocia LSI-16 or Vocia LSI-16e (EN54-16 certified)",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet lists alarm / fault inputs, outputs to the LSI-16 and dual 24 V DC power but names no connector types; ports wait for the panel"
+  },
+  "ports": []
+}

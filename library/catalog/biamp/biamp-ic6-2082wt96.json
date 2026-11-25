@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-00004-00018",
+  "label": "Biamp IC6-2082WT96",
+  "shortName": "IC6-2082WT96",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00004-00018",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00004-00018",
+  "searchTerms": [
+    "930-00004-00018",
+    "ic6-2082wt96",
+    "biamp"
+  ],
+  "heightMm": 287,
+  "widthMm": 571,
+  "depthMm": 270,
+  "weightKg": 12.7,
+  "unitCost": 2968,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High Output Dual 8-Inch 2-Way 90 X 60 70V/100V Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_i_series_weather_resistant_2452.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V / 100 V internal autoformer (WT); sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable"
+    }
+  ]
+}

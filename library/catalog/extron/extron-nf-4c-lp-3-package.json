@@ -1,0 +1,93 @@
+{
+  "id": "avail-extron-42-337-33",
+  "label": "Extron NF 4C LP-3 Package",
+  "shortName": "NF 4C LP-3 Package",
+  "manufacturer": "Extron",
+  "modelNumber": "42-337-33",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nf4clp",
+  "searchTerms": [
+    "42-337-33",
+    "nf 4c lp-3 package",
+    "extron",
+    "lp-3",
+    "package"
+  ],
+  "heightMm": 120,
+  "widthMm": 270,
+  "depthMm": 270,
+  "weightKg": 2.5,
+  "powerDrawW": 40.3,
+  "voltage": "PoE++ 802.3bt",
+  "poeDrawW": 60,
+  "thermalBtuh": 137.5,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "One Powered NF 4C LP and Two Passive NF 4C S LP",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "35f39f4e-252a-4d5a-8c78-07652326398a",
+      "label": "Extron NF 4C P LP-3",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "8Ω 30W output to 1st passive NF 4C S LP secondary speaker. 3-pole 5mm captive screw.; to NF 4C S LP secondary",
+      "id": "port-2"
+    },
+    {
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "8Ω 30W output to 2nd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary",
+      "id": "port-3"
+    },
+    {
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "8Ω 30W output to 3rd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary",
+      "id": "port-4"
+    },
+    {
+      "label": "Dante / AES67",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1 Gbps Dante / AES67 audio network port (carries audio + PoE++ power).",
+      "poeDrawW": 40,
+      "id": "port-0"
+    },
+    {
+      "label": "Ethernet Host",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T host control / configuration port.",
+      "id": "port-1"
+    }
+  ]
+}

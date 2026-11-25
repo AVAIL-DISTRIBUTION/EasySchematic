@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1148-12",
+  "label": "Extron Network F-F Barrel (Black)",
+  "shortName": "Network F-F Barrel",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1148-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/rj45brlf2fcat5",
+  "searchTerms": [
+    "70-1148-12",
+    "network f-f barrel",
+    "extron",
+    "network",
+    "f-f",
+    "barrel"
+  ],
+  "heightMm": 55,
+  "widthMm": 28,
+  "depthMm": 7,
+  "weightKg": 0.02,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "Half-size Flex55 Module; Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

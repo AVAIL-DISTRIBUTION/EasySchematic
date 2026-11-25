@@ -1,0 +1,74 @@
+{
+  "id": "avail-extron-60-1566-113",
+  "label": "Extron TLS 1025M (White)",
+  "shortName": "TLS 1025M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1566-113",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tls1025m",
+  "searchTerms": [
+    "60-1566-113",
+    "tls 1025m",
+    "extron",
+    "tls",
+    "1025m"
+  ],
+  "heightMm": 174,
+  "widthMm": 257,
+  "depthMm": 32,
+  "weightKg": 0.92,
+  "powerDrawW": 12.9,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 39.3,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "10\" Wall Mount TouchLink Scheduling Panel - White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Room Scheduling Engineering Drawings/Room Scheduling - TLS Eng.vssx",
+      "label": "TLS 1025M NC White",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1566-113-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af class 3"
+    },
+    {
+      "id": "vx-60-1566-113-2",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "USB",
+      "notes": "USB Micro-B for config PC connection (TLP/TLS) or USB Control Adapter (TLC Pro). USB 2.0 high-speed."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "USB Micro-B for config PC connection (TLP/TLS) or USB Control Adapter (TLC Pro). USB 2.0 high-speed.",
+      "id": "vx-60-1566-113-s1"
+    }
+  ]
+}

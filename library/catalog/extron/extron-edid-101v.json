@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-991-01",
+  "label": "Extron EDID 101V",
+  "shortName": "EDID 101V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-991-01",
+  "deviceType": "adapter",
+  "category": "Integration Tools / Adapters",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/edid101v",
+  "searchTerms": [
+    "60-991-01",
+    "edid 101v",
+    "extron",
+    "edid",
+    "101v"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.2,
+  "powerDrawW": 0.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "EDID Emulator with EDID Minder® for VGA",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

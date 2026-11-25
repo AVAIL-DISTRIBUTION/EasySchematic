@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1706-01",
+  "label": "Extron FPC 6000",
+  "shortName": "FPC 6000",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1706-01",
+  "deviceType": "control-expansion",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fpc6000",
+  "searchTerms": [
+    "60-1706-01",
+    "fpc 6000",
+    "extron",
+    "fpc",
+    "6000"
+  ],
+  "heightMm": 142,
+  "widthMm": 224,
+  "depthMm": 41,
+  "weightKg": 5.67,
+  "powerDrawW": 16.2,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 55.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Front Panel Controller for FOX and FOX3 Matrix Switchers",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

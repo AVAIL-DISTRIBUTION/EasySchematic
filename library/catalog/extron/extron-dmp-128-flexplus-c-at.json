@@ -1,0 +1,255 @@
+{
+  "id": "avail-extron-60-1820-10",
+  "label": "Extron DMP 128 FlexPlus C AT",
+  "shortName": "DMP 128 FlexPlus C AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1820-10",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dmp128flexplus",
+  "searchTerms": [
+    "60-1820-10",
+    "dmp 128 flexplus c at",
+    "extron",
+    "dmp",
+    "128",
+    "flexplus"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 1.1,
+  "powerDrawW": 14.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 40.6,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "ProDSP Dante Digital Matrix Processor w/ 12 AEC",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "DMP 128 FlexPlus C AT",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1820-10-1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1820-10-2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1820-10-3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1820-10-4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1820-10-5",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-6",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-7",
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-8",
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-9",
+      "label": "Audio Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-10",
+      "label": "Audio Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-11",
+      "label": "Audio Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-12",
+      "label": "Audio Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1820-10-13",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T host control / configuration."
+    },
+    {
+      "id": "vx-60-1820-10-14",
+      "label": "Dante 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "1 Gbps Dante / AES67 audio network port (2-port internal switch)."
+    },
+    {
+      "id": "vx-60-1820-10-15",
+      "label": "Dante 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "1 Gbps Dante / AES67 audio network port (2-port internal switch)."
+    },
+    {
+      "id": "vx-60-1820-10-16",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 host control on a 3-pole 3.5mm captive screw (38400 baud default). (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1820-10-17",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output on a 3-pole captive screw (In/GND/Out per channel)."
+    },
+    {
+      "id": "vx-60-1820-10-18",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output on a 3-pole captive screw (In/GND/Out per channel)."
+    },
+    {
+      "id": "vx-60-1820-10-19",
+      "label": "ACP Bus",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "ACP audio control panel bus on a 4-pole 3.5mm captive screw — supports up to 8 ACP panels (+12V/+S/-S/G). Mapped to `serial` SignalType (no `acp`/`ebus` type in src/types.ts). (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1820-10-20",
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Proprietary 16×16 bidirectional digital audio expansion port over shielded CAT6 (24-bit / 48 kHz uncompressed). Used to link two DMP units or link to a DTP CrossPoint matrix. Mapped to `aes` SignalType per session 5 XMP 240 convention (no `extron-exp` SignalType in src/types.ts)."
+    },
+    {
+      "id": "vx-60-1820-10-21",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "USB",
+      "notes": "Rear-panel USB Mini-B for USB audio bridge (USB 2.0 high-speed). Up to 4 channels of digital audio in/out."
+    },
+    {
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for DSP Configurator / PCS configuration (USB 2.0).",
+      "id": "vx-60-1820-10-s1"
+    },
+    {
+      "id": "vx-60-1820-10-22",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU brick (100-240 VAC input)."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-910-00102",
+  "label": "Biamp DX-IC4-W",
+  "shortName": "DX-IC4-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00102",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00102",
+  "searchTerms": [
+    "910-00102",
+    "dx-ic4-w",
+    "biamp"
+  ],
+  "heightMm": 258,
+  "widthMm": 258,
+  "depthMm": 176,
+  "weightKg": 3.12,
+  "unitCost": 220,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4.5” High Efficiency Coaxial In-Ceiling Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_DX-IC_spec_Jan24_v2_January27-2024_9255.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive with DSP; 4-position Euroblock (In and Thru pairs); wattage / low impedance selector switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Pass-through on the same Euroblock"
+    }
+  ]
+}

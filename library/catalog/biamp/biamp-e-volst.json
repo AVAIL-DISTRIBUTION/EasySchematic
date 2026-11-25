@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-910-01626",
+  "label": "Biamp E-VOLST",
+  "shortName": "E-VOLST",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01626",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01626",
+  "searchTerms": [
+    "910-01626",
+    "e-volst",
+    "biamp"
+  ],
+  "heightMm": 80,
+  "widthMm": 80,
+  "depthMm": 60,
+  "weightKg": 0.28,
+  "powerDrawW": 0.1,
+  "unitCost": 98,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "volume-control",
+    "description": "Stereo, 2 x 40 watts Euro volume control, white",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Terminal assignment of the 8-pole euroblock is not shown (taken as L/R in and L/R out, 2 poles each)."
+  },
+  "ports": []
+}

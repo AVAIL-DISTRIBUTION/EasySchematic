@@ -1,0 +1,131 @@
+{
+  "id": "avail-extron-60-2031-01",
+  "label": "Extron XTP II CrossPoint 1600 Frame",
+  "shortName": "XTP II CrossPoint 1600 Frame",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2031-01",
+  "deviceType": "frame",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicp1600",
+  "searchTerms": [
+    "60-2031-01",
+    "xtp ii crosspoint 1600 frame",
+    "extron",
+    "xtp",
+    "crosspoint",
+    "1600",
+    "frame"
+  ],
+  "heightMm": 222,
+  "widthMm": 432,
+  "depthMm": 445,
+  "weightKg": 17.7,
+  "powerDrawW": 875,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 986,
+  "rackForm": "full",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-6",
+      "label": "Slot 6",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-7",
+      "label": "Slot 7",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-8",
+      "label": "Slot 8",
+      "slotFamily": "extron-xtp-2"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "5U Full rack",
+    "rackUnits": 5,
+    "slotFamilies": [
+      "extron-xtp-2"
+    ],
+    "description": "Modular Digital Matrix Switchers from 4x4 to 16x16 with SpeedSwitch® Technology",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "library",
+      "from": "extron-xtp-ii-crosspoint-1600.json",
+      "label": "Extron XTP II CrossPoint 1600",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1795167821309-21-0",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100Base-T control. Default 192.168.254.254."
+    },
+    {
+      "id": "p1795167821309-21-1",
+      "label": "Serial (RS-232/422)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "db9",
+      "notes": "Rear panel female 9-pin D. Selectable RS-232 / RS-422. 9600 (default) to 115200 baud."
+    },
+    {
+      "id": "p1795167821309-21-2",
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-mini",
+      "notes": "Front panel USB Mini-B for direct PC config. USB 2.0 low speed."
+    },
+    {
+      "id": "p1795167821309-21-3",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal PSU, 100-240 VAC (redundant PSU on 60-2031-11)"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "avail-biamp-920-02622-10000",
+  "label": "Biamp Desono DX-S8-UB-B Black",
+  "shortName": "Desono DX-S8-UB-B Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02622-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00334-10000",
+  "searchTerms": [
+    "920-02622-10000",
+    "desono dx-s8-ub-b black",
+    "biamp",
+    "desono",
+    "dx-s8-ub-b",
+    "black"
+  ],
+  "heightMm": 387,
+  "widthMm": 255,
+  "depthMm": 294,
+  "weightKg": 7.71,
+  "unitCost": 410,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "8” high output coaxial surface mount indoor/outdoor loudspeaker w/ HF compression driver. 8 ohm or 70V/100V operation, included aluminum U-bracket & water-tight ClickPlug, black (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; Характеристики с сайта по артикулу 920-00334-10000",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Desono_DX-S8_UB-CM_Jan26_13665.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; single amplified with DSP; lever-actuated 4-position terminal block with pass-through; low impedance or 70 V / 100 V by selector switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Pass-through on the same block"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "avail-extron-60-1592-02",
+  "label": "Extron Cable Cubby 100 UK AC",
+  "shortName": "Cable Cubby 100 UK AC",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1592-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby100",
+  "searchTerms": [
+    "60-1592-02",
+    "cable cubby 100 uk ac",
+    "extron",
+    "cable",
+    "cubby",
+    "100"
+  ],
+  "heightMm": 69,
+  "widthMm": 71,
+  "depthMm": 88,
+  "weightKg": 0.5,
+  "powerDrawW": 17.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-maap"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-maap"
+    ],
+    "description": "Cable Cubby 100 UK AC, Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "38dc9146-06c3-4dcc-bcdc-cb8417c00d8d",
+      "label": "Extron Cable Cubby 100 UK AC",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "id": "port-0",
+      "section": "Power"
+    },
+    {
+      "label": "AC Outlet 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-1"
+    },
+    {
+      "label": "AC Outlet 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-2"
+    }
+  ]
+}

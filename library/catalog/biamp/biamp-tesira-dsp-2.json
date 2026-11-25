@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-901-0307",
+  "label": "Biamp Tesira DSP-2",
+  "shortName": "Tesira DSP-2",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0307",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0307",
+  "searchTerms": [
+    "901.0307",
+    "910-00323",
+    "tesira dsp-2",
+    "biamp",
+    "tesira",
+    "dsp-2"
+  ],
+  "unitCost": 1096,
+  "slotFamily": "biamp-tesira-server-card",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-00323",
+    "deviceTypeSource": "card (biamp-tesira-server)",
+    "description": "Tesira DSP card with two DSPs",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsMissing": "Internal DSP card: the data sheet lists no connectors (processing only, installed inside SERVER / SERVER-IO)"
+  },
+  "ports": []
+}

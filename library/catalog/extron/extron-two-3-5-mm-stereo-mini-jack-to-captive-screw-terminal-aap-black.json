@@ -1,0 +1,74 @@
+{
+  "id": "avail-extron-70-331-11",
+  "label": "Extron Two 3.5 mm Stereo Mini Jack to Captive Screw Terminal (AAP, Black)",
+  "shortName": "Two 3.5 mm Stereo Mini Jack to C…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-331-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap235mmsmjjtocst",
+  "searchTerms": [
+    "70-331-11",
+    "two 3.5 mm stereo mini jack to c…",
+    "extron",
+    "two",
+    "stereo",
+    "mini",
+    "jack"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "AAP, Black",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two 3.5 mm Stereo Mini Jack to Captive Screw Terminal",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap235mmsmjjtocst",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1 (Front)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "passive"
+    },
+    {
+      "id": "p3",
+      "label": "Audio In 2 (Front)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Out 1 (Rear)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "p4",
+      "label": "Audio Out 2 (Rear)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix"
+    }
+  ]
+}

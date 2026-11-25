@@ -1,0 +1,69 @@
+{
+  "id": "avail-biamp-920-00443-00001",
+  "label": "Biamp Tesira EX-UBT",
+  "shortName": "Tesira EX-UBT",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00443-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00443-00001",
+  "searchTerms": [
+    "920-00443-00001",
+    "tesira ex-ubt",
+    "biamp",
+    "tesira",
+    "ex-ubt"
+  ],
+  "heightMm": 24,
+  "widthMm": 64,
+  "depthMm": 106,
+  "weightKg": 0.1,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 1060,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "PoE AVB/USB expander with Bluetooth® wireless technology",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e3ce328f-d02f-4834-83b1-651981b2d7ee",
+      "label": "Biamp Tesira EX-UBT",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p17762045524952-iu4",
+      "label": "Bluetooth",
+      "signalType": "bluetooth",
+      "direction": "bidirectional",
+      "connectorType": "wireless",
+      "section": "RF"
+    },
+    {
+      "id": "p17762045524950-a97",
+      "label": "AVB / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762045524951-kqc",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    }
+  ]
+}

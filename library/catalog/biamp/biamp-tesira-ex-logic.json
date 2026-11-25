@@ -1,0 +1,69 @@
+{
+  "id": "avail-biamp-920-00315-00001",
+  "label": "Biamp Tesira EX-LOGIC",
+  "shortName": "Tesira EX-LOGIC",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00315-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00315-00001",
+  "searchTerms": [
+    "920-00315-00001",
+    "tesira ex-logic",
+    "biamp",
+    "tesira",
+    "ex-logic"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 197,
+  "weightKg": 1,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 4,
+  "unitCost": 818,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Tesira PoE logic expander with 16 logic GPIO (4 GPIO are configurable for potentiometer interface)",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "172de8fa-5bf4-4c22-bf80-e47d8980fc67",
+      "label": "Biamp Tesira EX-LOGIC",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p17762059240000-ctrl",
+      "label": "Control / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762059240002-serial",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Serial"
+    },
+    {
+      "id": "p17762059240001-gpio",
+      "label": "Logic I/O (16 pins)",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Digital I/O"
+    }
+  ]
+}

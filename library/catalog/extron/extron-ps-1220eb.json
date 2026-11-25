@@ -1,0 +1,109 @@
+{
+  "id": "avail-extron-70-988-01",
+  "label": "Extron PS 1220EB",
+  "shortName": "PS 1220EB",
+  "manufacturer": "Extron",
+  "modelNumber": "70-988-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ps1220eb",
+  "searchTerms": [
+    "70-988-01",
+    "ps 1220eb",
+    "extron",
+    "1220eb"
+  ],
+  "heightMm": 42,
+  "widthMm": 109,
+  "depthMm": 114,
+  "weightKg": 0.4,
+  "powerDrawW": 28.5,
+  "powerCapacityW": 28.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 97.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "eBUS® 12 VDC Power Supply and Distribution Hub",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - eBus Eng.vssx",
+      "label": "PS 1220EB",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-70-988-01-1",
+      "label": "eBUS 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-70-988-01-2",
+      "label": "eBUS 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-70-988-01-3",
+      "label": "eBUS 3",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-70-988-01-4",
+      "label": "eBUS 4",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-70-988-01-5",
+      "label": "eBUS 5",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-70-988-01-6",
+      "label": "eBUS 6",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-70-988-01-7",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

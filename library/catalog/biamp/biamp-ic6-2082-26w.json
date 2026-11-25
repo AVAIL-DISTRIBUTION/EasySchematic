@@ -1,0 +1,57 @@
+{
+  "id": "avail-biamp-930-00004-00002",
+  "label": "Biamp IC6-2082/26W",
+  "shortName": "IC6-2082/26W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00004-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00004-00002",
+  "searchTerms": [
+    "930-00004-00002",
+    "ic6-2082/26w",
+    "biamp",
+    "ic6-2082",
+    "26w"
+  ],
+  "heightMm": 287,
+  "widthMm": 571,
+  "depthMm": 270,
+  "weightKg": 14.1,
+  "unitCost": 2332,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High Output Dual 8-Inch 2-Way 120 X 60 Indoor White",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_ic6-2082-26_2315.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, low impedance; screw terminal block, 5-position"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Parallel loop-thru on the same block"
+    }
+  ]
+}

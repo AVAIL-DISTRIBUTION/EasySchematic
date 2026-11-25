@@ -1,0 +1,203 @@
+{
+  "id": "avail-extron-60-1916-01",
+  "label": "Extron IPCP Pro 360Q xi (Standard)",
+  "shortName": "IPCP Pro 360Q xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1916-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro360qxi",
+  "searchTerms": [
+    "60-1916-01",
+    "ipcp pro 360q xi",
+    "extron",
+    "ipcp",
+    "pro",
+    "360q"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.3,
+  "powerDrawW": 90.8,
+  "voltage": "100-240V AC",
+  "poeBudgetW": 30,
+  "thermalBtuh": 289.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Standard",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "IPCP Pro xi Quad Core Control Processor",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1bf8a953-f3de-41ad-91cf-7e5b8129c948",
+      "label": "Extron IPCP Pro 360Q xi",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "b69aa914",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "c4225634",
+      "label": "AV LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "a5bd1857",
+      "label": "AV LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "638b5f11",
+      "label": "AV LAN 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "tpl-1",
+      "label": "COM 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-2",
+      "label": "COM 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-3",
+      "label": "COM 3",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-10",
+      "label": "eBUS",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-4",
+      "label": "IR 1",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-5",
+      "label": "IR 2",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-6",
+      "label": "Relay 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-7",
+      "label": "Relay 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-8",
+      "label": "Relay 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-9",
+      "label": "Relay 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "44a7dbd7",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "c21e6bb4",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "626890f3",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "8f6f848e",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "tpl-18",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

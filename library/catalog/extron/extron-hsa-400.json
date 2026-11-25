@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-415-01",
+  "label": "Extron HSA 400",
+  "shortName": "HSA 400",
+  "manufacturer": "Extron",
+  "modelNumber": "60-415-01",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hideawayhsa400",
+  "searchTerms": [
+    "60-415-01",
+    "hsa 400",
+    "extron",
+    "hsa",
+    "400"
+  ],
+  "heightMm": 133,
+  "widthMm": 219,
+  "depthMm": 163,
+  "weightKg": 3.8,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Tilt-Up HSA Hideaway Surface Access Enclosure: US Power Outlet - Black Anodized",
+    "notes": "[AVAIL] dims from Extron specifications (top plate 219 x 163, clamshell depth 133; weight not found)",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "number of extron-cubby-aap openings: not drawn in the Extron stencil and not in the description"
+  },
+  "ports": []
+}

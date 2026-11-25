@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-60-1998-02",
+  "label": "Extron TLP Pro 1035M (Black)",
+  "shortName": "TLP Pro 1035M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1998-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1035m",
+  "searchTerms": [
+    "60-1998-02",
+    "tlp pro 1035m",
+    "extron",
+    "tlp",
+    "pro",
+    "1035m"
+  ],
+  "heightMm": 158,
+  "widthMm": 247,
+  "depthMm": 32,
+  "weightKg": 0.77,
+  "powerDrawW": 7.28,
+  "voltage": "9V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 31.3,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "10.1\" Wall Mount TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1035M Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1998-02-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1998-02-2",
+      "label": "Digital In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1998-02-3",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    }
+  ]
+}

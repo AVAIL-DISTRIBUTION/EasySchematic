@@ -1,0 +1,94 @@
+{
+  "id": "avail-extron-60-2042-01",
+  "label": "Extron UCS 601",
+  "shortName": "UCS 601",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2042-01",
+  "deviceType": "dock",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs601",
+  "searchTerms": [
+    "60-2042-01",
+    "ucs 601",
+    "extron",
+    "ucs",
+    "601"
+  ],
+  "heightMm": 29,
+  "widthMm": 109,
+  "depthMm": 152,
+  "powerDrawW": 71.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 43.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Pro 4K USB-C 10G Dock",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "UCS 601",
+      "match": "part-number",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2042-01-1",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-2042-01-2",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-2042-01-3",
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-2042-01-4",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-2042-01-5",
+      "label": "USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-2042-01-6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

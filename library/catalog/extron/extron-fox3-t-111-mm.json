@@ -1,0 +1,96 @@
+{
+  "id": "avail-extron-60-1957-31",
+  "label": "Extron FOX3 T 111 MM",
+  "shortName": "FOX3 T 111 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1957-31",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t111",
+  "searchTerms": [
+    "60-1957-31",
+    "fox3 t 111 mm",
+    "extron",
+    "fox3",
+    "111"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 14.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 44,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Lossless 4K/60 Transmitter - Multimode",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 Transmitters Eng.vssx",
+      "label": "FOX3 T 111 MM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1957-31-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1957-31-2",
+      "label": "Fiber In",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1957-31-3",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1957-31-4",
+      "label": "Fiber Out",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1957-31-5",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1957-31-6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-pole captive screw — Extron convention, verify"
+    }
+  ]
+}

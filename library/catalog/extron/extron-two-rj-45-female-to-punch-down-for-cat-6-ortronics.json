@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-70-491-14",
+  "label": "Extron Two RJ-45 Female to Punch Down for CAT 6 - Ortronics",
+  "shortName": "Two RJ-45 Female to Punch Down f…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-491-14",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2rj45fpdbdo",
+  "searchTerms": [
+    "70-491-14",
+    "two rj-45 female to punch down f…",
+    "extron",
+    "two",
+    "rj-45",
+    "female",
+    "punch"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP – Black: Two RJ-45 Female to Punch Down for CAT 6 - Ortronics",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap2rj45fpdbdo",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN 1 (Front)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "LAN 1 (Rear)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "punch-down-110"
+    },
+    {
+      "id": "p3",
+      "label": "LAN 2 (Front)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "p4",
+      "label": "LAN 2 (Rear)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "punch-down-110"
+    }
+  ]
+}

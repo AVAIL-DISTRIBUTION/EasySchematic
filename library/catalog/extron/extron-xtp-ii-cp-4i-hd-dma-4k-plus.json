@@ -1,0 +1,113 @@
+{
+  "id": "avail-extron-70-1112-02",
+  "label": "Extron XTP II CP 4i HD DMA 4K PLUS",
+  "shortName": "XTP II CP 4i HD DMA 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1112-02",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicphd4kplusio",
+  "searchTerms": [
+    "70-1112-02",
+    "xtp ii cp 4i hd dma 4k plus",
+    "extron",
+    "xtp",
+    "dma",
+    "plus"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "Four Input Board, 4K/60 HDMI with Downmixing Audio",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Boards Eng.vssx",
+      "label": "XTP II CP 4i HD DMA 4K PLUS",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-70-1112-02-1",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+    },
+    {
+      "id": "vx-70-1112-02-2",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+    },
+    {
+      "id": "vx-70-1112-02-3",
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+    },
+    {
+      "id": "vx-70-1112-02-4",
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
+    },
+    {
+      "id": "vx-70-1112-02-5",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
+    },
+    {
+      "id": "vx-70-1112-02-6",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
+    },
+    {
+      "id": "vx-70-1112-02-7",
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
+    },
+    {
+      "id": "vx-70-1112-02-8",
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
+    }
+  ]
+}

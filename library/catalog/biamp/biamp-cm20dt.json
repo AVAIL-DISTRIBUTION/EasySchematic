@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-910-01541",
+  "label": "Biamp CM20DT",
+  "shortName": "CM20DT",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01541",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01541",
+  "searchTerms": [
+    "910-01541",
+    "cm20dt",
+    "biamp"
+  ],
+  "heightMm": 205,
+  "widthMm": 205,
+  "depthMm": 80,
+  "weightKg": 1.24,
+  "unitCost": 98,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "6.5\" two-way thin edge design ceiling speaker 100-70 volt / 20 watts, 16 ohms / 60 watts, white, with basket integrated neodymium magnets for a perfect seal, removable logo and quick fit push connector",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_cm20dt_feb26_13893.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 70 V / 100 V or 16 ohm; Quick Fit push-terminal connector"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "avail-extron-60-1607-01",
+  "label": "Extron DA2 HD 4K PLUS",
+  "shortName": "DA2 HD 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1607-01",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dahd4kplusseries",
+  "searchTerms": [
+    "60-1607-01",
+    "da2 hd 4k plus",
+    "extron",
+    "da2",
+    "plus"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.2,
+  "powerDrawW": 3.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 10.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Two Output 4K/60 HDMI Distribution Amplifier",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DA Engineering Drawings/DA - HDMI DA Eng.vssx",
+      "label": "",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1607-01-1",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1607-01-2",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1607-01-3",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1607-01-4",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3.5mm 3-pole captive screw (Tx/Rx/GND)."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS configuration (USB 2.0).",
+      "id": "vx-60-1607-01-s1"
+    },
+    {
+      "id": "vx-60-1607-01-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU brick (100-240 VAC input)."
+    }
+  ]
+}

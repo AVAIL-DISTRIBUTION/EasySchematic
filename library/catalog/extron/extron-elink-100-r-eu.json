@@ -1,0 +1,64 @@
+{
+  "id": "avail-extron-60-1490-13",
+  "label": "Extron eLink 100 R EU",
+  "shortName": "eLink 100 R EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1490-13",
+  "deviceType": "hdmi-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/elink100",
+  "searchTerms": [
+    "60-1490-13",
+    "elink 100 r eu",
+    "extron",
+    "elink",
+    "100"
+  ],
+  "heightMm": 36,
+  "widthMm": 80,
+  "depthMm": 102,
+  "weightKg": 0.1,
+  "powerDrawW": 7.5,
+  "voltage": "5V DC",
+  "thermalBtuh": 24.4,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Wireless Receiver for HDMI (EU)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f3e2df31-1bd9-4e92-a327-9ad3ef25efcd",
+      "label": "Extron eLink 100 R EU",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Decoded HDMI output to local sink (display/projector).",
+      "id": "port-0"
+    },
+    {
+      "label": "Power (5VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 5VDC, 2.6A PSU brick (13W).",
+      "id": "port-1"
+    }
+  ]
+}

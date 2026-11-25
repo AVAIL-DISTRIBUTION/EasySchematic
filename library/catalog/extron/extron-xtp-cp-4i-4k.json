@@ -1,0 +1,139 @@
+{
+  "id": "avail-extron-70-940-31",
+  "label": "Extron XTP CP 4i 4K",
+  "shortName": "XTP CP 4i 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "70-940-31",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpcp4kioboards",
+  "searchTerms": [
+    "70-940-31",
+    "xtp cp 4i 4k",
+    "extron",
+    "xtp"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "Four Input Board, XTP 4K with IR/RS-232 Insertion - 26W Remote Power Capable",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Boards Eng.vssx",
+      "label": "XTP CP 4i 4K",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-70-940-31-1",
+      "label": "XTP In 1",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-940-31-2",
+      "label": "XTP In 2",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-940-31-3",
+      "label": "XTP In 3",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-940-31-4",
+      "label": "XTP In 4",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-940-31-5",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-70-940-31-6",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-70-940-31-7",
+      "label": "LAN 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-70-940-31-8",
+      "label": "LAN 4",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Network",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-70-940-31-9",
+      "label": "LAN 5",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-70-940-31-10",
+      "label": "LAN 6",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Network",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-70-940-31-11",
+      "label": "RS-232/IR 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-70-940-31-12",
+      "label": "RS-232/IR 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    }
+  ]
+}

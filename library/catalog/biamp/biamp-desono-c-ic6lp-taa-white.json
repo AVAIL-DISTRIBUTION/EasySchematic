@@ -1,0 +1,77 @@
+{
+  "id": "avail-biamp-920-10298-20100",
+  "label": "Biamp Desono C-IC6LP-TAA White",
+  "shortName": "Desono C-IC6LP-TAA White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10298-20100",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10298-20100",
+  "searchTerms": [
+    "920-10298-20100",
+    "desono c-ic6lp-taa white",
+    "biamp",
+    "desono",
+    "c-ic6lp-taa",
+    "white"
+  ],
+  "heightMm": 341,
+  "widthMm": 341,
+  "depthMm": 101,
+  "weightKg": 4.12,
+  "unitCost": 424,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "6.5\" In-Ceiling, Low Profile coaxial loudspeaker, TAA-compliant, 60W, 8 ohms, RJ45 inputs, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_c-ic6lp-taa_jul23_1937.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive with DSP; 4-position Euroblock, two pairs in parallel; 8 ohm"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker In (RJ-45)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rj45",
+      "notes": "Speaker level over category cable; use either wiring option"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Out to the next loudspeaker on the same Euroblock"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Thru (RJ-45)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Out to the next loudspeaker over category cable"
+    }
+  ]
+}

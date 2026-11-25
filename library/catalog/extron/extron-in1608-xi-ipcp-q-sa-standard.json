@@ -1,0 +1,431 @@
+{
+  "id": "avail-extron-60-1238-95",
+  "label": "Extron IN1608 xi IPCP Q SA (Standard)",
+  "shortName": "IN1608 xi IPCP Q SA",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1238-95",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1608xi",
+  "searchTerms": [
+    "60-1238-95",
+    "in1608 xi ipcp q sa",
+    "extron",
+    "in1608",
+    "ipcp"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 241,
+  "weightKg": 2.3,
+  "powerDrawW": 42,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 123,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Standard",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "2 x 50 Watt Stereo Amp, AV LAN",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Scaler Switchers Eng.vssx",
+      "label": "IN1608 xi IPCP Q SA",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1238-95-1",
+      "label": "RGBHV In 1",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-2",
+      "label": "RGBHV In 2",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-3",
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-4",
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-5",
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-6",
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-7",
+      "label": "DTP In 7",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-8",
+      "label": "DTP In 8",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1238-95-9",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1238-95-10",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1238-95-11",
+      "label": "DTP Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1238-95-12",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-13",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-14",
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-15",
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-16",
+      "label": "Audio In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-17",
+      "label": "Audio In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-18",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-19",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-20",
+      "label": "Audio Out 1-2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1238-95-21",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-22",
+      "label": "Speaker Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-23",
+      "label": "AV LAN 1 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1238-95-24",
+      "label": "AV LAN 2 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1238-95-25",
+      "label": "AV LAN 3 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1238-95-26",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1238-95-27",
+      "label": "RS-232/IR (In 7)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-28",
+      "label": "RS-232/IR (In 8)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-29",
+      "label": "RS-232/IR (Out 3)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-30",
+      "label": "COM 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-31",
+      "label": "COM 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-32",
+      "label": "COM 3",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-33",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-34",
+      "label": "IR/S Out 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "IR or one-way RS-232; 2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-35",
+      "label": "IR/S Out 2",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "IR or one-way RS-232; 2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-36",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-37",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1238-95-38",
+      "label": "Relay 3",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-39",
+      "label": "Relay 4",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1238-95-40",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1238-95-41",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1238-95-42",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1238-95-43",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1238-95-44",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1238-95-45",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

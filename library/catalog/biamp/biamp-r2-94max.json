@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-930-10906-00004",
+  "label": "Biamp R2-94MAX",
+  "shortName": "R2-94MAX",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10906-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10906-00004",
+  "searchTerms": [
+    "930-10906-00004",
+    "r2-94max",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 781,
+  "weightKg": 52.2,
+  "unitCost": 6415,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Full-Range 3-Way Dual 12-Inch High Output 90 X 40",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r2-94max_2534.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LF In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Biamp with DSP; 12 ft (3.6 m) 16-2 SJOW cable"
+    },
+    {
+      "id": "p2",
+      "label": "MF/HF In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Biamp with DSP, passive MF/HF; 12 ft (3.6 m) 16-2 SJOW cable"
+    }
+  ]
+}

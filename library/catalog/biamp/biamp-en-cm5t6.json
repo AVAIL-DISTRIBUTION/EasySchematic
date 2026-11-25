@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-910-01610",
+  "label": "Biamp EN-CM5T6",
+  "shortName": "EN-CM5T6",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01610",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01610",
+  "searchTerms": [
+    "910-01610",
+    "en-cm5t6",
+    "biamp"
+  ],
+  "heightMm": 180,
+  "widthMm": 180,
+  "depthMm": 158,
+  "weightKg": 1.27,
+  "unitCost": 85,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "5.25\" built-in ceiling speaker equipped with a high efficiency full range speaker and a multi tap 100 volt transformer (1.5-3-6 watts), all certified according EN 54-24.",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_en-cm5t6_aug20_2626.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 100 V; ceramic speaker line connector block with thermal fuse (EN 54)"
+    }
+  ]
+}

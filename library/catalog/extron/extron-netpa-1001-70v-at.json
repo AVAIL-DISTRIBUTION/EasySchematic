@@ -1,0 +1,92 @@
+{
+  "id": "avail-extron-60-1501-01",
+  "label": "Extron NetPA 1001-70V AT",
+  "shortName": "NetPA 1001-70V AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1501-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpa1001at",
+  "searchTerms": [
+    "60-1501-01",
+    "netpa 1001-70v at",
+    "extron",
+    "netpa",
+    "1001-70v"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 1.2,
+  "powerDrawW": 22.7,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 35,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "One Channel Dante Amp, 100 watts at 70 volts",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "NetPA 1001-70V AT",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1501-01-1",
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1501-01-2",
+      "label": "Speaker Out (70V)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1501-01-3",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "100 Mbps Dante / AES67 audio network port (software-selectable transmission type)."
+    },
+    {
+      "id": "vx-60-1501-01-4",
+      "label": "Control",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1501-01-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
+    }
+  ]
+}

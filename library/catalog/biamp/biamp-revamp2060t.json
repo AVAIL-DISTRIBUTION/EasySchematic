@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-00652-00002",
+  "label": "Biamp REVAMP2060T",
+  "shortName": "REVAMP2060T",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00652-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00652-00001",
+  "searchTerms": [
+    "920-00652-00002",
+    "revamp2060t",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 230,
+  "powerDrawW": 175,
+  "voltage": "115-230V AC",
+  "unitCost": 653,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "2 Channel class D amplifier 2 x 60 Watts (70/100 Volts or RMS @ 4 Ohms) or in bridge mode 1 x 120 Watts (70/100 Volts or RMS @ 8 Ohms), convection cooled, 1 U, 19\" rackmount",
+    "notes": "Характеристики с сайта по артикулу 920-00652-00001; [AVAIL] estimated: 19\" rack width",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The product page links no data sheet or manual; the loudspeaker catalog gives only channel count and power"
+  },
+  "ports": []
+}

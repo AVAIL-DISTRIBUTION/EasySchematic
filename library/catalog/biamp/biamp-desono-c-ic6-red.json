@@ -1,0 +1,77 @@
+{
+  "id": "avail-biamp-920-00925-40000",
+  "label": "Biamp Desono C-IC6 Red",
+  "shortName": "Desono C-IC6 Red",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00925-40000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00925-40000",
+  "searchTerms": [
+    "920-00925-40000",
+    "desono c-ic6 red",
+    "biamp",
+    "desono",
+    "c-ic6",
+    "red"
+  ],
+  "heightMm": 277,
+  "widthMm": 277,
+  "depthMm": 150,
+  "weightKg": 3.5,
+  "unitCost": 276,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "In-Ceiling, Indoor 6.5\" Coaxial Loudspeaker, Red (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Desono_C-IC6_Apr25_v1_13310.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive with DSP; 4-position Euroblock, two pairs in parallel; 8 ohm"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker In (RJ-45)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rj45",
+      "notes": "Speaker level over category cable; use either wiring option"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Out to the next loudspeaker on the same Euroblock"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Thru (RJ-45)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Out to the next loudspeaker over category cable"
+    }
+  ]
+}

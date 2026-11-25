@@ -1,0 +1,63 @@
+{
+  "id": "avail-extron-60-2000-02",
+  "label": "Extron TLP Pro 1535M",
+  "shortName": "TLP Pro 1535M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2000-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1535m",
+  "searchTerms": [
+    "60-2000-02",
+    "tlp pro 1535m",
+    "extron",
+    "tlp",
+    "pro",
+    "1535m"
+  ],
+  "heightMm": 234,
+  "widthMm": 372,
+  "depthMm": 62,
+  "powerDrawW": 20,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 60.1,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "15.6\" Wall Mount TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1535M Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2000-02-1",
+      "label": "LAN (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE+ 802.3at class 4. Also tunnels XTP video on the same RJ-45 link."
+    },
+    {
+      "id": "vx-60-2000-02-2",
+      "label": "USB Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Power"
+    }
+  ]
+}

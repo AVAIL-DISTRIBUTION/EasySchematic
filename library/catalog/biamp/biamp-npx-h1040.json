@@ -1,0 +1,52 @@
+{
+  "id": "avail-biamp-910-01840",
+  "label": "Biamp NPX H1040",
+  "shortName": "NPX H1040",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01840",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01840",
+  "searchTerms": [
+    "910-01840",
+    "npx h1040",
+    "biamp",
+    "npx",
+    "h1040"
+  ],
+  "heightMm": 42,
+  "widthMm": 230,
+  "depthMm": 166,
+  "weightKg": 1.22,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 1807,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "paging-station",
+    "description": "4-button convenience paging station with handheld microphone, tabletop or wall mount",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_npx-paging-station_install-op-guide_may24_10146.pdf"
+    },
+    "portsMissing": "No H1040 data sheet: its page links only the G1100 sheet. Port from the NPX install guide (covers H1040); PoE class for H1040 is not stated there, notes carry the card's PoE wording."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "AVB or Dante audio and control; PoE 802.3af class 3 (card); class not stated for H1040"
+    }
+  ]
+}

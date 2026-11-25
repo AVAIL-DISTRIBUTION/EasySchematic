@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1692-13",
+  "label": "Extron Flex55 AC 101 MULTI (White)",
+  "shortName": "Flex55 AC 101 MULTI",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1692-13",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/flex55100seriespm",
+  "searchTerms": [
+    "60-1692-13",
+    "flex55 ac 101 multi",
+    "extron",
+    "flex55",
+    "101",
+    "multi"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 7,
+  "weightKg": 0.12,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "AC Module, Multi-Region: White",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

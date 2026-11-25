@@ -1,0 +1,51 @@
+{
+  "id": "avail-extron-60-1308-12",
+  "label": "Extron SM 26T (Black, 70/100V, Pair)",
+  "shortName": "SM 26T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1308-12",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sm26",
+  "searchTerms": [
+    "60-1308-12",
+    "sm 26t",
+    "extron",
+    "26t"
+  ],
+  "heightMm": 330,
+  "widthMm": 215,
+  "depthMm": 164,
+  "weightKg": 4,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black, 70/100V, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SpeedMount Two-Way Surface Mount Speakers with 6.5\" Woofer and 70/100 V Transformer, Pair - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "36290acd-b1cc-40d2-80c9-60666988fa0a",
+      "label": "Extron SM 26T Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

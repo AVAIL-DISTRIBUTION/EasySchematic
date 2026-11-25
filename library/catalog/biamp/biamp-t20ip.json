@@ -1,0 +1,58 @@
+{
+  "id": "avail-biamp-910-01499",
+  "label": "Biamp T20IP",
+  "shortName": "T20IP",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01499",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01499",
+  "searchTerms": [
+    "910-01499",
+    "t20ip",
+    "biamp"
+  ],
+  "heightMm": 53,
+  "widthMm": 112,
+  "depthMm": 58,
+  "weightKg": 0.53,
+  "unitCost": 57,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "audio-transformer",
+    "description": "8 ohms to 100 volt transformer with different power taps: 20 - 10 - 5 - 2.5 watts, waterproof",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_T20IP_Jul26_14026.pdf"
+    },
+    "portsMissing": "Connection type (leads or terminals) is not stated."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In (70/100V)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 100V: 20/10/5/2.5 W, 70V: 20/10/5/2.5/1.5 W taps; waterproof; connection type not stated"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out (8 ohm)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "other",
+      "notes": "To an 8 ohm loudspeaker; connection type not stated"
+    }
+  ]
+}

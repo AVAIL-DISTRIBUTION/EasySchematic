@@ -1,0 +1,65 @@
+{
+  "id": "avail-biamp-910-01519",
+  "label": "Biamp ACPL",
+  "shortName": "ACPL",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01519",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01519",
+  "searchTerms": [
+    "910-01519",
+    "acpl",
+    "biamp"
+  ],
+  "heightMm": 85,
+  "widthMm": 85,
+  "depthMm": 28,
+  "weightKg": 0.09,
+  "powerDrawW": 0.1,
+  "unitCost": 81,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Audio Control Panel with front panel Mic/Line inputs, volume control and power switch for SDQ5PIR",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_acp_series_8342.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-quarter",
+      "notes": "6.3 mm jack, balanced mono, dynamic mic; selectable with Line In"
+    },
+    {
+      "id": "p2",
+      "label": "Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm stereo mini-jack, unbalanced"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Link",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "rj45",
+      "notes": "APart speaker link (custom bus): CAT5 to the SDQ5PIR active speaker (control, local input), max 100 m; powered by host (phantom over CAT5)"
+    }
+  ]
+}

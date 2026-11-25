@@ -1,0 +1,111 @@
+{
+  "id": "avail-extron-60-1836-01",
+  "label": "Extron XMP 240 C AT",
+  "shortName": "XMP 240 C AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1836-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xmp240",
+  "searchTerms": [
+    "60-1836-01",
+    "xmp 240 c at",
+    "extron",
+    "xmp",
+    "240"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 241,
+  "weightKg": 0.9,
+  "powerDrawW": 9.8,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 33.4,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Dante Audio DSP Matrix Processor w/ 24 AEC",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "XMP 240 C AT",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1836-01-1",
+      "label": "Control LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af, gigabit. Acts as control + power source when not using the 12V DC barrel."
+    },
+    {
+      "id": "vx-60-1836-01-2",
+      "label": "Dante 1 (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Gigabit RJ-45 in a multi-port Dante switch (redundant ring or daisy chain)."
+    },
+    {
+      "id": "vx-60-1836-01-3",
+      "label": "Dante 2 (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Gigabit RJ-45 in a multi-port Dante switch (redundant ring or daisy chain)."
+    },
+    {
+      "id": "vx-60-1836-01-4",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1836-01-5",
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Proprietary Extron EXP digital-audio expansion bus on shielded CAT6 (16ch in / 16ch out, 24-bit/48 kHz, up to 10m). Modeled as `aes` SignalType — closest semantic match for proprietary digital audio over CAT cable; no Extron-specific bus type exists in src/types.ts."
+    },
+    {
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for configuration (USB 2.0).",
+      "id": "vx-60-1836-01-s1"
+    },
+    {
+      "id": "vx-60-1836-01-6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
+    }
+  ]
+}

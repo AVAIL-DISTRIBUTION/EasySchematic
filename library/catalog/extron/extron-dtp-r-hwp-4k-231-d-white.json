@@ -1,0 +1,89 @@
+{
+  "id": "avail-extron-60-1531-13",
+  "label": "Extron DTP R HWP 4K 231 D (White)",
+  "shortName": "DTP R HWP 4K 231 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1531-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtprhwp4k231d",
+  "searchTerms": [
+    "60-1531-13",
+    "dtp r hwp 4k 231 d",
+    "extron",
+    "dtp",
+    "hwp",
+    "231"
+  ],
+  "heightMm": 107,
+  "widthMm": 43,
+  "depthMm": 58,
+  "weightKg": 0.15,
+  "powerDrawW": 8.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 17.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "DTP Receiver for HDMI - Decorator-Style Wallplate, White - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Receivers Eng.vssx",
+      "label": "DTP R HWP 4K 231 D White",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1531-13-1",
+      "label": "DTP In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1531-13-2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1531-13-3",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1531-13-4",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1531-13-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

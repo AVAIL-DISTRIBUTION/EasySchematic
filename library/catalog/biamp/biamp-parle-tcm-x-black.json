@@ -1,0 +1,61 @@
+{
+  "id": "avail-biamp-920-00498-10000",
+  "label": "Biamp Parlé TCM-X Black",
+  "shortName": "Parlé TCM-X Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00498-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00498-10000",
+  "searchTerms": [
+    "920-00498-10000",
+    "parlé tcm-x black",
+    "biamp",
+    "parl",
+    "tcm-x",
+    "black"
+  ],
+  "heightMm": 30,
+  "widthMm": 172,
+  "depthMm": 132,
+  "weightKg": 0.62,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2565,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "AVB Beamtracking™ ceiling microphone, black surface mount",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Parle_TCM-X_Nov25_v2_13624.pdf"
+    },
+    "portsMissing": "The network-box-to-microphone RJ-45 is internal to the product and not modelled (as on the level-A TCM-XA)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "AVB (PoE)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "AVB",
+      "connectorType": "rj45",
+      "notes": "To a PoE switch: AVB and control; PoE 802.3at class 3, 15.4 W"
+    },
+    {
+      "id": "p2",
+      "label": "TCM-XEX Expansion",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "To a TCM-XEX expansion mic, up to 10 m"
+    }
+  ]
+}

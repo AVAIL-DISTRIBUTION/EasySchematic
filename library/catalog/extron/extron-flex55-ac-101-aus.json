@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1692-52",
+  "label": "Extron Flex55 AC 101 AUS",
+  "shortName": "Flex55 AC 101 AUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1692-52",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/flex55100seriespm",
+  "searchTerms": [
+    "60-1692-52",
+    "flex55 ac 101 aus",
+    "extron",
+    "flex55",
+    "101",
+    "aus"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 7,
+  "weightKg": 0.12,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "AC Module, Australia: Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

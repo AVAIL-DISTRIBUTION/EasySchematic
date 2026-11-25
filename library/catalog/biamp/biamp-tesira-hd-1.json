@@ -1,0 +1,51 @@
+{
+  "id": "avail-biamp-910-00437",
+  "label": "Biamp Tesira HD-1",
+  "shortName": "Tesira HD-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00437",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00437",
+  "searchTerms": [
+    "910-00437",
+    "tesira hd-1",
+    "biamp",
+    "tesira",
+    "hd-1"
+  ],
+  "heightMm": 40,
+  "widthMm": 145,
+  "depthMm": 145,
+  "weightKg": 0.4,
+  "voltage": "PoE 802.3at Class 1",
+  "poeDrawW": 4,
+  "unitCost": 1085,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Tesira Hardware Dialer",
+    "notes": "[AVAIL] from Biamp documentation | PoE from the manufacturer's document (takes precedence over the catalog card): \"Power: PoE (IEEE 802.3at Class 1, 4W)\" — https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_hd-1_aug22_2009.pdf; the card had PoE 802.3af class 1, poeDrawW 3.84",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_hd-1_aug22_2009.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "All communication, configuration and control; PoE 802.3at class 1, 4 W"
+    }
+  ]
+}

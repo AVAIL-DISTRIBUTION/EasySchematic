@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1996-103",
+  "label": "Extron TLS 835M (White)",
+  "shortName": "TLS 835M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1996-103",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tls835m",
+  "searchTerms": [
+    "60-1996-103",
+    "tls 835m",
+    "extron",
+    "tls",
+    "835m"
+  ],
+  "heightMm": 129,
+  "widthMm": 203,
+  "depthMm": 32,
+  "weightKg": 0.68,
+  "powerDrawW": 9.5,
+  "voltage": "9V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 33.6,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

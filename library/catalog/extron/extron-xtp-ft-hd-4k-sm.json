@@ -1,0 +1,106 @@
+{
+  "id": "avail-extron-60-1276-12",
+  "label": "Extron XTP FT HD 4K SM",
+  "shortName": "XTP FT HD 4K SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1276-12",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpfthd4k",
+  "searchTerms": [
+    "60-1276-12",
+    "xtp ft hd 4k sm",
+    "extron",
+    "xtp"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 8.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 26.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "XTP Fiber Optic Transmitter for HDMI - Singlemode",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Transmitters Eng.vssx",
+      "label": "XTP FT HD 4K SM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1276-12-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1276-12-2",
+      "label": "XTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "OM4 multimode (≤500 m / SM ≤10 km). Fiber link carries video/audio/Ethernet/control."
+    },
+    {
+      "id": "vx-60-1276-12-3",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1276-12-4",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3.5mm 5-pole captive screw, stereo balanced/unbalanced. Embeds onto the XTP link."
+    },
+    {
+      "id": "vx-60-1276-12-5",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1276-12-6",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector. (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1276-12-7",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP."
+    }
+  ]
+}

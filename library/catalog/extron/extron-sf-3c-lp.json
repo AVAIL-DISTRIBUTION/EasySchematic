@@ -1,0 +1,49 @@
+{
+  "id": "avail-extron-60-1311-13",
+  "label": "Extron SF 3C LP",
+  "shortName": "SF 3C LP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1311-13",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf3clp",
+  "searchTerms": [
+    "60-1311-13",
+    "sf 3c lp",
+    "extron"
+  ],
+  "heightMm": 112,
+  "widthMm": 226,
+  "depthMm": 226,
+  "weightKg": 1.3,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Full Range 3\" Ceiling Speakers, 8 Ohm, Low Profile, Complete Pair",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3a0a9ab3-2d58-49b0-be7e-cf99357c5aa5",
+      "label": "Extron SF 3C LP",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

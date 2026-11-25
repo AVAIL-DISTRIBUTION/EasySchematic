@@ -1,0 +1,62 @@
+{
+  "id": "avail-extron-70-1178-02",
+  "label": "Extron One HDMI Female to Female on Pigtail (Black)",
+  "shortName": "One HDMI Female to Female on Pig…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1178-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/hdmif2fp",
+  "searchTerms": [
+    "70-1178-02",
+    "one hdmi female to female on pig…",
+    "extron",
+    "one",
+    "hdmi",
+    "female"
+  ],
+  "heightMm": 55,
+  "widthMm": 28,
+  "depthMm": 7,
+  "weightKg": 0.04,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "Half-size Flex55 Module; Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/hdmif2fp",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In (Front)",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI Out (Rear)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    }
+  ]
+}

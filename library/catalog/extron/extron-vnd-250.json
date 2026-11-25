@@ -1,0 +1,160 @@
+{
+  "id": "avail-extron-60-1275-01",
+  "label": "Extron VND 250",
+  "shortName": "VND 250",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1275-01",
+  "deviceType": "streaming-decoder",
+  "category": "Streaming and Recording / Streaming AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vnmatrix250",
+  "searchTerms": [
+    "60-1275-01",
+    "vnd 250",
+    "extron",
+    "vnd",
+    "250"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 253,
+  "weightKg": 1.1,
+  "powerDrawW": 16.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 54.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Decoder for HDMI, Audio, USB Keyboard and Mouse",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "163fb0da-2f0b-41a5-825a-4f520b98824c",
+      "label": "Extron VND 250",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI/DVI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-0",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Return Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio Out (Stereo Line)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "LAN 1 (Control)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-11"
+    },
+    {
+      "label": "LAN 2 (Streaming)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-12"
+    },
+    {
+      "label": "Alarm Relay",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-8"
+    },
+    {
+      "label": "RS-232 (Control)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232 (Pass-Through)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-5"
+    },
+    {
+      "label": "Genlock In",
+      "signalType": "genlock",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Sync",
+      "id": "port-9"
+    },
+    {
+      "label": "Genlock Loop Out",
+      "signalType": "genlock",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Sync",
+      "id": "port-10"
+    },
+    {
+      "label": "USB Device 1",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-6"
+    },
+    {
+      "label": "USB Device 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-7"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-13"
+    }
+  ]
+}

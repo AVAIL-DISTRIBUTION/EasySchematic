@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-60-1473-13",
+  "label": "Extron USB Extender Plus D T",
+  "shortName": "USB Extender Plus D T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1473-13",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbextenderplus",
+  "searchTerms": [
+    "60-1473-13",
+    "usb extender plus d t",
+    "extron",
+    "usb",
+    "extender",
+    "plus"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 1.5,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 5.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Twisted Pair Extender for USB Peripherals - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/Retired USB Products/Retired USB - Extenders Eng.vssx",
+      "label": "USB Extender Plus D T",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1473-13-1",
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1473-13-2",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1473-13-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1596-02",
+  "label": "Extron Dual US AC w Conduit",
+  "shortName": "Dual US AC w Conduit",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1596-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dualacaap",
+  "searchTerms": [
+    "60-1596-02",
+    "dual us ac w conduit",
+    "extron",
+    "dual",
+    "conduit"
+  ],
+  "heightMm": 35,
+  "widthMm": 89,
+  "depthMm": 3,
+  "weightKg": 0.5,
+  "voltage": "125V AC",
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Two US Edison Style AC Outlet – Double Space AAP – Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

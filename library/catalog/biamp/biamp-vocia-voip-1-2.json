@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-00386-00002",
+  "label": "Biamp Vocia VOIP-1-2",
+  "shortName": "Vocia VOIP-1-2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00386-00002",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00386-00001",
+  "searchTerms": [
+    "920-00386-00002",
+    "vocia voip-1-2",
+    "biamp",
+    "vocia",
+    "voip-1-2"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 228,
+  "weightKg": 1.1,
+  "powerDrawW": 30,
+  "voltage": "24V DC",
+  "unitCost": 3384,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia VoIP interface; allows real-time live direct paging from a VoIP system into the Vocia platform; 2-lines",
+    "notes": "Характеристики с сайта по артикулу 920-00386-00001",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: The data sheet names only the dual RJ-45 network connection: the network connector of the VoIP card (SIP lines) and the dual 24 V DC power inputs are not described; ports wait for the panel"
+  },
+  "ports": []
+}

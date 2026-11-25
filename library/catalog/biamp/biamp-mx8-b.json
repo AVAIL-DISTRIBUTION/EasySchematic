@@ -1,0 +1,64 @@
+{
+  "id": "avail-biamp-910-01228",
+  "label": "Biamp MX8-B",
+  "shortName": "MX8-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01228",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01228",
+  "searchTerms": [
+    "910-01228",
+    "mx8-b",
+    "biamp"
+  ],
+  "heightMm": 263,
+  "widthMm": 275,
+  "depthMm": 367,
+  "weightKg": 8,
+  "unitCost": 829,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Monitor 2-Way 8-Inch Coax Black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_mx8_jan23_2481.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4-compatible, paralleled with the second NL4 and the barrier strip"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; 2-terminal barrier strip looped to the NL4s"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Thru (NL4)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "speakon",
+      "notes": "Second NL4, internally paralleled"
+    }
+  ]
+}

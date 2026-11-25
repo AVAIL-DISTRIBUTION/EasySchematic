@@ -1,0 +1,51 @@
+{
+  "id": "avail-extron-60-1592-04",
+  "label": "Extron Cable Cubby 100 AUS AC",
+  "shortName": "Cable Cubby 100 AUS AC",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1592-04",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby100",
+  "searchTerms": [
+    "60-1592-04",
+    "cable cubby 100 aus ac",
+    "extron",
+    "cable",
+    "cubby",
+    "100",
+    "aus"
+  ],
+  "heightMm": 69,
+  "widthMm": 71,
+  "depthMm": 88,
+  "weightKg": 0.5,
+  "powerDrawW": 17.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-maap"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-maap"
+    ],
+    "description": "Calbe Cubby 100 Australia AC, Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "slotsSource": "variant: extron/extron-cable-cubby-100-eu-ac.json"
+  },
+  "ports": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "avail-extron-60-977-01",
+  "label": "Extron DVI 104 Tx/Rx",
+  "shortName": "DVI 104 Tx/Rx",
+  "manufacturer": "Extron",
+  "modelNumber": "60-977-01",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / DVI",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dvi104",
+  "searchTerms": [
+    "60-977-01",
+    "dvi 104 tx/rx",
+    "extron",
+    "dvi",
+    "104"
+  ],
+  "heightMm": 15,
+  "widthMm": 39,
+  "depthMm": 59,
+  "weightKg": 0.04,
+  "powerDrawW": 1,
+  "voltage": "5V DC",
+  "thermalBtuh": 3.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "DVI Fiber Optic Extender",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

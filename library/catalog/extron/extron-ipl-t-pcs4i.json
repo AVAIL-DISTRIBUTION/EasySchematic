@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-544-09",
+  "label": "Extron IPL T PCS4i",
+  "shortName": "IPL T PCS4i",
+  "manufacturer": "Extron",
+  "modelNumber": "60-544-09",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipltpcs4i",
+  "searchTerms": [
+    "60-544-09",
+    "ipl t pcs4i",
+    "extron",
+    "ipl",
+    "pcs4i"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 241,
+  "weightKg": 1.2,
+  "powerDrawW": 15,
+  "voltage": "240V AC",
+  "thermalBtuh": 51.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Four Port Power Control and Current Sensor, 120/240 VAC",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

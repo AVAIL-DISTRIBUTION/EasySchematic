@@ -1,0 +1,170 @@
+{
+  "id": "avail-extron-60-1825-01",
+  "label": "Extron SMP 401",
+  "shortName": "SMP 401",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1825-01",
+  "deviceType": "recorder",
+  "category": "Streaming and Recording / Media processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/smp401",
+  "searchTerms": [
+    "60-1825-01",
+    "smp 401",
+    "extron",
+    "smp",
+    "401"
+  ],
+  "heightMm": 43,
+  "widthMm": 444,
+  "depthMm": 267,
+  "weightKg": 2.5,
+  "powerDrawW": 27.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 94,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "4K/60 Multi-Recording and Streaming",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f8fbd708-44f6-4220-869a-63898f016012",
+      "label": "Extron SMP 401",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out (Confidence)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio In 1 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo line OR 2 mono mic/line on a 5-pole 3.5mm captive screw. Software-switchable mic preamp + phantom power available.; Stereo or 2× mono mic/line",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-8"
+    },
+    {
+      "label": "LAN / Streaming 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Primary streaming network port.",
+      "id": "port-3"
+    },
+    {
+      "label": "LAN / Streaming 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Secondary streaming network port (independent IP / VLAN).",
+      "id": "port-4"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-12"
+    },
+    {
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.1 Type-A — front-panel.",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.1 Type-A — rear-panel.",
+      "id": "port-10"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS / DSP Configurator (USB 2.0).",
+      "id": "port-11"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-13"
+    }
+  ]
+}

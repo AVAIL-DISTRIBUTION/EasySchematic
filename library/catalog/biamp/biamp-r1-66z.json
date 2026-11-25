@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-00898-00002",
+  "label": "Biamp R1-66Z",
+  "shortName": "R1-66Z",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00898-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00898-00002",
+  "searchTerms": [
+    "930-00898-00002",
+    "r1-66z",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 756,
+  "weightKg": 25.2,
+  "unitCost": 3034,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Full-Range 2-Way 12-Inch Large Format Horn Loaded 60 X 60 Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r1-66z_2515.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 12 ft (4 m) SJOW 16 AWG cable, stripped ends"
+    }
+  ]
+}

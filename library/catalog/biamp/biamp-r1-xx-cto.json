@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00898",
+  "label": "Biamp R1-xx-CTO",
+  "shortName": "R1-xx-CTO",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00898",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00898",
+    "r1-xx-cto",
+    "biamp"
+  ],
+  "heightMm": 629,
+  "widthMm": 629,
+  "depthMm": 756,
+  "weightKg": 25.2,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "R1 Configured-To-Order (CTO)",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Configured to order: inputs depend on the configuration ordered; ports wait for the order specification"
+  },
+  "ports": []
+}

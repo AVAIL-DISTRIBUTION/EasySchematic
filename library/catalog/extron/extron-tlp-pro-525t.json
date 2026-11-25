@@ -1,0 +1,56 @@
+{
+  "id": "avail-extron-60-1559-13",
+  "label": "Extron TLP Pro 525T",
+  "shortName": "TLP Pro 525T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1559-13",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro525t",
+  "searchTerms": [
+    "60-1559-13",
+    "tlp pro 525t",
+    "extron",
+    "tlp",
+    "pro",
+    "525t"
+  ],
+  "heightMm": 99,
+  "widthMm": 151,
+  "depthMm": 73,
+  "weightKg": 0.65,
+  "powerDrawW": 7.7,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 21.6,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "5\" Tabletop TouchLink® Pro Touchpanel - White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 525T White",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1559-13-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af class 3"
+    }
+  ]
+}

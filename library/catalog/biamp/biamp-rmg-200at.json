@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-00892-00002",
+  "label": "Biamp RMG-200AT",
+  "shortName": "RMG-200AT",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00892-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00892-00002",
+  "searchTerms": [
+    "930-00892-00002",
+    "rmg-200at",
+    "biamp"
+  ],
+  "heightMm": 248,
+  "widthMm": 448,
+  "depthMm": 635,
+  "weightKg": 9.5,
+  "unitCost": 1692,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Voice Range Announcement System 70V/100V",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_rmg-200at_2541.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V / 100 V; 12 ft 18 AWG 5-conductor SJOW cable through gland nut"
+    }
+  ]
+}

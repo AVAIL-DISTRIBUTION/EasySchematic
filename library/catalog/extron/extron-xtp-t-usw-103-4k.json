@@ -1,0 +1,151 @@
+{
+  "id": "avail-extron-60-1717-12",
+  "label": "Extron XTP T USW 103 4K",
+  "shortName": "XTP T USW 103 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1717-12",
+  "deviceType": "switcher",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtptusw1034k",
+  "searchTerms": [
+    "60-1717-12",
+    "xtp t usw 103 4k",
+    "extron",
+    "xtp",
+    "usw",
+    "103"
+  ],
+  "heightMm": 42,
+  "widthMm": 221,
+  "depthMm": 215,
+  "weightKg": 1.2,
+  "powerDrawW": 16.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 55.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input Multi-Format Switcher with HDMI Output and Integrated XTP Transmitter - 26W Remote Power Capable",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Transmitters Eng.vssx",
+      "label": "XTP T USW 103 4K",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1717-12-1",
+      "label": "RGBHV In",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1717-12-2",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1717-12-3",
+      "label": "DisplayPort In",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1717-12-4",
+      "label": "XTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Shielded CATx (RJ-45) carrying HDMI/audio/Ethernet/RS-232/IR up to 100 m. Receives remote power from XTP CrossPoint or PI 140."
+    },
+    {
+      "id": "vx-60-1717-12-5",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1717-12-6",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "3.5mm mini stereo jack, unbalanced."
+    },
+    {
+      "id": "vx-60-1717-12-7",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1717-12-8",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector. (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1717-12-9",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1717-12-10",
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Tally / contact-closure outputs (one per input on USW switchers). (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1717-12-11",
+      "label": "Contact In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Contact-closure inputs for triggering switching from external buttons. (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1717-12-12",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP."
+    }
+  ]
+}

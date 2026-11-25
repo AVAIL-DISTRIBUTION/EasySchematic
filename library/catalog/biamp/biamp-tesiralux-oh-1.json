@@ -1,0 +1,148 @@
+{
+  "id": "avail-biamp-920-00427-00002",
+  "label": "Biamp TesiraLUX OH-1",
+  "shortName": "TesiraLUX OH-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00427-00002",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00427-00001",
+  "searchTerms": [
+    "920-00427-00002",
+    "tesiralux oh-1",
+    "biamp",
+    "tesiralux",
+    "oh-1"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 264,
+  "weightKg": 1.8,
+  "voltage": "100-240V AC",
+  "unitCost": 2565,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "AVB video decoder; includes one HDMI 2.0 port. 8 channels of embedded PCM audio and includes 2 mic/line level analog outputs.",
+    "notes": "Характеристики с сайта по артикулу 920-00427-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesiralux_oh-1_feb20_2006.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "Up to 4K60, 8 ch PCM audio embedding"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line output"
+    },
+    {
+      "id": "p3",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line output"
+    },
+    {
+      "id": "p4",
+      "label": "Control",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Control and configuration, third-party control"
+    },
+    {
+      "id": "p5",
+      "label": "AVB Only",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "AVB",
+      "connectorType": "rj45",
+      "notes": "1 Gb AVB/TSN media"
+    },
+    {
+      "id": "p6",
+      "label": "AVB SFP+",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "AVB",
+      "connectorType": "sfp",
+      "notes": "1 Gb or 10 Gb AVB/TSN media, fiber SFP+"
+    },
+    {
+      "id": "p7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "db9"
+    },
+    {
+      "id": "p8",
+      "label": "Logic I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p9",
+      "label": "Logic I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p10",
+      "label": "Logic I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p11",
+      "label": "Logic I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p12",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "100-240 V AC, 0.5-0.21 A"
+    }
+  ]
+}

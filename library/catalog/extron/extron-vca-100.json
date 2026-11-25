@@ -1,0 +1,65 @@
+{
+  "id": "avail-extron-60-1963-01",
+  "label": "Extron VCA 100",
+  "shortName": "VCA 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1963-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/vca100",
+  "searchTerms": [
+    "60-1963-01",
+    "vca 100",
+    "extron",
+    "vca",
+    "100"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 305,
+  "weightKg": 1.5,
+  "powerDrawW": 11.8,
+  "voltage": "100V AC",
+  "thermalBtuh": 40.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Virtual Control Appliance with 5 Virtual Control Processors",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - VCA.vssx",
+      "label": "VCA 100",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1963-01-1",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T host network port."
+    },
+    {
+      "id": "vx-60-1963-01-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
+    }
+  ]
+}

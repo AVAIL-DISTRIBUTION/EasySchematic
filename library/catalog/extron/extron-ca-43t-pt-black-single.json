@@ -1,0 +1,51 @@
+{
+  "id": "avail-extron-42-359-02",
+  "label": "Extron CA 43T PT (Black, Single)",
+  "shortName": "CA 43T PT",
+  "manufacturer": "Extron",
+  "modelNumber": "42-359-02",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca43t",
+  "searchTerms": [
+    "42-359-02",
+    "ca 43t pt",
+    "extron",
+    "43t"
+  ],
+  "heightMm": 430,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 4.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Pan and Tilt Mount, Single, Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c823d7bd-433c-422e-bdee-e70d5af48197",
+      "label": "Extron CA 43T PT, Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

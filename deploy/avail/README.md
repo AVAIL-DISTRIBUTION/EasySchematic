@@ -105,6 +105,30 @@ docker compose exec api npm run apply:vendor-decisions                 # зап�
 затирает то, что записали нормализатор и чистки: пока шаблон в источнике не менялся
 (`avail_template_meta.source_hash`), локальная строка остаётся как есть.
 
+### Шаг 1.9: каталог Extron и Biamp (library/catalog)
+
+Порты каталога заполняются в репозитории (`fill:catalog-ports` по снимку базы из бэкапа), на
+сервер приезжают с новым образом. В базу попадают файлы уровня B и выше (A и B — как draft), FIX
+остаётся в каталоге; только уровень A — `-- --min-level A`. В отчёте — сколько загружено A и B.
+
+```bash
+./backup.sh                                                       # обязательно первым; откат — восстановление из бэкапа
+./update.sh                                                       # новый образ: каталог в /app/library/catalog, миграция 9005
+docker compose exec api npm run import:catalog -- --dry-run       # создано / обновлено / ниже B / library/avail / удалено (SQT-1), A и B
+docker compose exec api npm run import:catalog
+docker compose exec api npm run import:catalog -- --dry-run       # повтор: «inserted 0, updated 0»
+```
+
+Найденные по производителю + артикулу шаблоны обновляются (raw → draft, verified остаётся verified,
+если данные не изменились и файл на уровне A, иначе draft с причиной), остальные создаются как draft. `library/avail`
+не трогается; Biamp SQT-1 удаляется (`docs/avail/deleted-templates.json`). Другие шаблоны той же
+модели (цветовой вариант или базовая модель: Desono C-IC6 для C-IC6 Black/White) со статусом raw
+скрываются (hidden, причина «superseded by catalog (<файл>)»); verified и draft не трогаются, только
+перечисляются в отчёте. Схемы со ссылкой на скрытый шаблон продолжают работать.
+
+Снимок базы для `fill:catalog-ports` — из того же бэкапа: распаковать `easyschematic-*.tar.gz` в
+`tools/avail/incoming/db/` (в git и в образ не попадает).
+
 ### Шаг 1.8b: ответы вендоров
 
 ```bash

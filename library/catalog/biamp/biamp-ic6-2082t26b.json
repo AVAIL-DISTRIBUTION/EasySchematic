@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-930-00004-00011",
+  "label": "Biamp IC6-2082T26B",
+  "shortName": "IC6-2082T26B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00004-00011",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00004-00011",
+  "searchTerms": [
+    "930-00004-00011",
+    "ic6-2082t26b",
+    "biamp"
+  ],
+  "heightMm": 287,
+  "widthMm": 571,
+  "depthMm": 270,
+  "weightKg": 15.9,
+  "unitCost": 2449,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High Output Dual 8-Inch 2-Way 120 X 60 70V/100V Indoor Black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_ic6-2082-26_2315.pdf"
+    },
+    "portsMissing": "70 V / 100 V input panel: the data sheet shows it only as a picture, a Thru is not confirmed; check the panel"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 70 V / 100 V autoformer; screw terminal block, 5-position"
+    }
+  ]
+}

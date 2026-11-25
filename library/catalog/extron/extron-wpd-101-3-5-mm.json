@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-70-1173-01",
+  "label": "Extron WPD 101 3.5 mm",
+  "shortName": "WPD 101 3.5 mm",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1173-01",
+  "deviceType": "wall-plate",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wpd102",
+  "searchTerms": [
+    "70-1173-01",
+    "wpd 101 3.5 mm",
+    "extron",
+    "wpd",
+    "101"
+  ],
+  "heightMm": 104,
+  "widthMm": 36,
+  "depthMm": 20,
+  "weightKg": 0.1,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Pass-Through Wallplate with One 3.5 mm Connector - Decorator-Style; White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

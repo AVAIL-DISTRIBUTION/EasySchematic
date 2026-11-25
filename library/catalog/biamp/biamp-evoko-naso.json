@@ -1,0 +1,61 @@
+{
+  "id": "avail-biamp-910-02267",
+  "label": "Biamp Evoko Naso",
+  "shortName": "Evoko Naso",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-02267",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-02267",
+  "searchTerms": [
+    "910-02267",
+    "evoko naso",
+    "biamp",
+    "evoko",
+    "naso"
+  ],
+  "heightMm": 195,
+  "widthMm": 195,
+  "depthMm": 35,
+  "weightKg": 0.9,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 13,
+  "unitCost": 1200,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "The latest Evoko Naso including a 1-year Workplace Booking Plus License",
+    "notes": "Панель бронирования переговорных",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Evoko-Naso-Room-Manager-Mar25-001_13192.pdf"
+    },
+    "portsMissing": "Connector of the optional 5 V adapter input is not stated."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100; PoE 802.3at PD type 1 (13 W), or the optional 5 V power adapter"
+    },
+    {
+      "id": "p2",
+      "label": "Wi-Fi",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "wireless",
+      "notes": "802.11 b/g/n/ac 2.4 GHz"
+    }
+  ]
+}

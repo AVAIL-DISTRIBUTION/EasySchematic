@@ -1,0 +1,104 @@
+{
+  "id": "avail-extron-60-1955-01",
+  "label": "Extron XPA U 3502",
+  "shortName": "XPA U 3502",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1955-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau3502",
+  "searchTerms": [
+    "60-1955-01",
+    "xpa u 3502",
+    "extron",
+    "xpa",
+    "3502"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 106.9,
+  "voltage": "100V AC",
+  "thermalBtuh": 66,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Amp, 350 watts at 8 or 4 ohms",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "928599b1-bea1-4115-8d4b-2befd4f537ff",
+      "label": "Extron XPA U 3502",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-3",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Channel 1 Control",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-4"
+    },
+    {
+      "label": "Channel 2 Control",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-5"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-6"
+    }
+  ]
+}

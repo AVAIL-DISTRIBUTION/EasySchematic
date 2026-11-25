@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-01989-00002",
+  "label": "Biamp Vocia TTS-2",
+  "shortName": "Vocia TTS-2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01989-00002",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01989-00001",
+  "searchTerms": [
+    "920-01989-00002",
+    "vocia tts-2",
+    "biamp",
+    "vocia",
+    "tts-2"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 444,
+  "weightKg": 5.4,
+  "powerDrawW": 300,
+  "voltage": "100-240V AC",
+  "unitCost": 13780,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Text-to-speech engine, voice fonts and nurse call included",
+    "notes": "Характеристики с сайта по артикулу 920-01989-00001",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: RS-232 port (nurse call, TAP) is listed without a connector type; spare LAN 3 / LAN 4 and USB-A are inactive and omitted"
+  },
+  "ports": []
+}

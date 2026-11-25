@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-910-01615",
+  "label": "Biamp EN-MP5T20-W",
+  "shortName": "EN-MP5T20-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01615",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01615",
+  "searchTerms": [
+    "910-01615",
+    "en-mp5t20-w",
+    "biamp"
+  ],
+  "heightMm": 140,
+  "widthMm": 140,
+  "depthMm": 183,
+  "weightKg": 2.48,
+  "unitCost": 233,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "compact sound projector with a 5.25\" woofer, equipped with a high efficiency full range driver and a multi tap 100 volt transformer (5-10-15-20 watts), all certified according EN 54-24;",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_en-mp5t20-w_aug20_2631.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 100 V; ceramic speaker line connector block with thermal fuse (EN 54)"
+    }
+  ]
+}

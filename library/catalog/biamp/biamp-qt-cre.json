@@ -1,0 +1,114 @@
+{
+  "id": "avail-biamp-920-00714-00002",
+  "label": "Biamp QT-CRE",
+  "shortName": "QT-CRE",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00714-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00714-00001",
+  "searchTerms": [
+    "920-00714-00002",
+    "qt-cre",
+    "biamp"
+  ],
+  "heightMm": 89,
+  "widthMm": 179,
+  "depthMm": 23,
+  "weightKg": 0.32,
+  "powerDrawW": 7,
+  "voltage": "100-240V AC (24V DC adapter)",
+  "unitCost": 3850,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "sound-masking",
+    "description": "Qt Conference Room Edition",
+    "notes": "Звуковая маскировка; в таксономии нет своей категории; Характеристики с сайта по артикулу 920-00714-00001; [AVAIL] from Biamp documentation: system < 7 W",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Qt_Conference_Room_Edition_Oct25_13546.pdf"
+    },
+    "portsMissing": "Kit: ports are those of the control module; the 8 emitters and 2 privacy signs are separate blocks"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Aux paging/music input, stereo or mono, +4 dBu"
+    },
+    {
+      "id": "p2",
+      "label": "Qt Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Cable run to Qt emitters over category cable, up to 60 emitters"
+    },
+    {
+      "id": "p3",
+      "label": "Qt Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Cable run to Qt emitters over category cable, up to 60 emitters"
+    },
+    {
+      "id": "p4",
+      "label": "Status Out",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Logic status output, 5 V DC"
+    },
+    {
+      "id": "p5",
+      "label": "Remote In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Contact closure, normally open (fire alarm / remote)"
+    },
+    {
+      "id": "p6",
+      "label": "Privacy Sign 1",
+      "signalType": "tally",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "5 V DC 75 mA to a lighted privacy sign"
+    },
+    {
+      "id": "p7",
+      "label": "Privacy Sign 2",
+      "signalType": "tally",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "5 V DC 75 mA to a lighted privacy sign"
+    },
+    {
+      "id": "p8",
+      "label": "Power (24V DC)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "24 V DC 1 A from external supply; coax plug (center positive) or captive screw terminal"
+    }
+  ]
+}

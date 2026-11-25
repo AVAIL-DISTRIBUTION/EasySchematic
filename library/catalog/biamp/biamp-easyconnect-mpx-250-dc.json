@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-920-02277-00002",
+  "label": "Biamp EasyConnect MPX 250 DC",
+  "shortName": "EasyConnect MPX 250 DC",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02277-00002",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-02277-00001",
+  "searchTerms": [
+    "920-02277-00002",
+    "easyconnect mpx 250 dc",
+    "biamp",
+    "easyconnect",
+    "mpx",
+    "250"
+  ],
+  "powerDrawW": 200,
+  "voltage": "100-240V AC (20V DC adapter)",
+  "unitCost": 2544,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Multi-unit direct connection hub for EasyConnect MPX 250",
+    "notes": "Характеристики с сайта по артикулу 920-02277-00001; [AVAIL] from Biamp documentation: 200 W PSU; [AVAIL] room-mounted (table-side hub) — dimensions optional",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not list the hub's connectors (only 'USB-C extension ports' for up to 4 MPX 250 units, 20 V DC 10 A supply); its back-panel picture repeats the MPX 250 table box, so the hub's own ports wait for the manual or the panel"
+  },
+  "ports": []
+}

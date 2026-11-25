@@ -1,0 +1,71 @@
+{
+  "id": "avail-extron-60-1861-01",
+  "label": "Extron ACP VC1 D",
+  "shortName": "ACP VC1 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1861-01",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acpvc1d",
+  "searchTerms": [
+    "60-1861-01",
+    "acp vc1 d",
+    "extron",
+    "acp",
+    "vc1"
+  ],
+  "heightMm": 114,
+  "widthMm": 71,
+  "depthMm": 8,
+  "weightKg": 0.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 2.5,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Audio Control Panel with Volume and Mute - Decorator-Style",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Control Panels Eng.vssx",
+      "label": "ACP VC1 D",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1861-01-1",
+      "label": "ACP Bus 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "bus-powered (ACP) (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1861-01-2",
+      "label": "ACP Bus 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "avail-extron-60-1861-01-dc12",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw — Extron convention, verify"
+    }
+  ]
+}

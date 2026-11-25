@@ -1,0 +1,80 @@
+{
+  "id": "avail-biamp-920-00925-20000",
+  "label": "Biamp Desono C-IC6 White",
+  "shortName": "Desono C-IC6 White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00925-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00925-20000",
+  "searchTerms": [
+    "920-00925-20000",
+    "desono c-ic6 white",
+    "biamp",
+    "desono",
+    "c-ic6",
+    "white"
+  ],
+  "heightMm": 277,
+  "widthMm": 277,
+  "depthMm": 150,
+  "weightKg": 3.5,
+  "unitCost": 276,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "In-Ceiling, Indoor 6.5\" Coaxial Loudspeaker, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "7ffd9c1e-b87e-44ec-ba01-639a6989d3c5",
+      "label": "Biamp Desono C-IC6",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "3c2e1539",
+      "label": "Input",
+      "signalType": "speaker-level",
+      "connectorType": "terminal-block",
+      "direction": "input",
+      "inheritsSignal": false,
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "tpl-0",
+      "label": "Input",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "rj45",
+      "inheritsSignal": false,
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "4798895c",
+      "label": "Output",
+      "signalType": "speaker-level",
+      "connectorType": "terminal-block",
+      "direction": "output",
+      "inheritsSignal": false,
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "tpl-1",
+      "label": "Output",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs"
+    }
+  ]
+}

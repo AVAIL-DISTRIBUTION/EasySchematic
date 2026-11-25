@@ -1,0 +1,254 @@
+{
+  "id": "avail-biamp-920-00396-00002",
+  "label": "Biamp TesiraFORTÉ AVB AI",
+  "shortName": "TesiraFORTÉ AVB AI",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00396-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00396-00001",
+  "searchTerms": [
+    "920-00396-00002",
+    "tesiraforté avb ai",
+    "biamp",
+    "tesirafort",
+    "avb"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 267,
+  "weightKg": 3.63,
+  "powerDrawW": 35,
+  "voltage": "100-240V AC",
+  "unitCost": 3850,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Fixed I/O DSP with 12 analog inputs, 8 analog outputs, 8 channels configurable USB audio, and 128 x 128 channels of AVB",
+    "notes": "Характеристики с сайта по артикулу 920-00396-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "dd52bf65-44d9-4854-85d2-59346993b77f",
+      "label": "Biamp TesiraFORTÉ AVB AI",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p-in1",
+      "label": "Input 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in2",
+      "label": "Input 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in3",
+      "label": "Input 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in4",
+      "label": "Input 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in5",
+      "label": "Input 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in6",
+      "label": "Input 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in7",
+      "label": "Input 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in8",
+      "label": "Input 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in9",
+      "label": "Input 9",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in10",
+      "label": "Input 10",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in11",
+      "label": "Input 11",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in12",
+      "label": "Input 12",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-out1",
+      "label": "Output 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out2",
+      "label": "Output 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out3",
+      "label": "Output 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out4",
+      "label": "Output 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out5",
+      "label": "Output 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out6",
+      "label": "Output 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out7",
+      "label": "Output 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out8",
+      "label": "Output 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-ctrl",
+      "label": "Control",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p-avb",
+      "label": "AVB",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p-rs232",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Serial"
+    },
+    {
+      "id": "p-gpio",
+      "label": "Logic I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "p-usb",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "worklist-26",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    }
+  ]
+}

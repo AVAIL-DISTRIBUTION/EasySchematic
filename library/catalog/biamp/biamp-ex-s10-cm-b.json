@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-920-01817-10000",
+  "label": "Biamp EX-S10-CM-B",
+  "shortName": "EX-S10-CM-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01817-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01817-10000",
+  "searchTerms": [
+    "920-01817-10000",
+    "ex-s10-cm-b",
+    "biamp"
+  ],
+  "heightMm": 529,
+  "widthMm": 309,
+  "depthMm": 439,
+  "weightKg": 15.2,
+  "unitCost": 1024,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "10” Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included ClickMount pan-tilt mounting bracket, black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Desono_Data_Sheet_EX-S10_UB-CM_Jan26_13689.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; lever-actuated 4-position terminal block with pass-through; low impedance or 70 V / 100 V by selector switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Pass-through on the same block"
+    }
+  ]
+}

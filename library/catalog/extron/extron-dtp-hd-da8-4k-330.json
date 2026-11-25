@@ -1,0 +1,260 @@
+{
+  "id": "avail-extron-60-1438-51",
+  "label": "Extron DTP HD DA8 4K 330",
+  "shortName": "DTP HD DA8 4K 330",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1438-51",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtphdda330",
+  "searchTerms": [
+    "60-1438-51",
+    "dtp hd da8 4k 330",
+    "extron",
+    "dtp",
+    "da8",
+    "330"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 268,
+  "weightKg": 2.3,
+  "powerDrawW": 80.8,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 132,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Long Distance HDMI to Eight Output DTP Twisted Pair Distribution Amplifier - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DA Engineering Drawings/DA - DTP DA Eng.vssx",
+      "label": "DTP HD DA8 4K 330",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1438-51-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1438-51-2",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1438-51-3",
+      "label": "DTP Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-4",
+      "label": "DTP Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-5",
+      "label": "DTP Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-6",
+      "label": "DTP Out 4",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-7",
+      "label": "DTP Out 5",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-8",
+      "label": "DTP Out 6",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-9",
+      "label": "DTP Out 7",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-10",
+      "label": "DTP Out 8",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "DTP/HDBaseT extended HDMI output over shielded twisted pair (carries video, embedded + analog audio, RS-232/IR, and remote PoE)."
+    },
+    {
+      "id": "vx-60-1438-51-11",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "Unbalanced stereo on a 3.5mm TRS mini jack."
+    },
+    {
+      "id": "vx-60-1438-51-12",
+      "label": "Audio Loop Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "vx-60-1438-51-13",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1438-51-14",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3.5mm 3-pole captive screw (Tx/Rx/GND)."
+    },
+    {
+      "id": "vx-60-1438-51-15",
+      "label": "RS-232/IR (Out 1)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1438-51-16",
+      "label": "RS-232/IR (Out 2)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1438-51-17",
+      "label": "RS-232/IR (Out 3)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1438-51-18",
+      "label": "RS-232/IR (Out 4)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1438-51-19",
+      "label": "RS-232/IR (Out 5)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1438-51-20",
+      "label": "RS-232/IR (Out 6)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1438-51-21",
+      "label": "RS-232/IR (Out 7)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1438-51-22",
+      "label": "RS-232/IR (Out 8)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw — RS-232 + IR pass-through to the matching DTP output endpoint (Tx/Rx + IR signal/GND). (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS configuration (USB 2.0).",
+      "id": "vx-60-1438-51-s1"
+    },
+    {
+      "id": "vx-60-1438-51-23",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
+    }
+  ]
+}

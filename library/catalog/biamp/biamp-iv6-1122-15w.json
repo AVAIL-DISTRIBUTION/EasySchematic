@@ -1,0 +1,66 @@
+{
+  "id": "avail-biamp-930-00885-00002",
+  "label": "Biamp IV6-1122/15W",
+  "shortName": "IV6-1122/15W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00885-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00885-00002",
+  "searchTerms": [
+    "930-00885-00002",
+    "iv6-1122/15w",
+    "biamp",
+    "iv6-1122",
+    "15w"
+  ],
+  "heightMm": 356,
+  "widthMm": 714,
+  "depthMm": 425,
+  "weightKg": 33.2,
+  "unitCost": 4664,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "12-inch two-way, 120 x 15 (Indoor, White)",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_iv6_jan21_2458.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; screw terminal block (2 x 2-position)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4, pins 1+/1- in parallel with the terminal strip"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Thru (NL4)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "speakon",
+      "notes": "Second NL4 in parallel: 1+/1- link, 2+/2- pass through"
+    }
+  ]
+}

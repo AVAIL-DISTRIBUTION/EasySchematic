@@ -1,0 +1,50 @@
+{
+  "id": "avail-biamp-910-00313",
+  "label": "Biamp CM10TB White",
+  "shortName": "CM10TB White",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00313",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00313",
+  "searchTerms": [
+    "910-00313",
+    "cm10tb white",
+    "biamp",
+    "cm10tb",
+    "white"
+  ],
+  "heightMm": 223,
+  "widthMm": 223,
+  "depthMm": 159,
+  "weightKg": 2.1,
+  "unitCost": 140,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Commercial Back Can Ceiling Speaker, 10W, 8 ohms, 70V/100V transformer, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/CM10TB_dataSheet_Apr24_9865.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, low impedance or 70 V / 100 V by selector switch; 4-position terminal block"
+    }
+  ]
+}

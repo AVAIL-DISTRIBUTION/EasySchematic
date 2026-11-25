@@ -1,0 +1,109 @@
+{
+  "id": "avail-extron-60-1449-01",
+  "label": "Extron MPA 601-70V",
+  "shortName": "MPA 601-70V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1449-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mpa601",
+  "searchTerms": [
+    "60-1449-01",
+    "mpa 601-70v",
+    "extron",
+    "mpa",
+    "601-70v"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.4,
+  "powerDrawW": 14.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 24,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "One Channel Amp, 60 watts at 70 volts",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "MPA 601-70V",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1449-01-1",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1449-01-2",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1449-01-3",
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "rca",
+      "section": "Audio Inputs",
+      "notes": "L/R RCA pair"
+    },
+    {
+      "id": "vx-60-1449-01-4",
+      "label": "Speaker Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1449-01-5",
+      "label": "Volume Control",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "0-10VDC analog volume control input (3-pole captive screw, +10VDC reference / variable input / GND). Modeled as analog-audio per src/types.ts (no control-voltage SignalType)."
+    },
+    {
+      "id": "vx-60-1449-01-6",
+      "label": "Standby",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1449-01-7",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC, 4.2A PSU brick (50W). 2.1mm/2.5mm barrel jack on device end."
+    }
+  ]
+}

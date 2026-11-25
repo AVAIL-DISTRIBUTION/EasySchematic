@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1175-01",
+  "label": "Extron PS 1205 C",
+  "shortName": "PS 1205 C",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1175-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/extpowsupplies",
+  "searchTerms": [
+    "70-1175-01",
+    "ps 1205 c",
+    "extron",
+    "1205"
+  ],
+  "heightMm": 37,
+  "widthMm": 55,
+  "depthMm": 86,
+  "weightKg": 0.2,
+  "powerDrawW": 6.9,
+  "powerCapacityW": 6.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 3.8,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "12 V, 0.5 A, Captive Screw Connector",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

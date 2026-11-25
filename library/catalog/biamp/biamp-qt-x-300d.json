@@ -1,0 +1,196 @@
+{
+  "id": "avail-biamp-920-00218-00002",
+  "label": "Biamp Qt X 300D",
+  "shortName": "Qt X 300D",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00218-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00218-00001",
+  "searchTerms": [
+    "920-00218-00002",
+    "qt x 300d",
+    "biamp",
+    "300d"
+  ],
+  "heightMm": 89,
+  "widthMm": 371.5,
+  "depthMm": 97,
+  "weightKg": 1.88,
+  "powerDrawW": 22,
+  "voltage": "100-240V AC",
+  "unitCost": 3180,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "sound-masking",
+    "description": "Qt X Controller 3 Qt Outputs, Dante",
+    "notes": "Звуковая маскировка; в таксономии нет своей категории; Характеристики с сайта по артикулу 920-00218-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Qt_X300-300D_Dec24_12937.pdf"
+    },
+    "portsMissing": "The data sheet does not say which of network ports 1/2 carries media and which control"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced 3-pin, up to +24 dBu; phantom +48 V"
+    },
+    {
+      "id": "p2",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced 3-pin, up to +24 dBu; phantom +48 V"
+    },
+    {
+      "id": "p3",
+      "label": "Qt Out 1A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 1, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p4",
+      "label": "Qt Out 1B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 1, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p5",
+      "label": "Qt Out 2A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 2, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p6",
+      "label": "Qt Out 2B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 2, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p7",
+      "label": "Qt Out 3A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 3, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p8",
+      "label": "Qt Out 3B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 3, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p9",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Media / control (Dante)"
+    },
+    {
+      "id": "p10",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Media / control (Dante)"
+    },
+    {
+      "id": "p11",
+      "label": "GPIO 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Shared 4-pin block: +5V, 1, 2, ground"
+    },
+    {
+      "id": "p12",
+      "label": "GPIO 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Shared 4-pin block: +5V, 1, 2, ground"
+    },
+    {
+      "id": "p13",
+      "label": "Contact In 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Normally open; emergency mute (panel: 1-Emergency Mute)"
+    },
+    {
+      "id": "p14",
+      "label": "Contact In 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Normally open"
+    },
+    {
+      "id": "p15",
+      "label": "Privacy 1",
+      "signalType": "tally",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic status output 5 V DC (privacy sign)"
+    },
+    {
+      "id": "p16",
+      "label": "Privacy 2",
+      "signalType": "tally",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic status output 5 V DC (privacy sign)"
+    },
+    {
+      "id": "p17",
+      "label": "Power (24V DC)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "24 V DC 2.7 A, external supply 100-240 V AC"
+    }
+  ]
+}

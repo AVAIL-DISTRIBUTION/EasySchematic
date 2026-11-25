@@ -1,0 +1,29 @@
+{
+  "id": "avail-extron-70-223-01",
+  "label": "Extron IR Sensor",
+  "shortName": "IR Sensor",
+  "manufacturer": "Extron",
+  "modelNumber": "70-223-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/irsensor",
+  "searchTerms": [
+    "70-223-01",
+    "ir sensor",
+    "extron",
+    "sensor"
+  ],
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Remote IR Receiver",
+    "notes": "[AVAIL] powered by the host device / bus — no own power input; [AVAIL] sensor head on a cable — dimensions not applicable",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

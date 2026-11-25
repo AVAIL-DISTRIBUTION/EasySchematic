@@ -1,0 +1,55 @@
+{
+  "id": "avail-extron-60-1795-01",
+  "label": "Extron NBP 200",
+  "shortName": "NBP 200",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1795-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbp200",
+  "searchTerms": [
+    "60-1795-01",
+    "nbp 200",
+    "extron",
+    "nbp",
+    "200"
+  ],
+  "heightMm": 114,
+  "widthMm": 163,
+  "depthMm": 8,
+  "weightKg": 0.7,
+  "powerDrawW": 3,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 10,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Network Button Panel with 10 Buttons - US 2-Gang",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP 200",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1795-01-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
+}

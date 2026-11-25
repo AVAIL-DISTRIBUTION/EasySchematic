@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00908-00034",
+  "label": "Biamp IP6-1122WR94",
+  "shortName": "IP6-1122WR94",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00908-00034",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00908-00034",
+  "searchTerms": [
+    "930-00908-00034",
+    "ip6-1122wr94",
+    "biamp"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 29.5,
+  "unitCost": 3900,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Medium Power 12-Inch 2-Way 90 X 40 Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Weather-resistant: sealed gland nut with 15 ft 14 AWG SJOW cable; passive or biamp is set at the factory, so the number of conductor pairs depends on the order"
+  },
+  "ports": []
+}

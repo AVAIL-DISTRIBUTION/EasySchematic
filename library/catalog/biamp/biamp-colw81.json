@@ -1,0 +1,54 @@
+{
+  "id": "avail-biamp-910-01593",
+  "label": "Biamp COLW81",
+  "shortName": "COLW81",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01593",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01593",
+  "searchTerms": [
+    "910-01593",
+    "colw81",
+    "biamp"
+  ],
+  "heightMm": 973,
+  "widthMm": 99,
+  "depthMm": 84,
+  "unitCost": 492,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "8 x 3.3\" sound column loudspeaker with 1\" tweeter 70 - 100 volt / 80 watts or 8 ohms / 120 watts, white",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_colw81_sep23_2623.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; multi-position pass-through screw terminal block, transformer tap or low impedance by wiring"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Pass-through on the same connector"
+    }
+  ]
+}

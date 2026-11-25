@@ -1,0 +1,49 @@
+{
+  "id": "avail-extron-42-339-33",
+  "label": "Extron CA 163 LP (White, 70/100V, IP54, Single)",
+  "shortName": "CA 163 LP",
+  "manufacturer": "Extron",
+  "modelNumber": "42-339-33",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca163",
+  "searchTerms": [
+    "42-339-33",
+    "ca 163 lp",
+    "extron",
+    "163"
+  ],
+  "heightMm": 1318,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 12.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, 70/100V, IP54, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Low-Profile Mount, Single, 70/100V, White - IP54",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "variant",
+      "from": "extron/extron-ca-163-lp-black-70-100v-single.json",
+      "label": "Extron CA 163 LP (Black, 70/100V, Single)",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

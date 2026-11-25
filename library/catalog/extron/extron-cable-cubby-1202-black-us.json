@@ -1,0 +1,79 @@
+{
+  "id": "avail-extron-60-1894-02",
+  "label": "Extron Cable Cubby 1202 (Black, US)",
+  "shortName": "Cable Cubby 1202",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1894-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby1202",
+  "searchTerms": [
+    "60-1894-02",
+    "cable cubby 1202",
+    "extron",
+    "cable",
+    "cubby",
+    "1202"
+  ],
+  "heightMm": 113,
+  "widthMm": 269,
+  "depthMm": 116,
+  "weightKg": 1.1,
+  "voltage": "125V AC",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-cubby-aap"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black, US",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Black with 2 US AC, 12 A Circuit Breaker, and 2 Outlets Under",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "variant",
+      "from": "extron/extron-cable-cubby-1202-brushed-aluminum-no-ac.json",
+      "label": "Extron Cable Cubby 1202 (Brushed Aluminum, No AC)",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0",
+      "notes": "passive"
+    }
+  ]
+}

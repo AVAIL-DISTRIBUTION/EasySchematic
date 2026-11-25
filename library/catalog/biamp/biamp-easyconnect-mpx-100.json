@@ -1,0 +1,142 @@
+{
+  "id": "avail-biamp-920-01963-00001",
+  "label": "Biamp EasyConnect MPX 100",
+  "shortName": "EasyConnect MPX 100",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01963-00001",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01963-00001",
+  "searchTerms": [
+    "920-01963-00001",
+    "easyconnect mpx 100",
+    "biamp",
+    "easyconnect",
+    "mpx",
+    "100"
+  ],
+  "heightMm": 37.3,
+  "widthMm": 206,
+  "depthMm": 206,
+  "weightKg": 0.86,
+  "powerDrawW": 150,
+  "voltage": "100-240V AC",
+  "unitCost": 1325,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "usb-switch",
+    "description": "BYOM Switching Device",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_easyconnect_mpx-100_nov23_9233.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In (UC Compute)",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0 from the in-room UC compute"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI In (Laptop)",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0 from the BYOM laptop"
+    },
+    {
+      "id": "p3",
+      "label": "HDMI Out (Room A/V)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0 to the room display, up to 4K"
+    },
+    {
+      "id": "p4",
+      "label": "Network",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Gigabit Ethernet: SageVue / web management"
+    },
+    {
+      "id": "p5",
+      "label": "USB-B (UC Compute)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 3.0 to the in-room UC compute"
+    },
+    {
+      "id": "p6",
+      "label": "USB-B (Laptop)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 3.0 to the BYOM laptop"
+    },
+    {
+      "id": "p7",
+      "label": "USB-A 1 (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 to room peripherals"
+    },
+    {
+      "id": "p8",
+      "label": "USB-A 2 (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 to room peripherals"
+    },
+    {
+      "id": "p9",
+      "label": "USB-A 3 (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 to room peripherals"
+    },
+    {
+      "id": "p10",
+      "label": "USB-C (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 3.0 with Power Delivery for Parlé ABC/VBC 2500 bars"
+    },
+    {
+      "id": "p11",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "24 V / 3.75 A with lock connector, external supply"
+    }
+  ]
+}

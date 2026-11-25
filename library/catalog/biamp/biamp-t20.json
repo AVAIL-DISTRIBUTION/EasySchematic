@@ -1,0 +1,58 @@
+{
+  "id": "avail-biamp-910-01498",
+  "label": "Biamp T20",
+  "shortName": "T20",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01498",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01498",
+  "searchTerms": [
+    "910-01498",
+    "t20",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 70,
+  "depthMm": 34,
+  "weightKg": 0.3,
+  "unitCost": 23,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "audio-transformer",
+    "description": "8 ohms to 100 volt transformer with different power taps: 20 - 10 - 5 - 2.5 watts",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_T20_Jul26_13991.pdf"
+    },
+    "portsMissing": "The 8 ohm side connection type is not stated."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In (70/100V)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; colour-coded wire taps (yellow, green, blue, red, black COM); 100V: 20/10/5/2.5 W; 70V: 10/5/2.5/1.25 W"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out (8 ohm)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "other",
+      "notes": "To an 8 ohm loudspeaker; connection type not stated"
+    }
+  ]
+}

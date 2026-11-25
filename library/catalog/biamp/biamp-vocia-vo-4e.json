@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-910-10358",
+  "label": "Biamp Vocia VO-4e",
+  "shortName": "Vocia VO-4e",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-10358",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-10358",
+  "searchTerms": [
+    "910-10358",
+    "vocia vo-4e",
+    "biamp",
+    "vocia",
+    "vo-4e"
+  ],
+  "heightMm": 44.5,
+  "widthMm": 483,
+  "depthMm": 254,
+  "weightKg": 3,
+  "powerDrawW": 15,
+  "voltage": "24V DC / PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2862,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia networked audio output expansion device with 4 line-level output channels. Enhanced to support Vocia ELD-1 & ANC-1. Emergency Message storage.",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Connectors of the 4 line outputs, 4 page active relays, control inputs / outputs and the dual aux 24 V DC inputs are not named in the data sheet; ports wait for the panel"
+  },
+  "ports": []
+}

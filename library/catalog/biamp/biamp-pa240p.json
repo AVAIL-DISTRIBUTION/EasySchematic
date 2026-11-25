@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-920-01452-00002",
+  "label": "Biamp PA240P",
+  "shortName": "PA240P",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01452-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01452-00002",
+  "searchTerms": [
+    "920-01452-00002",
+    "pa240p",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 364,
+  "powerDrawW": 525,
+  "voltage": "230V AC",
+  "unitCost": 500,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Power amplifier 240 watts @ 100 volt with program and priority input, 24V priority output, tone control, 24V DC - 230 V AC",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet lists 1 balanced line input with link through, a priority input with contact, 24 V DC priority output and 24 V DC emergency supply, but no connector types; the manual PDF has no extractable text"
+  },
+  "ports": []
+}

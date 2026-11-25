@@ -1,0 +1,66 @@
+{
+  "id": "avail-biamp-910-00861",
+  "label": "Biamp QT-RC2",
+  "shortName": "QT-RC2",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00861",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00861",
+  "searchTerms": [
+    "910-00861",
+    "qt-rc2",
+    "biamp"
+  ],
+  "heightMm": 104,
+  "widthMm": 48,
+  "depthMm": 56,
+  "weightKg": 0.13,
+  "powerDrawW": 0.1,
+  "unitCost": 286,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "volume-control",
+    "description": "In Room Volume Control with Decora Style Plate for the Qt-100 only",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Qt-RC2_Dec24_12941.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Emitter In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rj45",
+      "notes": "Passive, no auxiliary power; 4 channels of masking/audio from the Qt 100"
+    },
+    {
+      "id": "p2",
+      "label": "Pass-Through Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "4 channels unaltered to the next device in the zone"
+    },
+    {
+      "id": "p3",
+      "label": "Room Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Attenuated masking to up to 8 standard emitters"
+    }
+  ]
+}

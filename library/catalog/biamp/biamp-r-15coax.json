@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-920-01234-30000",
+  "label": "Biamp R.15COAX",
+  "shortName": "R.15COAX",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01234-30000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01234-30000",
+  "searchTerms": [
+    "920-01234-30000",
+    "r.15coax",
+    "biamp",
+    "15coax"
+  ],
+  "heightMm": 229,
+  "widthMm": 258,
+  "depthMm": 259,
+  "weightKg": 7.7,
+  "unitCost": 560,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Full-Range 2-Way 6.5-Inch Coax Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r-15coax_oct21_2482.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4 Speakon-type, alternative to the terminal strip"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; 2-position terminal strip; low impedance or 70 V / 100 V by tap switch"
+    }
+  ]
+}

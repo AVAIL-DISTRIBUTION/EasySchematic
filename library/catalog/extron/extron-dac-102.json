@@ -1,0 +1,94 @@
+{
+  "id": "avail-extron-60-1811-01",
+  "label": "Extron DAC 102",
+  "shortName": "DAC 102",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1811-01",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dac102",
+  "searchTerms": [
+    "60-1811-01",
+    "dac 102",
+    "extron",
+    "dac",
+    "102"
+  ],
+  "heightMm": 34,
+  "widthMm": 61,
+  "depthMm": 58,
+  "weightKg": 0.1,
+  "powerDrawW": 1.1,
+  "voltage": "5V DC",
+  "thermalBtuh": 3.7,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Two Channel Digital to Analog Audio Converter",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1abfec69-b7a3-429e-ac18-eeb571fdf1f0",
+      "label": "Extron DAC 102",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "S/PDIF In (Optical)",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "toslink",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "S/PDIF In (Coax)",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "rca",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "IR Remote",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-4"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-5"
+    }
+  ]
+}

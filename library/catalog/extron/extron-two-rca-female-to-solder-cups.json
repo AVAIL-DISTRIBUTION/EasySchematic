@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-092-11",
+  "label": "Extron Two RCA Female to Solder Cups",
+  "shortName": "Two RCA Female to Solder Cups",
+  "manufacturer": "Extron",
+  "modelNumber": "70-092-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2rcafrca",
+  "searchTerms": [
+    "70-092-11",
+    "two rca female to solder cups",
+    "extron",
+    "two",
+    "rca",
+    "female",
+    "solder"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two RCA Female to Solder Cups",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "Signal type not stated in the product name (RCA: audio or video); ports wait for the datasheet"
+  },
+  "ports": []
+}

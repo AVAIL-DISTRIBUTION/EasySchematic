@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-00904-00003",
+  "label": "Biamp IS8-112WR",
+  "shortName": "IS8-112WR",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00904-00003",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00904-00003",
+  "searchTerms": [
+    "930-00904-00003",
+    "is8-112wr",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 553,
+  "weightKg": 26.3,
+  "unitCost": 3600,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High Power 12-Inch Subwoofer Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_i_series_weather_resistant_2452.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive subwoofer, external amplifier; sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable; single amp"
+    }
+  ]
+}

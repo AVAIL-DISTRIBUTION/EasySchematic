@@ -1,0 +1,158 @@
+{
+  "id": "avail-extron-60-1911-01a",
+  "label": "Extron IPCP Pro 250 xi (LinkLicense)",
+  "shortName": "IPCP Pro 250 xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1911-01A",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro250xi",
+  "searchTerms": [
+    "60-1911-01a",
+    "ipcp pro 250 xi",
+    "extron",
+    "ipcp",
+    "pro",
+    "250"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 9.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 12.3,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "LinkLicense",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "IPCP Pro xi Control Processor w/LinkLicense for User Interfaces Upgrade",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "b68fd64c-54de-4f34-8403-e2d3d876a120",
+      "label": "Extron IPCP Pro 250 xi",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "9467d5d7",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "tpl-3",
+      "label": "IR/S",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-4",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "inheritsSignal": false
+    },
+    {
+      "id": "tpl-5",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "inheritsSignal": false
+    },
+    {
+      "id": "6cfcfe1e",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "71c55d0c",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "3f8c68b7",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "0fbd0c11",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "tpl-1",
+      "label": "COM 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-2",
+      "label": "COM 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-6",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "inheritsSignal": false
+    },
+    {
+      "id": "tpl-12",
+      "label": "Volume (0-10 VDC)",
+      "signalType": "custom",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "inheritsSignal": false
+    },
+    {
+      "id": "tpl-11",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
+}

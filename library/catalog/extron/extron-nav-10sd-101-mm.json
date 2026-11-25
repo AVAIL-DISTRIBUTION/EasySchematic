@@ -1,0 +1,111 @@
+{
+  "id": "avail-extron-60-1572-19",
+  "label": "Extron NAV 10SD 101 (MM)",
+  "shortName": "NAV 10SD 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1572-19",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nav10sd101",
+  "searchTerms": [
+    "60-1572-19",
+    "nav 10sd 101",
+    "extron",
+    "nav",
+    "10sd",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 21,
+  "voltage": "12V DC",
+  "thermalBtuh": 71.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "MM",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "10G HDMI Scaling Decoder - Multimode",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Decod Eng.vssx",
+      "label": "NAV 10SD 101 MM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1572-19-1",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "HDMI output from decoded NAV stream. Also carries CEC."
+    },
+    {
+      "id": "vx-60-1572-19-2",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole 3.5mm captive screw, balanced/unbalanced stereo. De-embedded from decoded HDMI / NAV audio stream. (5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1572-19-3",
+      "label": "NAV 10G",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1572-19-4",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 5-pole 3.5mm captive screw shared with IR. Pin configuration Tx/Rx/Gnd. (5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1572-19-5",
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix",
+      "notes": "TTL-level IR (carrier 30-300 kHz) on a 5-pole 3.5mm captive screw shared with RS-232. Pin configuration S/Gnd."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
+      "id": "vx-60-1572-19-s1"
+    },
+    {
+      "id": "vx-60-1572-19-6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU input (100-240VAC brick). Local power only — fiber NAV variants cannot be PoE-powered."
+    }
+  ]
+}

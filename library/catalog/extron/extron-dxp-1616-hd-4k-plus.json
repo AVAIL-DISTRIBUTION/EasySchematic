@@ -1,0 +1,397 @@
+{
+  "id": "avail-extron-60-1497-21",
+  "label": "Extron DXP 1616 HD 4K PLUS",
+  "shortName": "DXP 1616 HD 4K PLUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1497-21",
+  "deviceType": "router",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dxphd4kplus",
+  "searchTerms": [
+    "60-1497-21",
+    "dxp 1616 hd 4k plus",
+    "extron",
+    "dxp",
+    "1616",
+    "plus"
+  ],
+  "heightMm": 89,
+  "widthMm": 432,
+  "depthMm": 241,
+  "weightKg": 4,
+  "powerDrawW": 67.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 217,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "16x16 4K/60 HDMI with 4 Audio Outputs",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Matrix Engineering Drawings/Matrix- DXP Eng.vssx",
+      "label": "DXP 1616 HD 4K PLUS",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1497-21-1",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-2",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-3",
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-4",
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-5",
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-6",
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-7",
+      "label": "HDMI In 7",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-8",
+      "label": "HDMI In 8",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-9",
+      "label": "HDMI In 9",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-10",
+      "label": "HDMI In 10",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-11",
+      "label": "HDMI In 11",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-12",
+      "label": "HDMI In 12",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-13",
+      "label": "HDMI In 13",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-14",
+      "label": "HDMI In 14",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-15",
+      "label": "HDMI In 15",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-16",
+      "label": "HDMI In 16",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1497-21-17",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-18",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-19",
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-20",
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-21",
+      "label": "HDMI Out 5",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-22",
+      "label": "HDMI Out 6",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-23",
+      "label": "HDMI Out 7",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-24",
+      "label": "HDMI Out 8",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-25",
+      "label": "HDMI Out 9",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-26",
+      "label": "HDMI Out 10",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-27",
+      "label": "HDMI Out 11",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-28",
+      "label": "HDMI Out 12",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-29",
+      "label": "HDMI Out 13",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-30",
+      "label": "HDMI Out 14",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-31",
+      "label": "HDMI Out 15",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-32",
+      "label": "HDMI Out 16",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-33",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1497-21-34",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1497-21-35",
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1497-21-36",
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1497-21-37",
+      "label": "S/PDIF Out 1",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-38",
+      "label": "S/PDIF Out 2",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-39",
+      "label": "S/PDIF Out 3",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-40",
+      "label": "S/PDIF Out 4",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "vx-60-1497-21-41",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1497-21-42",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1497-21-43",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

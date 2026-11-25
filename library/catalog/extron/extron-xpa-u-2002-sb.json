@@ -1,0 +1,91 @@
+{
+  "id": "avail-extron-60-1758-01",
+  "label": "Extron XPA U 2002 SB",
+  "shortName": "XPA U 2002 SB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1758-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau2002sb",
+  "searchTerms": [
+    "60-1758-01",
+    "xpa u 2002 sb",
+    "extron",
+    "xpa",
+    "2002"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.5,
+  "powerDrawW": 66.3,
+  "voltage": "100V AC",
+  "thermalBtuh": 56,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Channel Bridgeable Output Amp, 200/400 Watts",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "XPA U 2002 SB",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1758-01-1",
+      "label": "Audio In 1-2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1758-01-2",
+      "label": "Audio Out (SB)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1758-01-3",
+      "label": "Remote 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1758-01-4",
+      "label": "Remote 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1758-01-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

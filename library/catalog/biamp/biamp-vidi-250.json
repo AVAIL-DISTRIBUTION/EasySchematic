@@ -1,0 +1,51 @@
+{
+  "id": "avail-biamp-910-00130",
+  "label": "Biamp Vidi 250",
+  "shortName": "Vidi 250",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00130",
+  "deviceType": "camera",
+  "category": "Videocameras / USB cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00130",
+  "searchTerms": [
+    "910-00130",
+    "vidi 250",
+    "biamp",
+    "vidi",
+    "250"
+  ],
+  "heightMm": 50.3,
+  "widthMm": 50,
+  "depthMm": 70,
+  "unitCost": 650,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4K conferencing camera",
+    "notes": "[AVAIL] USB-C bus-powered",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "biamp-vidi-250.json",
+      "label": "Biamp Vidi 250",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vidi250-usbc",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB 3.0 video/data; bus-powered (USB), < 10 W"
+    }
+  ]
+}

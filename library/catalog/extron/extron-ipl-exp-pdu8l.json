@@ -1,0 +1,145 @@
+{
+  "id": "avail-extron-60-1928-01",
+  "label": "Extron IPL EXP PDU8L",
+  "shortName": "IPL EXP PDU8L",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1928-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iplexppdu8l",
+  "searchTerms": [
+    "60-1928-01",
+    "ipl exp pdu8l",
+    "extron",
+    "ipl",
+    "exp",
+    "pdu8l"
+  ],
+  "heightMm": 42,
+  "widthMm": 109,
+  "depthMm": 203,
+  "weightKg": 1,
+  "powerDrawW": 1.6,
+  "voltage": "240V AC",
+  "thermalBtuh": 5.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Control System Power Expansion Interface",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - IPL IPCP Pro Eng.vssx",
+      "label": "IPL EXP PDU8L",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1928-01-1",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1928-01-11",
+      "label": "Temp",
+      "signalType": "sensor",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    },
+    {
+      "id": "vx-60-1928-01-3",
+      "label": "Switched 12 VDC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-4",
+      "label": "Switched 12 VDC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-5",
+      "label": "Switched 12 VDC Out 3",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-6",
+      "label": "Switched 12 VDC Out 4",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-7",
+      "label": "Switched 12 VDC Out 5",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-8",
+      "label": "Switched 12 VDC Out 6",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-9",
+      "label": "Switched 12 VDC Out 7",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1928-01-10",
+      "label": "Switched 12 VDC Out 8",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

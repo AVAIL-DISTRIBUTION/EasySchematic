@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-920-01314-10000",
+  "label": "Biamp V2-6B",
+  "shortName": "V2-6B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01314-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01314-10000",
+  "searchTerms": [
+    "920-01314-10000",
+    "v2-6b",
+    "biamp"
+  ],
+  "heightMm": 395,
+  "widthMm": 249,
+  "depthMm": 258,
+  "weightKg": 8.9,
+  "unitCost": 676,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Full-Range 2-Way 6-Inch 90 X 70 Black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_v2-6_2551.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4-compatible locking connector"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Terminal strip in parallel with the NL4"
+    }
+  ]
+}

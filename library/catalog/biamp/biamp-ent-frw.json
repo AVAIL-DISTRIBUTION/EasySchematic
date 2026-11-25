@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-01389-00002",
+  "label": "Biamp ENT-FRW",
+  "shortName": "ENT-FRW",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-01389-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-01389-00002",
+  "searchTerms": [
+    "930-01389-00002",
+    "ent-frw",
+    "biamp"
+  ],
+  "heightMm": 1129,
+  "widthMm": 140,
+  "depthMm": 187,
+  "weightKg": 18.1,
+  "unitCost": 3733,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "ENTASYS Full-Range 3-Way Column Loudspeaker, White",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Connections: dual banana (male) on top; NL4, two 2-terminal barrier strips and a banana (female) at the bottom. The data sheet does not say which are inputs and which link to the next column; check the manual"
+  },
+  "ports": []
+}

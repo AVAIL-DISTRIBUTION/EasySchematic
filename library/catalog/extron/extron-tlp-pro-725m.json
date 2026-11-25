@@ -1,0 +1,74 @@
+{
+  "id": "avail-extron-60-1563-12",
+  "label": "Extron TLP Pro 725M",
+  "shortName": "TLP Pro 725M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1563-12",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro725m",
+  "searchTerms": [
+    "60-1563-12",
+    "tlp pro 725m",
+    "extron",
+    "tlp",
+    "pro",
+    "725m"
+  ],
+  "heightMm": 128,
+  "widthMm": 184,
+  "depthMm": 30,
+  "weightKg": 0.5,
+  "powerDrawW": 8.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 24.3,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "7\" Wall Mount TouchLink® Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 725M NC Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1563-12-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af class 3"
+    },
+    {
+      "id": "vx-60-1563-12-2",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "USB",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed.",
+      "id": "vx-60-1563-12-s1"
+    }
+  ]
+}

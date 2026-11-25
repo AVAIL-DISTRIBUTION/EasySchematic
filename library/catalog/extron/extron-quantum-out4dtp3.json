@@ -1,0 +1,121 @@
+{
+  "id": "avail-extron-70-1327-01",
+  "label": "Extron Quantum OUT4DTP3",
+  "shortName": "Quantum OUT4DTP3",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1327-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1327-01",
+    "quantum out4dtp3",
+    "extron",
+    "quantum",
+    "out4dtp3"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Four-channel 4K/60 DTP3 Output Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f14acf63-f511-4206-bf8f-77396162d0b3",
+      "label": "Extron Quantum OUT4DTP3",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "DTP3 Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-1"
+    },
+    {
+      "label": "DTP3 Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-3"
+    },
+    {
+      "label": "DTP3 Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-5"
+    },
+    {
+      "label": "DTP3 Out 4",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-7"
+    },
+    {
+      "label": "DTP Power Inject",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "Captive screw input. Up to 72W shared across 4 DTP3 outputs to remotely power receivers (DTP3 mode only).",
+      "id": "port-8"
+    }
+  ]
+}

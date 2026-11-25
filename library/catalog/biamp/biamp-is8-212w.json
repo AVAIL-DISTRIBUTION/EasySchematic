@@ -1,0 +1,73 @@
+{
+  "id": "avail-biamp-930-00901-00002",
+  "label": "Biamp IS8-212W",
+  "shortName": "IS8-212W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00901-00002",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00901-00002",
+  "searchTerms": [
+    "930-00901-00002",
+    "is8-212w",
+    "biamp"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 553,
+  "weightKg": 40.4,
+  "unitCost": 4072,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High Power Dual 12-Inch Subwoofer White",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_is8-212_nov2023_2444.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LF1 In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive subwoofer, external amplifier; Screw terminal block, 4-position (two blocks); single amp: external jumper LF1 to LF2"
+    },
+    {
+      "id": "p2",
+      "label": "LF2 In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 4-position (two blocks); dual amp"
+    },
+    {
+      "id": "p3",
+      "label": "LF1 Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 4-position (two blocks)"
+    },
+    {
+      "id": "p4",
+      "label": "LF2 Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 4-position (two blocks)"
+    }
+  ]
+}

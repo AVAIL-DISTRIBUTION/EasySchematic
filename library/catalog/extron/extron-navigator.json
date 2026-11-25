@@ -1,0 +1,81 @@
+{
+  "id": "avail-extron-60-1534-01",
+  "label": "Extron NAVigator",
+  "shortName": "NAVigator",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1534-01",
+  "deviceType": "av-over-ip",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/navigator",
+  "searchTerms": [
+    "60-1534-01",
+    "navigator",
+    "extron"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 2.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 10.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Entry Level Version for 16 Endpoints",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAVigator Eng.vssx",
+      "label": "NAVigator",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1534-01-1",
+      "label": "NAV",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1Gbps Ethernet for NAV system management — connects to the NAV network. Optional PoE class 3 (802.3af) powered (4.5W)."
+    },
+    {
+      "id": "vx-60-1534-01-2",
+      "label": "LAN (OOB)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Out-of-band 1Gbps Ethernet — separate management network for control / configuration."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
+      "id": "vx-60-1534-01-s1"
+    },
+    {
+      "id": "vx-60-1534-01-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45."
+    }
+  ]
+}

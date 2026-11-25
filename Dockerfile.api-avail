@@ -28,6 +28,7 @@ ENV NODE_ENV=production \
     MIGRATIONS_DIR=/app/migrations \
     AVAIL_MIGRATIONS_DIR=/app/migrations-avail \
     AVAIL_LIBRARY_DIR=/app/library/avail \
+    AVAIL_CATALOG_DIR=/app/library/catalog \
     AVAIL_WORKLIST_FILE=/app/incoming/Library_worklist_engineers_solutions.xlsx \
     AVAIL_VENDOR_RESPONSES_FILE=/app/incoming/vendor-responses.json
 WORKDIR /app
@@ -35,7 +36,7 @@ COPY --from=builder /app/api-avail/node_modules ./node_modules
 COPY --from=builder /app/api-avail/dist ./dist
 COPY api/migrations ./migrations
 COPY api-avail/migrations ./migrations-avail
-# Curated library for `npm run import:avail` (library/avail + library/hidden.json).
+# Curated library for `npm run import:avail` (library/avail + library/hidden.json), catalog for `npm run import:catalog`.
 COPY library ./library
 # Engineers' worklist solutions (apply:worklist, export:vendor-requests), vendors' answers (apply:vendor-responses).
 COPY tools/avail/incoming ./incoming

@@ -1,0 +1,78 @@
+{
+  "id": "avail-biamp-920-01737-00002",
+  "label": "Biamp Modena Hub+",
+  "shortName": "Modena Hub+",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01737-00002",
+  "deviceType": "wireless-presentation",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01737-00001",
+  "searchTerms": [
+    "920-01737-00002",
+    "modena hub+",
+    "biamp",
+    "modena",
+    "hub+"
+  ],
+  "heightMm": 51,
+  "widthMm": 160,
+  "depthMm": 132,
+  "weightKg": 1.1,
+  "voltage": "12V DC",
+  "unitCost": 1272,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Wireless presentation hub with integrated WiFi access point",
+    "notes": "Характеристики с сайта по артикулу 920-01737-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_modena_hub_plus_may21_2648.pdf"
+    },
+    "portsMissing": "The data sheet does not state the HDMI direction; output to the room display is taken from the catalog — confirm on the panel; the two Wi-Fi AP antennas are not modelled as ports"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI to the room display (wireless presentation)"
+    },
+    {
+      "id": "p2",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1000 Mbit/s"
+    },
+    {
+      "id": "p3",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 Type-A to AV peripherals (camera, Devio SCR, USB hub)"
+    },
+    {
+      "id": "p4",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V DC, external power adapter"
+    }
+  ]
+}

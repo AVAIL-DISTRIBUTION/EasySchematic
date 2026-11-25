@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-60-2088-02",
+  "label": "Extron USB PowerPlate 411 MAAP",
+  "shortName": "USB PowerPlate 411 MAAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2088-02",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbpowerplate400",
+  "searchTerms": [
+    "60-2088-02",
+    "usb powerplate 411 maap",
+    "extron",
+    "usb",
+    "powerplate",
+    "411",
+    "maap"
+  ],
+  "heightMm": 35,
+  "widthMm": 55,
+  "depthMm": 47,
+  "weightKg": 0.5,
+  "powerDrawW": 109.5,
+  "voltage": "5V DC",
+  "thermalBtuh": 40,
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "USB-C PowerPlate MAAP",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+  },
+  "ports": []
+}

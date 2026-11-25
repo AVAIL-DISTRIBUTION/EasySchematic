@@ -1,0 +1,115 @@
+{
+  "id": "avail-extron-60-1714-52",
+  "label": "Extron DTP3 T 212 D (Black)",
+  "shortName": "DTP3 T 212 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1714-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t212d",
+  "searchTerms": [
+    "60-1714-52",
+    "dtp3 t 212 d",
+    "extron",
+    "dtp3",
+    "212"
+  ],
+  "heightMm": 68,
+  "widthMm": 89,
+  "depthMm": 51,
+  "weightKg": 0.25,
+  "powerDrawW": 6.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 21.8,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input 4K/60 DTP3 Transmitter for USB-C and HDMI with Audio Embedding – Decorator-Style Wallplate, Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 212 D Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1714-52-1",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1714-52-2",
+      "label": "USB-C In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "video input"
+    },
+    {
+      "id": "vx-60-1714-52-3",
+      "label": "DTP/HDBT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "RJ-45 to Rx"
+    },
+    {
+      "id": "vx-60-1714-52-4",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1714-52-5",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1714-52-6",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "label": "USB-C Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Control",
+      "id": "vx-60-1714-52-s1"
+    },
+    {
+      "id": "vx-60-1714-52-7",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

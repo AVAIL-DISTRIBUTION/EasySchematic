@@ -1,0 +1,53 @@
+{
+  "id": "avail-biamp-920-00026",
+  "label": "Biamp Apprimo Touch 10 UCX-PSA",
+  "shortName": "Apprimo Touch 10 UCX-PSA",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00026",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.biamp.com",
+  "searchTerms": [
+    "920-00026",
+    "apprimo touch 10 ucx-psa",
+    "biamp",
+    "apprimo",
+    "touch",
+    "ucx-psa"
+  ],
+  "heightMm": 20,
+  "widthMm": 40,
+  "depthMm": 180,
+  "powerDrawW": 60,
+  "powerCapacityW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 320,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Optional power supply accessory for Apprimo Touch 10 UCX-T supporting 65W USB-C device charging or Wi-Fi connections, 100V to 240V",
+    "notes": "Нет данных в каталоге products.biamp.com; [AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp); [AVAIL] default PSU power 60 W (AVAIL decision; not published by Biamp)",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Apprimo_Touch_10__UCX-T_Sep26_v3_14128.pdf"
+    },
+    "portsMissing": "No own data sheet; the AC input connector of the power supply is not stated."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-C Out",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "100 W USB-C power output to the Apprimo Touch 10 UCX-T"
+    }
+  ]
+}

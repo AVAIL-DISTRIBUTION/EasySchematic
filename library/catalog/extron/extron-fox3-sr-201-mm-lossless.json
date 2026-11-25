@@ -1,0 +1,119 @@
+{
+  "id": "avail-extron-60-1600-21",
+  "label": "Extron FOX3 SR 201 MM (Lossless)",
+  "shortName": "FOX3 SR 201 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1600-21",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3sr201",
+  "searchTerms": [
+    "60-1600-21",
+    "fox3 sr 201 mm",
+    "extron",
+    "fox3",
+    "201"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 203,
+  "weightKg": 0.84,
+  "powerDrawW": 21.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 59,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Lossless",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Scaling Receiver for HDMI, Audio, and Control",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3a8606d8-8b02-4543-a313-4a7ed823e6d5",
+      "label": "Extron FOX3 SR 201 MM Lossless",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Fiber",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3.5mm 5-pole captive screw, stereo balanced/unbalanced. Carries de-embedded HDMI audio or line-level.",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232 Control",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw. Host SIS control port (9600 baud default).",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232 / IR Pass-through",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL).",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front panel USB Mini-B config (USB 2.0, Ethernet-over-USB).",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-6"
+    },
+    {
+      "label": "DC 12V",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC/24W Extron Everlast PSU (100-240 VAC input).",
+      "id": "port-7"
+    }
+  ]
+}

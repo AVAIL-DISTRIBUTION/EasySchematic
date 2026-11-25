@@ -1,0 +1,85 @@
+{
+  "id": "avail-biamp-920-00308-00001",
+  "label": "Biamp Tesira EX-IN",
+  "shortName": "Tesira EX-IN",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00308-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00308-00001",
+  "searchTerms": [
+    "920-00308-00001",
+    "tesira ex-in",
+    "biamp",
+    "tesira",
+    "ex-in"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 197,
+  "weightKg": 1.4,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1808,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Tesira 4 channel mic/line input expander PoE+",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3fc68edd-639b-40c2-880d-563c86f8d524",
+      "label": "Biamp Tesira EX-IN",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p17762111396051-yxr",
+      "label": "CH 1 In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17762111396052-3zb",
+      "label": "CH 2 In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17762111396053-mxw",
+      "label": "CH 3 In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17762111396054-9rv",
+      "label": "CH 4 In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17762111396050-9on",
+      "label": "AVB / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    }
+  ]
+}

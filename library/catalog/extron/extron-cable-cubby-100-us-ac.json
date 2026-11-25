@@ -1,0 +1,82 @@
+{
+  "id": "avail-extron-60-1933-01",
+  "label": "Extron Cable Cubby 100 US AC",
+  "shortName": "Cable Cubby 100 US AC",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1933-01",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby100",
+  "searchTerms": [
+    "60-1933-01",
+    "cable cubby 100 us ac",
+    "extron",
+    "cable",
+    "cubby",
+    "100"
+  ],
+  "heightMm": 69,
+  "widthMm": 71,
+  "depthMm": 88,
+  "weightKg": 0.9,
+  "powerDrawW": 17.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-maap"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-maap"
+    ],
+    "description": "Cable Cubby 100 US AC, Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "9ec57fe2-ced6-4202-be1b-7ca59f7f3549",
+      "label": "Extron Cable Cubby 100 US AC",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "id": "port-0",
+      "section": "Power"
+    },
+    {
+      "label": "AC Outlet 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-1"
+    },
+    {
+      "label": "AC Outlet 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-2"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "avail-biamp-930-00908-00004",
+  "label": "Biamp IP6-1122/64W",
+  "shortName": "IP6-1122/64W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00908-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00908-00004",
+  "searchTerms": [
+    "930-00908-00004",
+    "ip6-1122/64w",
+    "biamp",
+    "ip6-1122",
+    "64w"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 29.5,
+  "unitCost": 2586,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Medium Power 12-Inch 2-Way 60 X 40 White",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_ip6-1122-64_nov2023_2321.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Passive In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 6-position (two blocks); passive (single-amp) mode, internal crossover"
+    },
+    {
+      "id": "p2",
+      "label": "LF In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 6-position (two blocks); biamp mode with external DSP"
+    },
+    {
+      "id": "p3",
+      "label": "HF In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 6-position (two blocks); biamp mode with external DSP"
+    },
+    {
+      "id": "p4",
+      "label": "Passive Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 6-position (two blocks); parallel loop-thru of the passive input"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "avail-extron-60-2026-02",
+  "label": "Extron XPA U 2004 FX (ECO Standby)",
+  "shortName": "XPA U 2004 FX",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2026-02",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau2004fx",
+  "searchTerms": [
+    "60-2026-02",
+    "xpa u 2004 fx",
+    "extron",
+    "xpa",
+    "2004"
+  ],
+  "heightMm": 44,
+  "widthMm": 440,
+  "depthMm": 419,
+  "weightKg": 4.6,
+  "powerDrawW": 157.2,
+  "voltage": "100V AC",
+  "thermalBtuh": 195,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "ECO Standby",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "4 Ch Flexible Output Amp w/ ECO Standby, 200 Watts",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ed9b88a0-8d2f-40fc-9622-74b11efe9a10",
+      "label": "Extron XPA U 2004 FX",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-4",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-5",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-6",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-7",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Standby Control",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
+      "id": "port-8"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-9"
+    }
+  ]
+}

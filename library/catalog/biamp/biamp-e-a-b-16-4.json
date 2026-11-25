@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-930-10854-00002",
+  "label": "Biamp E-A-B-16-4",
+  "shortName": "E-A-B-16-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10854-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10854-00002",
+  "searchTerms": [
+    "930-10854-00002",
+    "e-a-b-16-4",
+    "biamp"
+  ],
+  "heightMm": 83,
+  "widthMm": 83,
+  "depthMm": 64,
+  "weightKg": 0.16,
+  "unitCost": 630,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Standard Emitters, Black, 4 pack, with 4 x 16 ft black plenum rated cables",
+    "notes": "Эмиттер звуковой маскировки; Продаётся упаковкой по 4 шт.; цена в прайсе — за упаковку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Cambridge_Qt_Emitters_Dec24_12943.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Emitter In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rj45",
+      "notes": "Passive Qt emitter; RJ-45, daisy chain over category cable from the Qt controller"
+    },
+    {
+      "id": "p2",
+      "label": "Emitter Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "RJ-45 to the next emitter; wiring shifts pairs so emitters sequence between channels"
+    }
+  ]
+}

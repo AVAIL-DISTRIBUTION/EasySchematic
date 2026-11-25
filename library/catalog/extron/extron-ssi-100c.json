@@ -1,0 +1,91 @@
+{
+  "id": "avail-extron-60-1961-01",
+  "label": "Extron SSI 100C",
+  "shortName": "SSI 100C",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1961-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ssi100",
+  "searchTerms": [
+    "60-1961-01",
+    "ssi 100c",
+    "extron",
+    "ssi",
+    "100c"
+  ],
+  "heightMm": 78,
+  "widthMm": 229,
+  "depthMm": 74,
+  "weightKg": 0.45,
+  "powerDrawW": 9.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 25.7,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "System Status Indicators",
+    "notes": "[AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Room Scheduling Engineering Drawings/Room Scheduling - MISC Eng.vssx",
+      "label": "SSI 100C",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1961-01-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power."
+    },
+    {
+      "id": "vx-60-1961-01-2",
+      "label": "Digital In 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw."
+    },
+    {
+      "id": "vx-60-1961-01-3",
+      "label": "Digital In 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1961-01-4",
+      "label": "+V Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "+24VDC, 50mA fixed power output for driving a downstream sensor. (2-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1961-01-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

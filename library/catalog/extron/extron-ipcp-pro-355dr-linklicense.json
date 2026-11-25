@@ -1,0 +1,201 @@
+{
+  "id": "avail-extron-60-1433-01a",
+  "label": "Extron IPCP Pro 355DR (LinkLicense)",
+  "shortName": "IPCP Pro 355DR",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1433-01A",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro355dr",
+  "searchTerms": [
+    "60-1433-01a",
+    "ipcp pro 355dr",
+    "extron",
+    "ipcp",
+    "pro",
+    "355dr"
+  ],
+  "heightMm": 90,
+  "widthMm": 160,
+  "depthMm": 58,
+  "weightKg": 0.3,
+  "powerDrawW": 8.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 9.3,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "LinkLicense",
+    "rackFormSource": "Non-rack",
+    "description": "IP Link® Pro Control Processor w/DIN Rail and LinkLicense for User Interfaces Upgrade",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ba470e64-dd41-4860-abed-e57abe08da5a",
+      "label": "Extron IPCP Pro 355DR LL",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Auto-negotiating 10/100 Base-T Ethernet (control + management).",
+      "id": "port-0"
+    },
+    {
+      "label": "AV LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Isolated AV-LAN switch port (separate broadcast domain from primary LAN; for connecting AV devices like touchpanels, switchers, etc).",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232/422/485 Port 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 / RS-422 / RS-485 on a 5-pole 3.5mm captive screw (selectable via software).",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232 Port 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232 Port 3",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-4"
+    },
+    {
+      "label": "IR/Serial 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "Programmable IR (carrier or non-carrier, up to 300 kHz) or unidirectional RS-232 ±5V output. 3.5mm captive screw (single-channel: 2-pole; multi-channel: shared on a 4 or 5-pole captive).",
+      "id": "port-5"
+    },
+    {
+      "label": "IR/Serial 2",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "Programmable IR (carrier or non-carrier, up to 300 kHz) or unidirectional RS-232 ±5V output. 3.5mm captive screw (single-channel: 2-pole; multi-channel: shared on a 4 or 5-pole captive).",
+      "id": "port-6"
+    },
+    {
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
+      "id": "port-11"
+    },
+    {
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
+      "id": "port-12"
+    },
+    {
+      "label": "Relay 3",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
+      "id": "port-13"
+    },
+    {
+      "label": "Relay 4",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
+      "id": "port-14"
+    },
+    {
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
+      "id": "port-7"
+    },
+    {
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
+      "id": "port-8"
+    },
+    {
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
+      "id": "port-9"
+    },
+    {
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
+      "id": "port-10"
+    },
+    {
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "Extron eBUS differential serial bus on a 4 or 5-pole captive screw (carries +12V/+/-/G). Bus-powers downstream EBP button panels. Modeled as `serial` — no `ebus`/`acp` SignalType in src/types.ts.",
+      "id": "port-15"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC PSU brick (100-240 VAC input).",
+      "id": "port-16"
+    }
+  ]
+}

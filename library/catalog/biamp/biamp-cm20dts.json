@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-910-00631",
+  "label": "Biamp CM20DTS",
+  "shortName": "CM20DTS",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00631",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00631",
+  "searchTerms": [
+    "910-00631",
+    "cm20dts",
+    "biamp"
+  ],
+  "heightMm": 223,
+  "widthMm": 223,
+  "depthMm": 84,
+  "weightKg": 2,
+  "unitCost": 160,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4.25” two-way thin edge design ceiling loudspeaker 100-70 volt / 20 watts, 16 ohms / 60 watts, white, front frame integrated neodymium magnets and shallow back can (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_cm20dts_sep23_2109.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 70 V / 100 V; 4-way Euroblock with permanent pass-through"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Pass-through on the same connector"
+    }
+  ]
+}

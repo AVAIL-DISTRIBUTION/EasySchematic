@@ -1,0 +1,50 @@
+{
+  "id": "avail-extron-60-1311-03",
+  "label": "Extron SF 3CT LP",
+  "shortName": "SF 3CT LP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1311-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf3ctlp",
+  "searchTerms": [
+    "60-1311-03",
+    "sf 3ct lp",
+    "extron",
+    "3ct"
+  ],
+  "heightMm": 112,
+  "widthMm": 226,
+  "depthMm": 226,
+  "weightKg": 1.6,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Full Range 3\" Ceiling Speakers, Low Profile, Complete Pair",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d61cdd78-19d9-40dd-a64b-7eaf64a20d2e",
+      "label": "Extron SF 3CT LP",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

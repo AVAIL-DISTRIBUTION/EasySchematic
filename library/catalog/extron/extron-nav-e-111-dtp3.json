@@ -1,0 +1,93 @@
+{
+  "id": "avail-extron-60-1525-16",
+  "label": "Extron NAV E 111 DTP3",
+  "shortName": "NAV E 111 DTP3",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1525-16",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave111dtp3",
+  "searchTerms": [
+    "60-1525-16",
+    "nav e 111 dtp3",
+    "extron",
+    "nav",
+    "111",
+    "dtp3"
+  ],
+  "heightMm": 42,
+  "widthMm": 222,
+  "depthMm": 267,
+  "weightKg": 1.2,
+  "powerDrawW": 50.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 105.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G DTP3 Encoder",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Encod Eng.vssx",
+      "label": "NAV E 111 DTP3",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1525-16-1",
+      "label": "DTP3 In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "DTP3 input from a DTP3 Tx wallplate over CAT6 — carries HDMI video, audio (PCM/analog), RS-232, IR, and CEC pass-through. Up to 100m at 4K."
+    },
+    {
+      "id": "vx-60-1525-16-2",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through."
+    },
+    {
+      "id": "vx-60-1525-16-3",
+      "label": "NAV 1G (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1Gbps Ethernet carrying PURE3 video / audio over IP / AES67 / management."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
+      "id": "vx-60-1525-16-s1"
+    },
+    {
+      "id": "vx-60-1525-16-4",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal 100-240VAC mains PSU."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "avail-extron-70-103-27",
+  "label": "Extron Two XLR 3-pin Male to Solder Cups - Neutrik (AAP Double, White)",
+  "shortName": "Two XLR 3-pin Male to Solder Cup…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-103-27",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2xlr3",
+  "searchTerms": [
+    "70-103-27",
+    "two xlr 3-pin male to solder cup…",
+    "extron",
+    "two",
+    "xlr",
+    "3-pin",
+    "male"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "AAP Double, White",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - White: Two XLR 3-pin Male to Solder Cups - Neutrik",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap2xlr3",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p2",
+      "label": "XLR In 1 (Rear)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "solder-cup",
+      "notes": "passive"
+    },
+    {
+      "id": "p4",
+      "label": "XLR In 2 (Rear)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "solder-cup"
+    },
+    {
+      "id": "p1",
+      "label": "XLR Out 1 (Front)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3"
+    },
+    {
+      "id": "p3",
+      "label": "XLR Out 2 (Front)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3"
+    }
+  ]
+}

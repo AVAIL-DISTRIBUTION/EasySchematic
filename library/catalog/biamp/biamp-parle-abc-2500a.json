@@ -1,0 +1,70 @@
+{
+  "id": "avail-biamp-920-01968-00002",
+  "label": "Biamp Parlé ABC 2500a",
+  "shortName": "Parlé ABC 2500a",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01968-00002",
+  "deviceType": "audio-bar",
+  "category": "UC / Speakerphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01968-00001",
+  "searchTerms": [
+    "920-01968-00002",
+    "parlé abc 2500a",
+    "biamp",
+    "parl",
+    "abc",
+    "2500a"
+  ],
+  "heightMm": 100,
+  "widthMm": 940,
+  "depthMm": 64,
+  "weightKg": 4.4,
+  "powerDrawW": 60,
+  "voltage": "12V DC / USB-C PD",
+  "unitCost": 1700,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Parlé Conferencing Audio Bar with ALS port",
+    "notes": "Характеристики с сайта по артикулу 920-01968-00001; [AVAIL] from Biamp documentation: PS-12-60 or 60 W USB-C PD",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/parle_abc_2500a_biamp_data_sheet_feb24_9359.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "ALS Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm mono balanced, assistive listening feed"
+    },
+    {
+      "id": "p2",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 3.0 to host: USB audio; locking; can power the bar if the host supplies 60 W (USB-C PD)"
+    },
+    {
+      "id": "p3",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12VDC, 4.74 A, external PSU PS-12-60 (100-240VAC), screw-locking; needed if the host cannot supply 60 W over USB-C"
+    }
+  ]
+}

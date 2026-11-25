@@ -1,0 +1,70 @@
+{
+  "id": "avail-biamp-910-00253",
+  "label": "Biamp Vocia WS-4",
+  "shortName": "Vocia WS-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00253",
+  "deviceType": "wired-mic",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00253",
+  "searchTerms": [
+    "910-00253",
+    "vocia ws-4",
+    "biamp",
+    "vocia",
+    "ws-4"
+  ],
+  "heightMm": 135,
+  "widthMm": 302,
+  "depthMm": 48,
+  "weightKg": 1.2,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 2215,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "paging-station",
+    "description": "Vocia Wall-mounted Paging Station, 4 buttons with hand-held microphone",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_ws-4_sep20_9089.pdf"
+    },
+    "portsMissing": "Aux Power connector type is not named (only 'two-way connector'); connectorType 'other'."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Auxiliary",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rj45",
+      "notes": "Not Ethernet: VAM-1 / VPSI-1 accessory port; balanced line in -10 dB, PTT, RS-232 57600 (VTP), 12V DC out 50 mA"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Network (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "CobraNet audio, control and power; PoE 802.3af class 2"
+    },
+    {
+      "id": "p3",
+      "label": "Aux Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "Two-way connector, 24V DC 6 W; main or redundant to PoE (links CN11/CN12 removed)"
+    }
+  ]
+}

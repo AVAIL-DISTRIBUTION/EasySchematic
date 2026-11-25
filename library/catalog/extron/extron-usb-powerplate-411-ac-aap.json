@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-60-2087-02",
+  "label": "Extron USB PowerPlate 411 AC AAP",
+  "shortName": "USB PowerPlate 411 AC AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2087-02",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbpowerplate400",
+  "searchTerms": [
+    "60-2087-02",
+    "usb powerplate 411 ac aap",
+    "extron",
+    "usb",
+    "powerplate",
+    "411",
+    "aap"
+  ],
+  "heightMm": 35,
+  "widthMm": 88,
+  "depthMm": 51,
+  "weightKg": 1,
+  "powerDrawW": 109.5,
+  "voltage": "5V DC",
+  "thermalBtuh": 40,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "USB-C+USB-A PowerPlate AC AAP",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

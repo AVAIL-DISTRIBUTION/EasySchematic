@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-70-1183-01",
+  "label": "Extron Cable Cubby 650 UT",
+  "shortName": "Cable Cubby 650 UT",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1183-01",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby650ut",
+  "searchTerms": [
+    "70-1183-01",
+    "cable cubby 650 ut",
+    "extron",
+    "cable",
+    "cubby",
+    "650"
+  ],
+  "heightMm": 102,
+  "widthMm": 178,
+  "depthMm": 165,
+  "weightKg": 0.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Black Under-table Cable Access Enclosure",
+    "notes": "[AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "number of extron-cubby-aap openings: not drawn in the Extron stencil and not in the description"
+  },
+  "ports": []
+}

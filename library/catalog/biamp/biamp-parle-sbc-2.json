@@ -1,0 +1,105 @@
+{
+  "id": "avail-biamp-920-01869-00002",
+  "label": "Biamp Parlé SBC 2",
+  "shortName": "Parlé SBC 2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01869-00002",
+  "deviceType": "audio-bar",
+  "category": "UC / Speakerphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01869-00001",
+  "searchTerms": [
+    "920-01869-00002",
+    "parlé sbc 2",
+    "biamp",
+    "parl",
+    "sbc"
+  ],
+  "heightMm": 130,
+  "widthMm": 1018,
+  "depthMm": 75,
+  "weightKg": 4.5,
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 320,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Conferencing speaker bar",
+    "notes": "Характеристики с сайта по артикулу 920-01869-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_parle_sbc_2_feb22_2723.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI ARC",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 1.4 with ARC (audio from the display) and CEC; 24-bit PCM stereo"
+    },
+    {
+      "id": "p2",
+      "label": "Line In (Balanced)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Stereo, 5-pole 5.08 mm pluggable Euroblock; max 2 Vrms; wake on signal"
+    },
+    {
+      "id": "p3",
+      "label": "RCA In L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo input, left; max 1 Vrms; wake on signal"
+    },
+    {
+      "id": "p4",
+      "label": "RCA In R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo input, right; max 1 Vrms; wake on signal"
+    },
+    {
+      "id": "p5",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "3-pin Euroblock (Rx, Tx, G), 19200 8-N-1"
+    },
+    {
+      "id": "p6",
+      "label": "USB Audio In",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 2.0 Type-B audio input, 24-bit PCM stereo"
+    },
+    {
+      "id": "p7",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec-c7",
+      "notes": "IEC C8 inlet, built-in PSU 100-240VAC 50/60 Hz, < 60 W"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "avail-extron-60-1997-02",
+  "label": "Extron TLP Pro 835T",
+  "shortName": "TLP Pro 835T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1997-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro835t",
+  "searchTerms": [
+    "60-1997-02",
+    "tlp pro 835t",
+    "extron",
+    "tlp",
+    "pro",
+    "835t"
+  ],
+  "heightMm": 124,
+  "widthMm": 201,
+  "depthMm": 71,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "8\" Tabletop TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 835T Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1997-02-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1997-02-2",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    }
+  ]
+}

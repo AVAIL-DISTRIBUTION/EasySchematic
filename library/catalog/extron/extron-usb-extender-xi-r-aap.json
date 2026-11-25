@@ -1,0 +1,97 @@
+{
+  "id": "avail-extron-60-1965-22",
+  "label": "Extron USB Extender xi R AAP",
+  "shortName": "USB Extender xi R AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1965-22",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usb-extender-xi",
+  "searchTerms": [
+    "60-1965-22",
+    "usb extender xi r aap",
+    "extron",
+    "usb",
+    "extender",
+    "aap"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 2.2,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 7.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Extenders Eng.vssx",
+      "label": "USB Extender xi R AAP",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1965-22-1",
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1965-22-2",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1965-22-3",
+      "label": "USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1965-22-4",
+      "label": "USB 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1965-22-5",
+      "label": "USB 5",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1965-22-6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-pole captive screw — Extron convention, verify"
+    }
+  ]
+}

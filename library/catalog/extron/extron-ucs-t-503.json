@@ -1,0 +1,186 @@
+{
+  "id": "avail-extron-60-1798-12",
+  "label": "Extron UCS T 503",
+  "shortName": "UCS T 503",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1798-12",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs504",
+  "searchTerms": [
+    "60-1798-12",
+    "ucs t 503",
+    "extron",
+    "ucs",
+    "503"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1.9,
+  "powerDrawW": 92.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 102.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input Collaboration Switcher Transmitter",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "7a4a8535-f6fa-4c65-8d74-9bf9a9b20a9a",
+      "label": "Extron UCS T 503",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C In (DP Alt, 60W PD)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "id": "port-2",
+      "notes": "DP Alt + USB host + 60 W PD"
+    },
+    {
+      "label": "DTP3 Out (RJ-45 to Rx)",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out (loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-C Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Control",
+      "id": "port-12"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-13"
+    },
+    {
+      "label": "Contact Closure",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-14"
+    },
+    {
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-15"
+    },
+    {
+      "label": "USB-B Host In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-B Host In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-A 2.0 Out 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 2.0 Out 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-A 2.0 Out 3",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 3.2 Link to Rx",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-10",
+      "notes": "10 Gbps"
+    },
+    {
+      "label": "USB Twisted Pair Ext (to Rx)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "USB",
+      "id": "port-11"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-16"
+    }
+  ]
+}

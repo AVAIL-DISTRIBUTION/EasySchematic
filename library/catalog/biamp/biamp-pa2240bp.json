@@ -1,0 +1,148 @@
+{
+  "id": "avail-biamp-920-01451-00002",
+  "label": "Biamp PA2240BP",
+  "shortName": "PA2240BP",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01451-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01451-00002",
+  "searchTerms": [
+    "920-01451-00002",
+    "pa2240bp",
+    "biamp"
+  ],
+  "heightMm": 88,
+  "widthMm": 483,
+  "depthMm": 411,
+  "weightKg": 21.7,
+  "powerDrawW": 1050,
+  "voltage": "230V AC",
+  "unitCost": 800,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "2-channel 100 volt power amplifier, 2 x 240 watts bridgeable into 1 x 480 watts with program and priority input per channel, 24V priority output, tone control, 230V AC - 24V DC",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_pa2240bp_9059.pdf"
+    },
+    "portsMissing": "Not stated: speaker output connector type (terminals, set to terminal-block) and 24 V DC emergency input connector (set to other)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Program In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 1 balanced line 0 dB / 10 kOhm, Euroblock (+ - G); bridge mode uses channel 1"
+    },
+    {
+      "id": "p2",
+      "label": "Priority In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 1 balanced line priority input on the priority control connector (Euroblock)"
+    },
+    {
+      "id": "p3",
+      "label": "Program In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 2 balanced line 0 dB / 10 kOhm, Euroblock (+ - G); bridge mode uses channel 1"
+    },
+    {
+      "id": "p4",
+      "label": "Priority In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 2 balanced line priority input on the priority control connector (Euroblock)"
+    },
+    {
+      "id": "p5",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Terminals COM, 4 ohm, 35/50/70/100 V, 240 W; use one tap only; bridge across channels 1+2 for 480 W"
+    },
+    {
+      "id": "p6",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Terminals COM, 4 ohm, 35/50/70/100 V, 240 W; use one tap only; bridge across channels 1+2 for 480 W"
+    },
+    {
+      "id": "p7",
+      "label": "Priority Contact 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Shorting the contact activates priority input 1 and the 24 V priority output; on the priority control connector"
+    },
+    {
+      "id": "p8",
+      "label": "Priority Out 1",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "24 V DC, 0.6 A max while priority is active, for attenuator priority relays; on the priority control connector (only channel 1 in bridge mode)"
+    },
+    {
+      "id": "p9",
+      "label": "Priority Contact 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Shorting the contact activates priority input 2 and the 24 V priority output; on the priority control connector"
+    },
+    {
+      "id": "p10",
+      "label": "Priority Out 2",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "24 V DC, 0.6 A max while priority is active, for attenuator priority relays; on the priority control connector"
+    },
+    {
+      "id": "p11",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "230 V AC, standard IEC power cord; 8.0 AT fuse in the socket"
+    },
+    {
+      "id": "p12",
+      "label": "DC In 24V",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "24 V DC emergency battery / supply input, 6.5 A per channel (13 A program); connector type not stated"
+    }
+  ]
+}

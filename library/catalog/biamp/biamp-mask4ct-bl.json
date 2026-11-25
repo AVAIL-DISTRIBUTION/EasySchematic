@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-930-00637-00003",
+  "label": "Biamp MASK4CT-BL",
+  "shortName": "MASK4CT-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00637-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00637-00003",
+  "searchTerms": [
+    "930-00637-00003",
+    "mask4ct-bl",
+    "biamp"
+  ],
+  "heightMm": 238,
+  "widthMm": 144,
+  "depthMm": 144,
+  "weightKg": 2.3,
+  "unitCost": 140,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4.25\" small design two-way surface mount loudspeaker, 70 - 100 volt / 20 watts or 16 ohms / 70 watts, Black, CLICKMOUNT bracket and safety cable included (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_mask4ct_august23_2119.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 70 V / 100 V; lever-action input terminals at the ClickMount bracket"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Lever-action output terminals at the bracket"
+    }
+  ]
+}

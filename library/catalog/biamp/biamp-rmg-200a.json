@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-00892-00001",
+  "label": "Biamp RMG-200A",
+  "shortName": "RMG-200A",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00892-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00892-00001",
+  "searchTerms": [
+    "930-00892-00001",
+    "rmg-200a",
+    "biamp"
+  ],
+  "heightMm": 248,
+  "widthMm": 448,
+  "depthMm": 635,
+  "weightKg": 9.5,
+  "unitCost": 1575,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Voice Range Announcement System",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_rmg-200a_2542.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 12 ft (4 m) 16 AWG 2-conductor SJOW cable through gland nut"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "avail-biamp-920-01902-00002",
+  "label": "Biamp Workplace Bridge",
+  "shortName": "Workplace Bridge",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01902-00002",
+  "deviceType": "gateway",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01902-00001",
+  "searchTerms": [
+    "920-01902-00002",
+    "workplace bridge",
+    "biamp",
+    "workplace",
+    "bridge"
+  ],
+  "heightMm": 43.65,
+  "widthMm": 482.6,
+  "depthMm": 168.57,
+  "weightKg": 2.4,
+  "powerDrawW": 170,
+  "voltage": "100-240V AC",
+  "unitCost": 5300,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Network appliance to facilitate Workplace connection",
+    "notes": "Шлюз Biamp Workplace; категорию проверить; Характеристики с сайта по артикулу 920-01902-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Workplace_Bridge_Apr25_13346.pdf"
+    },
+    "portsMissing": "The mains inlet type is not named (connector 'other')"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1000BASE-T: AV LAN / internet path for Biamp Workplace"
+    },
+    {
+      "id": "p2",
+      "label": "Ethernet 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1000BASE-T; function to be enabled in a future update"
+    },
+    {
+      "id": "p3",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "100-240 V AC, power cord included"
+    }
+  ]
+}

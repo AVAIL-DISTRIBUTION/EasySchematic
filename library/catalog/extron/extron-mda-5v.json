@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-446-01",
+  "label": "Extron MDA 5V",
+  "shortName": "MDA 5V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-446-01",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mda5v",
+  "searchTerms": [
+    "60-446-01",
+    "mda 5v",
+    "extron",
+    "mda"
+  ],
+  "heightMm": 42,
+  "widthMm": 110,
+  "depthMm": 76,
+  "weightKg": 0.2,
+  "powerDrawW": 1.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 4.1,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Five Output Composite Video Distribution Amplifier",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

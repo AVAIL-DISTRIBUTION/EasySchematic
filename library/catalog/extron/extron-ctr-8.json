@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1408-01",
+  "label": "Extron CTR 8",
+  "shortName": "CTR 8",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1408-01",
+  "deviceType": "converter",
+  "category": "AV distribution / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ctr8",
+  "searchTerms": [
+    "60-1408-01",
+    "ctr 8",
+    "extron",
+    "ctr"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.3,
+  "powerDrawW": 2.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 4.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Contact closure to RS-232 Converter for Extron switchers",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

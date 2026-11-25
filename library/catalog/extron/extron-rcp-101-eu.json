@@ -1,0 +1,69 @@
+{
+  "id": "avail-extron-60-1598-32",
+  "label": "Extron RCP 101 EU",
+  "shortName": "RCP 101 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1598-32",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/rcp101",
+  "searchTerms": [
+    "60-1598-32",
+    "rcp 101 eu",
+    "extron",
+    "rcp",
+    "101"
+  ],
+  "heightMm": 114,
+  "widthMm": 71,
+  "depthMm": 10,
+  "weightKg": 0.5,
+  "powerDrawW": 3.2,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 2.4,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
+    "description": "Remote Control Panel - Flex55 and EU",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - H264 Eng.vssx",
+      "label": "RCP 101 EU",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1598-32-1",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1598-32-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

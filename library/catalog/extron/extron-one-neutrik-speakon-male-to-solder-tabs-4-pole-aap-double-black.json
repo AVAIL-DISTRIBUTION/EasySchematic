@@ -1,0 +1,58 @@
+{
+  "id": "avail-extron-70-323-12",
+  "label": "Extron One Neutrik Speakon Male to Solder Tabs - 4 Pole (AAP Double, Black)",
+  "shortName": "One Neutrik Speakon Male to Sold…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-323-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aapinsmtost4pc",
+  "searchTerms": [
+    "70-323-12",
+    "one neutrik speakon male to sold…",
+    "extron",
+    "one",
+    "neutrik",
+    "speakon",
+    "male"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "AAP Double, Black",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - Black: One Neutrik Speakon Male to Solder Tabs - 4 Pole",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aapinsmtost4pc",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p2",
+      "label": "Speaker In (Rear)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "solder-cup",
+      "notes": "passive"
+    },
+    {
+      "id": "p1",
+      "label": "Speaker Out (Front)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "speakon"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "avail-extron-60-1998-102",
+  "label": "Extron TLS 1035M (Black)",
+  "shortName": "TLS 1035M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1998-102",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Room Scheduling",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tls1035m",
+  "searchTerms": [
+    "60-1998-102",
+    "tls 1035m",
+    "extron",
+    "tls",
+    "1035m"
+  ],
+  "heightMm": 158,
+  "widthMm": 247,
+  "depthMm": 32,
+  "weightKg": 0.77,
+  "powerDrawW": 7.28,
+  "voltage": "9V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 31.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

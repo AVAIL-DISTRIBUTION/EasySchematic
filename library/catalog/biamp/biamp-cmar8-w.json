@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-01565",
+  "label": "Biamp CMAR8-W",
+  "shortName": "CMAR8-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01565",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01565",
+  "searchTerms": [
+    "910-01565",
+    "cmar8-w",
+    "biamp"
+  ],
+  "heightMm": 220,
+  "widthMm": 220,
+  "depthMm": 76,
+  "weightKg": 1.5,
+  "unitCost": 153,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8\" two-way built-in marine speaker 8 ohms / 100 watts, IP65, white",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not name the input connector; ports wait for the manual or the panel"
+  },
+  "ports": []
+}

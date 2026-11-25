@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-920-02276-00002",
+  "label": "Biamp EasyConnect MPX 250 EXT 30",
+  "shortName": "EasyConnect MPX 250 EXT 30",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02276-00002",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-02276-00001",
+  "searchTerms": [
+    "920-02276-00002",
+    "easyconnect mpx 250 ext 30",
+    "biamp",
+    "easyconnect",
+    "mpx",
+    "250",
+    "ext"
+  ],
+  "weightKg": 0.38,
+  "powerDrawW": 60,
+  "voltage": "12V DC",
+  "unitCost": 1484,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Wall side extension system - 30 ft (10m) for EasyConnect MPX 250",
+    "notes": "Характеристики с сайта по артикулу 920-02276-00001; 60 Вт — штатный БП 12 V 5 A; опционально 20 V 10 A (200 Вт); [AVAIL] room-mounted (mounted behind the display) — dimensions optional",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: The data sheet does not say which panel USB-C is the 'USB-C Input Port' (up to 100 W); EXT In assumed to take the Link cable"
+  },
+  "ports": []
+}

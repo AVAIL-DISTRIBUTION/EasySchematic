@@ -1,0 +1,122 @@
+{
+  "id": "avail-extron-60-1587-52",
+  "label": "Extron DTP2 T 212",
+  "shortName": "DTP2 T 212",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1587-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp2t212",
+  "searchTerms": [
+    "60-1587-52",
+    "dtp2 t 212",
+    "extron",
+    "dtp2",
+    "212"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.45,
+  "powerDrawW": 10.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 28,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Input 4K/60 HDMI Switcher with Integrated DTP2 Transmitter and HDMI Output",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP2 Switchers Eng.vssx",
+      "label": "DTP2 T 212",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1587-52-1",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1587-52-2",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1587-52-3",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1587-52-4",
+      "label": "DTP/HDBT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1587-52-5",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1587-52-6",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1587-52-7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1587-52-8",
+      "label": "Contact/Tally",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "contact inputs and tally outputs; 8-pole captive screw"
+    },
+    {
+      "id": "vx-60-1587-52-9",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

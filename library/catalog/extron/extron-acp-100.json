@@ -1,0 +1,62 @@
+{
+  "id": "avail-extron-60-1643-03",
+  "label": "Extron ACP 100",
+  "shortName": "ACP 100",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1643-03",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acp100",
+  "searchTerms": [
+    "60-1643-03",
+    "acp 100",
+    "extron",
+    "acp",
+    "100"
+  ],
+  "heightMm": 114,
+  "widthMm": 117,
+  "depthMm": 8,
+  "weightKg": 0.2,
+  "powerDrawW": 0.5,
+  "thermalBtuh": 1.7,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Audio Control Panel with Volume and 6 Control Buttons – US 2-Gang",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Control Panels Eng.vssx",
+      "label": "ACP 100",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1643-03-1",
+      "label": "ACP Bus 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "Extron ACP differential bus on a 4-pole 3.5mm captive screw — bus-powered (+12VDC) and bus-controlled. Daisy-chain to other ACP panels via the loop port.; bus-powered (ACP) (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1643-03-2",
+      "label": "ACP Bus 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "Loop-through to the next ACP panel in a daisy chain. (4-pole captive screw)"
+    }
+  ]
+}

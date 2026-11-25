@@ -1,0 +1,100 @@
+{
+  "id": "avail-extron-60-2040-01",
+  "label": "Extron NAV E 121",
+  "shortName": "NAV E 121",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2040-01",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave121",
+  "searchTerms": [
+    "60-2040-01",
+    "nav e 121",
+    "extron",
+    "nav",
+    "121"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.38,
+  "powerDrawW": 13.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 44.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "1G HDMI Compact Encoder",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Encod Eng.vssx",
+      "label": "NAV E 121",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2040-01-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-2040-01-2",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through."
+    },
+    {
+      "id": "vx-60-2040-01-3",
+      "label": "NAV 1G (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC)."
+    },
+    {
+      "id": "vx-60-2040-01-4",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/Gnd). (5-pole captive screw)"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Configuration",
+      "notes": "Front-panel USB-C for Ethernet-over-USB device configuration.",
+      "id": "vx-60-2040-01-s1"
+    },
+    {
+      "id": "vx-60-2040-01-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45."
+    }
+  ]
+}

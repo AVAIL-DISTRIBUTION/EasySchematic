@@ -1,0 +1,59 @@
+{
+  "id": "avail-biamp-910-01874",
+  "label": "Biamp Apprimo Touch 4",
+  "shortName": "Apprimo Touch 4",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01874",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01874",
+  "searchTerms": [
+    "910-01874",
+    "apprimo touch 4",
+    "biamp",
+    "apprimo",
+    "touch"
+  ],
+  "heightMm": 115,
+  "widthMm": 77,
+  "depthMm": 41,
+  "weightKg": 0.16,
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 7,
+  "unitCost": 1052,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4\" touch panel, black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_apprimo_touch_4_oct21_1959.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "PoE 802.3at class 2, 7 W"
+    },
+    {
+      "id": "p2",
+      "label": "Mini USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-mini",
+      "notes": "USB 2.0; firmware update; USB-OTG adapter included"
+    }
+  ]
+}

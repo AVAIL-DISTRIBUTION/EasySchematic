@@ -1,0 +1,50 @@
+{
+  "id": "avail-extron-60-1312-03",
+  "label": "Extron SF 26X",
+  "shortName": "SF 26X",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1312-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf26x",
+  "searchTerms": [
+    "60-1312-03",
+    "sf 26x",
+    "extron",
+    "26x"
+  ],
+  "heightMm": 75,
+  "widthMm": 229,
+  "depthMm": 229,
+  "weightKg": 1.2,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "6.5\" 2-Way Ceiling Spkrs, 8 Ohm, Pair",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "b77e088c-350a-4023-a275-47b331ae6ec2",
+      "label": "Extron SF 26X",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

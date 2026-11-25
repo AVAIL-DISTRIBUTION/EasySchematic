@@ -1,0 +1,76 @@
+{
+  "id": "avail-extron-70-1117-01",
+  "label": "Extron Quantum IN4HDMI",
+  "shortName": "Quantum IN4HDMI",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1117-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "70-1117-01",
+    "quantum in4hdmi",
+    "extron",
+    "quantum",
+    "in4hdmi"
+  ],
+  "slotFamily": "extron-quantum-ultra",
+  "_avail": {
+    "status": "ports-filled",
+    "cardFamilies": [
+      "extron-quantum-ultra",
+      "extron-quantum-ultra-2"
+    ],
+    "deviceTypeSource": "card (extron-quantum-ultra, extron-quantum-ultra-2)",
+    "description": "Four-channel HDMI Input Card for Quantum Ultra",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1ea6c4dd-96de-4403-b037-2ddfafb1cadf",
+      "label": "Extron Quantum IN4HDMI",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    }
+  ]
+}

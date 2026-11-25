@@ -1,0 +1,78 @@
+{
+  "id": "avail-extron-60-1782-03",
+  "label": "Extron AC+USB 311 EU",
+  "shortName": "AC+USB 311 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1782-03",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb300",
+  "searchTerms": [
+    "60-1782-03",
+    "ac+usb 311 eu",
+    "extron",
+    "ac+usb",
+    "311"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 152,
+  "weightKg": 1.1,
+  "powerDrawW": 45,
+  "voltage": "12V DC",
+  "thermalBtuh": 29.6,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "AC+USB-C+USB-A, EU",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "fa7056a8-506b-42f0-ae7d-0a5be7fbf761",
+      "label": "Extron AC+USB 311 EU",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "USB Charging (Type C, PD)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Charging (Type A)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "AC Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "port-1"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "avail-extron-60-1533-12",
+  "label": "Extron DTP T MK 4K 231",
+  "shortName": "DTP T MK 4K 231",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1533-12",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptmk4k231",
+  "searchTerms": [
+    "60-1533-12",
+    "dtp t mk 4k 231",
+    "extron",
+    "dtp",
+    "231"
+  ],
+  "heightMm": 86,
+  "widthMm": 86,
+  "depthMm": 10,
+  "weightKg": 0.1,
+  "powerDrawW": 2.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 9.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "DTP HDMI Transmitter for Flex55 and MK Junction Boxes - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Transmitters Eng.vssx",
+      "label": "DTP T MK 4K 231",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1533-12-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1533-12-2",
+      "label": "DTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1533-12-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

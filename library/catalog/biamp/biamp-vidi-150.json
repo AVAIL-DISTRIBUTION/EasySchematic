@@ -1,0 +1,52 @@
+{
+  "id": "avail-biamp-910-01936",
+  "label": "Biamp Vidi 150",
+  "shortName": "Vidi 150",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01936",
+  "deviceType": "camera",
+  "category": "Videocameras / USB cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01936",
+  "searchTerms": [
+    "910-01936",
+    "vidi 150",
+    "biamp",
+    "vidi",
+    "150"
+  ],
+  "heightMm": 42,
+  "widthMm": 194,
+  "depthMm": 34,
+  "weightKg": 0.34,
+  "powerDrawW": 3,
+  "voltage": "USB bus-powered",
+  "unitCost": 200,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4K conferencing camera",
+    "notes": "[AVAIL] from Biamp documentation: max 3 W from host; [AVAIL] from Biamp documentation",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vidi_150_jul22_1963.pdf"
+    },
+    "portsMissing": "Power draw over USB is not published (powerDrawW stays empty)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB 3.0",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 3.0 Type-B: UVC video up to 2160p30 and USB audio (2 mics); bus-powered (USB)"
+    }
+  ]
+}

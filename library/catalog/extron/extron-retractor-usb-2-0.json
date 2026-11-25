@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-70-1065-05",
+  "label": "Extron Retractor USB 2.0",
+  "shortName": "Retractor USB 2.0",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1065-05",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/retractorseries2",
+  "searchTerms": [
+    "70-1065-05",
+    "retractor usb 2.0",
+    "extron",
+    "retractor",
+    "usb"
+  ],
+  "heightMm": 577,
+  "widthMm": 30,
+  "depthMm": 119,
+  "weightKg": 1.3,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-maap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-maap, extron-cc-flex55)",
+    "description": "Cable Retraction System for AVEdge, Cable Cubby®, select TouchLink® Enclosures, and TMK 120 R Kit - USB A to USB A",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-maap\"; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

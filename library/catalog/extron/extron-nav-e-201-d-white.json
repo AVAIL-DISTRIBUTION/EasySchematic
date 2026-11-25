@@ -1,0 +1,108 @@
+{
+  "id": "avail-extron-60-1525-06",
+  "label": "Extron NAV E 201 D (White)",
+  "shortName": "NAV E 201 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1525-06",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave201d",
+  "searchTerms": [
+    "60-1525-06",
+    "nav e 201 d",
+    "extron",
+    "nav",
+    "201"
+  ],
+  "heightMm": 114,
+  "widthMm": 163,
+  "depthMm": 18,
+  "weightKg": 0.68,
+  "powerDrawW": 19.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 65.6,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "1G Pro AV over IP Encoder for HDMI, Decorator-Style Wallplate, White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Encod Eng.vssx",
+      "label": "NAV E 201 D White",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1525-06-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1525-06-2",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through."
+    },
+    {
+      "id": "vx-60-1525-06-3",
+      "label": "NAV 1G (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC)."
+    },
+    {
+      "id": "vx-60-1525-06-4",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 5-pole 3.5mm captive screw shared with IR. Pin configuration Tx/Rx/Gnd. (5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1525-06-5",
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix",
+      "notes": "TTL-level IR (carrier 30-300 kHz) on a 5-pole 3.5mm captive screw shared with RS-232. Pin configuration S/Gnd."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
+      "id": "vx-60-1525-06-s1"
+    },
+    {
+      "id": "vx-60-1525-06-6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45."
+    }
+  ]
+}

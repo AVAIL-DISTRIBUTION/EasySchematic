@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-42-289-04",
+  "label": "Extron SF 10C SUB & NetPA U 8001 SUB Package",
+  "shortName": "SF 10C SUB & NetPA U 8001 SUB Pa…",
+  "manufacturer": "Extron",
+  "modelNumber": "42-289-04",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/netpau8001sub",
+  "searchTerms": [
+    "42-289-04",
+    "sf 10c sub & netpa u 8001 sub pa…",
+    "extron",
+    "10c",
+    "sub",
+    "netpa",
+    "8001"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 121,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 72,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "SF 10C SUB & NetPA U 8001 SUB - Discount Package",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

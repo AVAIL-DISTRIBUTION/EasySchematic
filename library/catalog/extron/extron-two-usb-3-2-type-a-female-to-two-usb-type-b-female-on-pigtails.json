@@ -1,0 +1,75 @@
+{
+  "id": "avail-extron-70-1235-02",
+  "label": "Extron Two USB 3.2 Type-A Female to Two USB Type-B Female on Pigtails",
+  "shortName": "Two USB 3.2 Type-A Female to Two…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1235-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2usbaf2usbbf10",
+  "searchTerms": [
+    "70-1235-02",
+    "two usb 3.2 type-a female to two…",
+    "extron",
+    "two",
+    "usb",
+    "type-a",
+    "female"
+  ],
+  "weightKg": 0.2,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two USB 3.2 Type-A Female to USB Type-B Female on Pigtails",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap2usbaf2usbbf10",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-A In 1 (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "USB-B Out 1 (Rear)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-b"
+    },
+    {
+      "id": "p3",
+      "label": "USB-A In 2 (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "USB",
+      "connectorType": "usb-a"
+    },
+    {
+      "id": "p4",
+      "label": "USB-B Out 2 (Rear)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-b"
+    }
+  ]
+}

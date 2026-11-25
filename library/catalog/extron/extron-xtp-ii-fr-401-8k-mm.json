@@ -1,0 +1,134 @@
+{
+  "id": "avail-extron-60-1527-21",
+  "label": "Extron XTP II FR 401 8K MM",
+  "shortName": "XTP II FR 401 8K MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1527-21",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiifr4018k",
+  "searchTerms": [
+    "60-1527-21",
+    "xtp ii fr 401 8k mm",
+    "extron",
+    "xtp",
+    "401"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.64,
+  "powerDrawW": 16.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 51,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "8K XTP II Fiber Optic Receiver with local HDMI Input - Mulitmode",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Receivers Eng.vssx",
+      "label": "XTP II FR 401 MM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1527-21-1",
+      "label": "XTP In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "8K fiber link, 2 LC connectors per channel (40 Gbps duplex). OM4 multimode ≤400 m / SM ≤10 km."
+    },
+    {
+      "id": "vx-60-1527-21-2",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1527-21-3",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1527-21-4",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3.5mm 5-pole captive screw, stereo balanced/unbalanced. De-embedded from HDMI or XTP."
+    },
+    {
+      "id": "vx-60-1527-21-5",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1527-21-6",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1527-21-7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1527-21-8",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "2-pole 3.5mm captive screw — dry-contact relay output for room control (24V/1A typical). (2-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1527-21-9",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "2-pole 3.5mm captive screw — dry-contact relay output for room control (24V/1A typical). (2-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1527-21-10",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP."
+    }
+  ]
+}

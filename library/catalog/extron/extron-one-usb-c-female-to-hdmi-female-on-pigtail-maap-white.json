@@ -1,0 +1,63 @@
+{
+  "id": "avail-extron-70-1242-13",
+  "label": "Extron One USB-C Female to HDMI Female on Pigtail (MAAP, White)",
+  "shortName": "One USB-C Female to HDMI Female…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1242-13",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/1usbcfhdmif-10",
+  "searchTerms": [
+    "70-1242-13",
+    "one usb-c female to hdmi female…",
+    "extron",
+    "one",
+    "usb-c",
+    "female",
+    "hdmi"
+  ],
+  "heightMm": 18,
+  "widthMm": 56,
+  "depthMm": 3,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "MAAP, White",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - White: One USB-C Female to HDMI Female on Pigtail",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/1usbcfhdmif-10",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p2",
+      "label": "HDMI Out (Rear)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "passive"
+    },
+    {
+      "id": "p1",
+      "label": "USB-C In (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "USB",
+      "connectorType": "usb-c"
+    }
+  ]
+}

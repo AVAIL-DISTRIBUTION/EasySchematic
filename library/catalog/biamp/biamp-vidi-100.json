@@ -1,0 +1,52 @@
+{
+  "id": "avail-biamp-910-01877",
+  "label": "Biamp Vidi 100",
+  "shortName": "Vidi 100",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01877",
+  "deviceType": "camera",
+  "category": "Videocameras / USB cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01877",
+  "searchTerms": [
+    "910-01877",
+    "vidi 100",
+    "biamp",
+    "vidi",
+    "100"
+  ],
+  "heightMm": 42,
+  "widthMm": 194,
+  "depthMm": 34,
+  "weightKg": 0.34,
+  "powerDrawW": 3,
+  "voltage": "USB bus-powered",
+  "unitCost": 150,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4K conferencing camera",
+    "notes": "[AVAIL] from Biamp documentation: max 3 W from host; [AVAIL] from Biamp documentation",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vidi_100_jul22_1960.pdf"
+    },
+    "portsMissing": "Power draw over USB is not published (powerDrawW stays empty)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB 3.0",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 3.0 Type-B: UVC video up to 2160p30 and USB audio (2 mics); bus-powered (USB)"
+    }
+  ]
+}

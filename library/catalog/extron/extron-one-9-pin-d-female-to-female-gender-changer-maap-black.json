@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-310-11",
+  "label": "Extron One 9-pin D Female to Female Gender Changer (MAAP, Black)",
+  "shortName": "One 9-pin D Female to Female Gen…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-310-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in9374",
+  "searchTerms": [
+    "70-310-11",
+    "one 9-pin d female to female gen…",
+    "extron",
+    "one",
+    "9-pin",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "MAAP, Black",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - Black: One 9-pin D Female to Female Gender Changer",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsMissing": "Signal type not stated in the product name (9-pin D gender changer); ports wait for the datasheet"
+  },
+  "ports": []
+}

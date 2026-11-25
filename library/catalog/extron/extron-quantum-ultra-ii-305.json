@@ -1,0 +1,201 @@
+{
+  "id": "avail-extron-60-1899-01",
+  "label": "Extron Quantum Ultra II 305",
+  "shortName": "Quantum Ultra II 305",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1899-01",
+  "deviceType": "frame",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "60-1899-01",
+    "quantum ultra ii 305",
+    "extron",
+    "quantum",
+    "ultra",
+    "305"
+  ],
+  "heightMm": 133,
+  "widthMm": 445,
+  "depthMm": 483,
+  "weightKg": 25,
+  "powerDrawW": 760,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 2575,
+  "rackForm": "full",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-quantum-ultra-2",
+      "slotFamilies": [
+        "extron-quantum-ultra"
+      ]
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "3U Full rack",
+    "rackUnits": 3,
+    "slotFamilies": [
+      "extron-quantum-ultra-2"
+    ],
+    "description": "3U, 5-slot Frame for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "extron-quantum-ultra-ii-305.json",
+      "label": "Extron Quantum Ultra II 305",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1795168041492-28-4",
+      "label": "HDMI Out (Setup)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "Local setup display output (640x480 to 1920x1200)."
+    },
+    {
+      "id": "p1795168041492-28-0",
+      "label": "LAN A",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Gigabit control / VCS / Telnet / SSH. Default 192.168.254.254."
+    },
+    {
+      "id": "p1795168041492-28-1",
+      "label": "LAN B",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Gigabit control (separate subnet). Default 192.168.1.254."
+    },
+    {
+      "id": "p1795168041492-28-2",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "3-pole captive screw. 9600, 8-N-1."
+    },
+    {
+      "id": "p1795168041492-28-h1",
+      "label": "HyperLane 1",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "mpo",
+      "notes": "Chassis-to-chassis HyperLane interconnect, 12-fiber MPO (32 channels in total, up to 5 chassis)"
+    },
+    {
+      "id": "p1795168041492-28-h2",
+      "label": "HyperLane 2",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "mpo",
+      "notes": "Chassis-to-chassis HyperLane interconnect, 12-fiber MPO (32 channels in total, up to 5 chassis)"
+    },
+    {
+      "id": "p1795168041492-28-h3",
+      "label": "HyperLane 3",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "mpo",
+      "notes": "Chassis-to-chassis HyperLane interconnect, 12-fiber MPO (32 channels in total, up to 5 chassis)"
+    },
+    {
+      "id": "p1795168041492-28-3",
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-mini",
+      "notes": "Rear USB mini-B, control and configuration"
+    },
+    {
+      "id": "p1795168041492-28-5",
+      "label": "Setup USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage."
+    },
+    {
+      "id": "p1795168041492-28-6",
+      "label": "Setup USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage."
+    },
+    {
+      "id": "p1795168041492-28-7",
+      "label": "Setup USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage."
+    },
+    {
+      "id": "p1795168041492-28-8",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal PSU, IEC 60320 C14 inlet, 100-240 VAC"
+    }
+  ]
+}

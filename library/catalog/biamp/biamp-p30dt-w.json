@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-920-00904-20000",
+  "label": "Biamp P30DT-W",
+  "shortName": "P30DT-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00904-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00904-20000",
+  "searchTerms": [
+    "920-00904-20000",
+    "p30dt-w",
+    "biamp"
+  ],
+  "heightMm": 233,
+  "widthMm": 233,
+  "depthMm": 223,
+  "weightKg": 2.6,
+  "unitCost": 286,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4.25\" two-way, pendant loudspeaker 70-100 volt / 30 watts, 16 ohms / 50 watts, white",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Desono_P30DT_A%26E-Specs_Nov24_12681.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 70 V / 100 V or low impedance by selector; 4-way Euroblock with permanent pass-through"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Pass-through on the same connector"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "avail-extron-60-1954-01",
+  "label": "Extron PS 125",
+  "shortName": "PS 125",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1954-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ps125",
+  "searchTerms": [
+    "60-1954-01",
+    "ps 125",
+    "extron",
+    "125"
+  ],
+  "heightMm": 44,
+  "widthMm": 110,
+  "depthMm": 216,
+  "weightKg": 0.5,
+  "powerDrawW": 60,
+  "powerCapacityW": 60,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 34.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "12 VDC, 60 W Rack Mountable Power Supply",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "36d682a5-c9bd-4517-a555-5e7b510a07d9",
+      "label": "Extron PS 125",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "12VDC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-1"
+    },
+    {
+      "label": "12VDC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-2"
+    },
+    {
+      "label": "12VDC Out 3",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-3"
+    },
+    {
+      "label": "12VDC Out 4",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-4"
+    },
+    {
+      "label": "12VDC Out 5",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-5"
+    },
+    {
+      "label": "12VDC Out 6",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-6"
+    },
+    {
+      "label": "12VDC Out 7",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-7"
+    },
+    {
+      "label": "12VDC Out 8",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-8"
+    }
+  ]
+}

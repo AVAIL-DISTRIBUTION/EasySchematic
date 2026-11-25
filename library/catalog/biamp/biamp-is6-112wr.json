@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-10886-00005",
+  "label": "Biamp IS6-112WR",
+  "shortName": "IS6-112WR",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10886-00005",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10886-00005",
+  "searchTerms": [
+    "930-10886-00005",
+    "is6-112wr",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 533,
+  "weightKg": 29,
+  "unitCost": 3100,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Medium Power 12-Inch Subwoofer Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_i_series_weather_resistant_2452.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive subwoofer, external amplifier; Sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable; single amp"
+    }
+  ]
+}

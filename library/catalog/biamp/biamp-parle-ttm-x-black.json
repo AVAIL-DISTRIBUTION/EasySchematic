@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-920-00510-10000",
+  "label": "Biamp Parlé TTM-X Black",
+  "shortName": "Parlé TTM-X Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00510-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00510-10000",
+  "searchTerms": [
+    "920-00510-10000",
+    "parlé ttm-x black",
+    "biamp",
+    "parl",
+    "ttm-x",
+    "black"
+  ],
+  "heightMm": 18,
+  "widthMm": 106,
+  "depthMm": 106,
+  "weightKg": 0.23,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 2101,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "AVB Beamtracking tabletop microphone, black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1de8d771-1f0f-4411-a400-c70d5d3c4d88",
+      "label": "Biamp TTM-X Table Mic (incl. Network Box)",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "52f51962",
+      "label": "AVB",
+      "signalType": "avb",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "AVB"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-930-10886-00004",
+  "label": "Biamp IS6-112W",
+  "shortName": "IS6-112W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10886-00004",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10886-00004",
+  "searchTerms": [
+    "930-10886-00004",
+    "is6-112w",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 368,
+  "depthMm": 533,
+  "weightKg": 29,
+  "unitCost": 1982,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Medium Power 12-Inch Subwoofer White",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_is6-112_nov2023_2405.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive subwoofer, external amplifier; Screw terminal block, 4-position (two blocks); single amp"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 4-position (two blocks); parallel loop-thru"
+    }
+  ]
+}

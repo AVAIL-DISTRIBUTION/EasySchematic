@@ -1,0 +1,58 @@
+{
+  "id": "avail-biamp-920-10300-20000",
+  "label": "Biamp DX-IC6LP-W White",
+  "shortName": "DX-IC6LP-W White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10300-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10300-20000",
+  "searchTerms": [
+    "920-10300-20000",
+    "dx-ic6lp-w white",
+    "biamp",
+    "dx-ic6lp-w",
+    "white"
+  ],
+  "heightMm": 341,
+  "widthMm": 341,
+  "depthMm": 99,
+  "weightKg": 4.9,
+  "unitCost": 290,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "6.5\" In-Ceiling, Low Profile coaxial loudspeaker, 60W, 8 ohms, 70V/100V transformer, White (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_dx-ic6lp_may23_1990.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive with DSP; 4-position Euroblock (In and Thru pairs); wattage / low impedance selector switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Pass-through on the same Euroblock"
+    }
+  ]
+}

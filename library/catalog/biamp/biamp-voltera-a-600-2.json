@@ -1,0 +1,109 @@
+{
+  "id": "avail-biamp-920-01946-00002",
+  "label": "Biamp Voltera A 600.2",
+  "shortName": "Voltera A 600.2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01946-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01946-00001",
+  "searchTerms": [
+    "920-01946-00002",
+    "voltera a 600.2",
+    "biamp",
+    "voltera",
+    "600"
+  ],
+  "heightMm": 44,
+  "widthMm": 220,
+  "depthMm": 290,
+  "weightKg": 2.7,
+  "voltage": "100-240V AC",
+  "unitCost": 1378,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Two-channel, 600-watt analog amplifier",
+    "notes": "Та же модель под другим артикулом: 920-01946-00001; Характеристики с сайта по артикулу 920-01946-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "4aa692f7-80bf-4fcd-bcd6-d04dae41351a",
+      "label": "Biamp Voltera A 600.2",
+      "match": "model-name",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "p17809024216910-ml0",
+      "label": "INPUT 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17809024216911-ri7",
+      "label": "INPUT 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17809024216912-uw1",
+      "label": "OUTPUT 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17809024216913-blp",
+      "label": "OUTPUT 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17809024216916-kx1",
+      "label": "LOGIC I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "p17809024216914-crs",
+      "label": "VC1",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control"
+    },
+    {
+      "id": "p17809024216915-q7v",
+      "label": "VC2",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control"
+    },
+    {
+      "id": "p17809024216917-72e",
+      "label": "100-240 VAC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    }
+  ]
+}

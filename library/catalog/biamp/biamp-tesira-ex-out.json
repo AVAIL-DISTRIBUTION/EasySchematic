@@ -1,0 +1,85 @@
+{
+  "id": "avail-biamp-920-00309-00001",
+  "label": "Biamp Tesira EX-OUT",
+  "shortName": "Tesira EX-OUT",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00309-00001",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00309-00001",
+  "searchTerms": [
+    "920-00309-00001",
+    "tesira ex-out",
+    "biamp",
+    "tesira",
+    "ex-out"
+  ],
+  "heightMm": 44,
+  "widthMm": 216,
+  "depthMm": 197,
+  "weightKg": 1.4,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1808,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Tesira 4 channel mic/line output expander PoE+",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "2db847a6-dbbd-4ac3-83a0-6d8896e9ea40",
+      "label": "Biamp Tesira EX-OUT",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p17762064520001-out1",
+      "label": "CH 1 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p17762064520002-out2",
+      "label": "CH 2 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p17762064520003-out3",
+      "label": "CH 3 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p17762064520004-out4",
+      "label": "CH 4 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p17762064520000-avb",
+      "label": "AVB / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    }
+  ]
+}

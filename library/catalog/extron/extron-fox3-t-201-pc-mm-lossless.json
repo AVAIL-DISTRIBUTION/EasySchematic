@@ -1,0 +1,107 @@
+{
+  "id": "avail-extron-70-1224-11",
+  "label": "Extron FOX3 T 201 PC MM (Lossless)",
+  "shortName": "FOX3 T 201 PC MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1224-11",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3t201pc",
+  "searchTerms": [
+    "70-1224-11",
+    "fox3 t 201 pc mm",
+    "extron",
+    "fox3",
+    "201"
+  ],
+  "slotFamily": "extron-fox3-powercage",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Lossless",
+    "deviceTypeSource": "fiber-transmitter",
+    "description": "PowerCage Fiber Optic Transmitter for HDMI, Audio, and RS-232",
+    "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 PowerCage Eng.vssx",
+      "label": "FOX3 T 201 PC MM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-70-1224-11-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1224-11-2",
+      "label": "Fiber In 1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1224-11-3",
+      "label": "Fiber In 2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1224-11-4",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1224-11-5",
+      "label": "Fiber Out 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
+    },
+    {
+      "id": "vx-70-1224-11-6",
+      "label": "Fiber Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1224-11-7",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-70-1224-11-8",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber. (3-pole captive screw)"
+    }
+  ]
+}

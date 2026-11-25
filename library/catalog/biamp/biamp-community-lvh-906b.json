@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-930-00001-00001",
+  "label": "Biamp Community LVH-906B",
+  "shortName": "Community LVH-906B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00001-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001-00001",
+  "searchTerms": [
+    "930-00001-00001",
+    "community lvh-906b",
+    "biamp",
+    "community",
+    "lvh-906b"
+  ],
+  "heightMm": 948,
+  "widthMm": 797,
+  "depthMm": 775,
+  "weightKg": 113.4,
+  "unitCost": 12243,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Large Format, High Output, Horn Loaded 4 x 12-inch 3-Way, Steerable Vertical Dispersion x 60 Horizontal, Black",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Multi-amplifier with FIR DSP beamforming on 4, 6 and 8-position terminal blocks: the number of pass-band inputs is not stated; ports wait for the manual"
+  },
+  "ports": []
+}

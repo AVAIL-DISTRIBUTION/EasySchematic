@@ -1,0 +1,138 @@
+{
+  "id": "avail-extron-60-952-02",
+  "label": "Extron SW2 USB",
+  "shortName": "SW2 USB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-952-02",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/swusbseries",
+  "searchTerms": [
+    "60-952-02",
+    "sw2 usb",
+    "extron",
+    "sw2",
+    "usb"
+  ],
+  "heightMm": 41,
+  "widthMm": 218,
+  "depthMm": 76,
+  "weightKg": 0.9,
+  "powerDrawW": 11,
+  "voltage": "12V DC",
+  "thermalBtuh": 38,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Two Input USB Switcher",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "SW2 USB",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-952-02-1",
+      "label": "RS-232 (Pass-Through)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-952-02-2",
+      "label": "RS-232 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-952-02-3",
+      "label": "RS-232 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-952-02-4",
+      "label": "Contact In 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-952-02-5",
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-952-02-6",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-952-02-7",
+      "label": "USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-952-02-8",
+      "label": "USB 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-952-02-9",
+      "label": "USB 5",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-952-02-10",
+      "label": "USB 6",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-952-02-11",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
+}

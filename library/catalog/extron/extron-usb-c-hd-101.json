@@ -1,0 +1,71 @@
+{
+  "id": "avail-extron-60-1883-01",
+  "label": "Extron USB-C HD 101",
+  "shortName": "USB-C HD 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1883-01",
+  "deviceType": "converter",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbchd101",
+  "searchTerms": [
+    "60-1883-01",
+    "usb-c hd 101",
+    "extron",
+    "usb-c",
+    "101"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.31,
+  "powerDrawW": 65.8,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 30.7,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "USB-C to HDMI Interface",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Signal Proc Eng.vssx",
+      "label": "USB-C HD 101",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1883-01-1",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1883-01-2",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1883-01-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

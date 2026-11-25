@@ -1,0 +1,160 @@
+{
+  "id": "avail-extron-60-1989-01",
+  "label": "Extron Quantum Ultra 305",
+  "shortName": "Quantum Ultra 305",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1989-01",
+  "deviceType": "frame",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "60-1989-01",
+    "quantum ultra 305",
+    "extron",
+    "quantum",
+    "ultra",
+    "305"
+  ],
+  "heightMm": 133,
+  "widthMm": 445,
+  "depthMm": 483,
+  "weightKg": 16,
+  "powerDrawW": 288,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 956,
+  "rackForm": "full",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-quantum-ultra"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "3U Full rack",
+    "rackUnits": 3,
+    "slotFamilies": [
+      "extron-quantum-ultra"
+    ],
+    "description": "3U, 5-slot Frame for Quantum Ultra",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ad539e6d-bff8-4624-b7a8-a7f2f2cd2c01",
+      "label": "Extron Quantum Ultra 305",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Setup HDMI",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Local setup display output (640x480 to 1920x1200).",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN A",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit control / VCS / Telnet / SSH. Default 192.168.254.254.",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN B",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit control (separate subnet). Default 192.168.1.254.",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole captive screw. 9600, 8-N-1.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "USB Mini-B for direct PC config.",
+      "id": "port-3"
+    },
+    {
+      "label": "Setup USB 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "Configuration",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage.",
+      "id": "port-5"
+    },
+    {
+      "label": "Setup USB 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "Configuration",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage.",
+      "id": "port-6"
+    },
+    {
+      "label": "Setup USB 3",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "Configuration",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage.",
+      "id": "port-7"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Primary internal hot-swappable PSU. IEC mains 100-240 VAC, 50-60 Hz.",
+      "id": "port-8"
+    }
+  ]
+}

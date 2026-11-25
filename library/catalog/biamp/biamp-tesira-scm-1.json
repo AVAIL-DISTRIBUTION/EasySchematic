@@ -1,0 +1,37 @@
+{
+  "id": "avail-biamp-901-0317",
+  "label": "Biamp Tesira SCM-1",
+  "shortName": "Tesira SCM-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0317",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0317",
+  "searchTerms": [
+    "901.0317",
+    "910-00326",
+    "tesira scm-1",
+    "biamp",
+    "tesira",
+    "scm-1"
+  ],
+  "unitCost": 1096,
+  "slotFamily": "biamp-tesira-server-card",
+  "_avail": {
+    "status": "awaiting-ports",
+    "altPartNumber": "910-00326",
+    "deviceTypeSource": "card (biamp-tesira-server)",
+    "description": "Tesira 32x32 CobraNet® module for use in SERVER or SERVER-IO chassis",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsMissing": "CobraNet network card: the catalog does not state the connector or the number of ports (primary/secondary); ports wait for the manual or the panel"
+  },
+  "ports": []
+}

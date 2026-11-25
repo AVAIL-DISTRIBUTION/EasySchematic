@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-910-00101",
+  "label": "Biamp DX-IC10SUB-W",
+  "shortName": "DX-IC10SUB-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00101",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00101",
+  "searchTerms": [
+    "910-00101",
+    "dx-ic10sub-w",
+    "biamp"
+  ],
+  "heightMm": 360,
+  "widthMm": 360,
+  "depthMm": 263,
+  "weightKg": 10,
+  "unitCost": 520,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "10” High Output In-Ceiling Subwoofer w/ Internal Crossover. 8 Ohm or 70V/100V operation, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_dx-ic10sub_sep23_1911.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive subwoofer with internal crossover, external amplifier; 4-position Euroblock (In and Thru pairs); wattage / low impedance selector switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Pass-through on the same Euroblock"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "avail-biamp-920-00005",
+  "label": "Biamp EasyConnect POE-90W",
+  "shortName": "EasyConnect POE-90W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00005",
+  "deviceType": "converter",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00005",
+  "searchTerms": [
+    "920-00005",
+    "easyconnect poe-90w",
+    "biamp",
+    "easyconnect",
+    "poe-90w"
+  ],
+  "heightMm": 20,
+  "widthMm": 40,
+  "depthMm": 180,
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "poeBudgetW": 90,
+  "unitCost": 400,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "poe-injector",
+    "description": "90W PoE++ power injector",
+    "notes": "PoE++ инжектор 90 Вт; [AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp); [AVAIL] default PSU power 60 W (AVAIL decision; not published by Biamp)",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; the product page does not name the data / PoE / AC connectors."
+  },
+  "ports": []
+}

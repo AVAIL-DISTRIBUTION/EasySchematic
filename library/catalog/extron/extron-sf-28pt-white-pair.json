@@ -1,0 +1,34 @@
+{
+  "id": "avail-extron-60-1946-03",
+  "label": "Extron SF 28PT (White, Pair)",
+  "shortName": "SF 28PT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1946-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf28pt",
+  "searchTerms": [
+    "60-1946-03",
+    "sf 28pt",
+    "extron",
+    "28pt"
+  ],
+  "heightMm": 338,
+  "widthMm": 281,
+  "depthMm": 281,
+  "weightKg": 5.7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SoundField 8\" Two-Way Pendant Speaker, Pair - White",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

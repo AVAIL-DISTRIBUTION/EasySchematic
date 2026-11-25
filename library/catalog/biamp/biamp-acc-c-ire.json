@@ -1,0 +1,31 @@
+{
+  "id": "avail-biamp-910-01922",
+  "label": "Biamp ACC-C-IRE",
+  "shortName": "ACC-C-IRE",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01922",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01922",
+  "searchTerms": [
+    "910-01922",
+    "acc-c-ire",
+    "biamp"
+  ],
+  "unitCost": 129,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "ir-emitter",
+    "description": "Single IR-emitter, No blink",
+    "notes": "ИК-излучатель; в таксономии нет своей категории; [AVAIL] room-mounted (IR emitter stuck on the device) — dimensions optional",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; the plug type of the emitter is not stated."
+  },
+  "ports": []
+}

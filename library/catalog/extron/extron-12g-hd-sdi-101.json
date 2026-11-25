@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-60-1673-01",
+  "label": "Extron 12G HD-SDI 101",
+  "shortName": "12G HD-SDI 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1673-01",
+  "deviceType": "converter",
+  "category": "AV distribution / HD-SDI, 3G-SDI & 12G",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/12ghdsdi101",
+  "searchTerms": [
+    "60-1673-01",
+    "12g hd-sdi 101",
+    "extron",
+    "12g",
+    "hd-sdi",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 1,
+  "voltage": "12V DC",
+  "thermalBtuh": 3.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Cable Equalizer for 12G-SDI",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bee12b11-4516-4d35-99c4-8b974c70b2c9",
+      "label": "Extron 12G HD-SDI 101",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "SDI In",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "SDI Out",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "id": "port-1",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
+}

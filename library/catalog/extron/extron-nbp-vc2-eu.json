@@ -1,0 +1,62 @@
+{
+  "id": "avail-extron-60-2053-01",
+  "label": "Extron NBP VC2 EU",
+  "shortName": "NBP VC2 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2053-01",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbpvc2eu",
+  "searchTerms": [
+    "60-2053-01",
+    "nbp vc2 eu",
+    "extron",
+    "nbp",
+    "vc2"
+  ],
+  "heightMm": 81,
+  "widthMm": 81,
+  "depthMm": 11,
+  "weightKg": 0.1,
+  "powerDrawW": 2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 6.9,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "cardFamilies": [
+      "extron-cubby-aap",
+      "extron-cubby-flex55"
+    ],
+    "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
+    "description": "Network Button Panel with Dual Volume Control – Flex55 and EU Wall Frame",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP VC2 EU",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2053-01-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "avail-extron-60-1667-02",
+  "label": "Extron TLP Pro 300M (Black)",
+  "shortName": "TLP Pro 300M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1667-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro300m",
+  "searchTerms": [
+    "60-1667-02",
+    "tlp pro 300m",
+    "extron",
+    "tlp",
+    "pro",
+    "300m"
+  ],
+  "heightMm": 115,
+  "widthMm": 77,
+  "depthMm": 43,
+  "weightKg": 0.2,
+  "powerDrawW": 4,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 9,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "3.5” Portrait Wall Mount TouchLink Pro Touchpanel – Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 300M Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1667-02-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af class 2"
+    },
+    {
+      "id": "vx-60-1667-02-2",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "USB",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed."
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed.",
+      "id": "vx-60-1667-02-s1"
+    }
+  ]
+}

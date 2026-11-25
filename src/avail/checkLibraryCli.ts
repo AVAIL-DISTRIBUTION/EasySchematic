@@ -6,12 +6,13 @@
  * library/avail/*.json        — every file at standard level A, file name by label, unique ids
  * library/avail-pending/*.json — shape and file name only (level not required)
  * library/hidden.json         — well-formed
+ * library/catalog/<vendor>/*.json — product catalog: shape, names, index.json; levels reported only
  * Exits with 1 when anything fails, so the build goes red.
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { checkLibrary, formatLibraryCheck, parseHiddenList, type LibraryEntry } from "./libraryFiles";
+import { checkCatalog, checkLibrary, formatCatalogCheck, formatLibraryCheck, parseHiddenList, type LibraryEntry } from "./libraryFiles";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../library");
 
@@ -54,6 +55,21 @@ if (existsSync(hiddenFile)) {
     process.stdout.write(`\n! library/hidden.json: ${err instanceof Error ? err.message : String(err)}\n`);
     ok = false;
   }
+}
+
+// Product catalog (step 1.9): one directory per manufacturer.
+const catalogRoot = path.join(root, "catalog");
+if (existsSync(catalogRoot)) {
+  const entries: LibraryEntry[] = readdirSync(catalogRoot, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort()
+    .flatMap((vendor) => readDir(path.join(catalogRoot, vendor)).map((e) => ({ ...e, file: `${vendor}/${e.file}` })));
+  const indexFile = path.join(catalogRoot, "index.json");
+  const index = existsSync(indexFile) ? (JSON.parse(readFileSync(indexFile, "utf8")) as unknown) : undefined;
+  const catalog = checkCatalog(entries, index);
+  process.stdout.write("\n" + formatCatalogCheck(catalog, "library/catalog"));
+  ok &&= catalog.ok;
 }
 
 if (!ok) process.exitCode = 1;

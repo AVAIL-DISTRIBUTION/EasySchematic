@@ -1,0 +1,117 @@
+{
+  "id": "avail-extron-60-1628-11",
+  "label": "Extron AXI 44 AT",
+  "shortName": "AXI 44 AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1628-11",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi44at",
+  "searchTerms": [
+    "60-1628-11",
+    "axi 44 at",
+    "extron",
+    "axi"
+  ],
+  "heightMm": 43,
+  "widthMm": 110,
+  "depthMm": 153,
+  "weightKg": 0.3,
+  "powerDrawW": 7,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 17.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "4 In, 4 Out Dante Audio Interface w/ DDM & AES67",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "AXI 44 AT",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1628-11-1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1628-11-2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1628-11-3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1628-11-4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1628-11-5",
+      "label": "Audio Out 1-2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1628-11-6",
+      "label": "Audio Out 3-4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw; channels 3-4"
+    },
+    {
+      "id": "vx-60-1628-11-7",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante"
+    },
+    {
+      "id": "vx-60-1628-11-8",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

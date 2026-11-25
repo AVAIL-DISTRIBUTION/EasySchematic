@@ -1,0 +1,81 @@
+{
+  "id": "avail-extron-60-1384-06",
+  "label": "Extron AC+USB 212 FR",
+  "shortName": "AC+USB 212 FR",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1384-06",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb200",
+  "searchTerms": [
+    "60-1384-06",
+    "ac+usb 212 fr",
+    "extron",
+    "ac+usb",
+    "212"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 102,
+  "weightKg": 1.1,
+  "powerDrawW": 24.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 18.5,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AC+USB Module, France",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "348efa90-3491-42c0-8ee2-175a693d3b7b",
+      "label": "Extron AC+USB 212 FR",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "USB Charging 1 (Type A)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Charging 2 (Type A)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "AC Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "port-1"
+    }
+  ]
+}

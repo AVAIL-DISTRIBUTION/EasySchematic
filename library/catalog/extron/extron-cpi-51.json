@@ -1,0 +1,61 @@
+{
+  "id": "avail-extron-60-2033-01",
+  "label": "Extron CPI 51",
+  "shortName": "CPI 51",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2033-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cpi51",
+  "searchTerms": [
+    "60-2033-01",
+    "cpi 51",
+    "extron",
+    "cpi"
+  ],
+  "heightMm": 20,
+  "widthMm": 25,
+  "depthMm": 14,
+  "weightKg": 0.02,
+  "powerDrawW": 6,
+  "powerCapacityW": 6,
+  "voltage": "12V DC",
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Cable Power Injector for Extron Active Cables",
+    "notes": "[AVAIL] dims from dealer specification",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3fc1fc3d-fef5-43e3-93dd-9bc6a2cd8f41",
+      "label": "Extron CPI 51",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "12VDC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "5VDC Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-1"
+    }
+  ]
+}

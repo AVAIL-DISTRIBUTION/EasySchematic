@@ -1,0 +1,83 @@
+{
+  "id": "avail-biamp-910-00010",
+  "label": "Biamp BMA 360D-I White",
+  "shortName": "BMA 360D-I White",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00010",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00010",
+  "searchTerms": [
+    "910-00010",
+    "bma 360d-i white",
+    "biamp",
+    "bma",
+    "360d-i",
+    "white"
+  ],
+  "voltage": "PoE",
+  "unitCost": 5500,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "600 mm Frequency Invariant Beamforming Ceiling Tile Microphone Array White with Dante and 4 x 15 Watt PoE amplifier",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_BMA-360D-I_Jun26_13924.pdf"
+    },
+    "portsMissing": "BMA 360D-I Black page has no documents; the BMA 360D-I sheet (from the White page) covers it. The sheet gives 4 amplifier channels on 5.08 mm Euroblock but not whether they share one block or use one block per channel; modelled as one port per channel."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "5.08 mm Phoenix-type Euroblock; 15 W into 8 ohm, bridgeable to 2 x 30 W into 4 ohm; needs PoE++ 90 W"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "5.08 mm Phoenix-type Euroblock; 15 W into 8 ohm, bridgeable to 2 x 30 W into 4 ohm; needs PoE++ 90 W"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "5.08 mm Phoenix-type Euroblock; 15 W into 8 ohm, bridgeable to 2 x 30 W into 4 ohm; needs PoE++ 90 W"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "5.08 mm Phoenix-type Euroblock; 15 W into 8 ohm, bridgeable to 2 x 30 W into 4 ohm; needs PoE++ 90 W"
+    },
+    {
+      "id": "p5",
+      "label": "Dante (PoE++)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Single RJ-45: Dante/AES67 audio, TCP control and power; PoE+ 30 W without speakers, PoE++ 802.3bt 90 W with speakers"
+    }
+  ]
+}

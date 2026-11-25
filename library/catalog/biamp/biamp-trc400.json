@@ -1,0 +1,57 @@
+{
+  "id": "avail-biamp-910-01306",
+  "label": "Biamp TRC400",
+  "shortName": "TRC400",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01306",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01306",
+  "searchTerms": [
+    "910-01306",
+    "trc400",
+    "biamp"
+  ],
+  "heightMm": 95,
+  "widthMm": 114,
+  "depthMm": 95,
+  "weightKg": 4.1,
+  "unitCost": 409,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "audio-transformer",
+    "description": "Transformer 400W, 4 Ohms",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_sheet_community_trc400_13555.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In (70/100/140V)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 70/100/140 V input taps; 7 in (178 mm) #18 AWG colour-coded stripped wires; in/out may be reversed for step-up"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out (4/8 ohm)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "other",
+      "notes": "400/200/100 W taps, nominal 4 or 8 ohm; #18 AWG colour-coded stripped wires"
+    }
+  ]
+}

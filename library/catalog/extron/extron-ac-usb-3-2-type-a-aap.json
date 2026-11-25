@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-60-1940-02",
+  "label": "Extron AC USB 3.2 Type-A AAP",
+  "shortName": "AC USB 3.2 Type-A AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1940-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusbaap",
+  "searchTerms": [
+    "60-1940-02",
+    "ac usb 3.2 type-a aap",
+    "extron",
+    "usb",
+    "type-a",
+    "aap"
+  ],
+  "weightKg": 0.54,
+  "voltage": "125V AC",
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP – US Unswitched AC Outlet, USB 3.2 Type-A Female to USB Type-B Female on Pigtail; Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

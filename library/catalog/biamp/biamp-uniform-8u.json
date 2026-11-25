@@ -1,0 +1,95 @@
+{
+  "id": "avail-biamp-910-01870",
+  "label": "Biamp Uniform 8U",
+  "shortName": "Uniform 8U",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01870",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01870",
+  "searchTerms": [
+    "910-01870",
+    "uniform 8u",
+    "biamp",
+    "uniform"
+  ],
+  "heightMm": 94,
+  "widthMm": 76,
+  "depthMm": 15,
+  "weightKg": 0.08,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 4,
+  "unitCost": 700,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "8-button E Ink control pad with Ethernet, 1 bidirectional RS-232 port, 2 unidirectional RS-232 ports, 3 GPIO; PoE (IEEE 802.3at Class 1, 4W)",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_impera_uniform_sep23_8712.pdf"
+    },
+    "portsMissing": "Terminal type of the RS-232/IR and I/O connections is not stated."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100 Mbps; PoE 802.3at class 1, 4 W"
+    },
+    {
+      "id": "p2",
+      "label": "RS-232/IR 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "other",
+      "notes": "TX-1, RX-1, GND terminals: bidirectional RS-232 or one-way IR; terminal type not stated"
+    },
+    {
+      "id": "p3",
+      "label": "RS-232/IR 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "other",
+      "notes": "TX-2, GND terminals: one-way RS-232 or IR; terminal type not stated"
+    },
+    {
+      "id": "p4",
+      "label": "RS-232/IR 3",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "other",
+      "notes": "TX-3, GND terminals: one-way RS-232 or IR; terminal type not stated"
+    },
+    {
+      "id": "p5",
+      "label": "I/O 1-3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "other",
+      "notes": "I/O 1-3, GND terminals; open drain, 24 V DC, 0.5 A max; terminal type not stated"
+    },
+    {
+      "id": "p6",
+      "label": "Mini USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-mini",
+      "notes": "Mini USB 5P, configuration upload only"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "avail-extron-60-2036-01",
+  "label": "Extron NBP VC1 D",
+  "shortName": "NBP VC1 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2036-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nbpvc1d",
+  "searchTerms": [
+    "60-2036-01",
+    "nbp vc1 d",
+    "extron",
+    "nbp",
+    "vc1"
+  ],
+  "heightMm": 105,
+  "widthMm": 45,
+  "depthMm": 57,
+  "weightKg": 0.1,
+  "powerDrawW": 1.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 5.2,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Network Button Panel with Volume Control - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP VC1 D",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2036-01-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
+}

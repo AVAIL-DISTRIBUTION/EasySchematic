@@ -14,3 +14,6 @@
 api-avail/dist
 api-avail/data
 src/__tests__
+# Server database snapshots (fill:catalog-ports input) and catalog archives never go into the image.
+tools/avail/incoming/db
+library/*.zip

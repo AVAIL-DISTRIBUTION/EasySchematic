@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-70-1352-03",
+  "label": "Extron One HDMI Female, One USB A 3.2 Female to USB B Female on Pigtails (AAP, White)",
+  "shortName": "One HDMI Female, One USB A 3.2 F…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1352-03",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/1hdmif1usba3fp",
+  "searchTerms": [
+    "70-1352-03",
+    "one hdmi female, one usb a 3.2 f…",
+    "extron",
+    "one",
+    "hdmi",
+    "female"
+  ],
+  "heightMm": 18,
+  "widthMm": 89,
+  "depthMm": 1,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP, White",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - White: One HDMI Female to One USB A 3.2 Female Pigtails",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "Rear termination of the HDMI not stated in the product name; ports wait for the datasheet"
+  },
+  "ports": []
+}

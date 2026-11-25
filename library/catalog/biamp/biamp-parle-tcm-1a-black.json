@@ -1,0 +1,80 @@
+{
+  "id": "avail-biamp-920-00493-10000",
+  "label": "Biamp Parlé TCM-1A Black",
+  "shortName": "Parlé TCM-1A Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00493-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00493-10000",
+  "searchTerms": [
+    "920-00493-10000",
+    "parlé tcm-1a black",
+    "biamp",
+    "parl",
+    "tcm-1a",
+    "black"
+  ],
+  "heightMm": 51,
+  "widthMm": 63,
+  "depthMm": 63,
+  "weightKg": 0.2,
+  "voltage": "PoE+ 802.3at Class 4",
+  "unitCost": 2565,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "AVB Beamtracking ceiling microphone with PoE+ amplifier, black pendant",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_parle_tcm-1a_jul22_2040.pdf"
+    },
+    "portsMissing": "Sheet says '4-pin 5.08 mm Phoenix connectors' for 2 channels without saying one shared block or one per channel; modelled as one port per channel. Pendant mic to plenum box (2-pin 3.5 mm Phoenix) is internal to the product, not modelled. Card White says PoE 802.3af class 3 / 15.4 W, the sheet says PoE+ class 4, 30 W - card should be checked.",
+    "notes": "PoE from the manufacturer's document (takes precedence over the catalog card): \"PoE+ (IEEE 802.3at Class 4, 30W) amplifier\" — https://products.biamp.com/api/media/file/biamp_data_sheet_parle_tcm-1a_jul22_2040.pdf; the card had PoE+ 802.3at, poeDrawW None"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "4-pin 5.08 mm Phoenix; 4 W continuous (8 W single channel), burst 40 W / 4 ohm, 30 W / 8 ohm"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "4-pin 5.08 mm Phoenix; 4 W continuous, burst 40 W / 4 ohm, 30 W / 8 ohm; inactive in single-channel mode"
+    },
+    {
+      "id": "p3",
+      "label": "AVB/Control (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "AVB",
+      "connectorType": "rj45",
+      "notes": "To a Tesira AVB port via PoE+ injector or a PoE+ AVB switch; PoE+ 802.3at class 4, 30 W"
+    },
+    {
+      "id": "p4",
+      "label": "Mic In (TCM-1EX)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Daisy-chain up to two TCM-1EX expansion mics, up to 10 m between plenum boxes"
+    }
+  ],
+  "poeDrawW": 30
+}

@@ -1,0 +1,131 @@
+{
+  "id": "avail-biamp-920-00661-00002",
+  "label": "Biamp MA30",
+  "shortName": "MA30",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00661-00002",
+  "deviceType": "power-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00661-00001",
+  "searchTerms": [
+    "920-00661-00002",
+    "ma30",
+    "biamp"
+  ],
+  "heightMm": 89,
+  "widthMm": 216,
+  "depthMm": 250,
+  "weightKg": 2.4,
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 350,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "9.5\" mixing amplifier 70 - 100 volt / 30 watts, 1 mic/line input, 2 stereo line inputs, left to right 4 level priority system, Emergency in, paging mic with chime, 24V override output",
+    "notes": "Характеристики с сайта по артикулу 920-00661-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_ma30-ma60_aug21_8724.pdf"
+    },
+    "portsMissing": "The MA30 product page links no documents; ports come from the shared MA30/MA60 manual (MA60 data sheet for connector sizes). Not stated: emergency input, priority-out and mains inlet connector types (set to other). The data sheet says the mic input takes Euroblock or RCA, the manual mentions only Euroblock; check the panel for an RCA jack"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Emergency In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Balanced 0 dBV line level; triggered by potential-free contact on the mute all connection; connector type not stated"
+    },
+    {
+      "id": "p2",
+      "label": "Paging Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic level on Euroblock; paging contact mutes lower priorities and plays chime"
+    },
+    {
+      "id": "p3",
+      "label": "Paging Line In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Line level alternative for the paging input"
+    },
+    {
+      "id": "p4",
+      "label": "Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs (Phantom)",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line on Euroblock; +48 V phantom switchable; VOX; compatible with local input panel"
+    },
+    {
+      "id": "p5",
+      "label": "Input 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line on RCA"
+    },
+    {
+      "id": "p6",
+      "label": "Input 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line on RCA"
+    },
+    {
+      "id": "p7",
+      "label": "Pre Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Line level after master volume; Euroblock"
+    },
+    {
+      "id": "p8",
+      "label": "Speaker Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "4-pin 0.3 inch (7.6 mm) Euroblock: 4 ohm, 70 V, 100 V taps; use one only"
+    },
+    {
+      "id": "p9",
+      "label": "Priority Out",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "24 V DC, 0.5 A max when priority is active; connector type not stated"
+    },
+    {
+      "id": "p10",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "100-240 V AC mains inlet with power switch and fuse; inlet type not stated"
+    }
+  ]
+}

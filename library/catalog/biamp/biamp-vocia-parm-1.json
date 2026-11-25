@@ -1,0 +1,113 @@
+{
+  "id": "avail-biamp-901-0269",
+  "label": "Biamp Vocia PARM-1",
+  "shortName": "Vocia PARM-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "901.0269",
+  "deviceType": "expansion-card",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/901.0269",
+  "searchTerms": [
+    "901.0269",
+    "910-00299",
+    "vocia parm-1",
+    "biamp",
+    "vocia",
+    "parm-1"
+  ],
+  "unitCost": 479,
+  "slotFamily": "biamp-vocia-va-8600",
+  "_avail": {
+    "status": "ports-filled",
+    "altPartNumber": "910-00299",
+    "deviceTypeSource": "card (biamp-vocia-va-8600)",
+    "description": "Vocia Page Active Relay Module Card, Factory Installed",
+    "notes": "Заводская установка; Card Kit для установки на объекте — в «Альт. артикул»",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "new slot family \"biamp-vocia-va-8600\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_parm-1_aug18_11906.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 1; 3.5 mm pluggable"
+    },
+    {
+      "id": "p2",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 2; 3.5 mm pluggable"
+    },
+    {
+      "id": "p3",
+      "label": "Relay 3",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 3; 3.5 mm pluggable"
+    },
+    {
+      "id": "p4",
+      "label": "Relay 4",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 4; 3.5 mm pluggable"
+    },
+    {
+      "id": "p5",
+      "label": "Relay 5",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 5; 3.5 mm pluggable"
+    },
+    {
+      "id": "p6",
+      "label": "Relay 6",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 6; 3.5 mm pluggable"
+    },
+    {
+      "id": "p7",
+      "label": "Relay 7",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 7; 3.5 mm pluggable"
+    },
+    {
+      "id": "p8",
+      "label": "Relay 8",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "SPDT form C (C / NC / NO), voltage-free, 125 V AC / 60 V DC; energized when paging is active on amp channel 8; 3.5 mm pluggable"
+    }
+  ]
+}

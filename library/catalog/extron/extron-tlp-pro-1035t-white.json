@@ -1,0 +1,65 @@
+{
+  "id": "avail-extron-60-1999-03",
+  "label": "Extron TLP Pro 1035T (White)",
+  "shortName": "TLP Pro 1035T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1999-03",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1035t",
+  "searchTerms": [
+    "60-1999-03",
+    "tlp pro 1035t",
+    "extron",
+    "tlp",
+    "pro",
+    "1035t"
+  ],
+  "heightMm": 149,
+  "widthMm": 245,
+  "depthMm": 85,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "10.1\" Tabletop TouchLink Pro Touchpanel - White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "470f759b-c911-4b39-a558-a9fd5b05e0fa",
+      "label": "Extron TLP Pro 1035T",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 11.5,
+      "notes": "PoE 802.3af class 3",
+      "id": "port-0"
+    },
+    {
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+      "id": "port-1"
+    }
+  ]
+}

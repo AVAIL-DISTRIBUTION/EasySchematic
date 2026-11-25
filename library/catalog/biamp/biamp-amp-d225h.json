@@ -1,0 +1,184 @@
+{
+  "id": "avail-biamp-920-01887-00002",
+  "label": "Biamp AMP-D225H",
+  "shortName": "AMP-D225H",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01887-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01887-00001",
+  "searchTerms": [
+    "920-01887-00002",
+    "amp-d225h",
+    "biamp"
+  ],
+  "heightMm": 37,
+  "widthMm": 218,
+  "depthMm": 70,
+  "weightKg": 0.5,
+  "powerDrawW": 50,
+  "voltage": "24V DC",
+  "unitCost": 583,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "2 channel, 25W half-rack amplifier",
+    "notes": "Характеристики с сайта по артикулу 920-01887-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_amp-d225h_sep21_2726.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line input, RCA pair (L white, R red), 2 Vrms max"
+    },
+    {
+      "id": "p2",
+      "label": "Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line input, RCA pair (L white, R red), 2 Vrms max"
+    },
+    {
+      "id": "p3",
+      "label": "Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line input, RCA pair (L white, R red), 2 Vrms max"
+    },
+    {
+      "id": "p4",
+      "label": "Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line input, RCA pair (L white, R red), 2 Vrms max"
+    },
+    {
+      "id": "p5",
+      "label": "Speaker Out L",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "25 W 8 ohm / 35 W 4 ohm; L+ L- R+ R- on one 4-pin 0.3-inch Euroblock; bridged mode across both"
+    },
+    {
+      "id": "p6",
+      "label": "Speaker Out R",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "25 W 8 ohm / 35 W 4 ohm; L+ L- R+ R- on one 4-pin 0.3-inch Euroblock; bridged mode across both"
+    },
+    {
+      "id": "p7",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Control and web interface, auto MDI-X; no PoE"
+    },
+    {
+      "id": "p8",
+      "label": "RS-232/IR 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "RS-232 or IR transmitter (T1/R1/G); 3-pin 0.3-inch Euroblock"
+    },
+    {
+      "id": "p9",
+      "label": "RS-232/IR 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "RS-232 or IR transmitter (T2/R2/G); 3-pin 0.3-inch Euroblock"
+    },
+    {
+      "id": "p10",
+      "label": "I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Open-drain digital I/O, 24 V DC / 0.5 A max; I/O 1-4 + G share one 5-pin 0.3-inch Euroblock"
+    },
+    {
+      "id": "p11",
+      "label": "I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Open-drain digital I/O, 24 V DC / 0.5 A max; I/O 1-4 + G share one 5-pin 0.3-inch Euroblock"
+    },
+    {
+      "id": "p12",
+      "label": "I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Open-drain digital I/O, 24 V DC / 0.5 A max; I/O 1-4 + G share one 5-pin 0.3-inch Euroblock"
+    },
+    {
+      "id": "p13",
+      "label": "I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Open-drain digital I/O, 24 V DC / 0.5 A max; I/O 1-4 + G share one 5-pin 0.3-inch Euroblock"
+    },
+    {
+      "id": "p14",
+      "label": "USB Audio In",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 2.0 Type-B audio input from a PC/Mac, 16-bit 48 kHz"
+    },
+    {
+      "id": "p15",
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-mini",
+      "notes": "Front USB Mini-B 5P marked config, for configuration"
+    },
+    {
+      "id": "p16",
+      "label": "DC In 24V",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "24 V DC, 2.5 A round DC input from the included Biamp power adaptor (50 W)"
+    }
+  ]
+}

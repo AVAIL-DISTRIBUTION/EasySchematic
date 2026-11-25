@@ -1,0 +1,62 @@
+{
+  "id": "avail-biamp-920-00487-10000",
+  "label": "Biamp Parlé TCM-1EX Black",
+  "shortName": "Parlé TCM-1EX Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00487-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00487-10000",
+  "searchTerms": [
+    "920-00487-10000",
+    "parlé tcm-1ex black",
+    "biamp",
+    "parl",
+    "tcm-1ex",
+    "black"
+  ],
+  "heightMm": 51,
+  "widthMm": 63,
+  "depthMm": 63,
+  "weightKg": 0.2,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Expansion AVB Beamtracking ceiling microphone, black pendant",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "4648353a-cb09-4963-b2d9-436e3e7ce8bf",
+      "label": "Biamp Parlé TCM-1EX",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "1d4f6978",
+      "label": "IN",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    },
+    {
+      "id": "fc5ce6ae",
+      "label": "OUT",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "avail-biamp-920-01871-10000",
+  "label": "Biamp Apprimo Touch 7 Black",
+  "shortName": "Apprimo Touch 7 Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01871-10000",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01871-10000",
+  "searchTerms": [
+    "920-01871-10000",
+    "apprimo touch 7 black",
+    "biamp",
+    "apprimo",
+    "touch",
+    "black"
+  ],
+  "heightMm": 120,
+  "widthMm": 180,
+  "depthMm": 41,
+  "weightKg": 0.33,
+  "voltage": "PoE+ 802.3at class 3",
+  "poeDrawW": 15,
+  "unitCost": 1463,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "7\" touch panel, black",
+    "notes": "[AVAIL] from Biamp documentation",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_apprimo_touch_7_oct21_1957.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "PoE 802.3at class 3, 15 W"
+    },
+    {
+      "id": "p2",
+      "label": "Mini USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-mini",
+      "notes": "USB 2.0; firmware update; USB-OTG adapter included"
+    }
+  ]
+}

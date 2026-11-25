@@ -1,0 +1,132 @@
+{
+  "id": "avail-extron-60-1551-52",
+  "label": "Extron DTP T USW 333",
+  "shortName": "DTP T USW 333",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1551-52",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptusw333",
+  "searchTerms": [
+    "60-1551-52",
+    "dtp t usw 333",
+    "extron",
+    "dtp",
+    "usw",
+    "333"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 4.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 14.2,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input Switcher with Integrated Long Distance DTP Transmitter and Audio Embedding - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Switchers Eng.vssx",
+      "label": "DTP T USW 333",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1551-52-1",
+      "label": "RGBHV In 1",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1551-52-2",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1551-52-3",
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1551-52-4",
+      "label": "DTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1551-52-5",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1551-52-6",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole (RS-232 and IR on one connector; 3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1551-52-7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "over DTP (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1551-52-8",
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1551-52-9",
+      "label": "Contact In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1551-52-10",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

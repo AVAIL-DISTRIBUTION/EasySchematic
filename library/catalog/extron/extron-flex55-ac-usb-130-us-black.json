@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1945-02",
+  "label": "Extron Flex55 AC+USB 130 US (Black)",
+  "shortName": "Flex55 AC+USB 130 US",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1945-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/flex55100seriespm",
+  "searchTerms": [
+    "60-1945-02",
+    "flex55 ac+usb 130 us",
+    "extron",
+    "flex55",
+    "ac+usb",
+    "130"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 7,
+  "weightKg": 0.84,
+  "voltage": "12V DC",
+  "thermalBtuh": 16.4,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "US Outlet, USB Type-A and USB Type-C Module; Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

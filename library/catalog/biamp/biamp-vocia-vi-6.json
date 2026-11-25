@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-912-variant-dne",
+  "label": "Biamp Vocia VI-6",
+  "shortName": "Vocia VI-6",
+  "manufacturer": "Biamp",
+  "modelNumber": "912 variant DNE",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00247",
+  "searchTerms": [
+    "912 variant dne",
+    "vocia vi-6",
+    "biamp",
+    "vocia",
+    "vi-6"
+  ],
+  "heightMm": 44.5,
+  "widthMm": 483,
+  "depthMm": 254,
+  "weightKg": 2.9,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 3034,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia networked audio input device with 6 channels of BGM or user configurable mic/line audio",
+    "notes": "Артикул на сайте Biamp: 910-00247 (в прайсе указан «912 variant DNE»); Характеристики с сайта по артикулу 910-00247",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Connectors of the 2 mic/line inputs, 4 paging inputs (VAM-1 / VPSI-1), 4 control inputs and 4 control outputs are not named; whether RCA and terminal block of a line input are alternatives or summed is not stated. Check the panel"
+  },
+  "ports": []
+}

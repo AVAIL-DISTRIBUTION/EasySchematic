@@ -1,0 +1,50 @@
+{
+  "id": "avail-biamp-930-00890-00003",
+  "label": "Biamp R.5-96MAX",
+  "shortName": "R.5-96MAX",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00890-00003",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00890-00003",
+  "searchTerms": [
+    "930-00890-00003",
+    "r.5-96max",
+    "biamp",
+    "5-96max"
+  ],
+  "heightMm": 406,
+  "widthMm": 406,
+  "depthMm": 411,
+  "weightKg": 21.3,
+  "unitCost": 3082,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Full-Range 2-Way 12-Inch High Output 90 X 60 Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "38464057-915f-42df-b12d-f21e90fd9dda",
+      "label": "Biamp R.5-96MAX",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "Audio In (Pigtail)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "none",
+      "section": "Audio Inputs"
+    }
+  ]
+}

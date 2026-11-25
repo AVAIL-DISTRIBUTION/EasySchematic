@@ -1,0 +1,77 @@
+{
+  "id": "avail-extron-60-1390-23",
+  "label": "Extron MLC 55 RS MK",
+  "shortName": "MLC 55 RS MK",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1390-23",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc55rsmk",
+  "searchTerms": [
+    "60-1390-23",
+    "mlc 55 rs mk",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 71,
+  "widthMm": 45,
+  "depthMm": 36,
+  "weightKg": 0.1,
+  "powerDrawW": 1.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 3.6,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Controller with RS-232 and IR Display Control for MK Junction Boxes",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - MLC Eng.vssx",
+      "label": "MLC 55 RS MK",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1390-23-1",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1390-23-2",
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix"
+    },
+    {
+      "label": "USB Host (Config)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration (Config)",
+      "id": "vx-60-1390-23-s1"
+    },
+    {
+      "id": "vx-60-1390-23-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
+}

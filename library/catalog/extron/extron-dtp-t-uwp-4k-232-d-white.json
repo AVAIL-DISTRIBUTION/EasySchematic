@@ -1,0 +1,122 @@
+{
+  "id": "avail-extron-60-1755-13",
+  "label": "Extron DTP T UWP 4K 232 D (White)",
+  "shortName": "DTP T UWP 4K 232 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1755-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptuwp4k232d",
+  "searchTerms": [
+    "60-1755-13",
+    "dtp t uwp 4k 232 d",
+    "extron",
+    "dtp",
+    "uwp",
+    "232"
+  ],
+  "heightMm": 69,
+  "widthMm": 89,
+  "depthMm": 48,
+  "weightKg": 0.2,
+  "powerDrawW": 3.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.7,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "Two Input DTP Transmitter for HDMI and VGA with Audio Embedding - Decorator-Style Wallplate, White - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "06e9b740-e0ee-444a-a8ab-6d79ef31a591",
+      "label": "Extron DTP T UWP 4K 232 D White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "VGA In",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "DTP Out (RJ-45)",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "Audio In 1 (HDMI)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio In 2 (VGA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232 + Contact Closure",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-5",
+      "notes": "5-pole"
+    },
+    {
+      "label": "USB Config (Mini-B Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-6"
+    },
+    {
+      "label": "RS-232 Pass-Through",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-7",
+      "notes": "over DTP"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-8"
+    }
+  ]
+}

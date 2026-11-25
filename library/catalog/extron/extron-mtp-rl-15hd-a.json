@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1062-01",
+  "label": "Extron MTP RL 15HD A",
+  "shortName": "MTP RL 15HD A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1062-01",
+  "deviceType": "hdmi-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mtpr15hdas",
+  "searchTerms": [
+    "60-1062-01",
+    "mtp rl 15hd a",
+    "extron",
+    "mtp",
+    "15hd"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 76,
+  "weightKg": 0.2,
+  "powerDrawW": 6,
+  "voltage": "12V DC",
+  "thermalBtuh": 20.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "MTP Twisted Pair Receiver for VGA and Audio",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

@@ -1,0 +1,184 @@
+{
+  "id": "avail-extron-60-1797-01",
+  "label": "Extron UCS 303",
+  "shortName": "UCS 303",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1797-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucssw313",
+  "searchTerms": [
+    "60-1797-01",
+    "ucs 303",
+    "extron",
+    "ucs",
+    "303"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 220,
+  "weightKg": 0.9,
+  "powerDrawW": 95.6,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 87.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "3x1 4K/60 Collaboration and Presentation Switcher",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ca3b9487-5987-41ff-b0d5-4dff994970d2",
+      "label": "Extron UCS 303",
+      "match": "part-number",
+      "status": "raw",
+      "level": "FIX"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "DisplayPort In",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "id": "port-1",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-5",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "USB-C Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Control",
+      "id": "port-11"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-12"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-13"
+    },
+    {
+      "label": "Contact Closure",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-14"
+    },
+    {
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-15"
+    },
+    {
+      "label": "USB-B Host In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-B Host In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-A 3.2 Out 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-A 3.2 Out 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 2.0 Out 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-A 2.0 Out 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 2.0 Out 3",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-10"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-16"
+    },
+    {
+      "label": "USB-C In (DP Alt, 60W PD)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "id": "port-2",
+      "notes": "DP Alt + USB host + 60 W PD"
+    }
+  ]
+}

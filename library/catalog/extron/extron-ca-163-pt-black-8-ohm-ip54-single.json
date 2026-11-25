@@ -1,0 +1,49 @@
+{
+  "id": "avail-extron-42-338-22",
+  "label": "Extron CA 163 PT (Black, 8 Ohm, IP54, Single)",
+  "shortName": "CA 163 PT",
+  "manufacturer": "Extron",
+  "modelNumber": "42-338-22",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca163",
+  "searchTerms": [
+    "42-338-22",
+    "ca 163 pt",
+    "extron",
+    "163"
+  ],
+  "heightMm": 1318,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 12.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black, 8 Ohm, IP54, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Pan and Tilt Mount, Single, 8 Ohm, Black - IP54",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "variant",
+      "from": "extron/extron-ca-163-pt-black-70-100v-single.json",
+      "label": "Extron CA 163 PT (Black, 70/100V, Single)",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "id": "avail-extron-60-1211-01",
+  "label": "Extron DMP 128",
+  "shortName": "DMP 128",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1211-01",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dmp128",
+  "searchTerms": [
+    "60-1211-01",
+    "dmp 128",
+    "extron",
+    "dmp",
+    "128"
+  ],
+  "heightMm": 43,
+  "widthMm": 442,
+  "depthMm": 241,
+  "weightKg": 1.3,
+  "powerDrawW": 28,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 95.5,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "12x8 ProDSP Digital Matrix Processor",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "DMP 128",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1211-01-1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-5",
+      "label": "Mic/Line In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-6",
+      "label": "Mic/Line In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-7",
+      "label": "Mic/Line In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-8",
+      "label": "Mic/Line In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-9",
+      "label": "Mic/Line In 9",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-10",
+      "label": "Mic/Line In 10",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-11",
+      "label": "Mic/Line In 11",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-12",
+      "label": "Mic/Line In 12",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-13",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-14",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-15",
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-16",
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-17",
+      "label": "Audio Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-18",
+      "label": "Audio Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-19",
+      "label": "Audio Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-20",
+      "label": "Audio Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "6-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-21",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T host control / configuration."
+    },
+    {
+      "id": "vx-60-1211-01-22",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 host control on a 3-pole 3.5mm captive screw (38400 baud default). (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1211-01-23",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled)."
+    },
+    {
+      "id": "vx-60-1211-01-24",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled)."
+    },
+    {
+      "id": "vx-60-1211-01-25",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled)."
+    },
+    {
+      "id": "vx-60-1211-01-26",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled)."
+    },
+    {
+      "id": "vx-60-1211-01-27",
+      "label": "Digital I/O 5",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "6-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-28",
+      "label": "Digital I/O 6",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "6-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-29",
+      "label": "Digital I/O 7",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "6-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-30",
+      "label": "Digital I/O 8",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "6-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-31",
+      "label": "Digital I/O 9",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "6-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-32",
+      "label": "Digital I/O 10",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "6-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-33",
+      "label": "Digital I/O 11",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-34",
+      "label": "Digital I/O 12",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-35",
+      "label": "Digital I/O 13",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-36",
+      "label": "Digital I/O 14",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-37",
+      "label": "Digital I/O 15",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-38",
+      "label": "Digital I/O 16",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-39",
+      "label": "Digital I/O 17",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-40",
+      "label": "Digital I/O 18",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-41",
+      "label": "Digital I/O 19",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-42",
+      "label": "Digital I/O 20",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1211-01-43",
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Proprietary 16×16 bidirectional digital audio expansion port over shielded CAT6 (24-bit / 48 kHz uncompressed). Used to link two DMP units or link to a DTP CrossPoint matrix. Mapped to `aes` SignalType per session 5 XMP 240 convention (no `extron-exp` SignalType in src/types.ts)."
+    },
+    {
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for DSP Configurator / PCS configuration (USB 2.0).",
+      "id": "vx-60-1211-01-s1"
+    },
+    {
+      "id": "vx-60-1211-01-44",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
+    }
+  ]
+}

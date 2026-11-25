@@ -1,0 +1,74 @@
+{
+  "id": "avail-extron-60-1979-01",
+  "label": "Extron IPCP Pro S1 xi (Standard)",
+  "shortName": "IPCP Pro S1 xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1979-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppros1xi",
+  "searchTerms": [
+    "60-1979-01",
+    "ipcp pro s1 xi",
+    "extron",
+    "ipcp",
+    "pro"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.3,
+  "powerDrawW": 2.2,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 7.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Standard",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "IPCP Pro xi Control Processor",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - IPL IPCP Pro Eng.vssx",
+      "label": "IPL Pro S1 xi",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1979-01-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1979-01-2",
+      "label": "COM",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1979-01-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
+}

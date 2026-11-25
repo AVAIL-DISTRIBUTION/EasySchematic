@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-910-01613",
+  "label": "Biamp EN-H10-G",
+  "shortName": "EN-H10-G",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01613",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01613",
+  "searchTerms": [
+    "910-01613",
+    "en-h10-g",
+    "biamp"
+  ],
+  "heightMm": 142,
+  "widthMm": 142,
+  "depthMm": 210,
+  "weightKg": 1.93,
+  "unitCost": 148,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "powerful horn speaker equipped with a compression driver and a multi tap 100 volt transformer (1.25-2.5-5-10 watts) and a power selector switch to 20 ohms, all certified according EN 54-24",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_en-h10-g_aug20_2629.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 100 V; ceramic speaker line connector block with thermal fuse (EN 54)"
+    }
+  ]
+}

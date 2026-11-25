@@ -1,0 +1,57 @@
+{
+  "id": "avail-biamp-920-01819-10000",
+  "label": "Biamp EX-S10-UB-B",
+  "shortName": "EX-S10-UB-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01819-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01819-10000",
+  "searchTerms": [
+    "920-01819-10000",
+    "ex-s10-ub-b",
+    "biamp"
+  ],
+  "heightMm": 548,
+  "widthMm": 309,
+  "depthMm": 355,
+  "weightKg": 15.2,
+  "unitCost": 1024,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "10” Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included indexing u-bracket and weather cover, black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d3b277e9-ffd2-40e4-8618-250b2eded7d4",
+      "label": "Biamp Desono EX-S10-UB-B",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "INPUT",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "tpl-2",
+      "label": "THRU",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Speaker Outputs"
+    }
+  ]
+}

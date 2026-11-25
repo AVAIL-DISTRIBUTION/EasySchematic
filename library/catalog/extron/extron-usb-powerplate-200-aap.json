@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-60-1346-02",
+  "label": "Extron USB PowerPlate 200 AAP",
+  "shortName": "USB PowerPlate 200 AAP",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1346-02",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbpp200",
+  "searchTerms": [
+    "60-1346-02",
+    "usb powerplate 200 aap",
+    "extron",
+    "usb",
+    "powerplate",
+    "200",
+    "aap"
+  ],
+  "heightMm": 14,
+  "widthMm": 52,
+  "depthMm": 37,
+  "weightKg": 0.5,
+  "powerDrawW": 17.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Two Outlet USB Charger - AAP Version",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

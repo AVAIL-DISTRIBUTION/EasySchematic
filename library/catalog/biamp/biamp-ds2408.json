@@ -1,0 +1,43 @@
+{
+  "id": "avail-biamp-910-00809",
+  "label": "Biamp DS2408",
+  "shortName": "DS2408",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00809",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00809",
+  "searchTerms": [
+    "910-00809",
+    "ds2408",
+    "biamp"
+  ],
+  "unitCost": 502,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "8 Ohm, pipe, conduit, wall masker for SCIF / secure rooms",
+    "notes": "Эмиттер звуковой маскировки",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Dynasound_DS2408_Dec24_12925.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 8 ohm; two-conductor copper leads"
+    }
+  ]
+}

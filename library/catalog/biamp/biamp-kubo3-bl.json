@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-930-00683-00001",
+  "label": "Biamp KUBO3-BL",
+  "shortName": "KUBO3-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00683-00001",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00683-00001",
+  "searchTerms": [
+    "930-00683-00001",
+    "kubo3-bl",
+    "biamp"
+  ],
+  "heightMm": 125,
+  "widthMm": 131,
+  "depthMm": 109,
+  "weightKg": 1,
+  "unitCost": 106,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "3\" compact design full range surface mount loudspeaker, 8 ohms / 40 watts, mounting bracket and safety cable included, black (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_kubo3_august23_2173.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 8 ohm; 2-way Euroblock (two, for daisy-chaining)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Second 2-way Euroblock, daisy-chain"
+    }
+  ]
+}

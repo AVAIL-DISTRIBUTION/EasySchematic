@@ -1,0 +1,48 @@
+{
+  "id": "avail-biamp-910-00419",
+  "label": "Biamp Vocia PLD-1",
+  "shortName": "Vocia PLD-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00419",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00419",
+  "searchTerms": [
+    "910-00419",
+    "vocia pld-1",
+    "biamp",
+    "vocia",
+    "pld-1"
+  ],
+  "heightMm": 44,
+  "widthMm": 60,
+  "depthMm": 12,
+  "unitCost": 615,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Vocia passive end of speaker line supervision device, VA-8600 (4-pack)",
+    "notes": "Продаётся упаковкой по 4 шт.; цена в прайсе — за упаковку; [AVAIL] powered from the speaker line (Biamp)",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_vocia_pld_1_2_jun21_11907.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker Line In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive end-of-line device on the 70 V / 100 V speaker line; 225 mm cable leads, no connector"
+    }
+  ]
+}

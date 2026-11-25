@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-42-361-01",
+  "label": "Extron UCS 504",
+  "shortName": "UCS 504",
+  "manufacturer": "Extron",
+  "modelNumber": "42-361-01",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs504",
+  "searchTerms": [
+    "42-361-01",
+    "ucs 504",
+    "extron",
+    "ucs",
+    "504"
+  ],
+  "heightMm": 44,
+  "widthMm": 222,
+  "depthMm": 216,
+  "weightKg": 1.9,
+  "powerDrawW": 92.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 102.5,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4x2 4K Collaboration Switcher & Scaling Receiver",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

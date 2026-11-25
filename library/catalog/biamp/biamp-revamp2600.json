@@ -1,0 +1,158 @@
+{
+  "id": "avail-biamp-920-01470-00002",
+  "label": "Biamp REVAMP2600",
+  "shortName": "REVAMP2600",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01470-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01470-00002",
+  "searchTerms": [
+    "920-01470-00002",
+    "revamp2600",
+    "biamp"
+  ],
+  "heightMm": 88,
+  "widthMm": 483,
+  "depthMm": 334,
+  "weightKg": 12.1,
+  "powerDrawW": 1840,
+  "voltage": "230V AC",
+  "unitCost": 899,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "2 Channel class H amplifier 2 x 600 Watts (RMS @ 4 Ohms), 2 x 840 Watts (Dynamic @ 4 Ohms), variable fan cooled, Analogue Devices DSP processor, 2 U, 19\" rackmount",
+    "notes": "[AVAIL] estimated: 2U height",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_revamp2600_8761.pdf"
+    },
+    "portsMissing": "Not stated: mains inlet type (set to other) and whether the XLR and Euroblock inputs of a channel are in parallel"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 1 balanced, 3-pole Euroblock (bridge / CH1 SUB mode)"
+    },
+    {
+      "id": "p2",
+      "label": "Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 2 balanced, 3-pole Euroblock"
+    },
+    {
+      "id": "p3",
+      "label": "XLR In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Channel 1 balanced XLR"
+    },
+    {
+      "id": "p4",
+      "label": "XLR In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Channel 2 balanced XLR"
+    },
+    {
+      "id": "p5",
+      "label": "Line In 1 (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Channel 1 unbalanced 0 dBV on cinch; internally connected 1:1 with Line Link 1"
+    },
+    {
+      "id": "p6",
+      "label": "Line In 2 (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Channel 2 unbalanced 0 dBV on cinch; internally connected 1:1 with Line Link 2"
+    },
+    {
+      "id": "p7",
+      "label": "Line Link 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Cinch pass-through of Line In 1 (RCA)"
+    },
+    {
+      "id": "p8",
+      "label": "Line Link 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Cinch pass-through of Line In 2 (RCA)"
+    },
+    {
+      "id": "p9",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 1, 2-pole Euroblock; 840 W 4 ohm"
+    },
+    {
+      "id": "p10",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 2, 2-pole Euroblock; 840 W 4 ohm"
+    },
+    {
+      "id": "p11",
+      "label": "Speaker Out 1+2 (Speakon)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "speakon",
+      "notes": "4-pole Speakon: 1+/1- = channel 1, 2+/2- = channel 2"
+    },
+    {
+      "id": "p12",
+      "label": "Speaker Out 2 (Speakon)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "speakon",
+      "notes": "4-pole Speakon: 1+/1- = channel 2"
+    },
+    {
+      "id": "p13",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "230 V AC mains inlet; inlet type not stated"
+    }
+  ]
+}

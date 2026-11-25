@@ -1,0 +1,63 @@
+{
+  "id": "avail-extron-70-1232-01",
+  "label": "Extron Quantum IN SMD 100",
+  "shortName": "Quantum IN SMD 100",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1232-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "70-1232-01",
+    "quantum in smd 100",
+    "extron",
+    "quantum",
+    "smd",
+    "100"
+  ],
+  "slotFamily": "extron-quantum-ultra",
+  "_avail": {
+    "status": "ports-filled",
+    "cardFamilies": [
+      "extron-quantum-ultra",
+      "extron-quantum-ultra-2"
+    ],
+    "deviceTypeSource": "card (extron-quantum-ultra, extron-quantum-ultra-2)",
+    "description": "Streaming Decoder Card for Quantum Ultra",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "6d403507-ecf1-480b-8835-9bd2c461ff04",
+      "label": "Extron Quantum IN SMD 100",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Shielded RJ-45. H.264/MPEG2/MJPEG IP video stream input. 10/100/1000Base-T.",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Shielded RJ-45. H.264/MPEG2/MJPEG IP video stream input. 10/100/1000Base-T.",
+      "id": "port-1"
+    }
+  ]
+}

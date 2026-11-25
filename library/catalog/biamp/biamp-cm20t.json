@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-920-01543-20000",
+  "label": "Biamp CM20T",
+  "shortName": "CM20T",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01543-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01543-20000",
+  "searchTerms": [
+    "920-01543-20000",
+    "cm20t",
+    "biamp"
+  ],
+  "heightMm": 205,
+  "widthMm": 205,
+  "depthMm": 80,
+  "weightKg": 1.4,
+  "unitCost": 85,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "6.5\" two-way ceiling speaker 70 - 100 volt / 20 watts, 16 ohms / 60 watts, white, with removable logo and quick fit push connector",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_cm20t_feb26_13892.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V / 100 V or 16 ohm; Quick Fix wiring connector"
+    }
+  ]
+}

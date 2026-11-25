@@ -1,0 +1,115 @@
+{
+  "id": "avail-extron-60-1779-11",
+  "label": "Extron XTP II FT 402 8K MM",
+  "shortName": "XTP II FT 402 8K MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1779-11",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiift4028k",
+  "searchTerms": [
+    "60-1779-11",
+    "xtp ii ft 402 8k mm",
+    "extron",
+    "xtp",
+    "402"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.64,
+  "powerDrawW": 17.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 54.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "8K XTP II Fiber Optic Transmitter for HDMI & DisplayPort with Audio Embedding - Multimode",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Transmitters Eng.vssx",
+      "label": "XTP II FT 402 8K MM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1779-11-1",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1779-11-2",
+      "label": "DisplayPort In 2",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1779-11-3",
+      "label": "XTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "8K fiber link, 2 LC connectors per channel (40 Gbps duplex). OM4 multimode ≤400 m / SM ≤10 km."
+    },
+    {
+      "id": "vx-60-1779-11-4",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1779-11-5",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "3.5mm mini stereo jack, unbalanced."
+    },
+    {
+      "id": "vx-60-1779-11-6",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1779-11-7",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector. (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1779-11-8",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP."
+    }
+  ]
+}

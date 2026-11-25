@@ -1,0 +1,58 @@
+{
+  "id": "avail-biamp-910-00434",
+  "label": "Biamp Devio DTM-1",
+  "shortName": "Devio DTM-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00434",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00434",
+  "searchTerms": [
+    "910-00434",
+    "devio dtm-1",
+    "biamp",
+    "devio",
+    "dtm-1"
+  ],
+  "heightMm": 56,
+  "widthMm": 130,
+  "depthMm": 121,
+  "weightKg": 0.27,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Beamtracking tabletop microphone",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/devio-dtm-1-data-sheet_nov18_2007.pdf"
+    },
+    "portsMissing": "Panel labels of the two RJ-45 jacks are not given."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Devio Link (To SCR)",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Proprietary Devio audio network and control to SCR-20/SCR-25, up to 15 m; phantom powered from SCR-20/SCR-25 (powered by host), < 1 W"
+    },
+    {
+      "id": "p2",
+      "label": "Devio Link (Daisy-chain)",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "To a second DTM-1 (max two mics per chain), up to 15 m; not compatible with DCM-1"
+    }
+  ]
+}

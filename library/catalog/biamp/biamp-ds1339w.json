@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-920-00708-20000",
+  "label": "Biamp DS1339W",
+  "shortName": "DS1339W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00708-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00708-20000",
+  "searchTerms": [
+    "920-00708-20000",
+    "ds1339w",
+    "biamp"
+  ],
+  "heightMm": 216,
+  "widthMm": 216,
+  "depthMm": 114,
+  "weightKg": 2,
+  "unitCost": 123,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "70V plenum loudspeaker - white",
+    "notes": "Эмиттер звуковой маскировки",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Dynasound_DS1339_Dec24_12917.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V; 2-wire pigtail"
+    }
+  ]
+}

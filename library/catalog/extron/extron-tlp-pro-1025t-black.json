@@ -1,0 +1,57 @@
+{
+  "id": "avail-extron-60-1565-12",
+  "label": "Extron TLP Pro 1025T (Black)",
+  "shortName": "TLP Pro 1025T",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1565-12",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1025t",
+  "searchTerms": [
+    "60-1565-12",
+    "tlp pro 1025t",
+    "extron",
+    "tlp",
+    "pro",
+    "1025t"
+  ],
+  "heightMm": 163,
+  "widthMm": 257,
+  "depthMm": 105,
+  "weightKg": 1.36,
+  "powerDrawW": 11.5,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 34.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "10\" Tabletop TouchLink® Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1025T Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1565-12-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af class 3"
+    }
+  ]
+}

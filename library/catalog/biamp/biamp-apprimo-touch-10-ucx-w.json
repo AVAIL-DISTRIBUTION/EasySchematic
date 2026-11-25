@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-02285",
+  "label": "Biamp Apprimo Touch 10 UCX-W",
+  "shortName": "Apprimo Touch 10 UCX-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-02285",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.biamp.com",
+  "searchTerms": [
+    "910-02285",
+    "apprimo touch 10 ucx-w",
+    "biamp",
+    "apprimo",
+    "touch",
+    "ucx-w"
+  ],
+  "voltage": "PoE+ 802.3at",
+  "unitCost": 2600,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "10-inch wall mounted touch panel for Devio UCX with Wi-Fi 6, PoE+ or USB-C powered",
+    "notes": "Нет данных в каталоге products.biamp.com",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet on products.biamp.com; product page has no specifications."
+  },
+  "ports": []
+}

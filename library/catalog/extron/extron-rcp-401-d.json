@@ -1,0 +1,62 @@
+{
+  "id": "avail-extron-60-1868-01",
+  "label": "Extron RCP 401 D",
+  "shortName": "RCP 401 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1868-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/rcp401",
+  "searchTerms": [
+    "60-1868-01",
+    "rcp 401 d",
+    "extron",
+    "rcp",
+    "401"
+  ],
+  "heightMm": 114,
+  "widthMm": 71,
+  "depthMm": 10,
+  "weightKg": 0.5,
+  "powerDrawW": 9.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 5.3,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "SMP 401 Remote Control Panel - Decorator-Style",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - H264 Eng.vssx",
+      "label": "RCP 401 D",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1868-01-1",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1868-01-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

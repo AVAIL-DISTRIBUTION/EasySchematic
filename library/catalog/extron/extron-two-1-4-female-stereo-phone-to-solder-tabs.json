@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-70-097-11",
+  "label": "Extron Two 1/4\" Female Stereo Phone to Solder Tabs",
+  "shortName": "Two 1/4\" Female Stereo Phone to…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-097-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2phsc",
+  "searchTerms": [
+    "70-097-11",
+    "two 1/4\" female stereo phone to…",
+    "extron",
+    "two",
+    "female",
+    "stereo",
+    "phone"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two 1/4\" Female Stereo Phone to Solder Tabs",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap2phsc",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1 (Front)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-quarter",
+      "notes": "passive"
+    },
+    {
+      "id": "p3",
+      "label": "Audio In 2 (Front)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-quarter"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Out 1 (Rear)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "solder-cup"
+    },
+    {
+      "id": "p4",
+      "label": "Audio Out 2 (Rear)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "solder-cup"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "avail-biamp-920-02274-00002",
+  "label": "Biamp PS-AE-3",
+  "shortName": "PS-AE-3",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02274-00002",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-02274-00001",
+  "searchTerms": [
+    "920-02274-00002",
+    "ps-ae-3",
+    "biamp"
+  ],
+  "heightMm": 64,
+  "widthMm": 127,
+  "depthMm": 317,
+  "weightKg": 1.7,
+  "voltage": "100-240V AC",
+  "unitCost": 759,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Active emitter power supply",
+    "notes": "Характеристики с сайта по артикулу 920-02274-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Qt_PS-AE-3_Aug25_vf_13498.pdf"
+    },
+    "portsMissing": "AC inlet type is not stated."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "100-240 V, 4.0 A auto switching; detachable power cord included (inlet type not stated)"
+    },
+    {
+      "id": "p2",
+      "label": "36VDC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-conductor captive screw (12-24 AWG), 2.9 A max; to a PI-AE, up to 50 active emitters"
+    },
+    {
+      "id": "p3",
+      "label": "36VDC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-conductor captive screw (12-24 AWG), 2.9 A max; to a PI-AE, up to 50 active emitters"
+    },
+    {
+      "id": "p4",
+      "label": "36VDC Out 3",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-conductor captive screw (12-24 AWG), 2.9 A max; to a PI-AE, up to 50 active emitters"
+    }
+  ]
+}

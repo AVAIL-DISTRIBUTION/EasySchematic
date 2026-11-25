@@ -1,0 +1,73 @@
+{
+  "id": "avail-biamp-920-00645-10000",
+  "label": "Biamp SUBLIME-BL",
+  "shortName": "SUBLIME-BL",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00645-10000",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00645-10000",
+  "searchTerms": [
+    "920-00645-10000",
+    "sublime-bl",
+    "biamp"
+  ],
+  "heightMm": 420,
+  "widthMm": 120,
+  "depthMm": 470,
+  "weightKg": 8,
+  "unitCost": 492,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Ultra compact 6.5\" dual coil passive subwoofer, 2 x 8 ohms / 2 x 80 watts, full range loudspeaker level output to satelites, wall bracket included, black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_sublime_sep23_2125.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In 1",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "binding-post",
+      "notes": "Passive subwoofer, dual coil 2 x 8 ohm, external amplifier; 5-way binding posts"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In 2",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "binding-post",
+      "notes": "Second coil; 5-way binding posts"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "binding-post",
+      "notes": "Output connection, 5-way binding posts"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "binding-post",
+      "notes": "Output connection, 5-way binding posts"
+    }
+  ]
+}

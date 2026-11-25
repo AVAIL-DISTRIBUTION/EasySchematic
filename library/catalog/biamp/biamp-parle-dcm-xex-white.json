@@ -1,0 +1,50 @@
+{
+  "id": "avail-biamp-920-10117-20000",
+  "label": "Biamp Parlé DCM-XEX White",
+  "shortName": "Parlé DCM-XEX White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-10117-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-10117-20000",
+  "searchTerms": [
+    "920-10117-20000",
+    "parlé dcm-xex white",
+    "biamp",
+    "parl",
+    "dcm-xex",
+    "white"
+  ],
+  "heightMm": 150,
+  "widthMm": 150,
+  "depthMm": 17,
+  "weightKg": 0.34,
+  "unitCost": 1000,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Expansion Devio UCX Beamtracking ceiling microphone, white surface mount",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf"
+    },
+    "portsMissing": "Install manual used as the data sheet. Power source of DCM-XEX is not stated explicitly; it has no power input and connects only to the host plenum box (powered by host)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic Link (to DCM-X/XA)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "To Mic In 2 on a DCM-X/DCM-XA plenum box, up to 10 m; powered by host (DCM-X/DCM-XA)"
+    }
+  ]
+}

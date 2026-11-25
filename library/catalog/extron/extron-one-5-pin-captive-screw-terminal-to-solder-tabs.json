@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-308-11",
+  "label": "Extron One 5-pin Captive Screw Terminal to Solder Tabs",
+  "shortName": "One 5-pin Captive Screw Terminal…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-308-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in9356",
+  "searchTerms": [
+    "70-308-11",
+    "one 5-pin captive screw terminal…",
+    "extron",
+    "one",
+    "5-pin",
+    "captive",
+    "screw"
+  ],
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - Black: One 5-pin Captive Screw Terminal to Solder Tabs",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsMissing": "Signal type not stated in the product name (5-pin captive screw to solder tabs); ports wait for the datasheet"
+  },
+  "ports": []
+}

@@ -1,0 +1,46 @@
+{
+  "id": "avail-biamp-930-00002-00008",
+  "label": "Biamp IC6-1062WT00",
+  "shortName": "IC6-1062WT00",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00002-00008",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00002-00008",
+  "searchTerms": [
+    "930-00002-00008",
+    "ic6-1062wt00",
+    "biamp"
+  ],
+  "heightMm": 363,
+  "widthMm": 203,
+  "depthMm": 227,
+  "weightKg": 7.5,
+  "unitCost": 1696,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High Output 6.5-Inch 2-Way 100 X 100 70V/100V Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_i_series_weather_resistant_2452.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V / 100 V internal autoformer (WT); sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable"
+    }
+  ]
+}

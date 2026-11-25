@@ -1,0 +1,43 @@
+{
+  "id": "avail-biamp-920-00877-20000",
+  "label": "Biamp DS1398",
+  "shortName": "DS1398",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00877-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00877-20000",
+  "searchTerms": [
+    "920-00877-20000",
+    "ds1398",
+    "biamp"
+  ],
+  "unitCost": 123,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "8 Ohm low-profile loudspeaker with clip",
+    "notes": "Эмиттер звуковой маскировки",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Dynasound_DS1398_Dec24_12922.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 8 ohm; 2-wire pigtail"
+    }
+  ]
+}

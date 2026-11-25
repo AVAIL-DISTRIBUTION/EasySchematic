@@ -1,0 +1,70 @@
+{
+  "id": "avail-extron-60-1902-52",
+  "label": "Extron DTP3 T 101 D (Black)",
+  "shortName": "DTP3 T 101 D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1902-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t101d",
+  "searchTerms": [
+    "60-1902-52",
+    "dtp3 t 101 d",
+    "extron",
+    "dtp3",
+    "101"
+  ],
+  "heightMm": 71,
+  "widthMm": 43,
+  "depthMm": 48,
+  "weightKg": 0.18,
+  "powerDrawW": 5.04,
+  "voltage": "12V DC",
+  "thermalBtuh": 17.2,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "4K/60 DTP3 Transmitter for HDMI – Decorator-Style Wallplate, Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 101 D Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1902-52-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1902-52-2",
+      "label": "DTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1902-52-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

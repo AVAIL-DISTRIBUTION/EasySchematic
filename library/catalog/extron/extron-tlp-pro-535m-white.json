@@ -1,0 +1,83 @@
+{
+  "id": "avail-extron-60-1993-03",
+  "label": "Extron TLP Pro 535M (White)",
+  "shortName": "TLP Pro 535M",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1993-03",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro535m",
+  "searchTerms": [
+    "60-1993-03",
+    "tlp pro 535m",
+    "extron",
+    "tlp",
+    "pro",
+    "535m"
+  ],
+  "heightMm": 83,
+  "widthMm": 152,
+  "depthMm": 30,
+  "weightKg": 0.32,
+  "powerDrawW": 7.2,
+  "voltage": "9V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 31.8,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "5.5\" Wall Mount TouchLink Pro Touchpanel - White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 535M White",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1993-03-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af class 3"
+    },
+    {
+      "id": "vx-60-1993-03-2",
+      "label": "Digital In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "1 configurable digital input (0-30VDC range, programmable pull-up) on a 3.5mm 2-pole captive screw."
+    },
+    {
+      "id": "vx-60-1993-03-3",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed.",
+      "id": "vx-60-1993-03-s1"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "avail-extron-70-414-11",
+  "label": "Extron One RJ-45 Female to Punch Down for CAT 6 (AAP, Black)",
+  "shortName": "One RJ-45 Female to Punch Down f…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-414-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap1rj45ffbcat6lxcs",
+  "searchTerms": [
+    "70-414-11",
+    "one rj-45 female to punch down f…",
+    "extron",
+    "one",
+    "rj-45",
+    "female",
+    "punch"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "AAP, Black",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: One RJ-45 Female to Punch Down for CAT 6",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap1rj45ffbcat6lxcs",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (Front)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "LAN (Rear)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "punch-down-110"
+    }
+  ]
+}

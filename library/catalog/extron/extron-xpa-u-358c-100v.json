@@ -1,0 +1,145 @@
+{
+  "id": "avail-extron-60-1762-11",
+  "label": "Extron XPA U 358C-100V",
+  "shortName": "XPA U 358C-100V",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1762-11",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau358c",
+  "searchTerms": [
+    "60-1762-11",
+    "xpa u 358c-100v",
+    "extron",
+    "xpa",
+    "358c-100v"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 9.2,
+  "voltage": "100V AC",
+  "thermalBtuh": 31,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Eight Channel Combo Amp - Four Channels at 8 or 4 ohms - Four Channels at 100V",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "XPA U 358C-100V",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1762-11-1",
+      "label": "Audio In 1-2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1762-11-2",
+      "label": "Audio In 3-4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 3-4"
+    },
+    {
+      "id": "vx-60-1762-11-3",
+      "label": "Audio In 5-6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 5-6"
+    },
+    {
+      "id": "vx-60-1762-11-4",
+      "label": "Audio In 7-8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 7-8"
+    },
+    {
+      "id": "vx-60-1762-11-5",
+      "label": "Speaker Out 1-2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1762-11-6",
+      "label": "Speaker Out 3-4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 3-4"
+    },
+    {
+      "id": "vx-60-1762-11-7",
+      "label": "Speaker Out 5",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1762-11-8",
+      "label": "Speaker Out 6",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1762-11-9",
+      "label": "Speaker Out 7-8",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 7-8"
+    },
+    {
+      "id": "vx-60-1762-11-10",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1762-11-11",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
+    }
+  ]
+}

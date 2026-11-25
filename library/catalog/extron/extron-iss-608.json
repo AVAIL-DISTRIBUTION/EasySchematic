@@ -1,0 +1,170 @@
+{
+  "id": "avail-extron-60-1684-01",
+  "label": "Extron ISS 608",
+  "shortName": "ISS 608",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1684-01",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/iss608",
+  "searchTerms": [
+    "60-1684-01",
+    "iss 608",
+    "extron",
+    "iss",
+    "608"
+  ],
+  "heightMm": 89,
+  "widthMm": 444,
+  "depthMm": 324,
+  "weightKg": 3.9,
+  "powerDrawW": 59.1,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 176,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "Eight Input HDMI & DisplayPort 4K/60 Seamless Switcher",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Scalers Eng.vssx",
+      "label": "ISS 608",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1684-01-1",
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-2",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-3",
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-4",
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-5",
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-6",
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-7",
+      "label": "DisplayPort In 7 (Display)",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-8",
+      "label": "DisplayPort In 8 (Display)",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1684-01-9",
+      "label": "HDMI Preview Out 1A",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1684-01-10",
+      "label": "HDMI Program Out 2A",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1684-01-11",
+      "label": "Audio Out (Preview)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1684-01-12",
+      "label": "Audio Out (Program)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1684-01-13",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1684-01-14",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1684-01-15",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

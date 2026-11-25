@@ -1,0 +1,36 @@
+{
+  "id": "avail-extron-60-1005-02",
+  "label": "Extron MLC 62 RS D",
+  "shortName": "MLC 62 RS D",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1005-02",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc62rsd",
+  "searchTerms": [
+    "60-1005-02",
+    "mlc 62 rs d",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 106,
+  "widthMm": 47,
+  "depthMm": 37,
+  "weightKg": 0.5,
+  "powerDrawW": 2.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 7,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Controller With RS-232 - Decorator-Style Wallplate",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

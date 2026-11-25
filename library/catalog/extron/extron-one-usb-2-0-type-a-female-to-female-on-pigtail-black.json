@@ -1,0 +1,63 @@
+{
+  "id": "avail-extron-70-1180-02",
+  "label": "Extron One USB 2.0 Type-A Female to Female on Pigtail (Black)",
+  "shortName": "One USB 2.0 Type-A Female to Fem…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1180-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbaf2fp",
+  "searchTerms": [
+    "70-1180-02",
+    "one usb 2.0 type-a female to fem…",
+    "extron",
+    "one",
+    "usb",
+    "type-a",
+    "female"
+  ],
+  "heightMm": 55,
+  "widthMm": 28,
+  "depthMm": 7,
+  "weightKg": 0.03,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "Half-size Flex55 Module; Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/usbaf2fp",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-A In (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "USB-A Out (Rear)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-a"
+    }
+  ]
+}

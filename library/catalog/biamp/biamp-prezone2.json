@@ -1,0 +1,230 @@
+{
+  "id": "avail-biamp-920-00650-00002",
+  "label": "Biamp PREZONE2",
+  "shortName": "PREZONE2",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00650-00002",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00650-00001",
+  "searchTerms": [
+    "920-00650-00002",
+    "prezone2",
+    "biamp"
+  ],
+  "heightMm": 89,
+  "widthMm": 430,
+  "depthMm": 290,
+  "weightKg": 3.9,
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 600,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Stereo Pre-Amplifier, 2 stereo source zones, 4 stereo line inputs, 2 mic/line inputs, selective paging, emergency input, 0.5 Watts auto stdby, 2 U19\" rack mounting, black",
+    "notes": "Характеристики с сайта по артикулу 920-00650-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_prezone2_mar21_2137.pdf"
+    },
+    "portsMissing": "Not stated: mains inlet type (set to other) and whether each stereo zone output is one 3-pin Euroblock or one per side; the mute all contact is in the Emergency In notes; Wall Control uses signal type ebus (Biamp 2-wire wall panel bus)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Emergency In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced 0 dBV line level on Euroblock; triggered by VOX or potential-free contact on the mute all connection"
+    },
+    {
+      "id": "p2",
+      "label": "Paging Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Mic or line on Euroblock; zone-selective paging with chime (MICPAT-2 / MICPAT-D)"
+    },
+    {
+      "id": "p3",
+      "label": "Mic A In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs (Phantom)",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line on Euroblock; +48 V phantom switchable; VOX"
+    },
+    {
+      "id": "p4",
+      "label": "Mic A In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA, mono summed"
+    },
+    {
+      "id": "p5",
+      "label": "Mic B In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs (Phantom)",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line on Euroblock; +48 V phantom switchable"
+    },
+    {
+      "id": "p6",
+      "label": "Mic B In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA, mono summed"
+    },
+    {
+      "id": "p7",
+      "label": "Input 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Stereo balanced line on Euroblock; summed with the Input 1 RCA"
+    },
+    {
+      "id": "p8",
+      "label": "Input 1 (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo unbalanced line on RCA; summed with the Input 1 Euroblock"
+    },
+    {
+      "id": "p9",
+      "label": "Input 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo unbalanced line on RCA"
+    },
+    {
+      "id": "p10",
+      "label": "Input 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo unbalanced line on RCA"
+    },
+    {
+      "id": "p11",
+      "label": "Input 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo unbalanced line on RCA"
+    },
+    {
+      "id": "p12",
+      "label": "Zone 1 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced stereo line output, 3-pin 0.3-inch Euroblock; mono/stereo switch; active together with the RCA output"
+    },
+    {
+      "id": "p13",
+      "label": "Zone 1 Out (RCA)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line output on RCA; active together with the Euroblock output"
+    },
+    {
+      "id": "p14",
+      "label": "Zone 2 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced stereo line output, 3-pin 0.3-inch Euroblock; mono/stereo switch; active together with the RCA output"
+    },
+    {
+      "id": "p15",
+      "label": "Zone 2 Out (RCA)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced stereo line output on RCA; active together with the Euroblock output"
+    },
+    {
+      "id": "p16",
+      "label": "Ethernet",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Control and configuration (web app, TCP), CAT5e or better"
+    },
+    {
+      "id": "p17",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "3-pin Euroblock, 115200 8-N-1"
+    },
+    {
+      "id": "p18",
+      "label": "Priority Out",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "3-pin Euroblock with two 24 V DC priority signals (one per zone), active on emergency or paging"
+    },
+    {
+      "id": "p19",
+      "label": "Wall Control 1",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "phoenix",
+      "notes": "2-pin Euroblock to one DIWAC / D-DIWAC wall panel for zone 1; data and power on two wires, no polarity; up to 500 m; DIWAC 2-wire bus (data and power)"
+    },
+    {
+      "id": "p20",
+      "label": "Wall Control 2",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "phoenix",
+      "notes": "2-pin Euroblock to one DIWAC / D-DIWAC wall panel for zone 2; data and power on two wires, no polarity; up to 500 m; DIWAC 2-wire bus (data and power)"
+    },
+    {
+      "id": "p21",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "100-240 V AC 3-prong mains power cord connection with switch and fuse (T1AL/250V); inlet type not stated"
+    }
+  ]
+}

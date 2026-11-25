@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-930-00687-00002",
+  "label": "Biamp KUBO5-W",
+  "shortName": "KUBO5-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00687-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00687-00002",
+  "searchTerms": [
+    "930-00687-00002",
+    "kubo5-w",
+    "biamp"
+  ],
+  "heightMm": 155,
+  "widthMm": 164,
+  "depthMm": 136,
+  "weightKg": 1.7,
+  "unitCost": 148,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "5.25\" compact design two-way surface mount loudspeaker, 8 ohms / 80 watts, mounting bracket and safety cable included, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_kubo5_sep23_2179.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 8 ohm; 2-way Euroblock (two, for daisy-chaining)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Second 2-way Euroblock, daisy-chain"
+    }
+  ]
+}

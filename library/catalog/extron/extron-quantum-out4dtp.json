@@ -1,0 +1,125 @@
+{
+  "id": "avail-extron-70-1162-01",
+  "label": "Extron Quantum OUT4DTP",
+  "shortName": "Quantum OUT4DTP",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1162-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra",
+  "searchTerms": [
+    "70-1162-01",
+    "quantum out4dtp",
+    "extron",
+    "quantum",
+    "out4dtp"
+  ],
+  "slotFamily": "extron-quantum-ultra",
+  "_avail": {
+    "status": "ports-filled",
+    "cardFamilies": [
+      "extron-quantum-ultra",
+      "extron-quantum-ultra-2"
+    ],
+    "deviceTypeSource": "card (extron-quantum-ultra, extron-quantum-ultra-2)",
+    "description": "Four-channel DTP Output Card for Quantum Ultra",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bfbfafb0-e8bb-4fd4-b61e-58e77ef8c184",
+      "label": "Extron Quantum OUT4DTP",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "DTP Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP / XTP / HDBaseT. Up to 100m. HDCP compliant.",
+      "id": "port-0"
+    },
+    {
+      "label": "DTP Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP / XTP / HDBaseT. Up to 100m. HDCP compliant.",
+      "id": "port-1"
+    },
+    {
+      "label": "DTP Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP / XTP / HDBaseT. Up to 100m. HDCP compliant.",
+      "id": "port-2"
+    },
+    {
+      "label": "DTP Out 4",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Selectable DTP / XTP / HDBaseT. Up to 100m. HDCP compliant.",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232 / IR Out 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw. RS-232 + IR pass-through to remote DTP endpoint (shared connector).",
+      "id": "port-4"
+    },
+    {
+      "label": "RS-232 / IR Out 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw. RS-232 + IR pass-through to remote DTP endpoint (shared connector).",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232 / IR Out 3",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw. RS-232 + IR pass-through to remote DTP endpoint (shared connector).",
+      "id": "port-6"
+    },
+    {
+      "label": "RS-232 / IR Out 4",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw. RS-232 + IR pass-through to remote DTP endpoint (shared connector).",
+      "id": "port-7"
+    },
+    {
+      "label": "DTP Power Inject",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "Captive screw input. Up to 48W shared across 4 DTP outputs to remotely power receivers (DTP mode only).",
+      "id": "port-8"
+    }
+  ]
+}

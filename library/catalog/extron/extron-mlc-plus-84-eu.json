@@ -1,0 +1,124 @@
+{
+  "id": "avail-extron-60-1354-33",
+  "label": "Extron MLC Plus 84 EU",
+  "shortName": "MLC Plus 84 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1354-33",
+  "deviceType": "button-panel",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc84pluseu",
+  "searchTerms": [
+    "60-1354-33",
+    "mlc plus 84 eu",
+    "extron",
+    "mlc",
+    "plus"
+  ],
+  "heightMm": 48,
+  "widthMm": 111,
+  "depthMm": 39,
+  "weightKg": 0.2,
+  "powerDrawW": 2.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 8.9,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "MediaLink® Plus Controller - EU Wallplate",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - MLC Eng.vssx",
+      "label": "MLC Plus 84 EU",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1354-33-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1354-33-2",
+      "label": "COM 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1354-33-3",
+      "label": "COM 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1354-33-4",
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1354-33-5",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1354-33-6",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1354-33-7",
+      "label": "Digital In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1354-33-8",
+      "label": "Volume Control",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1354-33-9",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
+}

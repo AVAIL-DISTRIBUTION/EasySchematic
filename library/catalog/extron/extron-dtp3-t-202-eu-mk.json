@@ -1,0 +1,115 @@
+{
+  "id": "avail-extron-60-1829-52",
+  "label": "Extron DTP3 T 202 EU/MK",
+  "shortName": "DTP3 T 202 EU/MK",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1829-52",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t202eumk",
+  "searchTerms": [
+    "60-1829-52",
+    "dtp3 t 202 eu/mk",
+    "extron",
+    "dtp3",
+    "202"
+  ],
+  "heightMm": 47,
+  "widthMm": 110,
+  "depthMm": 39,
+  "weightKg": 0.27,
+  "powerDrawW": 6.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 21.5,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "Two Input DTP3 Transmitter for Flex55 and EU/MK Junction Boxes",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 202 EU/MK",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1829-52-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1829-52-2",
+      "label": "DTP3/HDBT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "RJ-45 to Rx"
+    },
+    {
+      "id": "vx-60-1829-52-3",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1829-52-4",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1829-52-5",
+      "label": "RS-232 (Remote)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "label": "USB-C Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Control",
+      "id": "vx-60-1829-52-s1"
+    },
+    {
+      "id": "vx-60-1829-52-6",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1829-52-7",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

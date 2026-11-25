@@ -1,0 +1,401 @@
+{
+  "id": "avail-extron-60-1238-96a",
+  "label": "Extron IN1608 xi IPCP Q MA 70 (LinkLicense)",
+  "shortName": "IN1608 xi IPCP Q MA 70",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1238-96A",
+  "deviceType": "presentation-system",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/in1608xi",
+  "searchTerms": [
+    "60-1238-96a",
+    "in1608 xi ipcp q ma 70",
+    "extron",
+    "in1608",
+    "ipcp"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 241,
+  "weightKg": 2.3,
+  "powerDrawW": 42,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 123,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "LinkLicense",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "100 Watt 70 V Mono Amp, AV LAN, LL UI Upgrade",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ab2f9caa-bfbc-490a-b7c8-ecf25096c398",
+      "label": "Extron IN1608 xi IPCP Q MA 70 LL",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "label": "Input 1 VGA",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "db15",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Input 2 VGA",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "db15",
+      "id": "port-1",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Input 3 HDMI",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-2",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Input 4 HDMI",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-3",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Input 5 HDMI",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-4",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Input 6 HDMI",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-5",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Input 7 DTP",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "id": "port-6",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Input 8 DTP",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "id": "port-7",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "Output A HDMI",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-16",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Output B HDMI",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-17",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Output C DTP/HDBaseT",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "id": "port-18",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-8"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-9"
+    },
+    {
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-10"
+    },
+    {
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-11"
+    },
+    {
+      "label": "Audio In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-12"
+    },
+    {
+      "label": "Audio In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-13"
+    },
+    {
+      "label": "Mic/Line 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-14"
+    },
+    {
+      "label": "Mic/Line 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-15"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-19"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-20"
+    },
+    {
+      "label": "Speaker Out (70V Mono)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "id": "port-25"
+    },
+    {
+      "label": "IPCP LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-26"
+    },
+    {
+      "label": "IPCP AV LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-27"
+    },
+    {
+      "label": "IPCP AV LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-28"
+    },
+    {
+      "label": "IPCP AV LAN 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-29"
+    },
+    {
+      "label": "IPCP Serial 1 (RS-232/422/485)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-30"
+    },
+    {
+      "label": "IPCP Serial 2 (RS-232)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-31"
+    },
+    {
+      "label": "IPCP Serial 3 (RS-232)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-32"
+    },
+    {
+      "label": "IPCP IR/Serial 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-37"
+    },
+    {
+      "label": "IPCP IR/Serial 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-38"
+    },
+    {
+      "label": "IPCP Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-39"
+    },
+    {
+      "label": "IPCP Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-40"
+    },
+    {
+      "label": "IPCP Relay 3",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-41"
+    },
+    {
+      "label": "IPCP Relay 4",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-42"
+    },
+    {
+      "label": "IPCP Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "id": "port-33"
+    },
+    {
+      "label": "IPCP Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "id": "port-34"
+    },
+    {
+      "label": "IPCP Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "id": "port-35"
+    },
+    {
+      "label": "IPCP Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "id": "port-36"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-21"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-22"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-23"
+    },
+    {
+      "label": "IPCP eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-43"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-24"
+    }
+  ]
+}

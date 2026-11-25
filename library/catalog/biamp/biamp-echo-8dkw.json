@@ -1,0 +1,97 @@
+{
+  "id": "avail-biamp-920-01885-20002",
+  "label": "Biamp Echo 8DKW",
+  "shortName": "Echo 8DKW",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01885-20002",
+  "deviceType": "button-panel",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01885-20002",
+  "searchTerms": [
+    "920-01885-20002",
+    "echo 8dkw",
+    "biamp",
+    "echo",
+    "8dkw"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 17,
+  "weightKg": 0.09,
+  "powerDrawW": 5,
+  "voltage": "12V DC",
+  "unitCost": 526,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "8-button control pad with 1 bidirectional RS-232 port, 1 unidirectional RS-232 port, 3 GPIO; DK, white",
+    "notes": "[AVAIL] from Biamp documentation (Impera Echo); [AVAIL] from Biamp documentation (EU model size)",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_impera_echo_jan23_8709.pdf"
+    },
+    "portsMissing": "NEB bus connector type is not stated."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "3-pin screw block (TX-1, RX-1, GND), bidirectional"
+    },
+    {
+      "id": "p2",
+      "label": "RS-232/IR",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "2-pin screw block (TX-2, GND): one-way RS-232 or IR, up to 2 IR emitters"
+    },
+    {
+      "id": "p3",
+      "label": "I/O 1-3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "4-pin screw block (I/O 1-3, GND); open drain, 24 V DC, 0.5 A max"
+    },
+    {
+      "id": "p4",
+      "label": "NEB",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "other",
+      "notes": "NEB extension bus (PWR, NDA, NCL, GND), up to 2 devices; 12 V DC 0.3 A output; connector type not stated"
+    },
+    {
+      "id": "p5",
+      "label": "Mini USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-mini",
+      "notes": "Mini USB B 5P, programming; behind the front cover"
+    },
+    {
+      "id": "p6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "12 V DC, 2-pin screw block; included 100-240 V AC wall plug PSU"
+    }
+  ]
+}

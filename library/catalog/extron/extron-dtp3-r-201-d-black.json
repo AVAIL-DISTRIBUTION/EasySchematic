@@ -1,0 +1,78 @@
+{
+  "id": "avail-extron-60-2072-52",
+  "label": "Extron DTP3 R 201 D, Black",
+  "shortName": "DTP3 R 201 D, Black",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2072-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3r201d",
+  "searchTerms": [
+    "60-2072-52",
+    "dtp3 r 201 d, black",
+    "extron",
+    "dtp3",
+    "201",
+    "black"
+  ],
+  "heightMm": 71,
+  "widthMm": 43,
+  "depthMm": 48,
+  "powerDrawW": 7.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 20.2,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "HDMI 4K/60 Wallplate Rx, Black - 330 feet (100 m)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "variant",
+      "from": "extron/extron-dtp3-r-201-d-white.json",
+      "label": "Extron DTP3 R 201 D, White",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2072-53-1",
+      "label": "DTP In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-2072-53-2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-2072-53-3",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-2072-53-4",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-pole captive screw — Extron convention, verify"
+    }
+  ]
+}

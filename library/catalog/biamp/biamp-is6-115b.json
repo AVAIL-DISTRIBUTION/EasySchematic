@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-930-00855-00001",
+  "label": "Biamp IS6-115B",
+  "shortName": "IS6-115B",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00855-00001",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00855-00001",
+  "searchTerms": [
+    "930-00855-00001",
+    "is6-115b",
+    "biamp"
+  ],
+  "heightMm": 503,
+  "widthMm": 419,
+  "depthMm": 593,
+  "weightKg": 35.4,
+  "unitCost": 2200,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Medium Power 15-Inch Subwoofer Black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_is6-115_nov2023_2407.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive subwoofer, external amplifier; Screw terminal block, 4-position (two blocks); single amp"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 4-position (two blocks); parallel loop-thru"
+    }
+  ]
+}

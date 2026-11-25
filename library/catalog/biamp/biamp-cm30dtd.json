@@ -1,0 +1,56 @@
+{
+  "id": "avail-biamp-910-00632",
+  "label": "Biamp CM30DTD",
+  "shortName": "CM30DTD",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00632",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00632",
+  "searchTerms": [
+    "910-00632",
+    "cm30dtd",
+    "biamp"
+  ],
+  "heightMm": 223,
+  "widthMm": 223,
+  "depthMm": 120,
+  "weightKg": 2.5,
+  "unitCost": 172,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4.25” two-way thin edge design ceiling loudspeaker 100-70 volt / 30 watts, 16 ohms / 60 watts, white, front frame integrated neodymium magnets and back can (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; [AVAIL] estimated: back-can depth from product photos",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_cm30dtd_sep23_2110.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 70 V / 100 V; 4-way Euroblock with permanent pass-through"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Pass-through on the same connector"
+    }
+  ]
+}

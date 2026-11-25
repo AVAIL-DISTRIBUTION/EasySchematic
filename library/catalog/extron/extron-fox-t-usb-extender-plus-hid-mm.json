@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1526-11",
+  "label": "Extron FOX T USB Extender Plus HID MM",
+  "shortName": "FOX T USB Extender Plus HID MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1526-11",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/foxusbextplus",
+  "searchTerms": [
+    "60-1526-11",
+    "fox t usb extender plus hid mm",
+    "extron",
+    "fox",
+    "usb",
+    "extender",
+    "plus"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 3.3,
+  "voltage": "12V DC",
+  "thermalBtuh": 11.3,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Fiber Optic Transmitter for USB - Multimode",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

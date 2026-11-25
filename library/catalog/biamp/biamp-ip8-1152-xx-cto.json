@@ -1,0 +1,36 @@
+{
+  "id": "avail-biamp-930-00912",
+  "label": "Biamp IP8-1152/xx-CTO",
+  "shortName": "IP8-1152/xx-CTO",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00912",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00912",
+    "ip8-1152/xx-cto",
+    "biamp",
+    "ip8-1152",
+    "xx-cto"
+  ],
+  "heightMm": 782,
+  "widthMm": 419,
+  "depthMm": 510,
+  "weightKg": 30.8,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 15-inch Two-Way Installation Loudspeaker",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Configured to order: inputs depend on the configuration ordered; ports wait for the order specification"
+  },
+  "ports": []
+}

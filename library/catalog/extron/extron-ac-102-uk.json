@@ -1,0 +1,70 @@
+{
+  "id": "avail-extron-60-1385-02",
+  "label": "Extron AC 102 UK",
+  "shortName": "AC 102 UK",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1385-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubbypowermod",
+  "searchTerms": [
+    "60-1385-02",
+    "ac 102 uk",
+    "extron",
+    "102"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 76,
+  "weightKg": 0.8,
+  "voltage": "125V AC",
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AC Module, UK",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "21fd061a-81fc-439d-8573-08986cd22b1f",
+      "label": "Extron AC 102 UK",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "id": "port-0",
+      "section": "Power"
+    },
+    {
+      "label": "AC Outlet 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-1"
+    },
+    {
+      "label": "AC Outlet 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-2"
+    }
+  ]
+}

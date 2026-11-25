@@ -1,0 +1,62 @@
+{
+  "id": "avail-extron-70-617-12",
+  "label": "Extron One HDMI Female to Female on Pigtail (MAAP, Black)",
+  "shortName": "One HDMI Female to Female on Pig…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-617-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/maap1hdmif1hdmif10",
+  "searchTerms": [
+    "70-617-12",
+    "one hdmi female to female on pig…",
+    "extron",
+    "one",
+    "hdmi",
+    "female"
+  ],
+  "heightMm": 17,
+  "widthMm": 56,
+  "depthMm": 1,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-maap",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "MAAP, Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-maap)",
+    "description": "Single Space MAAP - Black: One HDMI Female to Female on Pigtail",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/maap1hdmif1hdmif10",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In (Front)",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI Out (Rear)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    }
+  ]
+}

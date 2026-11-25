@@ -90,6 +90,9 @@ docs/src/searchIndex.json
 docs/public/dev/
 
 # DB backups
+# AVAIL: server database snapshots for fill:catalog-ports, archives of the catalog export
+tools/avail/incoming/db/
+library/*.zip
 api/backup-*.sql
 backups/
 
@@ -118,3 +121,6 @@ email-signature.html
 
 # Local QA test-report artifacts (test-report skill)
 test-reports/
+
+# AVAIL: Extron Visio stencils (22 MB, from extron.com); parsed into tools/avail/extron-visio/
+tools/avail/incoming/extron-visio/

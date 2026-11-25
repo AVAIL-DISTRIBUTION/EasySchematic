@@ -9,7 +9,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { blocksOf, formatBlockReport, genericModelNumber, lintBlock, lintDocument } from "../avail/blockLint";
+import { blocksOf, formatBlockReport, genericModelNumber, isRoomMounted, lintBlock, lintDocument } from "../avail/blockLint";
 import {
   defaultCategoryFor,
   findCategory,
@@ -246,5 +246,55 @@ describe("blocksOf", () => {
     expect(
       blocksOf({ nodes: [{ type: "device", data: { label: "d" } }, { type: "room", data: { label: "r" } }] }),
     ).toEqual([{ label: "d" }]);
+  });
+});
+
+describe("dimensions: rack versus room (standard 3.2, step 1.9)", () => {
+  const noPhysics = () => {
+    const { heightMm: _h, widthMm: _w, depthMm: _d, weightKg: _k, ...rest } = clean();
+    return rest;
+  };
+
+  it("requires dimensions and weight for whatever stands in a rack", () => {
+    expect(lintBlock(noPhysics()).warnings).toEqual(["no heightMm"]);
+    expect(lintBlock({ ...noPhysics(), category: "Audio Products / DSP", deviceType: "audio-dsp" }).warnings).toEqual(["no heightMm"]);
+  });
+
+  it("does not require them for room-mounted categories and device types", () => {
+    expect(lintBlock({ ...noPhysics(), category: "Audio Products / Speakers", deviceType: "speaker" }).warnings).toEqual([]);
+    expect(lintBlock({ ...noPhysics(), category: "Microphones / Array microphones", deviceType: "wired-mic" }).warnings).toEqual([]);
+    expect(lintBlock({ ...noPhysics(), category: "Control Systems / Button Panel" }).warnings).toEqual([]);
+    expect(lintBlock({ ...noPhysics(), deviceType: "wall-plate" }).warnings).toEqual([]);
+    // Other physics stays required: a room-mounted device still needs power data.
+    const { powerDrawW: _p, ...noPower } = noPhysics();
+    expect(lintBlock({ ...noPower, deviceType: "touch-screen" }).warnings).toEqual(["no powerDrawW/voltage (or poeDrawW)"]);
+  });
+
+  it("a rack form puts the device in a rack whatever its category", () => {
+    expect(lintBlock({ ...noPhysics(), deviceType: "video-bar", rackForm: "shelf-only" }).warnings).toEqual(["no heightMm"]);
+  });
+
+  it("isRoomMounted matches a group or a leaf path, not a prefix of a name", () => {
+    expect(isRoomMounted({ category: "Displays / LED" })).toBe(true);
+    expect(isRoomMounted({ category: "Videocameras / PTZ cameras" })).toBe(true);
+    expect(isRoomMounted({ category: "UC / Speakerphones" })).toBe(true);
+    expect(isRoomMounted({ category: "UC / Collaboration System" })).toBe(false);
+    expect(isRoomMounted({ category: "Control Systems / Processors" })).toBe(false);
+    expect(isRoomMounted({ category: "Microphones", rackForm: "half" })).toBe(false);
+    expect(isRoomMounted({ deviceType: "ptz-camera" })).toBe(true);
+    expect(isRoomMounted({})).toBe(false);
+  });
+});
+
+describe("a block needs ports or slots (step 1.9)", () => {
+  it("is an error to have neither", () => {
+    expect(lintBlock({ ...clean(), ports: [] }).errors).toContain("no ports");
+    // A speaker needs no power port, but still something to connect.
+    expect(lintBlock({ ...clean(), deviceType: "speaker", category: "Audio Products / Speakers", ports: [] }).level).toBe("FIX");
+  });
+
+  it("slots alone are enough (a Cable Cubby frame)", () => {
+    const frame = { ...clean(), ports: [], slots: [{ id: "slot-1", label: "Slot 1", slotFamily: "extron-cubby-aap" }] };
+    expect(lintBlock(frame).errors).not.toContain("no ports");
   });
 });

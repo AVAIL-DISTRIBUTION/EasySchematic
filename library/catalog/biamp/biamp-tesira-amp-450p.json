@@ -1,0 +1,85 @@
+{
+  "id": "avail-biamp-920-00010-00001",
+  "label": "Biamp Tesira AMP-450P",
+  "shortName": "Tesira AMP-450P",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00010-00001",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00010-00001",
+  "searchTerms": [
+    "920-00010-00001",
+    "tesira amp-450p",
+    "biamp",
+    "tesira",
+    "amp-450p"
+  ],
+  "heightMm": 30,
+  "widthMm": 195,
+  "depthMm": 120,
+  "weightKg": 0.7,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "unitCost": 1028,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4 channel PoE+ conferencing amplifier",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e6d6d528-b11f-4c54-b880-1e0f49512b28",
+      "label": "Biamp Tesira AMP-450P",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p17762064186281-wz6",
+      "label": "CH 1 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186282-4xy",
+      "label": "CH 2 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186283-oz6",
+      "label": "CH 3 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186284-h28",
+      "label": "CH 4 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186280-snc",
+      "label": "AVB / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    }
+  ]
+}

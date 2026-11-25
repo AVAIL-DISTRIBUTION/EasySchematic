@@ -1,0 +1,136 @@
+{
+  "id": "avail-extron-60-1863-01",
+  "label": "Extron XPA U 758",
+  "shortName": "XPA U 758",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1863-01",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xpau758",
+  "searchTerms": [
+    "60-1863-01",
+    "xpa u 758",
+    "extron",
+    "xpa",
+    "758"
+  ],
+  "heightMm": 43,
+  "widthMm": 220,
+  "depthMm": 267,
+  "weightKg": 1.9,
+  "powerDrawW": 9.6,
+  "voltage": "100V AC",
+  "thermalBtuh": 33,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Eight Channel Amp, 75 watts at 8 ohms",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "XPA U 758",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1863-01-1",
+      "label": "Audio In 1-2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1863-01-2",
+      "label": "Audio In 3-4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 3-4"
+    },
+    {
+      "id": "vx-60-1863-01-3",
+      "label": "Audio In 5-6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 5-6"
+    },
+    {
+      "id": "vx-60-1863-01-4",
+      "label": "Audio In 7-8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 7-8"
+    },
+    {
+      "id": "vx-60-1863-01-5",
+      "label": "Speaker Out 1-2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1863-01-6",
+      "label": "Speaker Out 3-4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 3-4"
+    },
+    {
+      "id": "vx-60-1863-01-7",
+      "label": "Speaker Out 5-6",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 5-6"
+    },
+    {
+      "id": "vx-60-1863-01-8",
+      "label": "Speaker Out 7-8",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 7-8"
+    },
+    {
+      "id": "vx-60-1863-01-9",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1863-01-10",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

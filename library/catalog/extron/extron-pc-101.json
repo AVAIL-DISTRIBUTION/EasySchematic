@@ -1,0 +1,82 @@
+{
+  "id": "avail-extron-60-1378-01",
+  "label": "Extron PC 101",
+  "shortName": "PC 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1378-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/pc101",
+  "searchTerms": [
+    "60-1378-01",
+    "pc 101",
+    "extron",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 102,
+  "weightKg": 0.4,
+  "powerDrawW": 1.9,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 2.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "AC Power Controller",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - Misc Eng.vssx",
+      "label": "PC 101",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1378-01-1",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1378-01-2",
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1378-01-3",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains, 6\" pigtail with male IEC). Included male IEC → female Edison adapter for US receptacles."
+    },
+    {
+      "id": "vx-60-1378-01-4",
+      "label": "AC Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Switched AC outlet (10A max, 1106W @ 120 VAC) — toggled by the contact-closure input. 24\" pigtail with female IEC."
+    }
+  ]
+}

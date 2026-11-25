@@ -1,0 +1,96 @@
+{
+  "id": "avail-biamp-920-00823-00002",
+  "label": "Biamp Qt 100",
+  "shortName": "Qt 100",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00823-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00823-00001",
+  "searchTerms": [
+    "920-00823-00002",
+    "qt 100",
+    "biamp",
+    "100"
+  ],
+  "heightMm": 89,
+  "widthMm": 179,
+  "depthMm": 23,
+  "weightKg": 0.17,
+  "powerDrawW": 7,
+  "voltage": "100-240V AC",
+  "unitCost": 1225,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "sound-masking",
+    "description": "Qt-100, 1-zone sound masking control module",
+    "notes": "Звуковая маскировка; в таксономии нет своей категории; Характеристики с сайта по артикулу 920-00823-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Qt_100_Dec24_12928.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Aux paging/music input, stereo or mono, +4 dBu"
+    },
+    {
+      "id": "p2",
+      "label": "Qt Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Cable run to Qt emitters over category cable, up to 60 emitters"
+    },
+    {
+      "id": "p3",
+      "label": "Qt Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Cable run to Qt emitters over category cable, up to 60 emitters"
+    },
+    {
+      "id": "p4",
+      "label": "Status Out",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Logic status output, 5 V DC"
+    },
+    {
+      "id": "p5",
+      "label": "Remote In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Contact closure, normally open (fire alarm / remote)"
+    },
+    {
+      "id": "p6",
+      "label": "Power (24V DC)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "24 V DC 1 A from external supply; coax plug (center positive) or captive screw terminal"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-910-01583",
+  "label": "Biamp CMSUB8",
+  "shortName": "CMSUB8",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01583",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01583",
+  "searchTerms": [
+    "910-01583",
+    "cmsub8",
+    "biamp"
+  ],
+  "heightMm": 246,
+  "widthMm": 246,
+  "depthMm": 97,
+  "weightKg": 2.1,
+  "unitCost": 170,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "8\" dual coil ceiling subwoofer 2 x 8 ohms / 2 x 80 watts, built-in crossover, white",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not name the input connector; ports wait for the manual or the panel"
+  },
+  "ports": []
+}

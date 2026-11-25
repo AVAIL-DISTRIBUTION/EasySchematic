@@ -1,0 +1,50 @@
+{
+  "id": "avail-biamp-920-00511-20000",
+  "label": "Biamp Parlé TTM-XEX White",
+  "shortName": "Parlé TTM-XEX White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00511-20000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00511-20000",
+  "searchTerms": [
+    "920-00511-20000",
+    "parlé ttm-xex white",
+    "biamp",
+    "parl",
+    "ttm-xex",
+    "white"
+  ],
+  "heightMm": 110,
+  "widthMm": 110,
+  "depthMm": 18,
+  "weightKg": 0.23,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Expansion AVB Beamtracking tabletop microphone, white",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_parle_ttm-xex_jul22_1947.pdf"
+    },
+    "portsMissing": "Power is 'Custom/Proprietary' from the host; typed avb to mate with the Parlé expansion convention."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic Link",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Pre-attached 2 m cable, RJ-45; proprietary digital protocol to Mic 2 of a TTM-X network box, up to 10 m; powered by host (Power: Custom/Proprietary)"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-70-1243-02",
+  "label": "Extron USB-C AVPD 101 Flex55 (Black)",
+  "shortName": "USB-C AVPD 101 Flex55",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1243-02",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/usbcfm",
+  "searchTerms": [
+    "70-1243-02",
+    "usb-c avpd 101 flex55",
+    "extron",
+    "usb-c",
+    "avpd",
+    "101",
+    "flex55"
+  ],
+  "heightMm": 17,
+  "widthMm": 89,
+  "depthMm": 1,
+  "weightKg": 0.1,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "Half-Size Flex55 - Black: One USB-C Female to Male on Pigtail",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

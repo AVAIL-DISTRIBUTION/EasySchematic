@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-1425-02",
+  "label": "Extron Cable Cubby 202 UK",
+  "shortName": "Cable Cubby 202 UK",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1425-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby202",
+  "searchTerms": [
+    "60-1425-02",
+    "cable cubby 202 uk",
+    "extron",
+    "cable",
+    "cubby",
+    "202"
+  ],
+  "heightMm": 81,
+  "widthMm": 203,
+  "depthMm": 112,
+  "weightKg": 1.1,
+  "voltage": "125V AC",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Cable Cubby 202 UK AC, Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "number of extron-cubby-aap openings: not drawn in the Extron stencil and not in the description"
+  },
+  "ports": []
+}

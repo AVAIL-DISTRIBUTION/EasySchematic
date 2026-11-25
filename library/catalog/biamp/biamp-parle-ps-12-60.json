@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-01897-00002",
+  "label": "Biamp Parlé PS-12-60",
+  "shortName": "Parlé PS-12-60",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01897-00002",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01897-00001",
+  "searchTerms": [
+    "920-01897-00002",
+    "parlé ps-12-60",
+    "biamp",
+    "parl",
+    "ps-12-60"
+  ],
+  "heightMm": 20,
+  "widthMm": 40,
+  "depthMm": 180,
+  "powerDrawW": 60,
+  "powerCapacityW": 60,
+  "voltage": "100-240V AC",
+  "unitCost": 159,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "12 V 60W optional power supply for ABC 2500(a), VBC 2500a, VBC 2800",
+    "notes": "Характеристики с сайта по артикулу 920-01897-00001; [AVAIL] from Biamp documentation: PSU, output 12V DC 60 W (rating); [AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp)",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; the AC input and the screw-lock output connector type are not stated."
+  },
+  "ports": []
+}

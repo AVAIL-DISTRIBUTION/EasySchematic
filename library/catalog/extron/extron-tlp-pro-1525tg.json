@@ -1,0 +1,74 @@
+{
+  "id": "avail-extron-60-1790-12",
+  "label": "Extron TLP Pro 1525TG",
+  "shortName": "TLP Pro 1525TG",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1790-12",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1525tg",
+  "searchTerms": [
+    "60-1790-12",
+    "tlp pro 1525tg",
+    "extron",
+    "tlp",
+    "pro",
+    "1525tg"
+  ],
+  "heightMm": 280,
+  "widthMm": 408,
+  "depthMm": 238,
+  "weightKg": 6.3,
+  "powerDrawW": 23.9,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 76.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "15\" Tabletop TouchLink® Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1525TG NC",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1790-12-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI input for direct video preview on the touchpanel."
+    },
+    {
+      "id": "vx-60-1790-12-2",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE+ 802.3at class 4. Also tunnels XTP video on the same RJ-45 link."
+    },
+    {
+      "id": "vx-60-1790-12-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "Alternate to PoE — 12VDC barrel input (use Extron PS 1230 or PS 1210C)."
+    }
+  ]
+}

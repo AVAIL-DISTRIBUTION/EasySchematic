@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-910-00578",
+  "label": "Biamp V2-212SB",
+  "shortName": "V2-212SB",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00578",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00578",
+  "searchTerms": [
+    "910-00578",
+    "v2-212sb",
+    "biamp"
+  ],
+  "heightMm": 468,
+  "widthMm": 912,
+  "depthMm": 455,
+  "weightKg": 31.8,
+  "unitCost": 1283,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Subwoofer 2 X 12-Inch Black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_v2-212s_2103.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive subwoofer, external amplifier; NL4-compatible locking connector"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Terminal strip in parallel with the NL4"
+    }
+  ]
+}

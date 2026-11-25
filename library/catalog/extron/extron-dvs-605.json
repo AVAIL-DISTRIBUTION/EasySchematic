@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-1059-01",
+  "label": "Extron DVS 605",
+  "shortName": "DVS 605",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1059-01",
+  "deviceType": "scaler",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dvs605",
+  "searchTerms": [
+    "60-1059-01",
+    "dvs 605",
+    "extron",
+    "dvs",
+    "605"
+  ],
+  "heightMm": 44,
+  "widthMm": 444,
+  "depthMm": 267,
+  "weightKg": 2.2,
+  "powerDrawW": 25.7,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 83.6,
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Five Input HDCP-Compliant Scaler with Seamless Switching",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

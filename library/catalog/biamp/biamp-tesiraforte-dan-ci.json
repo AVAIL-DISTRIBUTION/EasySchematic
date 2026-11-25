@@ -1,0 +1,256 @@
+{
+  "id": "avail-biamp-920-00447-00002",
+  "label": "Biamp TesiraFORTÉ DAN CI",
+  "shortName": "TesiraFORTÉ DAN CI",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00447-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00447-00001",
+  "searchTerms": [
+    "920-00447-00002",
+    "tesiraforté dan ci",
+    "biamp",
+    "tesirafort",
+    "dan"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 267,
+  "weightKg": 3.63,
+  "powerDrawW": 35,
+  "voltage": "100-240V AC",
+  "unitCost": 5014,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Fixed I/O DSP with 12 analog inputs, 8 analog outputs, 8 channels configurable USB audio, 32 x 32 channels of Dante, and AEC technology (all 12 inputs)",
+    "notes": "Характеристики с сайта по артикулу 920-00447-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "162bea3c-2800-4401-8ccb-e38dcf48f8d2",
+      "label": "Biamp TesiraFORTÉ DAN CI",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "f1b8393c",
+      "label": "Line 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "9fa26a31",
+      "label": "Line 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "71186174",
+      "label": "Line 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "2d525931",
+      "label": "Line 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "5fb39f1e",
+      "label": "Line 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "b5a42401",
+      "label": "Line 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "c386c72f",
+      "label": "Line 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "9b3b559a",
+      "label": "Line 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "21d9e057",
+      "label": "Line 9",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "cc8521cd",
+      "label": "Line 10",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "e0118aa2",
+      "label": "Line 11",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "5e72d3c8",
+      "label": "Line 12",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "3031b494",
+      "label": "Line 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "0b0c2a41",
+      "label": "Line 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "3b2626a9",
+      "label": "Line 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "1a7ab14c",
+      "label": "Line 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "25967b9c",
+      "label": "Line 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "6e386b23",
+      "label": "Line 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "85c7978e",
+      "label": "Line 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "ebced61c",
+      "label": "Line 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-dante",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p-ctrl",
+      "label": "Control",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p-rs232",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "db9",
+      "section": "Control"
+    },
+    {
+      "id": "p-gpio",
+      "label": "Logic I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control"
+    },
+    {
+      "id": "p-usb",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "7c47f941",
+      "label": "AC Power",
+      "signalType": "power",
+      "connectorType": "iec",
+      "direction": "input",
+      "inheritsSignal": false,
+      "gender": "male",
+      "section": "Power"
+    }
+  ]
+}

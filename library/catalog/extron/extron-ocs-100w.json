@@ -1,0 +1,79 @@
+{
+  "id": "avail-extron-60-1665-01",
+  "label": "Extron OCS 100W",
+  "shortName": "OCS 100W",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1665-01",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ocs100",
+  "searchTerms": [
+    "60-1665-01",
+    "ocs 100w",
+    "extron",
+    "ocs",
+    "100w"
+  ],
+  "heightMm": 140,
+  "widthMm": 71,
+  "depthMm": 53,
+  "weightKg": 0.1,
+  "powerDrawW": 0.8,
+  "thermalBtuh": 2.6,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Occupancy Sensor - Wall Mount",
+    "notes": "[AVAIL] powered by the host device / bus — no own power input; [AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - Misc Eng.vssx",
+      "label": "PC 1224",
+      "match": "part-number",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1664-01-1",
+      "label": "USB Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Power"
+    },
+    {
+      "id": "vx-60-1664-01-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1664-01-3",
+      "label": "24 V Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1664-01-4",
+      "label": "Power Out (Loop)",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

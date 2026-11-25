@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-60-1705-03",
+  "label": "Extron ECM S10",
+  "shortName": "ECM S10",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1705-03",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / eBUS",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ecms10",
+  "searchTerms": [
+    "60-1705-03",
+    "ecm s10",
+    "extron",
+    "ecm",
+    "s10"
+  ],
+  "heightMm": 108,
+  "widthMm": 45,
+  "depthMm": 42,
+  "weightKg": 0.07,
+  "powerDrawW": 1,
+  "voltage": "14V DC",
+  "thermalBtuh": 2.6,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "eBUS Partition Sensor",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "8a18d4c6-21e8-4d01-ae93-e855c1018aa0",
+      "label": "Extron ECM S10",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Digital Out",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Digital output asserted on occupancy detection. 2-pole 3.5mm captive screw, TTL logic levels.",
+      "id": "port-1"
+    },
+    {
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "Extron eBUS — differential serial bus on a 4-pole 3.5mm captive screw (+V / +S / -S / G). 12V supplied from upstream IPCP Pro / power injector.",
+      "id": "port-0"
+    },
+    {
+      "label": "Power Out (Tx)",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "14 VDC @ 100 mA on a 2-pole captive screw — supplies power to the matching ECM S10 IR transmitter (the receiver+transmitter pair forms the IR beam-break sensor).",
+      "id": "port-2"
+    }
+  ]
+}

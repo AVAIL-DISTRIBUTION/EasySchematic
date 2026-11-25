@@ -1,0 +1,82 @@
+{
+  "id": "avail-extron-60-1891-20",
+  "label": "Extron AC+USB 314 US, Conduit",
+  "shortName": "AC+USB 314 US, Conduit",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1891-20",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb300",
+  "searchTerms": [
+    "60-1891-20",
+    "ac+usb 314 us, conduit",
+    "extron",
+    "ac+usb",
+    "314",
+    "conduit"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 76,
+  "weightKg": 1,
+  "powerDrawW": 45,
+  "voltage": "12V DC",
+  "thermalBtuh": 29.6,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "US (2) AC & (1) USBA, (1) USBC Outlets, 12 A Circuit Breaker, Integrated PS, 6' (1.83 m) Conduit",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "59483590-9947-4e7d-a4c7-618ceedda7c8",
+      "label": "Extron AC+USB 314 US Conduit",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "USB Charging (Type C, PD)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Charging (Type A)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "AC Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "port-1"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "avail-extron-60-1610-01",
+  "label": "Extron SF 10C SUB",
+  "shortName": "SF 10C SUB",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1610-01",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sf10csub",
+  "searchTerms": [
+    "60-1610-01",
+    "sf 10c sub",
+    "extron",
+    "10c",
+    "sub"
+  ],
+  "heightMm": 385,
+  "widthMm": 362,
+  "depthMm": 869,
+  "weightKg": 17.2,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "10\" SoundField In-Ceiling Subwoofer",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "a200afe8-e98d-4046-be45-89f43db4f309",
+      "label": "Extron SF 10C SUB",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

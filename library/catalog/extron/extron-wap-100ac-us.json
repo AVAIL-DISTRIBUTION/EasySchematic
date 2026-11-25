@@ -1,0 +1,64 @@
+{
+  "id": "avail-extron-60-1635-01",
+  "label": "Extron WAP 100AC US",
+  "shortName": "WAP 100AC US",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1635-01",
+  "deviceType": "access-point",
+  "category": "Networking / Wireless",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/wap100ac",
+  "searchTerms": [
+    "60-1635-01",
+    "wap 100ac us",
+    "extron",
+    "wap",
+    "100ac"
+  ],
+  "heightMm": 42,
+  "widthMm": 162,
+  "depthMm": 162,
+  "weightKg": 0.28,
+  "powerDrawW": 15.77,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 53.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Wireless Access Point - US/Canada Version",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Misc Engineering Drawings/MISC - Wireless Eng.vssx",
+      "label": "WAP 100AC US",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1635-01-1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T Ethernet with PoE+ input (802.3at, ~16W max). Single port carries data + power."
+    },
+    {
+      "id": "vx-60-1635-01-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-pole captive screw — Extron convention, verify"
+    }
+  ]
+}

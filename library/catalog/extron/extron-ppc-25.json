@@ -1,0 +1,71 @@
+{
+  "id": "avail-extron-60-887-01",
+  "label": "Extron PPC 25",
+  "shortName": "PPC 25",
+  "manufacturer": "Extron",
+  "modelNumber": "60-887-01",
+  "deviceType": "keypad",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ppc25",
+  "searchTerms": [
+    "60-887-01",
+    "ppc 25",
+    "extron",
+    "ppc"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.7,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Priority Page Controller",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Misc Eng.vssx",
+      "label": "PPC 25",
+      "match": "part-number",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-887-01-1",
+      "label": "Relay",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Latching contact-closure output (24V, 1A normally-open) on a 2-pole 3.5mm captive screw — drives a downstream amp's standby/mute input when paging is active. (2-pole captive screw)"
+    },
+    {
+      "id": "vx-60-887-01-3",
+      "label": "Paging Sensor",
+      "signalType": "sensor",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-887-01-2",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "12VDC, 33mA — power input via 2-pole captive screw. PSU not included; can share with another Extron device's auxiliary power output."
+    }
+  ]
+}

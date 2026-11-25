@@ -1,0 +1,82 @@
+{
+  "id": "avail-extron-60-1782-10",
+  "label": "Extron AC+USB 311 MULTI",
+  "shortName": "AC+USB 311 MULTI",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1782-10",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb300",
+  "searchTerms": [
+    "60-1782-10",
+    "ac+usb 311 multi",
+    "extron",
+    "ac+usb",
+    "311",
+    "multi"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 152,
+  "weightKg": 1.1,
+  "powerDrawW": 45,
+  "voltage": "12V DC",
+  "thermalBtuh": 29.6,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AC+USB-C+USB-A, MULTI",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "64c28a97-4fd6-48e5-8a65-4e485d014daf",
+      "label": "Extron AC+USB 311 MULTI",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "USB Charging (Type C, PD)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Charging (Type A)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "AC Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "port-1"
+    }
+  ]
+}

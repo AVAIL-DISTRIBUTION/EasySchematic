@@ -1,0 +1,81 @@
+{
+  "id": "avail-extron-60-1627-11",
+  "label": "Extron AXI 22 AT",
+  "shortName": "AXI 22 AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1627-11",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi22at",
+  "searchTerms": [
+    "60-1627-11",
+    "axi 22 at",
+    "extron",
+    "axi"
+  ],
+  "heightMm": 43,
+  "widthMm": 110,
+  "depthMm": 153,
+  "weightKg": 0.3,
+  "powerDrawW": 4.4,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 11.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "2 Input, 2 Output Dante Audio Interface",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "AXI 22 AT",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1627-11-1",
+      "label": "Mic/Line In 1-2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1627-11-2",
+      "label": "Audio Out 1-2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1627-11-3",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante"
+    },
+    {
+      "id": "vx-60-1627-11-4",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

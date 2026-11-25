@@ -1,0 +1,72 @@
+{
+  "id": "avail-extron-60-2076-01",
+  "label": "Extron EDID 121",
+  "shortName": "EDID 121",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2076-01",
+  "deviceType": "adapter",
+  "category": "Integration Tools / Adapters",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/edid121",
+  "searchTerms": [
+    "60-2076-01",
+    "edid 121",
+    "extron",
+    "edid",
+    "121"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.23,
+  "powerDrawW": 4.2,
+  "voltage": "12V DC",
+  "thermalBtuh": 10.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "8K HDMI EDID Emulator with EDID Minder® Plus",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Signal Proc Eng.vssx",
+      "label": "EDID 121",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2076-01-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-2076-01-2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-2076-01-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
+    }
+  ]
+}

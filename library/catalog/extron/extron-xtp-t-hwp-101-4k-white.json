@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-60-1611-13",
+  "label": "Extron XTP T HWP 101 4K (White)",
+  "shortName": "XTP T HWP 101 4K",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1611-13",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpthwp1014k",
+  "searchTerms": [
+    "60-1611-13",
+    "xtp t hwp 101 4k",
+    "extron",
+    "xtp",
+    "hwp",
+    "101"
+  ],
+  "heightMm": 71,
+  "widthMm": 43,
+  "depthMm": 48,
+  "weightKg": 0.2,
+  "powerDrawW": 2.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 9,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "XTP Transmitter for HDMI - Decorator-Style Wallplate - White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Transmitters Eng.vssx",
+      "label": "XTP T HWP 101 4K White",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1611-13-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1611-13-2",
+      "label": "XTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Shielded CATx (RJ-45) carrying HDMI/audio/Ethernet/RS-232/IR up to 100 m. Receives remote power from XTP CrossPoint or PI 140."
+    },
+    {
+      "id": "vx-60-1611-13-3",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP."
+    }
+  ]
+}

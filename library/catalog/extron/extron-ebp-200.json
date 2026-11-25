@@ -1,0 +1,72 @@
+{
+  "id": "avail-extron-60-1389-01",
+  "label": "Extron EBP 200",
+  "shortName": "EBP 200",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1389-01",
+  "deviceType": "button-panel",
+  "category": "Control Systems / eBUS",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ebp200",
+  "searchTerms": [
+    "60-1389-01",
+    "ebp 200",
+    "extron",
+    "ebp",
+    "200"
+  ],
+  "heightMm": 69,
+  "widthMm": 132,
+  "depthMm": 21,
+  "weightKg": 0.3,
+  "powerDrawW": 0.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 1.1,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "eBUS Button Panel with 10 Buttons - US 3-Gang",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Retired Control System Products/Retired Control - eBus Eng.vssx",
+      "label": "EBP 200",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1389-01-1",
+      "label": "eBUS 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "bus-powered (eBUS) (4-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1389-01-2",
+      "label": "eBUS 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "avail-extron-60-1389-01-dc12",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw — Extron convention, verify"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "id": "avail-extron-70-1107-03",
+  "label": "Extron FOX3 24x I/O 88 MM",
+  "shortName": "FOX3 24x I/O 88 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1107-03",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix24x",
+  "searchTerms": [
+    "70-1107-03",
+    "fox3 24x i/o 88 mm",
+    "extron",
+    "fox3",
+    "24x"
+  ],
+  "slotFamily": "extron-fox3-matrix-24",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-fox3-matrix-24x)",
+    "description": "8x8 I/O Board - Multimode",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 Matrix 24X Eng.vssx",
+      "label": "FOX3 24x I/O 88 MM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-70-1107-03-1",
+      "label": "Fiber In 1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-2",
+      "label": "Fiber In 2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-3",
+      "label": "Fiber In 3",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-4",
+      "label": "Fiber In 4",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-5",
+      "label": "Fiber In 5",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-6",
+      "label": "Fiber In 6",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-7",
+      "label": "Fiber In 7",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-8",
+      "label": "Fiber In 8",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1107-03-9",
+      "label": "Fiber Out 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1107-03-10",
+      "label": "Fiber Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1107-03-11",
+      "label": "Fiber Out 3",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1107-03-12",
+      "label": "Fiber Out 4",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1107-03-13",
+      "label": "Fiber Out 5",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1107-03-14",
+      "label": "Fiber Out 6",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1107-03-15",
+      "label": "Fiber Out 7",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1107-03-16",
+      "label": "Fiber Out 8",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    }
+  ]
+}

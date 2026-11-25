@@ -1,0 +1,62 @@
+{
+  "id": "avail-biamp-920-00027-10000",
+  "label": "Biamp Parlé DCM-X Black",
+  "shortName": "Parlé DCM-X Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00027-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00027-10000",
+  "searchTerms": [
+    "920-00027-10000",
+    "parlé dcm-x black",
+    "biamp",
+    "parl",
+    "dcm-x",
+    "black"
+  ],
+  "heightMm": 30,
+  "widthMm": 172,
+  "depthMm": 132,
+  "weightKg": 0.62,
+  "voltage": "PoE 802.3af Class 3",
+  "poeDrawW": 13,
+  "unitCost": 1800,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Devio UCX Beamtracking™ ceiling microphone, black surface mount",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf"
+    },
+    "portsMissing": "Install manual used as the data sheet (no separate sheet on the page). Network protocol on the Control port is not named (Devio UCX audio and control).",
+    "notes": "PoE from the manufacturer's document (takes precedence over the catalog card): \"An IEEE 802.3af Class 3 PoE device requiring 13W of PoE power\" — https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf; the card had PoE 802.3af class 3, poeDrawW 15.4"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Control (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "To a Devio UCX PoE+ port: network audio and control; PoE 802.3af class 3, 13 W"
+    },
+    {
+      "id": "p2",
+      "label": "Mic In 2 (DCM-XEX)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Optional DCM-XEX expansion mic, up to 10 m; Mic In 1 takes the included microphone"
+    }
+  ]
+}

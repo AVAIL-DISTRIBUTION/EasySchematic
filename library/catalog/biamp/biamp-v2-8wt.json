@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-930-00573-00004",
+  "label": "Biamp V2-8WT",
+  "shortName": "V2-8WT",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00573-00004",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00573-00004",
+  "searchTerms": [
+    "930-00573-00004",
+    "v2-8wt",
+    "biamp"
+  ],
+  "heightMm": 433,
+  "widthMm": 287,
+  "depthMm": 298,
+  "weightKg": 11.5,
+  "unitCost": 818,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Full-Range 2-Way 8-Inch 90 X 70 70V/100V White",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_v2-8_2098.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive, 70 V / 100 V autoformer (T); NL4-compatible locking connector"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Terminal strip in parallel with the NL4"
+    }
+  ]
+}

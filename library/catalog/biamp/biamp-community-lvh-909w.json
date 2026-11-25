@@ -1,0 +1,35 @@
+{
+  "id": "avail-biamp-930-00006-00002",
+  "label": "Biamp Community LVH-909W",
+  "shortName": "Community LVH-909W",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00006-00002",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00006-00002",
+  "searchTerms": [
+    "930-00006-00002",
+    "community lvh-909w",
+    "biamp",
+    "community",
+    "lvh-909w"
+  ],
+  "heightMm": 948,
+  "widthMm": 797,
+  "depthMm": 775,
+  "weightKg": 113.4,
+  "unitCost": 12243,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Large Format, High Output, Horn Loaded 4 x 12-inch 3-Way, Steerable Vertical Dispersion x 90 Horizontal, White",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Multi-amplifier with FIR DSP beamforming on 4, 6 and 8-position terminal blocks: the number of pass-band inputs is not stated; ports wait for the manual"
+  },
+  "ports": []
+}

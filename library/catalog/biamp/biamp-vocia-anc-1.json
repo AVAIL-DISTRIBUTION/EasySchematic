@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-910-00266",
+  "label": "Biamp Vocia ANC-1",
+  "shortName": "Vocia ANC-1",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00266",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00266",
+  "searchTerms": [
+    "910-00266",
+    "vocia anc-1",
+    "biamp",
+    "vocia",
+    "anc-1"
+  ],
+  "voltage": "PoE 802.3af class 2",
+  "poeDrawW": 6.49,
+  "unitCost": 1096,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia Ambient Noise Compensation Device, surface-mountable, networked ambient microphone input device",
+    "notes": "[AVAIL] from Biamp documentation; [AVAIL] room-mounted (wall-mounted noise sensor) — dimensions optional",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Two ambient sense inputs (balanced mic/line, 48 V phantom): the data sheet does not name their connector; Input 1 / Input 2 wait for the panel"
+  },
+  "ports": []
+}

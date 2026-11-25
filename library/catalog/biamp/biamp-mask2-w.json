@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-920-00635-20000",
+  "label": "Biamp MASK2-W",
+  "shortName": "MASK2-W",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00635-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00635-20000",
+  "searchTerms": [
+    "920-00635-20000",
+    "mask2-w",
+    "biamp"
+  ],
+  "heightMm": 94,
+  "widthMm": 82,
+  "depthMm": 108,
+  "weightKg": 0.5,
+  "unitCost": 81,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "2.5\" compact design surface mount loudspeaker, 8 ohms / 50 watts, wall bracket included, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_mask2_august23_2114.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 8 ohm; 2-way Euroblock"
+    }
+  ]
+}

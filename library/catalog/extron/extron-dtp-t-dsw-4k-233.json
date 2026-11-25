@@ -1,0 +1,132 @@
+{
+  "id": "avail-extron-60-1487-12",
+  "label": "Extron DTP T DSW 4K 233",
+  "shortName": "DTP T DSW 4K 233",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1487-12",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtptdsw4k233",
+  "searchTerms": [
+    "60-1487-12",
+    "dtp t dsw 4k 233",
+    "extron",
+    "dtp",
+    "dsw",
+    "233"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 6.8,
+  "voltage": "12V DC",
+  "thermalBtuh": 23.1,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Three Input Multi-Format Switcher with Integrated DTP Transmitter and Audio Embedding - 230 feet (70 m)",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Switchers Eng.vssx",
+      "label": "DTP T DSW 4K 233",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1487-12-1",
+      "label": "RGBHV In 1",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1487-12-2",
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1487-12-3",
+      "label": "DisplayPort In 3",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1487-12-4",
+      "label": "DTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1487-12-5",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "vx-60-1487-12-6",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole (RS-232 and IR on one connector; 3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1487-12-7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "over DTP (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1487-12-8",
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1487-12-9",
+      "label": "Contact In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1487-12-10",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

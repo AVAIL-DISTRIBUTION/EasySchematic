@@ -1,0 +1,50 @@
+{
+  "id": "avail-extron-60-1308-03",
+  "label": "Extron SM 26 (White, Pair)",
+  "shortName": "SM 26",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1308-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sm26",
+  "searchTerms": [
+    "60-1308-03",
+    "sm 26",
+    "extron"
+  ],
+  "heightMm": 330,
+  "widthMm": 215,
+  "depthMm": 164,
+  "weightKg": 3.4,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, Pair",
+    "rackFormSource": "Non-rack",
+    "description": "SpeedMount Two-Way Surface Mount Speakers with 6.5\" Woofer, Pair - White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "cc5e6d04-786f-46af-9c87-96dbd3d9bf22",
+      "label": "Extron SM 26 White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

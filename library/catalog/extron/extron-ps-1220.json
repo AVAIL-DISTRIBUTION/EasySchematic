@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1259-01",
+  "label": "Extron PS 1220",
+  "shortName": "PS 1220",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1259-01",
+  "deviceType": "power-supply",
+  "category": "Integration Tools / PSU",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/extpowsupplies",
+  "searchTerms": [
+    "70-1259-01",
+    "ps 1220",
+    "extron",
+    "1220"
+  ],
+  "heightMm": 42,
+  "widthMm": 55,
+  "depthMm": 114,
+  "weightKg": 0.3,
+  "powerDrawW": 27.5,
+  "powerCapacityW": 27.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 11.1,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "12 V, 2 A Power Supply featuring ZipClip",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

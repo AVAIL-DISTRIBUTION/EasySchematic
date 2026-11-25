@@ -1,0 +1,166 @@
+{
+  "id": "avail-biamp-920-00649-00002",
+  "label": "Biamp PREZONE1",
+  "shortName": "PREZONE1",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00649-00002",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00649-00001",
+  "searchTerms": [
+    "920-00649-00002",
+    "prezone1",
+    "biamp"
+  ],
+  "heightMm": 88,
+  "widthMm": 483,
+  "depthMm": 290,
+  "weightKg": 3.65,
+  "powerDrawW": 30,
+  "unitCost": 350,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Stereo pre-amplifier/mixer with 2 mono / stereo volume zones, 4 line inputs, 2 MIC/Line inputs with 48V phantom power adn1 emergency input, 2 U 19\" rack mount, black",
+    "notes": "Характеристики с сайта по артикулу 920-00649-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_prezone1_9148.pdf"
+    },
+    "portsMissing": "Not stated: connector type of the balanced zone outputs (set to other) and whether each is one stereo connector; the mute all contact is in the Emergency In notes"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Emergency In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced 0 dBV line level, isolated; triggered by VOX or potential-free contact on the mute all connection"
+    },
+    {
+      "id": "p2",
+      "label": "Mic A In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs (Phantom)",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line on Euroblock; +48 V phantom switchable; VOX; ALINP compatible"
+    },
+    {
+      "id": "p3",
+      "label": "Mic A In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA, mono summed with the Euroblock input"
+    },
+    {
+      "id": "p4",
+      "label": "Mic B In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs (Phantom)",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic or line on Euroblock; +48 V phantom switchable; ALINP compatible"
+    },
+    {
+      "id": "p5",
+      "label": "Mic B In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA, mono summed with the Euroblock input"
+    },
+    {
+      "id": "p6",
+      "label": "Input 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA"
+    },
+    {
+      "id": "p7",
+      "label": "Input 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA"
+    },
+    {
+      "id": "p8",
+      "label": "Input 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA"
+    },
+    {
+      "id": "p9",
+      "label": "Input 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Stereo line on RCA"
+    },
+    {
+      "id": "p10",
+      "label": "Zone 1 Out (Balanced)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "other",
+      "notes": "Balanced line output, mono/stereo switch; connector type not stated"
+    },
+    {
+      "id": "p11",
+      "label": "Zone 1 Out (RCA)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced line output on RCA, mono/stereo switch"
+    },
+    {
+      "id": "p12",
+      "label": "Zone 2 Out (Balanced)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "other",
+      "notes": "Balanced line output, mono/stereo switch; connector type not stated"
+    },
+    {
+      "id": "p13",
+      "label": "Zone 2 Out (RCA)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced line output on RCA, mono/stereo switch"
+    },
+    {
+      "id": "p14",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "100-240 V AC mains inlet (appliance coupler) with switch and fuse; IEC inlet type not stated; inlet type not stated (\"appliance coupler\")"
+    }
+  ]
+}

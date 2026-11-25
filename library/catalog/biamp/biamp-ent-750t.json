@@ -1,0 +1,31 @@
+{
+  "id": "avail-biamp-930-00156-00001",
+  "label": "Biamp ENT-750T",
+  "shortName": "ENT-750T",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00156-00001",
+  "deviceType": "adapter",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00156-00001",
+  "searchTerms": [
+    "930-00156-00001",
+    "ent-750t",
+    "biamp"
+  ],
+  "unitCost": 630,
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "audio-transformer",
+    "description": "ENTASYS 750 Watt External Autoformer, Black",
+    "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The loudspeaker catalog and product page give no connector data for the external autoformer."
+  },
+  "ports": []
+}

@@ -1,0 +1,104 @@
+{
+  "id": "avail-extron-60-1525-12",
+  "label": "Extron NAV E 101",
+  "shortName": "NAV E 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1525-12",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/nave101",
+  "searchTerms": [
+    "60-1525-12",
+    "nav e 101",
+    "extron",
+    "nav",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.68,
+  "powerDrawW": 18.9,
+  "voltage": "12V DC",
+  "thermalBtuh": 63.7,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "1G HDMI Encoder",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c0a80101-00f3-4000-8000-000000000319",
+      "label": "Extron NAV E 101",
+      "match": "model-name",
+      "status": "verified",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "port-3245",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "port-3246",
+      "label": "HDMI Loop",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "port-3248",
+      "label": "Audio In L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-3249",
+      "label": "Audio In R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-3247",
+      "label": "Network",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "port-3250",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial"
+    },
+    {
+      "id": "port-3251",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power"
+    }
+  ]
+}

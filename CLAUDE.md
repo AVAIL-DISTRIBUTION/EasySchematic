@@ -76,6 +76,8 @@ PR всегда открываем в `master` нашего форка, **ник
 | `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
 | `tools/avail/incoming/avail-biamp-templates.json` | 4 шаблона Biamp из пилота (исходник) |
 | `src/avail/vendorDecisions.ts` | правила решений о вендорах: `VendorRules.classify`, `genericTemplate` («Generic <тип>»), `completeness` |
+| `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, стенсилов Extron, снимка базы и вариантов (`fill:catalog-ports`) |
+| `src/avail/extronVisio.ts`, `extronStencil.ts` | стенсилы Extron Visio: мастер → порты (`parse:extron-visio`), применение к каталогу и сравнение |
 
 Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
 не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
@@ -221,6 +223,76 @@ B и FIX с топ-3 замечаниями, по вендорам. Способ
 `avail-vendor-responses`, заблокирован), видна в карточке Review. Статусы не меняются, уровни пересчитываются.
 Шаблон из `library/avail` в файле — остановка без записи, код выхода 1. Повтор — без изменений.
 
+Каталог (шаг 1.9): `library/catalog/<vendor>/*.json` — карточки Extron и Biamp по артикулам (1789, из
+`avail-products-extron-biamp.xlsx`), `index.json` — список; имя файла = `slug(label)` (при совпадении
+slug — с `-<артикул>`), `id` = `avail-<vendor>-<артикул>`. `_avail` — не схема upstream: вариант,
+альт. артикул, `slotFamilies` шасси, `cardFamilies`, описание, `portsSource` (откуда порты:
+library / db / variant / datasheet), `portsMissing` (чего нет в даташите). Карточку (габариты,
+питание, категория) не перезаписываем — данные каталога авторитетнее. Порты:
+`npm run fill:catalog-ports [-- --dry-run] [-- --db <снимок.sqlite>]` (в `api-avail`;
+`src/avail/catalogPorts.ts`, CLI `fillCatalogPortsCli.ts`) — library/avail, затем снимок базы по
+производителю + артикулу и по названию модели (verified > draft > raw, затем уровень), затем от
+описанного варианта (label без варианта в скобках или цвета в конце); пишет только файлы, порты из
+даташита не трогает; снимок — `tools/avail/incoming/db/easyschematic.sqlite` (не в git). Остаток —
+по даташитам вручную (`portsSource.kind = "datasheet"`), после — повторный fill разносит по
+вариантам. `avail:check-library` проверяет каталог: форма, имена, уникальность, `index.json`;
+уровень любой (FIX допустим), в отчёте — уровни по вендорам. `npm run import:catalog
+[-- --dry-run] [-- --verbose] [-- --min-level A|B]` (`api-avail/src/importCatalog.ts`, миграция 9005): в базу
+уровень `--min-level` и выше (по умолчанию B: A и B идут как draft, FIX остаётся в каталоге), в отчёте —
+сколько загружено A и B; совпадение — прежняя загрузка (source `avail-catalog`), id, производитель + артикул;
+найден — обновить (raw/draft → draft, hidden остаётся, verified — если данные не изменились и уровень A), нет —
+draft; `_avail` и `rackForm` — в `avail_template_meta.catalog`; library/avail не трогает,
+deleted-templates.json соблюдает (записи с `partNumber` удаляет из базы — Biamp SQT-1);
+другие шаблоны той же модели (label без варианта/цвета) со статусом raw скрывает с причиной
+«superseded by catalog», verified/draft только перечисляет в отчёте;
+`import:upstream` строки каталога не перезаписывает.
+
+Стенсилы Extron (шаг 1.10): Visio-стенсилы Extron Engineering Drawings (логические блоки, 124 .vssx)
+кладём в `tools/avail/incoming/extron-visio/` (не в git, 22 МБ). `npm run parse:extron-visio [-- --dir …]`
+(в `api-avail`; `src/avail/extronVisio.ts`, CLI `extronVisioCli.ts`) → `tools/avail/extron-visio/extron-visio-blocks.json`
+(в git, мастер на строку): part number — из `Part #` (имя мастера бывает скопировано с другого изделия), порты —
+по текстам: подпись у левого/правого края, разъём в скобках под ней, номер входа слева; точки подключения не
+используются (у части мастеров их нет или они внутри фигуры). Таблицы: разъём (`[F TYPE A]` → hdmi / usb-a по
+сигналу, `[N POLE CS]` → phoenix + «N-pole captive screw» в notes…), сигнал по подписи, направление (видео/аудио —
+по стороне, если подпись не говорит In/Out; serial/LAN/USB — bidirectional; power — input, кроме PWR insert/OUT),
+секция по стандарту. Склейки: L/R-строки → один стерео-порт; номера над/под общим разъёмом → «Audio In 1-2»;
+строка под нумерованным портом берёт его номер («Audio In 1», «RS-232/IR (In 7)»); функции одного разъёма
+(RS-232 / CONTROL / IR) получают общий разъём; номера без подписей у шасси — позиции слотов (`modularSlots`).
+Неизвестная подпись или разъём, пин-уровень (C/T/+V) → `issues`, такой мастер не применяется.
+`fill:catalog-ports` читает этот файл (`--stencils`): между library и снимком базы — чистый мастер с тем же
+артикулом (или `altPartNumber`), `portsSource.kind = "stencil"`; из порта сообщества с тем же сигналом и
+направлением берутся notes и разъём, которого стенсил не рисует; порт питания без разъёма при AC — iec; сервисные
+порты (Configuration, «(Front)») карточка сохраняет — логическая схема их не рисует. Стенсил не понижает уровень
+(в базу идёт только A): если с ним уровень ниже, остаются порты сообщества, карточка — в «kept». Порты library и
+datasheet только сравниваются. Затем нормализатор (берутся только порты) и линтер. Отчёт —
+`tools/avail/extron-visio/report.md`: filled / replaced (с расхождениями по сигналу и направлению) / compared /
+kept / skipped (проблемы мастера и топ причин) / слоты шасси / не найдено в стенсилах (по типам и категориям),
+уровни до → после. Повторный запуск ничего не меняет.
+Правило питания Extron (`withExtronDcPower`, все автоматические порты Extron, кроме library и datasheet): voltage
+«12V DC» / «12 VDC» и нет входа питания → порт «12V DC In» (power, input, phoenix); вход питания без разъёма →
+phoenix; notes «2-pole captive screw — Extron convention, verify». Шасси Extron (`_avail.slotFamilies`) без слотов:
+слоты вариантов той же модели (без региона, AC, цвета), если они совпадают, иначе число из описания («for 4 AAP
+Modules»), иначе причина в `_avail.portsMissing`; откуда слоты — `_avail.slotsSource`; собственные разъёмы шасси
+остаются портами. Линтер: шасси только со слотами — не «no ports», но слот без `slotFamily` — W.
+
+**Приоритет источников данных** (каталог и библиотека): документ производителя (даташит, руководство,
+A&E-спецификация) > карточка каталога (`library/catalog`) > шаблон из базы. Карточка главнее базы
+(`fill:catalog-ports` копирует из базы только порты), но если карточка расходится с документом
+производителя (например, PoE: в карточке 802.3af Class 3 / 15.4 Вт, в даташите 802.3at Class 4 / 30 Вт),
+поле карточки исправляется по документу; источник (цитата и URL) и прежнее значение — в
+`_avail.notes`, у порта PoE — в notes. Опубликованное производителем число мощности пишется как есть
+(30 Вт), таблица классов (25.5 Вт) — только когда числа в документе нет.
+
+**Соглашения по портам Biamp** (утверждены, шаг 1.9): фирменные шины (DIWAC, APart, Impera NEB,
+Devio-линк) — `signalType: "custom"`, название шины в подписи или в начале notes; выходы табличек
+приватности Qt — `tally` (output, Control); расширительные линки Parlé XEX — `avb` (как в TCM-XA).
+Неполный блок не пишется: если документ не называет разъёмы основных сигналов, портов нет, причина —
+в `_avail.portsMissing`. Пометки «проверить Thru по панели» остаются в `portsMissing` у блоков с портами.
+
+Стандарт v0.7 (3.2): габариты и вес обязательны для того, что стоит в шкафу (в т.ч. любой `rackForm`);
+для монтируемого в помещении (`ROOM_MOUNTED_CATEGORIES` / `ROOM_MOUNTED_TYPES` в `blockLint.ts`) —
+нет. Блок без портов и слотов — ошибка «no ports».
+
 Generic-вендор приводится к проверенному набору планом `docs/avail/generic-plan.json`
 (`npm run apply:generic-plan [-- --dry-run]`, `api-avail/src/genericPlan.ts`): переименования в
 «Generic <тип или назначение>» без брендов, смена deviceType/категории (сетевые переходники и
@@ -254,6 +326,9 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/vendorCleanup.ts`, `src/vendorCleanupCli.ts` | чистка библиотеки по `vendor-decisions.json` (`npm run apply:vendor-decisions [-- --dry-run]`), одна транзакция, `library/avail` не трогает; новый «Generic <тип>» — только для типов без Generic, существующие Generic не перезаписываются; отчёт перечисляет итоговые Generic (новые — с исходным шаблоном) |
 | `src/vendorResponses.ts`, `src/vendorResponsesCli.ts` | ответы вендоров (`npm run apply:vendor-responses [-- --dry-run]`): удаление по `docs/avail/deleted-templates.json`, данные и заметки, одна транзакция, `library/avail` не трогает |
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
+| `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из стенсилов Extron и снимка базы (`npm run fill:catalog-ports`), пишет только файлы и отчёт стенсилов |
+| `src/extronVisioCli.ts` | стенсилы Extron → `tools/avail/extron-visio/extron-visio-blocks.json` (`npm run parse:extron-visio`); zip читает `xlsx.ts` (`readZipText`) |
+| `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня B и выше в базу (`npm run import:catalog [-- --min-level A|B]`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
 | `src/seed.ts` | сид библиотеки из встроенных шаблонов (`src/deviceLibrary.ts`) через `templateToRow` из `api/src/db.ts`, без обращения к easyschematic.live |
@@ -392,7 +467,7 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 | Фаза | Содержание |
 |------|------------|
 | 0 | **Фундамент** — Docker-образ и CI (сделано); перенос API с Cloudflare Workers на наш сервер (Node + SQLite + файловое хранилище) (сделано); вход через Google Workspace только для нашего домена (сделано); ежедневные бэкапы (`deploy/avail/backup.sh` готов, cron ставится на сервере); отключение внешней библиотеки шаблонов |
-| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано); курируемая библиотека `library/avail` (23 шаблона уровня A), редактирование шаблонов из ревью, английский интерфейс; решения о вендорах и чистка библиотеки (сделано) |
+| 1 | **Библиотека** — закрытая библиотека устройств AVAIL на нашем API; линтер блоков `src/avail/blockLint.ts`; справочники категорий и вендоров, статусы шаблонов, импорт сырья из easyschematic.live; фильтр библиотеки по статусу, ревью модератора, автонормализатор (сделано); курируемая библиотека `library/avail` (23 шаблона уровня A), редактирование шаблонов из ревью, английский интерфейс; решения о вендорах и чистка библиотеки (сделано); каталог Extron/Biamp `library/catalog` — порты и загрузка уровня A (шаг 1.9) |
 | 2 | **Классификация** — категории/типы устройств и портов под наш ассортимент |
 | 3 | **Хранение** — только хранение проектов: структура клиент → объект → помещение, статусы |
 | 4 | **Интеграция Claude** — помощь в проектировании через Claude |

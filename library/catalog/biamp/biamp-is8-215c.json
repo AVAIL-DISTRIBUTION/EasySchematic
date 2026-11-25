@@ -1,0 +1,34 @@
+{
+  "id": "avail-biamp-930-00900",
+  "label": "Biamp IS8-215C",
+  "shortName": "IS8-215C",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00900",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00001",
+  "searchTerms": [
+    "930-00900",
+    "is8-215c",
+    "biamp"
+  ],
+  "heightMm": 991,
+  "widthMm": 419,
+  "depthMm": 593,
+  "weightKg": 51.7,
+  "unitCost": "CALL FOR QUOTE",
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power Dual 15-Inch Subwoofer Configured-to-Order",
+    "notes": "Характеристики с сайта по артикулу 930-00001",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Configured to order: inputs depend on the configuration ordered; ports wait for the order specification"
+  },
+  "ports": []
+}

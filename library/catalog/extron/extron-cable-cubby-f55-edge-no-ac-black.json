@@ -1,0 +1,42 @@
+{
+  "id": "avail-extron-70-1296-02",
+  "label": "Extron Cable Cubby F55 Edge (No AC, Black)",
+  "shortName": "Cable Cubby F55 Edge",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1296-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubbyf55edge",
+  "searchTerms": [
+    "70-1296-02",
+    "cable cubby f55 edge",
+    "extron",
+    "cable",
+    "cubby",
+    "f55",
+    "edge"
+  ],
+  "heightMm": 105,
+  "widthMm": 251,
+  "depthMm": 143,
+  "weightKg": 1.5,
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "No AC, Black",
+    "slotFamilies": [
+      "extron-cubby-flex55"
+    ],
+    "description": "Cable Cubby F55 Edge, Black, No AC",
+    "notes": "[AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsMissing": "number of extron-cubby-flex55 openings: not drawn in the Extron stencil and not in the description"
+  },
+  "ports": []
+}

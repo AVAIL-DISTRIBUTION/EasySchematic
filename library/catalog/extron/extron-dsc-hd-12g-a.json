@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-60-2060-01",
+  "label": "Extron DSC HD-12G A",
+  "shortName": "DSC HD-12G A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2060-01",
+  "deviceType": "scaler",
+  "category": "AV distribution / Scalers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dschd12ga",
+  "searchTerms": [
+    "60-2060-01",
+    "dsc hd-12g a",
+    "extron",
+    "dsc",
+    "hd-12g"
+  ],
+  "heightMm": 29,
+  "widthMm": 222,
+  "depthMm": 152,
+  "weightKg": 0.7,
+  "powerDrawW": 12.5,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 42.6,
+  "rackForm": "half",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "HDMI to 12G-SDI Scaler with Stereo Audio",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

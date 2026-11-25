@@ -1,0 +1,55 @@
+{
+  "id": "avail-biamp-920-01809-10000",
+  "label": "Biamp EX-S6-CM-B",
+  "shortName": "EX-S6-CM-B",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01809-10000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01809-10000",
+  "searchTerms": [
+    "920-01809-10000",
+    "ex-s6-cm-b",
+    "biamp"
+  ],
+  "heightMm": 349,
+  "widthMm": 217,
+  "depthMm": 327,
+  "weightKg": 6.5,
+  "unitCost": 540,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "6.5” Coaxial Surface Mount Indoor/Outdoor Loudspeaker. 8 Ohm or 70V/100V operation, included ClickMount pan-tilt mounting bracket, black",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Desono_EX-S6_UB-CM_Jan26_13667.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; lever-actuated 4-position terminal block with pass-through; low impedance or 70 V / 100 V by selector switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Pass-through on the same block"
+    }
+  ]
+}

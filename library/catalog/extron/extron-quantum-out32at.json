@@ -1,0 +1,58 @@
+{
+  "id": "avail-extron-70-1367-01",
+  "label": "Extron Quantum OUT32AT",
+  "shortName": "Quantum OUT32AT",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1367-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumultra2",
+  "searchTerms": [
+    "70-1367-01",
+    "quantum out32at",
+    "extron",
+    "quantum",
+    "out32at"
+  ],
+  "slotFamily": "extron-quantum-ultra-2",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-quantum-ultra-2)",
+    "description": "Dante Audio Output Card for Quantum Ultra II",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "5ef6dbbd-3b6b-407d-bfa3-870936f09568",
+      "label": "Extron Quantum OUT32AT",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Dante Primary",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Audio Outputs",
+      "notes": "Dante / AES67. 1 Gbps. 64-channel Tx (32 stereo pairs). Internal 2-port switch with secondary RJ-45.",
+      "id": "port-0"
+    },
+    {
+      "label": "Dante Secondary",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Audio Outputs",
+      "notes": "Dante / AES67 secondary. Internal 2-port switch chain.",
+      "id": "port-1"
+    }
+  ]
+}

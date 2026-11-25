@@ -1,0 +1,32 @@
+{
+  "id": "avail-extron-70-751-01",
+  "label": "Extron QEC I12VID",
+  "shortName": "QEC I12VID",
+  "manufacturer": "Extron",
+  "modelNumber": "70-751-01",
+  "deviceType": "expansion-card",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/quantumelite",
+  "searchTerms": [
+    "70-751-01",
+    "qec i12vid",
+    "extron",
+    "qec",
+    "i12vid"
+  ],
+  "slotFamily": "extron-quantum-elite",
+  "_avail": {
+    "status": "awaiting-ports",
+    "deviceTypeSource": "video-wall-controller",
+    "description": "Quantum Elite 12 Input Video/S-Video Card",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "new slot family \"extron-quantum-elite\" — no Quantum Elite chassis in the library"
+  },
+  "ports": []
+}

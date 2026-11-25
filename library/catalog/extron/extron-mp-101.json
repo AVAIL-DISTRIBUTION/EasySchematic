@@ -1,0 +1,82 @@
+{
+  "id": "avail-extron-60-718-10",
+  "label": "Extron MP 101",
+  "shortName": "MP 101",
+  "manufacturer": "Extron",
+  "modelNumber": "60-718-10",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlp101",
+  "searchTerms": [
+    "60-718-10",
+    "mp 101",
+    "extron",
+    "101"
+  ],
+  "heightMm": 43,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 3.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 12.3,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Microphone Preamplifier",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Misc Eng.vssx",
+      "label": "MP 101",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-718-10-1",
+      "label": "Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-718-10-2",
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-718-10-3",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-718-10-4",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    }
+  ]
+}

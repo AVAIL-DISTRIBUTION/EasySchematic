@@ -1,0 +1,184 @@
+{
+  "id": "avail-extron-70-1114-01",
+  "label": "Extron XTP II CP 4i F 8K MM",
+  "shortName": "XTP II CP 4i F 8K MM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1114-01",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / XTP Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/xtpiicpf8kioboards",
+  "searchTerms": [
+    "70-1114-01",
+    "xtp ii cp 4i f 8k mm",
+    "extron",
+    "xtp"
+  ],
+  "slotFamily": "extron-xtp-2",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-xtp2-crosspoint)",
+    "description": "XTP II Four Input Board, Fiber 8K - Multimode",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "e9750c2a-c901-480f-b323-86245e4c32a2",
+      "label": "Extron XTP II CP 4i F 8K MM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. Selectable with paired XTP fiber per channel. 12V/125mA peripheral power.",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. Selectable with paired XTP fiber per channel. 12V/125mA peripheral power.",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. Selectable with paired XTP fiber per channel. 12V/125mA peripheral power.",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. Selectable with paired XTP fiber per channel. 12V/125mA peripheral power.",
+      "id": "port-3"
+    },
+    {
+      "label": "Fiber In 1.1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 1 pair 1. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-4"
+    },
+    {
+      "label": "Fiber In 1.2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 1 pair 2. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-5"
+    },
+    {
+      "label": "Fiber In 2.1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 2 pair 1. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-6"
+    },
+    {
+      "label": "Fiber In 2.2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 2 pair 2. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-7"
+    },
+    {
+      "label": "Fiber In 3.1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 3 pair 1. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-8"
+    },
+    {
+      "label": "Fiber In 3.2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 3 pair 2. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-9"
+    },
+    {
+      "label": "Fiber In 4.1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 4 pair 1. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-10"
+    },
+    {
+      "label": "Fiber In 4.2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "XTP II 8K fiber link channel 4 pair 2. 40 Gbps. Up to 8K/60 4:2:0 or 8K/30 4:4:4.",
+      "id": "port-11"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-12"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-13"
+    },
+    {
+      "label": "LAN 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-14"
+    },
+    {
+      "label": "LAN 4",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-15"
+    }
+  ]
+}

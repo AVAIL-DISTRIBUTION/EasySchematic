@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-60-1796-01",
+  "label": "Extron KNX 100G",
+  "shortName": "KNX 100G",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1796-01",
+  "deviceType": "gateway",
+  "category": "Control Systems / IP Link Control Proc",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/knx100g",
+  "searchTerms": [
+    "60-1796-01",
+    "knx 100g",
+    "extron",
+    "knx",
+    "100g"
+  ],
+  "heightMm": 90,
+  "widthMm": 18,
+  "depthMm": 60,
+  "weightKg": 0.4,
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "KNX IP Interface",
+    "notes": "[AVAIL] powered from the KNX bus (15 mA)",
+    "source": "extron-blocks-v4.csv"
+  },
+  "ports": []
+}

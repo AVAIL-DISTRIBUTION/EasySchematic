@@ -1,0 +1,81 @@
+{
+  "id": "avail-extron-60-1669-01",
+  "label": "Extron TLI Pro 201",
+  "shortName": "TLI Pro 201",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1669-01",
+  "deviceType": "touch-controller",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlipro201",
+  "searchTerms": [
+    "60-1669-01",
+    "tli pro 201",
+    "extron",
+    "tli",
+    "pro",
+    "201"
+  ],
+  "heightMm": 25,
+  "widthMm": 221,
+  "depthMm": 203,
+  "weightKg": 0.77,
+  "powerDrawW": 17.3,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 49.9,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "4K TouchLink® Interface",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - Misc Eng.vssx",
+      "label": "TLI Pro 201",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1669-01-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1669-01-2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1669-01-3",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "vx-60-1669-01-4",
+      "label": "Control USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    }
+  ]
+}

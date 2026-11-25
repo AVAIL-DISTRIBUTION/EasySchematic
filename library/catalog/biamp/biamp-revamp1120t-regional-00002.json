@@ -1,0 +1,87 @@
+{
+  "id": "avail-biamp-920-00651-00002",
+  "label": "Biamp REVAMP1120T (Regional -00002)",
+  "shortName": "REVAMP1120T",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00651-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00651-00001",
+  "searchTerms": [
+    "920-00651-00002",
+    "revamp1120t",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 239,
+  "weightKg": 4.6,
+  "powerDrawW": 200,
+  "voltage": "115-230V AC",
+  "unitCost": 653,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Regional -00002",
+    "description": "Class D amplifier 1 x 120 Watts (70/100 Volts or RMS @ 4 Ohms), convection cooled, 1 U, 19\" rackmount",
+    "notes": "Та же модель под другим артикулом: 920-00651-00001; Характеристики с сайта по артикулу 920-00651-00001; [AVAIL] regional versions, confirmed by AVAIL",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_revamp1120t_8755.pdf"
+    },
+    "portsMissing": "Regional variants -00001 / -00002 share the ports; the documents do not say how they differ (likely the supplied mains cord). The IEC inlet type (C14 etc.) is not stated"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Channel 1 balanced line, 3-pole Euroblock"
+    },
+    {
+      "id": "p2",
+      "label": "Line In 1 (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Channel 1 unbalanced 0 dBV on cinch; internally connected 1:1 with Line Link 1"
+    },
+    {
+      "id": "p3",
+      "label": "Line Link 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Cinch pass-through of Line In 1 (RCA)"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "120 W; Euroblock taps COM, 4 ohm, 35/50/70/100 V; use one tap only (6-pole)"
+    },
+    {
+      "id": "p5",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "115-230 V AC mains inlet (appliance coupler); IEC inlet type not stated; inlet type not stated (\"appliance coupler\")"
+    }
+  ]
+}

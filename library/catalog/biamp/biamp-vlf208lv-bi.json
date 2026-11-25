@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-920-00584-10000",
+  "label": "Biamp VLF208LV-BI",
+  "shortName": "VLF208LV-BI",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00584-10000",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00584-10000",
+  "searchTerms": [
+    "920-00584-10000",
+    "vlf208lv-bi",
+    "biamp"
+  ],
+  "heightMm": 260,
+  "widthMm": 552,
+  "depthMm": 552,
+  "weightKg": 21.8,
+  "unitCost": 1028,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Dual 8-Inch \"Large Volume\" Subwoofer (Black)",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The product page has no data sheet; ports wait for it"
+  },
+  "ports": []
+}

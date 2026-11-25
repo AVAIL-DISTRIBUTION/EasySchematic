@@ -1,0 +1,51 @@
+{
+  "id": "avail-extron-42-357-02",
+  "label": "Extron CA 83T LP (Black, Single)",
+  "shortName": "CA 83T LP",
+  "manufacturer": "Extron",
+  "modelNumber": "42-357-02",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca83t",
+  "searchTerms": [
+    "42-357-02",
+    "ca 83t lp",
+    "extron",
+    "83t"
+  ],
+  "heightMm": 757,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 7.7,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Low Profile Mount, Single, Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "7bf15c69-428b-4398-a90a-d47e81433538",
+      "label": "Extron CA 83T LP, Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

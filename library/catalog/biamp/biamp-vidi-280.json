@@ -1,0 +1,49 @@
+{
+  "id": "avail-biamp-910-01981",
+  "label": "Biamp Vidi 280",
+  "shortName": "Vidi 280",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01981",
+  "deviceType": "camera",
+  "category": "Videocameras / USB cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01981",
+  "searchTerms": [
+    "910-01981",
+    "vidi 280",
+    "biamp",
+    "vidi",
+    "280"
+  ],
+  "heightMm": 50,
+  "widthMm": 65,
+  "depthMm": 70,
+  "weightKg": 0.16,
+  "powerDrawW": 4.5,
+  "unitCost": 1600,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "4K Conferencing Camera with dual 50 MP & 8 MP image sensors, 120º HFoV, with 5-mic array",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Vidi280_Apr25_v2_13313.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 3.0 video/audio/data (USB 2.0 compatibility mode); bus-powered (USB), < 4.5 W"
+    }
+  ]
+}

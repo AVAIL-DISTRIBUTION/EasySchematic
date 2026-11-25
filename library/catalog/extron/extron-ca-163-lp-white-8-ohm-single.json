@@ -1,0 +1,51 @@
+{
+  "id": "avail-extron-42-339-03",
+  "label": "Extron CA 163 LP (White, 8 Ohm, Single)",
+  "shortName": "CA 163 LP",
+  "manufacturer": "Extron",
+  "modelNumber": "42-339-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ca163",
+  "searchTerms": [
+    "42-339-03",
+    "ca 163 lp",
+    "extron",
+    "163"
+  ],
+  "heightMm": 1318,
+  "widthMm": 114,
+  "depthMm": 127,
+  "weightKg": 12.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, 8 Ohm, Single",
+    "rackFormSource": "Non-rack",
+    "description": "Low-Profile Mount, Single, 8 Ohm, White",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e391cca7-f583-42a2-aa8c-cc3a86c64671",
+      "label": "Extron CA 163 LP, 8 Ohm, White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "avail-biamp-910-01625",
+  "label": "Biamp E-VOL60",
+  "shortName": "E-VOL60",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-01625",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-01625",
+  "searchTerms": [
+    "910-01625",
+    "e-vol60",
+    "biamp"
+  ],
+  "heightMm": 80,
+  "widthMm": 80,
+  "depthMm": 50,
+  "weightKg": 0.35,
+  "powerDrawW": 0.1,
+  "unitCost": 66,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "volume-control",
+    "description": "100 volt, 60 watts Euro volume control, white, with 24V prioirty relais",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_e-vol60_aug20_2641.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (100V)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive; 100 V line, max 60 W; IN on the 6-pole euroblock"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out (100V)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "To 100 V loudspeakers; OUT on the 6-pole euroblock"
+    },
+    {
+      "id": "p3",
+      "label": "Priority In (24V)",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "24 V DC priority relay (20 mA), - 24V + on the 6-pole euroblock"
+    }
+  ]
+}

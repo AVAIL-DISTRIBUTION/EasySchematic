@@ -1,0 +1,41 @@
+{
+  "id": "avail-extron-60-2093-04",
+  "label": "Extron AC+USB 411 AUS",
+  "shortName": "AC+USB 411 AUS",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2093-04",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/acusb400",
+  "searchTerms": [
+    "60-2093-04",
+    "ac+usb 411 aus",
+    "extron",
+    "ac+usb",
+    "411",
+    "aus"
+  ],
+  "heightMm": 61,
+  "widthMm": 107,
+  "depthMm": 76,
+  "weightKg": 0.8,
+  "powerDrawW": 10,
+  "voltage": "25V DC",
+  "thermalBtuh": 38.6,
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "AUS (1) AC, (1) USBC, & (1) USBA Outlets",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+  },
+  "ports": []
+}

@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-60-1753-01",
+  "label": "Extron AXI 02 AT",
+  "shortName": "AXI 02 AT",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1753-01",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/axi02at",
+  "searchTerms": [
+    "60-1753-01",
+    "axi 02 at",
+    "extron",
+    "axi"
+  ],
+  "heightMm": 42,
+  "widthMm": 55,
+  "depthMm": 113,
+  "weightKg": 0.1,
+  "powerDrawW": 3.2,
+  "voltage": "PoE 802.3af",
+  "poeDrawW": 15.4,
+  "thermalBtuh": 10.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Two Output Dante Audio Interface",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "AXI 02 AT",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1753-01-1",
+      "label": "Audio Out 1-2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw; channels 1-2"
+    },
+    {
+      "id": "vx-60-1753-01-2",
+      "label": "S/PDIF Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "vx-60-1753-01-3",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
+}

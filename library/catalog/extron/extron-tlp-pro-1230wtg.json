@@ -1,0 +1,74 @@
+{
+  "id": "avail-extron-60-1668-02",
+  "label": "Extron TLP Pro 1230WTG",
+  "shortName": "TLP Pro 1230WTG",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1668-02",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/tlppro1230wtg",
+  "searchTerms": [
+    "60-1668-02",
+    "tlp pro 1230wtg",
+    "extron",
+    "tlp",
+    "pro",
+    "1230wtg"
+  ],
+  "heightMm": 147,
+  "widthMm": 328,
+  "depthMm": 92,
+  "weightKg": 2.04,
+  "powerDrawW": 17.4,
+  "voltage": "PoE+ 802.3at",
+  "poeDrawW": 30,
+  "thermalBtuh": 58.5,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "12” Ultra-wide Tabletop TouchLink Pro Touchpanel - Black",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - TLP Pro  Eng.vssx",
+      "label": "TLP Pro 1230WTG Black",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1668-02-1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI input for direct video preview on the touchpanel."
+    },
+    {
+      "id": "vx-60-1668-02-2",
+      "label": "LAN (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE+ 802.3at"
+    },
+    {
+      "id": "vx-60-1668-02-3",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories."
+    }
+  ]
+}

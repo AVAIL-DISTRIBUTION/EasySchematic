@@ -1,0 +1,107 @@
+{
+  "id": "avail-extron-70-1223-22",
+  "label": "Extron FOX3 SR 311 PC SM (Lossless)",
+  "shortName": "FOX3 SR 311 PC SM",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1223-22",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3sr311pc",
+  "searchTerms": [
+    "70-1223-22",
+    "fox3 sr 311 pc sm",
+    "extron",
+    "fox3",
+    "311"
+  ],
+  "slotFamily": "extron-fox3-powercage",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Lossless",
+    "deviceTypeSource": "fiber-transmitter",
+    "description": "PowerCage Fiber Optic Scaling Receiver for HDMI with Embedded Audio, USB HID, and RS-232",
+    "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 PowerCage Eng.vssx",
+      "label": "FOX3 SR 311 PC SM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-70-1223-22-1",
+      "label": "Fiber In 1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
+    },
+    {
+      "id": "vx-70-1223-22-2",
+      "label": "Fiber In 2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1223-22-3",
+      "label": "Fiber Out 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1223-22-4",
+      "label": "Fiber Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1223-22-5",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1223-22-6",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-70-1223-22-7",
+      "label": "USB HID 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-70-1223-22-8",
+      "label": "USB HID 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    }
+  ]
+}

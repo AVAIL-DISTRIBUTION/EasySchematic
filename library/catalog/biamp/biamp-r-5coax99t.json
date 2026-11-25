@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-930-00889-00007",
+  "label": "Biamp R.5COAX99T",
+  "shortName": "R.5COAX99T",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00889-00007",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00889-00007",
+  "searchTerms": [
+    "930-00889-00007",
+    "r.5coax99t",
+    "biamp",
+    "5coax99t"
+  ],
+  "heightMm": 406.4,
+  "widthMm": 406.4,
+  "depthMm": 406.4,
+  "weightKg": 17.46,
+  "unitCost": 1596,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Full-Range 2-Way 12-Inch Coax 90 X 90 Grey 70V/100V",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r-5coax66t_2502.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 12 ft (4 m) SJOW 16 AWG cable, stripped ends; 70 V / 100 V autoformer"
+    }
+  ]
+}

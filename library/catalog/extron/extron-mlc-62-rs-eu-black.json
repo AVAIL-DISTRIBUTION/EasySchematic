@@ -1,0 +1,116 @@
+{
+  "id": "avail-extron-60-1005-32",
+  "label": "Extron MLC 62 RS EU (Black)",
+  "shortName": "MLC 62 RS EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1005-32",
+  "deviceType": "expansion-card",
+  "category": "Control Systems / MediaLink Controller",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mlc62eu",
+  "searchTerms": [
+    "60-1005-32",
+    "mlc 62 rs eu",
+    "extron",
+    "mlc"
+  ],
+  "heightMm": 106,
+  "widthMm": 47,
+  "depthMm": 37,
+  "weightKg": 0.5,
+  "powerDrawW": 2.1,
+  "voltage": "12V DC",
+  "thermalBtuh": 7,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "MediaLink® Controller for EU Junction Boxes - Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - MLC Eng.vssx",
+      "label": "MLC 62 RS EU",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1005-32-1",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1005-32-2",
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "section": "IR",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1005-32-3",
+      "label": "IR/S Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "IR or one-way RS-232; 2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1005-32-4",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "id": "vx-60-1005-32-5",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1005-32-6",
+      "label": "Digital In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "label": "USB Host (Config)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration (Config)",
+      "id": "vx-60-1005-32-s1"
+    },
+    {
+      "id": "vx-60-1005-32-7",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
+}

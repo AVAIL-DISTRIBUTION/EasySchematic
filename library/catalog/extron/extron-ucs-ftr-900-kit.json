@@ -1,0 +1,88 @@
+{
+  "id": "avail-extron-42-298-01",
+  "label": "Extron UCS FTR 900 Kit",
+  "shortName": "UCS FTR 900 Kit",
+  "manufacturer": "Extron",
+  "modelNumber": "42-298-01",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ucs900",
+  "searchTerms": [
+    "42-298-01",
+    "ucs ftr 900 kit",
+    "extron",
+    "ucs",
+    "ftr",
+    "900",
+    "kit"
+  ],
+  "heightMm": 25,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 1.3,
+  "powerDrawW": 0.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 3.5,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Fiber Optic USB 5Gbps Extenders",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Extenders Eng.vssx",
+      "label": "UCS 900, FR902",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-42-298-01-1",
+      "label": "Fiber In",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-42-298-01-2",
+      "label": "Fiber Out",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-42-298-01-3",
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-42-298-01-4",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-42-298-01-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "2-pole captive screw — Extron convention, verify"
+    }
+  ]
+}

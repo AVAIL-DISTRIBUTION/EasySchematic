@@ -1,0 +1,157 @@
+{
+  "id": "avail-biamp-920-01537-00002",
+  "label": "Biamp CHAMP-4",
+  "shortName": "CHAMP-4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01537-00002",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01537-00002",
+  "searchTerms": [
+    "920-01537-00002",
+    "champ-4",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 442,
+  "depthMm": 359,
+  "weightKg": 7.5,
+  "powerDrawW": 400,
+  "voltage": "230V AC",
+  "unitCost": 550,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "High End, very dynamic 4-channel low impedance power amplifier, convection cooled. 4 x 125 watts @ 4 ohms, black 1U 19\" rack mounted",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_champ-4_8367.pdf"
+    },
+    "portsMissing": "The mains inlet type is not stated; connector set to other"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced input, channel 1; two cinch jacks wired in parallel"
+    },
+    {
+      "id": "p2",
+      "label": "Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced input, channel 2; two cinch jacks wired in parallel"
+    },
+    {
+      "id": "p3",
+      "label": "Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced input, channel 3; two cinch jacks wired in parallel"
+    },
+    {
+      "id": "p4",
+      "label": "Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced input, channel 4; two cinch jacks wired in parallel"
+    },
+    {
+      "id": "p5",
+      "label": "Line Link 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Second cinch of channel 1, wired in parallel with Line In 1 (signal link)"
+    },
+    {
+      "id": "p6",
+      "label": "Line Link 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Second cinch of channel 2, wired in parallel with Line In 2 (signal link)"
+    },
+    {
+      "id": "p7",
+      "label": "Line Link 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Second cinch of channel 3, wired in parallel with Line In 3 (signal link)"
+    },
+    {
+      "id": "p8",
+      "label": "Line Link 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Second cinch of channel 4, wired in parallel with Line In 4 (signal link)"
+    },
+    {
+      "id": "p9",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "binding-post-banana",
+      "notes": "80 W 4 ohm RMS; red/black binding posts, accept 4 mm banana; bridged pair uses red posts of 1+2"
+    },
+    {
+      "id": "p10",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "binding-post-banana",
+      "notes": "80 W 4 ohm RMS; red/black binding posts, accept 4 mm banana; bridged pair uses red posts of 1+2"
+    },
+    {
+      "id": "p11",
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "binding-post-banana",
+      "notes": "80 W 4 ohm RMS; red/black binding posts, accept 4 mm banana; bridged pair uses red posts of 3+4"
+    },
+    {
+      "id": "p12",
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "binding-post-banana",
+      "notes": "80 W 4 ohm RMS; red/black binding posts, accept 4 mm banana; bridged pair uses red posts of 3+4"
+    },
+    {
+      "id": "p13",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "230 V AC mains cable connector with fuse holder; inlet type not stated"
+    }
+  ]
+}

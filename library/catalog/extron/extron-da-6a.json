@@ -1,0 +1,116 @@
+{
+  "id": "avail-extron-60-692-20",
+  "label": "Extron DA 6A",
+  "shortName": "DA 6A",
+  "manufacturer": "Extron",
+  "modelNumber": "60-692-20",
+  "deviceType": "da",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/da6a",
+  "searchTerms": [
+    "60-692-20",
+    "da 6a",
+    "extron"
+  ],
+  "heightMm": 43,
+  "widthMm": 221,
+  "depthMm": 152,
+  "weightKg": 0.9,
+  "powerDrawW": 8,
+  "voltage": "100V AC",
+  "thermalBtuh": 27.3,
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Six Output Stereo Audio Distribution Amplifier",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Misc Eng.vssx",
+      "label": "DA 6A",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-692-20-1",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-692-20-2",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-692-20-3",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-692-20-4",
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-692-20-5",
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-692-20-6",
+      "label": "Audio Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-692-20-7",
+      "label": "Audio Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "L/R; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-692-20-8",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec"
+    }
+  ]
+}

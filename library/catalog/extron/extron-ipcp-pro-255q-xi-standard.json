@@ -1,0 +1,175 @@
+{
+  "id": "avail-extron-60-1914-01",
+  "label": "Extron IPCP Pro 255Q xi (Standard)",
+  "shortName": "IPCP Pro 255Q xi",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1914-01",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/ipcppro255qxi",
+  "searchTerms": [
+    "60-1914-01",
+    "ipcp pro 255q xi",
+    "extron",
+    "ipcp",
+    "pro",
+    "255q"
+  ],
+  "heightMm": 43,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.4,
+  "powerDrawW": 10.6,
+  "voltage": "12V DC",
+  "thermalBtuh": 15.8,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Standard",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "IPCP Pro xi Quad Core Control Processor",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "extron-ipcp-pro-255q-xi.json",
+      "label": "Extron IPCP Pro 255Q xi",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1795168268940-35-12",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000Base-T"
+    },
+    {
+      "id": "p1795168268940-35-13",
+      "label": "LAN (AV Network)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Silkscreen AV LAN: separate AV device network, 10/100/1000, IPv4, optional DHCP server"
+    },
+    {
+      "id": "p1795168268940-35-0",
+      "label": "COM 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "RS-232 / RS-422 / RS-485, 5-pole 3.5 mm captive screw"
+    },
+    {
+      "id": "p1795168268940-35-1",
+      "label": "COM 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "RS-232, 3-pole 3.5 mm captive screw"
+    },
+    {
+      "id": "p1795168268940-35-2",
+      "label": "IR/S",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix",
+      "notes": "IR (30-300 kHz) or one-way RS-232, 2-pole 3.5 mm captive screw"
+    },
+    {
+      "id": "p1795168268940-35-3",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "Normally open, 24 VDC 1 A; relays 1-2 share one 3-pole 3.5 mm captive screw"
+    },
+    {
+      "id": "p1795168268940-35-4",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "connectorType": "phoenix",
+      "notes": "Normally open, 24 VDC 1 A; relays 1-2 share one 3-pole 3.5 mm captive screw"
+    },
+    {
+      "id": "p1795168268940-35-8",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (pins 1-4, 5 = Gnd)"
+    },
+    {
+      "id": "p1795168268940-35-9",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (pins 1-4, 5 = Gnd)"
+    },
+    {
+      "id": "p1795168268940-35-10",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (pins 1-4, 5 = Gnd)"
+    },
+    {
+      "id": "p1795168268940-35-11",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Digital I/O 1-4 share one 5-pole 3.5 mm captive screw (pins 1-4, 5 = Gnd)"
+    },
+    {
+      "id": "p1795168268940-35-6",
+      "label": "Volume Control",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "0-10 VDC volume control output for select Extron amplifiers, 5-pole 3.5 mm captive screw"
+    },
+    {
+      "id": "p1795168268940-35-5",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "phoenix",
+      "notes": "5-pole 3.5 mm captive screw (+12 VDC, +S, -S, G), 6 W eBUS power"
+    },
+    {
+      "id": "p1795168268940-35-7",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix",
+      "notes": "External 12 VDC 1.5 A supply (included), captive screw (+12 VDC, return)"
+    }
+  ]
+}

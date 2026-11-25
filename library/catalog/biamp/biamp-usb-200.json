@@ -1,0 +1,88 @@
+{
+  "id": "avail-biamp-920-01882-00002",
+  "label": "Biamp USB 200",
+  "shortName": "USB 200",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01882-00002",
+  "deviceType": "switcher",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01882-00001",
+  "searchTerms": [
+    "920-01882-00002",
+    "usb 200",
+    "biamp",
+    "usb",
+    "200"
+  ],
+  "heightMm": 23,
+  "widthMm": 64,
+  "depthMm": 95,
+  "weightKg": 0.07,
+  "powerDrawW": 15,
+  "voltage": "5V DC",
+  "unitCost": 293,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "usb-switch",
+    "description": "2x1 USB switch",
+    "notes": "Характеристики с сайта по артикулу 920-01882-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_usb_200_sep22_2725.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "SEL",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Contact closure input for manual source selection; 2-pin 0.3-inch Euroblock"
+    },
+    {
+      "id": "p2",
+      "label": "PC1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 3.0 Type-B to host computer 1 (priority)"
+    },
+    {
+      "id": "p3",
+      "label": "PC2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 3.0 Type-B to host computer 2"
+    },
+    {
+      "id": "p4",
+      "label": "Device",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 Type-A to the peripheral"
+    },
+    {
+      "id": "p5",
+      "label": "Power (5V DC)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "5 V DC, 15 W"
+    }
+  ]
+}

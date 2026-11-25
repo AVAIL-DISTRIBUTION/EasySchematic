@@ -1,0 +1,81 @@
+{
+  "id": "avail-extron-60-1957-21",
+  "label": "Extron FOX3 R 101 MM",
+  "shortName": "FOX3 R 101 MM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1957-21",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3r101",
+  "searchTerms": [
+    "60-1957-21",
+    "fox3 r 101 mm",
+    "extron",
+    "fox3",
+    "101"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.5,
+  "powerDrawW": 17.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 58.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "Fiber Optic Receiver for HDMI",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 Receivers Eng.vssx",
+      "label": "FOX3 R 101 MM",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-1957-21-1",
+      "label": "Fiber In",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
+    },
+    {
+      "id": "vx-60-1957-21-2",
+      "label": "Fiber Out",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1957-21-3",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1957-21-4",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC/24W Extron Everlast PSU (100-240 VAC input)."
+    }
+  ]
+}

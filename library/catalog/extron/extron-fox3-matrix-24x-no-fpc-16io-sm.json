@@ -1,0 +1,170 @@
+{
+  "id": "avail-extron-60-1716-15",
+  "label": "Extron FOX3 Matrix 24x no FPC 16io SM",
+  "shortName": "FOX3 Matrix 24x no FPC 16io SM",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1716-15",
+  "deviceType": "frame",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/fox3matrix24x",
+  "searchTerms": [
+    "60-1716-15",
+    "fox3 matrix 24x no fpc 16io sm",
+    "extron",
+    "fox3",
+    "matrix",
+    "24x",
+    "fpc"
+  ],
+  "heightMm": 89,
+  "widthMm": 432,
+  "depthMm": 330,
+  "weightKg": 7.7,
+  "powerDrawW": 86,
+  "voltage": "100-240V AC",
+  "thermalBtuh": 294,
+  "rackForm": "full",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "I/O Slot 1",
+      "slotFamily": "extron-fox3-matrix-24"
+    },
+    {
+      "id": "slot-2",
+      "label": "I/O Slot 2",
+      "slotFamily": "extron-fox3-matrix-24"
+    },
+    {
+      "id": "slot-3",
+      "label": "I/O Slot 3",
+      "slotFamily": "extron-fox3-matrix-24"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "slotFamilies": [
+      "extron-fox3-matrix-24"
+    ],
+    "description": "Configured Fiber Optic Matrix Switcher - 16x16 Singlemode",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "36973fa1-ef1f-4ba0-949a-f397fa421c41",
+      "label": "Extron FOX3 Matrix 24x no FPC 16io SM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-3"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit control. Default 192.168.254.254.",
+      "id": "port-9"
+    },
+    {
+      "label": "AT 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Dante / AES67 software-selectable. Up to 32 stereo Tx + 32 stereo Rx.",
+      "id": "port-4"
+    },
+    {
+      "label": "AT 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Dante / AES67 second port (redundant or daisy-chain).",
+      "id": "port-5"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front-panel USB Mini-B for direct PC config (Ethernet over USB).",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole captive screw. 300-115200 baud (default 9600), 8-N-1.",
+      "id": "port-8"
+    },
+    {
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Extron proprietary expansion bus. 8 stereo Tx + 8 stereo Rx, shielded CAT6 up to 10 m.",
+      "id": "port-6"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Primary internal PSU. IEC 60320 C14 mains 100-240 VAC, 50-60 Hz.",
+      "id": "port-10"
+    }
+  ]
+}

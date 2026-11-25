@@ -1,0 +1,101 @@
+{
+  "id": "avail-extron-70-1185-02",
+  "label": "Extron Cable Cubby 1402 (No AC, Black)",
+  "shortName": "Cable Cubby 1402",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1185-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby1402",
+  "searchTerms": [
+    "70-1185-02",
+    "cable cubby 1402",
+    "extron",
+    "cable",
+    "cubby",
+    "1402"
+  ],
+  "heightMm": 113,
+  "widthMm": 269,
+  "depthMm": 189,
+  "weightKg": 1.9,
+  "voltage": "125V AC",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-6",
+      "label": "Slot 6",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-7",
+      "label": "Slot 7",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-8",
+      "label": "Slot 8",
+      "slotFamily": "extron-cubby-aap"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "No AC, Black",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Cable Cubby 1402 Black, AC Module Not Included",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "b8ced497-830e-415f-a8f3-176acaa8bcca",
+      "label": "Extron Cable Cubby 1402 Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0",
+      "notes": "passive"
+    }
+  ]
+}

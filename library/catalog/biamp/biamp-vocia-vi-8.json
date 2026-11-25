@@ -1,0 +1,38 @@
+{
+  "id": "avail-biamp-920-00384-00002",
+  "label": "Biamp Vocia VI-8",
+  "shortName": "Vocia VI-8",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00384-00002",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Public Address",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00384-00001",
+  "searchTerms": [
+    "920-00384-00002",
+    "vocia vi-8",
+    "biamp",
+    "vocia",
+    "vi-8"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 254,
+  "weightKg": 3,
+  "powerDrawW": 35,
+  "voltage": "24V DC",
+  "unitCost": 3967,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "Vocia input device with 8 analog mic/line inputs, allows live audio paging within the Vocia platform",
+    "notes": "Характеристики с сайта по артикулу 920-00384-00001",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Connectors of the 8 mic/line inputs, 9 control inputs, 4 relay outputs, status out and the dual 24 V DC power inputs are not named in the data sheet; ports wait for the panel"
+  },
+  "ports": []
+}

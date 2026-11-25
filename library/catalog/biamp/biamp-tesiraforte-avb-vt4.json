@@ -1,0 +1,175 @@
+{
+  "id": "avail-biamp-920-00452-00002",
+  "label": "Biamp TesiraFORTÉ AVB VT4",
+  "shortName": "TesiraFORTÉ AVB VT4",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00452-00002",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00452-00001",
+  "searchTerms": [
+    "920-00452-00002",
+    "tesiraforté avb vt4",
+    "biamp",
+    "tesirafort",
+    "avb",
+    "vt4"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 267,
+  "weightKg": 3.63,
+  "powerDrawW": 35,
+  "voltage": "100-240V AC",
+  "unitCost": 3617,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Fixed I/O DSP with 4 analog inputs, 4 analog outputs, 8 channels configurable USB audio, 128 x 128 channels of AVB, AEC technology (all 4 inputs), 2 channel VoIP, and standard FXO telephone interface",
+    "notes": "Характеристики с сайта по артикулу 920-00452-00001",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e2122dac-0eb1-4fc6-8de0-ea8b4b4829aa",
+      "label": "Biamp TesiraFORTÉ AVB VT4",
+      "match": "model-name",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "p-in1",
+      "label": "Input 1 (AEC)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in2",
+      "label": "Input 2 (AEC)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in3",
+      "label": "Input 3 (AEC)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-in4",
+      "label": "Input 4 (AEC)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p-out1",
+      "label": "Output 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out2",
+      "label": "Output 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out3",
+      "label": "Output 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-out4",
+      "label": "Output 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p-ctrl",
+      "label": "Control",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p-avb",
+      "label": "AVB",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p-voip",
+      "label": "VoIP",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p-pots",
+      "label": "POTS (Telephone)",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "connectorType": "rj11",
+      "section": "Telephony"
+    },
+    {
+      "id": "p-rs232",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Serial"
+    },
+    {
+      "id": "p-gpio",
+      "label": "Logic I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "p-usb",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "worklist-16",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "avail-extron-70-449-12",
+  "label": "Extron Two Neutrik Speakon Male to Solder Tabs - 4 Pole",
+  "shortName": "Two Neutrik Speakon Male to Sold…",
+  "manufacturer": "Extron",
+  "modelNumber": "70-449-12",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2nsmtost4pc",
+  "searchTerms": [
+    "70-449-12",
+    "two neutrik speakon male to sold…",
+    "extron",
+    "two",
+    "neutrik",
+    "speakon",
+    "male"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Double Space AAP - Black: Two Neutrik Speakon Male to Solder Tabs - 4 Pole",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap2nsmtost4pc",
+      "note": "connectors as in the official product name (front to rear)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p2",
+      "label": "Speaker In 1 (Rear)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "solder-cup",
+      "notes": "passive"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker In 2 (Rear)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "solder-cup"
+    },
+    {
+      "id": "p1",
+      "label": "Speaker Out 1 (Front)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "speakon"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Out 2 (Front)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "speakon"
+    }
+  ]
+}

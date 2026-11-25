@@ -1,0 +1,35 @@
+{
+  "id": "avail-extron-70-091-11",
+  "label": "Extron Two BNC Female to Female Barrels (AAP, Black)",
+  "shortName": "Two BNC Female to Female Barrels",
+  "manufacturer": "Extron",
+  "modelNumber": "70-091-11",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/aap2bncptff",
+  "searchTerms": [
+    "70-091-11",
+    "two bnc female to female barrels",
+    "extron",
+    "two",
+    "bnc",
+    "female"
+  ],
+  "slotFamily": "extron-cubby-aap",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "AAP, Black",
+    "deviceTypeSource": "card (extron-cc-aap)",
+    "description": "Single Space AAP - Black: Two BNC Female to Female Barrels",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "Signal type not stated in the product name (BNC barrel: SDI, composite or analog); ports wait for the datasheet"
+  },
+  "ports": []
+}

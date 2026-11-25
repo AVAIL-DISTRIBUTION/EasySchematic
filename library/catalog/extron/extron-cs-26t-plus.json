@@ -1,0 +1,53 @@
+{
+  "id": "avail-extron-60-1505-03",
+  "label": "Extron CS 26T Plus",
+  "shortName": "CS 26T Plus",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1505-03",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cs26tplus",
+  "searchTerms": [
+    "60-1505-03",
+    "cs 26t plus",
+    "extron",
+    "26t",
+    "plus"
+  ],
+  "heightMm": 101,
+  "widthMm": 262,
+  "depthMm": 262,
+  "weightKg": 2.7,
+  "powerDrawW": 60,
+  "thermalBtuh": 204.7,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "SpeedMount Two-Way Ceiling Speakers with 6.5\" Woofer, Pair",
+    "notes": "[AVAIL] dims from Extron specifications",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1a64499e-cd38-4110-a966-859fd57fdbdf",
+      "label": "Extron CS 26T Plus",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
+}

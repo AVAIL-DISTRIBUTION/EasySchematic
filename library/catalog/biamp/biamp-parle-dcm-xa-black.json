@@ -1,0 +1,80 @@
+{
+  "id": "avail-biamp-920-00028-10000",
+  "label": "Biamp Parlé DCM-XA Black",
+  "shortName": "Parlé DCM-XA Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00028-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00028-10000",
+  "searchTerms": [
+    "920-00028-10000",
+    "parlé dcm-xa black",
+    "biamp",
+    "parl",
+    "dcm-xa",
+    "black"
+  ],
+  "heightMm": 30,
+  "widthMm": 172,
+  "depthMm": 132,
+  "weightKg": 0.68,
+  "voltage": "PoE+ 802.3at Class 4",
+  "poeDrawW": 30,
+  "unitCost": 2400,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "Devio UCX Beamtracking™ ceiling microphone, two-channel amplifier, black surface mount",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf"
+    },
+    "portsMissing": "Install manual used as the data sheet. Amp Out connector is not named directly; RJ-45 follows from the CCA adapter (Cat-5 to euroblock), as on the level-A TCM-XA. Card says PoE 802.3af class 3 / 15.4 W, the manual says 802.3at class 4, 30 W - card poeDrawW/voltage should be checked.",
+    "notes": "PoE from the manufacturer's document (takes precedence over the catalog card): \"An IEEE 802.3at Class 4 device requiring 30W of PoE+ power\" — https://products.biamp.com/api/media/file/biamp_manual_parle-dcm-x-xa-xex_install_jul26_14054.pdf; the card had PoE 802.3af class 3, poeDrawW 15.4"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Amp Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Amplifier output over category cable (CCA adapter for euroblock speakers); 2 x 4 W RMS or 1 x 8 W RMS, 4/8 ohm"
+    },
+    {
+      "id": "p2",
+      "label": "Amp Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Amplifier output over category cable (CCA adapter for euroblock speakers); 2 x 4 W RMS or 1 x 8 W RMS, 4/8 ohm"
+    },
+    {
+      "id": "p3",
+      "label": "Control (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "To a Devio UCX PoE+ port: network audio and control; PoE+ 802.3at class 4, 30 W"
+    },
+    {
+      "id": "p4",
+      "label": "Mic In 2 (DCM-XEX)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Optional DCM-XEX expansion mic, up to 10 m; Mic In 1 takes the included microphone"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "avail-extron-60-1944-01",
+  "label": "Extron WFA 100 US",
+  "shortName": "WFA 100 US",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1944-01",
+  "deviceType": "adapter",
+  "category": "UC / Collaboration System",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/sharelinkprowfa100",
+  "searchTerms": [
+    "60-1944-01",
+    "wfa 100 us",
+    "extron",
+    "wfa",
+    "100"
+  ],
+  "heightMm": 26,
+  "widthMm": 72,
+  "depthMm": 11,
+  "weightKg": 0.01,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "USB to Wi-Fi & Bluetooth Adapter - US",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bbb0f439-d83b-4c0a-943a-51ae7415d52b",
+      "label": "Extron WFA 100 US",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "USB-A (Plug)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "Male USB 2.0 Type-A plug — connects to a host ShareLink Pro receiver's USB-A port. Provides 802.11ac/a/b/g/n Wi-Fi + Bluetooth via internal PCB antennas. Bus-powered (no external power).; bus-powered (USB)",
+      "id": "port-0"
+    }
+  ]
+}

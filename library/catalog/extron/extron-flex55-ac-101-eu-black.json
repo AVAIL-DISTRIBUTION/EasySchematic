@@ -1,0 +1,40 @@
+{
+  "id": "avail-extron-60-1692-22",
+  "label": "Extron Flex55 AC 101 EU (Black)",
+  "shortName": "Flex55 AC 101 EU",
+  "manufacturer": "Extron",
+  "modelNumber": "60-1692-22",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/flex55100seriespm",
+  "searchTerms": [
+    "60-1692-22",
+    "flex55 ac 101 eu",
+    "extron",
+    "flex55",
+    "101"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 7,
+  "weightKg": 0.12,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.1,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "AC Module, Central Europe: Black",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

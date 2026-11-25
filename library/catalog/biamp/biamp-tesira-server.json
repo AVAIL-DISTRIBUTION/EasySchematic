@@ -1,0 +1,370 @@
+{
+  "id": "avail-biamp-930-00300-00002",
+  "label": "Biamp Tesira SERVER",
+  "shortName": "Tesira SERVER",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00300-00002",
+  "deviceType": "frame",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00300-00001",
+  "searchTerms": [
+    "930-00300-00002",
+    "tesira server",
+    "biamp",
+    "tesira",
+    "server"
+  ],
+  "heightMm": 133,
+  "widthMm": 483,
+  "depthMm": 432,
+  "weightKg": 8.2,
+  "powerDrawW": 150,
+  "voltage": "100-240V AC",
+  "unitCost": 10261,
+  "_avail": {
+    "status": "ports-filled",
+    "slotFamilies": [
+      "biamp-tesira-server-card"
+    ],
+    "description": "Configurable I/O DSP with 1 DSP-2 card (7 additional DSP-2 cards can be added) and 1 AVB-1 network card",
+    "notes": "Модульный DSP: состав и число слотов задать по даташиту; Характеристики с сайта по артикулу 930-00300-00001; «< 150 W» — максимум для шасси; зависит от набора карт",
+    "source": "biamp-blocks.csv",
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "c0a80101-009a-4000-8000-000000000154",
+      "label": "Biamp Tesira SERVER",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "port-2450",
+      "label": "Analog In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2451",
+      "label": "Analog In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2452",
+      "label": "Analog In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2453",
+      "label": "Analog In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2454",
+      "label": "Analog In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2455",
+      "label": "Analog In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2456",
+      "label": "Analog In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2457",
+      "label": "Analog In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2458",
+      "label": "Analog In 9",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2459",
+      "label": "Analog In 10",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2460",
+      "label": "Analog In 11",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2461",
+      "label": "Analog In 12",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2470",
+      "label": "AES In 1",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2471",
+      "label": "AES In 2",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2472",
+      "label": "AES In 3",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2473",
+      "label": "AES In 4",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2474",
+      "label": "AES In 5",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2475",
+      "label": "AES In 6",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2476",
+      "label": "AES In 7",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2477",
+      "label": "AES In 8",
+      "signalType": "aes",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "port-2462",
+      "label": "Analog Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2463",
+      "label": "Analog Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2464",
+      "label": "Analog Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2465",
+      "label": "Analog Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2466",
+      "label": "Analog Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2467",
+      "label": "Analog Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2468",
+      "label": "Analog Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2469",
+      "label": "Analog Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2478",
+      "label": "AES Out 1",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2479",
+      "label": "AES Out 2",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2480",
+      "label": "AES Out 3",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2481",
+      "label": "AES Out 4",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2482",
+      "label": "AES Out 5",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2483",
+      "label": "AES Out 6",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2484",
+      "label": "AES Out 7",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2485",
+      "label": "AES Out 8",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-2486",
+      "label": "Ethernet 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "port-2487",
+      "label": "Ethernet 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "port-2488",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "port-2489",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    }
+  ]
+}

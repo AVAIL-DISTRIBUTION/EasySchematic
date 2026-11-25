@@ -1,0 +1,119 @@
+{
+  "id": "avail-biamp-920-01453-00002",
+  "label": "Biamp PC1000RMKII",
+  "shortName": "PC1000RMKII",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-01453-00002",
+  "deviceType": "media-player",
+  "category": "Audio Products / Sources",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-01453-00002",
+  "searchTerms": [
+    "920-01453-00002",
+    "pc1000rmkii",
+    "biamp"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 303,
+  "weightKg": 4.5,
+  "voltage": "230V AC",
+  "unitCost": 350,
+  "_avail": {
+    "status": "ports-filled",
+    "deviceTypeSource": "audio-player",
+    "description": "Media Player, CD/MP3 from Disc, SD-card or USB memory stick, RS232 control, IR remote included, 1U, 19\"",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_pc1000rmkii_8959.pdf"
+    },
+    "portsMissing": "The mains inlet type is not named (connector 'other'); rear USB and SD-card media slots are not modelled as ports"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Balanced Out L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced line out, max level set by the rear level knob"
+    },
+    {
+      "id": "p2",
+      "label": "Balanced Out R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced line out, max level set by the rear level knob"
+    },
+    {
+      "id": "p3",
+      "label": "Unbalanced Out L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca"
+    },
+    {
+      "id": "p4",
+      "label": "Unbalanced Out R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca"
+    },
+    {
+      "id": "p5",
+      "label": "Optical Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "toslink",
+      "notes": "S/PDIF, 16 bit, 44.1 kHz"
+    },
+    {
+      "id": "p6",
+      "label": "Coaxial Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "S/PDIF, 16 bit, 44.1 kHz"
+    },
+    {
+      "id": "p7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "db9",
+      "notes": "Control only, 38400 8-N-1"
+    },
+    {
+      "id": "p8",
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "section": "IR",
+      "connectorType": "trs-eighth",
+      "notes": "IR eye input, stereo minijack; disables the front IR receiver"
+    },
+    {
+      "id": "p9",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "Mains cable inlet, 230 V AC, max 30 VA; mains cable supplied"
+    }
+  ]
+}

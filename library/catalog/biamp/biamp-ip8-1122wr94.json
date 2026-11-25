@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-00910-00034",
+  "label": "Biamp IP8-1122WR94",
+  "shortName": "IP8-1122WR94",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-00910-00034",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-00910-00034",
+  "searchTerms": [
+    "930-00910-00034",
+    "ip8-1122wr94",
+    "biamp"
+  ],
+  "heightMm": 711,
+  "widthMm": 368,
+  "depthMm": 450,
+  "weightKg": 24.9,
+  "unitCost": 4600,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power 12-Inch 2-Way 90 X 40 Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Weather-resistant: sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable; the operating mode (passive, biamp or triamp) is set at the factory, so the number of conductor pairs depends on the order"
+  },
+  "ports": []
+}

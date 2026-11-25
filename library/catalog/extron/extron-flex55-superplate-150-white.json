@@ -1,0 +1,39 @@
+{
+  "id": "avail-extron-70-1143-53",
+  "label": "Extron Flex55 SuperPlate 150 (White)",
+  "shortName": "Flex55 SuperPlate 150",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1143-53",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/flex55superplate",
+  "searchTerms": [
+    "70-1143-53",
+    "flex55 superplate 150",
+    "extron",
+    "flex55",
+    "superplate",
+    "150"
+  ],
+  "heightMm": 55,
+  "widthMm": 55,
+  "depthMm": 7,
+  "weightKg": 0.05,
+  "slotFamily": "extron-cubby-flex55",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "deviceTypeSource": "card (extron-cc-flex55)",
+    "description": "White: HDMI and Audio",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+  },
+  "ports": []
+}

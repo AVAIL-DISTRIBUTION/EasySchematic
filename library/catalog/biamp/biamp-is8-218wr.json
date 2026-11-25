@@ -1,0 +1,33 @@
+{
+  "id": "avail-biamp-930-10899-00003",
+  "label": "Biamp IS8-218WR",
+  "shortName": "IS8-218WR",
+  "manufacturer": "Biamp",
+  "modelNumber": "930-10899-00003",
+  "deviceType": "subwoofer",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/930-10899-00003",
+  "searchTerms": [
+    "930-10899-00003",
+    "is8-218wr",
+    "biamp"
+  ],
+  "heightMm": 991,
+  "widthMm": 561,
+  "depthMm": 734,
+  "weightKg": 78,
+  "unitCost": 7700,
+  "_avail": {
+    "status": "awaiting-ports",
+    "description": "High Power Dual 18-Inch Subwoofer Weather-Resistant Grey",
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Weather-resistant: sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable; single or dual amp is set at the factory, so the number of conductor pairs depends on the order"
+  },
+  "ports": []
+}

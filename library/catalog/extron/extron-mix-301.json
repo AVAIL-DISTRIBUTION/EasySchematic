@@ -1,0 +1,92 @@
+{
+  "id": "avail-extron-60-737-01",
+  "label": "Extron MIX 301",
+  "shortName": "MIX 301",
+  "manufacturer": "Extron",
+  "modelNumber": "60-737-01",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/mix301",
+  "searchTerms": [
+    "60-737-01",
+    "mix 301",
+    "extron",
+    "mix",
+    "301"
+  ],
+  "heightMm": 43,
+  "widthMm": 56,
+  "depthMm": 76,
+  "weightKg": 0.1,
+  "powerDrawW": 2.4,
+  "voltage": "12V DC",
+  "thermalBtuh": 8.2,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/8 rack",
+    "rackUnits": 1,
+    "description": "Three Channel Line Level Mixer",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Misc Eng.vssx",
+      "label": "MIX 301",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-737-01-1",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-737-01-2",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-737-01-3",
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-737-01-4",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-737-01-5",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "External 12VDC, 0.5A PSU brick (6W)."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "avail-extron-70-1046-02",
+  "label": "Extron Cable Cubby 700 (No AC, Black)",
+  "shortName": "Cable Cubby 700",
+  "manufacturer": "Extron",
+  "modelNumber": "70-1046-02",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/cablecubby700",
+  "searchTerms": [
+    "70-1046-02",
+    "cable cubby 700",
+    "extron",
+    "cable",
+    "cubby",
+    "700"
+  ],
+  "heightMm": 164,
+  "widthMm": 198,
+  "depthMm": 162,
+  "weightKg": 1.1,
+  "voltage": "125V AC",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-cubby-aap"
+    }
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "No AC, Black",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "extron-cubby-aap"
+    ],
+    "description": "Cable Cubby 700, Black, No AC",
+    "source": "extron-blocks-v4.csv",
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "8be41ae6-c2a8-42bf-804d-f4355203ab99",
+      "label": "Extron Cable Cubby 700 Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0",
+      "notes": "passive"
+    }
+  ]
+}

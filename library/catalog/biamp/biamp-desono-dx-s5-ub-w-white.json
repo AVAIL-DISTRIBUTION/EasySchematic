@@ -1,0 +1,62 @@
+{
+  "id": "avail-biamp-920-02618-20000",
+  "label": "Biamp Desono DX-S5-UB-W White",
+  "shortName": "Desono DX-S5-UB-W White",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-02618-20000",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00332-20000",
+  "searchTerms": [
+    "920-02618-20000",
+    "desono dx-s5-ub-w white",
+    "biamp",
+    "desono",
+    "dx-s5-ub-w",
+    "white"
+  ],
+  "heightMm": 286,
+  "widthMm": 180,
+  "depthMm": 219,
+  "weightKg": 4.7,
+  "unitCost": 270,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "5” high output coaxial surface mount indoor/outdoor loudspeaker w/ HF compression driver. 8 ohm or 70V/100V operation, included aluminum U-bracket & water-tight ClickPlug, white (priced individually, but sold in pairs)",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; Характеристики с сайта по артикулу 920-00332-20000",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "biamp-desono-dx-s5-ub-w.json",
+      "label": "Biamp Desono DX-S5-UB-W",
+      "match": "model-name",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1795168569861-44-0",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs",
+      "notes": "Lever-actuated 4-position terminal block (In +/-, Thru +/-); 70 V / 100 V taps or 6 ohm"
+    },
+    {
+      "id": "p1795168569861-44-1",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Speaker Outputs",
+      "notes": "Pass-through on the same terminal block, for daisy-chaining"
+    }
+  ]
+}

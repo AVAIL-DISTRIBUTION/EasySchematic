@@ -1,0 +1,115 @@
+{
+  "id": "avail-extron-60-2070-52",
+  "label": "Extron DTP3 T 211",
+  "shortName": "DTP3 T 211",
+  "manufacturer": "Extron",
+  "modelNumber": "60-2070-52",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.extron.com/product/dtp3t211",
+  "searchTerms": [
+    "60-2070-52",
+    "dtp3 t 211",
+    "extron",
+    "dtp3",
+    "211"
+  ],
+  "heightMm": 25,
+  "widthMm": 109,
+  "depthMm": 152,
+  "weightKg": 0.27,
+  "powerDrawW": 8.7,
+  "voltage": "12V DC",
+  "thermalBtuh": 25.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U 1/4 rack",
+    "rackUnits": 1,
+    "description": "4K/60 USB-C DTP3 Transmitter",
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 211",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "vx-60-2070-52-1",
+      "label": "DTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-2070-52-2",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-2070-52-3",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
+    },
+    {
+      "label": "USB-C Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Control",
+      "id": "vx-60-2070-52-s1"
+    },
+    {
+      "id": "vx-60-2070-52-4",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "one connector with POWER"
+    },
+    {
+      "id": "vx-60-2070-52-5",
+      "label": "Power 1",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Power",
+      "notes": "one connector with USB-C"
+    },
+    {
+      "id": "vx-60-2070-52-6",
+      "label": "Power Out (Insert)",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-2070-52-7",
+      "label": "Power 2",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
+}

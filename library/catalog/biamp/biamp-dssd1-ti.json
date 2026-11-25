@@ -1,0 +1,47 @@
+{
+  "id": "avail-biamp-910-00060",
+  "label": "Biamp DSSD1-TI",
+  "shortName": "DSSD1-TI",
+  "manufacturer": "Biamp",
+  "modelNumber": "910-00060",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/910-00060",
+  "searchTerms": [
+    "910-00060",
+    "dssd1-ti",
+    "biamp"
+  ],
+  "heightMm": 52.34,
+  "widthMm": 58.6,
+  "depthMm": 58.6,
+  "weightKg": 0.47,
+  "unitCost": 933,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "SD-1 Solid Drive speaker for drywall",
+    "notes": "Эмиттер звуковой маскировки; [AVAIL] estimated: round puck, width = depth",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Dynasound-DSSD1-TI-Spec-Sheet_13382.pdf"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive solid drive transducer; plenum speaker wire with screw connector block"
+    }
+  ]
+}
