@@ -116,6 +116,12 @@ export function variantBase(label: unknown): string {
   return norm(l);
 }
 
+/** Manufacturer + model without the variant: "biamp|desono c-ic6" for "Biamp Desono C-IC6 Black". */
+export function modelKey(label: unknown, manufacturer: unknown): string {
+  const name = modelName(variantBase(label), manufacturer);
+  return name ? `${vendorKey(manufacturer)}|${name}` : "";
+}
+
 function hasPorts(t: { ports?: unknown; slots?: unknown }): boolean {
   return (Array.isArray(t.ports) && t.ports.length > 0) || (Array.isArray(t.slots) && t.slots.length > 0);
 }

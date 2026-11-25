@@ -146,14 +146,36 @@ describe("import:catalog", () => {
     expect(row("avail-biamp-910-00071")).toBeUndefined();
   });
 
-  it("is idempotent and notes possible duplicates", () => {
-    const f = file(card("avail-extron-60-1885-52", { _avail: { portsSource: { kind: "db", match: "model-name", from: "old", label: "Extron DTP3 T 203" } } }));
-    const first = importCatalog(api.db.sqlite, [f], { deletedList: NO_DELETED });
-    expect(first.rows[0].note).toBe("possible duplicate of old (Extron DTP3 T 203): ports were copied from it");
+  it("is idempotent", () => {
+    const f = file(card("avail-extron-60-1885-52"));
+    importCatalog(api.db.sqlite, [f], { deletedList: NO_DELETED });
     const v = (api.db.sqlite.prepare("SELECT version FROM library_meta WHERE id = 1").get() as { version: number }).version;
     const second = importCatalog(api.db.sqlite, [f], { deletedList: NO_DELETED });
     expect(second.counts).toMatchObject({ unchanged: 1, inserted: 0, updated: 0 });
+    expect(second.superseded).toEqual([]);
     expect((api.db.sqlite.prepare("SELECT version FROM library_meta WHERE id = 1").get() as { version: number }).version).toBe(v);
+  });
+
+  it("hides raw templates of a model the catalog brought, lists verified and draft", () => {
+    const biamp = (id: string, label: string, modelNumber: string) => ({ ...card(id), manufacturer: "Biamp", label, modelNumber });
+    insertLocal(biamp("base", "Biamp Desono C-IC6", "C-IC6"), "raw");
+    insertLocal(biamp("other-colour", "Biamp Desono C-IC6 White", "C-IC6-W"), "raw");
+    insertLocal(biamp("checked", "Biamp Desono C-IC6", "C-IC6 old"), "verified");
+    insertLocal(biamp("work", "Biamp Desono C-IC6 Black", "X"), "draft");
+    insertLocal(biamp("own-file", "Biamp Desono C-IC6 Grey", "910-3"), "raw"); // its own catalog file, still below A
+    insertLocal(biamp("unrelated", "Biamp Desono C-IC6LP", "C-IC6LP"), "raw");
+    const black = file(card("avail-biamp-910-1", { manufacturer: "Biamp", label: "Biamp Desono C-IC6 Black", modelNumber: "910-1" }), "biamp/biamp-desono-c-ic6-black.json");
+    const grey = file(card("avail-biamp-910-3", { manufacturer: "Biamp", label: "Biamp Desono C-IC6 Grey", modelNumber: "910-3", ports: [] }), "biamp/biamp-desono-c-ic6-grey.json");
+    const r = importCatalog(api.db.sqlite, [black, grey], { deletedList: NO_DELETED });
+    expect(r.superseded.map((x) => [x.id, x.action]).sort()).toEqual([
+      ["base", "hidden"], ["checked", "listed"], ["other-colour", "hidden"], ["work", "listed"],
+    ]);
+    expect(meta("base")).toMatchObject({ status: "hidden", status_reason: "superseded by catalog (library/catalog/biamp/biamp-desono-c-ic6-black.json)" });
+    expect(meta("checked")!.status).toBe("verified");
+    expect(meta("own-file")!.status).toBe("raw");
+    expect(meta("unrelated")!.status).toBe("raw");
+    // Second run: nothing more to hide.
+    expect(importCatalog(api.db.sqlite, [black, grey], { deletedList: NO_DELETED }).superseded.filter((x) => x.action === "hidden")).toEqual([]);
   });
 
   it("dry run writes nothing", () => {

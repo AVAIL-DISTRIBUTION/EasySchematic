@@ -235,6 +235,8 @@ library / db / variant / datasheet), `portsMissing` (чего нет в дата
 найден — обновить (raw/draft → draft, hidden остаётся, verified — если данные не изменились), нет —
 draft; `_avail` и `rackForm` — в `avail_template_meta.catalog`; library/avail не трогает,
 deleted-templates.json соблюдает (записи с `partNumber` удаляет из базы — Biamp SQT-1);
+другие шаблоны той же модели (label без варианта/цвета) со статусом raw скрывает с причиной
+«superseded by catalog», verified/draft только перечисляет в отчёте;
 `import:upstream` строки каталога не перезаписывает.
 
 Стандарт v0.7 (3.2): габариты и вес обязательны для того, что стоит в шкафу (в т.ч. любой `rackForm`);

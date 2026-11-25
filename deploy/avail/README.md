@@ -116,9 +116,10 @@ docker compose exec api npm run import:catalog -- --dry-run       # повтор
 
 Найденные по производителю + артикулу шаблоны обновляются (raw → draft, verified остаётся verified,
 если данные не изменились, иначе draft с причиной), остальные создаются как draft. `library/avail`
-не трогается; Biamp SQT-1 удаляется (`docs/avail/deleted-templates.json`). В отчёте
-«possible duplicate» — новый шаблон, порты которого взяты из шаблона базы с похожим названием
-(цветовой вариант): решите, скрыть ли старый.
+не трогается; Biamp SQT-1 удаляется (`docs/avail/deleted-templates.json`). Другие шаблоны той же
+модели (цветовой вариант или базовая модель: Desono C-IC6 для C-IC6 Black/White) со статусом raw
+скрываются (hidden, причина «superseded by catalog (<файл>)»); verified и draft не трогаются, только
+перечисляются в отчёте. Схемы со ссылкой на скрытый шаблон продолжают работать.
 
 Снимок базы для `fill:catalog-ports` — из того же бэкапа: распаковать `easyschematic-*.tar.gz` в
 `tools/avail/incoming/db/` (в git и в образ не попадает).

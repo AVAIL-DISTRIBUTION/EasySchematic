@@ -16,6 +16,11 @@
  * The template gets the file without `_avail` and `rackForm`; those go to
  * avail_template_meta.catalog (migration 9005) with the file path.
  *
+ * Superseded: other templates of a model the catalog loaded (colour variant or base model, matched
+ * by label without the variant) — raw ones become hidden with status_reason "superseded by catalog
+ * (<file>)", verified and draft are only listed in the report. Rows any catalog file matched by part
+ * number are never superseded (their own file may still be below A).
+ *
  * Entries of deleted-templates.json with a partNumber are also removed from the database when
  * still there (by id, vendor + part number or vendor + model label), curated templates excepted.
  *
@@ -24,7 +29,7 @@
 import type Database from "better-sqlite3";
 import { templateToRow, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
-import type { CatalogTemplate } from "../../src/avail/catalogPorts";
+import { modelKey, type CatalogTemplate } from "../../src/avail/catalogPorts";
 import { normalizeManufacturer } from "../../src/avail/library";
 import type { CatalogFileText } from "./catalogFiles";
 import { AVAIL_LIBRARY_SOURCE, fileHash } from "./importAvail";
@@ -53,7 +58,15 @@ export interface ImportCatalogReport {
   counts: Record<ImportCatalogAction, number>;
   /** Removed from the database by deleted-templates.json entries with a partNumber. */
   removed: { id: string; label: string; entry: string }[];
+  /**
+   * Other templates of a model the catalog brought (colour variant or base model, "Desono C-IC6"
+   * for "Desono C-IC6 Black"): raw ones are hidden ("superseded by catalog"), verified and draft
+   * are only listed.
+   */
+  superseded: { id: string; label: string; status: TemplateStatus; action: "hidden" | "listed"; by: string }[];
 }
+
+export const SUPERSEDED_REASON = "superseded by catalog";
 
 export interface ImportCatalogOptions {
   dryRun?: boolean;
@@ -92,21 +105,11 @@ export function splitCatalogTemplate(t: CatalogTemplate, file: string): { templa
   return { template: rest as unknown as Template & { id: string }, catalog: JSON.stringify(catalog) };
 }
 
-/**
- * A new template whose ports came from a database template matched by model name (not part
- * number) may duplicate it ("Desono C-IC6" for "Desono C-IC6 Black"): worth a look.
- */
-function possibleDuplicate(t: CatalogTemplate, matchedId: string | null): { note?: string } {
-  const src = t._avail?.portsSource;
-  if (matchedId || src?.kind !== "db" || src.match !== "model-name" || !src.from) return {};
-  return { note: `possible duplicate of ${src.from} (${src.label ?? "?"}): ports were copied from it` };
-}
-
 export function importCatalog(sqlite: Database.Database, files: readonly CatalogFileText[], options: ImportCatalogOptions = {}): ImportCatalogReport {
   const updatedBy = options.updatedBy ?? "import:catalog";
   const deletedList = options.deletedList ?? DELETED_TEMPLATES;
   const counts = { inserted: 0, updated: 0, unchanged: 0, "below-a": 0, curated: 0, deleted: 0, duplicate: 0, invalid: 0 };
-  const report: ImportCatalogReport = { dryRun: !!options.dryRun, rows: [], counts, removed: [] };
+  const report: ImportCatalogReport = { dryRun: !!options.dryRun, rows: [], counts, removed: [], superseded: [] };
 
   const curatedIds = new Set((options.curated ?? []).map((c) => c.id));
   const curatedKeys = new Set((options.curated ?? []).map((c) => partKey(c.manufacturer, c.modelNumber)).filter(Boolean));
@@ -174,6 +177,10 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       if (k && !byPart.has(k)) byPart.set(k, r);
     }
     const claimed = new Map<string, string>();
+    /** Rows a catalog file matched (loaded or not): never superseded by another file. */
+    const matchedByFile = new Set<string>();
+    /** Model key → catalog file loaded into the database for it. */
+    const loadedModels = new Map<string, string>();
 
     files.forEach((file, index) => {
       const t = file.template;
@@ -187,7 +194,12 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       const existing = bySourceId.get(t.id) ?? byId.get(t.id) ?? parts.map((k) => byPart.get(k)).find(Boolean);
       const m = existing ? meta.get(existing.id) : undefined;
       const id = existing?.id ?? t.id;
+      if (existing) matchedByFile.add(existing.id);
       const base = { file: file.file, id, label: t.label, level };
+      const loaded = () => {
+        const k = modelKey(t.label, t.manufacturer);
+        if (k && !loadedModels.has(k)) loadedModels.set(k, file.file);
+      };
       const skip = (action: ImportCatalogAction, note: string) => {
         counts[action]++;
         report.rows.push({ ...base, action, ...(m ? { status: m.status } : {}), note });
@@ -208,6 +220,7 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       if (existing && m?.source === AVAIL_CATALOG_SOURCE && m.upstream_id === t.id && m.source_hash === hash) {
         counts.unchanged++;
         report.rows.push({ ...base, action: "unchanged", status: m.status });
+        loaded();
         return;
       }
 
@@ -239,6 +252,7 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
         catalog,
       });
       changed = true;
+      loaded();
       const action = existing ? "updated" : "inserted";
       counts[action]++;
       report.rows.push({
@@ -246,13 +260,33 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
         action,
         status,
         ...(before !== status ? { previousStatus: before } : {}),
-        ...(reason
-          ? { note: reason }
-          : existing && !dataChanged
-            ? { note: "data already matched the file" }
-            : possibleDuplicate(t, existing ? id : null)),
+        ...(reason ? { note: reason } : existing && !dataChanged ? { note: "data already matched the file" } : {}),
       });
     });
+
+    // Superseded: other templates of a loaded model. Raw → hidden; verified / draft → listed.
+    const hideMeta = sqlite.prepare(
+      `INSERT INTO avail_template_meta (template_id, status, updated_by, updated_at, status_reason, status_changed_at)
+       VALUES (@id, 'hidden', @by, datetime('now'), @reason, datetime('now'))
+       ON CONFLICT(template_id) DO UPDATE SET status = 'hidden', updated_by = excluded.updated_by, updated_at = excluded.updated_at,
+         status_reason = excluded.status_reason, status_changed_at = excluded.status_changed_at`,
+    );
+    const metaNow = getMeta();
+    for (const r of local) {
+      if (matchedByFile.has(r.id) || curatedIds.has(r.id)) continue;
+      const mr = metaNow.get(r.id);
+      if (mr?.source === AVAIL_CATALOG_SOURCE || mr?.source === AVAIL_LIBRARY_SOURCE) continue;
+      const status: TemplateStatus = mr?.status ?? "raw";
+      if (status === "hidden") continue;
+      const keys = [modelKey(r.label, r.manufacturer), modelKey(r.model_number, r.manufacturer)];
+      const by = keys.map((k) => (k ? loadedModels.get(k) : undefined)).find(Boolean);
+      if (!by) continue;
+      if (status === "raw") {
+        hideMeta.run({ id: r.id, by: updatedBy, reason: `${SUPERSEDED_REASON} (library/catalog/${by})` });
+        changed = true;
+        report.superseded.push({ id: r.id, label: r.label, status, action: "hidden", by });
+      } else report.superseded.push({ id: r.id, label: r.label, status, action: "listed", by });
+    }
 
     if (changed) sqlite.prepare(BUMP_LIBRARY_VERSION).run();
     if (options.dryRun) throw new DryRun();
@@ -282,6 +316,16 @@ export function formatImportCatalogReport(r: ImportCatalogReport, dir: string, v
   if (r.removed.length) {
     lines.push("", "Removed from the database (docs/avail/deleted-templates.json):");
     for (const x of r.removed) lines.push(`  ${x.id} ${x.label} — ${x.entry}`);
+  }
+  const hidden = r.superseded.filter((x) => x.action === "hidden");
+  const listed = r.superseded.filter((x) => x.action === "listed");
+  if (hidden.length) {
+    lines.push("", `Hidden, superseded by catalog (raw): ${hidden.length}`);
+    for (const x of hidden) lines.push(`  ${x.id} ${x.label} — ${x.by}`);
+  }
+  if (listed.length) {
+    lines.push("", `Same model as a catalog file, left as is (verified / draft): ${listed.length}`);
+    for (const x of listed) lines.push(`  ${x.status.padEnd(8)} ${x.id} ${x.label} — ${x.by}`);
   }
   lines.push("");
   for (const x of r.rows) {
