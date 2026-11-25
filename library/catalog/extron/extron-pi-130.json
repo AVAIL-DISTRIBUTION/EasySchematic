@@ -36,39 +36,37 @@
     "description": "High Power Injector for XTP and Pro Series Control Systems",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "7ec3b4f8-76c1-46e8-8f41-d45df66123ce",
-      "label": "Extron PI 130",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - Misc Eng.vssx",
+      "label": "PI 130",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN In",
+      "id": "vx-60-1361-02-1",
+      "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "id": "port-0"
+      "section": "Network"
     },
     {
-      "label": "LAN OUT + PoE",
+      "id": "vx-60-1361-02-2",
+      "label": "LAN (PoE Out)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "poeBudgetW": 30,
-      "id": "port-1"
+      "section": "Network"
     },
     {
+      "id": "vx-60-1361-02-3",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "iec"
     }
   ]
 }

@@ -33,57 +33,89 @@
     "description": "Automation Controller",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "bbb09ae9-5efc-497f-a5fd-0ec9faf82af3",
-      "label": "Extron HD CTL 100",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - Workspace control Eng.vssx",
+      "label": "HD CTL 100",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1633-01-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Out",
+      "id": "vx-60-1633-01-2",
+      "label": "HDMI Out 1",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1633-01-3",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1633-01-4",
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-60-1633-01-5",
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "phoenix",
       "section": "Video Outputs",
-      "id": "port-1"
+      "notes": "6-pole captive screw"
     },
     {
-      "label": "Digital I/O 1",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O",
-      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
-      "id": "port-3"
-    },
-    {
-      "label": "Digital I/O 2",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O",
-      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
-      "id": "port-4"
-    },
-    {
-      "label": "IR/Serial Out",
+      "id": "vx-60-1633-01-6",
+      "label": "IR/S Out",
       "signalType": "ir",
       "direction": "output",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Programmable IR (TTL-level, up to 300 kHz) OR unidirectional RS-232 ±5V output on a 2-pole 3.5mm captive screw.",
-      "id": "port-2"
+      "section": "IR",
+      "notes": "Programmable IR (TTL-level, up to 300 kHz) OR unidirectional RS-232 ±5V output on a 2-pole 3.5mm captive screw. (IR or one-way RS-232; 2-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1633-01-7",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw."
+    },
+    {
+      "id": "vx-60-1633-01-8",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw."
+    },
+    {
+      "id": "vx-60-1633-01-9",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
     },
     {
       "label": "USB Config",
@@ -92,16 +124,25 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for PCS / Global Configurator / Ethernet-over-USB.",
-      "id": "port-5"
+      "id": "vx-60-1633-01-s1"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1633-01-10",
+      "label": "+V Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw"
+    },
+    {
+      "id": "vx-60-1633-01-11",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC, 0.5A PSU brick (6W).",
-      "id": "port-6"
+      "connectorType": "barrel",
+      "notes": "External 12VDC, 0.5A PSU brick (6W)."
     }
   ]
 }

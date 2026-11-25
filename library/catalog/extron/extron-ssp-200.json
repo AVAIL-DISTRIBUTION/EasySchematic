@@ -35,173 +35,206 @@
     "description": "Surround Sound Processor",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "6d53eac4-0736-435c-96f4-cfa0b39c8e15",
-      "label": "Extron SSP 200",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "SSP 200",
       "match": "part-number",
-      "status": "raw",
-      "level": "B"
+      "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In",
+      "id": "vx-60-1658-01-1",
+      "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Loop",
+      "id": "vx-60-1658-01-2",
+      "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "S/PDIF In (Coax)",
+      "id": "vx-60-1658-01-3",
+      "label": "S/PDIF In 2",
       "signalType": "spdif",
       "direction": "input",
       "connectorType": "rca",
       "section": "Audio Inputs",
-      "notes": "Coaxial S/PDIF digital audio input on RCA.",
-      "id": "port-2"
+      "notes": "Coaxial S/PDIF digital audio input on RCA."
     },
     {
-      "label": "S/PDIF In (Optical 1)",
+      "id": "vx-60-1658-01-4",
+      "label": "S/PDIF In 3",
       "signalType": "spdif",
       "direction": "input",
       "connectorType": "toslink",
       "section": "Audio Inputs",
-      "notes": "Optical S/PDIF (TOSLINK).",
-      "id": "port-3"
+      "notes": "Optical S/PDIF (TOSLINK)."
     },
     {
-      "label": "S/PDIF In (Optical 2)",
+      "id": "vx-60-1658-01-5",
+      "label": "S/PDIF In 4",
       "signalType": "spdif",
       "direction": "input",
       "connectorType": "toslink",
       "section": "Audio Inputs",
-      "notes": "Optical S/PDIF (TOSLINK).",
-      "id": "port-4"
+      "notes": "Optical S/PDIF (TOSLINK)."
     },
     {
-      "label": "Analog In (5.1 Stereo)",
+      "id": "vx-60-1658-01-6",
+      "label": "Mic/Line In 5",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "Stereo balanced/unbalanced analog input on a 6-pole captive screw.",
-      "id": "port-5"
+      "notes": "Stereo balanced/unbalanced analog input on a 6-pole captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Surround Out — Front L",
+      "id": "vx-60-1658-01-7",
+      "label": "Audio Out 1 (Left Front)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
-      "id": "port-6"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Surround Out — Front R",
+      "id": "vx-60-1658-01-8",
+      "label": "Audio Out 2 (Right Front)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
-      "id": "port-7"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Surround Out — Center",
+      "id": "vx-60-1658-01-9",
+      "label": "Audio Out 3 (Center)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
-      "id": "port-8"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Surround Out — Subwoofer",
+      "id": "vx-60-1658-01-10",
+      "label": "Audio Out 4 (Sub)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
-      "id": "port-9"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Surround Out — Surround L",
+      "id": "vx-60-1658-01-11",
+      "label": "Audio Out 5 (Left Surround)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
-      "id": "port-10"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Surround Out — Surround R",
+      "id": "vx-60-1658-01-12",
+      "label": "Audio Out 6 (Right Surround)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
-      "id": "port-11"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Surround Back L",
+      "id": "vx-60-1658-01-13",
+      "label": "Audio Out 7",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable",
-      "id": "port-12"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable (3-pole captive screw)"
     },
     {
-      "label": "Surround Back R",
+      "id": "vx-60-1658-01-14",
+      "label": "Audio Out 8",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable",
-      "id": "port-13"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable (3-pole captive screw)"
     },
     {
-      "label": "Height/Aux 1 Out",
+      "id": "vx-60-1658-01-15",
+      "label": "Audio Out 9 (Mix)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable",
-      "id": "port-14"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable (3-pole captive screw)"
     },
     {
-      "label": "Surround Out — Height/Aux 2 (assignable)",
+      "id": "vx-60-1658-01-16",
+      "label": "Audio Out 10 (Mix)",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
-      "id": "port-15"
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw. (3-pole captive screw)"
     },
     {
+      "id": "vx-60-1658-01-17",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "id": "port-18"
+      "section": "Network"
     },
     {
+      "id": "vx-60-1658-01-18",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
-      "id": "port-16"
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1658-01-19",
+      "label": "ACP Bus",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole captive screw"
+    },
+    {
+      "id": "vx-60-1658-01-20",
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion"
+    },
+    {
+      "id": "vx-60-1658-01-21",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-mini",
+      "notes": "Front-panel USB Mini-B for configuration (USB 2.0)."
+    },
+    {
+      "id": "vx-60-1658-01-22",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-mini"
     },
     {
       "label": "USB Config",
@@ -210,16 +243,16 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for configuration (USB 2.0).",
-      "id": "port-17"
+      "id": "vx-60-1658-01-s1"
     },
     {
-      "label": "Power (IEC)",
+      "id": "vx-60-1658-01-23",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU.",
-      "id": "port-19"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU."
     }
   ]
 }

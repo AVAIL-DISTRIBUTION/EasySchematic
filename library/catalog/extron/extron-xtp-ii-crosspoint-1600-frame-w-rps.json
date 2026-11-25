@@ -83,59 +83,40 @@
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name",
     "portsSource": {
-      "kind": "db",
-      "from": "daae5de8-837c-4810-9d74-180c2be18fac",
-      "label": "Extron XTP II CrossPoint 1600 Frame w/ RPS",
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Frames Eng.vssx",
+      "label": "XTP II CrossPoint 1600 Frame w/ RPS",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-2031-11-1",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "10/100Base-T control. Default 192.168.254.254.",
-      "id": "port-0"
+      "notes": "10/100Base-T control. Default 192.168.254.254."
     },
     {
-      "label": "RS-232 / RS-422",
+      "id": "vx-60-2031-11-2",
+      "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
-      "connectorType": "db9",
-      "section": "Control",
-      "notes": "Rear panel female 9-pin D. Selectable RS-232 / RS-422. 9600 (default) to 115200 baud.",
-      "id": "port-1"
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "notes": "Front panel USB Mini-B for direct PC config. USB 2.0 low speed.",
-      "id": "port-2"
-    },
-    {
-      "label": "AC Power (Primary)",
+      "id": "vx-60-2031-11-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Dual hot-swappable PSU (primary + redundant). IEC C14 mains, 100-240 VAC, 50-60 Hz.",
-      "id": "port-3"
-    },
-    {
-      "label": "AC Power (Redundant)",
-      "signalType": "power",
-      "direction": "input",
       "connectorType": "iec",
-      "section": "Power",
-      "notes": "Dual hot-swappable PSU (primary + redundant). IEC C14 mains, 100-240 VAC, 50-60 Hz.",
-      "id": "port-4"
+      "notes": "Dual hot-swappable PSU (primary + redundant). IEC C14 mains, 100-240 VAC, 50-60 Hz."
     }
   ]
 }

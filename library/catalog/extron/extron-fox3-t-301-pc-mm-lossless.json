@@ -29,75 +29,95 @@
     "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "9fb2c971-d8c8-4048-8f32-c0586c6cb249",
-      "label": "Extron FOX3 T 301 PC MM",
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 PowerCage Eng.vssx",
+      "label": "FOX3 T 301 PC MM",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-70-1190-11-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Loop Out",
+      "id": "vx-70-1190-11-2",
+      "label": "Fiber In 1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1190-11-3",
+      "label": "Fiber In 2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-70-1190-11-4",
+      "label": "HDMI Out (Loop)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "Fiber",
+      "id": "vx-70-1190-11-5",
+      "label": "Fiber Out 1",
       "signalType": "fiber",
       "direction": "output",
       "connectorType": "lc",
       "section": "Video Outputs",
-      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
-      "id": "port-6"
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors."
     },
     {
+      "id": "vx-70-1190-11-6",
+      "label": "Fiber Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "vx-70-1190-11-7",
       "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "mini-trs",
-      "section": "Audio Inputs",
-      "notes": "3.5mm mini stereo jack, unbalanced. Accepts HDMI de-embedded or line-level.",
-      "id": "port-2"
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 Pass-through",
+      "id": "vx-70-1190-11-8",
+      "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber.",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber. (3-pole captive screw)"
     },
     {
+      "id": "vx-70-1190-11-9",
       "label": "USB HID",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
       "connectorType": "usb-b",
-      "section": "USB",
-      "notes": "USB type B female (host HID device — keyboard/mouse). Max 100 mA per port.",
-      "id": "port-4"
+      "section": "USB"
     },
     {
-      "label": "USB 2.0",
+      "id": "vx-70-1190-11-10",
+      "label": "USB",
       "signalType": "usb",
-      "direction": "input",
+      "direction": "bidirectional",
       "connectorType": "usb-b",
-      "section": "USB",
-      "notes": "USB type B female (host USB 2.0 — up to 480 Mbps). Max 500 mA.",
-      "id": "port-5"
+      "section": "USB"
     }
   ]
 }

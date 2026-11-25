@@ -34,118 +34,114 @@
     "description": "Four Input HDCP-Compliant Scaler",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "edae3a94-a23a-4804-94e6-3fb149220b78",
-      "label": "Extron IN1604 HD",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Scalers Eng.vssx",
+      "label": "IN1604 HD",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "VGA In",
+      "id": "vx-60-1457-02-1",
+      "label": "RGBHV In 1",
       "signalType": "vga",
       "direction": "input",
-      "connectorType": "db15",
-      "id": "port-0",
+      "connectorType": "vga",
       "section": "Video Inputs"
     },
     {
-      "label": "HDMI In 1",
-      "signalType": "hdmi",
-      "direction": "input",
-      "connectorType": "hdmi",
-      "id": "port-1",
-      "section": "Video Inputs"
-    },
-    {
+      "id": "vx-60-1457-02-2",
       "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-2",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1457-02-3",
       "label": "HDMI In 3",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-3",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1457-02-4",
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1457-02-5",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-4",
       "section": "Video Outputs"
     },
     {
-      "label": "Audio In (3.5mm TRS)",
+      "id": "vx-60-1457-02-6",
+      "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-5"
+      "section": "Audio Inputs"
     },
     {
-      "label": "Audio In (Captive)",
+      "id": "vx-60-1457-02-7",
+      "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-6"
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1457-02-8",
       "label": "Audio Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-7"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Contact Closure In",
-      "signalType": "contact-closure",
-      "direction": "input",
+      "id": "vx-60-1457-02-9",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-8"
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
+      "id": "vx-60-1457-02-10",
       "label": "Tally Out",
       "signalType": "tally",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-9"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "RS-232",
-      "signalType": "serial",
-      "direction": "bidirectional",
+      "id": "vx-60-1457-02-11",
+      "label": "Contact In",
+      "signalType": "contact-closure",
+      "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-10"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-11"
-    },
-    {
+      "id": "vx-60-1457-02-12",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-12"
+      "connectorType": "iec"
     }
   ]
 }

@@ -35,38 +35,47 @@
     "description": "DTP3 Receiver for 4K/60 HDMI and USB Data",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "550c9ae5-feb0-4b57-a368-9518661fe61d",
-      "label": "Extron DTP3 R 301",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Receivers Eng.vssx",
+      "label": "DTP3 R 301",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "DTP3 In (RJ-45 from Tx)",
+      "id": "vx-60-1773-53-1",
+      "label": "DTP3 In",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1773-53-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio Out (Stereo)",
+      "id": "vx-60-1773-53-3",
+      "label": "Audio Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-2"
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1773-53-4",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
       "label": "USB-C Config (Front)",
@@ -74,55 +83,47 @@
       "direction": "input",
       "connectorType": "usb-c",
       "section": "Control",
-      "id": "port-7"
+      "id": "vx-60-1773-53-s1"
     },
     {
-      "label": "RS-232 (Pass-through)",
-      "signalType": "serial",
+      "id": "vx-60-1773-53-5",
+      "label": "USB 1",
+      "signalType": "usb",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-8"
-    },
-    {
-      "label": "USB-A 2.0 Out 1",
-      "signalType": "usb",
-      "direction": "output",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-3"
+      "section": "USB"
     },
     {
-      "label": "USB-A 2.0 Out 2",
+      "id": "vx-60-1773-53-6",
+      "label": "USB 2",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-4"
+      "section": "USB"
     },
     {
-      "label": "USB-A 2.0 Out 3",
+      "id": "vx-60-1773-53-7",
+      "label": "USB 3",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-5"
+      "section": "USB"
     },
     {
-      "label": "USB-A 2.0 Out 4",
+      "id": "vx-60-1773-53-8",
+      "label": "USB 4",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-6"
+      "section": "USB"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1773-53-9",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-9"
+      "connectorType": "barrel"
     }
   ]
 }

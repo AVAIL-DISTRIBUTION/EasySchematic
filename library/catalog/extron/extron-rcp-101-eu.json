@@ -40,38 +40,30 @@
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
     "portsSource": {
-      "kind": "db",
-      "from": "652ca872-d5c4-4787-883c-f0b998ee1e17",
-      "label": "Extron RCP 101 EU",
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - H264 Eng.vssx",
+      "label": "RCP 101 EU",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "USB Host (to SMP)",
+      "id": "vx-60-1598-32-1",
+      "label": "USB",
       "signalType": "usb",
       "direction": "bidirectional",
       "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-0"
+      "section": "USB"
     },
     {
-      "label": "USB Storage",
-      "signalType": "usb",
-      "direction": "bidirectional",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-1"
-    },
-    {
+      "id": "vx-60-1598-32-2",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
+      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-2"
+      "notes": "2-pole captive screw"
     }
   ]
 }

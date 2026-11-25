@@ -33,38 +33,37 @@
     "description": "DTP HDMI Transmitter for Flex55 and MK Junction Boxes - 230 feet (70 m)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "1bb28553-ba3c-4094-abaf-9eb8608e2efc",
-      "label": "Extron DTP T MK 4K 231",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Transmitters Eng.vssx",
+      "label": "DTP T MK 4K 231",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1533-12-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "DTP Out (RJ-45)",
+      "id": "vx-60-1533-12-2",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1533-12-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "barrel"
     }
   ]
 }

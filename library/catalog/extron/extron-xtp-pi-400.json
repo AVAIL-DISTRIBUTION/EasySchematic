@@ -36,99 +36,86 @@
     "description": "Four Port XTP Power Injector",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "74cb5566-5ad4-4de0-ba20-359655dacaa2",
-      "label": "Extron XTP PI 400",
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Receivers Eng.vssx",
+      "label": "XTP PI 400",
       "match": "part-number",
-      "status": "raw",
-      "level": "B"
+      "level": "A"
     }
   },
   "ports": [
     {
-      "label": "XTP Pass-through In 1",
+      "id": "vx-60-1298-01-1",
+      "label": "XTP In 1",
       "signalType": "hdbaset",
-      "direction": "bidirectional",
+      "direction": "input",
       "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).; configurable input/output",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "XTP + Power Out 1",
+      "id": "vx-60-1298-01-2",
+      "label": "XTP In 2",
       "signalType": "hdbaset",
-      "direction": "output",
+      "direction": "input",
       "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
-      "poeBudgetW": 16.8,
-      "id": "port-1"
+      "section": "Video Inputs"
     },
     {
-      "label": "XTP Pass-through In 2",
+      "id": "vx-60-1298-01-3",
+      "label": "XTP In 3",
       "signalType": "hdbaset",
-      "direction": "bidirectional",
+      "direction": "input",
       "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).; configurable input/output",
-      "id": "port-2"
+      "section": "Video Inputs"
     },
     {
-      "label": "XTP + Power Out 2",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
+      "id": "vx-60-1298-01-4",
+      "label": "XTP In 4",
+      "signalType": "hdbaset",
+      "direction": "input",
       "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
-      "poeBudgetW": 16.8,
-      "id": "port-3"
+      "section": "Video Inputs"
     },
     {
-      "label": "XTP Pass-through In 3",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).",
-      "id": "port-4"
-    },
-    {
-      "label": "XTP + Power Out 3",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
-      "poeBudgetW": 16.8,
-      "id": "port-5"
-    },
-    {
-      "label": "XTP Pass-through In 4",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).",
-      "id": "port-6"
-    },
-    {
-      "label": "XTP + Power Out 4",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
-      "poeBudgetW": 16.8,
-      "id": "port-7"
-    },
-    {
+      "id": "vx-60-1298-01-5",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-8"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
+    },
+    {
+      "id": "vx-60-1298-01-6",
+      "label": "XTP Power 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Power"
+    },
+    {
+      "id": "vx-60-1298-01-7",
+      "label": "XTP Power 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Power"
+    },
+    {
+      "id": "vx-60-1298-01-8",
+      "label": "XTP Power 3",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Power"
+    },
+    {
+      "id": "vx-60-1298-01-9",
+      "label": "XTP Power 4",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Power"
     }
   ]
 }

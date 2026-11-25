@@ -35,50 +35,48 @@
     "description": "1G HDMI Compact Encoder",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "f1b703a1-bbb1-4127-8ff6-1cf17459556f",
-      "label": "Extron NAV E 121",
+      "kind": "stencil",
+      "from": "Extron Streaming Products Engineering Drawings/Streaming - NAV Encod Eng.vssx",
+      "label": "NAV E 121",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-2040-01-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "HDMI Loop Out",
+      "id": "vx-60-2040-01-2",
+      "label": "HDMI Out (Loop)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
       "section": "Video Outputs",
-      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through.",
-      "id": "port-1"
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through."
     },
     {
-      "label": "NAV",
+      "id": "vx-60-2040-01-3",
+      "label": "NAV 1G (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "poeDrawW": 13.2,
-      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC).",
-      "id": "port-2"
+      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC)."
     },
     {
+      "id": "vx-60-2040-01-4",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/Gnd).",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/Gnd). (5-pole captive screw)"
     },
     {
       "label": "USB Config",
@@ -87,16 +85,16 @@
       "connectorType": "usb-c",
       "section": "Configuration",
       "notes": "Front-panel USB-C for Ethernet-over-USB device configuration.",
-      "id": "port-4"
+      "id": "vx-60-2040-01-s1"
     },
     {
+      "id": "vx-60-2040-01-5",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45.",
-      "id": "port-5"
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45."
     }
   ]
 }

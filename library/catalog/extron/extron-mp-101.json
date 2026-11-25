@@ -34,59 +34,49 @@
     "description": "Microphone Preamplifier",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "912e5541-59ae-4822-b88c-996215de606e",
-      "label": "Extron MP 101",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Misc Eng.vssx",
+      "label": "MP 101",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Mic In (Mono Balanced)",
+      "id": "vx-60-718-10-1",
+      "label": "Mic In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw.",
-      "id": "port-0"
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Mic Out (Mono Balanced)",
+      "id": "vx-60-718-10-2",
+      "label": "Line Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw.",
-      "id": "port-1"
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw. (3-pole captive screw)"
     },
     {
-      "label": "DC Volume Control",
-      "signalType": "control-voltage",
-      "direction": "input",
+      "id": "vx-60-718-10-3",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "0-10VDC volume control input on a 3-pole 3.5mm captive screw (+10VDC ref / variable / GND). Modeled as analog-audio per session 4 convention (no control-voltage SignalType in src/types.ts).",
-      "id": "port-2"
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "Remote Keypad",
-      "signalType": "contact-closure",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Extron remote keypad input on a 3-pole 3.5mm captive screw — wired button presses for cue/mute control.",
-      "id": "port-3"
-    },
-    {
-      "label": "Power (12VDC)",
+      "id": "vx-60-718-10-4",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
+      "connectorType": "phoenix",
       "section": "Power",
-      "notes": "External 12VDC, 0.5A PSU brick (6W).",
-      "id": "port-4"
+      "notes": "2-pole captive screw"
     }
   ]
 }

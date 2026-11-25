@@ -36,104 +36,97 @@
     "description": "Three Input Switcher with Integrated Long Distance DTP Transmitter and Audio Embedding - 330 feet (100 m)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "aacf4bf4-325c-45d5-9e16-41f847686390",
-      "label": "Extron DTP T USW 333",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Switchers Eng.vssx",
+      "label": "DTP T USW 333",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In 1",
-      "signalType": "hdmi",
+      "id": "vx-60-1551-52-1",
+      "label": "RGBHV In 1",
+      "signalType": "vga",
       "direction": "input",
-      "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "connectorType": "vga",
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1551-52-2",
       "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-1"
+      "section": "Video Inputs"
     },
     {
-      "label": "VGA In",
-      "signalType": "vga",
+      "id": "vx-60-1551-52-3",
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
       "direction": "input",
-      "connectorType": "vga",
-      "section": "Video Inputs",
-      "id": "port-2"
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
     },
     {
-      "label": "DTP Out (RJ-45)",
+      "id": "vx-60-1551-52-4",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-4"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1551-52-5",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-3"
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 Switcher Control",
+      "id": "vx-60-1551-52-6",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-5",
-      "notes": "3-pole"
+      "section": "Serial",
+      "notes": "3-pole (RS-232 and IR on one connector; 3-pole captive screw)"
     },
     {
-      "label": "Tally Out (4-pole)",
+      "id": "vx-60-1551-52-7",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "over DTP (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1551-52-8",
+      "label": "Tally Out",
       "signalType": "tally",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-6"
+      "notes": "4-pole captive screw"
     },
     {
-      "label": "Contact Closure (4-pole)",
+      "id": "vx-60-1551-52-9",
+      "label": "Contact In",
       "signalType": "contact-closure",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-7"
+      "notes": "4-pole captive screw"
     },
     {
-      "label": "USB Config (Mini-B Front)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-8"
-    },
-    {
-      "label": "RS-232/IR Pass-Through",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-9",
-      "notes": "over DTP"
-    },
-    {
-      "label": "Power 12VDC",
+      "id": "vx-60-1551-52-10",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-10"
+      "connectorType": "barrel"
     }
   ]
 }

@@ -36,39 +36,37 @@
     "description": "Single Port Power Injector",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "1d6928f5-80de-4857-a67b-cbce212d0428",
-      "label": "Extron PI 115",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - Misc Eng.vssx",
+      "label": "PI 115",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN In",
+      "id": "vx-60-1233-02-1",
+      "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "id": "port-0"
+      "section": "Network"
     },
     {
-      "label": "LAN OUT + PoE",
+      "id": "vx-60-1233-02-2",
+      "label": "LAN (PoE Out)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "poeBudgetW": 15.4,
-      "id": "port-1"
+      "section": "Network"
     },
     {
+      "id": "vx-60-1233-02-3",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "iec"
     }
   ]
 }

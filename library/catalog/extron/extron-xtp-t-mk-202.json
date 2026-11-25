@@ -33,75 +33,74 @@
     "description": "Two Input XTP Transmitter for HDMI and VGA - MK Junction Boxes",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "49e3974a-47d3-405a-81c7-d071924c7c72",
-      "label": "Extron XTP T MK 202",
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/Retired XTP Systems Products/Retired XTP - Transmitters Eng.vssx",
+      "label": "XTP T MK 202",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1358-23-1",
+      "label": "RGBHV In",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1358-23-2",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "VGA In",
-      "signalType": "vga",
-      "direction": "input",
-      "connectorType": "vga",
-      "section": "Video Inputs",
-      "id": "port-1"
-    },
-    {
+      "id": "vx-60-1358-23-3",
       "label": "XTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
       "section": "Video Outputs",
-      "notes": "Shielded CATx (RJ-45) carrying HDMI/audio/Ethernet/RS-232/IR up to 100 m. Receives remote power from XTP CrossPoint or PI 140.",
-      "id": "port-5"
+      "notes": "Shielded CATx (RJ-45) carrying HDMI/audio/Ethernet/RS-232/IR up to 100 m. Receives remote power from XTP CrossPoint or PI 140."
     },
     {
+      "id": "vx-60-1358-23-4",
       "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
       "section": "Audio Inputs",
-      "notes": "3.5mm mini stereo jack, unbalanced.",
-      "id": "port-2"
+      "notes": "3.5mm mini stereo jack, unbalanced."
     },
     {
+      "id": "vx-60-1358-23-5",
+      "label": "RS-232/IR",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector. (RS-232 and IR on one connector; 5-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1358-23-6",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector.",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "IR Pass-through",
-      "signalType": "ir",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "2-pole 3.5mm captive screw. Carries IR pass-through to the remote endpoint (30-56 kHz TTL).",
-      "id": "port-4"
-    },
-    {
-      "label": "DC 12V",
+      "id": "vx-60-1358-23-7",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP.",
-      "id": "port-6"
+      "connectorType": "barrel",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP."
     }
   ]
 }

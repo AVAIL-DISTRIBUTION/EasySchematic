@@ -38,39 +38,38 @@
     "description": "Matrix Controller for USB Extender Plus Series",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "e071a7bc-eb46-47c5-9921-ddb3648b7c49",
-      "label": "Extron USB Plus Matrix Controller",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Extenders Eng.vssx",
+      "label": "USB Plus Matrix Controller",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN / PoE",
+      "id": "vx-42-267-01-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "poeDrawW": 1.5,
-      "id": "port-0"
+      "section": "Network"
     },
     {
-      "label": "RS-232 (5-pole)",
+      "id": "vx-42-267-01-2",
+      "label": "COM",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-1"
+      "section": "Serial",
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-42-267-01-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "barrel"
     }
   ]
 }

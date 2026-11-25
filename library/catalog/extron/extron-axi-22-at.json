@@ -35,62 +35,47 @@
     "description": "2 Input, 2 Output Dante Audio Interface",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "e598ab59-b2f2-4ba6-917a-63b13f874a2c",
-      "label": "Extron AXI 22 AT",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - DSP Eng.vssx",
+      "label": "AXI 22 AT",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Mic/Line In 1",
+      "id": "vx-60-1627-11-1",
+      "label": "Mic/Line In 1-2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
     },
     {
-      "label": "Mic/Line In 2",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Line Out 1",
+      "id": "vx-60-1627-11-2",
+      "label": "Audio Out 1-2",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw; channels 1-2"
     },
     {
-      "label": "Line Out 2",
-      "signalType": "analog-audio",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "id": "port-3",
-      "section": "Audio Outputs"
-    },
-    {
-      "label": "Dante / PoE",
+      "id": "vx-60-1627-11-3",
+      "label": "Dante (PoE)",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "id": "port-4"
+      "section": "Dante"
     },
     {
-      "label": "Power (12V Optional)",
+      "id": "vx-60-1627-11-4",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-5"
+      "connectorType": "barrel"
     }
   ]
 }

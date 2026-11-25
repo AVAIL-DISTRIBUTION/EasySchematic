@@ -34,17 +34,16 @@
     "description": "HDMI Twisted Pair Transmitter with Input Loop-Through - 230 feet (70 m)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "c0a80101-002c-4000-8000-000000000044",
-      "label": "Extron DTP T HD2 4K",
-      "match": "model-name",
-      "status": "raw",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Transmitters Eng.vssx",
+      "label": "DTP T HD2 4K 230",
+      "match": "part-number",
       "level": "A"
     }
   },
   "ports": [
     {
-      "id": "port-3695",
+      "id": "vx-60-1491-12-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
@@ -52,36 +51,37 @@
       "section": "Video Inputs"
     },
     {
-      "id": "port-3696",
-      "label": "HDMI Loop",
-      "signalType": "hdmi",
-      "direction": "output",
-      "connectorType": "hdmi",
-      "section": "Video Outputs"
-    },
-    {
-      "id": "port-3697",
-      "label": "HDBaseT Out",
+      "id": "vx-60-1491-12-2",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
       "section": "Video Outputs"
     },
     {
-      "id": "port-3698",
-      "label": "RS-232",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "db9",
-      "section": "Serial"
+      "id": "vx-60-1491-12-3",
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
     },
     {
-      "id": "port-3699",
-      "label": "AC Power",
+      "id": "vx-60-1491-12-4",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1491-12-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
-      "section": "Power"
+      "section": "Power",
+      "connectorType": "iec"
     }
   ]
 }

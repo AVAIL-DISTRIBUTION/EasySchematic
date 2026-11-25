@@ -143,6 +143,15 @@
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for PCS / Ethernet-over-USB configuration.",
       "id": "port-9"
+    },
+    {
+      "id": "avail-extron-42-351-02-dc12",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pole captive screw — Extron convention, verify"
     }
   ]
 }

@@ -35,39 +35,38 @@
     "description": "8K HDMI EDID Emulator with EDID Minder® Plus",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "ddbf9316-b644-4eb8-a4a9-4ccba411ec3a",
-      "label": "Extron EDID 121",
+      "kind": "stencil",
+      "from": "Extron Scalers Switchers Products Engineering Drawings/Scalers Switchers - Signal Proc Eng.vssx",
+      "label": "EDID 121",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-2076-01-1",
       "label": "HDMI In",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-2076-01-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-2076-01-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
-      "id": "port-2"
+      "connectorType": "barrel",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC)."
     }
   ]
 }

@@ -35,169 +35,103 @@
     "description": "Eight Channel Amp, 35 watts at 100 volts",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "129275c6-6c3b-49b7-8def-eaed4143ffbc",
-      "label": "Extron XPA U 358-100V",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "XPA U 358-100V",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In 1",
+      "id": "vx-60-1759-12-1",
+      "label": "Audio In 1-2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 1-2"
     },
     {
-      "label": "Audio In 2",
+      "id": "vx-60-1759-12-2",
+      "label": "Audio In 3-4",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 3-4"
     },
     {
-      "label": "Audio In 3",
+      "id": "vx-60-1759-12-3",
+      "label": "Audio In 5-6",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-2",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 5-6"
     },
     {
-      "label": "Audio In 4",
+      "id": "vx-60-1759-12-4",
+      "label": "Audio In 7-8",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-3",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw; channels 7-8"
     },
     {
-      "label": "Audio In 5",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-4",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Audio In 6",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-5",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Audio In 7",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-6",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Audio In 8",
-      "signalType": "analog-audio",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-7",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Speaker Out 1",
+      "id": "vx-60-1759-12-5",
+      "label": "Speaker Out 1-2",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-8",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 1-2"
     },
     {
-      "label": "Speaker Out 2",
+      "id": "vx-60-1759-12-6",
+      "label": "Speaker Out 3-4",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-9",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 3-4"
     },
     {
-      "label": "Speaker Out 3",
+      "id": "vx-60-1759-12-7",
+      "label": "Speaker Out 5-6",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-10",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 5-6"
     },
     {
-      "label": "Speaker Out 4",
+      "id": "vx-60-1759-12-8",
+      "label": "Speaker Out 7-8",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-11",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 7-8"
     },
     {
-      "label": "Speaker Out 5",
-      "signalType": "speaker-level",
-      "direction": "output",
+      "id": "vx-60-1759-12-9",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "id": "port-12",
-      "section": "Speaker Outputs"
+      "section": "Digital I/O",
+      "notes": "2-pole captive screw"
     },
     {
-      "label": "Speaker Out 6",
-      "signalType": "speaker-level",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "id": "port-13",
-      "section": "Speaker Outputs"
-    },
-    {
-      "label": "Speaker Out 7",
-      "signalType": "speaker-level",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "id": "port-14",
-      "section": "Speaker Outputs"
-    },
-    {
-      "label": "Speaker Out 8",
-      "signalType": "speaker-level",
-      "direction": "output",
-      "connectorType": "phoenix",
-      "id": "port-15",
-      "section": "Speaker Outputs"
-    },
-    {
-      "label": "Standby Control",
-      "signalType": "contact-closure",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
-      "id": "port-16"
-    },
-    {
-      "label": "HPF Select",
-      "signalType": "contact-closure",
-      "direction": "input",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "High-pass filter select (contact-closure) on 3.5mm 2-pole captive screw — 70V/100V models only.",
-      "id": "port-17"
-    },
-    {
+      "id": "vx-60-1759-12-10",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Internal 100-240 VAC PSU (IEC mains).",
-      "id": "port-18"
+      "connectorType": "iec",
+      "notes": "Internal 100-240 VAC PSU (IEC mains)."
     }
   ]
 }

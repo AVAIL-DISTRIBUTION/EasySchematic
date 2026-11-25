@@ -34,56 +34,72 @@
     "description": "Two Output DisplayPort Distribution Amplifier with EDID Minder®",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "dede4372-ed84-4866-8bae-42ade0ecc7c9",
-      "label": "Extron DP DA2",
+      "kind": "stencil",
+      "from": "Extron DA Engineering Drawings/DA - MISC DA Eng.vssx",
+      "label": "DP DA2",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "DisplayPort In",
+      "id": "vx-60-1221-01-1",
+      "label": "DisplayPort In 1",
       "signalType": "displayport",
       "direction": "input",
       "connectorType": "displayport",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1221-01-2",
       "label": "DisplayPort Out 1",
       "signalType": "displayport",
       "direction": "output",
       "connectorType": "displayport",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
+      "id": "vx-60-1221-01-3",
       "label": "DisplayPort Out 2",
       "signalType": "displayport",
       "direction": "output",
       "connectorType": "displayport",
-      "section": "Video Outputs",
-      "id": "port-2"
+      "section": "Video Outputs"
     },
     {
-      "label": "RS-232",
+      "id": "vx-60-1221-01-4",
+      "label": "RS-232 (2)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3.5mm 3-pole captive screw (Tx/Rx/GND).",
-      "id": "port-3"
+      "section": "Serial",
+      "notes": "3.5mm 3-pole captive screw (Tx/Rx/GND). (5-pole captive screw; one connector with Mute 2)"
     },
     {
-      "label": "Video Mute (Contact Closure)",
+      "id": "vx-60-1221-01-5",
+      "label": "RS-232 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "vx-60-1221-01-6",
+      "label": "Mute 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Contact-closure video-mute trigger on the same 5-pole captive screw as RS-232 (modeled as separate logical port; physically shared connector)."
+    },
+    {
+      "id": "vx-60-1221-01-7",
+      "label": "Mute 2",
       "signalType": "contact-closure",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "notes": "Contact-closure video-mute trigger on the same 5-pole captive screw as RS-232 (modeled as separate logical port; physically shared connector).",
-      "id": "port-4"
+      "notes": "5-pole captive screw; one connector with RS232/Mute"
     },
     {
       "label": "USB Config",
@@ -92,16 +108,16 @@
       "connectorType": "usb-mini",
       "section": "Configuration",
       "notes": "Front-panel USB Mini-B for PCS configuration (USB 2.0).",
-      "id": "port-5"
+      "id": "vx-60-1221-01-s1"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1221-01-8",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC PSU brick (100-240 VAC input).",
-      "id": "port-6"
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU brick (100-240 VAC input)."
     }
   ]
 }

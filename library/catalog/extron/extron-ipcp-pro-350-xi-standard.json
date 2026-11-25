@@ -37,154 +37,161 @@
     "description": "IPCP Pro xi Control Processor",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "34164145-3b80-46bc-bbad-58a0a34a7d11",
-      "label": "Extron IPCP Pro 350 xi",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - IPL IPCP Pro Eng.vssx",
+      "label": "IPCP Pro 350 xi",
       "match": "part-number",
-      "status": "raw",
-      "level": "B"
+      "level": "A"
     }
   },
   "ports": [
     {
-      "id": "3fc6d86f",
-      "label": "LAN 1",
+      "id": "vx-60-1912-01-1",
+      "label": "LAN 1 1",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network"
     },
     {
-      "id": "430c3b78",
-      "label": "LAN 2",
+      "id": "vx-60-1912-01-2",
+      "label": "LAN 2 2",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network"
     },
     {
-      "id": "9ac03c75",
-      "label": "LAN 3",
+      "id": "vx-60-1912-01-3",
+      "label": "LAN 3 3",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network"
     },
     {
-      "id": "tpl-1",
+      "id": "vx-60-1912-01-4",
       "label": "COM 1",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "5-pole captive screw"
     },
     {
-      "id": "tpl-2",
+      "id": "vx-60-1912-01-5",
       "label": "COM 2",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-3",
+      "id": "vx-60-1912-01-6",
       "label": "COM 3",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-10",
-      "label": "eBUS",
-      "signalType": "ebus",
-      "direction": "bidirectional",
-      "section": "Serial",
-      "connectorType": "phoenix"
-    },
-    {
-      "id": "tpl-4",
-      "label": "IR 1",
+      "id": "vx-60-1912-01-7",
+      "label": "IR/S Out 1",
       "signalType": "ir",
       "direction": "output",
+      "connectorType": "phoenix",
       "section": "IR",
-      "connectorType": "phoenix"
+      "notes": "IR or one-way RS-232; 2-pole captive screw"
     },
     {
-      "id": "tpl-5",
-      "label": "IR 2",
+      "id": "vx-60-1912-01-8",
+      "label": "IR/S Out 2",
       "signalType": "ir",
       "direction": "output",
+      "connectorType": "phoenix",
       "section": "IR",
-      "connectorType": "phoenix"
+      "notes": "IR or one-way RS-232; 2-pole captive screw"
     },
     {
-      "id": "tpl-6",
+      "id": "vx-60-1912-01-9",
       "label": "Relay 1",
       "signalType": "contact-closure",
-      "direction": "bidirectional",
+      "direction": "output",
+      "connectorType": "phoenix",
       "section": "Relays",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-7",
+      "id": "vx-60-1912-01-10",
       "label": "Relay 2",
       "signalType": "contact-closure",
-      "direction": "bidirectional",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
-      "id": "tpl-8",
+      "id": "vx-60-1912-01-11",
       "label": "Relay 3",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
       "section": "Relays",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-9",
+      "id": "vx-60-1912-01-12",
       "label": "Relay 4",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
-      "id": "06b4f24c",
+      "id": "vx-60-1912-01-13",
       "label": "Digital I/O 1",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
     },
     {
-      "id": "0f009ffe",
+      "id": "vx-60-1912-01-14",
       "label": "Digital I/O 2",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
     },
     {
-      "id": "97038ad9",
+      "id": "vx-60-1912-01-15",
       "label": "Digital I/O 3",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
     },
     {
-      "id": "d686aa8f",
+      "id": "vx-60-1912-01-16",
       "label": "Digital I/O 4",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
     },
     {
-      "id": "tpl-17",
-      "label": "12V Power",
+      "id": "vx-60-1912-01-17",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1912-01-18",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
       "section": "Power",

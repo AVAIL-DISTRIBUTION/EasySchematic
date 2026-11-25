@@ -36,62 +36,55 @@
     "description": "Long Distance DVI Twisted Pair Transmitter - 330 feet (100 m)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "d8d9d047-0628-42c1-bbfd-c3181c380d32",
-      "label": "Extron DTP DVI 4K 330 Tx",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Transmitters Eng.vssx",
+      "label": "DTP DVI 4K 330 Tx",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1360-12-1",
       "label": "DVI In",
       "signalType": "dvi",
       "direction": "input",
       "connectorType": "dvi",
       "section": "Video Inputs",
-      "id": "port-0"
+      "notes": "DVI-I"
     },
     {
-      "label": "DVI Loop-Through",
-      "signalType": "dvi",
-      "direction": "output",
-      "connectorType": "dvi",
-      "section": "Video Outputs",
-      "id": "port-1"
-    },
-    {
-      "label": "DTP Out (RJ-45)",
+      "id": "vx-60-1360-12-2",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "section": "Video Outputs",
-      "id": "port-3"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1360-12-3",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-2"
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 / IR (Pass-through)",
+      "id": "vx-60-1360-12-4",
+      "label": "RS-232/IR (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-4"
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1360-12-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-5"
+      "connectorType": "barrel"
     }
   ]
 }

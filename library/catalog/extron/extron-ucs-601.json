@@ -34,62 +34,61 @@
     "description": "Pro 4K USB-C 10G Dock",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "2b7a7a71-ed60-49d6-9684-eee6149b8525",
-      "label": "Extron UCS 601",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/-USB - Switchers and Misc Eng.vssx",
+      "label": "UCS 601",
       "match": "part-number",
-      "status": "raw",
-      "level": "FIX"
+      "level": "B"
     }
   },
   "ports": [
     {
+      "id": "vx-60-2042-01-1",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "id": "port-1",
       "section": "Video Outputs"
     },
     {
-      "label": "USB-A 3.2 Out 1 (900mA)",
+      "id": "vx-60-2042-01-2",
+      "label": "USB-C",
       "signalType": "usb",
-      "direction": "output",
-      "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-2"
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB"
     },
     {
-      "label": "USB-A 3.2 Out 2 (500mA)",
+      "id": "vx-60-2042-01-3",
+      "label": "USB 1",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-3"
+      "section": "USB"
     },
     {
-      "label": "USB-A 3.2 Out 3 (500mA)",
+      "id": "vx-60-2042-01-4",
+      "label": "USB 2",
       "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "usb-a",
-      "section": "USB",
-      "id": "port-4"
+      "section": "USB"
     },
     {
-      "label": "AC Power",
+      "id": "vx-60-2042-01-5",
+      "label": "USB 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-2042-01-6",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-5"
-    },
-    {
-      "label": "USB-C In (DP Alt, 60W PD)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-c",
-      "id": "port-0",
-      "notes": "DP Alt + USB host + 60 W PD"
+      "connectorType": "iec"
     }
   ]
 }

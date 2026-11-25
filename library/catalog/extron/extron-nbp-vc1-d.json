@@ -34,22 +34,21 @@
     "description": "Network Button Panel with Volume Control - Decorator-Style Wallplate",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "e923ce16-a65a-4ac7-95fb-bdcd4aa05fc9",
-      "label": "Extron NBP VC1 D",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - NBP Eng.vssx",
+      "label": "NBP VC1 D",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Ethernet / PoE",
+      "id": "vx-60-2036-01-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "id": "port-0",
       "notes": "PoE: actual draw not published; PoE 802.3af"
     }
   ]

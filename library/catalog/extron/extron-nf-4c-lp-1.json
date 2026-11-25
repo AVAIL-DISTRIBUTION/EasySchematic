@@ -33,60 +33,49 @@
     "description": "One Powered 4” Ceiling Speaker w/ Dante and DSP",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "2155e07f-9808-4c5e-98cc-1c4a774911d8",
-      "label": "Extron NF 4C P LP-1",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Speakers ceiling Eng.vssx",
+      "label": "NF 4C P LP-1",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-2056-13-1",
       "label": "Speaker Out 1",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Speaker Outputs",
-      "notes": "8Ω 30W output to 1st passive NF 4C S LP secondary speaker. 3-pole 5mm captive screw.; to NF 4C S LP secondary",
-      "id": "port-2"
+      "notes": "8Ω 30W output to 1st passive NF 4C S LP secondary speaker. 3-pole 5mm captive screw.; to NF 4C S LP secondary (2-pole captive screw)"
     },
     {
+      "id": "vx-60-2056-13-2",
       "label": "Speaker Out 2",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Speaker Outputs",
-      "notes": "8Ω 30W output to 2nd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary",
-      "id": "port-3"
+      "notes": "8Ω 30W output to 2nd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary (2-pole captive screw)"
     },
     {
+      "id": "vx-60-2056-13-3",
       "label": "Speaker Out 3",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Speaker Outputs",
-      "notes": "8Ω 30W output to 3rd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary",
-      "id": "port-4"
+      "notes": "8Ω 30W output to 3rd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary (2-pole captive screw)"
     },
     {
-      "label": "Dante / AES67",
+      "id": "vx-60-2056-13-4",
+      "label": "Dante (PoE)",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "notes": "1 Gbps Dante / AES67 audio network port (carries audio + PoE++ power).",
-      "poeDrawW": 40,
-      "id": "port-0"
-    },
-    {
-      "label": "Ethernet Host",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "10/100 Base-T host control / configuration port.",
-      "id": "port-1"
+      "section": "Dante",
+      "notes": "1 Gbps Dante / AES67 audio network port (carries audio + PoE++ power)."
     }
   ]
 }

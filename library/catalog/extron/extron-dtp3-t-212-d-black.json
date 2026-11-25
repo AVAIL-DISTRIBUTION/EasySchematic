@@ -34,56 +34,65 @@
     "description": "Two Input 4K/60 DTP3 Transmitter for USB-C and HDMI with Audio Embedding – Decorator-Style Wallplate, Black",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "8cd4e7e6-88a3-434e-b6a5-6e1b470c7282",
-      "label": "Extron DTP3 T 212 D Black",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Transmitters Eng.vssx",
+      "label": "DTP3 T 212 D Black",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "HDMI In",
+      "id": "vx-60-1714-52-1",
+      "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
-      "label": "USB-C In (DP Alt)",
+      "id": "vx-60-1714-52-2",
+      "label": "USB-C In 2",
       "signalType": "usb",
       "direction": "input",
       "connectorType": "usb-c",
       "section": "Video Inputs",
-      "id": "port-1"
+      "notes": "video input"
     },
     {
-      "label": "DTP3/HDBaseT Out",
+      "id": "vx-60-1714-52-3",
+      "label": "DTP/HDBT Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
       "section": "Video Outputs",
-      "id": "port-3",
       "notes": "RJ-45 to Rx"
     },
     {
-      "label": "Audio In (Stereo)",
+      "id": "vx-60-1714-52-4",
+      "label": "Audio In",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-2"
+      "section": "Audio Inputs"
     },
     {
-      "label": "RS-232 Switcher Control",
+      "id": "vx-60-1714-52-5",
+      "label": "RS-232 (Over TP)",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-4",
-      "notes": "3-pole"
+      "section": "Serial",
+      "notes": "3-pole (3-pole captive screw)"
+    },
+    {
+      "id": "vx-60-1714-52-6",
+      "label": "Remote",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "3-pole captive screw"
     },
     {
       "label": "USB-C Config (Front)",
@@ -91,24 +100,16 @@
       "direction": "input",
       "connectorType": "usb-c",
       "section": "Control",
-      "id": "port-5"
+      "id": "vx-60-1714-52-s1"
     },
     {
-      "label": "RS-232 Pass-Through",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-6",
-      "notes": "3-pole"
-    },
-    {
-      "label": "Power 12VDC",
+      "id": "vx-60-1714-52-7",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
+      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-7"
+      "notes": "2-pole captive screw"
     }
   ]
 }

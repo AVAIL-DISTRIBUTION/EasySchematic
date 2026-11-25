@@ -36,70 +36,66 @@
     "description": "Control System I/O Expansion Interface",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "125a7a0c-7cd4-415f-b413-dae2b6816325",
-      "label": "Extron IPL EXP S5",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - IPL IPCP Pro Eng.vssx",
+      "label": "IPL EXP S5",
       "match": "part-number",
-      "status": "raw",
-      "level": "B"
+      "level": "A"
     }
   },
   "ports": [
     {
-      "id": "e1fbccd9",
-      "label": "LAN",
+      "id": "vx-60-1906-01-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network"
     },
     {
-      "id": "tpl-1",
+      "id": "vx-60-1906-01-2",
       "label": "COM 1",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-2",
+      "id": "vx-60-1906-01-3",
       "label": "COM 2",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-3",
+      "id": "vx-60-1906-01-4",
       "label": "COM 3",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-4",
+      "id": "vx-60-1906-01-5",
       "label": "COM 4",
       "signalType": "serial",
       "direction": "bidirectional",
+      "connectorType": "phoenix",
       "section": "Serial",
-      "connectorType": "phoenix"
+      "notes": "3-pole captive screw"
     },
     {
-      "id": "tpl-5",
+      "id": "vx-60-1906-01-6",
       "label": "COM 5",
       "signalType": "serial",
       "direction": "bidirectional",
-      "section": "Serial",
-      "connectorType": "phoenix"
-    },
-    {
-      "id": "worklist-7",
-      "label": "Power 48V DC",
-      "signalType": "power",
-      "direction": "input",
       "connectorType": "phoenix",
-      "section": "Power"
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     }
   ]
 }

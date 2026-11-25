@@ -34,71 +34,73 @@
     "description": "MediaLink® Plus Controller",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "c9bc1f10-911e-4c7d-9c6a-bc257b773ed3",
-      "label": "Extron MLC Plus 50",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Control - MLC Eng.vssx",
+      "label": "MLC Plus 50",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "LAN / PoE",
+      "id": "vx-60-1468-03-1",
+      "label": "LAN (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "Network",
-      "poeDrawW": 3.6,
-      "id": "port-0"
+      "section": "Network"
     },
     {
-      "label": "COM 1 (RS-232)",
+      "id": "vx-60-1468-03-2",
+      "label": "COM 1",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "id": "port-1"
+      "notes": "3-pole captive screw"
     },
     {
-      "label": "IR Out",
+      "id": "vx-60-1468-03-3",
+      "label": "IR In",
       "signalType": "ir",
-      "direction": "output",
+      "direction": "input",
       "connectorType": "phoenix",
       "section": "IR",
-      "id": "port-2"
+      "notes": "2-pole captive screw"
     },
     {
+      "id": "vx-60-1468-03-4",
       "label": "Relay 1",
       "signalType": "contact-closure",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Relays",
-      "id": "port-4"
+      "notes": "3-pole captive screw"
     },
     {
+      "id": "vx-60-1468-03-5",
       "label": "Relay 2",
       "signalType": "contact-closure",
       "direction": "output",
-      "connectorType": "phoenix",
       "section": "Relays",
-      "id": "port-5"
+      "connectorType": "phoenix"
     },
     {
-      "label": "Digital Input",
+      "id": "vx-60-1468-03-6",
+      "label": "Digital In",
       "signalType": "gpio",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Digital I/O",
-      "id": "port-3"
+      "notes": "2-pole captive screw"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1468-03-7",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "phoenix",
       "section": "Power",
-      "id": "port-6"
+      "connectorType": "phoenix"
     }
   ]
 }

@@ -35,167 +35,166 @@
     "description": "IP Link® Pro Control Processor, DIN Rail",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "8dc3c07d-9fdb-425f-b278-0e69fa7de32a",
-      "label": "Extron IPCP Pro 355DR",
+      "kind": "stencil",
+      "from": "Extron Control Systems Engineering Drawings/Retired Control System Products/Retired Control - IPL IPCP Pro Eng.vssx",
+      "label": "IPCP Pro 355DR",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1433-01-1",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "Auto-negotiating 10/100 Base-T Ethernet (control + management).",
-      "id": "port-0"
+      "notes": "Auto-negotiating 10/100 Base-T Ethernet (control + management)."
     },
     {
+      "id": "vx-60-1433-01-2",
       "label": "AV LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "Isolated AV-LAN switch port (separate broadcast domain from primary LAN; for connecting AV devices like touchpanels, switchers, etc).",
-      "id": "port-1"
+      "notes": "Isolated AV-LAN switch port (separate broadcast domain from primary LAN; for connecting AV devices like touchpanels, switchers, etc)."
     },
     {
-      "label": "RS-232/422/485 Port 1",
+      "id": "vx-60-1433-01-3",
+      "label": "COM 1",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "notes": "Bidirectional RS-232 / RS-422 / RS-485 on a 5-pole 3.5mm captive screw (selectable via software).",
-      "id": "port-2"
+      "notes": "Bidirectional RS-232 / RS-422 / RS-485 on a 5-pole 3.5mm captive screw (selectable via software). (5-pole captive screw)"
     },
     {
-      "label": "RS-232 Port 2",
+      "id": "vx-60-1433-01-4",
+      "label": "COM 2",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/GND).",
-      "id": "port-3"
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
     },
     {
-      "label": "RS-232 Port 3",
+      "id": "vx-60-1433-01-5",
+      "label": "COM 3",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/GND).",
-      "id": "port-4"
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/GND). (3-pole captive screw)"
     },
     {
-      "label": "IR/Serial 1",
+      "id": "vx-60-1433-01-6",
+      "label": "IR/S Out 1",
       "signalType": "ir",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "IR",
-      "notes": "Programmable IR (carrier or non-carrier, up to 300 kHz) or unidirectional RS-232 ±5V output. 3.5mm captive screw (single-channel: 2-pole; multi-channel: shared on a 4 or 5-pole captive).",
-      "id": "port-5"
+      "notes": "Programmable IR (carrier or non-carrier, up to 300 kHz) or unidirectional RS-232 ±5V output. 3.5mm captive screw (single-channel: 2-pole; multi-channel: shared on a 4 or 5-pole captive). (IR or one-way RS-232; 2-pole captive screw)"
     },
     {
-      "label": "IR/Serial 2",
+      "id": "vx-60-1433-01-7",
+      "label": "IR/S Out 2",
       "signalType": "ir",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "IR",
-      "notes": "Programmable IR (carrier or non-carrier, up to 300 kHz) or unidirectional RS-232 ±5V output. 3.5mm captive screw (single-channel: 2-pole; multi-channel: shared on a 4 or 5-pole captive).",
-      "id": "port-6"
+      "notes": "Programmable IR (carrier or non-carrier, up to 300 kHz) or unidirectional RS-232 ±5V output. 3.5mm captive screw (single-channel: 2-pole; multi-channel: shared on a 4 or 5-pole captive). (IR or one-way RS-232; 2-pole captive screw)"
     },
     {
+      "id": "vx-60-1433-01-8",
       "label": "Relay 1",
       "signalType": "contact-closure",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
-      "id": "port-11"
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled. (3-pole captive screw)"
     },
     {
+      "id": "vx-60-1433-01-9",
       "label": "Relay 2",
       "signalType": "contact-closure",
       "direction": "output",
-      "connectorType": "phoenix",
       "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
-      "id": "port-12"
+      "connectorType": "phoenix",
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled."
     },
     {
+      "id": "vx-60-1433-01-10",
       "label": "Relay 3",
       "signalType": "contact-closure",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
-      "id": "port-13"
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled. (3-pole captive screw)"
     },
     {
+      "id": "vx-60-1433-01-11",
       "label": "Relay 4",
       "signalType": "contact-closure",
       "direction": "output",
-      "connectorType": "phoenix",
       "section": "Relays",
-      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled.",
-      "id": "port-14"
+      "connectorType": "phoenix",
+      "notes": "Normally-open dry-contact relay output (24 VDC, 1 A max). Per-channel modeled."
     },
     {
+      "id": "vx-60-1433-01-12",
       "label": "Digital I/O 1",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
-      "id": "port-7"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block."
     },
     {
+      "id": "vx-60-1433-01-13",
       "label": "Digital I/O 2",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
-      "id": "port-8"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block."
     },
     {
+      "id": "vx-60-1433-01-14",
       "label": "Digital I/O 3",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
-      "id": "port-9"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block."
     },
     {
+      "id": "vx-60-1433-01-15",
       "label": "Digital I/O 4",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "phoenix",
       "section": "Digital I/O",
-      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block.",
-      "id": "port-10"
+      "connectorType": "phoenix",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output). Per-channel modeled — channels share a captive screw block."
     },
     {
+      "id": "vx-60-1433-01-16",
       "label": "eBUS",
       "signalType": "ebus",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Expansion",
-      "notes": "Extron eBUS differential serial bus on a 4 or 5-pole captive screw (carries +12V/+/-/G). Bus-powers downstream EBP button panels. Modeled as `serial` — no `ebus`/`acp` SignalType in src/types.ts.",
-      "id": "port-15"
+      "notes": "Extron eBUS differential serial bus on a 4 or 5-pole captive screw (carries +12V/+/-/G). Bus-powers downstream EBP button panels. Modeled as `serial` — no `ebus`/`acp` SignalType in src/types.ts. (4-pole captive screw)"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1433-01-17",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC PSU brick (100-240 VAC input).",
-      "id": "port-16"
+      "connectorType": "barrel",
+      "notes": "External 12VDC PSU brick (100-240 VAC input)."
     }
   ]
 }

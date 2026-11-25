@@ -35,83 +35,75 @@
     "description": "One Channel Amp, 60 watts at 100 volts",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "161f7a9e-bf32-46e8-8267-11e1766e6d12",
-      "label": "Extron MPA 601-100V",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "MPA 601-100V",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1449-11-1",
       "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1449-11-2",
       "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "phoenix",
-      "id": "port-1",
-      "section": "Audio Inputs"
-    },
-    {
-      "label": "Audio In (TRS)",
-      "signalType": "analog-audio",
-      "direction": "input",
       "connectorType": "trs-eighth",
-      "notes": "Stereo 3.5mm mini-jack (TRS) — single-stereo-source convention: 1 port.",
-      "id": "port-2",
       "section": "Audio Inputs"
     },
     {
-      "label": "Audio In (RCA)",
+      "id": "vx-60-1449-11-3",
+      "label": "Audio In 3",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "rca",
-      "notes": "Stereo RCA pair — single-stereo-source convention: 1 port.",
-      "id": "port-3",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "L/R RCA pair"
     },
     {
-      "label": "Speaker Out (70V/100V)",
+      "id": "vx-60-1449-11-4",
+      "label": "Speaker Out",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-4",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     },
     {
-      "label": "DC Volume Control",
+      "id": "vx-60-1449-11-5",
+      "label": "Volume Control",
       "signalType": "control-voltage",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "notes": "0-10VDC analog volume control input (3-pole captive screw, +10VDC reference / variable input / GND). Modeled as analog-audio per src/types.ts (no control-voltage SignalType).",
-      "id": "port-5"
+      "notes": "0-10VDC analog volume control input (3-pole captive screw, +10VDC reference / variable input / GND). Modeled as analog-audio per src/types.ts (no control-voltage SignalType)."
     },
     {
-      "label": "Standby Control",
+      "id": "vx-60-1449-11-6",
+      "label": "Standby",
       "signalType": "contact-closure",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
-      "id": "port-6"
+      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw. (3-pole captive screw)"
     },
     {
-      "label": "Power (12VDC)",
+      "id": "vx-60-1449-11-7",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "notes": "External 12VDC, 4.2A PSU brick (50W). 2.1mm/2.5mm barrel jack on device end.",
-      "id": "port-7"
+      "connectorType": "barrel",
+      "notes": "External 12VDC, 4.2A PSU brick (50W). 2.1mm/2.5mm barrel jack on device end."
     }
   ]
 }

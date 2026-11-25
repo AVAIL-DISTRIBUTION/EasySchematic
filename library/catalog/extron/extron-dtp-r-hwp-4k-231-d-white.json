@@ -35,46 +35,55 @@
     "description": "DTP Receiver for HDMI - Decorator-Style Wallplate, White - 230 feet (70 m)",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "149bd692-dca0-4398-8faf-1a920c34d0d9",
-      "label": "Extron DTP R HWP 4K 231 D White",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Receivers Eng.vssx",
+      "label": "DTP R HWP 4K 231 D White",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "DTP In (RJ-45)",
+      "id": "vx-60-1531-13-1",
+      "label": "DTP In",
       "signalType": "hdbaset",
       "direction": "input",
       "connectorType": "rj45",
-      "section": "Video Inputs",
-      "id": "port-0"
+      "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1531-13-2",
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
-      "section": "Video Outputs",
-      "id": "port-1"
+      "section": "Video Outputs"
     },
     {
-      "label": "Audio Out (Stereo)",
+      "id": "vx-60-1531-13-3",
+      "label": "Audio Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-2"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1531-13-4",
+      "label": "RS-232/IR (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "RS-232 and IR on one connector; 5-pole captive screw"
+    },
+    {
+      "id": "vx-60-1531-13-5",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-3"
+      "connectorType": "barrel"
     }
   ]
 }

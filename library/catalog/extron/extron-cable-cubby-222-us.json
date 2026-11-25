@@ -34,7 +34,8 @@
     ],
     "description": "One US AC Outlet, 12 A Circuit Breaker, and 2 Outlets Under",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "number of extron-cubby-aap openings: not drawn in the Extron stencil and not in the description"
   },
   "ports": []
 }

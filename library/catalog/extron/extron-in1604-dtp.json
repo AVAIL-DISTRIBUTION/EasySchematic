@@ -35,127 +35,123 @@
     "description": "Four Input HDCP-Compliant Scaler with DTP Extension",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "594cd075-f841-4aeb-84b3-b85776de7dd6",
-      "label": "Extron IN1604 DTP",
+      "kind": "stencil",
+      "from": "Extron DTP Systems Engineering Drawings/DTP - Scaler Switchers Eng.vssx",
+      "label": "IN1604 DTP",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "VGA In",
+      "id": "vx-60-1457-01-1",
+      "label": "RGBHV In 1",
       "signalType": "vga",
       "direction": "input",
-      "connectorType": "db15",
-      "id": "port-0",
+      "connectorType": "vga",
       "section": "Video Inputs"
     },
     {
-      "label": "HDMI In 1",
-      "signalType": "hdmi",
-      "direction": "input",
-      "connectorType": "hdmi",
-      "id": "port-1",
-      "section": "Video Inputs"
-    },
-    {
+      "id": "vx-60-1457-01-2",
       "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-2",
       "section": "Video Inputs"
     },
     {
+      "id": "vx-60-1457-01-3",
       "label": "HDMI In 3",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
-      "id": "port-3",
       "section": "Video Inputs"
     },
     {
-      "label": "DTP/HDBT Out",
+      "id": "vx-60-1457-01-4",
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs"
+    },
+    {
+      "id": "vx-60-1457-01-5",
+      "label": "DTP Out",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
-      "id": "port-4",
       "section": "Video Outputs"
     },
     {
-      "label": "Audio In (3.5mm TRS)",
+      "id": "vx-60-1457-01-6",
+      "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "section": "Audio Inputs",
-      "id": "port-5"
+      "section": "Audio Inputs"
     },
     {
-      "label": "Audio In (Captive)",
+      "id": "vx-60-1457-01-7",
+      "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "id": "port-6"
+      "notes": "5-pole captive screw"
     },
     {
+      "id": "vx-60-1457-01-8",
       "label": "Audio Out",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "id": "port-7"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "RS-232/IR Pass-Through",
+      "id": "vx-60-1457-01-9",
+      "label": "RS-232/IR",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-8",
-      "notes": "over DTP"
+      "section": "Serial",
+      "notes": "over DTP (RS-232 and IR on one connector; 5-pole captive screw)"
     },
     {
-      "label": "Contact Closure In",
-      "signalType": "contact-closure",
-      "direction": "input",
+      "id": "vx-60-1457-01-10",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "id": "port-9"
+      "section": "Serial",
+      "notes": "3-pole captive screw"
     },
     {
+      "id": "vx-60-1457-01-11",
       "label": "Tally Out",
       "signalType": "tally",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-10"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "RS-232",
-      "signalType": "serial",
-      "direction": "bidirectional",
+      "id": "vx-60-1457-01-12",
+      "label": "Contact In",
+      "signalType": "contact-closure",
+      "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-11"
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "id": "port-12"
-    },
-    {
+      "id": "vx-60-1457-01-13",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "id": "port-13"
+      "connectorType": "iec"
     }
   ]
 }

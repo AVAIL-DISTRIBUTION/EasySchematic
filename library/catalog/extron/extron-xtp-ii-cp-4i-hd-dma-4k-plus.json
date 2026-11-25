@@ -29,86 +29,85 @@
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name",
     "portsSource": {
-      "kind": "db",
-      "from": "18da0647-9355-46c0-8047-9779237e5263",
-      "label": "Extron XTP II CP 4i HD DMA 4K PLUS",
+      "kind": "stencil",
+      "from": "Extron XTP Systems Engineering Drawings/-XTP - Boards Eng.vssx",
+      "label": "XTP II CP 4i HD DMA 4K PLUS",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-70-1112-02-1",
       "label": "HDMI In 1",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps).",
-      "id": "port-0"
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
     },
     {
+      "id": "vx-70-1112-02-2",
       "label": "HDMI In 2",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps).",
-      "id": "port-1"
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
     },
     {
+      "id": "vx-70-1112-02-3",
       "label": "HDMI In 3",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps).",
-      "id": "port-2"
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
     },
     {
+      "id": "vx-70-1112-02-4",
       "label": "HDMI In 4",
       "signalType": "hdmi",
       "direction": "input",
       "connectorType": "hdmi",
       "section": "Video Inputs",
-      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps).",
-      "id": "port-3"
+      "notes": "HDMI 2.0b / DVI-D. HDCP 2.3. Up to 4K/60 4:4:4 8-bit (18 Gbps)."
     },
     {
+      "id": "vx-70-1112-02-5",
       "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
-      "id": "port-4"
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
     },
     {
+      "id": "vx-70-1112-02-6",
       "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
-      "id": "port-5"
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
     },
     {
+      "id": "vx-70-1112-02-7",
       "label": "Audio In 3",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
-      "id": "port-6"
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
     },
     {
+      "id": "vx-70-1112-02-8",
       "label": "Audio In 4",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
-      "id": "port-7"
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level. (5-pole captive screw)"
     }
   ]
 }

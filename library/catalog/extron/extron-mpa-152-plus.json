@@ -36,62 +36,65 @@
     "description": "Stereo Amp - 15 Watts Per Channel",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "c8b4c46e-0f64-48b5-af37-e9da6794f45b",
-      "label": "Extron MPA 152 Plus",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Amplifiers Eng.vssx",
+      "label": "MPA 152 Plus",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Audio In (Captive Screw)",
+      "id": "vx-60-844-03-1",
+      "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
-      "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw"
     },
     {
-      "label": "Audio In (TRS)",
+      "id": "vx-60-844-03-2",
+      "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "trs-eighth",
-      "id": "port-1",
       "section": "Audio Inputs"
     },
     {
-      "label": "Audio In (RCA)",
+      "id": "vx-60-844-03-3",
+      "label": "Audio In 3",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "rca",
-      "id": "port-2",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "L/R RCA pair"
     },
     {
-      "label": "Speaker Out (Stereo)",
+      "id": "vx-60-844-03-4",
+      "label": "Speaker Out 1-2",
       "signalType": "speaker-level",
       "direction": "output",
       "connectorType": "phoenix",
-      "id": "port-3",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "notes": "4-pole captive screw; channels 1-2"
     },
     {
+      "id": "vx-60-844-03-5",
       "label": "Volume Control",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "control-voltage",
+      "direction": "input",
       "connectorType": "phoenix",
       "section": "Control",
-      "id": "port-4"
+      "notes": "3-pole captive screw"
     },
     {
+      "id": "vx-60-844-03-6",
       "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-5"
+      "connectorType": "barrel"
     }
   ]
 }

@@ -38,38 +38,37 @@
     "description": "Twisted Pair Extender for USB Peripherals – HID",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "f2d02e20-ee50-439a-b12a-a15c87a83092",
-      "label": "Extron USB Extender Plus T HID",
+      "kind": "stencil",
+      "from": "Extron USB Products Engineering Drawings/Retired USB Products/Retired USB - Extenders Eng.vssx",
+      "label": "USB Extender Plus T HID",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "USB Host (USB-B)",
+      "id": "vx-60-1539-12-1",
+      "label": "USB 1",
       "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-b",
-      "section": "USB",
-      "id": "port-0"
-    },
-    {
-      "label": "USB Extension (CATx to Rx)",
-      "signalType": "usb",
-      "direction": "output",
+      "direction": "bidirectional",
       "connectorType": "rj45",
-      "section": "USB",
-      "id": "port-1"
+      "section": "USB"
     },
     {
-      "label": "Power 12VDC",
+      "id": "vx-60-1539-12-2",
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    },
+    {
+      "id": "vx-60-1539-12-3",
+      "label": "Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "barrel",
       "section": "Power",
-      "id": "port-2"
+      "connectorType": "barrel"
     }
   ]
 }

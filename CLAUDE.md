@@ -76,7 +76,8 @@ PR всегда открываем в `master` нашего форка, **ник
 | `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
 | `tools/avail/incoming/avail-biamp-templates.json` | 4 шаблона Biamp из пилота (исходник) |
 | `src/avail/vendorDecisions.ts` | правила решений о вендорах: `VendorRules.classify`, `genericTemplate` («Generic <тип>»), `completeness` |
-| `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, снимка базы и вариантов (`fill:catalog-ports`) |
+| `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, стенсилов Extron, снимка базы и вариантов (`fill:catalog-ports`) |
+| `src/avail/extronVisio.ts`, `extronStencil.ts` | стенсилы Extron Visio: мастер → порты (`parse:extron-visio`), применение к каталогу и сравнение |
 
 Питание по шине (стандарт 3.1): устройство с питанием по USB или PoE без порта питания
 проходит линтер, если в notes питающего порта написано «bus-powered (USB)» или «PoE».
@@ -239,6 +240,34 @@ deleted-templates.json соблюдает (записи с `partNumber` удал
 «superseded by catalog», verified/draft только перечисляет в отчёте;
 `import:upstream` строки каталога не перезаписывает.
 
+Стенсилы Extron (шаг 1.10): Visio-стенсилы Extron Engineering Drawings (логические блоки, 124 .vssx)
+кладём в `tools/avail/incoming/extron-visio/` (не в git, 22 МБ). `npm run parse:extron-visio [-- --dir …]`
+(в `api-avail`; `src/avail/extronVisio.ts`, CLI `extronVisioCli.ts`) → `tools/avail/extron-visio/extron-visio-blocks.json`
+(в git, мастер на строку): part number — из `Part #` (имя мастера бывает скопировано с другого изделия), порты —
+по текстам: подпись у левого/правого края, разъём в скобках под ней, номер входа слева; точки подключения не
+используются (у части мастеров их нет или они внутри фигуры). Таблицы: разъём (`[F TYPE A]` → hdmi / usb-a по
+сигналу, `[N POLE CS]` → phoenix + «N-pole captive screw» в notes…), сигнал по подписи, направление (видео/аудио —
+по стороне, если подпись не говорит In/Out; serial/LAN/USB — bidirectional; power — input, кроме PWR insert/OUT),
+секция по стандарту. Склейки: L/R-строки → один стерео-порт; номера над/под общим разъёмом → «Audio In 1-2»;
+строка под нумерованным портом берёт его номер («Audio In 1», «RS-232/IR (In 7)»); функции одного разъёма
+(RS-232 / CONTROL / IR) получают общий разъём; номера без подписей у шасси — позиции слотов (`modularSlots`).
+Неизвестная подпись или разъём, пин-уровень (C/T/+V) → `issues`, такой мастер не применяется.
+`fill:catalog-ports` читает этот файл (`--stencils`): между library и снимком базы — чистый мастер с тем же
+артикулом (или `altPartNumber`), `portsSource.kind = "stencil"`; из порта сообщества с тем же сигналом и
+направлением берутся notes и разъём, которого стенсил не рисует; порт питания без разъёма при AC — iec; сервисные
+порты (Configuration, «(Front)») карточка сохраняет — логическая схема их не рисует. Стенсил не понижает уровень
+(в базу идёт только A): если с ним уровень ниже, остаются порты сообщества, карточка — в «kept». Порты library и
+datasheet только сравниваются. Затем нормализатор (берутся только порты) и линтер. Отчёт —
+`tools/avail/extron-visio/report.md`: filled / replaced (с расхождениями по сигналу и направлению) / compared /
+kept / skipped (проблемы мастера и топ причин) / слоты шасси / не найдено в стенсилах (по типам и категориям),
+уровни до → после. Повторный запуск ничего не меняет.
+Правило питания Extron (`withExtronDcPower`, все автоматические порты Extron, кроме library и datasheet): voltage
+«12V DC» / «12 VDC» и нет входа питания → порт «12V DC In» (power, input, phoenix); вход питания без разъёма →
+phoenix; notes «2-pole captive screw — Extron convention, verify». Шасси Extron (`_avail.slotFamilies`) без слотов:
+слоты вариантов той же модели (без региона, AC, цвета), если они совпадают, иначе число из описания («for 4 AAP
+Modules»), иначе причина в `_avail.portsMissing`; откуда слоты — `_avail.slotsSource`; собственные разъёмы шасси
+остаются портами. Линтер: шасси только со слотами — не «no ports», но слот без `slotFamily` — W.
+
 Стандарт v0.7 (3.2): габариты и вес обязательны для того, что стоит в шкафу (в т.ч. любой `rackForm`);
 для монтируемого в помещении (`ROOM_MOUNTED_CATEGORIES` / `ROOM_MOUNTED_TYPES` в `blockLint.ts`) —
 нет. Блок без портов и слотов — ошибка «no ports».
@@ -276,7 +305,8 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/vendorCleanup.ts`, `src/vendorCleanupCli.ts` | чистка библиотеки по `vendor-decisions.json` (`npm run apply:vendor-decisions [-- --dry-run]`), одна транзакция, `library/avail` не трогает; новый «Generic <тип>» — только для типов без Generic, существующие Generic не перезаписываются; отчёт перечисляет итоговые Generic (новые — с исходным шаблоном) |
 | `src/vendorResponses.ts`, `src/vendorResponsesCli.ts` | ответы вендоров (`npm run apply:vendor-responses [-- --dry-run]`): удаление по `docs/avail/deleted-templates.json`, данные и заметки, одна транзакция, `library/avail` не трогает |
 | `src/normalizeLibrary.ts`, `src/normalizeCli.ts` | автонормализация шаблонов наших вендоров (`npm run normalize:library`) |
-| `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из снимка базы (`npm run fill:catalog-ports`), пишет только файлы |
+| `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из стенсилов Extron и снимка базы (`npm run fill:catalog-ports`), пишет только файлы и отчёт стенсилов |
+| `src/extronVisioCli.ts` | стенсилы Extron → `tools/avail/extron-visio/extron-visio-blocks.json` (`npm run parse:extron-visio`); zip читает `xlsx.ts` (`readZipText`) |
 | `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня A в базу (`npm run import:catalog`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |

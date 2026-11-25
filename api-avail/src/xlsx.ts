@@ -53,6 +53,13 @@ function readEntry(buf: Buffer, e: ZipEntry): string {
   throw new Error(`unsupported zip compression ${e.method} in ${e.name}`);
 }
 
+/** Text parts of a zip archive (.xlsx, .vssx): name → content; `only` filters the names. */
+export function readZipText(buf: Buffer, only: (name: string) => boolean = () => true): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const e of zipEntries(buf).values()) if (only(e.name)) out.set(e.name, readEntry(buf, e));
+  return out;
+}
+
 function unescapeXml(s: string): string {
   return s
     .replace(/&lt;/g, "<")

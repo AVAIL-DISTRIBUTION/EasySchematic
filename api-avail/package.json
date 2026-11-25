@@ -19,6 +19,7 @@
     "export:vendor-requests": "tsx src/vendorRequestsCli.ts",
     "apply:vendor-responses": "tsx src/vendorResponsesCli.ts",
     "fill:catalog-ports": "tsx src/fillCatalogPortsCli.ts",
+    "parse:extron-visio": "tsx src/extronVisioCli.ts",
     "import:catalog": "tsx src/importCatalogCli.ts"
   },
   "dependencies": {

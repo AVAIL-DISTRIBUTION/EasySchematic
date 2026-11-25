@@ -34,7 +34,8 @@
     "description": "Cable Cubby F55, Black, No AC",
     "notes": "[AVAIL] dims from Extron specifications",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsMissing": "number of extron-cubby-flex55 openings: not drawn in the Extron stencil and not in the description"
   },
   "ports": []
 }

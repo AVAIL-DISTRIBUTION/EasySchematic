@@ -92,185 +92,157 @@
     "description": "Modular Fiber Optic Matrix Switcher from 8x8 to 80x80",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "a64a1a59-109b-4862-b15a-d37073351a4c",
-      "label": "Extron FOX3 Matrix 80x IPCP Pro",
+      "kind": "stencil",
+      "from": "Extron Fox Systems Engineering Drawings/Fox - Fox3 Matrix IPCP Pro 40,80,160,320 Eng.vssx",
+      "label": "FOX3 Matrix 80x IPCP Pro",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
+      "id": "vx-60-1553-12-1",
       "label": "Audio In 1",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-0"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-2",
       "label": "Audio In 2",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-1"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-3",
       "label": "Audio In 3",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-2"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-4",
       "label": "Audio In 4",
       "signalType": "analog-audio",
       "direction": "input",
       "connectorType": "phoenix",
       "section": "Audio Inputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-3"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-5",
       "label": "Audio Out 1",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-4"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-6",
       "label": "Audio Out 2",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-5"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-7",
       "label": "Audio Out 3",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-6"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-8",
       "label": "Audio Out 4",
       "signalType": "analog-audio",
       "direction": "output",
       "connectorType": "phoenix",
       "section": "Audio Outputs",
-      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
-      "id": "port-7"
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line."
     },
     {
+      "id": "vx-60-1553-12-9",
+      "label": "AV LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit control. Default 192.168.254.254."
+    },
+    {
+      "id": "vx-60-1553-12-10",
       "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Network",
-      "notes": "Gigabit control. Default 192.168.254.254.",
-      "id": "port-13"
+      "notes": "IPCP Pro Q xi Ethernet (control / serial-over-IP)."
     },
     {
-      "label": "IPCP LAN 1",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "IPCP Pro Q xi Ethernet (control / serial-over-IP).",
-      "id": "port-14"
-    },
-    {
-      "label": "IPCP LAN 2",
-      "signalType": "ethernet",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Network",
-      "notes": "IPCP Pro Q xi second Ethernet (redundant / isolated network).",
-      "id": "port-15"
-    },
-    {
-      "label": "AT 1",
+      "id": "vx-60-1553-12-11",
+      "label": "Dante 1",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Dante",
-      "notes": "Dante / AES67 software-selectable. Up to 32 stereo Tx + 32 stereo Rx.",
-      "id": "port-8"
+      "notes": "Dante / AES67 software-selectable. Up to 32 stereo Tx + 32 stereo Rx."
     },
     {
-      "label": "AT 2",
+      "id": "vx-60-1553-12-12",
+      "label": "Dante 2",
       "signalType": "dante",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Dante",
-      "notes": "Dante / AES67 second port (redundant or daisy-chain).",
-      "id": "port-9"
+      "notes": "Dante / AES67 second port (redundant or daisy-chain)."
     },
     {
-      "label": "IPCP RS-232",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Serial",
-      "notes": "IPCP Pro Q xi bidirectional RS-232. 3-pole captive screw.",
-      "id": "port-16"
-    },
-    {
-      "label": "USB Config",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-mini",
-      "section": "Control",
-      "notes": "Front-panel USB Mini-B for direct PC config (Ethernet over USB).",
-      "id": "port-11"
-    },
-    {
+      "id": "vx-60-1553-12-13",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
-      "section": "Control",
-      "notes": "3-pole captive screw. 300-115200 baud (default 9600), 8-N-1.",
-      "id": "port-12"
+      "section": "Serial",
+      "notes": "IPCP Pro Q xi bidirectional RS-232. 3-pole captive screw."
     },
     {
+      "id": "vx-60-1553-12-14",
       "label": "EXP",
       "signalType": "extron-exp",
       "direction": "bidirectional",
       "connectorType": "rj45",
       "section": "Expansion",
-      "notes": "Extron proprietary expansion bus. 8 stereo Tx + 8 stereo Rx, shielded CAT6 up to 10 m.",
-      "id": "port-10"
+      "notes": "Extron proprietary expansion bus. 8 stereo Tx + 8 stereo Rx, shielded CAT6 up to 10 m."
     },
     {
-      "label": "AC Power (Primary)",
+      "id": "vx-60-1553-12-15",
+      "label": "Power 1",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Primary internal PSU. IEC 60320 C14 mains 100-240 VAC, 50-60 Hz.",
-      "id": "port-17"
+      "connectorType": "iec",
+      "notes": "Primary internal PSU. IEC 60320 C14 mains 100-240 VAC, 50-60 Hz."
     },
     {
-      "label": "AC Power (Redundant)",
+      "id": "vx-60-1553-12-16",
+      "label": "Power 2",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
       "section": "Power",
-      "notes": "Redundant internal PSU. IEC 60320 C14 mains 100-240 VAC, 50-60 Hz.",
-      "id": "port-18"
+      "connectorType": "iec",
+      "notes": "Redundant internal PSU. IEC 60320 C14 mains 100-240 VAC, 50-60 Hz."
     }
   ]
 }

@@ -32,23 +32,22 @@
     "description": "Two Passive NF 4C S LP",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "b65c39ae-2e38-44f0-a5bf-1c1589832982",
-      "label": "Extron NF 4C S LP",
+      "kind": "stencil",
+      "from": "Extron Audio Products Engineering Drawings/Audio - Speakers ceiling Eng.vssx",
+      "label": "NF 4C S LP",
       "match": "part-number",
-      "status": "raw",
       "level": "A"
     }
   },
   "ports": [
     {
-      "label": "Speaker Input",
+      "id": "vx-70-1360-23-1",
+      "label": "Speaker Out",
       "signalType": "speaker-level",
-      "direction": "input",
+      "direction": "output",
       "connectorType": "phoenix",
-      "section": "Audio Inputs",
-      "notes": "Single 3-pole captive screw input from a NF 4C P LP primary speaker.",
-      "id": "port-0"
+      "section": "Speaker Outputs",
+      "notes": "2-pole captive screw"
     }
   ]
 }
