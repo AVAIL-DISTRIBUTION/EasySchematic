@@ -112,15 +112,15 @@ describe("linter: bus power (standard 3.1)", () => {
   it("USB bus-powered: no power port and no voltage needed when the port says bus-powered (USB)", () => {
     expect(lintBlock({ ...card, ports: [usb("USB 3.0; bus-powered (USB), < 10 W")] })).toEqual({ level: "A", errors: [], warnings: [] });
     const plain = lintBlock({ ...card, ports: [usb("USB 3.0")] });
-    expect(plain.errors).toContain("no power port");
+    expect(plain.warnings).toContain("no power port");
     expect(plain.warnings).toContain("no powerDrawW/voltage (or poeDrawW)");
   });
 
   it("PoE in the notes of the powering port; \"no PoE\", output ports and PoE sources do not count", () => {
     const lan = (notes: string, direction = "bidirectional") => ({ id: "l", label: "LAN", signalType: "ethernet", direction, section: "Network", connectorType: "rj45", notes });
-    expect(lintBlock({ ...card, ports: [lan("PoE+ 802.3at")] }).errors).not.toContain("no power port");
-    expect(lintBlock({ ...card, ports: [lan("Gigabit, no PoE")] }).errors).toContain("no power port");
-    expect(lintBlock({ ...card, ports: [lan("PoE+ out", "output")] }).errors).toContain("no power port");
-    expect(lintBlock({ ...card, poeBudgetW: 120, ports: [lan("PoE+ 802.3at")] }).errors).toContain("no power port");
+    expect(lintBlock({ ...card, ports: [lan("PoE+ 802.3at")] }).warnings).not.toContain("no power port");
+    expect(lintBlock({ ...card, ports: [lan("Gigabit, no PoE")] }).warnings).toContain("no power port");
+    expect(lintBlock({ ...card, ports: [lan("PoE+ out", "output")] }).warnings).toContain("no power port");
+    expect(lintBlock({ ...card, poeBudgetW: 120, ports: [lan("PoE+ 802.3at")] }).warnings).toContain("no power port");
   });
 });

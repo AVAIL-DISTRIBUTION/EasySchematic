@@ -38,15 +38,15 @@ describe("no power port: the powering port's notes say how it is powered", () =>
   it("phantom, battery, passive, bus-powered (eBUS / ACP / DCP / VCH)", () => {
     for (const n of ["phantom +48 V", "battery (AA)", "passive", "bus-powered (eBUS)", "bus-powered (ACP)", "bus-powered (DCP)", "bus-powered (VCH)"]) {
       const l = without(n);
-      expect(l.errors, n).not.toContain("no power port");
+      expect(l.warnings, n).not.toContain("no power port");
       expect(l.warnings, n).not.toContain("no powerDrawW/voltage (or poeDrawW)");
     }
-    expect(without("balanced").errors).toContain("no power port");
+    expect(without("balanced").warnings).toContain("no power port");
   });
   it("powered by host: on any port, no power figure needed", () => {
     for (const n of ["powered by host", "powered by host (PoH)"]) {
       const l = without(n);
-      expect(l.errors, n).not.toContain("no power port");
+      expect(l.warnings, n).not.toContain("no power port");
       expect(l.warnings, n).not.toContain("no powerDrawW/voltage (or poeDrawW)");
     }
   });

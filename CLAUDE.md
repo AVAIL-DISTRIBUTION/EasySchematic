@@ -77,6 +77,12 @@ PR всегда открываем в `master` нашего форка, **ник
 | `tools/avail/incoming/avail-biamp-templates.json` | 4 шаблона Biamp из пилота (исходник) |
 | `src/avail/vendorDecisions.ts` | правила решений о вендорах: `VendorRules.classify`, `genericTemplate` («Generic <тип>»), `completeness` |
 
+Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
+не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
+deviceType, питание не input (кроме явных выходов). Оформление (секции вне словаря, порядок, подписи, капс, длина,
+shortName, searchTerms, шапка, color, schematic=false) и пробелы в данных (нет порта питания) — W. Секция Control —
+общая для serial, IR, реле, Digital I/O, tally; нормализатор секции словаря не трогает.
+
 Питание по шине (стандарт 3.1): устройство с питанием по USB или PoE без порта питания
 проходит линтер, если в notes питающего порта написано «bus-powered (USB)» или «PoE».
 

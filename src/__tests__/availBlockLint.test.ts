@@ -114,17 +114,17 @@ describe("lintBlock: card, physics and port rules (v0.2)", () => {
     expect(lintBlock({ ...clean(), modelNumber: "" })).toMatchObject({ level: "FIX", errors: ["no modelNumber"] });
   });
 
-  it("missing power port is an error unless PoE, slots, speaker or antenna", () => {
+  it("missing power port is a warning (v0.8) unless PoE, slots, speaker or antenna", () => {
     const noPower = { ...clean(), ports: clean().ports.filter((p) => p.signalType !== "power") };
-    expect(lintBlock(noPower).errors).toContain("no power port");
-    expect(lintBlock({ ...noPower, poeDrawW: 10 }).errors).not.toContain("no power port");
-    expect(lintBlock({ ...noPower, deviceType: "antenna" }).errors).not.toContain("no power port");
+    expect(lintBlock(noPower).warnings).toContain("no power port");
+    expect(lintBlock({ ...noPower, poeDrawW: 10 }).warnings).not.toContain("no power port");
+    expect(lintBlock({ ...noPower, deviceType: "antenna" }).warnings).not.toContain("no power port");
   });
 
   it("section order and vocabulary", () => {
     const [hdmi, dtp, rs232, power] = clean().ports;
     expect(lintBlock({ ...clean(), ports: [power, hdmi, dtp, rs232] }).warnings).toContain("sections are not in the standard order");
-    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).errors).toContain('"HDMI In": section "Rear" is not in the vocabulary; use "Video Inputs"');
+    expect(lintBlock({ ...clean(), ports: [{ ...hdmi, section: "Rear" }, power] }).warnings).toContain('"HDMI In": section "Rear" is not in the vocabulary; use "Video Inputs"');
   });
 
   it("keeps the v0.2 Python semantics: [] and 0 are missing, Unicode \\b, code-point length", () => {
@@ -161,10 +161,11 @@ describe("lintBlock: category (avail-taxonomy.json)", () => {
     ]);
   });
 
-  it("schematic=false category is an error for a block", () => {
+  it("schematic=false category is a warning for a block (v0.8)", () => {
     expect(lintBlock({ ...clean(), category: "Connectivity / Bulk Cables" })).toMatchObject({
-      level: "FIX",
-      errors: ['category "Connectivity / Bulk Cables" is not for schematic blocks (schematic=false)'],
+      level: "B",
+      errors: [],
+      warnings: ['category "Connectivity / Bulk Cables" is not for schematic blocks (schematic=false)'],
     });
   });
 });
