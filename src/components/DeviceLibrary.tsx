@@ -13,6 +13,8 @@ import ImportDevicesDialog from "./ImportDevicesDialog";
 import { signalLabel } from "../typeRegistry";
 import { useTypeRegistryVersion } from "../hooks/useTypeRegistryVersion";
 import { topLevelSlotCount } from "../slotDefinitions";
+import { isAvailBuild } from "../avail/brand";
+import { useLibraryWidth } from "../avail/LibraryResize";
 
 const APP_VERSION = __APP_VERSION__;
 const BUILD_HASH = __BUILD_HASH__;
@@ -1061,7 +1063,11 @@ export default function DeviceLibrary() {
   const toggleFavoriteTemplate = useSchematicStore((s) => s.toggleFavoriteTemplate);
   const categoryOrder = useSchematicStore((s) => s.categoryOrder);
   const reorderCategory = useSchematicStore((s) => s.reorderCategory);
-  const showOwnedGearPane = useSchematicStore((s) => s.showOwnedGearPane);
+  // AVAIL build: no Owned Gear (an upstream cloud feature) and a resizable panel.
+  const availBuild = isAvailBuild();
+  const ownedGearEnabled = !availBuild;
+  const availWidth = useLibraryWidth();
+  const showOwnedGearPane = useSchematicStore((s) => s.showOwnedGearPane) && ownedGearEnabled;
   const libraryActiveTab = useSchematicStore((s) => s.libraryActiveTab);
   const setLibraryActiveTab = useSchematicStore((s) => s.setLibraryActiveTab);
   const [search, setSearch] = useState("");
@@ -1170,9 +1176,10 @@ export default function DeviceLibrary() {
   useAvailLibraryReload(loadLibrary);
   const avail = useAvailState();
 
-  const handleAddToOwned = useCallback((template: DeviceTemplate) => {
+  const addToOwned = useCallback((template: DeviceTemplate) => {
     addOwnedGear(template, 1);
   }, [addOwnedGear]);
+  const handleAddToOwned = ownedGearEnabled ? addToOwned : undefined;
 
   const query = search.trim();
 
@@ -1275,7 +1282,11 @@ export default function DeviceLibrary() {
   }
 
   return (
-    <div className="w-56 bg-[var(--color-surface)] border-r border-[var(--color-border)] flex flex-col h-full overflow-hidden">
+    <div
+      className={`${availBuild ? "relative shrink-0" : "w-56"} bg-[var(--color-surface)] border-r border-[var(--color-border)] flex flex-col h-full overflow-hidden`}
+      style={availBuild ? { width: availWidth.width } : undefined}
+    >
+      {availBuild && availWidth.handle}
       {/* Header */}
       <div className="px-3 py-2 border-b border-[var(--color-border)] flex items-center justify-between">
         <h2 className="text-xs font-semibold text-[var(--color-text-heading)] uppercase tracking-wider">
@@ -1503,7 +1514,7 @@ export default function DeviceLibrary() {
       )}
       <ImportDevicesDialog open={showImportDialog} onClose={() => setShowImportDialog(false)} />
 
-      {libraryActiveTab === "owned" ? (
+      {ownedGearEnabled && libraryActiveTab === "owned" ? (
         <OwnedGearTab query={query} />
       ) : (
       <div className="flex-1 overflow-y-auto p-2 space-y-2">
@@ -1580,7 +1591,7 @@ export default function DeviceLibrary() {
                       isFavorite={favoriteSet.has(key)}
                       ownedQuantity={ownedQuantityMap.get(key)}
                       onToggleFavorite={() => toggleFavoriteTemplate(key)}
-                      onAddToOwned={() => handleAddToOwned(template)}
+                      onAddToOwned={handleAddToOwned ? () => handleAddToOwned(template) : undefined}
                     />
                   );
                 })}

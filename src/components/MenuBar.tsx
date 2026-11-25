@@ -25,6 +25,9 @@ import ShowInfoPanel from "./ShowInfoPanel";
 import CsvImportWizard from "./CsvImportWizard";
 import SignalColorPanel from "./SignalColorPanel";
 import { useTheme } from "../hooks/useTheme";
+import { AVAIL_MARK, isAvailBuild } from "../avail/brand";
+import { AvailAboutDialog, AvailHeaderBrand } from "../avail/BrandUi";
+import { availHelpMenu, AVAIL_HIDDEN_VIEW_ITEMS } from "../avail/menus";
 
 // ─── Menu data types ─────────────────────────────────────────────
 
@@ -720,7 +723,8 @@ export default function MenuBar() {
       { type: "separator" },
       { type: "item", label: "Room Distances...", onClick: () => setShowRoomDistances(true) },
     ],
-    Help: [
+    // AVAIL build: our Help (no easyschematic.live links), see src/avail/menus.ts.
+    Help: isAvailBuild() ? availHelpMenu(() => setShowAboutDialog(true)) : [
       {
         type: "item",
         label: "Documentation \u2197",
@@ -747,6 +751,11 @@ export default function MenuBar() {
       },
     ],
   };
+
+  // AVAIL build: no Owned Gear (an upstream cloud feature).
+  if (isAvailBuild()) {
+    menus.View = menus.View.filter((e) => e.type !== "item" || !AVAIL_HIDDEN_VIEW_ITEMS.has(e.label));
+  }
 
   const menuNames = Object.keys(menus);
 
@@ -804,12 +813,14 @@ export default function MenuBar() {
       <div className="hidden md:flex h-10 bg-[var(--color-surface)] border-b border-[var(--color-border)] items-center px-1 shrink-0 select-none">
         {/* Left: logo + brand + menus */}
         <div className="flex items-center">
+          {isAvailBuild() ? <AvailHeaderBrand /> : (
           <div className="flex items-center gap-2 px-3 shrink-0">
             <img src="/favicon.svg" alt="" className="w-5 h-5" />
             <span className="text-xs font-semibold text-[var(--color-text-heading)] tracking-tight">
               EasySchematic
             </span>
           </div>
+          )}
           <div className="w-px h-5 bg-[var(--color-border)]" />
           {menuNames.map((name) => (
             <div key={name} className="relative">
@@ -940,7 +951,7 @@ export default function MenuBar() {
 
       {/* Mobile header bar */}
       <div className="flex md:hidden h-10 bg-[var(--color-surface)] border-b border-[var(--color-border)] items-center px-3 shrink-0 select-none justify-between">
-        <img src="/favicon.svg" alt="" className="w-5 h-5" />
+        <img src={isAvailBuild() ? AVAIL_MARK : "/favicon.svg"} alt="" className="w-5 h-5" />
         <span className="text-sm font-semibold text-[var(--color-text-heading)] truncate mx-3 flex-1 text-center">
           {schematicName}
         </span>
@@ -1088,7 +1099,9 @@ export default function MenuBar() {
         <TitleBlockDialog onClose={() => setShowTitleBlockDialog(false)} />
       )}
       {showAboutDialog && (
-        <AboutDialog onClose={() => setShowAboutDialog(false)} />
+        isAvailBuild()
+          ? <AvailAboutDialog onClose={() => setShowAboutDialog(false)} />
+          : <AboutDialog onClose={() => setShowAboutDialog(false)} />
       )}
       {showPreferences && (
         <PreferencesDialog onClose={() => setShowPreferences(false)} />

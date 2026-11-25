@@ -11,6 +11,10 @@
  * Pure functions with no browser or Node dependencies, so the editor and the API can
  * both call them. Errors (E) block level B, warnings (W) block level A:
  *   FIX — at least one error; B — no errors, some warnings; A — clean.
+ * Since v0.8 (standard 8.1) errors are only what breaks the schematic or the specification:
+ * no ports (a chassis with slots is fine), no connectorType, no or unknown category, no
+ * modelNumber / manufacturer / deviceType, power that is not an input. Presentation (sections,
+ * labels, header, order…) and data gaps are warnings.
  */
 import { findCategory, findVendor, GENERIC_VENDOR } from "./library";
 import { onlyAbbreviations } from "./labels";
@@ -171,13 +175,14 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
   if (!truthy(sn)) W.push("no shortName");
   else if (typeof sn === "string" && SKU_RE.test(sn)) W.push(`shortName is a part number (${sn}), use the model`);
   if (!truthy(d.deviceType)) E.push("no deviceType");
-  // Every library template is a schematic block, so a schematic=false category is an error too.
+  // A category outside the taxonomy breaks the specification (E); a BoQ-only category
+  // (schematic=false) on a schematic block is a matter of grouping in the library (W, v0.8).
   const category = d.category;
   if (!truthy(category)) E.push("no category");
   else {
     const c = findCategory(typeof category === "string" ? category : undefined);
     if (!c || !c.leaf) E.push(`category "${String(category)}" is not a leaf category of avail-taxonomy.json`);
-    else if (!c.schematic) E.push(`category "${c.path}" is not for schematic blocks (schematic=false)`);
+    else if (!c.schematic) W.push(`category "${c.path}" is not for schematic blocks (schematic=false)`);
   }
   const aux = truthy(d.auxiliaryData) ? asArray(d.auxiliaryData) : [];
   if (!(aux.length === 1 && asObj(aux[0]).text === "{{deviceType}}")) W.push("header is not {{deviceType}}");
@@ -228,7 +233,8 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
     !truthy(d.poeBudgetW) &&
     ports.some((p) => typeof p.notes === "string" && (NO_POWER_FIGURE_RE.test(p.notes) || (p.direction !== "output" && BUS_POWER_RE.test(p.notes))));
   if (!ports.some((p) => p.signalType === "power") && !poe && !truthy(d.slots) && !busPowered && !truthy(d.slotFamily)) {
-    if (deviceType !== "speaker" && deviceType !== "antenna") E.push("no power port");
+    // v0.8: a missing power port is a gap in the data, not a broken schematic (W).
+    if (deviceType !== "speaker" && deviceType !== "antenna") W.push("no power port");
   }
   const order: number[] = [];
   for (const p of ports) {
@@ -243,7 +249,8 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
       // Hint: the section the normalizer would give it, when it can tell.
       const hint = suggestSection(p);
       const use = hint ? `; use "${hint}"` : "";
-      E.push(sec ? `${tag}: section "${sec}" is not in the vocabulary${use}` : `${tag}: no section${use}`);
+      // v0.8: sections are presentation (W); any vocabulary section is fine for any signal.
+      W.push(sec ? `${tag}: section "${sec}" is not in the vocabulary${use}` : `${tag}: no section${use}`);
     } else order.push(idx);
     const words = l.split(WORD_SPLIT_RE).filter((w) => HAS_LATIN_WORD_RE.test(w));
     // Abbreviations and numbers only ("IPCP LAN", "COM 1", "RS-232/IR") are how the panel reads.
@@ -257,7 +264,7 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
         !POWER_SOURCE_TYPES.has(String(deviceType))) {
       E.push(`${tag}: power is not an input`);
     }
-    if (sig === "rs422" && l.includes("232")) E.push(`${tag}: RS-232 marked as rs422`);
+    if (sig === "rs422" && l.includes("232")) W.push(`${tag}: RS-232 marked as rs422`);
     const lower = l.toLowerCase();
     if (lower.includes("relay") && sig !== "contact-closure") W.push(`${tag}: a relay must be contact-closure`);
     if (lower.includes("ebus") && sig !== "ebus") W.push(`${tag}: eBUS must be ebus`);

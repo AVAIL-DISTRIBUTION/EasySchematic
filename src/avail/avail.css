@@ -2,3 +2,29 @@
 [data-export-capturing] .avail-export-hide {
   display: none !important;
 }
+
+/* AVAIL: blue logo on the light theme, white logo on the dark one (theme is html.dark). */
+.avail-logo-dark {
+  display: none;
+}
+html.dark .avail-logo-light {
+  display: none;
+}
+html.dark .avail-logo-dark {
+  display: inline-block;
+}
+
+/* AVAIL: library panel resize handle. */
+.avail-library-resize {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 20;
+}
+.avail-library-resize:hover,
+.avail-library-resize[data-dragging="true"] {
+  background: var(--color-border);
+}

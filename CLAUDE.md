@@ -79,6 +79,12 @@ PR всегда открываем в `master` нашего форка, **ник
 | `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, стенсилов Extron, снимка базы и вариантов (`fill:catalog-ports`) |
 | `src/avail/extronVisio.ts`, `extronStencil.ts` | стенсилы Extron Visio: мастер → порты (`parse:extron-visio`), применение к каталогу и сравнение |
 
+Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
+не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
+deviceType, питание не input (кроме явных выходов). Оформление (секции вне словаря, порядок, подписи, капс, длина,
+shortName, searchTerms, шапка, color, schematic=false) и пробелы в данных (нет порта питания) — W. Секция Control —
+общая для serial, IR, реле, Digital I/O, tally; нормализатор секции словаря не трогает.
+
 Питание по шине (стандарт 3.1): устройство с питанием по USB или PoE без порта питания
 проходит линтер, если в notes питающего порта написано «bus-powered (USB)» или «PoE».
 
@@ -347,8 +353,38 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
 | `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |
 | `vite.config.ts` `navigateFallbackDenylist` | service worker не отдаёт SPA на навигации в `/api/` (иначе OAuth start/callback попадают в `index.html`) |
+| `vite.config.ts` `availBrandingPlugin`, `AVAIL_MANIFEST`, `SOURCE_COMMIT` | `VITE_AVAIL=1` → `index.html` и PWA-манифест AVAIL Schematic (`vite.avail.ts`); хеш сборки из `SOURCE_COMMIT` (в Docker нет `.git`) |
+| `src/main.tsx` | `VITE_AVAIL=1` → `AuthGate` вместо лендинга |
+| `src/App.tsx` | заголовок вкладки `appDocumentTitle`, без `PendingSubmissionBanner` |
+| `src/components/MenuBar.tsx` | бренд в шапке, Help/About AVAIL, без Show Owned Gear |
+| `src/components/DeviceLibrary.tsx` | без Owned Gear, ширина панели (`useLibraryWidth`) |
+| `src/components/DeviceEditor.tsx` | без Submit to Community (`availSaveActions`), подсказка цвета группы |
+| `src/components/ImportDevicesDialog.tsx`, `UserMenuButton.tsx` | без Add & Submit, ссылок на docs/devices.easyschematic.live |
+| `src/store.ts` | `newSchematic` → `availNewSchematicDefaults`; первый визит — пустой лист (`skipDemoSchematic`); цвет шапки — `templateHeaderColor` |
 
 Наш фронтенд-код — в `src/avail/`, тесты — `src/__tests__/avail*.test.ts`.
+
+### Интерфейс AVAIL (`VITE_AVAIL=1`)
+
+Флаг сборки (`src/avail/brand.ts` `isAvailBuild`; в `Dockerfile.avail` по умолчанию `1`). Без флага
+каждая точка подключения ведёт себя как upstream.
+
+- **Вход вместо лендинга** — `src/avail/AuthGate.tsx`, логика `session.ts` (`decideGate`): не вошёл →
+  сразу `/auth/google/start?returnTo=<текущий адрес>`; свой экран — при `?error=` от API, при возврате
+  от Google без сессии в течение минуты (защита от петли) и при недоступном API.
+- **Брендинг** — «AVAIL Schematic», логотип `public/avail/` (из брендбука AVAIL), About с
+  «Based on EasySchematic by duremovich (AGPL-3.0)» и ссылками на upstream и исходники коммита сборки
+  (`BrandUi.tsx`); Help — только About и `VITE_DOCS_URL`, если задан (`menus.ts`).
+- **Без облака upstream** — нет Owned Gear, Submit to Community, Add & Submit, ссылок на
+  `*.easyschematic.live`, демо-листа «Welcome to EasySchematic».
+- **Умолчания новой схемы** (`schematicDefaults.ts`) — палитра сигналов (видео `#AA00AA`, Ethernet
+  `#0055CC`, Dante/AVB/AES67 `#007700`, USB `#333333`, аналог и speaker-level `#CC6600`, fiber серый
+  пунктир), штамп (строка Company сверху: AVAIL DISTRIBUTION, FZCO; Engineer — вошедший пользователь;
+  дата — сегодня), A3 альбомный. PoE — свойство порта, не тип сигнала: линии PoE синие, как Ethernet.
+- **Цвет шапки по группе таксономии** (`headerColors.ts` `GROUP_HEADER_COLORS`): пресет > шаблон >
+  группа > умолчания проекта/приложения; только пути «Группа / Категория», «Other» без цвета.
+- **Ширина библиотеки** — перетаскивание правого края (200–560 px, не больше половины окна,
+  двойной клик — 280), в localStorage на пользователя (`libraryWidth.ts`, `LibraryResize.tsx`).
 
 Переменные окружения:
 
@@ -414,7 +450,8 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
 - `.github/workflows/avail-api-test.yml` — typecheck, тесты и сборка `api-avail`
   на PR и push в `master`.
 - Адреса фронтенда вшиваются при сборке (`import.meta.env`): build-args
-  `VITE_TEMPLATE_API_URL`, `VITE_DEVICES_URL`, `VITE_AUTH_GOOGLE_ONLY` в
+  `VITE_TEMPLATE_API_URL`, `VITE_DEVICES_URL`, `VITE_AUTH_GOOGLE_ONLY`, `VITE_DOCS_URL`
+  (плюс `VITE_AVAIL=1` и `SOURCE_COMMIT` — задаёт сам workflow) в
   `Dockerfile.avail`, в CI берутся из repository variables (`vars.*`). Пустое значение
   = дефолт приложения. В коде наши адреса не хардкодим.
 - `deploy/avail/` — продакшен на сервере: `docker-compose.yml` (caddy + app + api на

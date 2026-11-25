@@ -5,6 +5,7 @@ import { parseJsonImport } from "../import/parseJson";
 import { parseCsvImport } from "../import/parseCsv";
 import type { ParsedTemplate } from "../import/types";
 import { createSubmission } from "../templateApi";
+import { isAvailBuild } from "../avail/brand";
 
 type Tab = "json" | "csv";
 
@@ -156,6 +157,11 @@ export default function ImportDevicesDialog({ open, onClose }: Props) {
             </h2>
             <button onClick={close} className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] cursor-pointer">✕</button>
           </div>
+          {isAvailBuild() ? (
+            <p className="text-[11px] text-[var(--color-text-muted)] mt-1">
+              Bulk-add device templates to your library.
+            </p>
+          ) : (
           <p className="text-[11px] text-[var(--color-text-muted)] mt-1">
             Bulk-add device templates to your library. See the{" "}
             <a href="https://docs.easyschematic.live/import-devices" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">
@@ -167,6 +173,7 @@ export default function ImportDevicesDialog({ open, onClose }: Props) {
             </a>{" "}
             for the full field list.
           </p>
+          )}
         </div>
 
         {/* Tabs */}
@@ -259,7 +266,7 @@ export default function ImportDevicesDialog({ open, onClose }: Props) {
             </div>
           )}
 
-          {selectedTemplates.length > 0 && (
+          {selectedTemplates.length > 0 && !isAvailBuild() && (
             <div>
               <label className="block text-[10px] uppercase tracking-wide text-[var(--color-text-muted)] mb-1">
                 Submitter note (optional, used if you submit to community)
@@ -283,6 +290,7 @@ export default function ImportDevicesDialog({ open, onClose }: Props) {
           >
             Cancel
           </button>
+          {!isAvailBuild() && (
           <button
             onClick={handleAddAndSubmit}
             disabled={selectedTemplates.length === 0 || submitting}
@@ -291,6 +299,7 @@ export default function ImportDevicesDialog({ open, onClose }: Props) {
           >
             {submitting ? "Submitting…" : `Add & Submit (${selectedTemplates.length})`}
           </button>
+          )}
           <button
             onClick={handleAddToLibrary}
             disabled={selectedTemplates.length === 0 || submitting}
