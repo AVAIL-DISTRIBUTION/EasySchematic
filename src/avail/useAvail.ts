@@ -1,11 +1,13 @@
 /**
  * React side of src/avail/libraryMode.ts.
  */
-import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { fetchLibraryTemplate, loadRole } from "./api";
 import { startEditSession } from "./templateEdit";
 import { useSchematicStore } from "../store";
 import {
+  filterByPortsOrigin,
+  getPortsFilter,
   getRole,
   getSelected,
   isSelectMode,
@@ -28,7 +30,14 @@ export function useAvailState() {
     moderator: isModerator(),
     selectMode: isSelectMode(),
     selected: getSelected(),
+    portsFilter: getPortsFilter(),
   };
+}
+
+/** The library list under the moderator's ports filter (unchanged for everyone else). */
+export function useAvailFilteredTemplates<T>(list: readonly T[]): readonly T[] {
+  const { portsFilter, moderator, active } = useAvailState();
+  return useMemo(() => filterByPortsOrigin(list, portsFilter, { active, moderator }), [list, portsFilter, moderator, active]);
 }
 
 /**

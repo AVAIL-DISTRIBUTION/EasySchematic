@@ -37,7 +37,7 @@ export interface TemplateMeta {
   approvedAt: string | null;
 }
 
-export type ApprovalMethod = "review" | "bulk";
+export type ApprovalMethod = "review" | "bulk" | "bulk-source";
 
 export interface TemplateMetaRow {
   template_id: string;

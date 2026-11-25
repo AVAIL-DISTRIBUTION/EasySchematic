@@ -57,7 +57,7 @@ export interface TemplateStatusInfo {
   lintLevel: string | null;
   statusReason: string | null;
   statusChangedAt: string | null;
-  approvedVia?: "review" | "bulk" | null;
+  approvedVia?: "review" | "bulk" | "bulk-source" | null;
   approvedAt?: string | null;
   updatedBy?: string | null;
 }

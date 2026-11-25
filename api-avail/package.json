@@ -20,7 +20,8 @@
     "apply:vendor-responses": "tsx src/vendorResponsesCli.ts",
     "fill:catalog-ports": "tsx src/fillCatalogPortsCli.ts",
     "parse:extron-visio": "tsx src/extronVisioCli.ts",
-    "import:catalog": "tsx src/importCatalogCli.ts"
+    "import:catalog": "tsx src/importCatalogCli.ts",
+    "approve:catalog": "tsx src/approveCatalogCli.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.11",

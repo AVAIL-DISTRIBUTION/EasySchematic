@@ -26,11 +26,15 @@ import {
   clearSelection,
   isSelected,
   notifyLibraryChanged,
+  PORTS_FILTER_LABELS,
+  PORTS_FILTERS,
+  setPortsFilter,
   setSelectMode,
   setShowUnverified,
   statusBadge,
   statusOfTemplate,
   toggleSelected,
+  type PortsFilter,
   type TemplateStatus,
 } from "./libraryMode";
 import { describeChange, deviceCardRows, portLabelMap, groupByTaxonomy, portsBySection, REVIEW_CHECKLIST, unverifiedBlocks } from "./libraryView";
@@ -129,7 +133,7 @@ export function AvailTemplateExtras({ template }: { template: DeviceTemplate }) 
 
 /** "Show unverified" in the library panel (remembered in the browser); for moderators, Select + Approve. */
 export function AvailLibraryToggle() {
-  const { active, showUnverified, moderator, selectMode, selected } = useAvailState();
+  const { active, showUnverified, moderator, selectMode, selected, portsFilter } = useAvailState();
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<BatchStatusResult | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -157,6 +161,21 @@ export function AvailLibraryToggle() {
         <input type="checkbox" checked={showUnverified} onChange={(e) => setShowUnverified(e.target.checked)} className="cursor-pointer" />
         Show unverified
       </label>
+      {moderator && (
+        <select
+          data-testid="avail-ports-filter"
+          value={portsFilter}
+          onChange={(e) => setPortsFilter(e.target.value as PortsFilter)}
+          className="text-[10px] text-[var(--color-text-muted)] bg-transparent border border-[var(--color-border)] rounded px-1 py-px cursor-pointer"
+          title="Where the template's ports come from: the manufacturer's documents, the community database, or nothing recorded"
+        >
+          {PORTS_FILTERS.map((f) => (
+            <option key={f} value={f}>
+              {PORTS_FILTER_LABELS[f]}
+            </option>
+          ))}
+        </select>
+      )}
       {moderator && (
         <label className={label} title="Select templates to approve them together">
           <input type="checkbox" checked={selectMode} onChange={(e) => setSelectMode(e.target.checked)} className="cursor-pointer" />
@@ -413,12 +432,14 @@ export function AvailReviewDialog({ template, onClose }: { template: DeviceTempl
 
         {status === "verified" && info?.approvedVia && (
           <div data-testid="avail-approved-via" className="px-4 py-2 border-b border-green-200 bg-green-50 text-xs text-green-900">
-            {info.approvedVia === "bulk"
-              ? `Verified with bulk Approve${info.approvedAt ? ` on ${info.approvedAt} UTC` : ""}: the engineer's checklist was not ticked for this template.`
-              : `Verified in the Review card${info.approvedAt ? ` on ${info.approvedAt} UTC` : ""}.`}
+            {info.approvedVia === "bulk-source"
+              ? `Verified by the source of its ports${info.approvedAt ? ` on ${info.approvedAt} UTC` : ""} (approve:catalog): ${info.statusReason ?? "manufacturer's documents"}. The engineer's checklist was not ticked for this template.`
+              : info.approvedVia === "bulk"
+                ? `Verified with bulk Approve${info.approvedAt ? ` on ${info.approvedAt} UTC` : ""}: the engineer's checklist was not ticked for this template.`
+                : `Verified in the Review card${info.approvedAt ? ` on ${info.approvedAt} UTC` : ""}.`}
           </div>
         )}
-        {info?.statusReason && (
+        {info?.statusReason && !(status === "verified" && info.approvedVia === "bulk-source") && (
           <div className="px-4 py-2 border-b border-amber-200 bg-amber-50 text-xs text-amber-900">
             <span className="font-semibold">Status changed automatically:</span> {info.statusReason}
             {info.statusChangedAt ? ` (${info.statusChangedAt} UTC)` : ""}

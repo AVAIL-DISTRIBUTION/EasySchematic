@@ -79,6 +79,19 @@ PR всегда открываем в `master` нашего форка, **ник
 | `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, стенсилов Extron, снимка базы и вариантов (`fill:catalog-ports`) |
 | `src/avail/extronVisio.ts`, `extronStencil.ts` | стенсилы Extron Visio: мастер → порты (`parse:extron-visio`), применение к каталогу и сравнение |
 
+Утверждение по источнику портов (шаг 1.11): `npm run approve:catalog [-- --dry-run] [-- --verbose]`
+(`api-avail/src/approveCatalog.ts`). Кандидаты — draft из каталога (meta source `avail-catalog`) уровня A по текущему
+линтеру. Источник — `src/avail/portsOrigin.ts` по `avail_template_meta.catalog.portsSource`: manufacturer (stencil,
+datasheet, library и variant от такого файла) → verified, `approved_via = 'bulk-source'` (миграция 9006 пересобирает
+таблицу ради CHECK), `status_reason` «approved by source: ports from <kind> (<документ>)»; community (db, variant от
+db, импорт easyschematic.live) и none (нет portsSource) остаются draft. verified, hidden, raw и library/avail не
+трогает; повтор ничего не меняет. Отчёт — утверждено по вендорам и источникам, оставлено по причинам (source db,
+variant of db, no source, level B / FIX). Библиотека отдаёт у шаблона `availPortsOrigin` и `availLevel`; модератор
+видит фильтр Ports (any / manufacturer / community / no source / Review queue = draft + community + уровень B,
+запоминается в браузере; `filterByPortsOrigin` в `libraryMode.ts`, точка подключения — `DeviceLibrary.tsx`
+`useAvailFilteredTemplates`). На сервере: `./backup.sh`, затем `docker compose exec api npm run approve:catalog -- --dry-run`,
+затем без `--dry-run`.
+
 Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
 не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
 deviceType, питание не input (кроме явных выходов). Оформление (секции вне словаря, порядок, подписи, капс, длина,
@@ -329,6 +342,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из стенсилов Extron и снимка базы (`npm run fill:catalog-ports`), пишет только файлы и отчёт стенсилов |
 | `src/extronVisioCli.ts` | стенсилы Extron → `tools/avail/extron-visio/extron-visio-blocks.json` (`npm run parse:extron-visio`); zip читает `xlsx.ts` (`readZipText`) |
 | `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня B и выше в базу (`npm run import:catalog [-- --min-level A|B]`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
+| `src/approveCatalog.ts`, `src/approveCatalogCli.ts` | утверждение draft каталога уровня A по источнику портов (`npm run approve:catalog [-- --dry-run]`), миграция 9006 (`approved_via = bulk-source`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |
 | `src/seed.ts` | сид библиотеки из встроенных шаблонов (`src/deviceLibrary.ts`) через `templateToRow` из `api/src/db.ts`, без обращения к easyschematic.live |
@@ -347,7 +361,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `api/src/auth.ts` `Env.Bindings` | типы этих переменных |
 | `api/src/index.ts` `export { app }` | экземпляр Hono-приложения: `api-avail` регистрирует на нём свои маршруты `/avail/…` (за теми же CORS, сессией и заголовками) |
 | `src/templateApi.ts` | AVAIL: `GET /templates` с `libraryQuery()` и сессией, `noteLibraryResponse`, без встроенной подложки в списке, `invalidateTemplates()` |
-| `src/components/DeviceLibrary.tsx` | AVAIL: `AvailLibraryToggle`, `AvailCategoryTree`, `AvailTemplateExtras`, перезагрузка по смене статусов |
+| `src/components/DeviceLibrary.tsx` | AVAIL: `AvailLibraryToggle`, `AvailCategoryTree`, `AvailTemplateExtras`, перезагрузка по смене статусов, фильтр по источнику портов (`useAvailFilteredTemplates`) |
 | `src/components/DeviceNode.tsx` | `AvailBlockBadge` — значок статуса над блоком |
 | `src/components/DeviceEditor.tsx` | `AvailTemplateEditBar` — живой линтер и Save to library в режиме Edit (без сессии Edit не рендерится) |
 | `src/components/ReportsDialog.tsx` | `AvailUnverifiedNotice` — предупреждение о блоках из непроверенных шаблонов |
