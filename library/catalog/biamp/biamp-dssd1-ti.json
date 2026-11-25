@@ -24,10 +24,24 @@
   "weightKg": 0.47,
   "unitCost": 933,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "SD-1 Solid Drive speaker for drywall",
     "notes": "Эмиттер звуковой маскировки; [AVAIL] estimated: round puck, width = depth",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Dynasound-DSSD1-TI-Spec-Sheet_13382.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive solid drive transducer; plenum speaker wire with screw connector block"
+    }
+  ]
 }

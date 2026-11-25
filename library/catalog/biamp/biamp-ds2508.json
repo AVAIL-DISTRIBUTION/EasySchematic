@@ -20,10 +20,24 @@
   ],
   "unitCost": 721,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "8 Ohm, window, door, wall masker for SCIF / secure room",
     "notes": "Эмиттер звуковой маскировки",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Dynasound_DS2508_Dec24_12927.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 8 ohm; 12 ft two-conductor leads"
+    }
+  ]
 }

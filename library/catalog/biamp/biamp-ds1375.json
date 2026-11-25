@@ -20,10 +20,24 @@
   ],
   "unitCost": 153,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "In-ceiling downward firing loudspeaker. 70V and 8 ohm compatible",
     "notes": "Эмиттер звуковой маскировки",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Dynasound_DS1375_Dec24_12919.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V or 8 ohm; hook-up leads"
+    }
+  ]
 }

@@ -27,7 +27,8 @@
     "status": "awaiting-ports",
     "description": "MSK-1 Solid Drive Sound Masking Speaker for Drywall",
     "notes": "Эмиттер звуковой маскировки",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The product page has no data sheet; ports wait for it"
   },
   "ports": []
 }

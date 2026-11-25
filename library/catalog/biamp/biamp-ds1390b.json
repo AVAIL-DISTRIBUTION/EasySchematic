@@ -24,10 +24,24 @@
   "weightKg": 0.91,
   "unitCost": 212,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "70V low-profile loudspeaker with tile bridge",
     "notes": "Эмиттер звуковой маскировки; [AVAIL] estimated: round, depth = diameter",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Dynasound_DS1390_Dec24_12920.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V, taps 1/8 to 4 W; 2-wire pigtail"
+    }
+  ]
 }

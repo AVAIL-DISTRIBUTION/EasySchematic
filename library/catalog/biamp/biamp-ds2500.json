@@ -20,10 +20,24 @@
   ],
   "unitCost": 316,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "70V window, door, wall masker for SCIF / secure rooms",
     "notes": "Эмиттер звуковой маскировки",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Dynasound_DS2500_Dec24_12926.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V; 12 ft leads"
+    }
+  ]
 }

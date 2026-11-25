@@ -24,10 +24,33 @@
   "weightKg": 0.16,
   "unitCost": 712,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Standard Emitters, Black, 4 pack, with 4 x 25 ft black plenum rated cables",
     "notes": "Эмиттер звуковой маскировки; Продаётся упаковкой по 4 шт.; цена в прайсе — за упаковку",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Cambridge_Qt_Emitters_Dec24_12943.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Emitter In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rj45",
+      "notes": "Passive Qt emitter; RJ-45, daisy chain over category cable from the Qt controller"
+    },
+    {
+      "id": "p2",
+      "label": "Emitter Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "RJ-45 to the next emitter; wiring shifts pairs so emitters sequence between channels"
+    }
+  ]
 }

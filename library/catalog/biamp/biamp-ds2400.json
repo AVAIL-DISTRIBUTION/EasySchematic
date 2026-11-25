@@ -27,7 +27,8 @@
     "status": "awaiting-ports",
     "description": "70V duct, pipe, conduit, wall masker for SCIF / secure rooms",
     "notes": "Эмиттер звуковой маскировки",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not name the input connection; ports wait for the manual"
   },
   "ports": []
 }

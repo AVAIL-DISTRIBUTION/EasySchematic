@@ -26,9 +26,23 @@
   "weightKg": 2.32,
   "unitCost": 150,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "70V plenum loudspeaker – white, TAA-compliant, Chicago CCEA plenum compliant",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Cambridge_DS1339W-TAA_Apr26_13879.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V; hook-up leads with direct conduit adapter connection"
+    }
+  ]
 }
