@@ -29,11 +29,106 @@
   "thermalBtuh": 54.7,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "8K XTP II Fiber Optic Transmitter for HDMI & DisplayPort with Audio Embedding - Singlemode",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "8fe74fef-4e84-494a-a4b5-c00be2772659",
+      "label": "Extron XTP II FT 402 8K SM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "DisplayPort In",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "XTP 8K Fiber Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "8K fiber link, 2 LC connectors per channel (40 Gbps duplex). OM4 multimode ≤400 m / SM ≤10 km.",
+      "id": "port-7"
+    },
+    {
+      "label": "XTP 8K Fiber Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "8K fiber link, 2 LC connectors per channel (40 Gbps duplex). OM4 multimode ≤400 m / SM ≤10 km.",
+      "id": "port-8"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "3.5mm mini stereo jack, unbalanced.",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector.",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front/rear panel USB Mini-B (USB 2.0, Ethernet-over-USB) for setup and firmware.",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-6"
+    },
+    {
+      "label": "DC 12V",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP.",
+      "id": "port-9"
+    }
+  ]
 }

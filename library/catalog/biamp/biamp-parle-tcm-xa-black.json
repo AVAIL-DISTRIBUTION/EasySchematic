@@ -1,0 +1,81 @@
+{
+  "id": "avail-biamp-920-00499-10000",
+  "label": "Biamp Parlé TCM-XA Black",
+  "shortName": "Parlé TCM-XA Black",
+  "manufacturer": "Biamp",
+  "modelNumber": "920-00499-10000",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://products.biamp.com/product-details/-/o/ecom-item/920-00499-10000",
+  "searchTerms": [
+    "920-00499-10000",
+    "parlé tcm-xa black",
+    "biamp",
+    "parl",
+    "tcm-xa",
+    "black"
+  ],
+  "heightMm": 30,
+  "widthMm": 172,
+  "depthMm": 132,
+  "weightKg": 0.68,
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 15.4,
+  "unitCost": 3150,
+  "_avail": {
+    "status": "ports-filled",
+    "description": "AVB Beamtracking ceiling microphone with PoE+ amplifier, black surface mount",
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "biamp-parle-tcm-xa.json",
+      "label": "Biamp Parlé TCM-XA",
+      "match": "part-number",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "tcmxa-spk1",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Amplifier output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "tcmxa-spk2",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Amplifier output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "tcmxa-avb",
+      "label": "AVB (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "AVB",
+      "notes": "To a PoE+ switch: AVB and control; PoE+ 802.3at class 4"
+    },
+    {
+      "id": "tcmxa-xex",
+      "label": "TCM-XEX Expansion",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "To a TCM-XEX expansion box, up to 10 m"
+    }
+  ]
+}

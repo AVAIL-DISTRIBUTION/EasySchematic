@@ -29,11 +29,52 @@
   "voltage": "12V DC",
   "thermalBtuh": 14,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White",
     "rackFormSource": "Non-rack",
     "description": "Long Distance DTP Receiver for HDMI - Decorator-Style Wallplate, White - 330 feet (100 m)",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3147e73c-b5a3-4924-b4e8-6e95913a697e",
+      "label": "Extron DTP R HWP 4K 331 D White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "DTP In (RJ-45)",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-3"
+    }
+  ]
 }

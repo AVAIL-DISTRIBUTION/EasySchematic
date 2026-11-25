@@ -30,12 +30,165 @@
   "thermalBtuh": 20.5,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "LinkLicense",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "IPCP Pro xi Control Processor w/LinkLicense for User Interfaces Upgrade",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "34164145-3b80-46bc-bbad-58a0a34a7d11",
+      "label": "Extron IPCP Pro 350 xi",
+      "match": "model-name",
+      "status": "raw",
+      "level": "B"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "3fc6d86f",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "430c3b78",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "9ac03c75",
+      "label": "LAN 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "tpl-1",
+      "label": "COM 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-2",
+      "label": "COM 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-3",
+      "label": "COM 3",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-10",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-4",
+      "label": "IR 1",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-5",
+      "label": "IR 2",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-6",
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-7",
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-8",
+      "label": "Relay 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-9",
+      "label": "Relay 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Relays",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "06b4f24c",
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "0f009ffe",
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "97038ad9",
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "d686aa8f",
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "tpl-17",
+      "label": "12V Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
 }

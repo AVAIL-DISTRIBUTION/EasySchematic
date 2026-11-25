@@ -29,11 +29,63 @@
   "thermalBtuh": 35,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "One Channel Dante Amp, 100 watts at 70 volts",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "92053dd3-14b6-46d4-9612-885c70cbe336",
+      "label": "Extron NetPA 1001-70V AT",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Speaker Out (70V)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Dante / AES67",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "100 Mbps Dante / AES67 audio network port (software-selectable transmission type).",
+      "id": "port-0"
+    },
+    {
+      "label": "Standby Control",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-4"
+    }
+  ]
 }

@@ -28,10 +28,43 @@
   "voltage": "100-240V AC",
   "thermalBtuh": 1.8,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Remote Control Panel - Decorator-Style",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ddff04db-ae67-412b-997d-c175f85ac75d",
+      "label": "Extron RCP 101 D",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "USB Host (to SMP)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-0"
+    },
+    {
+      "label": "USB Storage",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-1"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
 }

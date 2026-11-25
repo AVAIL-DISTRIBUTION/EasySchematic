@@ -23,11 +23,28 @@
   "depthMm": 164,
   "weightKg": 3.4,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black, Pair",
     "rackFormSource": "Non-rack",
     "description": "SpeedMount Two-Way Surface Mount Speakers with 6.5\" Woofer, Pair - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "7477ac9a-5856-4194-b4a2-3e5798c8ef4d",
+      "label": "Extron SM 26 Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

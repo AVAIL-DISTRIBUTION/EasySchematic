@@ -29,11 +29,68 @@
   "thermalBtuh": 11.6,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "2 Input, 2 Output Dante Audio Interface",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e598ab59-b2f2-4ba6-917a-63b13f874a2c",
+      "label": "Extron AXI 22 AT",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-3",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "Dante / PoE",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-4"
+    },
+    {
+      "label": "Power (12V Optional)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-5"
+    }
+  ]
 }

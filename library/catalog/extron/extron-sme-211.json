@@ -29,11 +29,99 @@
   "thermalBtuh": 50,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Streaming Media Encoder",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "aa06fccc-992e-479c-b530-2c6810d879bb",
+      "label": "Extron SME 211",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Loop Out (Re-embedded)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "LAN / Streaming",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T host control + RTSP/RTMP/HLS streaming output.",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 1 (Hub)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A — 2-port USB hub for keyboard/mouse/storage.",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-A 2 (Hub)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A — 2-port USB hub for keyboard/mouse/storage.",
+      "id": "port-5"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS / DSP Configurator (USB 2.0).",
+      "id": "port-6"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-8"
+    }
+  ]
 }

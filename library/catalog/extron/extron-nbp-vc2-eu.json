@@ -30,7 +30,7 @@
   "thermalBtuh": 6.9,
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "cardFamilies": [
       "extron-cubby-aap",
@@ -39,7 +39,26 @@
     "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
     "description": "Network Button Panel with Dual Volume Control – Flex55 and EU Wall Frame",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "0314c3af-f989-4734-bc85-941b55551c0b",
+      "label": "Extron NBP VC2 EU",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power.",
+      "poeDrawW": 12.95,
+      "id": "port-0"
+    }
+  ]
 }

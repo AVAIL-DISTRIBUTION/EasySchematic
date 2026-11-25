@@ -31,11 +31,158 @@
   "thermalBtuh": 96,
   "rackForm": "full",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U Full rack",
     "rackUnits": 1,
     "description": "Dual Recording w/3G-SDI – 400 GB SSD",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bdf851aa-7885-46ca-b601-fadd36eee243",
+      "label": "Extron SMP 352 3G-SDI - 400 GB SSD",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "SDI In (3G-SDI)",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out (Confidence)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw, with analog loop-through to the next captive.; Stereo, loop-through",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio In 2 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-8"
+    },
+    {
+      "label": "Audio Loop Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-9"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-10"
+    },
+    {
+      "label": "LAN / Streaming",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T host control + RTSP/RTMP/HLS streaming output.",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-14"
+    },
+    {
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A (1.5A current limit) — for USB storage / keyboard / mouse.",
+      "id": "port-11"
+    },
+    {
+      "label": "USB-A (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A (1.5A current limit) — for USB storage / keyboard / mouse.",
+      "id": "port-12"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS / DSP Configurator (USB 2.0).",
+      "id": "port-13"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-15"
+    }
+  ]
 }

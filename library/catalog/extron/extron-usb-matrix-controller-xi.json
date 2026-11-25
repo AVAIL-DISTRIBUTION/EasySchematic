@@ -31,10 +31,44 @@
   "thermalBtuh": 7.4,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d4158805-a2bd-4733-be71-b8ec1687eed8",
+      "label": "Extron USB Matrix Controller xi",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "poeDrawW": 1.5
+    },
+    {
+      "id": "tpl-1",
+      "label": "RS-232 (5-pole)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-2",
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
 }

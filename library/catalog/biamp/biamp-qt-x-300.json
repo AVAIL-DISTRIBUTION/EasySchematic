@@ -27,11 +27,158 @@
   "voltage": "100-240V AC",
   "unitCost": 2968,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "sound-masking",
     "description": "Qt X Controller, 3 Qt Outputs",
     "notes": "Звуковая маскировка; в таксономии нет своей категории",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1b851049-f313-41d8-aa6e-7325cf45b620",
+      "label": "Biamp Qt X 300",
+      "match": "model-name",
+      "status": "raw",
+      "level": "FIX"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "Input 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "tpl-1",
+      "label": "Input 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "tpl-2",
+      "label": "Output 1 A",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "addressable": false,
+      "section": "Network"
+    },
+    {
+      "id": "tpl-3",
+      "label": "Output 1 B",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "addressable": false,
+      "section": "Network"
+    },
+    {
+      "id": "tpl-4",
+      "label": "Output 2 A",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "addressable": false,
+      "section": "Network"
+    },
+    {
+      "id": "tpl-5",
+      "label": "Output 2 B",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "addressable": false,
+      "section": "Network"
+    },
+    {
+      "id": "tpl-6",
+      "label": "Output 3 A",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "addressable": false,
+      "section": "Network"
+    },
+    {
+      "id": "tpl-7",
+      "label": "Output 3 B",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "addressable": false,
+      "section": "Network"
+    },
+    {
+      "id": "tpl-14",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-15",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-8",
+      "label": "GPIO 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-9",
+      "label": "GPIO 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-10",
+      "label": "Contact 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control"
+    },
+    {
+      "id": "tpl-11",
+      "label": "Contact 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control"
+    },
+    {
+      "id": "tpl-12",
+      "label": "Privacy 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control"
+    },
+    {
+      "id": "tpl-13",
+      "label": "Privacy 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control"
+    },
+    {
+      "id": "worklist-17",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    }
+  ]
 }

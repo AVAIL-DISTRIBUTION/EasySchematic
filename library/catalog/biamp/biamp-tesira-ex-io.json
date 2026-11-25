@@ -28,9 +28,58 @@
   "poeDrawW": 30,
   "unitCost": 1808,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Tesira 2 channel mic/line input & 2 channel mic/line output expander PoE+",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c52f7951-68d3-45da-87c3-1bf917e08daa",
+      "label": "Biamp Tesira EX-IO",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p17762058420001-in1",
+      "label": "CH 1 In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17762058420002-in2",
+      "label": "CH 2 In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17762058420003-out1",
+      "label": "CH 1 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p17762058420004-out2",
+      "label": "CH 2 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "p17762058420000-avb",
+      "label": "AVB / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    }
+  ]
 }

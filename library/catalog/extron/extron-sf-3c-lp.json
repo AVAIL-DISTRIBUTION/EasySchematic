@@ -23,10 +23,27 @@
   "depthMm": 226,
   "weightKg": 1.3,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Full Range 3\" Ceiling Speakers, 8 Ohm, Low Profile, Complete Pair",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3a0a9ab3-2d58-49b0-be7e-cf99357c5aa5",
+      "label": "Extron SF 3C LP",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

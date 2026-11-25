@@ -29,11 +29,140 @@
   "thermalBtuh": 72.5,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Encoder for HDMI, RGB, Audio, USB Keyboard and Mouse",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "5edfa058-afab-499d-a9bb-2eb3b4f99e5c",
+      "label": "Extron VNE 250",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "VGA In",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "db15",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI/DVI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-2",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "VGA Loop-Through",
+      "signalType": "vga",
+      "direction": "output",
+      "connectorType": "db15",
+      "id": "port-1",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI/DVI Loop-Through",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-3",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Audio In (Stereo Line)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "Audio Loop-Through",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Return Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "LAN 1 (Control)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-12"
+    },
+    {
+      "label": "LAN 2 (Streaming)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-13"
+    },
+    {
+      "label": "Alarm Relay",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-11"
+    },
+    {
+      "label": "RS-232 (Control)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232 (Pass-Through)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-8"
+    },
+    {
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-9"
+    },
+    {
+      "label": "USB Host (Peripheral)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-10"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-14"
+    }
+  ]
 }

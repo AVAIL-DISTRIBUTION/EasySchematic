@@ -30,10 +30,47 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 17.3,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "5\" Wall Mount Touchlink Pro Touchpanel, White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "38477217-3b0e-43c5-bfa6-c5cceb1b1ca1",
+      "label": "Extron TLP Pro 525M White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 6.5,
+      "notes": "PoE 802.3af class 3",
+      "id": "port-0"
+    },
+    {
+      "label": "Digital Input",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "1 configurable digital input (0-30VDC range, programmable pull-up) on a 3.5mm 2-pole captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed.",
+      "id": "port-1"
+    }
+  ]
 }

@@ -30,14 +30,42 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 24.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "slotFamilies": [
       "extron-cubby-aap"
     ],
     "description": "7\" Cable Cubby TouchLink Pro Touchpanel",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "4ce761ce-5eae-4bea-9c8a-3fec047d78af",
+      "label": "Extron TLP Pro 725C Black w/o AC",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 8.6,
+      "notes": "PoE 802.3af class 3",
+      "id": "port-0"
+    },
+    {
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+      "id": "port-1"
+    }
+  ]
 }

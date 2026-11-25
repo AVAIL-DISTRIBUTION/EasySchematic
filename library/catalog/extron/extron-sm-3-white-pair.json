@@ -23,11 +23,28 @@
   "depthMm": 102,
   "weightKg": 0.9,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White, Pair",
     "rackFormSource": "Non-rack",
     "description": "SpeedMount Compact Full-Range Surface Mount Speakers, Pair - White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "59b17bcc-e380-47b9-a17a-dade29ce6d05",
+      "label": "Extron SM 3 White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

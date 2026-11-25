@@ -22,10 +22,44 @@
   ],
   "slotFamily": "extron-quantum-ultra",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-quantum-ultra)",
     "description": "Expansion Input Card for Quantum Ultra",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "25c8711c-75c8-4903-922e-b519692d5135",
+      "label": "Extron Quantum Expansion IN",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HyperLane In A",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "mpo",
+      "section": "Video Inputs",
+      "notes": "MPO 12-fiber chassis-to-chassis HyperLane bus. Up to 15.7 Gbps per channel.",
+      "id": "port-0"
+    },
+    {
+      "label": "HyperLane In B",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "mpo",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HyperLane In C",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "mpo",
+      "section": "Video Inputs",
+      "id": "port-2"
+    }
+  ]
 }

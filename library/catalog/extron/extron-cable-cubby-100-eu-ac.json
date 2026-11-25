@@ -28,15 +28,55 @@
   "powerDrawW": 17.1,
   "voltage": "12V DC",
   "thermalBtuh": 8.1,
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-maap"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "slotFamilies": [
       "extron-cubby-maap"
     ],
     "description": "Cable Cubby 100 EU AC, Black",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "2163071a-89ef-4aa6-8c44-b8d50aaccc79",
+      "label": "Extron Cable Cubby 100 EU AC",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "id": "port-0",
+      "section": "Power"
+    },
+    {
+      "label": "AC Outlet 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-1"
+    },
+    {
+      "label": "AC Outlet 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "outlet-2"
+    }
+  ]
 }

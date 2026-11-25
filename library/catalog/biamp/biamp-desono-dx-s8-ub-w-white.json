@@ -27,10 +27,35 @@
   "weightKg": 7.71,
   "unitCost": 410,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "8” high output coaxial surface mount indoor/outdoor loudspeaker w/ HF compression driver. 8 ohm or 70V/100V operation, included aluminum U-bracket & water-tight ClickPlug, white (priced individually, but sold in pairs)",
     "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; Характеристики с сайта по артикулу 920-00334-20000",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "41e38da5-de8d-4ece-a849-a3fbb11cb18f",
+      "label": "Biamp Desono DX-S8-UB-W",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p17875508995910-ny5",
+      "label": "INPUT",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17875508995912-xuv",
+      "label": "THRU",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Speaker Outputs"
+    }
+  ]
 }

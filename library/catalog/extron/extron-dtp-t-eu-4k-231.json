@@ -29,7 +29,7 @@
   "thermalBtuh": 10.8,
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "cardFamilies": [
       "extron-cubby-aap",
@@ -38,7 +38,40 @@
     "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
     "description": "DTP HDMI Transmitter for Flex55 and EU Junction Boxes - 230 feet (70 m)",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "ba0f1864-8f0a-405c-93e7-f3cab55ccae1",
+      "label": "Extron DTP T EU 4K 231",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "DTP Out (RJ-45)",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
 }

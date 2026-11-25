@@ -25,11 +25,65 @@
   "depthMm": 58,
   "weightKg": 0.1,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "IP Link® Accessory with Four Relays",
     "notes": "[AVAIL] powered by the host device / bus — no own power input",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "813c4db2-ecfe-45d7-954d-7c51e56bc29d",
+      "label": "Extron IPA T RLY4",
+      "match": "part-number",
+      "status": "raw",
+      "level": "FIX"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Configurable NO + NC dry-contact relay output (24V, 1A) on a 3-pole 3.5mm captive screw.",
+      "id": "port-1"
+    },
+    {
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Configurable NO + NC dry-contact relay output (24V, 1A) on a 3-pole 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "Relay 3",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Configurable NO + NC dry-contact relay output (24V, 1A) on a 3-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Relay 4",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "Configurable NO + NC dry-contact relay output (24V, 1A) on a 3-pole 3.5mm captive screw.",
+      "id": "port-4"
+    },
+    {
+      "label": "Control / Power In",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw — control input + DC power from a host (12VDC). Carries serial control commands.",
+      "id": "port-0"
+    }
+  ]
 }

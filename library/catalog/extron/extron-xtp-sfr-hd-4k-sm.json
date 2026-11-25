@@ -28,11 +28,117 @@
   "thermalBtuh": 24.6,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "XTP Fiber Optic Scaling Receiver for HDMI - Singlemode",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "163e18c8-e2cf-4cdc-8a7d-309786bec623",
+      "label": "Extron XTP SFR HD 4K SM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "XTP Fiber In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "OM4 multimode (≤500 m / SM ≤10 km) from XTP fiber output board.",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3.5mm 5-pole captive screw, stereo balanced/unbalanced. De-embedded from HDMI or XTP.",
+      "id": "port-2"
+    },
+    {
+      "label": "S/PDIF Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "notes": "Coaxial S/PDIF digital audio output (de-embedded from HDMI).",
+      "id": "port-3"
+    },
+    {
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "2-pole 3.5mm captive screw — dry-contact relay output for room control (24V/1A typical).",
+      "id": "port-6"
+    },
+    {
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "2-pole 3.5mm captive screw — dry-contact relay output for room control (24V/1A typical).",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector.",
+      "id": "port-4"
+    },
+    {
+      "label": "IR Pass-through",
+      "signalType": "ir",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "2-pole 3.5mm captive screw. Carries IR pass-through to the remote endpoint (30-56 kHz TTL).",
+      "id": "port-5"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front/rear panel USB Mini-B (USB 2.0, Ethernet-over-USB) for setup and firmware.",
+      "id": "port-8"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-9"
+    },
+    {
+      "label": "DC 12V",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP.",
+      "id": "port-10"
+    }
+  ]
 }

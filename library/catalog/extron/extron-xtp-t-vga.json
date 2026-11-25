@@ -29,11 +29,89 @@
   "thermalBtuh": 38.9,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Universal XTP Transmitter for VGA",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e17e7962-d20d-4439-b550-81afdaf75dc0",
+      "label": "Extron XTP T VGA",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "VGA In",
+      "signalType": "vga",
+      "direction": "input",
+      "connectorType": "vga",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "VGA Loop Out",
+      "signalType": "vga",
+      "direction": "output",
+      "connectorType": "vga",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "XTP Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Shielded CATx (RJ-45) carrying HDMI/audio/Ethernet/RS-232/IR up to 100 m. Receives remote power from XTP CrossPoint or PI 140.",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "3.5mm mini stereo jack, unbalanced.",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector.",
+      "id": "port-3"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front/rear panel USB Mini-B (USB 2.0, Ethernet-over-USB) for setup and firmware.",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-5"
+    },
+    {
+      "label": "DC 12V",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP.",
+      "id": "port-7"
+    }
+  ]
 }

@@ -22,10 +22,55 @@
   ],
   "slotFamily": "extron-quantum-ultra-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-quantum-ultra-2)",
     "description": "Four-channel Lossless SM Fiber Output Card for Quantum Ultra II",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "99d3b2f5-bd90-42f5-a271-36acca5fbd6d",
+      "label": "Extron Quantum OUT4FOX3 L SM",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "FOX3 Out 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-0"
+    },
+    {
+      "label": "FOX3 Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-1"
+    },
+    {
+      "label": "FOX3 Out 3",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-2"
+    },
+    {
+      "label": "FOX3 Out 4",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-3"
+    }
+  ]
 }

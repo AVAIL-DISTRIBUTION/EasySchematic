@@ -30,11 +30,48 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 33.6,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black",
     "rackFormSource": "Non-rack",
     "description": "8\" Wall Mount TouchLink Pro Touchpanel - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "cab03936-e4de-4fd7-acc7-4bf9fe31d420",
+      "label": "Extron TLP Pro 835M Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "PoE 802.3af class 3",
+      "poeDrawW": 8.5
+    },
+    {
+      "id": "tpl-2",
+      "label": "Digital Input",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "1 configurable digital input (0-30VDC range, programmable pull-up) on a 3.5mm 2-pole captive screw."
+    },
+    {
+      "id": "tpl-1",
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-c",
+      "notes": "Front/side USB Micro-B for connecting a config PC. USB 2.0 high-speed."
+    }
+  ]
 }

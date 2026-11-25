@@ -24,12 +24,111 @@
   "weightKg": 0.4,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "eBUS® Distribution Hub",
     "notes": "[AVAIL] powered by the host device / bus — no own power input",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "11075238-5055-471e-97b9-70407ff4e0fc",
+      "label": "Extron EBDB",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "eBUS 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-0"
+    },
+    {
+      "label": "eBUS 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-1"
+    },
+    {
+      "label": "eBUS 3",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-2"
+    },
+    {
+      "label": "eBUS 4",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-3"
+    },
+    {
+      "label": "eBUS 5",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-4"
+    },
+    {
+      "label": "eBUS 6",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-5"
+    },
+    {
+      "label": "eBUS 7",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-6"
+    },
+    {
+      "label": "eBUS 8",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-7"
+    },
+    {
+      "label": "eBUS 9",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-8"
+    },
+    {
+      "label": "eBUS 10",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — passive eBUS distribution port. All 10 ports are electrically equivalent (one is typically the upstream connection, the other 9 fan out to EBP panels and other ACP devices).",
+      "id": "port-9"
+    }
+  ]
 }

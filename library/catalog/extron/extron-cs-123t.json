@@ -26,10 +26,27 @@
   "powerDrawW": 16,
   "thermalBtuh": 54.6,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Full-Range SpeedMount Ceiling Speaker System, Pair",
     "notes": "[AVAIL] dims from Extron specifications (CS 120P enclosure)",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "5bf9dd0c-ac78-49ad-a74c-0a94ed431f8a",
+      "label": "Extron CS 123T",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

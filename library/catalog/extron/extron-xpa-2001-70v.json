@@ -29,11 +29,64 @@
   "thermalBtuh": 59,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "One Channel Amp, 200 watts at 70 volts",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "089846fb-1a70-44fb-a74e-e293a569b057",
+      "label": "Extron XPA 2001-70V",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Line L (Summed)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Line R (Summed)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Speaker",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "Remote",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "connectorType": "other",
+      "section": "Control",
+      "notes": "Combined 3.5mm 5-pole captive screw — pin 4 GND / pin 5 standby (older XPA series convention).",
+      "id": "port-3",
+      "inheritsSignal": false
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-4",
+      "gender": "male"
+    }
+  ]
 }

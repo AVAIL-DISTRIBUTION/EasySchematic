@@ -29,7 +29,7 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 5.1,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Brushed Aluminum",
     "rackFormSource": "Non-rack",
     "slotFamilies": [
@@ -37,7 +37,25 @@
     ],
     "description": "Cable Cubby Enclosure with Network Button Panel - Brushed Aluminum",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "f559f114-d313-4c2e-b061-78ca1a7d8a8b",
+      "label": "Extron NBP 1200C Br Alum",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Ethernet / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-0",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
 }

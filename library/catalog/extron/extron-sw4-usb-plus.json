@@ -30,11 +30,116 @@
   "thermalBtuh": 38,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Four Input USB Switcher with Emulation",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "5b3140b3-51f5-4350-b41c-c798c92ab25f",
+      "label": "Extron SW4 USB PLUS",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-8"
+    },
+    {
+      "label": "RS-232 (Pass-Through)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-9"
+    },
+    {
+      "label": "Contact Closure",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-10"
+    },
+    {
+      "label": "USB Host In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-0"
+    },
+    {
+      "label": "USB Host In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-1"
+    },
+    {
+      "label": "USB Host In 3",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Host In 4",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "USB Device Out 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Device Out 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-5"
+    },
+    {
+      "label": "USB Device Out 3",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-6"
+    },
+    {
+      "label": "USB Device Out 4",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-7"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-11"
+    }
+  ]
 }

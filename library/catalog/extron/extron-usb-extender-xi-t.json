@@ -30,10 +30,43 @@
   "thermalBtuh": 7.4,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3d894b8f-2c2c-4edc-9b2a-2f31ae5bfdfb",
+      "label": "Extron USB Extender xi T",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "USB Host (USB-B)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "USB",
+      "connectorType": "usb-b"
+    },
+    {
+      "id": "tpl-1",
+      "label": "CAT 6",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-2",
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
 }

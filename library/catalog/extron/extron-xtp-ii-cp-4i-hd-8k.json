@@ -21,11 +21,92 @@
   ],
   "slotFamily": "extron-xtp-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-xtp2-crosspoint)",
     "description": "Four Input Board, 8K HDMI with Stereo Audio",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "425fb918-7ccb-482a-81ac-23581cb4c882",
+      "label": "Extron XTP II CP 4i HD 8K",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power.",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power.",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power.",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.1 / DVI-D. HDCP 2.3. 12V/125mA peripheral power.",
+      "id": "port-3"
+    },
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
+      "id": "port-4"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole 3.5mm captive screw. Stereo balanced/unbalanced line-level.",
+      "id": "port-7"
+    }
+  ]
 }

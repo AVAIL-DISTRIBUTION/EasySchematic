@@ -23,10 +23,55 @@
   ],
   "slotFamily": "extron-quantum-ultra-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-quantum-ultra-2)",
     "description": "Four-channel 4K/60 HDMI Input Card for Quantum Ultra II",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1643c10d-5541-4d4d-b587-3a0e14ce76ea",
+      "label": "Extron Quantum IN4HDMI 4K PLUS",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock).",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock).",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock).",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 + HDCP 2.3. Up to 4K/60 4:4:4 (600 MHz pixel clock).",
+      "id": "port-3"
+    }
+  ]
 }

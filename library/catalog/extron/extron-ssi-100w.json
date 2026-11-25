@@ -29,10 +29,65 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 25.7,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "System Status Indicators",
     "notes": "[AVAIL] dims from Extron specifications",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "a902aecf-664e-4f52-a494-62d56e819750",
+      "label": "Extron SSI 100W",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power.",
+      "poeDrawW": 12.95,
+      "id": "port-0"
+    },
+    {
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw.",
+      "id": "port-1"
+    },
+    {
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output on a 2-pole 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "+24VDC Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "+24VDC, 50mA fixed power output for driving a downstream sensor.",
+      "id": "port-3"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 1.5A PSU brick (18W, sold separately) — alternate to PoE.",
+      "id": "port-4"
+    }
+  ]
 }

@@ -29,11 +29,63 @@
   "thermalBtuh": 34.5,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "3G-SDI to HDMI Scaler with Audio Embedding",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "6da9e7c1-c1a8-44a6-a6ed-60a96a8b1d94",
+      "label": "Extron DSC 3G-HD A",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "SDI In",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "SDI Loop",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "Loop-through of the SDI input (passive).",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI/DVI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-3"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
+      "id": "port-4"
+    }
+  ]
 }

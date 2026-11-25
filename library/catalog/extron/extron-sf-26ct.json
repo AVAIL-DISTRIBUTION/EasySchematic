@@ -24,10 +24,27 @@
   "depthMm": 270,
   "weightKg": 4.3,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "SoundField XD 6.5\" Two-Way Ceiling Speaker with 8\" Composite Back Can and 70/100 V Transformer, Pair",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "67782401-b50e-42bc-9b36-f6fe167f7cc3",
+      "label": "Extron SF 26CT",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

@@ -26,11 +26,47 @@
   "voltage": "12V DC",
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/8 rack",
     "rackUnits": 1,
     "description": "Priority Page Controller",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bf285b9a-a10c-4219-ae29-250ed367d89d",
+      "label": "Extron PPC 25",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Paging Sensor In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "notes": "Paging audio-sense input on a 2-pole 3.5mm captive screw (VOX detection from a paging signal source).",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Relay Out (Latching)",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "notes": "Latching contact-closure output (24V, 1A normally-open) on a 2-pole 3.5mm captive screw — drives a downstream amp's standby/mute input when paging is active.",
+      "id": "port-1",
+      "section": "Relays"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "12VDC, 33mA — power input via 2-pole captive screw. PSU not included; can share with another Extron device's auxiliary power output.",
+      "id": "port-2"
+    }
+  ]
 }

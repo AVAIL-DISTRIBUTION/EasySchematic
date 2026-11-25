@@ -30,10 +30,67 @@
   "thermalBtuh": 7.4,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "6f186096-9427-4fd9-849c-d7af0954982d",
+      "label": "Extron USB Extender XI R",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "CAT 6",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-1",
+      "label": "USB Device 1 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-a"
+    },
+    {
+      "id": "tpl-2",
+      "label": "USB Device 2 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-a"
+    },
+    {
+      "id": "tpl-3",
+      "label": "USB Device 3 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-a"
+    },
+    {
+      "id": "tpl-4",
+      "label": "USB Device 4 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-a"
+    },
+    {
+      "id": "tpl-5",
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel"
+    }
+  ]
 }

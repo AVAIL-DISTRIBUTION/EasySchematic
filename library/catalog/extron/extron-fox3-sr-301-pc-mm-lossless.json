@@ -22,12 +22,74 @@
   ],
   "slotFamily": "extron-fox3-powercage",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Lossless",
     "deviceTypeSource": "fiber-transmitter",
     "description": "PowerCage Fiber Optic Scaling Receiver for HDMI with Embedded Audio, USB, and RS-232",
     "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c9f57d4e-472b-43ff-a416-6140695b361b",
+      "label": "Extron FOX3 SR 301 PC MM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Fiber",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232 Pass-through",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB HID 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB type A (HID peripheral port — keyboard/mouse). Max 100 mA.",
+      "id": "port-3"
+    },
+    {
+      "label": "USB HID 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB type A (second HID port). Max 100 mA.",
+      "id": "port-4"
+    },
+    {
+      "label": "USB 2.0",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB type A (USB 2.0 hub port). Max 500 mA.",
+      "id": "port-5"
+    }
+  ]
 }

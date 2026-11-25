@@ -30,11 +30,151 @@
   "thermalBtuh": 94,
   "rackForm": "full",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U Full rack",
     "rackUnits": 1,
     "description": "4K/60 Multi-Recording and Streaming w/12G-SDI",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d3a9e288-b148-41c1-b9dd-e618f883eec8",
+      "label": "Extron SMP 401 12G-SDI",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "SDI In (12G/6G/3G/HD/SD)",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "notes": "Single 12G/6G/3G/HD/SD-SDI input on a female BNC.",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out (Confidence)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio In 1 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo line OR 2 mono mic/line on a 5-pole 3.5mm captive screw. Software-switchable mic preamp + phantom power available.; Stereo or 2× mono mic/line",
+      "id": "port-8"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Stereo balanced/unbalanced audio on a 5-pole 3.5mm captive screw.",
+      "id": "port-9"
+    },
+    {
+      "label": "LAN / Streaming 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Primary streaming network port.",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN / Streaming 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Secondary streaming network port (independent IP / VLAN).",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-13"
+    },
+    {
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.1 Type-A — front-panel.",
+      "id": "port-10"
+    },
+    {
+      "label": "USB-A (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.1 Type-A — rear-panel.",
+      "id": "port-11"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS / DSP Configurator (USB 2.0).",
+      "id": "port-12"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-14"
+    }
+  ]
 }

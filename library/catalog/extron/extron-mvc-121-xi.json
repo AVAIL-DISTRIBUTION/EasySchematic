@@ -29,11 +29,128 @@
   "thermalBtuh": 13,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Three Source Audio Mixer with DSP",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "7e19990c-1ce1-4743-b59e-79c418498b15",
+      "label": "Extron MVC 121 xi",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-0"
+    },
+    {
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-1"
+    },
+    {
+      "label": "Stereo Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo line-level input on a 6-pole 3.5mm captive screw (balanced/unbalanced).",
+      "id": "port-2"
+    },
+    {
+      "label": "Variable Stereo Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Variable stereo line-level output on a 6-pole captive screw (volume-controlled, -100 dB to 0 dB).",
+      "id": "port-3"
+    },
+    {
+      "label": "Fixed Stereo Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Fixed-gain stereo line-level output on a 6-pole captive screw (-24 dB to +12 dB trim).",
+      "id": "port-4"
+    },
+    {
+      "label": "Digital In 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-7"
+    },
+    {
+      "label": "Digital In 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-8"
+    },
+    {
+      "label": "Digital In 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-9"
+    },
+    {
+      "label": "Digital In 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-10"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-5"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Configuration",
+      "notes": "Front-panel USB-C for configuration (USB 2.0 low/high speed).",
+      "id": "port-6"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
+      "id": "port-11"
+    }
+  ]
 }

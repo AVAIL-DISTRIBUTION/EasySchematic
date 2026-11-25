@@ -29,12 +29,165 @@
   "thermalBtuh": 381,
   "rackForm": "full",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "ECO Standby",
     "rackFormSource": "1U Full rack",
     "rackUnits": 1,
     "description": "8 Ch Flexible Output Amp w/ ECO Standby, 200 Watts",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "5202b484-663f-4d41-a652-129378f7c65b",
+      "label": "Extron XPA U 2008 FX",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-2",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-4",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-5",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-6",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-7",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-8",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-9",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-10",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-11",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 5",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-12",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 6",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-13",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 7",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-14",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Speaker Out 8",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-15",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "Standby Control",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-16"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-17"
+    }
+  ]
 }

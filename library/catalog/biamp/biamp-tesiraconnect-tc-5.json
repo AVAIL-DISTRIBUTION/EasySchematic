@@ -28,9 +28,66 @@
   "voltage": "100-240V AC",
   "unitCost": 1575,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "5-port expansion device",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c096cd6c-70ea-41a9-b8ec-bcd849d25106",
+      "label": "Biamp TesiraCONNECT TC-5",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p17762061450000-p1",
+      "label": "Port 1 (Control)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762061450001-p2",
+      "label": "Port 2 (AVB / PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762061450002-p3",
+      "label": "Port 3 (AVB / PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762061450003-p4",
+      "label": "Port 4 (AVB / PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762061450004-p5",
+      "label": "Port 5 (AVB / PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762061450005-pwr",
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power"
+    }
+  ]
 }

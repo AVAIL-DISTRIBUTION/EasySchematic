@@ -29,11 +29,125 @@
   "thermalBtuh": 95.7,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Three Input 4K/60 Switcher with Integrated DTP3 Transmitter",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "extron-dtp3-t-203.json",
+      "label": "Extron DTP3 T 203",
+      "match": "part-number",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "p1795168231268-33-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "p1795168231268-33-1"
+    },
+    {
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "id": "p1795168231268-33-2",
+      "notes": "DP 1.2 Alt Mode, 4 HBR2 lanes; USB-C charging up to 60 W (45 W with DTP3 Send Power on)"
+    },
+    {
+      "label": "HDMI Out (Loop)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "p1795168231268-33-3",
+      "notes": "Mirrors the DTP3 output, CEC"
+    },
+    {
+      "label": "DTP3 Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "id": "p1795168231268-33-4",
+      "notes": "To a DTP3 / DTP / HDBaseT receiver (mode switch); can power a DTP3 receiver remotely"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "p1795168231268-33-6",
+      "notes": "10/100Base-T"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "p1795168231268-33-7",
+      "notes": "Remote control of the unit, 3-pole 3.5 mm captive screw"
+    },
+    {
+      "id": "p1795168231268-33-11",
+      "label": "RS-232 (Over TP)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix",
+      "notes": "Pass-through to the far-end DTP3 device, 3-pole 3.5 mm captive screw"
+    },
+    {
+      "label": "Contact Closure",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "p1795168231268-33-8",
+      "notes": "Contacts 1-3 + G, 4-pole 3.5 mm captive screw"
+    },
+    {
+      "label": "Tally Out",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "p1795168231268-33-9",
+      "notes": "Tally 1-3 + 5 VDC, 4-pole 3.5 mm captive screw"
+    },
+    {
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Configuration",
+      "id": "p1795168231268-33-5",
+      "notes": "USB 2.0 low speed"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "p1795168231268-33-10",
+      "notes": "Internal PSU, 100-240 VAC"
+    }
+  ]
 }

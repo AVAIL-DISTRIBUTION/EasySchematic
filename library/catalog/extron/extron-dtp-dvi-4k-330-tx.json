@@ -30,11 +30,68 @@
   "thermalBtuh": 10.3,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Long Distance DVI Twisted Pair Transmitter - 330 feet (100 m)",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d8d9d047-0628-42c1-bbfd-c3181c380d32",
+      "label": "Extron DTP DVI 4K 330 Tx",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "DVI In",
+      "signalType": "dvi",
+      "direction": "input",
+      "connectorType": "dvi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "DVI Loop-Through",
+      "signalType": "dvi",
+      "direction": "output",
+      "connectorType": "dvi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "DTP Out (RJ-45)",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "Audio In (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232 / IR (Pass-through)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-4"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-5"
+    }
+  ]
 }

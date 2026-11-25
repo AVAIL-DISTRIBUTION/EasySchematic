@@ -27,10 +27,36 @@
   "voltage": "12V DC",
   "thermalBtuh": 2.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Audio Control Panel with Volume and Mute - Decorator-Style",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bd128af5-ccdc-4569-ae11-27efd23a2df2",
+      "label": "Extron ACP VC1 D",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "ACP Bus 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-0",
+      "notes": "bus-powered (ACP)"
+    },
+    {
+      "label": "ACP Bus 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-1"
+    }
+  ]
 }

@@ -30,15 +30,547 @@
   "voltage": "200-240V AC",
   "thermalBtuh": 5577.2,
   "rackForm": "full",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "I/O Slot 1",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-2",
+      "label": "I/O Slot 2",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-3",
+      "label": "I/O Slot 3",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-4",
+      "label": "I/O Slot 4",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-5",
+      "label": "I/O Slot 5",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-6",
+      "label": "I/O Slot 6",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-7",
+      "label": "I/O Slot 7",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-8",
+      "label": "I/O Slot 8",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-9",
+      "label": "I/O Slot 9",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-10",
+      "label": "I/O Slot 10",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-11",
+      "label": "I/O Slot 11",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-12",
+      "label": "I/O Slot 12",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-13",
+      "label": "I/O Slot 13",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-14",
+      "label": "I/O Slot 14",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-15",
+      "label": "I/O Slot 15",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-16",
+      "label": "I/O Slot 16",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-17",
+      "label": "I/O Slot 17",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-18",
+      "label": "I/O Slot 18",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-19",
+      "label": "I/O Slot 19",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-20",
+      "label": "I/O Slot 20",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-21",
+      "label": "I/O Slot 21",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-22",
+      "label": "I/O Slot 22",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-23",
+      "label": "I/O Slot 23",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-24",
+      "label": "I/O Slot 24",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-25",
+      "label": "I/O Slot 25",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-26",
+      "label": "I/O Slot 26",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-27",
+      "label": "I/O Slot 27",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-28",
+      "label": "I/O Slot 28",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-29",
+      "label": "I/O Slot 29",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-30",
+      "label": "I/O Slot 30",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-31",
+      "label": "I/O Slot 31",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-32",
+      "label": "I/O Slot 32",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-33",
+      "label": "I/O Slot 33",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-34",
+      "label": "I/O Slot 34",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-35",
+      "label": "I/O Slot 35",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-36",
+      "label": "I/O Slot 36",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-37",
+      "label": "I/O Slot 37",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-38",
+      "label": "I/O Slot 38",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-39",
+      "label": "I/O Slot 39",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-40",
+      "label": "I/O Slot 40",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-41",
+      "label": "I/O Slot 41",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-42",
+      "label": "I/O Slot 42",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-43",
+      "label": "I/O Slot 43",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-44",
+      "label": "I/O Slot 44",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-45",
+      "label": "I/O Slot 45",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-46",
+      "label": "I/O Slot 46",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-47",
+      "label": "I/O Slot 47",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-48",
+      "label": "I/O Slot 48",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-49",
+      "label": "I/O Slot 49",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-50",
+      "label": "I/O Slot 50",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-51",
+      "label": "I/O Slot 51",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-52",
+      "label": "I/O Slot 52",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-53",
+      "label": "I/O Slot 53",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-54",
+      "label": "I/O Slot 54",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-55",
+      "label": "I/O Slot 55",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-56",
+      "label": "I/O Slot 56",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-57",
+      "label": "I/O Slot 57",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-58",
+      "label": "I/O Slot 58",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-59",
+      "label": "I/O Slot 59",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-60",
+      "label": "I/O Slot 60",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-61",
+      "label": "I/O Slot 61",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-62",
+      "label": "I/O Slot 62",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-63",
+      "label": "I/O Slot 63",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-64",
+      "label": "I/O Slot 64",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-65",
+      "label": "I/O Slot 65",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-66",
+      "label": "I/O Slot 66",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-67",
+      "label": "I/O Slot 67",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-68",
+      "label": "I/O Slot 68",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-69",
+      "label": "I/O Slot 69",
+      "slotFamily": "extron-fox3-matrix"
+    },
+    {
+      "id": "slot-70",
+      "label": "I/O Slot 70",
+      "slotFamily": "extron-fox3-matrix"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "21U Full rack",
     "rackUnits": 21,
     "slotFamilies": [
       "extron-fox3-matrix"
     ],
     "description": "Modular Fiber Optic Matrix Switcher from 8x8 to 560x560",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "85e7f9a2-ef03-4467-91de-27576213eba9",
+      "label": "Extron FOX3 Matrix 560x IPCP Pro",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-3"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-4"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole captive screw, balanced/unbalanced stereo line.",
+      "id": "port-7"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit control. Default 192.168.254.254.",
+      "id": "port-13"
+    },
+    {
+      "label": "IPCP LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "IPCP Pro Q xi Ethernet (control / serial-over-IP).",
+      "id": "port-14"
+    },
+    {
+      "label": "IPCP LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "IPCP Pro Q xi second Ethernet (redundant / isolated network).",
+      "id": "port-15"
+    },
+    {
+      "label": "AT 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Dante / AES67 software-selectable. Up to 32 stereo Tx + 32 stereo Rx.",
+      "id": "port-8"
+    },
+    {
+      "label": "AT 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Dante / AES67 second port (redundant or daisy-chain).",
+      "id": "port-9"
+    },
+    {
+      "label": "IPCP RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "IPCP Pro Q xi bidirectional RS-232. 3-pole captive screw.",
+      "id": "port-16"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front-panel USB Mini-B for direct PC config (Ethernet over USB).",
+      "id": "port-11"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole captive screw. 300-115200 baud (default 9600), 8-N-1.",
+      "id": "port-12"
+    },
+    {
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Extron proprietary expansion bus. 8 stereo Tx + 8 stereo Rx, shielded CAT6 up to 10 m.",
+      "id": "port-10"
+    },
+    {
+      "label": "AC Power (Primary)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec-c20",
+      "section": "Power",
+      "notes": "Primary internal PSU. IEC 60320 C20 mains 100-240 VAC, 50-60 Hz.",
+      "id": "port-17"
+    },
+    {
+      "label": "AC Power (Redundant)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec-c20",
+      "section": "Power",
+      "notes": "Redundant internal PSU. IEC 60320 C20 mains 100-240 VAC, 50-60 Hz.",
+      "id": "port-18"
+    }
+  ]
 }

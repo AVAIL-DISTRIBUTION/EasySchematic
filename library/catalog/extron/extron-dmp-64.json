@@ -28,11 +28,208 @@
   "thermalBtuh": 45.8,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "6x4 ProDSP Digital Matrix Processor",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bd12bf07-2e1a-4162-bc30-c8c5775c1af2",
+      "label": "Extron DMP 64",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-0"
+    },
+    {
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-1"
+    },
+    {
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-2"
+    },
+    {
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-3"
+    },
+    {
+      "label": "Mic/Line In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-4"
+    },
+    {
+      "label": "Mic/Line In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono mic/line input, balanced/unbalanced. +48V phantom power switchable per input.",
+      "id": "port-5"
+    },
+    {
+      "label": "Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-6"
+    },
+    {
+      "label": "Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-7"
+    },
+    {
+      "label": "Line Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-8"
+    },
+    {
+      "label": "Line Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-9"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-13"
+    },
+    {
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-14"
+    },
+    {
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-15"
+    },
+    {
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-16"
+    },
+    {
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-17"
+    },
+    {
+      "label": "Digital I/O 5",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-18"
+    },
+    {
+      "label": "Digital I/O 6",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-19"
+    },
+    {
+      "label": "RS-232 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-10"
+    },
+    {
+      "label": "RS-232 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-11"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for configuration (USB 2.0).",
+      "id": "port-12"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
+      "id": "port-20"
+    }
+  ]
 }

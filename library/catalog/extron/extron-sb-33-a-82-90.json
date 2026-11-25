@@ -27,10 +27,82 @@
   "voltage": "100-240V AC",
   "thermalBtuh": 13,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Adjustable Width Sound Bar for 82\" to 90\" Displays",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "795c806b-5a17-4149-9b86-4b9092731fc0",
+      "label": "Extron SB 33 A 82-90",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In (5-pole Captive)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Main stereo balanced/unbalanced input on a 5-pole 3.5mm captive screw.",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio In (TRS)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "Stereo unbalanced on a 3.5mm TRS mini jack.",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "rca",
+      "section": "Audio Inputs",
+      "notes": "Stereo unbalanced on an RCA pair.",
+      "id": "port-2"
+    },
+    {
+      "label": "DC Volume Control",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "0-10VDC volume control input on a 3-pole 3.5mm captive screw (+10VDC ref / variable / GND). Modeled as analog-audio per session 4 convention.",
+      "id": "port-3"
+    },
+    {
+      "label": "Switched 12VDC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "Switched 12VDC peripheral power output (2-pole captive). 2 of 3 internal switched DC outputs are user-accessible.",
+      "id": "port-4"
+    },
+    {
+      "label": "Switched 12VDC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "Switched 12VDC peripheral power output (2-pole captive).",
+      "id": "port-5"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC, 4.2A PSU (IEC mains).",
+      "id": "port-6"
+    }
+  ]
 }

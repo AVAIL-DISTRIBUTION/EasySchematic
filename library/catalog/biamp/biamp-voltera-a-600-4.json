@@ -27,10 +27,131 @@
   "voltage": "100-240V AC",
   "unitCost": 1802,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Four-channel, 600-watt analog amplifier",
     "notes": "Та же модель под другим артикулом: 920-01947-00001; Характеристики с сайта по артикулу 920-01947-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "725119b6-1738-4110-bdf5-761d912b6774",
+      "label": "Biamp Voltera A 600.4",
+      "match": "model-name",
+      "status": "raw",
+      "level": "B"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p17809023986450-e5h",
+      "label": "INPUT 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17809023986451-hx9",
+      "label": "INPUT 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17809023986452-xkj",
+      "label": "INPUT 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17809023986453-ml4",
+      "label": "INPUT 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "p17809023986454-fu5",
+      "label": "OUTPUT 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17809023986455-gi3",
+      "label": "OUTPUT 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17809023986456-3n1",
+      "label": "OUTPUT 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17809023986457-nyd",
+      "label": "OUTPUT 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p178090239864512-cbm",
+      "label": "LOGIC I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O"
+    },
+    {
+      "id": "p17809023986458-05t",
+      "label": "VC1",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control"
+    },
+    {
+      "id": "p17809023986459-wmu",
+      "label": "VC2",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control"
+    },
+    {
+      "id": "p178090239864510-zqd",
+      "label": "VC3",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control"
+    },
+    {
+      "id": "p178090239864511-ubo",
+      "label": "VC4",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control"
+    },
+    {
+      "id": "p178090239864513-fks",
+      "label": "100-240 VAC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    }
+  ]
 }

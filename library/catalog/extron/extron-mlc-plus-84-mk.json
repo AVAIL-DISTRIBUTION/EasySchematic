@@ -29,10 +29,92 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 8.9,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "MediaLink® Plus Controller - MK Wallplate",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3cf38a2c-d0e6-4ad9-b6a5-4cd9d9dfe706",
+      "label": "Extron MLC Plus 84 MK",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 4,
+      "id": "port-0"
+    },
+    {
+      "label": "COM 1 (RS-232)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-1"
+    },
+    {
+      "label": "COM 2 (RS-232)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-2"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "id": "port-3"
+    },
+    {
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-5"
+    },
+    {
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-6"
+    },
+    {
+      "label": "Digital Input",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "id": "port-4"
+    },
+    {
+      "label": "Volume Control (0-10VDC)",
+      "signalType": "control-voltage",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-7"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-8"
+    }
+  ]
 }

@@ -28,11 +28,98 @@
   "thermalBtuh": 26.2,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "XTP Fiber Optic Transmitter for HDMI - Multimode",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "0a737ca9-ba9e-4f93-b51d-e43d3407d548",
+      "label": "Extron XTP FT HD 4K MM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "XTP Fiber Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "OM4 multimode (≤500 m / SM ≤10 km). Fiber link carries video/audio/Ethernet/control.",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3.5mm 5-pole captive screw, stereo balanced/unbalanced. Embeds onto the XTP link.",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole 3.5mm captive screw (3 pins used). Host SIS control + IR pass-through pins on same connector.",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Pass-through",
+      "signalType": "ir",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "2-pole 3.5mm captive screw. Carries IR pass-through to the remote endpoint (30-56 kHz TTL).",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front/rear panel USB Mini-B (USB 2.0, Ethernet-over-USB) for setup and firmware.",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-6"
+    },
+    {
+      "label": "DC 12V",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC Extron Everlast PSU brick (100-240 VAC universal input). Endpoint also supports remote power over XTP.",
+      "id": "port-8"
+    }
+  ]
 }

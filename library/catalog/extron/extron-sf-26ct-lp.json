@@ -24,10 +24,27 @@
   "depthMm": 270,
   "weightKg": 3.9,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "SoundField XD Low Profile 6.5\" Two-Way Ceiling Speaker with 4.2\" Composite Back, Complete Pair",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3bcd30c4-35e4-4b7a-8e80-82b4376f27d4",
+      "label": "Extron SF 26CT LP",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

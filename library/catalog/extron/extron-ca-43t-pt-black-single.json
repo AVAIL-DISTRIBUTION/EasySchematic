@@ -24,11 +24,28 @@
   "depthMm": 127,
   "weightKg": 4.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black, Single",
     "rackFormSource": "Non-rack",
     "description": "Pan and Tilt Mount, Single, Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c823d7bd-433c-422e-bdee-e70d5af48197",
+      "label": "Extron CA 43T PT, Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

@@ -27,9 +27,36 @@
   "weightKg": 0.2,
   "unitCost": 1096,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Expansion AVB Beamtracking ceiling microphone, black pendant",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "4648353a-cb09-4963-b2d9-436e3e7ce8bf",
+      "label": "Biamp Parlé TCM-1EX",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "1d4f6978",
+      "label": "IN",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    },
+    {
+      "id": "fc5ce6ae",
+      "label": "OUT",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    }
+  ]
 }

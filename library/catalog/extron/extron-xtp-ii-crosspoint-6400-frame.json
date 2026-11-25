@@ -30,8 +30,170 @@
   "voltage": "200-240V AC",
   "thermalBtuh": 942,
   "rackForm": "full",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-6",
+      "label": "Slot 6",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-7",
+      "label": "Slot 7",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-8",
+      "label": "Slot 8",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-9",
+      "label": "Slot 9",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-10",
+      "label": "Slot 10",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-11",
+      "label": "Slot 11",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-12",
+      "label": "Slot 12",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-13",
+      "label": "Slot 13",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-14",
+      "label": "Slot 14",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-15",
+      "label": "Slot 15",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-16",
+      "label": "Slot 16",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-17",
+      "label": "Slot 17",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-18",
+      "label": "Slot 18",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-19",
+      "label": "Slot 19",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-20",
+      "label": "Slot 20",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-21",
+      "label": "Slot 21",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-22",
+      "label": "Slot 22",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-23",
+      "label": "Slot 23",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-24",
+      "label": "Slot 24",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-25",
+      "label": "Slot 25",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-26",
+      "label": "Slot 26",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-27",
+      "label": "Slot 27",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-28",
+      "label": "Slot 28",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-29",
+      "label": "Slot 29",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-30",
+      "label": "Slot 30",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-31",
+      "label": "Slot 31",
+      "slotFamily": "extron-xtp-2"
+    },
+    {
+      "id": "slot-32",
+      "label": "Slot 32",
+      "slotFamily": "extron-xtp-2"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "20U Full rack",
     "rackUnits": 20,
     "slotFamilies": [
@@ -39,7 +201,61 @@
     ],
     "description": "Modular Digital Matrix Switchers from 4x4 to 64x64 with SpeedSwitch Technology, North America NEMA L6-20 Power Plug",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "b6e84f00-6e9c-4e63-bd39-4e6847de4ca5",
+      "label": "Extron XTP II CrossPoint 6400 Frame North Am",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100Base-T control. Default 192.168.254.254.",
+      "id": "port-0"
+    },
+    {
+      "label": "RS-232 / RS-422",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "db9",
+      "section": "Control",
+      "notes": "Rear panel female 9-pin D. Selectable RS-232 / RS-422. 9600 (default) to 115200 baud.",
+      "id": "port-1"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "Front panel USB Mini-B for direct PC config. USB 2.0 low speed.",
+      "id": "port-2"
+    },
+    {
+      "label": "AC Power (Primary)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec-c20",
+      "section": "Power",
+      "notes": "Hot-swappable Everlast PSU (redundant pair). IEC C20 inlet, 200-240 VAC, 50-60 Hz. Includes North American power cord (NEMA L6-20).",
+      "id": "port-3"
+    },
+    {
+      "label": "AC Power (Redundant)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec-c20",
+      "section": "Power",
+      "notes": "Hot-swappable Everlast PSU (redundant pair). IEC C20 inlet, 200-240 VAC, 50-60 Hz. Includes North American power cord (NEMA L6-20).",
+      "id": "port-4"
+    }
+  ]
 }

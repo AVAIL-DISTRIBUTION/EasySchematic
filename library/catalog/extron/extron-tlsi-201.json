@@ -30,11 +30,47 @@
   "thermalBtuh": 26.3,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Interactive Wayfinding Interface",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "aa4a3df0-797a-4847-84c2-ad25237a62df",
+      "label": "Extron TLSI 201",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI Out (Scheduler Display)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T with 802.3at PoE+ (Class 4) input. Carries data + power.",
+      "poeDrawW": 25.5,
+      "id": "port-1"
+    },
+    {
+      "label": "USB-A",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A receptacle for connecting peripherals or USB storage. 480 mA power available.",
+      "id": "port-2"
+    }
+  ]
 }

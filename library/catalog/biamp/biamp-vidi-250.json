@@ -25,10 +25,27 @@
   "depthMm": 70,
   "unitCost": 650,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "4K conferencing camera",
     "notes": "[AVAIL] USB-C bus-powered",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "biamp-vidi-250.json",
+      "label": "Biamp Vidi 250",
+      "match": "part-number",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "vidi250-usbc",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB 3.0 video/data; bus-powered (USB), < 10 W"
+    }
+  ]
 }

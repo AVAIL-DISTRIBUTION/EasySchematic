@@ -24,11 +24,28 @@
   "depthMm": 127,
   "weightKg": 12.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White, 8 Ohm, Single",
     "rackFormSource": "Non-rack",
     "description": "Low-Profile Mount, Single, 8 Ohm, White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e391cca7-f583-42a2-aa8c-cc3a86c64671",
+      "label": "Extron CA 163 LP, 8 Ohm, White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

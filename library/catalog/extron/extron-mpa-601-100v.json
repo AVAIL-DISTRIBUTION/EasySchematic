@@ -29,11 +29,89 @@
   "thermalBtuh": 26,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "One Channel Amp, 60 watts at 100 volts",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "161f7a9e-bf32-46e8-8267-11e1766e6d12",
+      "label": "Extron MPA 601-100V",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In (TRS)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "notes": "Stereo 3.5mm mini-jack (TRS) — single-stereo-source convention: 1 port.",
+      "id": "port-2",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In (RCA)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "rca",
+      "notes": "Stereo RCA pair — single-stereo-source convention: 1 port.",
+      "id": "port-3",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Speaker Out (70V/100V)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-4",
+      "section": "Speaker Outputs"
+    },
+    {
+      "label": "DC Volume Control",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "0-10VDC analog volume control input (3-pole captive screw, +10VDC reference / variable input / GND). Modeled as analog-audio per src/types.ts (no control-voltage SignalType).",
+      "id": "port-5"
+    },
+    {
+      "label": "Standby Control",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Standby contact-closure on 3.5mm 2-pole captive screw.",
+      "id": "port-6"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 4.2A PSU brick (50W). 2.1mm/2.5mm barrel jack on device end.",
+      "id": "port-7"
+    }
+  ]
 }

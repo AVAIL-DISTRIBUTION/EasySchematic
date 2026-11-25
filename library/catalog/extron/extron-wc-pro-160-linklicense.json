@@ -29,11 +29,109 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 25.7,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "LinkLicense",
     "rackFormSource": "Non-rack",
     "description": "Workspace Automation Controller with EDID Minder, LL WC Upgrade",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "0b80a8a5-1783-4340-9f66-bf5597ceffd0",
+      "label": "Extron WC PRO 160",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Stereo balanced/unbalanced line on a 5-pole 3.5mm captive screw, variable level.",
+      "id": "port-7"
+    },
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power.",
+      "poeDrawW": 12.95,
+      "id": "port-2"
+    },
+    {
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
+      "id": "port-5"
+    },
+    {
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
+      "id": "port-6"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Programmable TTL-level (0-5V) IR output (carrier and non-carrier, up to 300 kHz) on a 2-pole 3.5mm captive screw.",
+      "id": "port-4"
+    },
+    {
+      "label": "+24VDC Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "+24VDC, 75 mA fixed power output for driving an external sensor or accessory. 2-pole captive screw.",
+      "id": "port-8"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 1.5A PSU brick (18W) — sold separately. Alternate: PoE on the LAN port.",
+      "id": "port-9"
+    }
+  ]
 }

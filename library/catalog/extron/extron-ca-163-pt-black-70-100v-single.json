@@ -24,11 +24,28 @@
   "depthMm": 127,
   "weightKg": 12.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black, 70/100V, Single",
     "rackFormSource": "Non-rack",
     "description": "Pan and Tilt Mount, Single, 70/100V, Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "643490aa-205c-426f-95bd-6d54a6c5bf12",
+      "label": "Extron CA 163 PT, 70/100V, Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

@@ -29,11 +29,168 @@
   "thermalBtuh": 12.2,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Four Input 4K/60 HDMI Switcher",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "61fdd9a5-0a5c-4591-95b1-16789b5f7f14",
+      "label": "Extron SW4 HD 4K PLUS",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "Line Out (de-embedded)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced/unbalanced stereo line-level on a 5-pole 3.5mm captive screw.",
+      "id": "port-5"
+    },
+    {
+      "label": "Contact Closure 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Contact-closure input selects this input. 3-pole captive screw (shared with the matching tally output on smaller variants).",
+      "id": "port-6"
+    },
+    {
+      "label": "Contact Closure 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Contact-closure input selects this input. 3-pole captive screw (shared with the matching tally output on smaller variants).",
+      "id": "port-7"
+    },
+    {
+      "label": "Contact Closure 3",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Contact-closure input selects this input. 3-pole captive screw (shared with the matching tally output on smaller variants).",
+      "id": "port-8"
+    },
+    {
+      "label": "Contact Closure 4",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Contact-closure input selects this input. 3-pole captive screw (shared with the matching tally output on smaller variants).",
+      "id": "port-9"
+    },
+    {
+      "label": "Tally Out 1",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Tally output indicating active input. Open-collector, 3-pole captive screw (shared with contact closure on smaller variants).",
+      "id": "port-10"
+    },
+    {
+      "label": "Tally Out 2",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Tally output indicating active input. Open-collector, 3-pole captive screw (shared with contact closure on smaller variants).",
+      "id": "port-11"
+    },
+    {
+      "label": "Tally Out 3",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Tally output indicating active input. Open-collector, 3-pole captive screw (shared with contact closure on smaller variants).",
+      "id": "port-12"
+    },
+    {
+      "label": "Tally Out 4",
+      "signalType": "tally",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Tally output indicating active input. Open-collector, 3-pole captive screw (shared with contact closure on smaller variants).",
+      "id": "port-13"
+    },
+    {
+      "label": "Tally Power (+5V)",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "+5 VDC, 0.2A power output for driving tally indicators.",
+      "id": "port-14"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-15"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
+      "id": "port-16"
+    }
+  ]
 }

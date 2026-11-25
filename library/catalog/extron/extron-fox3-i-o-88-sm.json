@@ -21,10 +21,147 @@
   ],
   "slotFamily": "extron-fox3-matrix",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-fox3-matrix)",
     "description": "8x8 Input/Output Board for FOX3 Matrix - Singlemode",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "cff6988e-4135-43bf-87d3-56241e991633",
+      "label": "Extron FOX3 I/O 88 SM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Fiber In 1",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "Fiber In 2",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Fiber In 3",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Fiber In 4",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "Fiber In 5",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "Fiber In 6",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Fiber In 7",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-6"
+    },
+    {
+      "label": "Fiber In 8",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "lc",
+      "section": "Video Inputs",
+      "id": "port-7"
+    },
+    {
+      "label": "Fiber Out 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-8"
+    },
+    {
+      "label": "Fiber Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-9"
+    },
+    {
+      "label": "Fiber Out 3",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-10"
+    },
+    {
+      "label": "Fiber Out 4",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-11"
+    },
+    {
+      "label": "Fiber Out 5",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-12"
+    },
+    {
+      "label": "Fiber Out 6",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-13"
+    },
+    {
+      "label": "Fiber Out 7",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-14"
+    },
+    {
+      "label": "Fiber Out 8",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "id": "port-15"
+    }
+  ]
 }

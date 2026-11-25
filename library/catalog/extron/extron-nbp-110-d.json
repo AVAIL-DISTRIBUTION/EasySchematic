@@ -29,10 +29,28 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 6.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Network Button Panel with 10 Buttons - Decorator-Style Wallplate",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "6b4f56db-edfb-4628-b2a6-f59b711ddfbd",
+      "label": "Extron NBP 110",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Ethernet / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-0",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
 }

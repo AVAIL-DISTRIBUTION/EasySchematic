@@ -29,12 +29,102 @@
   "thermalBtuh": 65.5,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "SM",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "1G Fiber HDMI, Ethernet, USB Scaling Decoder - Singlemode",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e6214881-9518-4f38-b393-70e3a00571e5",
+      "label": "Extron NAV SD 511 SM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "HDMI output from decoded NAV stream. Also carries CEC.",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pole 3.5mm captive screw, balanced/unbalanced stereo. De-embedded from decoded HDMI / NAV audio stream.",
+      "id": "port-2"
+    },
+    {
+      "label": "NAV (Fiber)",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1G SFP fiber slot carrying PURE3 video / audio over IP / AES67 — 2 LC connectors per SFP (1000Base-LX SM or 1000Base-SX MM).",
+      "id": "port-0"
+    },
+    {
+      "label": "EXT",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Network-extension daisy-chain port (1Gbps). Pass-through for downstream NAV devices.",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 5-pole 3.5mm captive screw shared with IR. Pin configuration Tx/Rx/Gnd.",
+      "id": "port-5"
+    },
+    {
+      "label": "IR",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "TTL-level IR (carrier 30-300 kHz) on a 5-pole 3.5mm captive screw shared with RS-232. Pin configuration S/Gnd.",
+      "id": "port-6"
+    },
+    {
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB 2.0 high-speed extension over the NAV link. Single physical USB-C port configurable as host or device mode.",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for Ethernet-over-USB device configuration.",
+      "id": "port-7"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC PSU input (100-240VAC brick). Local power only — fiber NAV variants cannot be PoE-powered.",
+      "id": "port-8"
+    }
+  ]
 }

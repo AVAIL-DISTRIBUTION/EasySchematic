@@ -21,11 +21,132 @@
   ],
   "slotFamily": "extron-xtp-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-xtp2-crosspoint)",
     "description": "Four Output Board, XTP 4K with IR/RS-232 Insertion - 26W Remote Power Capable",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "b3258ad4-e2f6-45bf-b108-1003b3a78ebd",
+      "label": "Extron XTP CP 4o 4K",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "XTP Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config.",
+      "poeBudgetW": 18.75,
+      "id": "port-0"
+    },
+    {
+      "label": "XTP Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config.",
+      "poeBudgetW": 18.75,
+      "id": "port-1"
+    },
+    {
+      "label": "XTP Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config.",
+      "poeBudgetW": 18.75,
+      "id": "port-2"
+    },
+    {
+      "label": "XTP Out 4",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "XTP twisted pair output (HDMI/DVI/audio/RS-232/IR/Ethernet over shielded CATx, up to 100m). Selectable XTP / HDBaseT / DTP modes per chassis config.",
+      "poeBudgetW": 18.75,
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232 / IR 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL).",
+      "id": "port-4"
+    },
+    {
+      "label": "RS-232 / IR 2",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL).",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232 / IR 3",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL).",
+      "id": "port-6"
+    },
+    {
+      "label": "RS-232 / IR 4",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "5-pole captive screw. Shared: RS-232 pass-through (pins 1-3) + IR Tx/Rx (pins 4-5, 30-56 kHz TTL).",
+      "id": "port-7"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-8"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-9"
+    },
+    {
+      "label": "LAN 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-10"
+    },
+    {
+      "label": "LAN 4",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "notes": "Ethernet pass-through to remote XTP endpoint (channel-paired). 10/100Base-T (Gen 1) or 10/100/1000Base-T (Gen 2).",
+      "id": "port-11"
+    }
+  ]
 }

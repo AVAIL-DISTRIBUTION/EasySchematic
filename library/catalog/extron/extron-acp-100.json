@@ -27,10 +27,37 @@
   "powerDrawW": 0.5,
   "thermalBtuh": 1.7,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Audio Control Panel with Volume and 6 Control Buttons – US 2-Gang",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "eac86080-07bd-46e8-8bdc-12bfdb68cdf3",
+      "label": "Extron ACP 100",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "eBUS / ACP In",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "Extron ACP differential bus on a 4-pole 3.5mm captive screw — bus-powered (+12VDC) and bus-controlled. Daisy-chain to other ACP panels via the loop port.; bus-powered (ACP)",
+      "id": "port-0"
+    },
+    {
+      "label": "eBUS / ACP Loop Out",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "Loop-through to the next ACP panel in a daisy chain.",
+      "id": "port-1"
+    }
+  ]
 }

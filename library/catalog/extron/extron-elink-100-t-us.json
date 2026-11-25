@@ -28,10 +28,37 @@
   "voltage": "5V DC",
   "thermalBtuh": 24.4,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Wireless Transmitter for HDMI (US)",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "34670215-8965-42f7-b5c5-a90ece8e158d",
+      "label": "Extron eLink 100 T US",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "Source HDMI input — encoded and transmitted wirelessly to a paired eLink 100 R receiver (no wired video output on the transmitter).",
+      "id": "port-0"
+    },
+    {
+      "label": "Power (5VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 5VDC, 2.6A PSU brick (13W).",
+      "id": "port-1"
+    }
+  ]
 }

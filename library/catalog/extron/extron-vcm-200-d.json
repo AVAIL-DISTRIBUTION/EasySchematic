@@ -28,10 +28,35 @@
   "voltage": "10V DC",
   "thermalBtuh": 0.7,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Volume and Mute Controller - Decorator-Style Wallplate",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f6d19fb5-9aa7-422e-85c2-6c37c9d0ec78",
+      "label": "Extron VCM 200 D",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Volume / Mute Control",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-0"
+    },
+    {
+      "id": "worklist-2",
+      "label": "Power 10V DC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power"
+    }
+  ]
 }

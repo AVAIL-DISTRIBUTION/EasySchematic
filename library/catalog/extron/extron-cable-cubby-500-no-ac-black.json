@@ -26,8 +26,25 @@
   "depthMm": 162,
   "weightKg": 1,
   "voltage": "125V AC",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-cubby-aap"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "No AC, Black",
     "rackFormSource": "Non-rack",
     "slotFamilies": [
@@ -35,7 +52,25 @@
     ],
     "description": "Cable Cubby 500, Black, No AC",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "4f14bf92-ab49-4248-8f02-94ac4b0b246b",
+      "label": "Extron Cable Cubby 500 Black No AC",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0",
+      "notes": "passive"
+    }
+  ]
 }

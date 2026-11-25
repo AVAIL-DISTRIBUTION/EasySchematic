@@ -31,11 +31,53 @@
   "thermalBtuh": 49.9,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "4K TouchLink® Interface",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "747ced80-fc76-4ec0-99f1-82f6636ba0f6",
+      "label": "Extron TLI Pro 201",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "LAN / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 17.3,
+      "id": "port-2"
+    },
+    {
+      "label": "USB Device (Media)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    }
+  ]
 }

@@ -22,10 +22,100 @@
   ],
   "slotFamily": "extron-quantum-ultra-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-quantum-ultra-2)",
     "description": "Four-channel 4K/60 DTP3 Input Card for Quantum Ultra II",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d623abf2-82e9-45ab-a8b2-56e8dbc96676",
+      "label": "Extron Quantum IN4DTP3",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "DTP3 In 1",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-1"
+    },
+    {
+      "label": "DTP3 In 2",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-3"
+    },
+    {
+      "label": "DTP3 In 3",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-5"
+    },
+    {
+      "label": "DTP3 In 4",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "Selectable DTP3 / XTP. HDMI 2.0, HDCP 2.3 capable. Buffered.",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI 2.0 / DVI 1.0. HDCP 1.4 + 2.3.",
+      "id": "port-7"
+    },
+    {
+      "label": "DTP Power Inject",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "Captive screw input. Up to 72W shared across 4 DTP3 inputs to remotely power transmitters (DTP3 mode only).",
+      "id": "port-8"
+    }
+  ]
 }

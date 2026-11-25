@@ -29,11 +29,44 @@
   "thermalBtuh": 4.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/8 rack",
     "rackUnits": 1,
     "description": "HDMI Female to DisplayPort Female Converter",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "205edad6-b5ea-4603-b7c8-19f058910b00",
+      "label": "Extron HDP 101 4K",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "DisplayPort Out",
+      "signalType": "displayport",
+      "direction": "output",
+      "connectorType": "displayport",
+      "id": "port-1",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
 }

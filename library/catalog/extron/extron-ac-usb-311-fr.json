@@ -29,12 +29,53 @@
   "thermalBtuh": 29.6,
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "AC+USB-C+USB-A, FR",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "59133a3e-a63a-4cd8-9fdd-8c8be8ba9812",
+      "label": "Extron AC+USB 311 FR",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "USB Charging (Type C, PD)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Charging (Type A)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "AC Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "edison",
+      "section": "Power",
+      "id": "port-1"
+    }
+  ]
 }

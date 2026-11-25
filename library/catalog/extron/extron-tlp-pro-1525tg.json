@@ -30,10 +30,74 @@
   "poeDrawW": 30,
   "thermalBtuh": 76.8,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "15\" Tabletop TouchLink® Pro Touchpanel - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ed47982e-e6ed-4af3-9621-1ee7cee91bda",
+      "label": "Extron TLP Pro 1525TG NC",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI input for direct video preview on the touchpanel.",
+      "id": "port-0"
+    },
+    {
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "notes": "Unbalanced stereo line-level output, -10 dBV nominal. 3.5mm TRS mini-jack.",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 23.9,
+      "notes": "PoE+ 802.3at class 4. Also tunnels XTP video on the same RJ-45 link.",
+      "id": "port-1"
+    },
+    {
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+      "id": "port-3"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "Alternate to PoE — 12VDC barrel input (use Extron PS 1230 or PS 1210C).",
+      "id": "port-5"
+    }
+  ]
 }

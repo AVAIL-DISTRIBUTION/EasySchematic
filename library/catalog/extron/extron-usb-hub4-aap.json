@@ -28,12 +28,77 @@
   "voltage": "12V DC",
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Four-Port USB Hub - AAP Version - Black",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "ee16be7a-623d-49f7-9c5d-cf2a74deaad7",
+      "label": "Extron USB HUB4 AAP",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "USB Host In (Mini-B)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "USB",
+      "id": "port-0"
+    },
+    {
+      "label": "USB Host In (Captive)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "USB",
+      "id": "port-1"
+    },
+    {
+      "label": "USB Device Out 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Device Out 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "USB Device Out 3",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Device Out 4",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-5"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-6"
+    }
+  ]
 }

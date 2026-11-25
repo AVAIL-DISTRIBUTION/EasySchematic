@@ -30,10 +30,47 @@
   "poeDrawW": 30,
   "thermalBtuh": 58.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "12” Ultra-wide Tabletop TouchLink Pro Touchpanel - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "28769f0a-bf4e-4ef8-8a95-02bb9db0f355",
+      "label": "Extron TLP Pro 1230WTG Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI input for direct video preview on the touchpanel.",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 17.4,
+      "notes": "PoE+ 802.3at",
+      "id": "port-1"
+    },
+    {
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+      "id": "port-2"
+    }
+  ]
 }

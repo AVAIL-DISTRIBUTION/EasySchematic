@@ -28,11 +28,68 @@
   "thermalBtuh": 43.5,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Pro 4K USB-C 10G Dock",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "2b7a7a71-ed60-49d6-9684-eee6149b8525",
+      "label": "Extron UCS 601",
+      "match": "part-number",
+      "status": "raw",
+      "level": "FIX"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-1",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "USB-A 3.2 Out 1 (900mA)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-A 3.2 Out 2 (500mA)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A 3.2 Out 3 (500mA)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-4"
+    },
+    {
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-C In (DP Alt, 60W PD)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "id": "port-0",
+      "notes": "DP Alt + USB host + 60 W PD"
+    }
+  ]
 }

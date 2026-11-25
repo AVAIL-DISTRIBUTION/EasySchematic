@@ -30,10 +30,65 @@
   "poeDrawW": 30,
   "thermalBtuh": 66.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "15\" Wall Mount TouchLink® Pro Touchpanel - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "558d3c9e-9540-4f7b-923e-d5e124991537",
+      "label": "Extron TLP Pro 1525MG",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "HDMI input for direct video preview on the touchpanel.",
+      "id": "port-0"
+    },
+    {
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "notes": "Unbalanced stereo line-level output, -10 dBV nominal. 3.5mm TRS mini-jack.",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 20.9,
+      "notes": "PoE+ 802.3at class 4. Also tunnels XTP video on the same RJ-45 link.",
+      "id": "port-1"
+    },
+    {
+      "label": "USB 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories.",
+      "id": "port-3"
+    }
+  ]
 }

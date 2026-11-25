@@ -29,11 +29,336 @@
   "thermalBtuh": 95.5,
   "rackForm": "full",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U Full rack",
     "rackUnits": 1,
     "description": "12x8 ProDSP™ Digital Matrix Processor with AEC, POTS and Dante™",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c0dec43e-5b39-4965-a462-c52ef18db268",
+      "label": "Extron DMP 128 C P AT",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-0"
+    },
+    {
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-1"
+    },
+    {
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-2"
+    },
+    {
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-3"
+    },
+    {
+      "label": "Mic/Line In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-4"
+    },
+    {
+      "label": "Mic/Line In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-5"
+    },
+    {
+      "label": "Mic/Line In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-6"
+    },
+    {
+      "label": "Mic/Line In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs (with phantom)",
+      "notes": "3-pole 3.5mm captive screw, balanced/unbalanced, +48VDC phantom power switchable per input.",
+      "id": "port-7"
+    },
+    {
+      "label": "Mic/Line In 9",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+      "id": "port-8"
+    },
+    {
+      "label": "Mic/Line In 10",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+      "id": "port-9"
+    },
+    {
+      "label": "Mic/Line In 11",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+      "id": "port-10"
+    },
+    {
+      "label": "Mic/Line In 12",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced, no phantom power. 2 channels per connector — modeled per-channel.",
+      "id": "port-11"
+    },
+    {
+      "label": "Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-12"
+    },
+    {
+      "label": "Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-13"
+    },
+    {
+      "label": "Line Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-14"
+    },
+    {
+      "label": "Line Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-15"
+    },
+    {
+      "label": "Line Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-16"
+    },
+    {
+      "label": "Line Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-17"
+    },
+    {
+      "label": "Line Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-18"
+    },
+    {
+      "label": "Line Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-19"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T host control / configuration.",
+      "id": "port-20"
+    },
+    {
+      "label": "POTS Line",
+      "signalType": "pots",
+      "direction": "bidirectional",
+      "connectorType": "rj11",
+      "section": "Telephony",
+      "notes": "Analog POTS telephone interface on RJ-11 (compliant with PSTN / PBX). Modeled as `analog-audio` since POTS carries voice as a baseband analog signal — no `pots`/`telephony` SignalType in src/types.ts.",
+      "id": "port-30"
+    },
+    {
+      "label": "POTS Handset",
+      "signalType": "pots",
+      "direction": "bidirectional",
+      "connectorType": "rj11",
+      "section": "Telephony",
+      "notes": "Analog POTS telephone interface on RJ-11 (compliant with PSTN / PBX). Modeled as `analog-audio` since POTS carries voice as a baseband analog signal — no `pots`/`telephony` SignalType in src/types.ts.",
+      "id": "port-31"
+    },
+    {
+      "label": "Dante / AES67 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+      "id": "port-32"
+    },
+    {
+      "label": "Dante / AES67 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+      "id": "port-33"
+    },
+    {
+      "label": "Dante / AES67 3",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+      "id": "port-34"
+    },
+    {
+      "label": "Dante / AES67 4",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "1 Gbps Dante / AES67 audio network port (4-port internal switch).",
+      "id": "port-35"
+    },
+    {
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+      "id": "port-24"
+    },
+    {
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+      "id": "port-25"
+    },
+    {
+      "label": "Digital I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+      "id": "port-26"
+    },
+    {
+      "label": "Digital I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output. 6-pole captive screw shared with adjacent audio inputs (per-channel modeled).",
+      "id": "port-27"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 host control on a 3-pole 3.5mm captive screw (38400 baud default).",
+      "id": "port-22"
+    },
+    {
+      "label": "EXP",
+      "signalType": "extron-exp",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Proprietary 16×16 bidirectional digital audio expansion port over shielded CAT6 (24-bit / 48 kHz uncompressed). Used to link two DMP units or link to a DTP CrossPoint matrix. Mapped to `aes` SignalType per session 5 XMP 240 convention (no `extron-exp` SignalType in src/types.ts).",
+      "id": "port-28"
+    },
+    {
+      "label": "USB Audio (Rear)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "USB",
+      "notes": "Rear-panel USB Mini-B for USB audio bridge (USB 2.0 high-speed). Up to 4 channels of digital audio in/out.",
+      "id": "port-21"
+    },
+    {
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for DSP Configurator / PCS configuration (USB 2.0).",
+      "id": "port-23"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-29"
+    }
+  ]
 }

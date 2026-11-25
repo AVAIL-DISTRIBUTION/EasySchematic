@@ -29,10 +29,38 @@
   "poeDrawW": 30,
   "thermalBtuh": 60.1,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "15.6\" Wall Mount TouchLink Pro Touchpanel - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "fd8e1e6a-f85f-4db1-a523-93f28f3ab797",
+      "label": "Extron TLP Pro 1535M",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "PoE+ 802.3at class 4. Also tunnels XTP video on the same RJ-45 link.",
+      "poeDrawW": 20.9
+    },
+    {
+      "id": "tpl-1",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB-A host. Provides up to 275 mA bus power for accessories."
+    }
+  ]
 }

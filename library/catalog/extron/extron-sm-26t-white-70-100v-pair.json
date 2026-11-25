@@ -24,11 +24,28 @@
   "depthMm": 164,
   "weightKg": 4,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White, 70/100V, Pair",
     "rackFormSource": "Non-rack",
     "description": "SpeedMount Two-Way Surface Mount Speakers with 6.5\" Woofer and 70/100 V Transformer, Pair - White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "6e924716-7120-489e-9cd9-344631eede8d",
+      "label": "Extron SM 26T White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

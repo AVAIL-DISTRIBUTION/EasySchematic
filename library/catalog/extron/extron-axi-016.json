@@ -29,11 +29,191 @@
   "thermalBtuh": 24.3,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "16 Output Audio Expansion Interface",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "25ed7565-faef-4bac-9f8e-9e81e75e1fb2",
+      "label": "Extron AXI 016",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-0"
+    },
+    {
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-1"
+    },
+    {
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-2"
+    },
+    {
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-3"
+    },
+    {
+      "label": "Mic/Line In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-4"
+    },
+    {
+      "label": "Mic/Line In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-5"
+    },
+    {
+      "label": "Mic/Line In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-6"
+    },
+    {
+      "label": "Mic/Line In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-7"
+    },
+    {
+      "label": "Mic/Line In 9",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-8"
+    },
+    {
+      "label": "Mic/Line In 10",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-9"
+    },
+    {
+      "label": "Mic/Line In 11",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-10"
+    },
+    {
+      "label": "Mic/Line In 12",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-11"
+    },
+    {
+      "label": "Mic/Line In 13",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-12"
+    },
+    {
+      "label": "Mic/Line In 14",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-13"
+    },
+    {
+      "label": "Mic/Line In 15",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-14"
+    },
+    {
+      "label": "Mic/Line In 16",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "6-pole 3.5mm captive screw, balanced/unbalanced. 2 channels per connector — modeled per-channel.",
+      "id": "port-15"
+    },
+    {
+      "label": "Dante / AES67 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1 Gbps Dante / AES67 audio network port (primary). 16 channels Tx.",
+      "id": "port-16"
+    },
+    {
+      "label": "Dante / AES67 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1 Gbps Dante / AES67 audio network port (secondary / redundant Dante or 2nd switch port).",
+      "id": "port-17"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 1.5A PSU brick (18W).",
+      "id": "port-18"
+    }
+  ]
 }

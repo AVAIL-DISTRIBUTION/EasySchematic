@@ -27,10 +27,28 @@
   "powerDrawW": 0.8,
   "thermalBtuh": 2.6,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Occupancy Sensor - Wall Mount",
     "notes": "[AVAIL] powered by the host device / bus — no own power input; [AVAIL] dims from Extron specifications",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "cdb2ac01-d08e-44f3-a5b3-c7233551ddc7",
+      "label": "Extron OCS 100W",
+      "match": "part-number",
+      "status": "raw",
+      "level": "FIX"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Sensor Out (eBUS)",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "notes": "4-pole 3.5mm captive screw — connects to a host control processor's eBUS port (+12V/+S/-S/G). Reports occupancy state. Bus-powered. Mapped to `serial` SignalType (no `acp`/`ebus` type in src/types.ts).",
+      "id": "port-0"
+    }
+  ]
 }

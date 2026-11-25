@@ -29,11 +29,197 @@
   "thermalBtuh": 34.4,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Surround Sound Processor",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "6d53eac4-0736-435c-96f4-cfa0b39c8e15",
+      "label": "Extron SSP 200",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Loop",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "S/PDIF In (Coax)",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "rca",
+      "section": "Audio Inputs",
+      "notes": "Coaxial S/PDIF digital audio input on RCA.",
+      "id": "port-2"
+    },
+    {
+      "label": "S/PDIF In (Optical 1)",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "toslink",
+      "section": "Audio Inputs",
+      "notes": "Optical S/PDIF (TOSLINK).",
+      "id": "port-3"
+    },
+    {
+      "label": "S/PDIF In (Optical 2)",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "toslink",
+      "section": "Audio Inputs",
+      "notes": "Optical S/PDIF (TOSLINK).",
+      "id": "port-4"
+    },
+    {
+      "label": "Analog In (5.1 Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo balanced/unbalanced analog input on a 6-pole captive screw.",
+      "id": "port-5"
+    },
+    {
+      "label": "Surround Out — Front L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-6"
+    },
+    {
+      "label": "Surround Out — Front R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-7"
+    },
+    {
+      "label": "Surround Out — Center",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-8"
+    },
+    {
+      "label": "Surround Out — Subwoofer",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-9"
+    },
+    {
+      "label": "Surround Out — Surround L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-10"
+    },
+    {
+      "label": "Surround Out — Surround R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-11"
+    },
+    {
+      "label": "Surround Back L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable",
+      "id": "port-12"
+    },
+    {
+      "label": "Surround Back R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable",
+      "id": "port-13"
+    },
+    {
+      "label": "Height/Aux 1 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.; assignable",
+      "id": "port-14"
+    },
+    {
+      "label": "Surround Out — Height/Aux 2 (assignable)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-15"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-18"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-16"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for configuration (USB 2.0).",
+      "id": "port-17"
+    },
+    {
+      "label": "Power (IEC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU.",
+      "id": "port-19"
+    }
+  ]
 }

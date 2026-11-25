@@ -30,11 +30,105 @@
   "thermalBtuh": 187,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Four Port XTP Power Injector",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "74cb5566-5ad4-4de0-ba20-359655dacaa2",
+      "label": "Extron XTP PI 400",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "XTP Pass-through In 1",
+      "signalType": "hdbaset",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).; configurable input/output",
+      "id": "port-0"
+    },
+    {
+      "label": "XTP + Power Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
+      "poeBudgetW": 16.8,
+      "id": "port-1"
+    },
+    {
+      "label": "XTP Pass-through In 2",
+      "signalType": "hdbaset",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).; configurable input/output",
+      "id": "port-2"
+    },
+    {
+      "label": "XTP + Power Out 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
+      "poeBudgetW": 16.8,
+      "id": "port-3"
+    },
+    {
+      "label": "XTP Pass-through In 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).",
+      "id": "port-4"
+    },
+    {
+      "label": "XTP + Power Out 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
+      "poeBudgetW": 16.8,
+      "id": "port-5"
+    },
+    {
+      "label": "XTP Pass-through In 4",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data pass-through input (no PoE on the input side).",
+      "id": "port-6"
+    },
+    {
+      "label": "XTP + Power Out 4",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 female for XTP/HDBaseT data + 48VDC remote power output (16.8W per output, 0.35A @ 48VDC).",
+      "poeBudgetW": 16.8,
+      "id": "port-7"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains).",
+      "id": "port-8"
+    }
+  ]
 }

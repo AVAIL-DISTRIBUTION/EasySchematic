@@ -29,9 +29,25 @@
   "poeDrawW": 15.4,
   "unitCost": 2101,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "AVB Beamtracking tabletop ceiling microphone, white",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "variant",
+      "from": "biamp/biamp-parle-ttm-x-black.json",
+      "label": "Biamp Parlé TTM-X Black",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "52f51962",
+      "label": "AVB",
+      "signalType": "avb",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "AVB"
+    }
+  ]
 }

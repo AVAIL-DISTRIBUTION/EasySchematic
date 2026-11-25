@@ -27,10 +27,27 @@
   "powerDrawW": 60,
   "thermalBtuh": 204.7,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "SpeedMount Two-Way Ceiling Speakers with 6.5\" Woofer, Pair",
     "notes": "[AVAIL] dims from Extron specifications",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "1a64499e-cd38-4110-a966-859fd57fdbdf",
+      "label": "Extron CS 26T Plus",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

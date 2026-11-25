@@ -17,7 +17,9 @@
     "export:worklist": "tsx src/worklistCli.ts",
     "apply:worklist": "tsx src/applyWorklistCli.ts",
     "export:vendor-requests": "tsx src/vendorRequestsCli.ts",
-    "apply:vendor-responses": "tsx src/vendorResponsesCli.ts"
+    "apply:vendor-responses": "tsx src/vendorResponsesCli.ts",
+    "fill:catalog-ports": "tsx src/fillCatalogPortsCli.ts",
+    "import:catalog": "tsx src/importCatalogCli.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.11",

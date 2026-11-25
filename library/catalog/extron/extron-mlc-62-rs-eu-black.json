@@ -28,13 +28,86 @@
   "thermalBtuh": 7,
   "slotFamily": "extron-cubby-flex55",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black",
     "rackFormSource": "Non-rack",
     "deviceTypeSource": "card (extron-cc-flex55)",
     "description": "MediaLink® Controller for EU Junction Boxes - Black",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "810accde-ce3f-43ea-9e39-71c98ad23f28",
+      "label": "Extron MLC 62 RS EU",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "RS-232 Host",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial (Config)",
+      "id": "port-0"
+    },
+    {
+      "label": "Display Control (RS-232)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "port-2"
+    },
+    {
+      "label": "IR / Serial Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "id": "port-3"
+    },
+    {
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-4"
+    },
+    {
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "id": "port-5"
+    },
+    {
+      "label": "Digital Input",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "id": "port-6"
+    },
+    {
+      "label": "USB Host (Config)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Configuration (Config)",
+      "id": "port-1"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-7"
+    }
+  ]
 }

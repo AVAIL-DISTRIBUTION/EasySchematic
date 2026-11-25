@@ -25,9 +25,26 @@
   "weightKg": 21.3,
   "unitCost": 3082,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Full-Range 2-Way 12-Inch High Output 60 X 60 Grey",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f03d09db-a5ed-4603-8af6-7ea3550187f0",
+      "label": "Biamp R.5-66MAX",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "Audio In (Pigtail)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "none",
+      "section": "Audio Inputs"
+    }
+  ]
 }

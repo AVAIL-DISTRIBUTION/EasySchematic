@@ -28,10 +28,28 @@
   "poeDrawW": 15.4,
   "unitCost": 1807,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "paging-station",
     "description": "4-button convenience paging station with gooseneck microphone, tabletop or wall mount",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3278db72-b25b-4f8f-a6cb-a6284578082a",
+      "label": "Biamp NPX G1040",
+      "match": "model-name",
+      "status": "raw",
+      "level": "B"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "AVB",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "inheritsSignal": false,
+      "section": "AVB"
+    }
+  ]
 }

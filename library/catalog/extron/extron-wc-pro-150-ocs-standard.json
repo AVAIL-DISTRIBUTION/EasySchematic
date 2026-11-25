@@ -30,11 +30,74 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 13.8,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Standard",
     "rackFormSource": "Non-rack",
     "description": "Workspace Automation Controller with Occupancy Sensor",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e3bfdc0d-5284-40c4-a487-26a7fe5206bf",
+      "label": "Extron WC PRO 150 OCS",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T with 802.3af PoE (Class 3) input. Carries data + power.",
+      "poeDrawW": 12.95,
+      "id": "port-1"
+    },
+    {
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
+      "id": "port-4"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Programmable TTL-level (0-5V) IR output (carrier and non-carrier, up to 300 kHz) on a 2-pole 3.5mm captive screw.",
+      "id": "port-5"
+    }
+  ]
 }

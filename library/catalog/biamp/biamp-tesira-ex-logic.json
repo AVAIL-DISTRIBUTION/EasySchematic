@@ -28,9 +28,42 @@
   "poeDrawW": 4,
   "unitCost": 818,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Tesira PoE logic expander with 16 logic GPIO (4 GPIO are configurable for potentiometer interface)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "172de8fa-5bf4-4c22-bf80-e47d8980fc67",
+      "label": "Biamp Tesira EX-LOGIC",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p17762059240000-ctrl",
+      "label": "Control / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762059240002-serial",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Serial"
+    },
+    {
+      "id": "p17762059240001-gpio",
+      "label": "Logic I/O (16 pins)",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "terminal-block",
+      "section": "Digital I/O"
+    }
+  ]
 }

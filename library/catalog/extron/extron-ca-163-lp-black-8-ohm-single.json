@@ -24,11 +24,28 @@
   "depthMm": 127,
   "weightKg": 12.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black, 8 Ohm, Single",
     "rackFormSource": "Non-rack",
     "description": "Low-Profile Mount, Single, 8 Ohm, Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "24810e75-32b4-4fe5-b6df-85b4e6c8147f",
+      "label": "Extron CA 163 LP, 8 Ohm, Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

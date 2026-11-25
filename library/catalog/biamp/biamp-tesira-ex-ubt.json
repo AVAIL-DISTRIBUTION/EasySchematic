@@ -28,9 +28,42 @@
   "poeDrawW": 7,
   "unitCost": 1060,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "PoE AVB/USB expander with Bluetooth® wireless technology",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e3ce328f-d02f-4834-83b1-651981b2d7ee",
+      "label": "Biamp Tesira EX-UBT",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p17762045524952-iu4",
+      "label": "Bluetooth",
+      "signalType": "bluetooth",
+      "direction": "bidirectional",
+      "connectorType": "wireless",
+      "section": "RF"
+    },
+    {
+      "id": "p17762045524950-a97",
+      "label": "AVB / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "p17762045524951-kqc",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB"
+    }
+  ]
 }

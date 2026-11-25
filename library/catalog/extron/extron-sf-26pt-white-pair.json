@@ -24,11 +24,28 @@
   "depthMm": 229,
   "weightKg": 4.7,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White, Pair",
     "rackFormSource": "Non-rack",
     "description": "SoundField 6.5\" Two-Way Pendant Speaker, Pair - White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "238dc07c-3ddd-47f1-8db7-5b03422deb62",
+      "label": "Extron SF 26PT White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

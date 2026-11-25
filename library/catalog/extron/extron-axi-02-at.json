@@ -29,11 +29,53 @@
   "thermalBtuh": 10.9,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/8 rack",
     "rackUnits": 1,
     "description": "Two Output Dante Audio Interface",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e04b37d9-ffce-4ba2-a34d-78e18cb17e34",
+      "label": "Extron AXI 02 AT",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-1",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "S/PDIF In (Coax)",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "rca",
+      "id": "port-2",
+      "section": "Audio Inputs"
+    },
+    {
+      "label": "Dante / PoE",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-3",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
 }

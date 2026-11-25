@@ -30,11 +30,372 @@
   "thermalBtuh": 217,
   "rackForm": "full",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "2U Full rack",
     "rackUnits": 2,
     "description": "16x16 4K/60 HDMI with 4 Audio Outputs",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "91c956cb-c063-479f-9b40-523f4faef233",
+      "label": "Extron DXP 1616 HD 4K PLUS",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-1",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-2",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-3",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-4",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-5",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 7",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-6",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 8",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-7",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 9",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-8",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 10",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-9",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 11",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-10",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 12",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-11",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 13",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-12",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 14",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-13",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 15",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-14",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 16",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-15",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-16",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-17",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-18",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-19",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 5",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-20",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 6",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-21",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 7",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-22",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 8",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-23",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 9",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-24",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 10",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-25",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 11",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-26",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 12",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-27",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 13",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-28",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 14",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-29",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 15",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-30",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 16",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-31",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-32"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-33"
+    },
+    {
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-34"
+    },
+    {
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-35"
+    },
+    {
+      "label": "S/PDIF Out 1",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-36"
+    },
+    {
+      "label": "S/PDIF Out 2",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-37"
+    },
+    {
+      "label": "S/PDIF Out 3",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-38"
+    },
+    {
+      "label": "S/PDIF Out 4",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-39"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-40"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-41"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-42"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-43"
+    }
+  ]
 }

@@ -29,10 +29,28 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 6.6,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Network Button Panel with Dual Volume Control - Decorator-Style Wallplate",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c1210b55-7ee9-49b6-8f24-47d6cf359f7b",
+      "label": "Extron NBP VC2 D",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Ethernet / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-0",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
 }

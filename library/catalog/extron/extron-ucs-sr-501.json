@@ -29,11 +29,149 @@
   "thermalBtuh": 102.5,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "One Output Scaling Receiver",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "98f2e1be-8c50-4de5-9519-28154a2760aa",
+      "label": "Extron UCS SR 501",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "DTP3 In (RJ-45 from Tx)",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In (loop)",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-C Config (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Control",
+      "id": "port-10"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-11"
+    },
+    {
+      "label": "RS-232 (5-pole)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-12"
+    },
+    {
+      "label": "IR/Serial",
+      "signalType": "ir",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-13",
+      "notes": "2-pole, programmable"
+    },
+    {
+      "label": "Digital I/O (configurable)",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-14"
+    },
+    {
+      "label": "USB-B Host In",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-C Link to Tx (10 Gbps)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-A 3.2 Out",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-A 2.0 Out 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 2.0 Out 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-8"
+    },
+    {
+      "label": "USB TP Ext (from Tx)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "USB",
+      "id": "port-9"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-15"
+    }
+  ]
 }

@@ -28,10 +28,80 @@
   "voltage": "12V DC",
   "thermalBtuh": 4.2,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Automation Controller",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bbb09ae9-5efc-497f-a5fd-0ec9faf82af3",
+      "label": "Extron HD CTL 100",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Digital I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Digital I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital input/output (0-24 VDC input, 250 mA sink output) on a 3-pole 3.5mm captive screw.",
+      "id": "port-4"
+    },
+    {
+      "label": "IR/Serial Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Programmable IR (TTL-level, up to 300 kHz) OR unidirectional RS-232 ±5V output on a 2-pole 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS / Global Configurator / Ethernet-over-USB.",
+      "id": "port-5"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 0.5A PSU brick (6W).",
+      "id": "port-6"
+    }
+  ]
 }

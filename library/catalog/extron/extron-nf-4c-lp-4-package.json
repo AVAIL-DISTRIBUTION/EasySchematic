@@ -29,10 +29,65 @@
   "poeDrawW": 60,
   "thermalBtuh": 137.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "One Powered NF 4C LP and Three Passive NF 4C S LP",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "fb652090-ee4e-4331-a641-3f35862427ab",
+      "label": "Extron NF 4C P LP-4",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "8Ω 30W output to 1st passive NF 4C S LP secondary speaker. 3-pole 5mm captive screw.; to NF 4C S LP secondary",
+      "id": "port-2"
+    },
+    {
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "8Ω 30W output to 2nd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary",
+      "id": "port-3"
+    },
+    {
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs",
+      "notes": "8Ω 30W output to 3rd passive NF 4C S LP secondary speaker.; to NF 4C S LP secondary",
+      "id": "port-4"
+    },
+    {
+      "label": "Dante / AES67",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1 Gbps Dante / AES67 audio network port (carries audio + PoE++ power).",
+      "poeDrawW": 40,
+      "id": "port-0"
+    },
+    {
+      "label": "Ethernet Host",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Base-T host control / configuration port.",
+      "id": "port-1"
+    }
+  ]
 }

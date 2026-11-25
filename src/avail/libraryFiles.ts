@@ -138,3 +138,77 @@ export function parseHiddenList(doc: unknown): HiddenEntry[] {
     return { id: e.id, reason: e.reason, ...(typeof e.label === "string" ? { label: e.label } : {}) };
   });
 }
+
+/** One file of the product catalog: path "<vendor>/<file>.json" inside library/catalog. */
+export interface CatalogCheckReport {
+  files: LibraryFileReport[];
+  problems: string[];
+  /** Level counts per manufacturer, and files without ports. */
+  levels: Record<string, Record<BlockLintResult["level"], number> & { noPorts: number }>;
+  ok: boolean;
+}
+
+/**
+ * Checks the product catalog (library/catalog, step 1.9). The catalog is work in progress:
+ * any level is allowed (FIX included) and only reported. Required: a JSON object with id,
+ * ports array and _avail, file "<vendor>/<slug(label)>.json" (or "…-<slug(part number)>.json" when
+ * two labels share a slug), unique ids and part numbers,
+ * every file listed in index.json with its id (when the index is given).
+ */
+export function checkCatalog(entries: readonly LibraryEntry[], index?: unknown): CatalogCheckReport {
+  const files: LibraryFileReport[] = [];
+  const levels: CatalogCheckReport["levels"] = {};
+  for (const e of entries) {
+    const t = e.template;
+    if (!isObj(t)) {
+      files.push({ file: e.file, label: "?", lint: { level: "FIX", errors: [], warnings: [] }, problems: ["not a JSON object"] });
+      continue;
+    }
+    const lint = lintBlock(t);
+    const problems: string[] = [];
+    if (typeof t.id !== "string" || !t.id.trim()) problems.push("no id");
+    if (!Array.isArray(t.ports)) problems.push("no ports array");
+    if (!isObj(t._avail)) problems.push("no _avail");
+    const vendor = slug(typeof t.manufacturer === "string" ? t.manufacturer : "");
+    const expected = `${vendor}/${libraryFileName(t)}`;
+    // Two labels with the same slug ("Modena Hub", "Modena Hub+"): the part number tells them apart.
+    const withNumber = expected.replace(/\.json$/, `-${slug(typeof t.modelNumber === "string" ? t.modelNumber : "")}.json`);
+    if (e.file !== expected && e.file !== withNumber) problems.push(`file name must be ${expected}`);
+    const man = typeof t.manufacturer === "string" && t.manufacturer ? t.manufacturer : "?";
+    const lv = (levels[man] ??= { A: 0, B: 0, FIX: 0, noPorts: 0 });
+    lv[lint.level]++;
+    if (!(Array.isArray(t.ports) && t.ports.length) && !(Array.isArray(t.slots) && t.slots.length)) lv.noPorts++;
+    files.push({ file: e.file, label: typeof t.label === "string" ? t.label : "?", lint, problems });
+  }
+  const report = checkLibrary(entries, false);
+  // checkLibrary's per-file problems (flat file names) do not apply here: only the cross-file ones.
+  const problems = [...report.problems];
+  if (index !== undefined) {
+    const listed = isObj(index) && Array.isArray(index.templates) ? index.templates.filter(isObj) : null;
+    if (!listed) problems.push('index.json: expected { "templates": [...] }');
+    else {
+      const byFile = new Map(listed.map((x) => [String(x.file), x]));
+      for (const e of entries) {
+        const x = byFile.get(e.file);
+        const id = isObj(e.template) ? e.template.id : undefined;
+        if (!x) problems.push(`${e.file}: not in index.json`);
+        else if (x.id !== id) problems.push(`${e.file}: id differs from index.json (${String(x.id)})`);
+      }
+      const files = new Set(entries.map((e) => e.file));
+      for (const f of byFile.keys()) if (!files.has(f)) problems.push(`index.json: ${f} does not exist`);
+    }
+  }
+  const ok = problems.length === 0 && files.every((f) => f.problems.length === 0);
+  return { files, problems, levels, ok };
+}
+
+export function formatCatalogCheck(r: CatalogCheckReport, dir: string): string {
+  const lines = [`Catalog: ${dir} (${r.files.length} files; any level allowed, work in progress)`];
+  for (const [man, lv] of Object.entries(r.levels).sort()) {
+    lines.push(`  ${man.padEnd(10)} A ${lv.A} / B ${lv.B} / FIX ${lv.FIX}; without ports ${lv.noPorts}`);
+  }
+  for (const f of r.files) for (const p of f.problems) lines.push(`! ${f.file}: ${p}`);
+  for (const p of r.problems) lines.push(`! ${p}`);
+  lines.push(r.ok ? "OK: catalog files are well-formed" : "FAILED: fix the catalog files above");
+  return lines.join("\n") + "\n";
+}

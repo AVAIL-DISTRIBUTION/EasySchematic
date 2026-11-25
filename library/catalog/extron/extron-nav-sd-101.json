@@ -29,11 +29,68 @@
   "thermalBtuh": 58.1,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "1G HDMI Scaling Decoder",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c0a80101-00f4-4000-8000-000000000320",
+      "label": "Extron NAV SD 101",
+      "match": "model-name",
+      "status": "verified",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "port-3252",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs"
+    },
+    {
+      "id": "port-3254",
+      "label": "Audio Out L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-3255",
+      "label": "Audio Out R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "port-3253",
+      "label": "Network",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    },
+    {
+      "id": "port-3256",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial"
+    },
+    {
+      "id": "port-3257",
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power"
+    }
+  ]
 }

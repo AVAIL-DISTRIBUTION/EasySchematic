@@ -22,11 +22,92 @@
   ],
   "slotFamily": "extron-xtp-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-xtp2-crosspoint)",
     "description": "Four Output Board, 12G-SDI with Stereo Audio",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "9c832507-5da2-4ac9-aaf6-f5a25cf5a297",
+      "label": "Extron XTP CP 4o 12G-SDI",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "SDI Out 1",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-0"
+    },
+    {
+      "label": "SDI Out 2",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-1"
+    },
+    {
+      "label": "SDI Out 3",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-2"
+    },
+    {
+      "label": "SDI Out 4",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Parallel HDMI output for local monitoring (mirrors SDI Out).",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Parallel HDMI output for local monitoring (mirrors SDI Out).",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Parallel HDMI output for local monitoring (mirrors SDI Out).",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Parallel HDMI output for local monitoring (mirrors SDI Out).",
+      "id": "port-7"
+    }
+  ]
 }

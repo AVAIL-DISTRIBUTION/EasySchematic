@@ -27,10 +27,35 @@
   "powerCapacityW": 6,
   "voltage": "12V DC",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Cable Power Injector for Extron Active Cables",
     "notes": "[AVAIL] dims from dealer specification",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3fc1fc3d-fef5-43e3-93dd-9bc6a2cd8f41",
+      "label": "Extron CPI 51",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "12VDC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-0"
+    },
+    {
+      "label": "5VDC Out",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "port-1"
+    }
+  ]
 }

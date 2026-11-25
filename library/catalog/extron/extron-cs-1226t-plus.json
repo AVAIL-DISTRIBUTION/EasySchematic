@@ -27,10 +27,27 @@
   "powerDrawW": 60,
   "thermalBtuh": 204.7,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "SpeedMount Two-Way Ceiling Speaker Assy with 6.5\" Woofer, Pair",
     "notes": "[AVAIL] dims from Extron specifications (CS 120P enclosure)",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "b4d67f36-2784-4282-8d77-bc970097c0d1",
+      "label": "Extron CS 1226T Plus",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

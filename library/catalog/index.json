@@ -8611,7 +8611,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-ai.json",
+   "file": "biamp/biamp-tesiraforte-ai.json",
    "id": "avail-biamp-920-00400-00002",
    "label": "Biamp TesiraFORTÉ AI",
    "partNumber": "920-00400-00002",
@@ -8619,7 +8619,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-avb-ai.json",
+   "file": "biamp/biamp-tesiraforte-avb-ai.json",
    "id": "avail-biamp-920-00396-00002",
    "label": "Biamp TesiraFORTÉ AVB AI",
    "partNumber": "920-00396-00002",
@@ -8627,7 +8627,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-avb-ci.json",
+   "file": "biamp/biamp-tesiraforte-avb-ci.json",
    "id": "avail-biamp-920-00395-00002",
    "label": "Biamp TesiraFORTÉ AVB CI",
    "partNumber": "920-00395-00002",
@@ -8635,7 +8635,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-avb-vt.json",
+   "file": "biamp/biamp-tesiraforte-avb-vt.json",
    "id": "avail-biamp-920-00450-00002",
    "label": "Biamp TesiraFORTÉ AVB VT",
    "partNumber": "920-00450-00002",
@@ -8643,7 +8643,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-avb-vt4.json",
+   "file": "biamp/biamp-tesiraforte-avb-vt4.json",
    "id": "avail-biamp-920-00452-00002",
    "label": "Biamp TesiraFORTÉ AVB VT4",
    "partNumber": "920-00452-00002",
@@ -8651,7 +8651,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-ci.json",
+   "file": "biamp/biamp-tesiraforte-ci.json",
    "id": "avail-biamp-920-00399-00002",
    "label": "Biamp TesiraFORTÉ CI",
    "partNumber": "920-00399-00002",
@@ -8659,7 +8659,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-dan-ai.json",
+   "file": "biamp/biamp-tesiraforte-dan-ai.json",
    "id": "avail-biamp-920-00448-00002",
    "label": "Biamp TesiraFORTÉ DAN AI",
    "partNumber": "920-00448-00002",
@@ -8667,7 +8667,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-dan-ci.json",
+   "file": "biamp/biamp-tesiraforte-dan-ci.json",
    "id": "avail-biamp-920-00447-00002",
    "label": "Biamp TesiraFORTÉ DAN CI",
    "partNumber": "920-00447-00002",
@@ -8675,7 +8675,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-dan-vt.json",
+   "file": "biamp/biamp-tesiraforte-dan-vt.json",
    "id": "avail-biamp-920-00451-00002",
    "label": "Biamp TesiraFORTÉ DAN VT",
    "partNumber": "920-00451-00002",
@@ -8683,7 +8683,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-dan-vt4.json",
+   "file": "biamp/biamp-tesiraforte-dan-vt4.json",
    "id": "avail-biamp-920-00453-00002",
    "label": "Biamp TesiraFORTÉ DAN VT4",
    "partNumber": "920-00453-00002",
@@ -8691,7 +8691,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-vt.json",
+   "file": "biamp/biamp-tesiraforte-vt.json",
    "id": "avail-biamp-920-00449-00002",
    "label": "Biamp TesiraFORTÉ VT",
    "partNumber": "920-00449-00002",
@@ -8699,7 +8699,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-x-1600.json",
+   "file": "biamp/biamp-tesiraforte-x-1600.json",
    "id": "avail-biamp-920-00093-00002",
    "label": "Biamp TesiraFORTÉ X 1600",
    "partNumber": "920-00093-00002",
@@ -8707,7 +8707,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-x-400.json",
+   "file": "biamp/biamp-tesiraforte-x-400.json",
    "id": "avail-biamp-920-00091-00002",
    "label": "Biamp TesiraFORTÉ X 400",
    "partNumber": "920-00091-00002",
@@ -8715,7 +8715,7 @@
    "category": "Audio Products / DSP"
   },
   {
-   "file": "biamp/biamp-tesirafort-x-800.json",
+   "file": "biamp/biamp-tesiraforte-x-800.json",
    "id": "avail-biamp-920-00092-00002",
    "label": "Biamp TesiraFORTÉ X 800",
    "partNumber": "920-00092-00002",
@@ -13587,7 +13587,7 @@
    "category": "Integration Tools / Adapters"
   },
   {
-   "file": "biamp/biamp-parl-n-100.json",
+   "file": "biamp/biamp-parle-n-100.json",
    "id": "avail-biamp-920-01978-00002",
    "label": "Biamp Parlé N 100",
    "partNumber": "920-01978-00002",
@@ -13643,7 +13643,7 @@
    "category": "Integration Tools / PSU"
   },
   {
-   "file": "biamp/biamp-parl-ps-12-60.json",
+   "file": "biamp/biamp-parle-ps-12-60.json",
    "id": "avail-biamp-920-01897-00002",
    "label": "Biamp Parlé PS-12-60",
    "partNumber": "920-01897-00002",
@@ -13747,7 +13747,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dcm-x-black.json",
+   "file": "biamp/biamp-parle-dcm-x-black.json",
    "id": "avail-biamp-920-00027-10000",
    "label": "Biamp Parlé DCM-X Black",
    "partNumber": "920-00027-10000",
@@ -13755,7 +13755,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dcm-x-white.json",
+   "file": "biamp/biamp-parle-dcm-x-white.json",
    "id": "avail-biamp-920-00027-20000",
    "label": "Biamp Parlé DCM-X White",
    "partNumber": "920-00027-20000",
@@ -13763,7 +13763,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dcm-xa-black.json",
+   "file": "biamp/biamp-parle-dcm-xa-black.json",
    "id": "avail-biamp-920-00028-10000",
    "label": "Biamp Parlé DCM-XA Black",
    "partNumber": "920-00028-10000",
@@ -13771,7 +13771,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dcm-xa-white.json",
+   "file": "biamp/biamp-parle-dcm-xa-white.json",
    "id": "avail-biamp-920-00028-20000",
    "label": "Biamp Parlé DCM-XA White",
    "partNumber": "920-00028-20000",
@@ -13779,7 +13779,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dcm-xex-black.json",
+   "file": "biamp/biamp-parle-dcm-xex-black.json",
    "id": "avail-biamp-920-10117-10000",
    "label": "Biamp Parlé DCM-XEX Black",
    "partNumber": "920-10117-10000",
@@ -13787,7 +13787,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dcm-xex-white.json",
+   "file": "biamp/biamp-parle-dcm-xex-white.json",
    "id": "avail-biamp-920-10117-20000",
    "label": "Biamp Parlé DCM-XEX White",
    "partNumber": "920-10117-20000",
@@ -13795,7 +13795,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dtm-x-black.json",
+   "file": "biamp/biamp-parle-dtm-x-black.json",
    "id": "avail-biamp-920-00029-10000",
    "label": "Biamp Parlé DTM-X Black",
    "partNumber": "920-00029-10000",
@@ -13803,7 +13803,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dtm-x-white.json",
+   "file": "biamp/biamp-parle-dtm-x-white.json",
    "id": "avail-biamp-920-00029-20000",
    "label": "Biamp Parlé DTM-X White",
    "partNumber": "920-00029-20000",
@@ -13811,7 +13811,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dtm-xex-black.json",
+   "file": "biamp/biamp-parle-dtm-xex-black.json",
    "id": "avail-biamp-920-10118-10000",
    "label": "Biamp Parlé DTM-XEX Black",
    "partNumber": "920-10118-10000",
@@ -13819,7 +13819,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-dtm-xex-white.json",
+   "file": "biamp/biamp-parle-dtm-xex-white.json",
    "id": "avail-biamp-920-10118-20000",
    "label": "Biamp Parlé DTM-XEX White",
    "partNumber": "920-10118-20000",
@@ -13827,7 +13827,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-1-black.json",
+   "file": "biamp/biamp-parle-tcm-1-black.json",
    "id": "avail-biamp-920-00485-10000",
    "label": "Biamp Parlé TCM-1 Black",
    "partNumber": "920-00485-10000",
@@ -13835,7 +13835,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-1-white.json",
+   "file": "biamp/biamp-parle-tcm-1-white.json",
    "id": "avail-biamp-920-00485-20000",
    "label": "Biamp Parlé TCM-1 White",
    "partNumber": "920-00485-20000",
@@ -13843,7 +13843,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-1a-black.json",
+   "file": "biamp/biamp-parle-tcm-1a-black.json",
    "id": "avail-biamp-920-00493-10000",
    "label": "Biamp Parlé TCM-1A Black",
    "partNumber": "920-00493-10000",
@@ -13851,7 +13851,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-1a-white.json",
+   "file": "biamp/biamp-parle-tcm-1a-white.json",
    "id": "avail-biamp-920-00493-20000",
    "label": "Biamp Parlé TCM-1A White",
    "partNumber": "920-00493-20000",
@@ -13859,7 +13859,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-1ex-black.json",
+   "file": "biamp/biamp-parle-tcm-1ex-black.json",
    "id": "avail-biamp-920-00487-10000",
    "label": "Biamp Parlé TCM-1EX Black",
    "partNumber": "920-00487-10000",
@@ -13867,7 +13867,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-1ex-white.json",
+   "file": "biamp/biamp-parle-tcm-1ex-white.json",
    "id": "avail-biamp-920-00487-20000",
    "label": "Biamp Parlé TCM-1EX White",
    "partNumber": "920-00487-20000",
@@ -13875,7 +13875,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-x-black.json",
+   "file": "biamp/biamp-parle-tcm-x-black.json",
    "id": "avail-biamp-920-00498-10000",
    "label": "Biamp Parlé TCM-X Black",
    "partNumber": "920-00498-10000",
@@ -13883,7 +13883,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-x-white.json",
+   "file": "biamp/biamp-parle-tcm-x-white.json",
    "id": "avail-biamp-920-00498-20000",
    "label": "Biamp Parlé TCM-X White",
    "partNumber": "920-00498-20000",
@@ -13891,7 +13891,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-xa-black.json",
+   "file": "biamp/biamp-parle-tcm-xa-black.json",
    "id": "avail-biamp-920-00499-10000",
    "label": "Biamp Parlé TCM-XA Black",
    "partNumber": "920-00499-10000",
@@ -13899,7 +13899,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-xa-white.json",
+   "file": "biamp/biamp-parle-tcm-xa-white.json",
    "id": "avail-biamp-920-00499-20000",
    "label": "Biamp Parlé TCM-XA White",
    "partNumber": "920-00499-20000",
@@ -13907,7 +13907,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-xex-black.json",
+   "file": "biamp/biamp-parle-tcm-xex-black.json",
    "id": "avail-biamp-920-00500-10000",
    "label": "Biamp Parlé TCM-XEX Black",
    "partNumber": "920-00500-10000",
@@ -13915,7 +13915,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-tcm-xex-white.json",
+   "file": "biamp/biamp-parle-tcm-xex-white.json",
    "id": "avail-biamp-920-00500-20000",
    "label": "Biamp Parlé TCM-XEX White",
    "partNumber": "920-00500-20000",
@@ -13923,7 +13923,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-ttm-x-black.json",
+   "file": "biamp/biamp-parle-ttm-x-black.json",
    "id": "avail-biamp-920-00510-10000",
    "label": "Biamp Parlé TTM-X Black",
    "partNumber": "920-00510-10000",
@@ -13931,7 +13931,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-ttm-x-white.json",
+   "file": "biamp/biamp-parle-ttm-x-white.json",
    "id": "avail-biamp-920-00510-20000",
    "label": "Biamp Parlé TTM-X White",
    "partNumber": "920-00510-20000",
@@ -13939,7 +13939,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-ttm-xex-black.json",
+   "file": "biamp/biamp-parle-ttm-xex-black.json",
    "id": "avail-biamp-920-00511-10000",
    "label": "Biamp Parlé TTM-XEX Black",
    "partNumber": "920-00511-10000",
@@ -13947,7 +13947,7 @@
    "category": "Microphones / Array microphones"
   },
   {
-   "file": "biamp/biamp-parl-ttm-xex-white.json",
+   "file": "biamp/biamp-parle-ttm-xex-white.json",
    "id": "avail-biamp-920-00511-20000",
    "label": "Biamp Parlé TTM-XEX White",
    "partNumber": "920-00511-20000",
@@ -14003,7 +14003,7 @@
    "category": "UC / Collaboration System"
   },
   {
-   "file": "biamp/biamp-parl-abc-2500.json",
+   "file": "biamp/biamp-parle-abc-2500.json",
    "id": "avail-biamp-920-00131-00002",
    "label": "Biamp Parlé ABC 2500",
    "partNumber": "920-00131-00002",
@@ -14011,7 +14011,7 @@
    "category": "UC / Speakerphones"
   },
   {
-   "file": "biamp/biamp-parl-abc-2500a.json",
+   "file": "biamp/biamp-parle-abc-2500a.json",
    "id": "avail-biamp-920-01968-00002",
    "label": "Biamp Parlé ABC 2500a",
    "partNumber": "920-01968-00002",
@@ -14019,7 +14019,7 @@
    "category": "UC / Speakerphones"
   },
   {
-   "file": "biamp/biamp-parl-cbc-2500.json",
+   "file": "biamp/biamp-parle-cbc-2500.json",
    "id": "avail-biamp-920-01899-00002",
    "label": "Biamp Parlé CBC 2500",
    "partNumber": "920-01899-00002",
@@ -14027,7 +14027,7 @@
    "category": "UC / Speakerphones"
   },
   {
-   "file": "biamp/biamp-parl-cbc-2500-pm.json",
+   "file": "biamp/biamp-parle-cbc-2500-pm.json",
    "id": "avail-biamp-920-01996-00002",
    "label": "Biamp Parlé CBC 2500 PM",
    "partNumber": "920-01996-00002",
@@ -14035,7 +14035,7 @@
    "category": "UC / Speakerphones"
   },
   {
-   "file": "biamp/biamp-parl-sbc-2.json",
+   "file": "biamp/biamp-parle-sbc-2.json",
    "id": "avail-biamp-920-01869-00002",
    "label": "Biamp Parlé SBC 2",
    "partNumber": "920-01869-00002",
@@ -14067,7 +14067,7 @@
    "category": "UC / Video conference systems"
   },
   {
-   "file": "biamp/biamp-parl-vbc-2500a.json",
+   "file": "biamp/biamp-parle-vbc-2500a.json",
    "id": "avail-biamp-920-01967-00002",
    "label": "Biamp Parlé VBC 2500a",
    "partNumber": "920-01967-00002",
@@ -14075,7 +14075,7 @@
    "category": "UC / Video conference systems"
   },
   {
-   "file": "biamp/biamp-parl-vbc-2800.json",
+   "file": "biamp/biamp-parle-vbc-2800.json",
    "id": "avail-biamp-920-01987-00002",
    "label": "Biamp Parlé VBC 2800",
    "partNumber": "920-01987-00002",

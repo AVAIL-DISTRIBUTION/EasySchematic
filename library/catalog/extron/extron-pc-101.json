@@ -28,11 +28,47 @@
   "thermalBtuh": 2.9,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "AC Power Controller",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "ead32b0e-ed86-4cba-a03a-1909505c2c87",
+      "label": "Extron PC 101",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Trigger In (Contact Closure)",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "1 contact-closure input (+5VDC reference / GND) on a 2-pole 3.5mm captive screw. Pulls contact to ground to switch the AC outlet on.",
+      "id": "port-2"
+    },
+    {
+      "label": "Power In (IEC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Internal 100-240 VAC PSU (IEC mains, 6\" pigtail with male IEC). Included male IEC → female Edison adapter for US receptacles.",
+      "id": "port-0"
+    },
+    {
+      "label": "Switched AC Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Switched AC outlet (10A max, 1106W @ 120 VAC) — toggled by the contact-closure input. 24\" pigtail with female IEC.",
+      "id": "port-1"
+    }
+  ]
 }

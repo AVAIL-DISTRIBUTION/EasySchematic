@@ -29,11 +29,74 @@
   "thermalBtuh": 44.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "1G HDMI Compact Encoder",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f1b703a1-bbb1-4127-8ff6-1cf17459556f",
+      "label": "Extron NAV E 121",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Local HDMI loop-through of the video input. Also carries CEC pass-through.",
+      "id": "port-1"
+    },
+    {
+      "label": "NAV",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 13.2,
+      "notes": "1Gbps Ethernet carrying PURE3 video over IP, audio over IP / AES67, USB extension, and management. PoE+ class 4 powered (alternate to 12VDC).",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Bidirectional RS-232 on a 3-pole 3.5mm captive screw (Tx/Rx/Gnd).",
+      "id": "port-3"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Configuration",
+      "notes": "Front-panel USB-C for Ethernet-over-USB device configuration.",
+      "id": "port-4"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC PSU input (100-240VAC brick). 1G endpoints can alternatively be powered via PoE+ on the NAV RJ-45.",
+      "id": "port-5"
+    }
+  ]
 }

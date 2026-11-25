@@ -29,11 +29,72 @@
   "thermalBtuh": 24.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "4K/60 HDMI DTP3 Receiver with Audio De-Embedding",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "extron-dtp3-r-201.json",
+      "label": "Extron DTP3 R 201",
+      "match": "part-number",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "DTP3 In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "id": "p1795168250149-34-0",
+      "notes": "From a DTP3 transmitter; the transmitter can power this receiver (DTP3 mode)"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "p1795168250149-34-1"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "id": "p1795168250149-34-2",
+      "notes": "Balanced/unbalanced, de-embedded, 5-pole 3.5 mm captive screw"
+    },
+    {
+      "label": "RS-232 (Pass-through)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "id": "p1795168250149-34-4",
+      "notes": "300-115200 baud, 3-pole 3.5 mm captive screw"
+    },
+    {
+      "label": "USB Config (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Configuration",
+      "id": "p1795168250149-34-3",
+      "notes": "USB 2.0 low speed"
+    },
+    {
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "id": "p1795168250149-34-5",
+      "notes": "External 12 VDC 1.5 A supply (included with the Tx), 2-pole captive screw; or remote power from the DTP3 Tx"
+    }
+  ]
 }

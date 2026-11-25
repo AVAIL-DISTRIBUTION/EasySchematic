@@ -28,10 +28,43 @@
   "voltage": "12V DC",
   "thermalBtuh": 1.1,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "eBUS Button Panel with 6 Buttons - US 2-Gang",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "b66d48f5-ca06-4d98-93f0-c3f2caefc01a",
+      "label": "Extron EBP 100",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "eBUS 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-0"
+    },
+    {
+      "label": "eBUS 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-1"
+    },
+    {
+      "id": "worklist-3",
+      "label": "Power 12V DC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power"
+    }
+  ]
 }

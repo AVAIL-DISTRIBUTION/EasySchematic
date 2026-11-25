@@ -32,11 +32,117 @@
   "thermalBtuh": 61.7,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "ShareLink Pro 2500 w/Miracast, ShareNext, & PS - US",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "642a77f9-41c3-46cc-81bb-5c70e6427b14",
+      "label": "Extron ShareLink Pro 2500 Miracast & ShareNext Kit US",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw, variable level.",
+      "id": "port-10"
+    },
+    {
+      "label": "LAN 1 / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Shielded RJ-45 with 802.3at PoE+ input (primary network).",
+      "poeDrawW": 23,
+      "id": "port-3"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Shielded RJ-45 — secondary network (separate IP / VLAN for isolating client traffic).",
+      "id": "port-4"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Unidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-A 1 (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 SuperSpeed Type-A for content sharing and the WFA 100 wireless adapter.",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-A 2 (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 SuperSpeed Type-A for additional content sharing / storage.",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-C (Content Sharing)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "Front-panel USB-C 2.0 for direct content sharing from a laptop (no display alt-mode).",
+      "id": "port-8"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS / Ethernet-over-USB configuration.",
+      "id": "port-9"
+    }
+  ]
 }

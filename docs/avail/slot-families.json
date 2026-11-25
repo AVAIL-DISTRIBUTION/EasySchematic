@@ -50,6 +50,35 @@
    "category": "Connectivity / Architectural"
   },
   {
+   "name": "extron-cubby-aap",
+   "vendor": "Extron",
+   "platform": "Cable Cubby, NBP and other AAP (Architectural Adapter Plate) openings",
+   "category": "Connectivity / Architectural",
+   "note": "AAP-size cutout; Retractor and other modules that also fit MAAP or Flex55 list them in the catalog (_avail.cardFamilies)",
+   "source": "library/catalog (avail-products-extron-biamp.xlsx, step 1.9)"
+  },
+  {
+   "name": "extron-cubby-maap",
+   "vendor": "Extron",
+   "platform": "Cable Cubby 100 and other MAAP (Mini Architectural Adapter Plate) openings",
+   "category": "Connectivity / Architectural",
+   "source": "library/catalog (avail-products-extron-biamp.xlsx, step 1.9)"
+  },
+  {
+   "name": "extron-cubby-flex55",
+   "vendor": "Extron",
+   "platform": "Cable Cubby F55 and other Flex55 openings",
+   "category": "Connectivity / Architectural",
+   "source": "library/catalog (avail-products-extron-biamp.xlsx, step 1.9)"
+  },
+  {
+   "name": "extron-quantum-elite",
+   "vendor": "Extron",
+   "platform": "Quantum Elite frames",
+   "category": "Processing / Videowall Processors",
+   "source": "library/catalog (avail-products-extron-biamp.xlsx, step 1.9)"
+  },
+  {
    "name": "ah-dlive-io",
    "vendor": "Allen & Heath",
    "platform": "dLive and Avantis I/O Port (M-DL cards)",
@@ -149,6 +178,27 @@
    ],
    "note": "I/O and network cards share the slots, with per-slot rules (network cards in slots 11-13)",
    "source": "https://support.biamp.com/Tesira/Miscellaneous/Tesira_IO_card_order"
+  },
+  {
+   "name": "biamp-tesira-ex-mod",
+   "vendor": "Biamp",
+   "platform": "Tesira EX-MOD expander (EEC-4, EOC-4, EIOC-4 modules)",
+   "category": "Audio Products / Interfaces",
+   "source": "library/catalog (avail-products-extron-biamp.xlsx, step 1.9)"
+  },
+  {
+   "name": "biamp-vocia-va-8600",
+   "vendor": "Biamp",
+   "platform": "Vocia VA-8600 amplifier (AM-600 modules, VFOM-1)",
+   "category": "Audio Products / Power Amplifiers",
+   "source": "library/catalog (avail-products-extron-biamp.xlsx, step 1.9)"
+  },
+  {
+   "name": "biamp-vocia-lsi-16",
+   "vendor": "Biamp",
+   "platform": "Vocia LSI-16 line supervision interface (IM-16 card)",
+   "category": "Audio Products / Public Address",
+   "source": "library/catalog (avail-products-extron-biamp.xlsx, step 1.9)"
   },
   {
    "name": "sony-brc-brbk",

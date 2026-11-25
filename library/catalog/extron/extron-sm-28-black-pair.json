@@ -23,11 +23,28 @@
   "depthMm": 185,
   "weightKg": 4.6,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black, Pair",
     "rackFormSource": "Non-rack",
     "description": "SpeedMount Two-Way Surface Mount Speakers with 8\" Woofer, Pair - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c0c74320-ca26-4bac-ac7f-3adcdaae603c",
+      "label": "Extron SM 28 Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

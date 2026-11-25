@@ -31,11 +31,100 @@
   "thermalBtuh": 62.2,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "4K Wireless Presentation System",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3dffd66b-63e8-48ce-aa7f-4cc53bc376a6",
+      "label": "Extron ShareLink Pro 2000",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Unbalanced stereo line on a 5-pole 3.5mm captive screw.",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw, variable level.",
+      "id": "port-8"
+    },
+    {
+      "label": "LAN / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Shielded RJ-45 with 802.3at PoE+ input (Class 4).",
+      "poeDrawW": 23,
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "Unidirectional RS-232 on a 3-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "Front-panel USB 3.0 SuperSpeed Type-A for content sharing and the WFA 100 wireless adapter.",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-C (Content Sharing)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "Front-panel USB-C 2.0 for direct content sharing from a laptop (no display alt-mode).",
+      "id": "port-5"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Configuration",
+      "notes": "Front-panel USB Mini-B for PCS / Ethernet-over-USB configuration.",
+      "id": "port-6"
+    }
+  ]
 }

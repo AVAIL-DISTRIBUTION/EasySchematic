@@ -22,11 +22,128 @@
   ],
   "slotFamily": "extron-xtp-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-xtp2-crosspoint)",
     "description": "Four Input Board, 12G-SDI with SDI and HDMI Local Outputs",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name"
+    "libraryNotes": "slot family renamed to the library name",
+    "portsSource": {
+      "kind": "db",
+      "from": "e4d394dc-44a9-4e63-973c-8c8a1e3e7c37",
+      "label": "Extron XTP CP 4i 12G-SDI",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "SDI In 1",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-0"
+    },
+    {
+      "label": "SDI In 2",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-1"
+    },
+    {
+      "label": "SDI In 3",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-2"
+    },
+    {
+      "label": "SDI In 4",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "notes": "12G-SDI / 6G-SDI / 3G-SDI / HD-SDI. 11.88 Gbps per 12G connection. Embedded SDI audio (SMPTE 272M/299M).",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "Alternative HDMI source for the channel (selectable BNC vs HDMI per channel).",
+      "id": "port-8"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "Alternative HDMI source for the channel (selectable BNC vs HDMI per channel).",
+      "id": "port-9"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "Alternative HDMI source for the channel (selectable BNC vs HDMI per channel).",
+      "id": "port-10"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "Alternative HDMI source for the channel (selectable BNC vs HDMI per channel).",
+      "id": "port-11"
+    },
+    {
+      "label": "SDI Loop Out 1",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "Active loop-through of SDI In (daisy-chain).",
+      "id": "port-4"
+    },
+    {
+      "label": "SDI Loop Out 2",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "Active loop-through of SDI In (daisy-chain).",
+      "id": "port-5"
+    },
+    {
+      "label": "SDI Loop Out 3",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "Active loop-through of SDI In (daisy-chain).",
+      "id": "port-6"
+    },
+    {
+      "label": "SDI Loop Out 4",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "notes": "Active loop-through of SDI In (daisy-chain).",
+      "id": "port-7"
+    }
+  ]
 }

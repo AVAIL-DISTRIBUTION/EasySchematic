@@ -28,11 +28,65 @@
   "thermalBtuh": 12.3,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Three Output Stereo Audio Distribution Amplifier",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "dd520a24-492a-4369-9d0a-182738d1b113",
+      "label": "Extron MDA 3A",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio Out 1 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out 2 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio Out 3 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 0.5A PSU brick (6W).",
+      "id": "port-4"
+    }
+  ]
 }

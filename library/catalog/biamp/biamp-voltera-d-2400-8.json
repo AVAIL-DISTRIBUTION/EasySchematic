@@ -27,10 +27,235 @@
   "voltage": "100-240V AC",
   "unitCost": 6784,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Eight-channel Amplified Loudspeaker Controller, 2400 watt total power with DSP, Dante & AVB",
     "notes": "Характеристики с сайта по артикулу 920-01957-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "0ce14f2f-01ed-4c57-bf44-ef6557e09c92",
+      "label": "Biamp Voltara D 2400.8",
+      "match": "model-name",
+      "status": "raw",
+      "level": "FIX"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-1",
+      "label": "In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-2",
+      "label": "In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-3",
+      "label": "In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-4",
+      "label": "In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-5",
+      "label": "In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-6",
+      "label": "In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-7",
+      "label": "In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-8",
+      "label": "In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-9",
+      "label": "Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-10",
+      "label": "Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-11",
+      "label": "Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-12",
+      "label": "Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-13",
+      "label": "Out 5",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-14",
+      "label": "Out 6",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-15",
+      "label": "Out 7",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-16",
+      "label": "Out 8",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block"
+    },
+    {
+      "id": "tpl-17",
+      "label": "Network 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-18",
+      "label": "Network 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-23",
+      "label": "GPIO 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-24",
+      "label": "GPIO 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-25",
+      "label": "GPIO 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-26",
+      "label": "GPIO 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-19",
+      "label": "Logic 1",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-20",
+      "label": "Logic 2",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-21",
+      "label": "Logic 3",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-0",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power"
+    },
+    {
+      "id": "tpl-22",
+      "label": "Logic 4",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Logic IO",
+      "connectorType": "phoenix"
+    }
+  ]
 }

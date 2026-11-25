@@ -22,14 +22,55 @@
   ],
   "slotFamily": "extron-quantum-ultra",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "cardFamilies": [
       "extron-quantum-ultra",
       "extron-quantum-ultra-2"
     ],
     "deviceTypeSource": "card (extron-quantum-ultra, extron-quantum-ultra-2)",
     "description": "Four-channel HDMI Output Card for Quantum Ultra",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "366976ec-bfbf-42e2-a720-cbb057b18ada",
+      "label": "Extron Quantum OUT4HDMI",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-3"
+    }
+  ]
 }

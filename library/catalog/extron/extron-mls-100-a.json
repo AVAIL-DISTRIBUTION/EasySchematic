@@ -29,11 +29,92 @@
   "thermalBtuh": 16.4,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Four Input Stereo Audio MediaLink® Switcher",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "fdea1e53-22d3-4c54-af68-81a95205f864",
+      "label": "Extron MLS 100 A",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Audio In 1 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo unbalanced (switchable) on a 3-pole 3.5mm captive screw.",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio In 2 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo unbalanced (switchable) on a 3-pole 3.5mm captive screw.",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In 3 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo unbalanced (switchable) on a 3-pole 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio In 4 (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Stereo unbalanced (switchable) on a 3-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Aux Mix In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw.; Mono, always active",
+      "id": "port-4"
+    },
+    {
+      "label": "Audio Out (Stereo)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced/unbalanced stereo line on a 5-pole 3.5mm captive screw.",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "RS-232 on a 5-pole 3.5mm captive screw.",
+      "id": "port-6"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 0.5A PSU brick (6W).",
+      "id": "port-7"
+    }
+  ]
 }

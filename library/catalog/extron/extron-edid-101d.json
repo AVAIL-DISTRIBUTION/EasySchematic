@@ -29,11 +29,47 @@
   "thermalBtuh": 2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/8 rack",
     "rackUnits": 1,
     "description": "EDID Emulator with EDID Minder® for DVI",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f105b3ad-9e06-4812-bc28-9ac8f75d1f7b",
+      "label": "Extron EDID 101D",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "851bdde0",
+      "label": "DVI",
+      "signalType": "dvi",
+      "connectorType": "dvi",
+      "direction": "input",
+      "inheritsSignal": false,
+      "section": "Video Inputs"
+    },
+    {
+      "id": "8c5892fd",
+      "label": "DVI",
+      "signalType": "dvi",
+      "connectorType": "dvi",
+      "direction": "output",
+      "inheritsSignal": false,
+      "section": "Video Outputs"
+    },
+    {
+      "id": "4159508e",
+      "label": "DC Power",
+      "signalType": "power",
+      "connectorType": "phoenix",
+      "direction": "input",
+      "inheritsSignal": false,
+      "section": "Power"
+    }
+  ]
 }

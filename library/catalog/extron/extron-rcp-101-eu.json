@@ -29,7 +29,7 @@
   "thermalBtuh": 2.4,
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "cardFamilies": [
       "extron-cubby-aap",
@@ -38,7 +38,40 @@
     "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
     "description": "Remote Control Panel - Flex55 and EU",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "652ca872-d5c4-4787-883c-f0b998ee1e17",
+      "label": "Extron RCP 101 EU",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "USB Host (to SMP)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-0"
+    },
+    {
+      "label": "USB Storage",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-1"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
 }

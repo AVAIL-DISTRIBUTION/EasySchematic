@@ -24,9 +24,34 @@
   "weightKg": 15.2,
   "unitCost": 1024,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "10” Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included indexing u-bracket and weather cover, black",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d3b277e9-ffd2-40e4-8618-250b2eded7d4",
+      "label": "Biamp Desono EX-S10-UB-B",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "INPUT",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "terminal-block",
+      "section": "Audio Inputs"
+    },
+    {
+      "id": "tpl-2",
+      "label": "THRU",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "terminal-block",
+      "section": "Speaker Outputs"
+    }
+  ]
 }

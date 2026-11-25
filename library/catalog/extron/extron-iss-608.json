@@ -29,11 +29,148 @@
   "thermalBtuh": 176,
   "rackForm": "full",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "2U Full rack",
     "rackUnits": 2,
     "description": "Eight Input HDMI & DisplayPort 4K/60 Seamless Switcher",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "b803a7ea-dc8c-490e-8552-07437849148a",
+      "label": "Extron ISS 608",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-1",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-2",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-3",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-4",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "id": "port-5",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "DisplayPort In 1",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "id": "port-6",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "DisplayPort In 2",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "id": "port-7",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-8",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-9",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Audio Program Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-10",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "Audio Preview Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "id": "port-11",
+      "section": "Audio Outputs"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "id": "port-12"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Control",
+      "id": "port-13"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "id": "port-14"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-15"
+    }
+  ]
 }

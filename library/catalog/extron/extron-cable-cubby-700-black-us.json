@@ -26,8 +26,35 @@
   "depthMm": 162,
   "weightKg": 1.1,
   "voltage": "125V AC",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-cubby-aap"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-cubby-aap"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black, US",
     "rackFormSource": "Non-rack",
     "slotFamilies": [
@@ -35,7 +62,23 @@
     ],
     "description": "Black with 2 US AC, 12 A Circuit Breaker, and 2 Outlets Under",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "variant",
+      "from": "extron/extron-cable-cubby-700-brushed-aluminum-no-ac.json",
+      "label": "Extron Cable Cubby 700 (Brushed Aluminum, No AC)",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0",
+      "notes": "passive"
+    }
+  ]
 }

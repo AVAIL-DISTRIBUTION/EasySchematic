@@ -29,15 +29,166 @@
   "voltage": "100-240V AC",
   "thermalBtuh": 1941,
   "rackForm": "full",
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-6",
+      "label": "Slot 6",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-7",
+      "label": "Slot 7",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-8",
+      "label": "Slot 8",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-9",
+      "label": "Slot 9",
+      "slotFamily": "extron-quantum-ultra"
+    },
+    {
+      "id": "slot-10",
+      "label": "Slot 10",
+      "slotFamily": "extron-quantum-ultra"
+    }
+  ],
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "6U Full rack",
     "rackUnits": 6,
     "slotFamilies": [
       "extron-quantum-ultra"
     ],
     "description": "6U, 10-slot Frame for Quantum Ultra",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "7446c5c5-5273-46b3-903a-afca310e646d",
+      "label": "Extron Quantum Ultra 610",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Setup HDMI",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Local setup display output (640x480 to 1920x1200).",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN A",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit control / VCS / Telnet / SSH. Default 192.168.254.254.",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN B",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Gigabit control (separate subnet). Default 192.168.1.254.",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole captive screw. 9600, 8-N-1.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-mini",
+      "section": "Control",
+      "notes": "USB Mini-B for direct PC config.",
+      "id": "port-3"
+    },
+    {
+      "label": "Setup USB 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "Configuration",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage.",
+      "id": "port-5"
+    },
+    {
+      "label": "Setup USB 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "Configuration",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage.",
+      "id": "port-6"
+    },
+    {
+      "label": "Setup USB 3",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "Configuration",
+      "notes": "USB 2.0 Type-A for setup keyboard/mouse/storage.",
+      "id": "port-7"
+    },
+    {
+      "label": "AC Power (Primary)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Primary internal hot-swappable PSU. IEC mains 100-240 VAC, 50-60 Hz.",
+      "id": "port-8"
+    },
+    {
+      "label": "AC Power (Redundant)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "notes": "Redundant internal hot-swappable PSU. IEC mains 100-240 VAC, 50-60 Hz.",
+      "id": "port-9"
+    }
+  ]
 }

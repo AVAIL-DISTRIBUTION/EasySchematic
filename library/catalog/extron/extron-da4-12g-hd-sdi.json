@@ -30,11 +30,69 @@
   "thermalBtuh": 8.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Four Output 12G-SDI Distribution Amplifier",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "918140f1-24ad-4a90-9119-f7d391ae9356",
+      "label": "Extron DA4 12G HD-SDI",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "SDI In",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "SDI Out 1",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "SDI Out 2",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "SDI Out 3",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "SDI Out 4",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC PSU brick (100-240 VAC input).",
+      "id": "port-5"
+    }
+  ]
 }

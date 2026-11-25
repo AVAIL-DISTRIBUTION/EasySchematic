@@ -28,10 +28,36 @@
   "voltage": "12V DC",
   "thermalBtuh": 2.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Audio Control Panel with Volume and Mute - Flex55 and EU",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "30d0ad45-0ecc-4e3e-ba5e-80fdb9a2ad55",
+      "label": "Extron ACP VC1 EU",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "ACP Bus 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-0",
+      "notes": "bus-powered (ACP)"
+    },
+    {
+      "label": "ACP Bus 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-1"
+    }
+  ]
 }

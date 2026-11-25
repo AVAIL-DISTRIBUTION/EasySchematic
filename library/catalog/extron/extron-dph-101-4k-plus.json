@@ -29,10 +29,43 @@
   "voltage": "12V DC",
   "thermalBtuh": 1.9,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "DisplayPort Female to HDMI Female Active Adapter",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "9132e1d9-4b7f-4f8c-8196-72ff6849beb5",
+      "label": "Extron DPH 101 4K PLUS",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "DisplayPort In",
+      "signalType": "displayport",
+      "direction": "input",
+      "connectorType": "displayport",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "id": "port-1",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
 }

@@ -24,11 +24,28 @@
   "depthMm": 185,
   "weightKg": 5.4,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White, 70/100V, Pair",
     "rackFormSource": "Non-rack",
     "description": "SpeedMount Two-Way Surface Mount Speakers with 8\" Woofer and 70/100 V Transformer, Pair - White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "c8039005-6d37-4718-9c12-138ce1a1e370",
+      "label": "Extron SM 28T White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

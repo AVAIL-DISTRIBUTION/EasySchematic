@@ -29,11 +29,48 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 39.3,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black",
     "rackFormSource": "Non-rack",
     "description": "10\" Wall Mount TouchLink Scheduling Panel - Black",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "d362578a-779d-46d3-bc53-b762cd3bd297",
+      "label": "Extron TLS 1025M NC Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "poeDrawW": 12.9,
+      "notes": "PoE 802.3af class 3",
+      "id": "port-0"
+    },
+    {
+      "label": "Digital Input",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control (panel)",
+      "notes": "1 configurable digital input (0-30VDC range, programmable pull-up) on a 3.5mm 2-pole captive screw on the panel.",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Config",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "USB Micro-B for config PC connection (TLP/TLS) or USB Control Adapter (TLC Pro). USB 2.0 high-speed.",
+      "id": "port-1"
+    }
+  ]
 }

@@ -28,10 +28,37 @@
   "voltage": "5V DC",
   "thermalBtuh": 24.4,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Wireless Receiver for HDMI (US)",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "665a1d01-743e-4391-8074-64ba77db2253",
+      "label": "Extron eLink 100 R US",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Decoded HDMI output to local sink (display/projector).",
+      "id": "port-0"
+    },
+    {
+      "label": "Power (5VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 5VDC, 2.6A PSU brick (13W).",
+      "id": "port-1"
+    }
+  ]
 }

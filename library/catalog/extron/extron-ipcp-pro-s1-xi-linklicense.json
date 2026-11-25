@@ -30,12 +30,45 @@
   "thermalBtuh": 7.4,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "LinkLicense",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "IPCP Pro xi Control Proc., LL UI Upgrade",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "16e99ec8-554c-4bad-9678-c86441635ebe",
+      "label": "Extron IPCP Pro S1 xi",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-2",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-0",
+      "label": "COM 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-1",
+      "label": "12V Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
 }

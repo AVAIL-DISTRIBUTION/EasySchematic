@@ -28,9 +28,62 @@
   "poeDrawW": 30,
   "unitCost": 1028,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "4 channel PoE+ conferencing amplifier [includes BPAK]",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "library",
+      "from": "biamp-tesira-amp-450bp.json",
+      "label": "Biamp Tesira AMP-450BP",
+      "match": "part-number",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "amp450bp-out1",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Speaker output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "amp450bp-out2",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Speaker output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "amp450bp-out3",
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Speaker output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "amp450bp-out4",
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Speaker Outputs",
+      "notes": "Speaker output over category cable (CCA adapter for euroblock speakers)"
+    },
+    {
+      "id": "amp450bp-avb",
+      "label": "AVB (PoE+)",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "AVB",
+      "notes": "Gigabit AVB and control; the only power input, PoE+ 802.3at class 4"
+    }
+  ]
 }

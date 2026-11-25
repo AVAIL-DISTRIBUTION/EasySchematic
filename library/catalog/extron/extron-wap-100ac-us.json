@@ -29,10 +29,29 @@
   "poeDrawW": 30,
   "thermalBtuh": 53.8,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "description": "Wireless Access Point - US/Canada Version",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "df2f13b3-2fe3-4932-a71b-19362e11e766",
+      "label": "Extron WAP 100AC US",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100/1000 Base-T Ethernet with PoE+ input (802.3at, ~16W max). Single port carries data + power.",
+      "poeDrawW": 16,
+      "id": "port-0"
+    }
+  ]
 }

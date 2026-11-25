@@ -30,12 +30,121 @@
   "thermalBtuh": 5.1,
   "rackForm": "half",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "with Cable Kit",
     "rackFormSource": "1U 1/2 rack",
     "rackUnits": 1,
     "description": "Control System Power Expansion Interface with Cable Kit",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "fc811e82-8897-48b0-8baf-856b798f8c25",
+      "label": "Extron Control System Power Expansion Interface",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "fbe54ac4",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    },
+    {
+      "id": "2bbb331c",
+      "label": "Relay",
+      "signalType": "contact-closure",
+      "connectorType": "phoenix",
+      "direction": "output",
+      "inheritsSignal": false,
+      "section": "Relays"
+    },
+    {
+      "id": "6d6347cd",
+      "label": "Manual 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "inheritsSignal": false
+    },
+    {
+      "id": "fa699e1a",
+      "label": "Manual 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "inheritsSignal": false
+    },
+    {
+      "id": "cc1b6377",
+      "label": "Manual 3",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "inheritsSignal": false
+    },
+    {
+      "id": "96b03237",
+      "label": "Manual 4",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "inheritsSignal": false
+    },
+    {
+      "id": "8c1f70e5",
+      "label": "AC Power",
+      "signalType": "power",
+      "connectorType": "iec",
+      "direction": "input",
+      "inheritsSignal": false,
+      "gender": "male",
+      "section": "Power"
+    },
+    {
+      "id": "e136a166",
+      "label": "AC Power 1",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "iec",
+      "gender": "female",
+      "section": "Power"
+    },
+    {
+      "id": "64c9e956",
+      "label": "AC Power 2",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "iec",
+      "gender": "female",
+      "section": "Power"
+    },
+    {
+      "id": "d3f42427",
+      "label": "AC Power 3",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "iec",
+      "gender": "female",
+      "section": "Power"
+    },
+    {
+      "id": "2429cf0d",
+      "label": "AC Power 4",
+      "signalType": "power",
+      "direction": "output",
+      "connectorType": "iec",
+      "gender": "female",
+      "section": "Power"
+    }
+  ]
 }

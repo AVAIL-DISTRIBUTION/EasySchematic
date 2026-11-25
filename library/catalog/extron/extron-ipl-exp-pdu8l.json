@@ -30,11 +30,101 @@
   "thermalBtuh": 5.4,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Control System Power Expansion Interface",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e64df0e3-f336-43d7-939a-12e9edbbad0b",
+      "label": "Extron IPL EXP PDU8L",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "tpl-9",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "tpl-0",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "gender": "female"
+    },
+    {
+      "id": "tpl-1",
+      "label": "12v Power 1",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-2",
+      "label": "12v Power 2",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-3",
+      "label": "12v Power 3",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-4",
+      "label": "12v Power 4",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-5",
+      "label": "12v Power 5",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-6",
+      "label": "12v Power 6",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-7",
+      "label": "12v Power 7",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    },
+    {
+      "id": "tpl-8",
+      "label": "12v Power 8",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "phoenix"
+    }
+  ]
 }

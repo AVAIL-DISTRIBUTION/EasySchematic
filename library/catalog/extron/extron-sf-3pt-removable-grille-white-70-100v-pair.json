@@ -24,11 +24,28 @@
   "depthMm": 135,
   "weightKg": 1.2,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Removable Grille, White, 70/100V, Pair",
     "rackFormSource": "Non-rack",
     "description": "SoundField 3\" Full-Range Pendant Speaker with 70/100 V Transformer and Removable Grille, Pair - White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "fb9e11bb-7237-4969-ae53-7f6a2ed6e004",
+      "label": "Extron SF 3PT White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

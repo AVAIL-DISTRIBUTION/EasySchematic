@@ -24,11 +24,26 @@
   "depthMm": 127,
   "weightKg": 12.5,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black, 70/100V, IP54, Single",
     "rackFormSource": "Non-rack",
     "description": "Low-Profile Mount, Single, 70/100V, Black - IP54",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "variant",
+      "from": "extron/extron-ca-163-lp-black-70-100v-single.json",
+      "label": "Extron CA 163 LP (Black, 70/100V, Single)",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "id": "port-0",
+      "section": "Audio Inputs"
+    }
+  ]
 }

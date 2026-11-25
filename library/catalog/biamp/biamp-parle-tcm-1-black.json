@@ -29,9 +29,36 @@
   "poeDrawW": 15.4,
   "unitCost": 2101,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "AVB Beamtracking™ ceiling microphone, black pendant",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "0c12cfcc-e076-400e-b2e9-4ea07794bae0",
+      "label": "Biamp Parlé TCM-1",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "0e4ef28a",
+      "label": "Mic",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    },
+    {
+      "id": "c1ed8af2",
+      "label": "AVB / Control",
+      "signalType": "ethernet",
+      "connectorType": "rj45",
+      "direction": "bidirectional",
+      "inheritsSignal": false,
+      "section": "Network"
+    }
+  ]
 }

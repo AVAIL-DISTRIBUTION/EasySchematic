@@ -29,7 +29,7 @@
   "poeDrawW": 15.4,
   "thermalBtuh": 5.1,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Black",
     "rackFormSource": "Non-rack",
     "slotFamilies": [
@@ -37,7 +37,25 @@
     ],
     "description": "Cable Cubby Enclosure with Network Button Panel - Black",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "a084726c-2526-4a1c-b9f3-b2ab2739e8b2",
+      "label": "Extron NBP 1200C Black",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Ethernet / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-0",
+      "notes": "PoE: actual draw not published; PoE 802.3af"
+    }
+  ]
 }

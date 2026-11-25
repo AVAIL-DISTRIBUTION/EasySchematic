@@ -28,9 +28,58 @@
   "poeDrawW": 30,
   "unitCost": 1028,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "4 channel PoE+ conferencing amplifier",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "e6d6d528-b11f-4c54-b880-1e0f49512b28",
+      "label": "Biamp Tesira AMP-450P",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p17762064186281-wz6",
+      "label": "CH 1 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186282-4xy",
+      "label": "CH 2 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186283-oz6",
+      "label": "CH 3 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186284-h28",
+      "label": "CH 4 Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Speaker Outputs"
+    },
+    {
+      "id": "p17762064186280-snc",
+      "label": "AVB / PoE+",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network"
+    }
+  ]
 }

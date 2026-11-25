@@ -22,10 +22,91 @@
   ],
   "slotFamily": "extron-quantum-ultra-2",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-quantum-ultra-2)",
     "description": "Four-channel Uncompressed MM Fiber Output Card for Quantum Ultra II",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "2428bc5b-e177-4f16-992a-c06071312d29",
+      "label": "Extron Quantum OUT4FOX3 U MM",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "FOX3 Out 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-0"
+    },
+    {
+      "label": "FOX3 Out 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-1"
+    },
+    {
+      "label": "FOX3 Out 3",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-2"
+    },
+    {
+      "label": "FOX3 Out 4",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-3"
+    },
+    {
+      "label": "FOX3 Out 5",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-4"
+    },
+    {
+      "label": "FOX3 Out 6",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-5"
+    },
+    {
+      "label": "FOX3 Out 7",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-6"
+    },
+    {
+      "label": "FOX3 Out 8",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber video. SFP module + LC fiber connector.",
+      "id": "port-7"
+    }
+  ]
 }

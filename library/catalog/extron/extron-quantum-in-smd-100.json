@@ -23,14 +23,41 @@
   ],
   "slotFamily": "extron-quantum-ultra",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "cardFamilies": [
       "extron-quantum-ultra",
       "extron-quantum-ultra-2"
     ],
     "deviceTypeSource": "card (extron-quantum-ultra, extron-quantum-ultra-2)",
     "description": "Streaming Decoder Card for Quantum Ultra",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "6d403507-ecf1-480b-8835-9bd2c461ff04",
+      "label": "Extron Quantum IN SMD 100",
+      "match": "model-name",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Shielded RJ-45. H.264/MPEG2/MJPEG IP video stream input. 10/100/1000Base-T.",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Shielded RJ-45. H.264/MPEG2/MJPEG IP video stream input. 10/100/1000Base-T.",
+      "id": "port-1"
+    }
+  ]
 }

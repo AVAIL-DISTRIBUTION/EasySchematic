@@ -30,7 +30,7 @@
   "thermalBtuh": 3.9,
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "cardFamilies": [
       "extron-cubby-aap",
@@ -39,7 +39,25 @@
     "deviceTypeSource": "card (extron-cc-aap, extron-cc-flex55)",
     "description": "Network Button Panel with 4 Buttons – Flex55 and EU Wall Frame",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "db",
+      "from": "42ce8d98-f23a-4aa4-afe7-3658fcff7b5e",
+      "label": "Extron NBP 104 EU",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Ethernet / PoE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-0",
+      "notes": "PoE"
+    }
+  ]
 }

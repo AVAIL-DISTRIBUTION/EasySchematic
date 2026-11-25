@@ -28,11 +28,155 @@
   "thermalBtuh": 11.7,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "4x4 Digital Matrix Processor",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "f3b6408d-8a35-483d-bd00-86e3883909be",
+      "label": "Extron DMP 44 xi",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Line 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono line input, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-0"
+    },
+    {
+      "label": "Line 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono line input, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-1"
+    },
+    {
+      "label": "Line 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono line input, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "Line 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono line input, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Line 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-4"
+    },
+    {
+      "label": "Line 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-5"
+    },
+    {
+      "label": "Line 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-6"
+    },
+    {
+      "label": "Line 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono line output, balanced/unbalanced. Per-channel on a shared 3.5mm captive screw.",
+      "id": "port-7"
+    },
+    {
+      "label": "Digital 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-10"
+    },
+    {
+      "label": "Digital 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-11"
+    },
+    {
+      "label": "Digital 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-12"
+    },
+    {
+      "label": "Digital 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "Configurable digital I/O on a shared 3.5mm captive screw connector.",
+      "id": "port-13"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw (Tx/Rx/GND).",
+      "id": "port-8"
+    },
+    {
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Configuration",
+      "notes": "Front-panel USB-C for configuration (USB 2.0 low/high speed).",
+      "id": "port-9"
+    },
+    {
+      "label": "DC Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "External 12VDC barrel-jack input (100-240 VAC PSU brick → 12 VDC).",
+      "id": "port-14"
+    }
+  ]
 }

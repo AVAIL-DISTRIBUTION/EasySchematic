@@ -32,11 +32,68 @@
   "thermalBtuh": 5.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Twisted Pair Extender for USB Peripherals – HID",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "3a5e896a-b776-4458-bb73-27ea6a92a6cd",
+      "label": "Extron USB Extender Plus R HID",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "USB Extension (CATx from Tx)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "USB",
+      "id": "port-0"
+    },
+    {
+      "label": "USB Device 1 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-1"
+    },
+    {
+      "label": "USB Device 2 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Device 3 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "USB Device 4 (USB-A 2.0)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-4"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-5"
+    }
+  ]
 }

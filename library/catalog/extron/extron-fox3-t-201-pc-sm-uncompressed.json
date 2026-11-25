@@ -22,12 +22,73 @@
   ],
   "slotFamily": "extron-fox3-powercage",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Uncompressed",
     "deviceTypeSource": "fiber-transmitter",
     "description": "PowerCage Fiber Optic Transmitter for HDMI, Audio, and RS-232",
     "notes": "[AVAIL] single-slot module for PowerCage 411; Lossless/Uncompressed per Extron price list",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "86140c00-4af1-4310-a3b7-6b89474273e7",
+      "label": "Extron FOX3 T 201 PC SM",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Fiber 1",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
+      "id": "port-4"
+    },
+    {
+      "label": "Fiber 2",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "lc",
+      "section": "Video Outputs",
+      "notes": "FOX3 fiber link. SFP module (MM = 850 nm / SM = 1310 nm) with LC connectors.",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "mini-trs",
+      "section": "Audio Inputs",
+      "notes": "3.5mm mini stereo jack, unbalanced. Accepts HDMI de-embedded or line-level.",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232 Pass-through",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Control",
+      "notes": "3-pole 3.5mm captive screw. Passes RS-232 to remote device over fiber.",
+      "id": "port-3"
+    }
+  ]
 }

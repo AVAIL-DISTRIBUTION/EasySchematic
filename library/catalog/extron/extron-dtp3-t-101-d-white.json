@@ -28,11 +28,52 @@
   "voltage": "12V DC",
   "thermalBtuh": 17.2,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White",
     "rackFormSource": "Non-rack",
     "description": "4K/60 DTP3 Transmitter for HDMI – Decorator-Style Wallplate, White",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "8db98f5b-cc86-4c20-8622-04a3fd0fc24d",
+      "label": "Extron DTP3 T 101 D White",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "DTP3 Out (RJ-45 to Rx)",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C Config (Rear)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Control",
+      "id": "port-2"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-3"
+    }
+  ]
 }

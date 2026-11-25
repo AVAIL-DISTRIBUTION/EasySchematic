@@ -31,11 +31,44 @@
   "thermalBtuh": 5.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "Twisted Pair Extender for USB Peripherals",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "91333770-5624-492b-8688-f6d3e97d08b8",
+      "label": "Extron USB Extender Plus T",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "USB Host (USB-B)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-0"
+    },
+    {
+      "label": "USB Extension (CATx to Rx)",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "USB",
+      "id": "port-1"
+    },
+    {
+      "label": "Power 12VDC",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
 }

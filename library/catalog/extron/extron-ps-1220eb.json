@@ -29,11 +29,76 @@
   "thermalBtuh": 97.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/4 rack",
     "rackUnits": 1,
     "description": "eBUS® 12 VDC Power Supply and Distribution Hub",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "78043f22-1f0a-42ed-8cf7-b81c367e0520",
+      "label": "Extron PS 1220EB",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "eBUS Out 1",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-1"
+    },
+    {
+      "label": "eBUS Out 2",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-2"
+    },
+    {
+      "label": "eBUS Out 3",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-3"
+    },
+    {
+      "label": "eBUS Out 4",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-4"
+    },
+    {
+      "label": "eBUS Out 5",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-5"
+    },
+    {
+      "label": "eBUS Out 6",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Expansion",
+      "id": "port-6"
+    },
+    {
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-0"
+    }
+  ]
 }

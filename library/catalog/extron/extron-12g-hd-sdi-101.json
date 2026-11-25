@@ -30,11 +30,44 @@
   "thermalBtuh": 3.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/8 rack",
     "rackUnits": 1,
     "description": "Cable Equalizer for 12G-SDI",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "bee12b11-4516-4d35-99c4-8b974c70b2c9",
+      "label": "Extron 12G HD-SDI 101",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "SDI In",
+      "signalType": "sdi",
+      "direction": "input",
+      "connectorType": "bnc",
+      "id": "port-0",
+      "section": "Video Inputs"
+    },
+    {
+      "label": "SDI Out",
+      "signalType": "sdi",
+      "direction": "output",
+      "connectorType": "bnc",
+      "id": "port-1",
+      "section": "Video Outputs"
+    },
+    {
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "id": "port-2"
+    }
+  ]
 }

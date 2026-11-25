@@ -29,11 +29,65 @@
   "thermalBtuh": 8.2,
   "rackForm": "shelf-only",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "1U 1/8 rack",
     "rackUnits": 1,
     "description": "Three Channel Line Level Mixer",
-    "source": "extron-blocks-v4.csv"
+    "source": "extron-blocks-v4.csv",
+    "portsSource": {
+      "kind": "db",
+      "from": "0b342833-671b-43f4-afdc-8bca64181061",
+      "label": "Extron MIX 301",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "label": "Input 1 (Mono)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw.",
+      "id": "port-0"
+    },
+    {
+      "label": "Input 2 (Mono)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw.",
+      "id": "port-1"
+    },
+    {
+      "label": "Input 3 (Mono)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw.",
+      "id": "port-2"
+    },
+    {
+      "label": "Output (Mono)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Mono balanced/unbalanced line on a 3-pole 3.5mm captive screw.",
+      "id": "port-3"
+    },
+    {
+      "label": "Power (12VDC)",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "External 12VDC, 0.5A PSU brick (6W).",
+      "id": "port-4"
+    }
+  ]
 }
