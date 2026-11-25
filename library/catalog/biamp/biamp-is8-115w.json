@@ -24,9 +24,32 @@
   "weightKg": 32.7,
   "unitCost": 2972,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "High Power 15-Inch Subwoofer White",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_is8-115_nov2023_2437.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive subwoofer, external amplifier; Screw terminal block, 4-position (two blocks); single amp"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Screw terminal block, 4-position (two blocks); parallel loop-thru"
+    }
+  ]
 }

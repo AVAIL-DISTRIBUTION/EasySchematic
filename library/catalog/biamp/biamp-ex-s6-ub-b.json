@@ -24,10 +24,33 @@
   "weightKg": 6.5,
   "unitCost": 540,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "6.5” Coaxial Surface Mount Indoor/Outdoor Loudspeaker. 8 Ohm or 70V/100V operation, included indexing u-bracket and weather cover, black",
     "notes": "Характеристики с сайта по артикулу 920-01811-10000",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Desono_EX-S6_UB-CM_Jan26_13667.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; lever-actuated 4-position terminal block with pass-through; low impedance or 70 V / 100 V by selector switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Pass-through on the same block"
+    }
+  ]
 }

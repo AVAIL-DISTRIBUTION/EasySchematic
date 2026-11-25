@@ -24,9 +24,32 @@
   "weightKg": 12.8,
   "unitCost": 970,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "10” Subwoofer Surface Mount Indoor/Outdoor Loudspeaker. 8 Ohm operation, included indexing u-bracket and weather cover, white",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Desono_Data_Sheet_EX-S10SUB_Jan26_13699.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive subwoofer, external amplifier; lever-actuated 4-position terminal block with pass-through; 8 ohm"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Pass-through on the same block"
+    }
+  ]
 }

@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "High Power 12-Inch 2-Way 60 X 40 Weather-Resistant Grey",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Weather-resistant: sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable; the operating mode (passive, biamp or triamp) is set at the factory, so the number of conductor pairs depends on the order"
   },
   "ports": []
 }

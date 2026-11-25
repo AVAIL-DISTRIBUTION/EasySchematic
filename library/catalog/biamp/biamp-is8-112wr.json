@@ -24,9 +24,23 @@
   "weightKg": 26.3,
   "unitCost": 3600,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "High Power 12-Inch Subwoofer Weather-Resistant Grey",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_i_series_weather_resistant_2452.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive subwoofer, external amplifier; sealed gland nut with 15 ft (4.6 m) 14 AWG unterminated SJOW cable; single amp"
+    }
+  ]
 }

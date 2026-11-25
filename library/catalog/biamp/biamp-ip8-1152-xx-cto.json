@@ -29,7 +29,8 @@
     "status": "awaiting-ports",
     "description": "High Power 15-inch Two-Way Installation Loudspeaker",
     "notes": "Характеристики с сайта по артикулу 930-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Configured to order: inputs depend on the configuration ordered; ports wait for the order specification"
   },
   "ports": []
 }

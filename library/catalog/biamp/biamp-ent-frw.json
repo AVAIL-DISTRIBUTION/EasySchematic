@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "ENTASYS Full-Range 3-Way Column Loudspeaker, White",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Connections: dual banana (male) on top; NL4, two 2-terminal barrier strips and a banana (female) at the bottom. The data sheet does not say which are inputs and which link to the next column; check the manual"
   },
   "ports": []
 }

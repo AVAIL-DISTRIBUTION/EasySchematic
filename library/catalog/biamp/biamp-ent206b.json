@@ -24,9 +24,32 @@
   "weightKg": 6.8,
   "unitCost": 740,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "ENTASYS 200 Column, 2-Way 6 LF Drivers, Black",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_ent206_august23_2086.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4-type, low impedance only"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; 8-position terminal strip, low impedance or constant voltage"
+    }
+  ]
 }

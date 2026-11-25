@@ -24,9 +24,23 @@
   "weightKg": 18.3,
   "unitCost": 2650,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Two-Way 8-Inch \"Wide\" Compact System (White)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_w2-2w8_jan21_2554.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, low impedance; 12 ft (4 m) 16-2 SJOW cable"
+    }
+  ]
 }
