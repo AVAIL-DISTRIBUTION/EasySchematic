@@ -5,14 +5,19 @@ import path from 'path'
 import os from 'os'
 import { readFileSync } from 'fs'
 import { execSync } from 'child_process'
+import { availBrandingPlugin, isAvailEnv, AVAIL_MANIFEST } from './vite.avail'
 
 // Use temp dir for cache to avoid file-locking issues
 const cacheDir = path.join(os.tmpdir(), 'vite-easyschematic')
 
+// AVAIL: VITE_AVAIL=1 rebrands index.html and the PWA manifest (vite.avail.ts).
+const avail = isAvailEnv(process.env)
+
 const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'))
 
-let gitHash = 'unknown'
-try {
+// AVAIL: Docker builds have no .git; the image workflow passes the commit as SOURCE_COMMIT.
+let gitHash = process.env.SOURCE_COMMIT?.trim().slice(0, 7) || 'unknown'
+if (gitHash === 'unknown') try {
   gitHash = execSync('git rev-parse --short HEAD', { encoding: 'utf-8' }).trim()
 } catch { /* not a git repo or git not available */ }
 
@@ -23,6 +28,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    availBrandingPlugin(avail),
     VitePWA({
       // 'prompt' lets src/sw-register.ts decide what to do when a new SW
       // arrives — show a pill when the user's active, silent-reload when
@@ -67,6 +73,7 @@ export default defineConfig({
           { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
           { src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml' },
         ],
+        ...(avail ? AVAIL_MANIFEST : {}),
       },
     }),
   ],

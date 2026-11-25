@@ -57,6 +57,9 @@ jobs:
             VITE_TEMPLATE_API_URL=${{ vars.VITE_TEMPLATE_API_URL }}
             VITE_DEVICES_URL=${{ vars.VITE_DEVICES_URL }}
             VITE_AUTH_GOOGLE_ONLY=${{ vars.VITE_AUTH_GOOGLE_ONLY }}
+            VITE_DOCS_URL=${{ vars.VITE_DOCS_URL }}
+            VITE_AVAIL=1
+            SOURCE_COMMIT=${{ github.sha }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha,scope=frontend

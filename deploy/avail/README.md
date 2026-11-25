@@ -22,6 +22,10 @@ Basic auth нет: доступ ограничен входом через Googl
    - `VITE_TEMPLATE_API_URL` = `https://sch.avail-int.com/api`
    - `VITE_AUTH_GOOGLE_ONLY` = `1`
    - `VITE_DEVICES_URL` — по желанию (сайт базы устройств; без переменной ссылка ведёт на upstream)
+   - `VITE_DOCS_URL` — по желанию (наша документация для Help → Documentation; без переменной пункта нет)
+
+   `VITE_AVAIL=1` (интерфейс AVAIL: вход вместо лендинга, брендинг, умолчания) и `SOURCE_COMMIT`
+   (коммит для About и ссылки на исходники, требование AGPL) workflow передаёт сам.
 
    После изменения переменных нужно пересобрать образ: push в master или
    Actions → AVAIL image → Run workflow.

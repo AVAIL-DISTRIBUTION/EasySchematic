@@ -79,6 +79,7 @@ import { initUserTypes } from "./userTypes";
 import { loadTestSchematicFromUrl } from "./testSchematic/load";
 import { refreshCloudCache } from "./cloudSync";
 import { useTheme } from "./hooks/useTheme";
+import { appDocumentTitle, isAvailBuild } from "./avail/brand";
 
 // Community signals / connectors / device types the open schematic may use: register the
 // last-good copy (or the bundled one) before the first render; DeviceLibrary's
@@ -2081,9 +2082,7 @@ export default function App() {
   // reflects the active file (incl. after Save As / Open / rename). (#174)
   const schematicName = useSchematicStore((s) => s.schematicName);
   useEffect(() => {
-    document.title = schematicName
-      ? `${schematicName} — EasySchematic`
-      : "EasySchematic — AV Signal Flow Diagram Tool";
+    document.title = appDocumentTitle(schematicName); // AVAIL build: "… — AVAIL Schematic"
   }, [schematicName]);
 
   // Handle /s/{token} URLs for shared schematics
@@ -2163,7 +2162,7 @@ export default function App() {
       <UpdatePill />
       <BetaBanner />
       <DemoBanner />
-      <PendingSubmissionBanner />
+      {!isAvailBuild() && <PendingSubmissionBanner />}
       {printView && isSchematicActive && <PrintViewBar />}
       {isSchematicActive && <PrintTitleBlock />}
       <PageTabs />

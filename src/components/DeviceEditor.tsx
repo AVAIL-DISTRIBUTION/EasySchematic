@@ -39,6 +39,9 @@ import { buildDeviceTemplate, buildTemplatePreset, type PortDraft } from "../dev
 import { installedSlotsToDefinitions, slotOwnedPortIds } from "../slotDefinitions";
 import { AvailTemplateEditBar } from "../avail/LibraryUi";
 import { acceptedFamilies } from "../avail/slotFamilies";
+import { isAvailBuild } from "../avail/brand";
+import { availSaveActions } from "../avail/menus";
+import { groupHeaderColor } from "../avail/headerColors";
 import { carriesPowerCapacity } from "../deviceTypeCategories";
 import { editorPortsMatch, visibleSaveActions, SAVE_ACTION_LABELS, SAVE_ACTION_TITLES, type SaveActionId } from "../deviceEditorActions";
 import { visiblePortRowControls, PORT_ROW_CONTROL_TITLES, type PortRowControlId } from "../portRowControls";
@@ -1157,14 +1160,15 @@ export default function DeviceEditor() {
     "revert-preset": handleRevertToPreset,
     "revert-template": handleRevertToTemplate,
   };
-  const [primarySaveAction, ...menuSaveActions] = visibleSaveActions({
+  // AVAIL build: no "Submit to Community" (src/avail/menus.ts).
+  const [primarySaveAction, ...menuSaveActions] = availSaveActions(visibleSaveActions({
     templateId,
     isUserTemplate: customTemplates.some((t) => t.id === templateId),
     hasLabeledPort: ports.some((p) => p.label.trim().length > 0),
     hasPreset,
     dirtyVsPreset,
     dirtyVsTemplate,
-  });
+  }));
   const inputs = ports.filter((p) => p.direction === "input");
   const outputs = ports.filter((p) => p.direction === "output");
   const bidir = ports.filter((p) => p.direction === "bidirectional");
@@ -1330,14 +1334,19 @@ export default function DeviceEditor() {
               // or preset's own color is never labeled as a Preferences setting (#354).
               (() => {
                 const presetColor = templateId ? templatePresets[templateId]?.headerColor : undefined;
-                const templateColor = templateId ? getTemplateById(templateId, customTemplates)?.headerColor : undefined;
-                const fallback = resolveDeviceHeaderColor(presetColor, templateColor, projectHeaderColor, appHeaderColor);
+                const sourceTemplate = templateId ? getTemplateById(templateId, customTemplates) : undefined;
+                const templateColor = sourceTemplate?.headerColor;
+                // AVAIL build: the category group's color sits between the template's and the defaults.
+                const groupColor = normalizeHeaderColor(templateColor) ? undefined : groupHeaderColor(sourceTemplate?.category);
+                const fallback = resolveDeviceHeaderColor(presetColor, normalizeHeaderColor(templateColor) ?? groupColor, projectHeaderColor, appHeaderColor);
                 if (!fallback) return null;
                 const source = normalizeHeaderColor(presetColor)
                   ? "from this preset"
                   : normalizeHeaderColor(templateColor)
                     ? "from this template"
-                    : "default for new devices";
+                    : groupColor
+                      ? "from the category group"
+                      : "default for new devices";
                 return (
                   <span className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)]">
                     <span
@@ -1790,7 +1799,9 @@ export default function DeviceEditor() {
             </summary>
             <div className="pt-1 pl-2">
               <p className="text-[10px] text-[var(--color-text-muted)] mb-1">
-                Comma-separated keywords used to find this device in the library. Edit here and "Submit to Community" to contribute improvements back.
+                {isAvailBuild()
+                  ? "Comma-separated keywords used to find this device in the library."
+                  : 'Comma-separated keywords used to find this device in the library. Edit here and "Submit to Community" to contribute improvements back.'}
               </p>
               <input
                 type="text"

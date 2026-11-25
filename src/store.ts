@@ -90,6 +90,8 @@ import { DEFAULT_BRIDGE_PORT } from "./mcp/protocol";
 import { syncDeviceWithTemplate, type SyncResult } from "./templateSync";
 import { chooseNewHandleSuffix, type SwapPlan, type NewPortRef } from "./deviceSwap";
 import { getSignalColorOverrides, applySignalColors, loadSignalColors, saveSignalColors } from "./signalColors";
+import { availNewSchematicDefaults, skipDemoSchematic } from "./avail/schematicDefaults";
+import { templateHeaderColor } from "./avail/headerColors";
 import { computeCableSchedule } from "./cableSchedule";
 import { getPanelOccupancy, isPortAvailable } from "./patchCircuits";
 import { exclusiveConflictMessage, newExclusiveConflicts } from "./exclusivePorts";
@@ -2785,9 +2787,10 @@ export const useSchematicStore = create<SchematicState>((set, get) => ({
     // nothing at all (the theme's surface color). A color saved onto this template or its
     // preset is about this device specifically, so it beats both defaults. Stamped here so a
     // later change to any of them leaves this device alone (#354).
+    // AVAIL build: a template without its own color takes its category group's (src/avail/headerColors.ts).
     const headerColor = resolveDeviceHeaderColor(
       preset?.headerColor,
-      template.headerColor,
+      templateHeaderColor(template),
       state.defaultDeviceHeaderColor,
       state.appDefaultDeviceHeaderColor,
     );
@@ -5352,7 +5355,7 @@ export const useSchematicStore = create<SchematicState>((set, get) => ({
     // color the same way — preset, then template, then the two defaults (#354).
     const adapterHeaderColor = resolveDeviceHeaderColor(
       preset?.headerColor,
-      template.headerColor,
+      templateHeaderColor(template),
       state.defaultDeviceHeaderColor,
       state.appDefaultDeviceHeaderColor,
     );
@@ -7083,6 +7086,11 @@ export const useSchematicStore = create<SchematicState>((set, get) => ({
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) {
+        // AVAIL build: an empty sheet with AVAIL defaults instead of the demo.
+        if (skipDemoSchematic()) {
+          get().newSchematic();
+          return false;
+        }
         // Load default demo schematic for first-time visitors
         // Dynamically import to avoid bundling in the critical path
         import("./defaultSchematic.json").then((mod) => {
@@ -7611,6 +7619,13 @@ export const useSchematicStore = create<SchematicState>((set, get) => ({
         activePage: "schematic",
         loadSeq: get().loadSeq + 1,
       });
+      // AVAIL build: palette, title block and A3 landscape (src/avail/schematicDefaults.ts).
+      const avail = availNewSchematicDefaults();
+      if (avail) {
+        set(avail.state);
+        get().setSignalColors(avail.signalColors);
+        get().setSignalLineStyles(avail.signalLineStyles);
+      }
     }
     // Establishing a blank / template document also re-arms autosave in case the
     // initial localStorage hydrate had failed (which leaves `hydrated` false).
