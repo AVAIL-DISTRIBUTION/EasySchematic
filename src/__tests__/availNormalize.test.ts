@@ -323,8 +323,8 @@ describe("normalizeBlock: direction of physical signals (v2)", () => {
     const bad = { ...block(), ports: [port("x", { label: "HDMI Out", direction: "bidirectional", section: "Rear" })] };
     const lint = lintBlock(bad);
     expect(lint.warnings).toContain('"HDMI Out": hdmi must be input or output, not bidirectional');
-    expect(lint.errors).toContain('"HDMI Out": section "Rear" is not in the vocabulary; use "Video Outputs"');
-    expect(lintBlock({ ...block(), ports: [port("y", { label: "Thing", signalType: "custom", section: "" })] }).errors).toContain('"Thing": no section');
+    expect(lint.warnings).toContain('"HDMI Out": section "Rear" is not in the vocabulary; use "Video Outputs"');
+    expect(lintBlock({ ...block(), ports: [port("y", { label: "Thing", signalType: "custom", section: "" })] }).warnings).toContain('"Thing": no section');
   });
 });
 
