@@ -27,9 +27,77 @@
   "powerDrawW": 7,
   "unitCost": 2000,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "BYOM Room System",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_ModenaMAXConnect_May_26_001_13887.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0 to the room display"
+    },
+    {
+      "id": "p3",
+      "label": "LAN (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Gigabit Ethernet; PoE+ 802.3at, 30 W (or the 12 V adapter)"
+    },
+    {
+      "id": "p4",
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 to room peripherals (touch display)"
+    },
+    {
+      "id": "p5",
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 to room peripherals"
+    },
+    {
+      "id": "p6",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 3.0; to the included EasyConnect USB-C Adapter for wired BYOM"
+    },
+    {
+      "id": "p7",
+      "label": "Power (DC barrel)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V 2 A DC, external adapter; optional when PoE+ powered"
+    }
+  ]
 }

@@ -29,9 +29,140 @@
   "voltage": "50-57V DC",
   "unitCost": 4000,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Android UC meeting room hub with USB-C input and BYOM switch, HDMI input, supporting one display output and USB peripherals with PoE+ power for touch panel, microphones and amplifiers",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Devio_UCX2000_Sep26_v4_14126.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0 content sharing, 1080p60 or 4K30"
+    },
+    {
+      "id": "p2",
+      "label": "USB-C In (Laptop)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Content sharing and BYOM switch; USB-C DP 1.4a Alt Mode, 4K30"
+    },
+    {
+      "id": "p3",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0, CEC, 4K60; HDMI ARC audio input"
+    },
+    {
+      "id": "p4",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm stereo unbalanced input"
+    },
+    {
+      "id": "p5",
+      "label": "Assistive Listening Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm stereo unbalanced output, configurable near/far end mix"
+    },
+    {
+      "id": "p6",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Primary LAN, 100/1000"
+    },
+    {
+      "id": "p7",
+      "label": "LAN 2 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "PoE+ PSE 30 W for Apprimo Touch 10 UCX touch panels"
+    },
+    {
+      "id": "p8",
+      "label": "LAN 3 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Isolated PoE+ 30 W for network media (Parlé DCM-X/DCM-XA/DTM-X, Devio DPA-450BP)"
+    },
+    {
+      "id": "p9",
+      "label": "LAN 4 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Isolated PoE+ 30 W for network media (Parlé DCM-X/DCM-XA/DTM-X, Devio DPA-450BP)"
+    },
+    {
+      "id": "p10",
+      "label": "USB-A 1 (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 host for USB camera / USB audio"
+    },
+    {
+      "id": "p11",
+      "label": "USB-A 2 (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 host for USB camera / USB audio"
+    },
+    {
+      "id": "p12",
+      "label": "USB-A 3 (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 host for USB camera / USB audio"
+    },
+    {
+      "id": "p13",
+      "label": "USB-C (Room A/V)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 3.2 Gen 1 with 60 W PD for Parlé ABC and VBC conferencing bars"
+    },
+    {
+      "id": "p14",
+      "label": "Power (DC barrel)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "50-57 V DC, external adapter 100-240 V AC; threaded barrel"
+    }
+  ]
 }

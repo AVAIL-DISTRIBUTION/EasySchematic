@@ -29,10 +29,79 @@
   "voltage": "100-240V AC",
   "unitCost": 4781,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Conference room hub",
     "notes": "Devio SCX — конференц-хаб на базе Tesira; Характеристики с сайта по артикулу 920-00090-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Certified_Devio_SCX-800_Apr25_v2_13309.pdf"
+    },
+    "portsMissing": "The data sheet does not name the media protocol of ports 2-5 (Biamp network audio, likely AVB); typed as Ethernet"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1 Gb: configuration, control and SIP VoIP; no PoE"
+    },
+    {
+      "id": "p2",
+      "label": "LAN 2 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1 Gb: Biamp network audio and control peripherals; PoE+ to the peripheral"
+    },
+    {
+      "id": "p3",
+      "label": "LAN 3 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1 Gb: Biamp network audio and control peripherals; PoE+ to the peripheral"
+    },
+    {
+      "id": "p4",
+      "label": "LAN 4 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1 Gb: Biamp network audio and control peripherals; PoE+ to the peripheral"
+    },
+    {
+      "id": "p5",
+      "label": "LAN 5 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1 Gb: Biamp network audio and control peripherals; PoE+ to the peripheral"
+    },
+    {
+      "id": "p6",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB-B to the UC host: USB audio and HID"
+    },
+    {
+      "id": "p7",
+      "label": "Power (DC barrel)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "50-57 V DC, external supply (100-240 V AC)"
+    }
+  ]
 }

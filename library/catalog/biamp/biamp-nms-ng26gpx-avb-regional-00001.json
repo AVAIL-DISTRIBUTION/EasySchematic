@@ -27,11 +27,331 @@
   "poeBudgetW": 480,
   "unitCost": 4134,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "Regional -00001",
     "description": "AVB-enabled Netgear 26-port 1G switch, 24-ports w/ PoE+, 480W",
     "notes": "Та же модель под другим артикулом: 920-01976-00002; [AVAIL] regional versions, confirmed by AVAIL; [AVAIL] = Netgear M4250-26G4XF-PoE+ (Biamp); dims/power from library/avail/netgear-av-m4250-26g4xf-poe.json",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/cambridge_data_sheets_netgear-m4250_switch_series_mar23_2739.pdf"
+    },
+    "portsMissing": "Same ports as library/avail/netgear-av-m4250-26g4xf-poe.json; port numbering follows the Netgear order"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN 1 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p2",
+      "label": "LAN 2 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p3",
+      "label": "LAN 3 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p4",
+      "label": "LAN 4 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p5",
+      "label": "LAN 5 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p6",
+      "label": "LAN 6 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p7",
+      "label": "LAN 7 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p8",
+      "label": "LAN 8 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p9",
+      "label": "LAN 9 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p10",
+      "label": "LAN 10 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p11",
+      "label": "LAN 11 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p12",
+      "label": "LAN 12 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p13",
+      "label": "LAN 13 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p14",
+      "label": "LAN 14 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p15",
+      "label": "LAN 15 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p16",
+      "label": "LAN 16 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p17",
+      "label": "LAN 17 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p18",
+      "label": "LAN 18 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p19",
+      "label": "LAN 19 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p20",
+      "label": "LAN 20 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p21",
+      "label": "LAN 21 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p22",
+      "label": "LAN 22 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p23",
+      "label": "LAN 23 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p24",
+      "label": "LAN 24 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, PoE+ 802.3at, 30 W; AVB and Dante enabled"
+    },
+    {
+      "id": "p25",
+      "label": "LAN 25",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, no PoE; AVB and Dante enabled"
+    },
+    {
+      "id": "p26",
+      "label": "LAN 26",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "1G RJ-45, no PoE; AVB and Dante enabled"
+    },
+    {
+      "id": "p27",
+      "label": "SFP+ 27",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "sfp",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "p28",
+      "label": "SFP+ 28",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "sfp",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "p29",
+      "label": "SFP+ 29",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "sfp",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "p30",
+      "label": "SFP+ 30",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "sfp",
+      "notes": "1G / 10G SFP+"
+    },
+    {
+      "id": "p31",
+      "label": "USB-A (Front)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB storage port"
+    },
+    {
+      "id": "p32",
+      "label": "OOB",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "rj45",
+      "notes": "1G out-of-band management"
+    },
+    {
+      "id": "p33",
+      "label": "Console (RS-232)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "rj45",
+      "notes": "RJ-45 RS-232 console"
+    },
+    {
+      "id": "p34",
+      "label": "Console (USB-C)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "connectorType": "usb-c"
+    },
+    {
+      "id": "p35",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal PSU, IEC C14 inlet with on/off switch"
+    }
+  ]
 }

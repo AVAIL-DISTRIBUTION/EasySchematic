@@ -24,11 +24,125 @@
   "voltage": "20V DC",
   "unitCost": 3000,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "usb-switch",
     "description": "BYOM collaboration switcher - table connection box",
     "notes": "Характеристики с сайта по артикулу 920-02270-00001; [AVAIL] room-mounted (under-table unit) — dimensions optional",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/EasyConnect-MPX-250-Aug26-v1_14057.pdf"
+    },
+    "portsMissing": "The Wi-Fi antenna (SMA, management only) is not modelled as a port"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-C In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: USB 3.2 Gen 2, DP Alt Mode 1.2-1.4, up to 100 W charging"
+    },
+    {
+      "id": "p2",
+      "label": "USB-C In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: USB 3.2 Gen 2, DP Alt Mode 1.2-1.4, up to 100 W charging"
+    },
+    {
+      "id": "p3",
+      "label": "USB-C In 3",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: USB 3.2 Gen 2, DP Alt Mode 1.2-1.4, up to 100 W charging"
+    },
+    {
+      "id": "p4",
+      "label": "USB-C In 4",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: USB 3.2 Gen 2, DP Alt Mode 1.2-1.4, up to 100 W charging"
+    },
+    {
+      "id": "p5",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.1, up to 8K60, HDCP 2.3"
+    },
+    {
+      "id": "p6",
+      "label": "Mgmt",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100 Ethernet: management, REST API over SSH"
+    },
+    {
+      "id": "p7",
+      "label": "Internet",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100/1000 Ethernet: internet sharing to the connected laptop"
+    },
+    {
+      "id": "p8",
+      "label": "EXT Out/DP/UC/AV",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "usb-c",
+      "notes": "USB-C extension port: DP Alt Mode 1.4 video output; to MPX 250 EXT or a DP display"
+    },
+    {
+      "id": "p9",
+      "label": "USB-A (Ctrl/AV)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.2 Gen 2, 5 V / 0.9 A"
+    },
+    {
+      "id": "p10",
+      "label": "USB-A (AV)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.2 Gen 2, 5 V / 0.9 A"
+    },
+    {
+      "id": "p11",
+      "label": "USB-C Downstream (UC/AV)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB-C downstream, USB 3.2 Gen 2, 5 V / 3 A PD 3.0"
+    },
+    {
+      "id": "p12",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "kycon-4pin",
+      "notes": "20 V DC 10 A, 4-pin DIN; external power adapter"
+    }
+  ]
 }

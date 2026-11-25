@@ -25,11 +25,115 @@
   "voltage": "100-240V AC (20V DC adapter)",
   "unitCost": 2500,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "usb-switch",
     "description": "4x1 USB-C Host Switching Device for USB and HDMI peripherals",
     "notes": "Характеристики с сайта по артикулу 920-02240-00001; [AVAIL] from Biamp documentation; [AVAIL] room-mounted (under-table unit) — dimensions optional",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp-EasyConnect-MPX-200-Data-Sheet-v0424_9898.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-C In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: DP Alt Mode 1.1-1.4, USB 3.1, charging up to 100 W"
+    },
+    {
+      "id": "p2",
+      "label": "USB-C In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: DP Alt Mode 1.1-1.4, USB 3.1, charging up to 100 W"
+    },
+    {
+      "id": "p3",
+      "label": "USB-C In 3",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: DP Alt Mode 1.1-1.4, USB 3.1, charging up to 100 W"
+    },
+    {
+      "id": "p4",
+      "label": "USB-C In 4",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Retractable USB-C cable (2 m) to the laptop: DP Alt Mode 1.1-1.4, USB 3.1, charging up to 100 W"
+    },
+    {
+      "id": "p5",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "Video pass-through: HDMI 2.0b, HDCP 1.4/2.3, to display or projector"
+    },
+    {
+      "id": "p6",
+      "label": "Cloud Management",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Ethernet, management only, 100 Mbit/s"
+    },
+    {
+      "id": "p7",
+      "label": "USB Pass-through 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 to room devices (speakers, cameras)"
+    },
+    {
+      "id": "p8",
+      "label": "USB Pass-through 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 to room devices (speakers, cameras)"
+    },
+    {
+      "id": "p9",
+      "label": "Controller",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 to the touch controller"
+    },
+    {
+      "id": "p10",
+      "label": "IO Device",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 2.0 for accessories"
+    },
+    {
+      "id": "p11",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "kycon-4pin",
+      "notes": "20 V DC 10 A, 4-pin DIN with locking mechanism; external supply 85-264 V AC, 180 W"
+    }
+  ]
 }

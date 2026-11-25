@@ -27,11 +27,224 @@
   "voltage": "100-240V AC",
   "unitCost": 3816,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "sound-masking",
     "description": "Qt X Controller, 6 Qt Outputs",
     "notes": "Звуковая маскировка; в таксономии нет своей категории",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Qt_X600-600D_Dec24_12938.pdf"
+    },
+    "portsMissing": "The data sheet does not say which of network ports 1/2 carries media and which control; the spec says 'Output Connections: 6 RJ-45' but the back panel shows outputs 1-6 with A and B jacks (2 cable runs per zone): 12 RJ-45 modelled"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced 3-pin, up to +24 dBu; phantom +48 V"
+    },
+    {
+      "id": "p2",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced 3-pin, up to +24 dBu; phantom +48 V"
+    },
+    {
+      "id": "p3",
+      "label": "Qt Out 1A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 1, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p4",
+      "label": "Qt Out 1B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 1, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p5",
+      "label": "Qt Out 2A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 2, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p6",
+      "label": "Qt Out 2B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 2, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p7",
+      "label": "Qt Out 3A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 3, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p8",
+      "label": "Qt Out 3B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 3, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p9",
+      "label": "Qt Out 4A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 4, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p10",
+      "label": "Qt Out 4B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 4, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p11",
+      "label": "Qt Out 5A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 5, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p12",
+      "label": "Qt Out 5B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 5, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p13",
+      "label": "Qt Out 6A",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 6, cable run A: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p14",
+      "label": "Qt Out 6B",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "rj45",
+      "notes": "Zone 6, cable run B: Qt emitters daisy-chained over category cable"
+    },
+    {
+      "id": "p15",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Media / control (AVB)"
+    },
+    {
+      "id": "p16",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Media / control (AVB)"
+    },
+    {
+      "id": "p17",
+      "label": "GPIO 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Shared 4-pin block: +5V, 1, 2, ground"
+    },
+    {
+      "id": "p18",
+      "label": "GPIO 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "Shared 4-pin block: +5V, 1, 2, ground"
+    },
+    {
+      "id": "p19",
+      "label": "Contact In 1",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Normally open; emergency mute (panel: 1-Emergency Mute)"
+    },
+    {
+      "id": "p20",
+      "label": "Contact In 2",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Normally open"
+    },
+    {
+      "id": "p21",
+      "label": "Privacy 1",
+      "signalType": "tally",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic status output 5 V DC (privacy sign)"
+    },
+    {
+      "id": "p22",
+      "label": "Privacy 2",
+      "signalType": "tally",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic status output 5 V DC (privacy sign)"
+    },
+    {
+      "id": "p23",
+      "label": "Power (24V DC)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "24 V DC 2.7 A, external supply 100-240 V AC"
+    }
+  ]
 }

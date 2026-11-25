@@ -27,10 +27,132 @@
   "voltage": "100-240V AC",
   "unitCost": 2565,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "AVB video encoder; includes one HDMI 2.0 port and one DisplayPort 1.2 port. Accepts 8 channels of embedded PCM audio and includes 2 mic/line level analog inputs",
     "notes": "Характеристики с сайта по артикулу 920-00426-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesiralux_idh-1_feb20_2005.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "Up to 4K60 4:4:4, HDCP 2.2, 8 ch PCM audio de-embedding"
+    },
+    {
+      "id": "p2",
+      "label": "DisplayPort In",
+      "signalType": "displayport",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "displayport",
+      "notes": "DisplayPort 1.2, up to 4K60"
+    },
+    {
+      "id": "p3",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, phantom +48 V"
+    },
+    {
+      "id": "p4",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced mic/line, phantom +48 V"
+    },
+    {
+      "id": "p5",
+      "label": "Control",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Control and configuration, third-party control"
+    },
+    {
+      "id": "p6",
+      "label": "AVB Only",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "AVB",
+      "connectorType": "rj45",
+      "notes": "1 Gb AVB/TSN media"
+    },
+    {
+      "id": "p7",
+      "label": "AVB SFP+",
+      "signalType": "avb",
+      "direction": "bidirectional",
+      "section": "AVB",
+      "connectorType": "sfp",
+      "notes": "1 Gb or 10 Gb AVB/TSN media, fiber SFP+"
+    },
+    {
+      "id": "p8",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "db9",
+      "notes": "115200 8-N-1, command strings"
+    },
+    {
+      "id": "p9",
+      "label": "Logic I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p10",
+      "label": "Logic I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p11",
+      "label": "Logic I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p12",
+      "label": "Logic I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p13",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "100-240 V AC, 0.5-0.21 A"
+    }
+  ]
 }

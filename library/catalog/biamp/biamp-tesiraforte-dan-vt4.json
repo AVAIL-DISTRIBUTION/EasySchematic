@@ -29,10 +29,185 @@
   "voltage": "100-240V AC",
   "unitCost": 3850,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Fixed I/O DSP with 4 analog inputs, 4 analog outputs, 8 channels configurable USB audio, 32 x 32 channels of Dante, AEC technology (all 4 inputs), 2 channel VoIP, and standard FXO telephone interface",
     "notes": "Характеристики с сайта по артикулу 920-00453-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesiraforte_dan_vt4_oct20_2020.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic/Line In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
+    },
+    {
+      "id": "p2",
+      "label": "Mic/Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
+    },
+    {
+      "id": "p3",
+      "label": "Mic/Line In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
+    },
+    {
+      "id": "p4",
+      "label": "Mic/Line In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
+    },
+    {
+      "id": "p5",
+      "label": "Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
+    },
+    {
+      "id": "p6",
+      "label": "Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
+    },
+    {
+      "id": "p7",
+      "label": "Line Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
+    },
+    {
+      "id": "p8",
+      "label": "Line Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
+    },
+    {
+      "id": "p9",
+      "label": "Control",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Gigabit Ethernet: Tesira programming and control"
+    },
+    {
+      "id": "p10",
+      "label": "VoIP",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "SIP VoIP, 2 lines"
+    },
+    {
+      "id": "p11",
+      "label": "Telephone Line",
+      "signalType": "pots",
+      "direction": "bidirectional",
+      "section": "Telephony",
+      "connectorType": "rj11",
+      "notes": "Standard FXO telephone interface"
+    },
+    {
+      "id": "p12",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67, 32 x 32 channels"
+    },
+    {
+      "id": "p13",
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "connectorType": "db9"
+    },
+    {
+      "id": "p14",
+      "label": "Logic I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p15",
+      "label": "Logic I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p16",
+      "label": "Logic I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p17",
+      "label": "Logic I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p18",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB-B to the host: up to 8 channels of USB audio"
+    },
+    {
+      "id": "p19",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal universal power supply, 100-240 V AC"
+    }
+  ]
 }

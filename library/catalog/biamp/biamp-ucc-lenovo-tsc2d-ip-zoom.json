@@ -28,10 +28,106 @@
   "voltage": "100-240V AC",
   "unitCost": 9800,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "UC Compute - Lenovo ThinkSmart Dual LAN with Cat5 Based Connection - ZOOM Room",
     "notes": "Характеристики с сайта по артикулу 920-00020; [AVAIL] Lenovo ThinkSmart Core Gen 2: 170 W adapter; [AVAIL] Lenovo ThinkSmart Core Gen 2 compute unit",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_UCC-LenovoTSC2D-IP-Zoom_Aug26_v1_14080.pdf"
+    },
+    "portsMissing": "Kit block (UC Compute + IP controller + Link Box), AV-relevant connectors only; the power connector types are not stated (connector 'other'); USB 3.2 ports taken as Type-A because the sheet lists USB-C separately"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In (Controller)",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "Table HDMI input on the IP controller; reaches the compute through the Link Box (HDMI Out, USB-B) over the controller RJ-45"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "UC Compute HDMI-out 1.4"
+    },
+    {
+      "id": "p3",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "UC Compute HDMI-out 1.4"
+    },
+    {
+      "id": "p4",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "UC Compute Gigabit Ethernet"
+    },
+    {
+      "id": "p5",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "UC Compute Gigabit Ethernet"
+    },
+    {
+      "id": "p6",
+      "label": "USB-A",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "UC Compute: 3 ports (2x USB 3.2 Gen 2, 1x USB 3.2 Gen 1) for camera / audio"
+    },
+    {
+      "id": "p7",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "UC Compute USB-C 3.2 Gen 1"
+    },
+    {
+      "id": "p8",
+      "label": "Thunderbolt 4",
+      "signalType": "thunderbolt",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "UC Compute Thunderbolt 4"
+    },
+    {
+      "id": "p9",
+      "label": "Power (Compute)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "90 W adapter, 100-240 V AC"
+    },
+    {
+      "id": "p10",
+      "label": "Power (Link Box)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "Link Box power connector; the IP controller is powered over RJ-45 from the Link Box"
+    }
+  ]
 }

@@ -28,7 +28,8 @@
     "status": "awaiting-ports",
     "deviceTypeSource": "audio-player",
     "description": "Versatile DAB+ and FM RDS / CD / USB / SD-card /Bluetooth music source, RS232 control, IR remote included, 1U, 19\"",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet shows only the front panel: it lists '2 x RCA + COMBI RCA' unbalanced outputs, optical + coaxial outputs and RS232 without the rear layout, and does not name the FM/DAB antenna inputs or the mains inlet; the linked manual is for PC1000RMKII. Ports wait for the PCR3000RMKIII manual"
   },
   "ports": []
 }

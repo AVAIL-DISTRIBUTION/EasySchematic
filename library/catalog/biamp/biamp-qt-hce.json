@@ -29,7 +29,8 @@
     "deviceTypeSource": "sound-masking",
     "description": "Qt Conference Patient Privacy System",
     "notes": "Звуковая маскировка; в таксономии нет своей категории; Характеристики с сайта по артикулу 920-00825-00001; [AVAIL] estimated: same chassis as QT-CRE; [AVAIL] from Biamp documentation: system < 7 W",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The product brief lists the kit contents (control module, privacy signs, 8 emitters, power supply) but no connectors; ports wait for a data sheet (the control module appears to match QT-CRE)"
   },
   "ports": []
 }

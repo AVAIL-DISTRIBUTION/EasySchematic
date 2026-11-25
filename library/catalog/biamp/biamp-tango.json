@@ -28,7 +28,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "Touch panel controller with 3 bidirectional RS-232 ports, 2 unidirectional RS-232 ports, 4 built-in assignable relays, 8 GPIO; PoE powered (IEEE 802.3at Class 3, 15W)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: The 4-pin NEB connector (G, NCL, NDA, PWR) on the panel is not described in the data sheet and is not modelled"
   },
   "ports": []
 }
