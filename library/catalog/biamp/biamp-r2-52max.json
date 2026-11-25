@@ -24,9 +24,32 @@
   "weightKg": 55.3,
   "unitCost": 6998,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Full-Range 3-Way Dual 12-Inch, Dual M200Hp Mf Drivers, High Output 50 X 20",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r2-52max_2535.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LF In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Biamp with DSP; 12 ft (3.6 m) 16-2 SJOW cable"
+    },
+    {
+      "id": "p2",
+      "label": "MF/HF In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Biamp with DSP, passive MF/HF; 12 ft (3.6 m) 16-2 SJOW cable"
+    }
+  ]
 }

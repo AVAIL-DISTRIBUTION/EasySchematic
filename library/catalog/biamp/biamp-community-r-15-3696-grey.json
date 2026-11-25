@@ -26,9 +26,23 @@
   "depthMm": 356,
   "unitCost": 500,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Full-range 3-way 6-inch 90 x 60 grey weather-resistant loudspeaker",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Community_R15_3696_Sep24_vf_11881.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; 7-position terminal strip, low impedance (4 ohm) or 70 V / 100 V by jumper; gland nut cover"
+    }
+  ]
 }

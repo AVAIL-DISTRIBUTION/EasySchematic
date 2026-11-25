@@ -27,7 +27,8 @@
     "status": "awaiting-ports",
     "description": "R2-Max Configured-To-Order (CTO)",
     "notes": "Характеристики с сайта по артикулу 930-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Configured to order: inputs depend on the configuration ordered; ports wait for the order specification"
   },
   "ports": []
 }

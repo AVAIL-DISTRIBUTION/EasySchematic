@@ -25,9 +25,32 @@
   "weightKg": 15.4,
   "unitCost": 1050,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "R.35-3896 with EN 54-24 certification",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_datasheet_community_r35-3896-en_v3-0_aug2022_9207.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (NL4)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive; NL4 Speakon-type, low impedance only"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker In (Terminal)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; 7-position terminal strip, low impedance or 70 V / 100 V"
+    }
+  ]
 }

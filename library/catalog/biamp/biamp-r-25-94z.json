@@ -25,9 +25,23 @@
   "weightKg": 9.1,
   "unitCost": 848,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Full-Range 2-Way 8-Inch 90 X 40 Grey",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r-25-94z-94tz_oct21_2484.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 12 ft (4 m) 16-2 SJOW cable, stripped ends; TZ: 70 V / 100 V tap rotary switch"
+    }
+  ]
 }

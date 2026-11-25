@@ -24,9 +24,23 @@
   "weightKg": 43.5,
   "unitCost": 5014,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "R2-474Z with EN 54-24 certification",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_datasheet_community_r2-474z-en_aug2022_2518.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 12 ft (4 m) SJOW 16 AWG cable, stripped ends"
+    }
+  ]
 }

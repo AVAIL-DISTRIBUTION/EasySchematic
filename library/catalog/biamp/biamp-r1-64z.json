@@ -24,9 +24,23 @@
   "weightKg": 25.2,
   "unitCost": 3034,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Full-Range 2-Way 12-Inch Large Format Horn Loaded 50 X 35 Grey",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r1-64z_2514.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; 12 ft (4 m) SJOW 16 AWG cable, stripped ends"
+    }
+  ]
 }

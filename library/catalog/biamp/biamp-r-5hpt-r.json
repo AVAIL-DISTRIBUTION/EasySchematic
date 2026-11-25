@@ -25,9 +25,23 @@
   "weightKg": 20.6,
   "unitCost": 2586,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Full-Range 3-Way 12-Inch Horn Loaded 60 X 40 Grey 70V/100V Racing",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r-5hpt-r_2506.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V / 100 V autoformer; 12 ft (4 m) UV-resistant 18 AWG multi-conductor cable, stripped ends"
+    }
+  ]
 }
