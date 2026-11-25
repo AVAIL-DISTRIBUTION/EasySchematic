@@ -16,6 +16,7 @@ export type UserRole = "contributor" | "moderator" | "admin" | string;
 export const AVAIL_LIBRARY_HEADER = "X-Avail-Library";
 const KEY_MODE = "avail.library";
 const KEY_SHOW_UNVERIFIED = "avail.library.showUnverified";
+const KEY_PORTS_FILTER = "avail.library.portsFilter";
 
 function read(key: string): string | null {
   try {
@@ -170,6 +171,65 @@ export function libraryQuery(): string {
   return isModerator() ? "?include=raw,hidden" : "?include=raw";
 }
 
+// ---- filter by the source of the ports (moderators): the review queue
+
+/**
+ * all — no filter; manufacturer / community / none — by availPortsOrigin (api-avail,
+ * src/avail/portsOrigin.ts); review — the engineers' queue: draft, community ports, level B.
+ */
+export type PortsFilter = "all" | "manufacturer" | "community" | "none" | "review";
+export const PORTS_FILTERS: readonly PortsFilter[] = ["all", "manufacturer", "community", "none", "review"];
+
+/** Option text, one whole string per filter (ready for a translation table). */
+export const PORTS_FILTER_LABELS: Readonly<Record<PortsFilter, string>> = {
+  all: "Ports: any source",
+  manufacturer: "Ports: manufacturer",
+  community: "Ports: community",
+  none: "Ports: no source",
+  review: "Review queue: draft, community, level B",
+};
+
+function parsePortsFilter(v: string | null): PortsFilter {
+  return (PORTS_FILTERS as readonly string[]).includes(v ?? "") ? (v as PortsFilter) : "all";
+}
+
+let portsFilter: PortsFilter = parsePortsFilter(read(KEY_PORTS_FILTER));
+
+export function getPortsFilter(): PortsFilter {
+  return portsFilter;
+}
+
+export function setPortsFilter(value: PortsFilter): void {
+  if (value === portsFilter) return;
+  portsFilter = value;
+  write(KEY_PORTS_FILTER, value === "all" ? null : value);
+  emit();
+}
+
+/** availPortsOrigin of a library template; templates the API did not mark count as none. */
+export function portsOriginOfTemplate(t: unknown): "manufacturer" | "community" | "none" {
+  const o = (t as { availPortsOrigin?: unknown } | null)?.availPortsOrigin;
+  return o === "manufacturer" || o === "community" ? o : "none";
+}
+
+function levelOfTemplate(t: unknown): string | null {
+  const l = (t as { availLevel?: unknown } | null)?.availLevel;
+  return typeof l === "string" ? l : null;
+}
+
+/** The library list under the ports filter; only moderators in AVAIL mode filter. */
+export function filterByPortsOrigin<T>(
+  list: readonly T[],
+  filter: PortsFilter = portsFilter,
+  who: { active: boolean; moderator: boolean } = { active, moderator: isModerator() },
+): readonly T[] {
+  if (!who.active || !who.moderator || filter === "all") return list;
+  if (filter === "review") {
+    return list.filter((t) => statusOfTemplate(t) === "draft" && portsOriginOfTemplate(t) === "community" && levelOfTemplate(t) === "B");
+  }
+  return list.filter((t) => portsOriginOfTemplate(t) === filter);
+}
+
 // ---- selection for bulk actions (moderators)
 
 let selectMode = false;
@@ -212,6 +272,7 @@ export function clearSelection(): void {
 export function resetForTests(): void {
   active = read(KEY_MODE) === "1";
   showUnverified = read(KEY_SHOW_UNVERIFIED) === "1";
+  portsFilter = parsePortsFilter(read(KEY_PORTS_FILTER));
   role = null;
   statuses = new Map();
   statusesLoaded = false;

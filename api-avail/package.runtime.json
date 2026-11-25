@@ -14,6 +14,7 @@
     "apply:worklist": "node --enable-source-maps dist/apply-worklist.mjs",
     "export:vendor-requests": "node --enable-source-maps dist/export-vendor-requests.mjs",
     "apply:vendor-responses": "node --enable-source-maps dist/apply-vendor-responses.mjs",
-    "import:catalog": "node --enable-source-maps dist/import-catalog.mjs"
+    "import:catalog": "node --enable-source-maps dist/import-catalog.mjs",
+    "approve:catalog": "node --enable-source-maps dist/approve-catalog.mjs"
   }
 }

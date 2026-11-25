@@ -14,11 +14,15 @@
  *   GET /avail/library/summary[?include=raw,hidden]
  *     server.ts serves GET /templates and GET /templates/summary from these, so the
  *     editor gets verified + draft by default; include=raw adds raw, include=hidden
- *     (moderator/admin only) adds hidden.
+ *     (moderator/admin only) adds hidden. Every template carries availStatus, availLevel
+ *     (lint_level) and availPortsOrigin (manufacturer / community / none, src/avail/portsOrigin.ts)
+ *     for the moderator's review queue.
  */
 import type { app as UpstreamAppValue } from "../../api/src/index";
 import { requireModeratorOrToken } from "../../api/src/auth";
 import { rowToSummary, rowToTemplate, type TemplateRow } from "../../api/src/db";
+import type { BlockLevel } from "../../src/avail/blockLint";
+import { catalogIndex, parseCatalogMeta, portsOrigin } from "../../src/avail/portsOrigin";
 import {
   getTemplateMeta,
   isTemplateStatus,
@@ -160,16 +164,25 @@ export function registerAvailRoutes(app: UpstreamApp): void {
 
       const { results } = await db
         .prepare(
-          `SELECT t.*, COALESCE(m.status, 'raw') AS avail_status
+          `SELECT t.*, COALESCE(m.status, 'raw') AS avail_status, m.source AS avail_source, m.catalog AS avail_catalog,
+                  m.lint_level AS avail_level
              FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
             WHERE t.flagged_for_deletion = 0 AND COALESCE(m.status, 'raw') IN (${statuses.map(() => "?").join(", ")})
             ORDER BY t.sort_order, t.label`,
         )
         .bind(...statuses)
-        .all<TemplateRow & { avail_status: TemplateStatus }>();
+        .all<TemplateRow & { avail_status: TemplateStatus; avail_source: string | null; avail_catalog: string | null; avail_level: BlockLevel | null }>();
+      // Ports origin (manufacturer / community / none) for the review queue; a variant follows
+      // the catalog file it copied, which may be outside the statuses asked for.
+      const { results: catalogRows } = await db
+        .prepare("SELECT catalog FROM avail_template_meta WHERE catalog IS NOT NULL")
+        .all<{ catalog: string }>();
+      const byFile = catalogIndex(catalogRows.map((r) => parseCatalogMeta(r.catalog)));
       const out = results.map((row) => ({
         ...(shape === "full" ? rowToTemplate(row) : rowToSummary(row)),
         availStatus: row.avail_status,
+        availPortsOrigin: portsOrigin({ source: row.avail_source, catalog: parseCatalogMeta(row.avail_catalog) }, byFile).origin,
+        ...(row.avail_level ? { availLevel: row.avail_level } : {}),
       }));
       return c.json(out, 200, headers);
     });

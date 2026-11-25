@@ -14,7 +14,7 @@ const common = {
   logLevel: "info",
 };
 
-// The API server and the CLIs run in the image: import:upstream, normalize:library, import:avail, apply:vendor-decisions, apply:generic-plan, export:worklist, apply:worklist, export:vendor-requests, apply:vendor-responses, import:catalog.
+// The API server and the CLIs run in the image: import:upstream, normalize:library, import:avail, apply:vendor-decisions, apply:generic-plan, export:worklist, apply:worklist, export:vendor-requests, apply:vendor-responses, import:catalog, approve:catalog.
 await build({ ...common, entryPoints: ["src/main.ts"], outfile: "dist/server.mjs" });
 await build({ ...common, entryPoints: ["src/importCli.ts"], outfile: "dist/import-upstream.mjs" });
 await build({ ...common, entryPoints: ["src/normalizeCli.ts"], outfile: "dist/normalize-library.mjs" });
@@ -26,3 +26,4 @@ await build({ ...common, entryPoints: ["src/applyWorklistCli.ts"], outfile: "dis
 await build({ ...common, entryPoints: ["src/vendorRequestsCli.ts"], outfile: "dist/export-vendor-requests.mjs" });
 await build({ ...common, entryPoints: ["src/vendorResponsesCli.ts"], outfile: "dist/apply-vendor-responses.mjs" });
 await build({ ...common, entryPoints: ["src/importCatalogCli.ts"], outfile: "dist/import-catalog.mjs" });
+await build({ ...common, entryPoints: ["src/approveCatalogCli.ts"], outfile: "dist/approve-catalog.mjs" });

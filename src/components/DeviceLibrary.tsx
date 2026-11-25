@@ -2,7 +2,7 @@ import { type DragEvent, type ChangeEvent, useState, useMemo, useEffect, useRef,
 import { getBundledTemplates, fetchTemplates, isLibraryDegraded } from "../templateApi";
 // AVAIL: status badges, "show unverified", taxonomy grouping, review card (src/avail/)
 import { AvailCategoryTree, AvailLibraryToggle, AvailTemplateExtras } from "../avail/LibraryUi";
-import { useAvailLibraryReload, useAvailState } from "../avail/useAvail";
+import { useAvailFilteredTemplates, useAvailLibraryReload, useAvailState } from "../avail/useAvail";
 import { isAvailLibrary } from "../avail/libraryMode";
 import type { DeviceTemplate, CustomTemplateGroup, OwnedGearFile, OwnedGearItem, SchematicNode, DeviceData } from "../types";
 import { useSchematicStore, CATEGORY_ORDER_DEFAULT } from "../store";
@@ -1074,7 +1074,9 @@ export default function DeviceLibrary() {
   const [showDeviceCreator, setShowDeviceCreator] = useState(false);
   const [showImportDialog, setShowImportDialog] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
-  const [templates, setTemplates] = useState(() => (isAvailLibrary() ? [] : getBundledTemplates()));
+  const [loadedTemplates, setTemplates] = useState(() => (isAvailLibrary() ? [] : getBundledTemplates()));
+  // AVAIL: a moderator's filter by the source of the ports (the review queue); no-op otherwise.
+  const templates = useAvailFilteredTemplates(loadedTemplates) as typeof loadedTemplates;
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
   const [selectedBrands, setSelectedBrands] = useState<Set<string>>(new Set());
   const [selectedSignalTypes, setSelectedSignalTypes] = useState<Set<string>>(new Set());
