@@ -29,9 +29,32 @@
   "voltage": "100-240V AC",
   "unitCost": 53,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Power supply for Kleeo Desk Manager",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Evoko%20Kleeo%20Power%20Supply_v0225-1_13161.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "100-240 V AC wall plug; outlet plugs US, UK, EU, AUS/NZ"
+    },
+    {
+      "id": "p2",
+      "label": "5V Out (USB-C)",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "5.0 V DC, 1.0 A, 5 W; integrated 1.5 m USB-A to USB-C cable"
+    }
+  ]
 }

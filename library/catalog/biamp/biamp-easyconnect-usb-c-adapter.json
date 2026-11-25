@@ -23,10 +23,51 @@
   ],
   "unitCost": 106,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Adapter USB-C/HDMI 2.0/65W",
     "notes": "[AVAIL] room-mounted (cable adapter) — dimensions optional",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/EasyConnect-USB-Adapter-Data-Sheet-Jan25-001_13079.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "From the laptop / BYOM switcher: DP Alt Mode, USB 3.0 data, PD up to 90 W to the host"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "HDMI 2.0, up to 4K60, with audio"
+    },
+    {
+      "id": "p3",
+      "label": "USB-A",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0, 5 Gbps, 0.9 A max"
+    },
+    {
+      "id": "p4",
+      "label": "USB-C Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "USB-C PD input from an external PSU, 5-20 V, up to 90 W"
+    }
+  ]
 }

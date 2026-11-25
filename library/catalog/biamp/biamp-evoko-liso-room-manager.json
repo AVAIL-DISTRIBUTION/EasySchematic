@@ -29,10 +29,34 @@
   "voltage": "12V DC / PoE 802.3af",
   "unitCost": 1696,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Self-hosted room booking display with mounting kits for standard and glass walls",
     "notes": "Панель бронирования переговорных",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_data-sheet_Evoko-Liso-Room-Manager-Jul26_13949.pdf"
+    },
+    "portsMissing": "Connector of the optional 12 V adapter input and the PoE class are not stated."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100/1000; PoE (class / draw not published), or the optional 12 V power adapter"
+    },
+    {
+      "id": "p2",
+      "label": "Wi-Fi",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "wireless",
+      "notes": "802.11 a/b/g/n"
+    }
+  ]
 }

@@ -29,7 +29,8 @@
     "status": "awaiting-ports",
     "description": "12V power supply",
     "notes": "[AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp); [AVAIL] default PSU power 60 W (AVAIL decision; not published by Biamp)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; input and output connectors are not stated."
   },
   "ports": []
 }

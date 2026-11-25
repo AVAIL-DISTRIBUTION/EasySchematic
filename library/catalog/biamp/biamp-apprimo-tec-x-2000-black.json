@@ -30,9 +30,32 @@
   "poeDrawW": 15,
   "unitCost": 642,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Touch-enabled control pad, black",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_tec-x-2000_dec22_8781.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Ethernet In",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "From the control network (Tesira server-class device / PoE switch); PoE 802.3at class 3, 15 W"
+    },
+    {
+      "id": "p2",
+      "label": "Ethernet Out",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Daisy chain to the next TEC-X device (4 devices max)"
+    }
+  ]
 }

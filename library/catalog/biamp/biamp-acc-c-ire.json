@@ -24,7 +24,8 @@
     "deviceTypeSource": "ir-emitter",
     "description": "Single IR-emitter, No blink",
     "notes": "ИК-излучатель; в таксономии нет своей категории; [AVAIL] room-mounted (IR emitter stuck on the device) — dimensions optional",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; the plug type of the emitter is not stated."
   },
   "ports": []
 }

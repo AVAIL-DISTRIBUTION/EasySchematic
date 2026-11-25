@@ -31,7 +31,8 @@
     "status": "awaiting-ports",
     "description": "12 V 60W optional power supply for ABC 2500(a), VBC 2500a, VBC 2800",
     "notes": "Характеристики с сайта по артикулу 920-01897-00001; [AVAIL] from Biamp documentation: PSU, output 12V DC 60 W (rating); [AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; the AC input and the screw-lock output connector type are not stated."
   },
   "ports": []
 }

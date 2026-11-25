@@ -28,7 +28,8 @@
     "status": "awaiting-ports",
     "deviceTypeSource": "volume-control",
     "description": "70 volt,60 watts Decora style volume control, white, with 24V prioirty relais",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Terminal assignment of the 6-pole euroblock is not shown on the D-VOL sheet (split into in / out / 24 V as on the E-VOL manual panel: IN, OUT, - 24V +)."
   },
   "ports": []
 }

@@ -29,10 +29,25 @@
   "voltage": "100-240V AC",
   "unitCost": 320,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Optional power supply accessory for Apprimo Touch 10 UCX-T supporting 65W USB-C device charging or Wi-Fi connections, 100V to 240V",
     "notes": "Нет данных в каталоге products.biamp.com; [AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp); [AVAIL] default PSU power 60 W (AVAIL decision; not published by Biamp)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Apprimo_Touch_10__UCX-T_Sep26_v3_14128.pdf"
+    },
+    "portsMissing": "No own data sheet; the AC input connector of the power supply is not stated."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-C Out",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "100 W USB-C power output to the Apprimo Touch 10 UCX-T"
+    }
+  ]
 }

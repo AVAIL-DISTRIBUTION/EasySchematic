@@ -26,10 +26,70 @@
   "weightKg": 0.86,
   "unitCost": 530,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Network Expander for Parlé ABC/VBC",
     "notes": "Сетевой расширитель для ABC/VBC; Характеристики с сайта по артикулу 920-01978-00001",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_parle-n-100_nov23_9095.pdf"
+    },
+    "portsMissing": "Power connector type (locking DC) is not named."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Gigabit Ethernet; SageVue / web monitoring"
+    },
+    {
+      "id": "p2",
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "Room AV: USB 3.0 to room peripherals"
+    },
+    {
+      "id": "p3",
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "Room AV: USB 3.0 to room peripherals"
+    },
+    {
+      "id": "p4",
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "Room AV: USB 3.0 to the Parlé bar, with PD power for the bar"
+    },
+    {
+      "id": "p5",
+      "label": "USB-B (UC/Laptop)",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 3.0 to the UC compute or BYOM laptop"
+    },
+    {
+      "id": "p6",
+      "label": "Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "24 V / 3.75 A with lock connector; external 24 V / 90 W adapter included"
+    }
+  ]
 }

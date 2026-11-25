@@ -28,7 +28,8 @@
     "deviceTypeSource": "poe-injector",
     "description": "Active emitter power injector",
     "notes": "[AVAIL] powered from PS-AE-3 power supply (Biamp); [AVAIL] from Biamp PI-AE data sheet",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Only the sound masking catalog: inputs (DC power, audio) and two outputs are described, but no connector types."
   },
   "ports": []
 }

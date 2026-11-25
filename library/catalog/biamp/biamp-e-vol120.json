@@ -25,10 +25,42 @@
   "powerDrawW": 0.1,
   "unitCost": 81,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "volume-control",
     "description": "100 volt, 120 watts Euro volume control, white, with 24V prioirty relais",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_E-VOL120_Dec24_12847.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In (100V)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive; 100 V line, max 120 W; IN on the 6-pole euroblock"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out (100V)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "To 100 V loudspeakers; OUT on the 6-pole euroblock"
+    },
+    {
+      "id": "p3",
+      "label": "Priority In (24V)",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "24 V DC priority relay (20 mA), - 24V + on the 6-pole euroblock"
+    }
+  ]
 }

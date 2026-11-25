@@ -29,10 +29,33 @@
   "voltage": "5V DC",
   "unitCost": 400,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Evoko Kleeo Desk Manager including a 1-year Workplace Booking License, 1-pack",
     "notes": "Панель бронирования переговорных; Продаётся упаковкой по 1 шт.; цена в прайсе — за упаковку; Питание по USB-C 5 V 1 A",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Evoko-Kleeo-Desk-Manager-Data-Sheet-Jul26_14075.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Wi-Fi",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "wireless",
+      "notes": "Dual band 2.4 GHz 802.11n / 5 GHz 802.11n/ac"
+    },
+    {
+      "id": "p2",
+      "label": "Power (USB-C)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "5.0 V, 1 A max; USB-C to USB-A cable to a USB-A charger (sold separately)"
+    }
+  ]
 }

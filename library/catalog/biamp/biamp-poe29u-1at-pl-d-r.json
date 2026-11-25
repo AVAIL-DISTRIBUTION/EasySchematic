@@ -32,7 +32,8 @@
     "deviceTypeSource": "poe-injector",
     "description": "PHIHONG Gigabit PoE+ Injector, IEEE802.3af compliant, IEEE802.3at classified, 90-264 VAC Input Voltage",
     "notes": "Характеристики с сайта по артикулу 920-00004-00001; PoE+ инжектор (вход 90–264 V AC); [AVAIL] from Phihong POE29U-1AT(PL)D-R data sheet; output 30 W at 56 V",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; data / PoE / AC connectors are not stated."
   },
   "ports": []
 }

@@ -32,7 +32,8 @@
     "deviceTypeSource": "poe-injector",
     "description": "90W PoE++ power injector",
     "notes": "PoE++ инжектор 90 Вт; [AVAIL] default PSU size 20 x 40 x 180 mm (AVAIL decision; not published by Biamp); [AVAIL] default PSU power 60 W (AVAIL decision; not published by Biamp)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; the product page does not name the data / PoE / AC connectors."
   },
   "ports": []
 }

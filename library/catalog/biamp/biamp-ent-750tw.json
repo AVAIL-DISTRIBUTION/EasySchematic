@@ -24,7 +24,8 @@
     "deviceTypeSource": "audio-transformer",
     "description": "ENTASYS 750 Watt External Autoformer, White",
     "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The loudspeaker catalog and product page give no connector data for the external autoformer."
   },
   "ports": []
 }

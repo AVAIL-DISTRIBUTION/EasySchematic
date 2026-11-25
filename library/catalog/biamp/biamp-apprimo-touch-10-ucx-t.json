@@ -28,9 +28,42 @@
   "poeDrawW": 25.5,
   "unitCost": 2600,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "10-inch tabletop touch panel for Devio UCX with USB-C input, BYOM Switch, optional 65W USB-C device charging, Wi-Fi 6, PoE+ or USB-C powered",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Apprimo_Touch_10__UCX-T_Sep26_v3_14128.pdf"
+    },
+    "portsMissing": "Whether USB-C charging uses the BYOM port or a separate connector is not stated (taken as the BYOM port)."
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "BYOM / content sharing, DP 1.4a Alt Mode, 4K30; 65 W device charging when the optional PSU is connected"
+    },
+    {
+      "id": "p2",
+      "label": "LAN (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Primary LAN, 100/1000; PoE+ 802.3at class 4 PD, 25.5 W; Wi-Fi 6 also available"
+    },
+    {
+      "id": "p3",
+      "label": "Power (USB-C)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "Optional 100 W USB-C power supply (UCX-PSA) for Wi-Fi deployments and laptop charging"
+    }
+  ]
 }

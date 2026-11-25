@@ -28,7 +28,8 @@
     "status": "awaiting-ports",
     "deviceTypeSource": "volume-control",
     "description": "Stereo, 2 x 40 watts Euro volume control, white",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Partial: Terminal assignment of the 8-pole euroblock is not shown (taken as L/R in and L/R out, 2 poles each)."
   },
   "ports": []
 }

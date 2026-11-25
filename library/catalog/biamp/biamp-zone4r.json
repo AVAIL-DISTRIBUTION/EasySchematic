@@ -25,9 +25,23 @@
   "powerDrawW": 0.1,
   "unitCost": 182,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Digital wall control panel for use with ZONE4 for music volume adjustment, MIC volume adjustment and source selection",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_zone4r_8791.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Zone Link",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "4-pole euroblock: GND, Rx B, Tx A, +12 VDC; CAT5 to ZONE4, max 100 m; powered by host (+12 VDC from ZONE4)"
+    }
+  ]
 }

@@ -24,7 +24,8 @@
     "deviceTypeSource": "audio-transformer",
     "description": "Autotransformer 200W",
     "notes": "Трансформатор/автотрансформатор линии; в таксономии нет своей категории",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "No data sheet; the product page does not state the input/output connection type."
   },
   "ports": []
 }

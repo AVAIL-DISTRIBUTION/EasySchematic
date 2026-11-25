@@ -25,9 +25,50 @@
   "powerDrawW": 0.1,
   "unitCost": 212,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Active Local Input Panel with MIC and Line input with individual volume control. For use with any device with Line or MIC/LINE input with 24V phantom power.",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_manual_alinp_9046.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, dynamic mic; no phantom power on this input"
+    },
+    {
+      "id": "p2",
+      "label": "Line In L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced; L/R summed to mono"
+    },
+    {
+      "id": "p3",
+      "label": "Line In R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Unbalanced; L/R summed to mono"
+    },
+    {
+      "id": "p4",
+      "label": "Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pole MSTB (5 mm), 1 V balanced, to a mic/line input of the host; phantom 24-48 V from the host"
+    }
+  ]
 }

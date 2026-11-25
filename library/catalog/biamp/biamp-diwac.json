@@ -25,9 +25,23 @@
   "powerDrawW": 0.1,
   "unitCost": 187,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Digital wall control with 2 line LCD display. Buttons for source selection and volume control. Standard 2 wire connection.",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_diwac_aug20_2625.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Control",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "2-pole euroblock, hardwired to AUDIOCONTROL12.8, max 580 m; phantom powered by the host"
+    }
+  ]
 }

@@ -28,10 +28,24 @@
   "poeDrawW": 3.84,
   "unitCost": 1085,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Tesira Hardware Dialer",
     "notes": "[AVAIL] from Biamp documentation",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_hd-1_aug22_2009.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "All communication, configuration and control; PoE 802.3at class 1, 4 W"
+    }
+  ]
 }

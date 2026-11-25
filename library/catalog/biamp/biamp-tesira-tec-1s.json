@@ -28,9 +28,23 @@
   "poeDrawW": 4,
   "unitCost": 818,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Tesira PoE Ethernet Control surface mount",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_tec-1_aug18_8946.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "100BaseT; RJ-45 or IDC termination; PoE 802.3at class 1, 4 W"
+    }
+  ]
 }
