@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "8\" two-way full range wooden design surface mount loudspeaker, 8 ohms / 300 watts, wall bracket included, white",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Two Speakon and two 5-way binding posts: the data sheet does not say which are inputs and which link out; check the panel"
   },
   "ports": []
 }

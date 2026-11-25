@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "3\" Miniature ceiling speaker 70 - 100 volt / 6 watts, 16 ohms / 20 watts, spring clamps mounting, black, with removable logo",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not name the input connector; ports wait for the manual or the panel"
   },
   "ports": []
 }

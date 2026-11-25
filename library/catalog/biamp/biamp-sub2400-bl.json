@@ -24,9 +24,32 @@
   "weightKg": 29.2,
   "unitCost": 935,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Passive 2 x 10\" subwoofer, 4 ohms or 16 ohms / 600 watts, plywood construction with structured paint, black, pole mount adaptor",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_sub2400_apr21_2591.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "speakon",
+      "notes": "Passive subwoofer, external amplifier; Speakon, 4 or 16 ohm by rocker switch"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "speakon",
+      "notes": "Second Speakon wired in parallel"
+    }
+  ]
 }

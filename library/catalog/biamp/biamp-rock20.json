@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "Rock design outdoor loudspeaker, two-way, 100 volt / 20 watts or 8 ohms / 60 watts",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not name the input connector; ports wait for the manual or the panel"
   },
   "ports": []
 }

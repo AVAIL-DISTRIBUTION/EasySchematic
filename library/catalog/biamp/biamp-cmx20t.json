@@ -24,9 +24,24 @@
   "weightKg": 1.4,
   "unitCost": 100,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "8\" two-way ceiling speaker 70 - 100 volt / 20 watts, 16 ohms / 100 watts, white, with removable logo and quick fit push connector",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_cmx20t_feb26_13903.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive, 70 V / 100 V or 16 ohm; Quick Fix wiring connector"
+    }
+  ]
 }

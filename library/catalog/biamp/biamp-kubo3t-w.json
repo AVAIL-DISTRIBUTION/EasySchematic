@@ -24,10 +24,33 @@
   "weightKg": 1.2,
   "unitCost": 125,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "3\" compact design full range surface mount loudspeaker, 70 - 100 volt / 10 watts or 16 ohms / 40 watts, mounting bracket and safety cable included, white (priced individually, but sold in pairs)",
     "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_kubo3t_sep23_2177.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 70 V / 100 V or low impedance by tap switch; 2-way Euroblock (two, for daisy-chaining)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Second 2-way Euroblock, daisy-chain"
+    }
+  ]
 }

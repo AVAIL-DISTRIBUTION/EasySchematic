@@ -28,7 +28,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "Large Format, High Output, Horn Loaded 4 x 12-inch 3-Way, Steerable Vertical Dispersion x 90 Horizontal, Black",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Multi-amplifier with FIR DSP beamforming on 4, 6 and 8-position terminal blocks: the number of pass-band inputs is not stated; ports wait for the manual"
   },
   "ports": []
 }

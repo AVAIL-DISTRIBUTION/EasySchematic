@@ -24,9 +24,24 @@
   "weightKg": 1.8,
   "unitCost": 106,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "6.5\"surface mounted speaker equipped with a high efficiency full range speaker and a multi tap 100 volt transformer (1.5-3-6 watts), all certified according EN 54-24.",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_en-sms6t6-w_aug20_2635.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 100 V; ceramic speaker line connector block with thermal fuse (EN 54)"
+    }
+  ]
 }

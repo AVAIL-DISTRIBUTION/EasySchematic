@@ -27,7 +27,8 @@
     "status": "awaiting-ports",
     "description": "4\" ceiling speaker 70 - 100 volt / 6 watts, 16 ohms / 30 watts, spring clips mounting, black, with removable logo",
     "notes": "Вес на сайте 69 кг — явная ошибка, взят вес соседнего варианта",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not name the input connector; ports wait for the manual or the panel"
   },
   "ports": []
 }

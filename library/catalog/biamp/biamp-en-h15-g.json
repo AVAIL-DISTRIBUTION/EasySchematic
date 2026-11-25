@@ -24,9 +24,24 @@
   "weightKg": 2.32,
   "unitCost": 170,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "powerful horn speaker equipped with a compression driver and multi tap 100 volt transformer (1.87-3.75-7.5-15 watts) and a power selector switch to 20 ohms , all certified according EN 54.",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_en-h15-g_aug20_2630.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 100 V; ceramic speaker line connector block with thermal fuse (EN 54)"
+    }
+  ]
 }

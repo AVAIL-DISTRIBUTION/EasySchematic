@@ -24,9 +24,24 @@
   "weightKg": 1.6,
   "unitCost": 191,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "compact 5.25” sphere loudspeaker equipped with a high efficiency full range speaker and a multi tap 100 volt transformer (4-8-16 watts), all certified according EN 54-24.",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_en-sph5t16-w_aug20_2636.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 100 V; ceramic speaker line connector block with thermal fuse (EN 54)"
+    }
+  ]
 }

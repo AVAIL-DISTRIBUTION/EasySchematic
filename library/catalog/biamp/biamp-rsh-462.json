@@ -24,9 +24,23 @@
   "weightKg": 32.34,
   "unitCost": 4083,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "Exponential FocusedArray™ High Level Horn System",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_rsh-462_2543.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Passive; cable through gland nut in the weather-resistant cover"
+    }
+  ]
 }

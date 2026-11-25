@@ -23,9 +23,32 @@
   "depthMm": 66,
   "unitCost": 339,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "10 x 2\" slim sound column loudspeaker with 1\" tweeter 70/100 volt / 40 watts or 8 ohms / 60 watts, white",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_cols101_sep23_2614.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; multi-position pass-through screw terminal block, transformer tap or low impedance by wiring"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Pass-through on the same connector"
+    }
+  ]
 }

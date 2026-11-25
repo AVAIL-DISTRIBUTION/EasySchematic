@@ -24,9 +24,32 @@
   "weightKg": 3.9,
   "unitCost": 382,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "6.5\" two-way, pendant loudspeaker 70-100 volt / 60 watts, 16 ohms / 120 watts, black",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/Biamp_Desono_P60DT_A%26E-Specs_Nov24_12680.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 70 V / 100 V or low impedance by selector; 4-way Euroblock with permanent pass-through"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Pass-through on the same connector"
+    }
+  ]
 }

@@ -24,10 +24,25 @@
   "weightKg": 7.5,
   "unitCost": 653,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "8-Inch Pendant Loudspeaker, Black",
     "notes": "[AVAIL] estimated: round pendant, depth = diameter",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_dp8_2082.pdf"
+    },
+    "portsMissing": "Two 2-position Euroblocks: the data sheet does not say whether the second is a Thru; check the panel"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, wattage / low impedance selector; two 2-position Euroblock connectors"
+    }
+  ]
 }

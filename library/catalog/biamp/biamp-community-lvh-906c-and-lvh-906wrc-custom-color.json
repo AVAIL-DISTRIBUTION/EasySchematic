@@ -30,7 +30,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "LVH-906 or LVH-906WR in custom color",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "Multi-amplifier with FIR DSP beamforming on 4, 6 and 8-position terminal blocks: the number of pass-band inputs is not stated; ports wait for the manual"
   },
   "ports": []
 }

@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "Dual 8-Inch Subwoofer (White)",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The product page has no data sheet; ports wait for it"
   },
   "ports": []
 }

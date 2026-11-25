@@ -24,9 +24,32 @@
   "weightKg": 1.45,
   "unitCost": 112,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "8\" two-way thin edge design ceiling speaker 70 - 100 volt / 20 watts, 16 ohms / 100 watts, white, with basket integrated neodymium magnets for a perfect seal, removable logo and quick fix push connector",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_cmx20dt_feb26_13902.pdf"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 70 V / 100 V or 16 ohm; Quick Fit in and out push-terminal connector"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Out on the Quick Fit connector"
+    }
+  ]
 }

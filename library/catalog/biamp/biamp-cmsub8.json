@@ -26,7 +26,8 @@
   "_avail": {
     "status": "awaiting-ports",
     "description": "8\" dual coil ceiling subwoofer 2 x 8 ohms / 2 x 80 watts, built-in crossover, white",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsMissing": "The data sheet does not name the input connector; ports wait for the manual or the panel"
   },
   "ports": []
 }

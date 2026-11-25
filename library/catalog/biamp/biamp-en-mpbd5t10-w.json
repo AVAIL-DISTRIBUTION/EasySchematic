@@ -24,9 +24,24 @@
   "weightKg": 2.32,
   "unitCost": 233,
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "description": "compact bi-directional sound projector, equipped with 2 high efficiency full range drivers and a multi tap 100 volt transformer (1.5-3-6-10 watts), all certified according EN 54-24.",
-    "source": "biamp-blocks.csv"
+    "source": "biamp-blocks.csv",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://products.biamp.com/api/media/file/biamp_data_sheet_en-mpbd5t10-w_aug20_2632.pdf"
+    },
+    "portsMissing": "The data sheet names the input connector but does not say whether it has a pass-through; check the panel for a Thru"
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive, 100 V; ceramic speaker line connector block with thermal fuse (EN 54)"
+    }
+  ]
 }
