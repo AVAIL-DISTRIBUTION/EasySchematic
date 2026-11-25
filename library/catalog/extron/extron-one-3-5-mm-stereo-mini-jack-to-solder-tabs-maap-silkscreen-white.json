@@ -24,12 +24,35 @@
   ],
   "slotFamily": "extron-cubby-maap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "MAAP, Silkscreen, White",
     "deviceTypeSource": "card (extron-cc-maap)",
     "description": "Single Space MAAP - White: One 3.5 mm Stereo Mini Jack to Solder Tabs, Standard Silkscreen: \"Audio\"",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap135smjsc",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In (Front)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Out (Rear)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "solder-cup"
+    }
+  ]
 }

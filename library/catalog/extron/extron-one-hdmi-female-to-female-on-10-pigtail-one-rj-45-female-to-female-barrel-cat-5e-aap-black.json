@@ -27,13 +27,52 @@
   "weightKg": 0.1,
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "AAP, Black",
     "rackFormSource": "Non-rack",
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Single Space AAP - Black: One HDMI Female to Female on 10\" Pigtail, One RJ-45 Female to Female Barrel – CAT 5e",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/hdmiff10_rj45ffbc5",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In (Front)",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "HDMI Out (Rear)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "p3",
+      "label": "LAN (Front)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "p4",
+      "label": "LAN (Rear)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    }
+  ]
 }

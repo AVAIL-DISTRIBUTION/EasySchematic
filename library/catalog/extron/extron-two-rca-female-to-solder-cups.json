@@ -28,7 +28,8 @@
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Single Space AAP - Black: Two RCA Female to Solder Cups",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "Signal type not stated in the product name (RCA: audio or video); ports wait for the datasheet"
   },
   "ports": []
 }

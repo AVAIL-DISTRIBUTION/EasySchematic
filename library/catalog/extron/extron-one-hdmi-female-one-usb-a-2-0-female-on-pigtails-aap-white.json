@@ -33,7 +33,8 @@
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Single Space AAP - White: One HDMI Female to One USB A 2.0 Female Pigtails",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "Rear termination of the HDMI not stated in the product name; ports wait for the datasheet"
   },
   "ports": []
 }

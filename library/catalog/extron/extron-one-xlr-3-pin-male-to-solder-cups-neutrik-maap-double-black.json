@@ -24,12 +24,35 @@
   ],
   "slotFamily": "extron-cubby-maap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "MAAP Double, Black",
     "deviceTypeSource": "card (extron-cc-maap)",
     "description": "Double Space MAAP - Black: One XLR 3-pin Male to Solder Cups - Neutrik",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/maap2xlr3pmscn",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p2",
+      "label": "XLR In (Rear)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "solder-cup",
+      "notes": "passive"
+    },
+    {
+      "id": "p1",
+      "label": "XLR Out (Front)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3"
+    }
+  ]
 }

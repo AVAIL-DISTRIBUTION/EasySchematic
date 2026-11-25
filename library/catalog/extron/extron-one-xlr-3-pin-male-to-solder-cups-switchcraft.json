@@ -24,11 +24,34 @@
   ],
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Double Space AAP - Black: One XLR 3-pin Male to Solder Cups - Switchcraft",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/1xlr3pmtosc",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p2",
+      "label": "XLR In (Rear)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "solder-cup",
+      "notes": "passive"
+    },
+    {
+      "id": "p1",
+      "label": "XLR Out (Front)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3"
+    }
+  ]
 }

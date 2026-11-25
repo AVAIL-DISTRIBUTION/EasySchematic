@@ -23,11 +23,34 @@
   ],
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Single Space AAP - Black: One RJ-11 Female to Female Barrel - Phone",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap1rj11fbp",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Phone (Front)",
+      "signalType": "pots",
+      "direction": "bidirectional",
+      "section": "Telephony",
+      "connectorType": "rj11",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "Phone (Rear)",
+      "signalType": "pots",
+      "direction": "bidirectional",
+      "section": "Telephony",
+      "connectorType": "rj11"
+    }
+  ]
 }

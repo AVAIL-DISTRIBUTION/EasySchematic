@@ -28,7 +28,8 @@
     "deviceTypeSource": "card (extron-cc-maap)",
     "description": "Single Space MAAP - Black: One 5-pin Captive Screw Terminal to Solder Tabs",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsMissing": "Signal type not stated in the product name (5-pin captive screw to solder tabs); ports wait for the datasheet"
   },
   "ports": []
 }

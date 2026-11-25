@@ -28,7 +28,8 @@
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Single Space AAP - Black: Two Contact Closure Switch - Momentary, Single Pole, Double Throw with LED - to Solder Tabs",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsMissing": "Switch wiring (SPDT with LED) needs the datasheet; ports wait for it"
   },
   "ports": []
 }

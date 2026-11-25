@@ -36,6 +36,8 @@ export interface PortsSource {
   match?: "part-number" | "model-name";
   status?: TemplateStatusName;
   level?: BlockLevel;
+  /** datasheet: what the ports were read from when not a datasheet PDF (official product name). */
+  note?: string;
 }
 
 /** `_avail` of a catalog file: free-form, these are the fields this module reads or writes. */

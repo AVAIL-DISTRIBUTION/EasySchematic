@@ -24,11 +24,50 @@
   ],
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Double Space AAP - Black: Two Fiber Duplex LC Female to Female Barrels",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap2fdlcff",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Fiber 1 (Front)",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "lc",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "Fiber 1 (Rear)",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "lc"
+    },
+    {
+      "id": "p3",
+      "label": "Fiber 2 (Front)",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "lc"
+    },
+    {
+      "id": "p4",
+      "label": "Fiber 2 (Rear)",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "lc"
+    }
+  ]
 }

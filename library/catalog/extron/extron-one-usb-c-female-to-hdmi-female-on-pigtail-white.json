@@ -28,13 +28,36 @@
   "weightKg": 0.1,
   "slotFamily": "extron-cubby-flex55",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "White",
     "rackFormSource": "Non-rack",
     "deviceTypeSource": "card (extron-cc-flex55)",
     "description": "USB-C F to HDMI F Half Flex55; White",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/1usbcfhdmif-10",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p2",
+      "label": "HDMI Out (Rear)",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "passive"
+    },
+    {
+      "id": "p1",
+      "label": "USB-C In (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "USB",
+      "connectorType": "usb-c"
+    }
+  ]
 }

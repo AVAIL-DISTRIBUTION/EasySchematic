@@ -28,12 +28,51 @@
   "weightKg": 0.1,
   "slotFamily": "extron-cubby-aap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "rackFormSource": "Non-rack",
     "deviceTypeSource": "card (extron-cc-aap)",
     "description": "Single Space AAP - Black: One USB 2.0 Type-A Female to Female on Pigtail, One RJ-45 Female to Female Barrel - CAT 5e",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-aap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/aap1usbf1usbf10p",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p3",
+      "label": "LAN (Front)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "passive"
+    },
+    {
+      "id": "p4",
+      "label": "LAN (Rear)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "p1",
+      "label": "USB-A In (Front)",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "USB",
+      "connectorType": "usb-a"
+    },
+    {
+      "id": "p2",
+      "label": "USB-A Out (Rear)",
+      "signalType": "usb",
+      "direction": "output",
+      "section": "USB",
+      "connectorType": "usb-a"
+    }
+  ]
 }

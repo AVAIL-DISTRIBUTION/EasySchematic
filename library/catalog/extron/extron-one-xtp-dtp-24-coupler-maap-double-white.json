@@ -24,12 +24,35 @@
   ],
   "slotFamily": "extron-cubby-maap",
   "_avail": {
-    "status": "awaiting-ports",
+    "status": "ports-filled",
     "variant": "MAAP Double, White",
     "deviceTypeSource": "card (extron-cc-maap)",
     "description": "Double Space MAAP - White",
     "source": "extron-blocks-v4.csv",
-    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\""
+    "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-maap\"",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.extron.com/product/maap1xtpftp24co",
+      "note": "connectors as in the official product name (front to rear)"
+    }
   },
-  "ports": []
+  "ports": [
+    {
+      "id": "p1",
+      "label": "XTP/DTP In (Front)",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "rj45",
+      "notes": "passive"
+    },
+    {
+      "id": "p2",
+      "label": "XTP/DTP Out (Rear)",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "rj45"
+    }
+  ]
 }
