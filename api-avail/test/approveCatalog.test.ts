@@ -83,7 +83,7 @@ describe("migration 9006", () => {
     const cols = (api.db.sqlite.prepare("PRAGMA table_info(avail_template_meta)").all() as { name: string }[]).map((c) => c.name);
     expect(cols).toEqual([
       "template_id", "status", "source", "upstream_id", "lint_level", "updated_by", "updated_at", "linted_version",
-      "status_reason", "status_changed_at", "source_hash", "approved_via", "approved_at", "catalog",
+      "status_reason", "status_changed_at", "source_hash", "approved_via", "approved_at", "catalog", "approved_by",
     ]);
     load();
     expect(() => api.db.sqlite.prepare("UPDATE avail_template_meta SET approved_via = 'bulk-source' WHERE template_id = ?").run("avail-extron-60-1885-1")).not.toThrow();

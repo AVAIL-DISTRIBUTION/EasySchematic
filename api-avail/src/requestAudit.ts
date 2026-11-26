@@ -124,3 +124,53 @@ export async function refuseDisabledSignIn(sqlite: Database.Database, response: 
     headers: { Location: target, "Set-Cookie": "session=; Path=/; HttpOnly; SameSite=Lax; Secure; Max-Age=0" },
   });
 }
+
+/** A proposal decision: approve or reject of an upstream submission (library workspace, step 2.2). */
+export interface ProposalDecision {
+  submissionId: string;
+  decision: "accepted" | "rejected";
+  note: string | null;
+  templateId: string | null;
+  label: string | null;
+  submitter: string | null;
+}
+
+const PROPOSAL_RE = /^\/submissions\/([^/]+)\/(approve|reject)\/?$/;
+
+/**
+ * Reads what a POST /submissions/:id/approve|reject is about to decide (before upstream runs it:
+ * the submission is still pending), with the reviewer's note from the body. Null for other requests.
+ */
+export async function readProposalDecision(sqlite: Database.Database, request: Request): Promise<ProposalDecision | null> {
+  if (request.method !== "POST") return null;
+  const m = PROPOSAL_RE.exec(new URL(request.url).pathname);
+  if (!m) return null;
+  const id = decodeURIComponent(m[1]);
+  const row = sqlite
+    .prepare(
+      `SELECT s.template_id, json_extract(s.data, '$.label') AS label, u.email FROM submissions s
+         LEFT JOIN users u ON u.id = s.user_id WHERE s.id = ?`,
+    )
+    .get(id) as { template_id: string | null; label: string | null; email: string | null } | undefined;
+  if (!row) return null;
+  let note: string | null = null;
+  try {
+    const body = (await request.clone().json()) as { note?: unknown };
+    if (typeof body?.note === "string" && body.note.trim()) note = body.note.trim();
+  } catch {
+    /* no body */
+  }
+  return { submissionId: id, decision: m[2] === "approve" ? "accepted" : "rejected", note, templateId: row.template_id, label: row.label, submitter: row.email };
+}
+
+/** The audit entry of a decided proposal ("proposal" action of the template). */
+export function proposalAuditEntry(d: ProposalDecision, actor: RequestActor): AuditEntry {
+  return {
+    ...actor,
+    entity: "template",
+    entityId: d.templateId ?? `submission:${d.submissionId}`,
+    entityLabel: d.label,
+    action: "proposal",
+    after: { submissionId: d.submissionId, decision: d.decision, ...(d.note ? { note: d.note } : {}), ...(d.submitter ? { submitter: d.submitter } : {}) },
+  };
+}

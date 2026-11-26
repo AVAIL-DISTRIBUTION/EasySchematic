@@ -44,6 +44,7 @@ import { useAvailState, useStartTemplateEdit } from "./useAvail";
 import { useSchematicStore } from "../store";
 import { slotOwnedPortIds } from "../slotDefinitions";
 import type { DeviceTemplate } from "../types";
+import { AvailProposeChange } from "./ProposeUi";
 import "./avail.css";
 
 const BADGE_CLASS: Record<TemplateStatus, string> = {
@@ -566,7 +567,9 @@ export function AvailTemplateEditBar({
     [showNormalize, draft],
   );
 
-  if (!session || !draft || !lint) return null;
+  // No Edit session: an engineer may propose the edited block as a change (ProposeUi.tsx).
+  if (!session) return <AvailProposeChange nodeId={nodeId} build={build} />;
+  if (!draft || !lint) return null;
 
   const save = async (template: NonNullable<typeof draft>) => {
     setBusy(true);

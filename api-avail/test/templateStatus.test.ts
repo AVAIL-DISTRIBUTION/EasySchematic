@@ -86,7 +86,7 @@ describe("avail_template_meta", () => {
     const cols = (api.db.sqlite.prepare("PRAGMA table_info(avail_template_meta)").all() as { name: string }[]).map((c) => c.name);
     expect(cols).toEqual([
       "template_id", "status", "source", "upstream_id", "lint_level", "updated_by", "updated_at", "linted_version",
-      "status_reason", "status_changed_at", "source_hash", "approved_via", "approved_at", "catalog",
+      "status_reason", "status_changed_at", "source_hash", "approved_via", "approved_at", "catalog", "approved_by",
     ]);
     const templateCols = (api.db.sqlite.prepare("PRAGMA table_info(templates)").all() as { name: string }[]).map((c) => c.name);
     expect(templateCols.some((c) => c.includes("status") || c.includes("avail") || c.includes("lint"))).toBe(false);

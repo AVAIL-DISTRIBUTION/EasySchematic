@@ -194,6 +194,29 @@ deleted, status), было → стало (JSON, у updated — только и�
 по шаблонам CLI записей не пишет. `GET /avail/audit [?entity=user|template|run&entityId=&actor=&before=&limit=]` —
 librarian и admin.
 
+Рабочее окно библиотеки (шаг 2.2) — отдельная страница **`/library`** (librarian и admin; остальным — сообщение
+и ссылка в редактор), пункт «Library workspace» в меню аккаунта. `src/avail/LibraryWorkspace.tsx` (страница),
+`workspaceModel.ts` (строки, линтер с контекстом слотов всей библиотеки, ключи правил линтера, фильтры и сохранённые
+фильтры, колонки, сводка массовых действий, сравнение предложений), `workspaceApi.ts`, `xlsxWrite.ts` (xlsx без
+зависимостей), `ProposeUi.tsx`. Вкладка Templates: таблица всех шаблонов с виртуализацией (строки фиксированной высоты),
+колонки настраиваются (запоминаются в браузере); фильтры комбинируются — vendor, category (дерево: группа или лист),
+device type, status, level, ports source, правило линтера, изменён с даты, кем утверждён, поиск; сохранённые фильтры
+(Review queue, Drafts to fix, Unverified, My edits, Hidden + свои в браузере). Массовые действия над выделением:
+Approve / Move to draft / Hide / Unhide (`POST /avail/templates/status/batch`, сервер проверяет уровень A), Change
+category (`POST /avail/templates/category/batch`), Export to xlsx; перед выполнением — сводка «что изменится / уже так /
+будет отказано», после — отчёт; всё пишется в журнал. Панель деталей: карточка, порты по секциям, линтер, история из
+журнала (`GET /avail/audit?entity=template&entityId=`), ссылки на сайт и даташит; Edit (новая вкладка
+`/?availEdit=<id>` → Device Editor в сессии Edit, `AvailEditFromUrl` в `AdminUi.tsx`), Normalize (изменения и
+Save to library), Approve, Hide. Данные — `GET /avail/workspace/templates` (`api-avail/src/workspace.ts`): все статусы,
+уровень, причина статуса, обновлён, кто/как/когда утвердил (`avail_template_meta.approved_by`, миграция 9008 —
+заполнена из журнала), источник портов и даташит (`catalog`), авторы правок (журнал); ETag по версии библиотеки и журналу.
+Предложения: в Device Editor у engineer для блока из шаблона библиотеки — «Propose change» (комментарий → upstream
+`POST /submissions` action update с изменённой копией), там же — его прошлые предложения с решением и комментарием.
+Вкладка Proposals: `/submissions/pending`, сравнение «было → стало» по полям, портам (по id, иначе по подписи) и слотам,
+линтер предложенной версии; Accept → `/submissions/:id/approve` (правка записывается, уровень и статус — по обычным
+правилам), Reject с комментарием → `/:id/reject`. Решение пишется в журнал отдельной записью (action `proposal`:
+accepted / rejected, комментарий, автор; `requestAudit.ts` `readProposalDecision`), сама правка — как обычное updated.
+
 Первого админа назначают в базе:
 `docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','<email>')"`
 (пользователь должен один раз войти).
@@ -410,6 +433,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `vite.config.ts` `navigateFallbackDenylist` | service worker не отдаёт SPA на навигации в `/api/` (иначе OAuth start/callback попадают в `index.html`) |
 | `vite.config.ts` `availBrandingPlugin`, `AVAIL_MANIFEST`, `SOURCE_COMMIT` | `VITE_AVAIL=1` → `index.html` и PWA-манифест AVAIL Schematic (`vite.avail.ts`); хеш сборки из `SOURCE_COMMIT` (в Docker нет `.git`) |
 | `src/main.tsx` | `VITE_AVAIL=1` → `AuthGate` вместо лендинга |
+| `src/main.tsx` | `VITE_AVAIL=1` и путь `/library` → `src/avail/LibraryWorkspace.tsx` (рабочее окно библиотеки) внутри `AuthGate` |
 | `src/App.tsx` | заголовок вкладки `appDocumentTitle`, без `PendingSubmissionBanner` |
 | `src/components/MenuBar.tsx` | бренд в шапке, Help/About AVAIL, без Show Owned Gear |
 | `src/components/DeviceLibrary.tsx` | без Owned Gear, ширина панели (`useLibraryWidth`) |

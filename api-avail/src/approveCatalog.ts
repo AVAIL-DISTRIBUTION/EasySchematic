@@ -90,13 +90,13 @@ export function approveCatalog(sqlite: Database.Database, options: { dryRun?: bo
     const versions = new Map(drafts.map((d) => [d.id, d.version]));
     const update = sqlite.prepare(
       `UPDATE avail_template_meta
-          SET status = 'verified', approved_via = 'bulk-source', approved_at = datetime('now'),
+          SET status = 'verified', approved_via = 'bulk-source', approved_at = datetime('now'), approved_by = ?,
               status_reason = ?, status_changed_at = datetime('now'),
               lint_level = 'A', linted_version = ?, updated_by = ?, updated_at = datetime('now')
         WHERE template_id = ? AND status = 'draft'`,
     );
     sqlite.transaction(() => {
-      for (const r of approve) update.run(r.reason, versions.get(r.id) ?? null, APPROVE_CATALOG_USER, r.id);
+      for (const r of approve) update.run(APPROVE_CATALOG_USER, r.reason, versions.get(r.id) ?? null, APPROVE_CATALOG_USER, r.id);
       sqlite.prepare(BUMP_LIBRARY_VERSION).run();
     })();
   }

@@ -23,7 +23,7 @@ export interface AuditRecord {
   entity: "user" | "template" | "run";
   entityId: string;
   entityLabel: string | null;
-  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run";
+  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal";
   before: Record<string, unknown> | null;
   after: Record<string, unknown> | null;
 }
@@ -47,9 +47,10 @@ export const setUserRole = (id: string, role: AvailRole) =>
 export const setUserActive = (id: string, active: boolean) =>
   call<AvailUser>(`/avail/users/${encodeURIComponent(id)}/active`, { method: "PUT", body: JSON.stringify({ active }) });
 
-export function fetchAudit(q: { entity?: "user" | "template" | "run"; before?: number; limit?: number } = {}): Promise<AuditRecord[]> {
+export function fetchAudit(q: { entity?: "user" | "template" | "run"; entityId?: string; before?: number; limit?: number } = {}): Promise<AuditRecord[]> {
   const p = new URLSearchParams();
   if (q.entity) p.set("entity", q.entity);
+  if (q.entityId) p.set("entityId", q.entityId);
   if (q.before) p.set("before", String(q.before));
   if (q.limit) p.set("limit", String(q.limit));
   const qs = p.toString();
@@ -67,6 +68,7 @@ export const AUDIT_ACTION_LABELS: Readonly<Record<AuditRecord["action"], string>
   deleted: "Template deleted",
   status: "Status changed",
   run: "Command run",
+  proposal: "Proposal decided",
 };
 
 function short(v: unknown, max = 60): string {
@@ -85,6 +87,12 @@ export function auditChanges(r: AuditRecord): string[] {
     const counts = (a.counts ?? {}) as Record<string, number>;
     const totals = Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(", ");
     return [...(totals ? [totals] : []), `commit ${String(a.commit ?? "unknown").slice(0, 12)}`];
+  }
+  if (r.action === "proposal") {
+    const a = r.after ?? {};
+    const who = typeof a.submitter === "string" ? ` (proposed by ${a.submitter})` : "";
+    const note = typeof a.note === "string" ? `: ${a.note}` : "";
+    return [`${a.decision === "accepted" ? "Accepted" : "Rejected"}${who}${note}`];
   }
   if (r.action === "created") return [];
   if (r.action === "deleted") return [];
