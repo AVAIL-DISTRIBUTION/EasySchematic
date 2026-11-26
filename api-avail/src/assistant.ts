@@ -6,7 +6,8 @@
  *                                 (upstream validation; 409 on a duplicate, server.ts guard);
  *                                 → { template, status, level, errors, warnings }. Logged as created.
  *   POST /avail/lint              any signed-in user: { template } → the linter's result with the
- *                                 library's slot context; nothing is saved
+ *                                 library's slot context and the template's lifecycle (its own
+ *                                 `_avail` / `availLifecycle`, else the stored one by id); nothing is saved
  *   POST /avail/normalize         any signed-in user: { template } → { template, changes, before,
  *                                 after } — the normalizer and the linter before and after; nothing
  *                                 is saved
@@ -21,9 +22,10 @@ import { rowToTemplate, templateToRow, type TemplateRow } from "../../api/src/db
 import { validateTemplate } from "../../api/src/validate";
 import { lintBlock } from "../../src/avail/blockLint";
 import { normalizeBlock } from "../../src/avail/normalize";
+import { ACTIVE, carriedLifecycle, lifecycleOfColumns, withLifecycle } from "../../src/avail/lifecycle";
 import { isAssistant, isLibrarianOrAdmin } from "../../src/avail/roles";
 import { ADMIN_TOKEN_ACTOR, writeAuditD1 } from "./audit";
-import { BUMP_LIBRARY_VERSION, slotContextOfRows } from "./templateMeta";
+import { BUMP_LIBRARY_VERSION, slotContextOfRows, storedAvail } from "./templateMeta";
 
 type UpstreamApp = typeof UpstreamAppValue;
 type Ctx = Parameters<typeof requireSession>[0];
@@ -44,6 +46,29 @@ async function templateOf(c: Ctx): Promise<{ template: Record<string, unknown> }
 async function slotContext(db: D1Database) {
   const { results } = await db.prepare("SELECT slot_family, slots FROM templates WHERE flagged_for_deletion = 0").all<{ slot_family: string | null; slots: string | null }>();
   return slotContextOfRows(results);
+}
+
+/**
+ * A template as the linter sees it on save: with the stored template's catalog notes, description,
+ * rackForm and lifecycle when it names one by id; what the template carries itself wins (`_avail`,
+ * `availLifecycle` of get_template raw). So a preview of an upcoming product's estimates ("estimated
+ * from …") does not lower its level.
+ */
+async function asSaved(db: D1Database, t: Record<string, unknown>): Promise<Record<string, unknown>> {
+  const own = carriedLifecycle(t);
+  const m =
+    typeof t.id === "string" && t.id
+      ? await db
+          .prepare("SELECT catalog, lifecycle, available_from, eol_date FROM avail_template_meta WHERE template_id = ?")
+          .bind(t.id)
+          .first<{ catalog: string | null; lifecycle: string | null; available_from: string | null; eol_date: string | null }>()
+      : null;
+  const lc = own ?? (m ? lifecycleOfColumns(m) : ACTIVE);
+  const { avail, rackForm } = storedAvail(m?.catalog, lc);
+  const mine = t._avail && typeof t._avail === "object" ? (t._avail as Record<string, unknown>) : {};
+  const out = withLifecycle({ ...t, ...(rackForm && t.rackForm === undefined ? { rackForm } : {}), _avail: { ...avail, ...mine } }, lc);
+  if (!Object.keys(out._avail as object).length) delete (out as { _avail?: unknown })._avail;
+  return out;
 }
 
 /** Signed in (session, AI Assistant token) or the admin token. */
@@ -93,7 +118,7 @@ export function registerAssistantRoutes(app: UpstreamApp): void {
     if (!signedIn(c)) return c.json({ error: "Sign in first" }, 401);
     const t = await templateOf(c);
     if ("error" in t) return c.json({ error: t.error }, 400);
-    return c.json(lintBlock(t.template, await slotContext(c.env.easyschematic_db)));
+    return c.json(lintBlock(await asSaved(c.env.easyschematic_db, t.template), await slotContext(c.env.easyschematic_db)));
   });
 
   app.post("/avail/normalize", async (c) => {
@@ -102,6 +127,7 @@ export function registerAssistantRoutes(app: UpstreamApp): void {
     if ("error" in t) return c.json({ error: t.error }, 400);
     const ctx = await slotContext(c.env.easyschematic_db);
     const r = normalizeBlock(t.template);
-    return c.json({ template: r.template, changes: r.changes, before: lintBlock(t.template, ctx), after: lintBlock(r.template, ctx) });
+    const db = c.env.easyschematic_db;
+    return c.json({ template: r.template, changes: r.changes, before: lintBlock(await asSaved(db, t.template), ctx), after: lintBlock(await asSaved(db, r.template), ctx) });
   });
 }

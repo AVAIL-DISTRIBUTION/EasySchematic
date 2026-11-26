@@ -9,7 +9,7 @@
 import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel, type BlockLintResult } from "../../src/avail/blockLint";
-import { lifecycleOfColumns } from "../../src/avail/lifecycle";
+import { lifecycleOfColumns, type LifecycleInfo } from "../../src/avail/lifecycle";
 import { slotLibraryContext, type SlotLibraryContext } from "../../src/avail/slotFamilies";
 import { SYSTEM_ACTOR, writeAudit, writeAuditD1, type AuditEntry } from "./audit";
 import { dropStaleNotDuplicates } from "./notDuplicates";
@@ -115,19 +115,30 @@ export const LIFECYCLE_SELECT = "m.lifecycle AS avail_lifecycle, m.available_fro
  */
 export function blockOfRow(row: TemplateRow & LifecycleCols, catalogJson?: string | null): object {
   const t = rowToTemplate(row) as unknown as Record<string, unknown>;
+  const lc = lifecycleOfColumns({ lifecycle: row.avail_lifecycle, available_from: row.avail_available_from, eol_date: row.avail_eol_date });
+  const { avail, rackForm } = storedAvail(catalogJson, lc);
+  if (rackForm) t.rackForm = rackForm;
+  return Object.keys(avail).length ? { ...t, _avail: avail } : t;
+}
+
+/**
+ * What the linter reads besides the template when it lints a stored one: the catalog meta's
+ * description and notes (`_avail`), its rackForm, and the lifecycle.
+ */
+export function storedAvail(catalogJson: string | null | undefined, lc: LifecycleInfo): { avail: Record<string, unknown>; rackForm?: string } {
   const avail: Record<string, unknown> = {};
+  let rackForm: string | undefined;
   if (catalogJson) {
     try {
       const c = JSON.parse(catalogJson) as { description?: unknown; rackForm?: unknown; notes?: unknown; note?: unknown };
-      if (typeof c.rackForm === "string") t.rackForm = c.rackForm;
+      if (typeof c.rackForm === "string") rackForm = c.rackForm;
       for (const k of ["description", "notes", "note"] as const) if (typeof c[k] === "string") avail[k] = c[k];
     } catch {
       // not JSON: the template alone
     }
   }
-  const lc = lifecycleOfColumns({ lifecycle: row.avail_lifecycle, available_from: row.avail_available_from, eol_date: row.avail_eol_date });
   if (lc.lifecycle !== "active") Object.assign(avail, lc);
-  return Object.keys(avail).length ? { ...t, _avail: avail } : t;
+  return { avail, ...(rackForm ? { rackForm } : {}) };
 }
 
 /** Standard level of a stored template row (with the library's slot context and its catalog meta when given). */

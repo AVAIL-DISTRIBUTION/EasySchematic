@@ -208,11 +208,72 @@ curl -s -X PUT https://sch.avail-int.com/api/avail/users/<id>/role -H "Authoriza
 ```
 Роль действует сразу; в открытом редакторе — после перезагрузки страницы.
 
-## AI Assistant: MCP-коннектор для Claude
+## Коннектор Claude по OAuth (рекомендуется)
+
+С шага 2.8 коннектор входит **через OAuth**. Каждый инженер подключается своим Google-аккаунтом Workspace
+(только `GOOGLE_ALLOWED_DOMAIN`, то есть avail-int.com). Claude работает от его имени: с его ролью и правами
+(engineer, librarian, admin). В журнале всё пишется от этого пользователя с пометкой «via Claude». Статические
+токены AI Assistant (раздел ниже) остаются для автоматизаций и подключения без OAuth.
+
+Что делает API (`api-avail/src/oauth.ts`):
+- discovery: `/.well-known/oauth-protected-resource` и `/.well-known/oauth-authorization-server`;
+- динамическая регистрация клиента (`/oauth/register`);
+- вход через Google и страница согласия (`/oauth/authorize`, PKCE S256);
+- токены (`/oauth/token`): доступ на 1 час, refresh на 30 дней, при каждом обновлении выдаётся новая пара;
+- отзыв (`/oauth/revoke`).
+
+Издатель — `API_PUBLIC_URL` (`https://sch.avail-int.com/api`). Caddy после обновления `Caddyfile` проксирует
+в API и корневые `/.well-known/oauth-*`: часть клиентов ищет метаданные от корня домена.
+
+### Переключить коннектор организации на OAuth
+
+1. Обновить сервер (`./update.sh`). Миграция 9013 применится при старте API. Обновить `Caddyfile` из репозитория
+   и перезапустить Caddy: `docker compose up -d caddy`.
+2. Проверка: `curl -s https://sch.avail-int.com/api/.well-known/oauth-authorization-server | head -c 300`. Должен
+   прийти JSON с `issuer: "https://sch.avail-int.com/api"`.
+3. claude.ai, Owner организации: Settings → **Connectors**.
+   - Если коннектор `AVAIL library` с заголовком `Authorization` уже есть, удалить его. Для
+     автоматизаций токен остаётся, его можно отозвать отдельно (Users → `claude@avail.invalid` → Tokens).
+   - **Add custom connector**: Name — `AVAIL library`, Remote MCP server URL — `https://sch.avail-int.com/api/mcp`.
+     Request headers и OAuth Client ID / Secret **не заполнять**: Claude зарегистрируется сам.
+4. Сообщить инженерам, что коннектор переключён.
+
+Claude Code: `claude mcp add --transport http avail-library https://sch.avail-int.com/api/mcp`, затем в сессии
+`/mcp` → avail-library → Authenticate. Откроется браузер с тем же входом.
+
+### Что увидит инженер при первом подключении
+
+1. В claude.ai: Settings → Connectors → `AVAIL library` → **Connect** (или Claude предложит подключиться при первом
+   запросе к библиотеке).
+2. Откроется вход Google. Если инженер уже вошёл в AVAIL Schematic в этом браузере, этот шаг пропускается. Входят
+   только аккаунты avail-int.com; отключённый пользователь получает отказ («account_disabled»).
+3. Страница **Connect Claude to AVAIL Schematic**. На ней:
+   - кто подключается: email и роль;
+   - что Claude сможет делать. Engineer: читать библиотеку, проверять шаблоны линтером и нормализатором, предлагать
+     правки на ревью. Librarian и admin: ещё черновики шаблонов, очередь ревью, дубли и журнал;
+   - что в журнале действия будут с пометкой «via Claude».
+4. **Allow**: страница вернётся в claude.ai, коннектор станет Connected. **Deny**: подключение отменяется.
+5. Claude сам обновляет доступ (токен на час, refresh на 30 дней). Если коннектором не пользовались 30 дней,
+   claude.ai попросит подключиться снова.
+
+Инструменты по ролям: engineer — `search_templates`, `get_template`, `lint_template`, `normalize_template`,
+`propose_change`; librarian, admin и AI Assistant — все девять. Утверждать, скрывать и удалять через коннектор нельзя
+никому.
+
+### Отозвать доступ Claude
+
+- **Users** (admin): колонка **Claude access** → **Manage**. Там список подключений (клиент, когда выдан, последнее
+  использование, состояние) и **Revoke**. Следующий запрос Claude получит 401 «Access for Claude was revoked on …».
+- **Disable** пользователя отзывает все его подключения и токены.
+- Сам инженер может отключить коннектор в claude.ai. Подключение отзывается через `/oauth/revoke`, когда Claude его
+  вызывает.
+- В журнале: «Claude connected (…)» и «Claude access revoked (…)»; действия — «email via Claude».
+
+## AI Assistant: MCP-коннектор по статическому токену
 
 API отдаёт удалённый MCP-сервер библиотеки: **`https://sch.avail-int.com/api/mcp`** (Streamable HTTP, без
-сессий; Caddy проксирует `/api/*` как есть, отдельная настройка не нужна). Вход — только токен пользователя с ролью
-**AI Assistant**; без токена или с отозванным / просроченным — 401.
+сессий; Caddy проксирует `/api/*` как есть, отдельная настройка не нужна). Вход — OAuth (раздел выше) или токен пользователя с ролью
+**AI Assistant** (этот раздел: автоматизации, подключение без OAuth); без токена или с отозванным / просроченным — 401.
 
 Инструменты (по правам роли — чтение, проверка, черновики и предложения; утверждение и скрытие — только librarian):
 `search_templates`, `get_template`, `review_queue`, `possible_duplicates`, `audit_log` — чтение;

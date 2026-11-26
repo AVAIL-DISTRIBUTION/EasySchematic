@@ -20,7 +20,9 @@ export interface AuditRecord {
 
 /** Who did it: the actor, and the token when it was done with one. */
 export function auditActor(r: AuditRecord): string {
-  return r.token ? `${r.actor} (token “${r.token}”)` : r.actor;
+  if (!r.token) return r.actor;
+  // A Claude connection (OAuth): the user, "via Claude"; an access token: its name.
+  return r.token.startsWith("via ") ? `${r.actor} ${r.token}` : `${r.actor} (token “${r.token}”)`;
 }
 
 /** Action of an audit entry, one whole string each (ready for a translation table). */
@@ -74,6 +76,8 @@ export function auditChanges(r: AuditRecord): string[] {
   if (r.action === "token") {
     const a = r.after ?? {};
     if (typeof a.created === "string") return [`Created “${a.created}”, expires ${String(a.expiresAt ?? "").slice(0, 10)}`];
+    if (typeof a.oauthGranted === "string") return [`Claude connected (${a.oauthGranted})`];
+    if (typeof a.oauthRevoked === "string") return [`Claude access revoked (${a.oauthRevoked}): ${String(a.reason ?? "")}`];
     return [`Revoked “${String(a.revoked ?? "")}”: ${String(a.reason ?? "")}`];
   }
   if (r.action === "request") {

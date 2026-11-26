@@ -127,6 +127,28 @@ export function lifecycleOfColumns(r: { lifecycle?: string | null; available_fro
   return lifecycleOf({ lifecycle: r.lifecycle, availableFrom: r.available_from, eolDate: r.eol_date });
 }
 
+/**
+ * The block as the linter must see it: its lifecycle in `_avail` (what blockLint reads), so values
+ * "estimated from …" of an upcoming product do not lower its level. Active: the block unchanged.
+ */
+export function withLifecycle<T extends object>(block: T, lc: LifecycleInfo): T {
+  if (lc.lifecycle === "active") return block;
+  const avail = (block as { _avail?: unknown })._avail;
+  return { ...block, _avail: { ...(avail && typeof avail === "object" ? avail : {}), ...lc } };
+}
+
+/**
+ * The lifecycle a block carries itself: `_avail` (catalog card), `availLifecycle` (library, MCP raw)
+ * or `avail` (workspace); null when it carries none.
+ */
+export function carriedLifecycle(block: object): LifecycleInfo | null {
+  const b = block as { _avail?: { lifecycle?: unknown }; availLifecycle?: unknown; avail?: { lifecycle?: unknown } };
+  if (b._avail && isLifecycle(b._avail.lifecycle)) return lifecycleOf(b._avail);
+  if (b.availLifecycle && typeof b.availLifecycle === "object") return lifecycleOf(b.availLifecycle);
+  if (b.avail && isLifecycle(b.avail.lifecycle)) return lifecycleOf(b.avail);
+  return null;
+}
+
 // ---------------------------------------------------------------------------- estimates (linter)
 
 /** "estimated from DTP3 T 202" in notes: a value taken from an analog product. */

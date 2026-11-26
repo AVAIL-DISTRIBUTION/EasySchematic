@@ -12,6 +12,12 @@
 		reverse_proxy api:8787
 	}
 
+	# OAuth discovery for the Claude connector (api-avail/src/oauth.ts): clients that look the
+	# metadata up from the domain root (RFC 8414 / RFC 9728 path insertion) reach the API too.
+	handle /.well-known/oauth-* {
+		reverse_proxy api:8787
+	}
+
 	handle {
 		reverse_proxy app:80
 	}

@@ -16,10 +16,12 @@ import type Database from "better-sqlite3";
 import { auditChanges, type AuditRecord } from "../../src/avail/auditText";
 import { describeChange, portLabelMap, portsBySection } from "../../src/avail/libraryView";
 import type { NormalizeChange } from "../../src/avail/normalize";
-import { buildRows, builtInFilters, EMPTY_FILTER, filterRows, type WsFilter, type WsRow, type WsTemplate } from "../../src/avail/workspaceModel";
+import { buildRows, builtInFilters, EMPTY_FILTER, filterRows, type WsFilter, type WsInfo, type WsRow, type WsTemplate } from "../../src/avail/workspaceModel";
+import { availRoleOf, isAssistant, isLibrarianOrAdmin, ROLE_LABELS } from "../../src/avail/roles";
 import { LIFECYCLES } from "../../src/avail/lifecycle";
 import { applyTemplatePatch, describeEditChanges, editChanges, NO_CHANGE_ERROR, noChanges, storedForm } from "../../src/avail/templatePatch";
 import { writeAudit } from "./audit";
+import { resourceMetadataUrl } from "./oauth";
 
 export const MCP_PATH = "/mcp";
 export const PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"] as const;
@@ -29,6 +31,8 @@ export interface McpContext {
   /** A request to this API as the token's user: path with query, e.g. "/avail/audit?limit=5". */
   call: (path: string, init?: { method?: string; body?: unknown; headers?: Record<string, string> }) => Promise<Response>;
   token: { name: string; userId: string; email: string };
+  /** users.role of the signed-in user: assistant (static token), contributor, moderator, admin (OAuth). */
+  role: string;
   sqlite: Database.Database;
   /** The app's public origin for links (https://sch.avail-int.com), or "" for relative links. */
   appOrigin: string;
@@ -79,23 +83,47 @@ const STATUSES = ["verified", "draft", "raw", "hidden"] as const;
 const LEVELS = ["A", "B", "FIX"] as const;
 const ORIGINS = ["manufacturer", "community", "none"] as const;
 
-/** Workspace rows, rebuilt only when the library or the audit log changed (ETag). */
-let cache: { etag: string; rows: WsRow[] } | null = null;
+/**
+ * Who reads the workspace (every status, levels, duplicates): librarians, admins and the AI Assistant.
+ * An engineer reads the library as the editor shows it (GET /templates with raw), like in the interface.
+ */
+export const readsWorkspace = (role: string) => isLibrarianOrAdmin(role) || isAssistant(role);
+
+/** Rows per source, rebuilt only when the data changed (ETag). */
+const cache = new Map<string, { etag: string; rows: WsRow[] }>();
+
+/** A library template (GET /templates) as a workspace template: what the library tells about it. */
+function libraryTemplate(t: Json): WsTemplate {
+  const { availStatus, availLevel, availPortsOrigin, availLifecycle, ...rest } = t as Json & {
+    availStatus?: WsInfo["status"]; availLevel?: WsInfo["level"]; availPortsOrigin?: WsInfo["portsOrigin"]; availLifecycle?: { lifecycle?: WsInfo["lifecycle"]; availableFrom?: string; eolDate?: string };
+  };
+  const avail: WsInfo = {
+    status: availStatus ?? "raw", level: availLevel ?? null, statusReason: null, statusChangedAt: null, updatedAt: null,
+    approvedBy: null, approvedVia: null, approvedAt: null, portsOrigin: availPortsOrigin ?? "none", portsSource: null, portsFrom: null,
+    datasheetUrl: null, source: null, editors: [], lastActor: null, lastAt: null,
+    ...(availLifecycle?.lifecycle ? { lifecycle: availLifecycle.lifecycle, availableFrom: availLifecycle.availableFrom ?? null, eolDate: availLifecycle.eolDate ?? null } : {}),
+  };
+  return { ...(rest as unknown as WsTemplate), avail };
+}
 
 async function libraryRows(ctx: McpContext): Promise<WsRow[]> {
-  const res = await ctx.call("/avail/workspace/templates", { headers: cache ? { "If-None-Match": cache.etag } : {} });
-  if (res.status === 304 && cache) return cache.rows;
+  const workspace = readsWorkspace(ctx.role);
+  const path = workspace ? "/avail/workspace/templates" : "/templates?include=raw";
+  const cached = cache.get(path);
+  const res = await ctx.call(path, { headers: cached ? { "If-None-Match": cached.etag } : {} });
+  if (res.status === 304 && cached) return cached.rows;
   if (!res.ok) throw new ToolError(await errorText(res));
-  const body = (await res.json()) as { templates: WsTemplate[] };
-  const rows = buildRows(body.templates);
+  const templates = workspace ? ((await res.json()) as { templates: WsTemplate[] }).templates : ((await res.json()) as Json[]).map(libraryTemplate);
+  const rows = buildRows(templates);
   const etag = res.headers.get("ETag");
-  cache = etag ? { etag, rows } : null;
+  if (etag) cache.set(path, { etag, rows });
+  else cache.delete(path);
   return rows;
 }
 
 /** For tests: forget the cached rows. */
 export function resetMcpCache(): void {
-  cache = null;
+  cache.clear();
 }
 
 async function errorText(res: Response): Promise<string> {
@@ -279,7 +307,8 @@ export const TOOLS: readonly Tool[] = [
   {
     name: "lint_template",
     title: "Lint template",
-    description: "Check a template against the AVAIL Device Block Standard. Nothing is saved. Returns {level, errors, warnings}; level A is required for verified.",
+    description:
+      "Check a template against the AVAIL Device Block Standard as saving would: with its lifecycle (from availLifecycle of get_template raw, or the stored one by id). Nothing is saved. Returns {level, errors, warnings}; verified needs A.",
     inputSchema: { type: "object", properties: { template: TEMPLATE_SCHEMA }, required: ["template"], additionalProperties: false },
     readOnly: true,
     run: async (a, ctx) => {
@@ -293,7 +322,7 @@ export const TOOLS: readonly Tool[] = [
     name: "normalize_template",
     title: "Normalize template",
     description:
-      "Preview the normalizer on a template (sections, labels, directions, category). Nothing is saved. Returns {level_before, level_after, changes[], manual[], template}; manual lists what needs a human.",
+      "Preview the normalizer on a template (sections, labels, directions, category); levels as saving would lint them, lifecycle included. Nothing is saved. Returns {level_before, level_after, changes[], manual[], template}.",
     inputSchema: { type: "object", properties: { template: TEMPLATE_SCHEMA }, required: ["template"], additionalProperties: false },
     readOnly: true,
     run: async (a, ctx) => {
@@ -467,9 +496,14 @@ export const INSTRUCTIONS =
   "Check work with lint_template and normalize_template (nothing is saved). Write only through create_draft_template (new drafts) and propose_change (edits for librarian review: send a patch with only what changes, built on get_template's raw); approving is for librarians. " +
   "Data comes from manufacturer documents first: never guess ports or specs; cite the source in comments.";
 
+/** The tools of a role: an engineer gets what the interface lets them do (read, check, propose). */
+export const ENGINEER_TOOLS: readonly string[] = ["search_templates", "get_template", "lint_template", "normalize_template", "propose_change"];
+export const toolsFor = (role: string) => (readsWorkspace(role) ? TOOLS : TOOLS.filter((t) => ENGINEER_TOOLS.includes(t.name)));
+
 async function callTool(name: string, args: Json, ctx: McpContext): Promise<ToolResult> {
   const tool = TOOLS.find((t) => t.name === name);
   if (!tool) throw new InvalidParams(`Unknown tool: ${name}`);
+  if (!toolsFor(ctx.role).includes(tool)) return { data: { error: `${name} needs the Librarian or Admin role; you are signed in as ${ROLE_LABELS[availRoleOf(ctx.role)]}.` }, isError: true };
   try {
     return { data: await tool.run(args, ctx) };
   } catch (e) {
@@ -492,7 +526,7 @@ async function answer(m: RpcMessage, ctx: McpContext, version: string): Promise<
         return rpcResult(m.id, {});
       case "tools/list":
         return rpcResult(m.id, {
-          tools: TOOLS.map((t) => ({
+          tools: toolsFor(ctx.role).map((t) => ({
             name: t.name,
             title: t.title,
             description: t.description,
@@ -547,11 +581,11 @@ export async function handleMcp(request: Request, ctx: McpContext): Promise<Resp
   return jsonResponse(batch ? answers : answers[0]);
 }
 
-/** 401 for a request without an access token. */
-export function mcpUnauthorized(): Response {
+/** 401 for a request without a token: OAuth discovery for Claude, or an AI Assistant access token. */
+export function mcpUnauthorized(issuer: string): Response {
   return jsonResponse(
-    { error: "Sign in with an AI Assistant access token: Authorization: Bearer avail_ai_… (an admin creates it in Users)." },
+    { error: "Sign in: connect Claude with OAuth (your Google Workspace account), or send an AI Assistant access token (Authorization: Bearer avail_ai_…)." },
     401,
-    { "WWW-Authenticate": 'Bearer realm="avail", error="invalid_token"' },
+    { "WWW-Authenticate": `Bearer realm="avail", resource_metadata="${resourceMetadataUrl(issuer)}", error="invalid_token"` },
   );
 }

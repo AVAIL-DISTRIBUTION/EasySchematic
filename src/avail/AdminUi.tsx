@@ -6,6 +6,7 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { TokensPanel } from "./TokensUi";
+import { ClaudeAccessPanel } from "./ClaudeAccessUi";
 import { AUDIT_ACTION_LABELS, auditActor, auditChanges, fetchAudit, fetchUsers, setUserActive, setUserRole, type AuditRecord, type AvailUser } from "./adminApi";
 import { openAdminPage, useAdminPage, type AdminPage } from "./adminPages";
 import { loadRole } from "./api";
@@ -126,6 +127,7 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [tokensOf, setTokensOf] = useState<string | null>(null);
+  const [claudeOf, setClaudeOf] = useState<string | null>(null);
 
   const reload = useCallback(() => {
     fetchUsers().then(setUsers, (e: Error) => setError(e.message));
@@ -167,6 +169,7 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
                 <th className="px-2 py-2 font-medium">Last sign-in</th>
                 <th className="px-2 py-2 font-medium">Access</th>
                 <th className="px-2 py-2 font-medium">Tokens</th>
+                <th className="px-2 py-2 font-medium">Claude access</th>
               </tr>
             </thead>
             <tbody>
@@ -231,11 +234,32 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
                       <span className="text-[var(--color-text-muted)]">—</span>
                     )}
                   </td>
+                  <td className="px-2 py-1.5">
+                    {u.system || u.role === "assistant" ? (
+                      <span className="text-[var(--color-text-muted)]">—</span>
+                    ) : (
+                      <button
+                        data-testid="avail-user-claude"
+                        className="underline cursor-pointer"
+                        onClick={() => setClaudeOf((t) => (t === u.id ? null : u.id))}
+                        title="Claude connections (OAuth): Claude works as this user with their rights"
+                      >
+                        {u.activeClaudeAccess ? `${u.activeClaudeAccess} active` : "None"} · {claudeOf === u.id ? "Hide" : "Manage"}
+                      </button>
+                    )}
+                  </td>
                 </tr>
                 {tokensOf === u.id && (
                   <tr className="bg-[var(--color-surface-hover)]">
-                    <td colSpan={6} className="px-4">
+                    <td colSpan={7} className="px-4">
                       <TokensPanel user={u} onChanged={reload} />
+                    </td>
+                  </tr>
+                )}
+                {claudeOf === u.id && (
+                  <tr className="bg-[var(--color-surface-hover)]">
+                    <td colSpan={7} className="px-4">
+                      <ClaudeAccessPanel user={u} onChanged={reload} />
                     </td>
                   </tr>
                 )}
