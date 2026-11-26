@@ -33,6 +33,13 @@ export interface CategoryBatchResult {
 export const changeTemplatesCategory = (ids: string[], category: string) =>
   call<CategoryBatchResult>("/avail/templates/category/batch", { method: "POST", body: JSON.stringify({ ids, category }) });
 
+/** POST /avail/templates/merge: the ids become hidden "duplicate of <primary>" (step 2.4). */
+export const mergeTemplates = (primary: string, ids: string[]) =>
+  call<{ primary: string; updated: string[]; unchanged: string[]; failed: { id: string; reason: string }[] }>("/avail/templates/merge", {
+    method: "POST",
+    body: JSON.stringify({ primary, ids }),
+  });
+
 /** An upstream submission: a proposed template edit (action "update") with the engineer's comment. */
 export interface Proposal {
   id: string;

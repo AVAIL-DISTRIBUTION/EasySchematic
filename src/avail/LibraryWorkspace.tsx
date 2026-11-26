@@ -24,6 +24,7 @@ import {
   fetchWorkspace,
   rejectProposal,
   type Proposal,
+  mergeTemplates,
 } from "./workspaceApi";
 import {
   activeFilterCount,
@@ -45,6 +46,8 @@ import {
   LEVELS,
   ORIGIN_LABELS,
   planBulk,
+  planMerge,
+  suggestedPrimary,
   ruleLabel,
   sortRows,
   STATUS_LABELS,
@@ -56,7 +59,7 @@ import {
   type WsFilter,
   type WsRow,
 } from "./workspaceModel";
-import { BULK_BATCH, bulkReport, chunks, runBulk } from "./workspaceBulk";
+import { BULK_BATCH, bulkReport, chunks, runBulk, selectionAfter } from "./workspaceBulk";
 import { buildXlsx } from "./xlsxWrite";
 import "./avail.css";
 
@@ -158,6 +161,7 @@ function TemplatesTab() {
     | { kind: "plan"; plan: BulkPlan }
     | { kind: "report"; lines: string[]; title: string }
     | { kind: "category" }
+    | { kind: "merge" }
     | { kind: "columns" }
     | null
   >(null);
@@ -175,7 +179,15 @@ function TemplatesTab() {
     void reload();
   }, [reload]);
 
-  const shown = useMemo(() => (rows ? sortRows(filterRows(rows, filter), sort.by, sort.desc) : []), [rows, filter, sort]);
+  // A link /library?template=<id> (e.g. from a 409 "duplicate" answer) opens that template.
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get("template");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- once, from the address
+    if (id) setFocus(id);
+  }, []);
+  // Possible duplicates: groups together, primary first.
+  const by = filter.duplicates && sort.by !== "duplicateOf" ? { by: "duplicateOf" as ColumnId, desc: false } : sort;
+  const shown = useMemo(() => (rows ? sortRows(filterRows(rows, filter), by.by, by.desc) : []), [rows, filter, by.by, by.desc]);
   const selectedRows = useMemo(() => (rows ?? []).filter((r) => selected.has(r.id)), [rows, selected]);
   const focused = useMemo(() => rows?.find((r) => r.id === focus) ?? null, [rows, focus]);
 
@@ -184,8 +196,12 @@ function TemplatesTab() {
     const send =
       plan.action === "category"
         ? (ids: string[]) => changeTemplatesCategory(ids, plan.category!)
-        : (ids: string[]) => changeTemplatesStatus(ids, BULK_STATUS[plan.action as Exclude<BulkAction, "category">]);
+        : plan.action === "merge"
+          ? (ids: string[]) => mergeTemplates(plan.primary!.id, ids)
+          : (ids: string[]) => changeTemplatesStatus(ids, BULK_STATUS[plan.action as Exclude<BulkAction, "category" | "merge">]);
     const outcome = await runBulk(plan, send, onProgress);
+    // Done: the selection is cleared (failed batches stay selected to run again).
+    setSelected(selectionAfter(outcome));
     setDialog({ kind: "report", title: `${BULK_LABELS[plan.action]} — report`, lines: bulkReport(plan, outcome) });
     await reload();
   };
@@ -229,13 +245,21 @@ function TemplatesTab() {
         {selected.size > 0 && (
           <div data-testid="avail-ws-bulk" className="flex items-center gap-2 px-3 py-1.5 border-b border-[var(--color-border)] bg-blue-50">
             <span className="font-semibold">Bulk actions for {selected.size}:</span>
-            {(["approve", "draft", "hide", "unhide"] as BulkAction[]).map((a) => (
+            {(["approve", "draft", "hide", "unhide"] as Exclude<BulkAction, "category" | "merge">[]).map((a) => (
               <button key={a} className={btnPlain} onClick={() => setDialog({ kind: "plan", plan: planBulk(a, selectedRows) })}>
                 {BULK_LABELS[a]}
               </button>
             ))}
             <button className={btnPlain} onClick={() => setDialog({ kind: "category" })}>
               {BULK_LABELS.category}
+            </button>
+            <button
+              className={btnPlain}
+              onClick={() => setDialog({ kind: "merge" })}
+              disabled={selected.size < 2}
+              title={selected.size < 2 ? "Select the duplicates and the template to keep" : "Keep one template, hide the others as its duplicates"}
+            >
+              {BULK_LABELS.merge}
             </button>
             <button className={btnPlain} onClick={exportSelection}>
               Export to xlsx
@@ -277,6 +301,9 @@ function TemplatesTab() {
           onClose={() => setDialog(null)}
           onPick={(category) => setDialog({ kind: "plan", plan: planBulk("category", selectedRows, category) })}
         />
+      )}
+      {dialog?.kind === "merge" && (
+        <MergeDialog rows={selectedRows} onClose={() => setDialog(null)} onPick={(primary) => setDialog({ kind: "plan", plan: planMerge(selectedRows, primary) })} />
       )}
       {dialog?.kind === "report" && (
         <Modal title={dialog.title} onClose={() => setDialog(null)} testId="avail-ws-report">
@@ -585,6 +612,49 @@ function Modal({ title, onClose, children, testId, footer }: { title: string; on
 }
 
 /** The summary before a bulk action runs: what changes, what stays, what will be refused. */
+/** Merge into…: pick the template to keep among the selection (the suggested primary first). */
+function MergeDialog({ rows, onClose, onPick }: { rows: WsRow[]; onClose: () => void; onPick: (primary: WsRow) => void }) {
+  const suggested = suggestedPrimary(rows);
+  const [pick, setPick] = useState<string>(suggested?.id ?? "");
+  const primary = rows.find((r) => r.id === pick);
+  return (
+    <Modal
+      title="Merge into…"
+      onClose={onClose}
+      testId="avail-ws-merge"
+      footer={
+        <>
+          <button className={btnPlain} onClick={onClose}>
+            Cancel
+          </button>
+          <button className={btnPrimary} disabled={!primary} onClick={() => primary && onPick(primary)}>
+            Next
+          </button>
+        </>
+      }
+    >
+      <div className="p-4 flex flex-col gap-2">
+        <div>
+          Keep one template; the other {rows.length - 1} become hidden with the reason «duplicate of &lt;its id&gt;», each change in the audit log with a link to the
+          one kept.
+        </div>
+        <div className="flex flex-col gap-1 max-h-[50vh] overflow-y-auto">
+          {rows.map((r) => (
+            <label key={r.id} className="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="avail-merge-primary" checked={pick === r.id} onChange={() => setPick(r.id)} />
+              <span className="font-semibold">{r.template.label}</span>
+              <span className="text-[var(--color-text-muted)]">
+                {r.partNumber || "—"} · {STATUS_LABELS[r.status]} · level {r.level} · ports: {r.portsSource || "—"}
+                {r.id === suggested?.id ? " · suggested" : ""}
+              </span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </Modal>
+  );
+}
+
 function PlanDialog({
   plan,
   onClose,
@@ -597,7 +667,12 @@ function PlanDialog({
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState<{ batch: number; of: number } | null>(null);
   const batches = chunks(plan.change).length;
-  const what = plan.action === "category" ? `${BULK_LABELS.category} to ${plan.category}` : BULK_LABELS[plan.action];
+  const what =
+    plan.action === "category"
+      ? `${BULK_LABELS.category} to ${plan.category}`
+      : plan.action === "merge"
+        ? `Merge into ${plan.primary?.template.label ?? "…"}`
+        : BULK_LABELS[plan.action];
   return (
     <Modal
       title={`${what} — what will change`}
@@ -616,7 +691,7 @@ function PlanDialog({
               void onRun(plan, (batch, of) => setProgress({ batch, of }));
             }}
           >
-            {busy ? (progress ? `Batch ${progress.batch} of ${progress.of}…` : "Working…") : `${BULK_LABELS[plan.action]} ${plan.change.length}`}
+            {busy ? (progress ? `Batch ${progress.batch} of ${progress.of}…` : "Working…") : plan.action === "merge" ? `Hide ${plan.change.length} as duplicates` : `${BULK_LABELS[plan.action]} ${plan.change.length}`}
           </button>
         </>
       }

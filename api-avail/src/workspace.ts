@@ -6,6 +6,7 @@
  *                                            with its workspace data: status, level, status reason,
  *                                            updated, approved (by, how, when), ports origin and
  *                                            source, data sheet link, who edited it (audit log)
+ *                                            and its possible duplicate group (step 2.4)
  *   POST /avail/templates/category/batch     { ids, category } → { category, updated, unchanged, failed }
  *                                            leaf category of the taxonomy; each change goes to the
  *                                            audit log; levels are re-linted after the request
@@ -19,7 +20,9 @@ import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import type { BlockLevel } from "../../src/avail/blockLint";
 import { findCategory } from "../../src/avail/library";
 import { catalogIndex, parseCatalogMeta, portsOrigin, type PortsOrigin } from "../../src/avail/portsOrigin";
+import { duplicateGroups, duplicateIndex } from "../../src/avail/duplicates";
 import { ADMIN_TOKEN_ACTOR, writeAuditD1, type AuditEntry } from "./audit";
+import { candidatesOf } from "./duplicates";
 import { BUMP_LIBRARY_VERSION, type ApprovalMethod, type TemplateStatus } from "./templateMeta";
 
 type UpstreamApp = typeof UpstreamAppValue;
@@ -50,6 +53,8 @@ export interface WorkspaceInfo {
   editors: string[];
   lastActor: string | null;
   lastAt: string | null;
+  /** Possible duplicate (step 2.4): the group's proposed primary and size; null when none. */
+  duplicate: { primary: string; size: number } | null;
 }
 
 type Row = TemplateRow & {
@@ -101,6 +106,7 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
       editors.set(a.entity_id, list);
     }
     const byFile = catalogIndex(results.map((r) => parseCatalogMeta(r.avail_catalog)));
+    const dupes = duplicateIndex(duplicateGroups(candidatesOf(results)));
 
     const templates = results.map((row) => {
       const catalog = parseCatalogMeta(row.avail_catalog);
@@ -126,6 +132,7 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
         editors: edits.map((e) => e.actor).filter(isPerson),
         lastActor: edits[0]?.actor ?? null,
         lastAt: edits[0]?.at ?? null,
+        duplicate: dupes.get(row.id) ?? null,
       };
       return { ...rowToTemplate(row), avail: info };
     });

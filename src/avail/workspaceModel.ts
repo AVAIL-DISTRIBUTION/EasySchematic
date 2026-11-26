@@ -30,6 +30,8 @@ export interface WsInfo {
   editors: string[];
   lastActor: string | null;
   lastAt: string | null;
+  /** Possible duplicate (step 2.4): the group's proposed primary and size. */
+  duplicate?: { primary: string; size: number } | null;
 }
 
 export type WsTemplate = DeviceTemplate & { avail: WsInfo };
@@ -52,6 +54,10 @@ export interface WsRow {
   updatedAt: string;
   approvedBy: string;
   approvedVia: string;
+  /** Possible duplicate: "<primary label> (n)" — the primary's own row says "primary (n)"; "" when none. */
+  duplicateOf: string;
+  /** Sort key keeping a duplicate group together, primary first. */
+  duplicateKey: string;
   /** Lower-case text searched by the search box. */
   haystack: string;
 }
@@ -118,6 +124,7 @@ function modelOf(t: DeviceTemplate): string {
 
 /** Table rows: one per template, linted with the whole library's slot context. */
 export function buildRows(templates: readonly WsTemplate[]): WsRow[] {
+  const labels = new Map(templates.map((t) => [t.id ?? "", t.label]));
   const ctx = slotLibraryContext(templates.map((t) => ({ slotFamily: t.slotFamily ?? null, slots: (t.slots as { slotFamily?: string; slotFamilies?: string[] }[] | undefined) ?? null })));
   return templates.map((t) => {
     const lint = lintBlock(t, ctx);
@@ -138,6 +145,12 @@ export function buildRows(templates: readonly WsTemplate[]): WsRow[] {
       updatedAt: a.updatedAt ?? "",
       approvedBy: a.approvedBy ?? "",
       approvedVia: a.approvedVia ? APPROVAL_LABELS[a.approvedVia] : "",
+      duplicateOf: a.duplicate
+        ? a.duplicate.primary === t.id
+          ? `primary (${a.duplicate.size})`
+          : `${labels.get(a.duplicate.primary) ?? a.duplicate.primary} (${a.duplicate.size})`
+        : "",
+      duplicateKey: a.duplicate ? `${labels.get(a.duplicate.primary) ?? ""}|${a.duplicate.primary}|${a.duplicate.primary === t.id ? 0 : 1}` : "",
       haystack: "",
     };
     row.haystack = [t.label, row.partNumber, row.vendor, row.category, row.deviceType, ...(t.searchTerms ?? []), t.id ?? ""].join(" ").toLowerCase();
@@ -165,12 +178,14 @@ export interface WsFilter {
   approvedVia: WsApproval[];
   /** Somebody in the template's editors (audit log). */
   editedBy: string;
+  /** Only templates in a possible duplicate group (step 2.4). */
+  duplicates: boolean;
   text: string;
 }
 
 export const EMPTY_FILTER: WsFilter = {
   vendors: [], categories: [], deviceTypes: [], statuses: [], levels: [], portsSources: [], rules: [],
-  changedSince: "", approvedBy: [], origins: [], approvedVia: [], editedBy: "", text: "",
+  changedSince: "", approvedBy: [], origins: [], approvedVia: [], editedBy: "", duplicates: false, text: "",
 };
 
 /** A filter with every field (saved filters from an older page may lack the newer ones). */
@@ -195,6 +210,7 @@ export function filterRows(rows: readonly WsRow[], f: WsFilter): WsRow[] {
       (!f.origins.length || f.origins.includes(r.template.avail.portsOrigin)) &&
       (!f.approvedVia.length || (r.template.avail.approvedVia !== null && f.approvedVia.includes(r.template.avail.approvedVia))) &&
       (!f.editedBy || r.template.avail.editors.includes(f.editedBy)) &&
+      (!f.duplicates || r.duplicateOf !== "") &&
       text.every((w) => r.haystack.includes(w)),
   );
 }
@@ -202,7 +218,7 @@ export function filterRows(rows: readonly WsRow[], f: WsFilter): WsRow[] {
 export function activeFilterCount(f: WsFilter): number {
   return (
     f.vendors.length + f.categories.length + f.deviceTypes.length + f.statuses.length + f.levels.length + f.portsSources.length +
-    f.rules.length + f.approvedBy.length + f.origins.length + f.approvedVia.length + (f.changedSince ? 1 : 0) + (f.editedBy ? 1 : 0) + (f.text.trim() ? 1 : 0)
+    f.rules.length + f.approvedBy.length + f.origins.length + f.approvedVia.length + (f.changedSince ? 1 : 0) + (f.editedBy ? 1 : 0) + (f.duplicates ? 1 : 0) + (f.text.trim() ? 1 : 0)
   );
 }
 
@@ -226,6 +242,7 @@ export function builtInFilters(me: string | null): SavedFilter[] {
       filter: { ...EMPTY_FILTER, statuses: ["verified"], origins: ["community"], approvedVia: ["bulk"] },
     },
     ...(me ? [{ name: "My edits", builtIn: true, filter: { ...EMPTY_FILTER, editedBy: me } }] : []),
+    { name: "Possible duplicates", builtIn: true, filter: { ...EMPTY_FILTER, duplicates: true } },
     { name: "Hidden", builtIn: true, filter: { ...EMPTY_FILTER, statuses: ["hidden"] } },
   ];
 }
@@ -262,7 +279,7 @@ export function categoryTree(rows: readonly WsRow[]): { group: string; count: nu
 // ---------------------------------------------------------------------------- columns
 
 export type ColumnId =
-  | "vendor" | "model" | "partNumber" | "category" | "deviceType" | "level" | "status" | "portsSource" | "ew" | "updatedAt" | "approved";
+  | "vendor" | "model" | "partNumber" | "category" | "deviceType" | "level" | "status" | "portsSource" | "ew" | "updatedAt" | "approved" | "duplicateOf";
 
 export interface ColumnDef {
   id: ColumnId;
@@ -287,6 +304,7 @@ export const COLUMNS: readonly ColumnDef[] = [
   { id: "ew", label: "E / W", width: 64, value: (r) => `${r.lint.errors.length} / ${r.lint.warnings.length}`, sort: (r) => r.lint.errors.length * 1000 + r.lint.warnings.length },
   { id: "updatedAt", label: "Updated", width: 140, value: (r) => r.updatedAt },
   { id: "approved", label: "Approved by", width: 200, value: (r) => (r.approvedBy ? `${r.approvedBy}${r.approvedVia ? ` (${r.approvedVia})` : ""}` : "") },
+  { id: "duplicateOf", label: "Duplicate of", width: 220, value: (r) => r.duplicateOf, sort: (r) => r.duplicateKey },
 ];
 
 export const DEFAULT_COLUMNS: readonly ColumnId[] = ["vendor", "model", "partNumber", "category", "deviceType", "level", "status", "portsSource", "ew", "updatedAt", "approved"];
@@ -305,7 +323,7 @@ export function sortRows(rows: readonly WsRow[], by: ColumnId, desc: boolean): W
 
 // ---------------------------------------------------------------------------- bulk actions
 
-export type BulkAction = "approve" | "draft" | "hide" | "unhide" | "category";
+export type BulkAction = "approve" | "draft" | "hide" | "unhide" | "category" | "merge";
 
 export const BULK_LABELS: Readonly<Record<BulkAction, string>> = {
   approve: "Approve",
@@ -313,10 +331,11 @@ export const BULK_LABELS: Readonly<Record<BulkAction, string>> = {
   hide: "Hide",
   unhide: "Unhide",
   category: "Change category",
+  merge: "Merge into…",
 };
 
 /** Target status of a status action. */
-export const BULK_STATUS: Readonly<Record<Exclude<BulkAction, "category">, WsStatus>> = { approve: "verified", draft: "draft", hide: "hidden", unhide: "draft" };
+export const BULK_STATUS: Readonly<Record<Exclude<BulkAction, "category" | "merge">, WsStatus>> = { approve: "verified", draft: "draft", hide: "hidden", unhide: "draft" };
 
 export interface BulkPlan {
   action: BulkAction;
@@ -328,10 +347,42 @@ export interface BulkPlan {
   refused: { row: WsRow; reason: string }[];
   /** For category: the target path. */
   category?: string;
+  /** For merge: the primary template (stays), the others become hidden as its duplicates. */
+  primary?: WsRow;
+}
+
+/** The reason a merged duplicate is hidden with (api-avail duplicates.ts duplicateReason). */
+export const duplicateReason = (primaryId: string) => `duplicate of ${primaryId}`;
+
+/**
+ * The primary a merge proposes for a selection: the group's proposed primary when it is selected
+ * (workspace duplicate info), else the first selected row.
+ */
+export function suggestedPrimary(rows: readonly WsRow[]): WsRow | undefined {
+  const ids = new Set(rows.map((r) => r.id));
+  const counts = new Map<string, number>();
+  for (const r of rows) {
+    const p = r.template.avail.duplicate?.primary;
+    if (p && ids.has(p)) counts.set(p, (counts.get(p) ?? 0) + 1);
+  }
+  const best = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+  return rows.find((r) => r.id === best) ?? rows[0];
+}
+
+/** Merge: every selected row but the primary becomes hidden "duplicate of <primary>". */
+export function planMerge(rows: readonly WsRow[], primary: WsRow): BulkPlan {
+  const plan: BulkPlan = { action: "merge", change: [], unchanged: [], refused: [], primary };
+  const reason = duplicateReason(primary.id);
+  for (const row of rows) {
+    if (row.id === primary.id) continue;
+    if (row.status === "hidden" && row.template.avail.statusReason === reason) plan.unchanged.push(row);
+    else plan.change.push({ row, from: STATUS_LABELS[row.status], to: `Hidden (duplicate of ${primary.template.label})` });
+  }
+  return plan;
 }
 
 /** What a bulk action would do to the selection: the summary shown before it runs. */
-export function planBulk(action: BulkAction, rows: readonly WsRow[], category?: string): BulkPlan {
+export function planBulk(action: Exclude<BulkAction, "merge">, rows: readonly WsRow[], category?: string): BulkPlan {
   const plan: BulkPlan = { action, change: [], unchanged: [], refused: [], ...(category ? { category } : {}) };
   for (const row of rows) {
     if (action === "category") {

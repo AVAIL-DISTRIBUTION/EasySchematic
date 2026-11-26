@@ -138,6 +138,23 @@ Family, Models, Part numbers, Product page, Cards it closes; по убывани
    api npm run import:catalog`, затем `approve:catalog -- --dry-run` и `approve:catalog` — карточки уровня A с
    `datasheet` утвердятся.
 
+Контроль дубликатов (шаг 2.4; `src/avail/duplicates.ts`, API — `api-avail/src/duplicates.ts`, `duplicateGuard.ts`):
+пара — дубль, если (a) производитель + modelNumber совпадают (регистр, пробелы, пунктуация не важны) или (b) совпадает
+нормализованная модель (label без производителя, его синонимов из avail-vendors.json и сокращений вроде A&H, без
+пунктуации, регистра и слов варианта — цвет, MM/SM, регион, LinkLicense…) — **и** вариант тот же (поле `variant` каталога
++ слова варианта в label); различие только в варианте — это варианты, не дубли. Hidden не участвуют. Основной блок группы:
+verified > draft > raw; каталог / library > сообщество; порты из документа > база > нет; уровень; число портов.
+- `npm run report:duplicates [-- --db <sqlite>] [-- --out <md>]` → `docs/avail/duplicates.md` и `.xlsx` (в образе — рядом
+  с базой: `-- --out /data/duplicates.md`). Только читает.
+- Сервер: `POST /templates`, `PUT /templates/:id` (если меняются производитель или modelNumber — существующие дубли
+  остаются редактируемыми) и `POST /submissions/:id/approve` (с правками библиотекаря) при совпадении производитель +
+  modelNumber с другим шаблоном (не hidden, тот же вариант) → 409 `{ error, duplicateOf: {id, label}, link:
+  "/library?template=<id>" }`; ответ отдаёт внутренний маршрут приложения, поэтому CORS работает. Другой вариант — разрешён.
+- `POST /avail/templates/merge` `{primary, ids}` (librarian/admin, ≤ 500): остальные → hidden, `status_reason` «duplicate of
+  <primary>», запись в журнал (`after.duplicateOf`). В рабочем окне: фильтр «Possible duplicates», колонка «Duplicate of»
+  (группа вместе, основной первым), действие «Merge into…» (выбор основного, предложенный — основной группы);
+  `/library?template=<id>` открывает шаблон. После массового действия выделение сбрасывается (неудачные пакеты остаются).
+
 Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
 не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
 deviceType, питание не input (кроме явных выходов). Оформление (секции вне словаря, порядок, подписи, капс, длина,
@@ -455,6 +472,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня B и выше в базу (`npm run import:catalog [-- --min-level A|B]`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
 | `src/datasheetListCli.ts`, `src/xlsxWrite.ts` | список даташитов к скачиванию `docs/avail/datasheets-to-download.md` / `.xlsx` (`npm run report:datasheets`); минимальная запись xlsx |
 | `src/reviewQueueCli.ts`, `src/reviewRules.ts` | отчёт очереди ревью `docs/avail/review-queue.md` (`npm run report:review-queue`), предлагаемые правила |
+| `src/duplicates.ts`, `src/duplicateGuard.ts`, `src/duplicatesCli.ts` | дубликаты: кандидаты из базы, `POST /avail/templates/merge`, 409 при сохранении дубля, отчёт `npm run report:duplicates` |
 | `src/approveCatalog.ts`, `src/approveCatalogCli.ts` | утверждение draft каталога уровня A по источнику портов (`npm run approve:catalog [-- --dry-run]`), миграция 9006 (`approved_via = bulk-source`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |

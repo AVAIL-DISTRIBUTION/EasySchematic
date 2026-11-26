@@ -1,0 +1,32 @@
+# Possible duplicates
+
+Source: snapshot of the server database of 25.11.2026 (tools/avail/incoming/db) with the current library/catalog imported; 2280 templates (hidden ones left out). Generated 2026-11-26 by `npm run report:duplicates` (api-avail); the same table — `duplicates.xlsx`.
+
+**22** groups, **22** templates to merge into a primary. Same manufacturer + part number: 6 groups; same normalized model: 17.
+
+A pair is a duplicate when the manufacturer and modelNumber match, or the label without the manufacturer, punctuation, case and variant words (colour, MM / SM, region, LinkLicense…) matches — and the variant is the same; templates that differ only by the variant are variants, not duplicates. The proposed primary: verified > draft > unverified; catalog / curated library > community; ports from a document > database; then level and ports. In the library workspace: filter "Possible duplicates", select, "Merge into…" (the others become hidden with the reason "duplicate of <id>").
+
+| # | Primary | Duplicates | Why |
+|---:|---|---|---|
+| 1 | Allen & Heath dLive S7000 (`9c66c793-2883-4df0-be50-e2538a7993a5`, Unverified, easyschematic.live, ports: database, A) | Allen & Heath dLive S7000 (`c0a80101-0093-4000-8000-000000000147`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 2 | Allen & Heath SQ7+ (`3af15cc2-e5ef-4373-abb9-f83c8e7a492a`, Unverified, easyschematic.live, ports: database, A) | Allen & Heath SQ-7 (`c0a80101-0094-4000-8000-000000000148`, Unverified, easyschematic.live, ports: database, A) | same part number |
+| 3 | Biamp TesiraFORTÉ DAN AI (`9220f38b-5cf2-4e8d-bd8d-e701fffa5a71`, Verified, avail-library, ports: document, A) | Biamp TesiraFORTÉ DAN AI (`avail-biamp-920-00448-00002`, Draft, avail-catalog, ports: document, A) | same model |
+| 4 | Biamp TesiraFORTÉ X 400 (`avail-biamp-tesiraforte-x-400`, Verified, avail-library, ports: document, A) | Biamp TesiraFORTÉ X 400 (`avail-biamp-920-00091-00002`, Draft, avail-catalog, ports: document, A) | same model |
+| 5 | Biamp TesiraFORTÉ X 800 (`avail-biamp-920-00092-00002`, Draft, avail-catalog, ports: document, A) | Biamp TesiraFORTE X 800 (`25aa7db7-2733-44a9-9ae6-c4071d7baa8d`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 6 | Extron AAP (`95dbb9a0-864c-4df8-a68e-69f8f4cf5fb8`, Unverified, easyschematic.live, ports: database, A) | Extron AAP (`9ab2acd2-765e-4d39-aef4-3fabb0f3ba68`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 7 | Extron DTP CrossPoint 108 4K (`e3254e2b-619a-4f09-9bb1-4084dc32e19d`, Verified, avail-library, ports: document, A) | Extron DTP CrossPoint 108 4K (`c0a80101-0119-4000-8000-000000000357`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 8 | Extron DTP CrossPoint 82 4K IPCP MA 70 (`889641b9-226f-4128-adbd-99c08a0f1732`, Unverified, easyschematic.live, ports: database, A) | Extron DTP CrossPoint 82 4K IPCP MA 70 (`ddd7aa0b-361f-436e-a5c9-4a4057980334`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 9 | Extron DTP3 R 201 (`49bc6d64-ab6b-4b23-9329-d81f00527c9c`, Verified, avail-library, ports: document, A) | Extron DTP3 R 201 (`d14c3c58-98ff-44fe-81a4-8e5c8b1ce112`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 10 | Extron MGP 641 (`1d34e1ca-c789-4140-9e01-beb77106872e`, Unverified, easyschematic.live, ports: database, A) | Extron MGP 641 (`a32e1a88-8fde-4248-abc8-64851e235e1c`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 11 | Extron NAV E 101 (`c0a80101-00f3-4000-8000-000000000319`, Verified, easyschematic.live, ports: database, A) | Extron NAV E 101 (`avail-extron-60-1525-12`, Draft, avail-catalog, ports: database, A) | same model |
+| 12 | Extron NAV SD 101 (`c0a80101-00f4-4000-8000-000000000320`, Verified, easyschematic.live, ports: database, A) | Extron NAV SD 101 (`avail-extron-60-1525-14`, Draft, avail-catalog, ports: database, A) | same model |
+| 13 | Extron TLP Pro 1225MG (`c2b68b28-65f3-46a3-a1bd-a0f27a2c872e`, Unverified, easyschematic.live, ports: database, A) | Extron TLP Pro 1225MG (`fcafd4ca-9652-409a-bdef-f2c7ebd4c55c`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 14 | Extron TLP Pro 525C Black (`0ae026d7-d550-4a3b-a5bd-d1e346e60edd`, Unverified, easyschematic.live, ports: database, A) | Extron TLP Pro 525C Black (`7df70875-7bef-40da-81ca-de70becc3c78`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 15 | Extron TLS 300M (`1e2d94dd-52e5-4a52-b6b3-b687265445a5`, Unverified, easyschematic.live, ports: database, A) | Extron TLS 300M (`6aca0bdb-e593-484c-852a-d5aabead2281`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 16 | Extron XTP II CrossPoint 1600 (`b36b3ad1-bb96-46f7-83a8-53e11eb0f63c`, Verified, avail-library, ports: document, A) | Extron XTP II CrossPoint 1600 (`8b296dfa-d732-4b33-95c9-0fff97b89d28`, Unverified, easyschematic.live, ports: database, A) | same model, same part number |
+| 17 | Martin Audio SX118+ (`22d08b19-0136-4eb8-87a3-d1e8ab01f428`, Unverified, easyschematic.live, ports: database, A) | Martin Audio SX118 (`a83a2831-49ca-4c30-b259-ace50a9950c6`, Unverified, easyschematic.live, ports: database, A) | same part number |
+| 18 | Martin Audio SX218+ (`bb31474a-81c3-48c7-8e0f-cb9f6f01cdbf`, Unverified, easyschematic.live, ports: database, A) | Martin Audio SX218 (`9c888ba7-743f-403c-a1f4-0007b08be620`, Unverified, easyschematic.live, ports: database, A) | same part number |
+| 19 | Netgear-AV M4250-26G4F-PoE+ (`deabca17-7f53-480a-b28e-4aeb0dc124e6`, Unverified, easyschematic.live, ports: database, A) | Netgear-AV M4250-26G4F-PoE+ (`69ed86d1-5852-437d-96ff-45c01b3ae568`, Unverified, easyschematic.live, ports: database, B) | same model |
+| 20 | Powersoft Quattrocanali 1204 DSP+ (`baa9f3a3-9260-4b66-af1f-bb9b4b6ea67c`, Unverified, easyschematic.live, ports: database, A) | Powersoft Quattrocanali 1204 DSP (`773910f9-d105-4b12-85f6-892caceb2ac5`, Unverified, easyschematic.live, ports: database, A) | same part number |
+| 21 | QSC Q-SYS TSC-101-G3 (`8ca6729b-7416-49b9-939d-0ad95936f2d1`, Unverified, easyschematic.live, ports: database, A) | QSC Q-SYS TSC-101-G3 (`a41be8d8-0094-4f7a-9a76-9bcfc7ecf2df`, Unverified, easyschematic.live, ports: database, A) | same model |
+| 22 | Shure SLXD4+ (`a7481ecf-1488-4dba-979e-4247c1fd590d`, Unverified, easyschematic.live, ports: database, A) | Shure SLXD4 (`c0a80101-00a1-4000-8000-000000000161`, Unverified, easyschematic.live, ports: database, A) | same part number |
