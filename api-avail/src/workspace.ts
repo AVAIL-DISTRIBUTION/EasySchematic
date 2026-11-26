@@ -20,6 +20,7 @@ import { requireModeratorOrToken } from "../../api/src/auth";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import type { BlockLevel } from "../../src/avail/blockLint";
 import { findCategory } from "../../src/avail/library";
+import { canReadAudit } from "../../src/avail/roles";
 import { catalogIndex, parseCatalogMeta, portsOrigin, type PortsOrigin } from "../../src/avail/portsOrigin";
 import { duplicateGroups, duplicateIndex } from "../../src/avail/duplicates";
 import { ADMIN_TOKEN_ACTOR, writeAuditD1, type AuditEntry } from "./audit";
@@ -79,7 +80,8 @@ const isPerson = (actor: string) => actor !== "system" && actor !== "lint" && !a
 
 export function registerWorkspaceRoutes(app: UpstreamApp): void {
   app.get("/avail/workspace/templates", async (c) => {
-    if (!requireModeratorOrToken(c)) return c.json({ error: "Librarian or admin access required" }, 403);
+    // Read-only data: librarians, admins and the AI Assistant.
+    if (!requireModeratorOrToken(c) && !canReadAudit(c.get("user")?.role)) return c.json({ error: "Librarian, admin or AI Assistant access required" }, 403);
     const db = c.env.easyschematic_db;
     const lib = await db.prepare("SELECT version FROM library_meta WHERE id = 1").first<{ version: number }>();
     const last = await db.prepare("SELECT COALESCE(MAX(id), 0) AS id FROM avail_audit_log").first<{ id: number }>();

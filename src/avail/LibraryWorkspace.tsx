@@ -7,7 +7,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { DeviceTemplate } from "../types";
 import { changeTemplatesStatus, loadRole, saveLibraryTemplate } from "./api";
-import { auditChanges, AUDIT_ACTION_LABELS, fetchAudit, type AuditRecord } from "./adminApi";
+import { auditActor, auditChanges, AUDIT_ACTION_LABELS, fetchAudit, type AuditRecord } from "./adminApi";
 import { AVAIL_APP_NAME } from "./brand";
 import { AvailLogo } from "./BrandUi";
 import { lintBlock } from "./blockLint";
@@ -1020,7 +1020,7 @@ function DetailsPanel({
           {history?.map((h) => (
             <div key={h.id} className="border-t border-gray-100 py-1">
               <div>
-                <span className="text-[var(--color-text-muted)]">{h.at}</span> · {h.actor} · {AUDIT_ACTION_LABELS[h.action]}
+                <span className="text-[var(--color-text-muted)]">{h.at}</span> · {auditActor(h)} · {AUDIT_ACTION_LABELS[h.action]}
               </div>
               {auditChanges(h).map((l, i) => (
                 <div key={i} className="font-mono text-[10px] break-all text-[var(--color-text-muted)]">

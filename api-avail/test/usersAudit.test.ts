@@ -51,6 +51,8 @@ describe("users (admin)", () => {
     const list = await json<{ email: string; role: string; active: boolean; lastLoginAt: string | null }[]>(res);
     expect(list.map((u) => [u.email, u.role, u.active])).toEqual([
       ["boss@avail.test", "admin", true],
+      // The AI Assistant service account (migration 9010).
+      ["claude@avail.invalid", "assistant", true],
       ["eng@avail.test", "engineer", true],
       ["lib@avail.test", "librarian", true],
     ]);
@@ -141,6 +143,7 @@ describe("system accounts (.invalid)", () => {
     const list = await json<{ email: string; system: boolean }[]>(req("/avail/users", { headers: { Cookie: admin.cookie } }));
     expect(list.map((u) => [u.email, u.system])).toEqual([
       ["boss@avail.test", false],
+      ["claude@avail.invalid", true],
       ["vendor-responses@avail.invalid", true],
     ]);
     for (const res of [

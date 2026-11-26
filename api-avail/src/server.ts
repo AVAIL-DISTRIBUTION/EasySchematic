@@ -13,11 +13,13 @@ import { parseSeedMode, seedLibrary, type SeedResult } from "./seed";
 import { installMailStub } from "./mail";
 import { registerAvailRoutes } from "./routes";
 import { auditsTemplates, beginTemplateAudit, endTemplateAudit, proposalAuditEntry, readProposalDecision, refuseDisabledSignIn, resolveActor, userRouteRewrite, type ProposalDecision } from "./requestAudit";
-import { writeAudit } from "./audit";
+import { requestContext, writeAudit } from "./audit";
 import { registerUserRoutes } from "./users";
 import { duplicateConflict } from "./duplicateGuard";
 import { CONFLICT_PATH, pendingConflicts, registerDuplicateRoutes } from "./duplicates";
 import { registerNotDuplicateRoutes } from "./notDuplicates";
+import { logTokenRequest, pendingRefusals, rateLimitFromEnv, REFUSAL_PATH, registerAccessTokenRoutes, resolveAccessToken, TokenRateLimiter } from "./accessTokens";
+import { registerAssistantRoutes } from "./assistant";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -28,6 +30,8 @@ registerAvailRoutes(upstreamApp);
 registerUserRoutes(upstreamApp);
 registerDuplicateRoutes(upstreamApp);
 registerNotDuplicateRoutes(upstreamApp);
+registerAccessTokenRoutes(upstreamApp);
+registerAssistantRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
@@ -35,6 +39,8 @@ export interface ApiConfig {
   /** Our migrations (api-avail/migrations, 9xxx), applied after upstream's. */
   availMigrationsDir: string;
   seedMode: string | undefined;
+  /** Requests a minute per AI Assistant access token (AI_TOKEN_RATE_LIMIT, default 120). */
+  tokenRateLimit?: number;
   /** Secrets and settings handed to the app as Workers bindings. */
   vars: {
     ADMIN_TOKEN: string;
@@ -57,6 +63,7 @@ export function configFromEnv(env: NodeJS.ProcessEnv = process.env): ApiConfig {
     migrationsDir: path.resolve(env.MIGRATIONS_DIR ?? path.join(here, "../../api/migrations")),
     availMigrationsDir: path.resolve(env.AVAIL_MIGRATIONS_DIR ?? path.join(here, "../migrations")),
     seedMode: env.SEED_LIBRARY,
+    tokenRateLimit: rateLimitFromEnv(env.AI_TOKEN_RATE_LIMIT),
     vars: {
       ADMIN_TOKEN: env.ADMIN_TOKEN ?? "",
       GOOGLE_CLIENT_ID: env.GOOGLE_CLIENT_ID ?? "",
@@ -155,67 +162,107 @@ export function createApiServer(config: ApiConfig): ApiServer {
   };
   const ctx = executionContext(log);
 
-  return {
-    fetch: async (incoming) => {
-      // Disabled users run signed out; upstream's user admin calls go to ours (users.ts).
-      const { request, actor } = resolveActor(db.sqlite, userRouteRewrite(incoming), config.vars.ADMIN_TOKEN);
-      // A save that would duplicate another template (same manufacturer + part number): 409.
+  const limiter = new TokenRateLimiter(config.tokenRateLimit);
+  /** An answer of ours served by an internal route of the app, so its CORS and security headers apply. */
+  const internalAnswer = (request: Request, pathname: string) => {
+    const url = new URL(request.url);
+    url.pathname = pathname;
+    url.search = "";
+    return new Request(url, { method: request.method, headers: request.headers });
+  };
+
+  async function serve(incoming: Request): Promise<Response> {
+    // Disabled users run signed out; upstream's user admin calls go to ours (users.ts).
+    const { request, actor } = resolveActor(db.sqlite, userRouteRewrite(incoming), config.vars.ADMIN_TOKEN);
+    // A save that would duplicate another template (same manufacturer + part number): 409.
+    try {
+      const conflict = await duplicateConflict(db.sqlite, request);
+      if (conflict) {
+        const internal = internalAnswer(request, CONFLICT_PATH);
+        pendingConflicts.set(internal, conflict);
+        return await upstream.fetch(internal, bindings, ctx);
+      }
+    } catch (err) {
+      log(`duplicate check failed: ${String(err)}`);
+    }
+    // Template writes through upstream's routes: snapshot before, log what changed after.
+    let audit: ReturnType<typeof beginTemplateAudit> | null = null;
+    try {
+      if (auditsTemplates(request)) audit = beginTemplateAudit(db.sqlite, request);
+    } catch (err) {
+      log(`audit snapshot failed: ${String(err)}`);
+    }
+    // A proposal accepted or rejected in the library workspace: read before upstream decides it.
+    let proposal: ProposalDecision | null = null;
+    try {
+      proposal = await readProposalDecision(db.sqlite, request);
+    } catch (err) {
+      log(`proposal audit read failed: ${String(err)}`);
+    }
+    let response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
+    if (proposal && response.status < 400) {
       try {
-        const conflict = await duplicateConflict(db.sqlite, request);
-        if (conflict) {
-          // Answered by an internal route, so the app's CORS and security headers apply.
-          const url = new URL(request.url);
-          url.pathname = CONFLICT_PATH;
-          url.search = "";
-          const internal = new Request(url, { method: request.method, headers: request.headers });
-          pendingConflicts.set(internal, conflict);
+        writeAudit(db.sqlite, [proposalAuditEntry(proposal, actor)]);
+      } catch (err) {
+        log(`proposal audit write failed: ${String(err)}`);
+      }
+    }
+    if (audit && response.status < 400) {
+      try {
+        endTemplateAudit(db.sqlite, audit, actor);
+      } catch (err) {
+        log(`audit write failed: ${String(err)}`);
+      }
+    }
+    if (new URL(request.url).pathname === "/auth/google/callback") response = await refuseDisabledSignIn(db.sqlite, response);
+    // Whatever route saved a template (PUT /templates/:id, POST /templates, an approved
+    // submission…), upstream bumped its version: re-lint the changed ones (a verified
+    // one that fell below level A becomes draft).
+    if (!READ_METHODS.has(request.method) && response.status < 400) {
+      try {
+        const { demoted } = syncLintLevels(db.sqlite);
+        if (demoted.length > 0) log(`verified below level A, moved to draft: ${demoted.join(", ")}`);
+      } catch (err) {
+        log(`lint sync failed: ${String(err)}`);
+      }
+    }
+    return response;
+  }
+
+  return {
+    fetch: async (raw) => {
+      // An AI Assistant access token (Authorization: Bearer avail_ai_…) signs its user in (accessTokens.ts).
+      let token: { id: string; name: string; userId: string; email: string } | null = null;
+      let incoming = raw;
+      try {
+        const t = resolveAccessToken(db.sqlite, raw, limiter);
+        if (t.kind === "refused") {
+          const internal = internalAnswer(raw, REFUSAL_PATH);
+          pendingRefusals.set(internal, t);
           return await upstream.fetch(internal, bindings, ctx);
         }
-      } catch (err) {
-        log(`duplicate check failed: ${String(err)}`);
-      }
-      // Template writes through upstream's routes: snapshot before, log what changed after.
-      let audit: ReturnType<typeof beginTemplateAudit> | null = null;
-      try {
-        if (auditsTemplates(request)) audit = beginTemplateAudit(db.sqlite, request);
-      } catch (err) {
-        log(`audit snapshot failed: ${String(err)}`);
-      }
-      // A proposal accepted or rejected in the library workspace: read before upstream decides it.
-      let proposal: ProposalDecision | null = null;
-      try {
-        proposal = await readProposalDecision(db.sqlite, request);
-      } catch (err) {
-        log(`proposal audit read failed: ${String(err)}`);
-      }
-      let response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
-      if (proposal && response.status < 400) {
-        try {
-          writeAudit(db.sqlite, [proposalAuditEntry(proposal, actor)]);
-        } catch (err) {
-          log(`proposal audit write failed: ${String(err)}`);
+        if (t.kind === "ok") {
+          token = t.token;
+          incoming = t.request;
         }
+      } catch (err) {
+        log(`access token check failed: ${String(err)}`);
+        const internal = internalAnswer(raw, REFUSAL_PATH);
+        pendingRefusals.set(internal, { status: 401, body: { error: "Access token could not be checked. Try again." } });
+        return await upstream.fetch(internal, bindings, ctx);
       }
-      if (audit && response.status < 400) {
-        try {
-          endTemplateAudit(db.sqlite, audit, actor);
-        } catch (err) {
-          log(`audit write failed: ${String(err)}`);
+      // Every audit entry written while serving the request names the token (audit.ts).
+      return requestContext.run({ token: token ? { id: token.id, name: token.name } : null }, async () => {
+        const response = await serve(incoming);
+        if (token) {
+          try {
+            logTokenRequest(db.sqlite, token, incoming, response.status);
+          } catch (err) {
+            log(`token request audit failed: ${String(err)}`);
+          }
         }
-      }
-      if (new URL(request.url).pathname === "/auth/google/callback") response = await refuseDisabledSignIn(db.sqlite, response);
-      // Whatever route saved a template (PUT /templates/:id, POST /templates, an approved
-      // submission…), upstream bumped its version: re-lint the changed ones (a verified
-      // one that fell below level A becomes draft).
-      if (!READ_METHODS.has(request.method) && response.status < 400) {
-        try {
-          const { demoted } = syncLintLevels(db.sqlite);
-          if (demoted.length > 0) log(`verified below level A, moved to draft: ${demoted.join(", ")}`);
-        } catch (err) {
-          log(`lint sync failed: ${String(err)}`);
-        }
-      }
-      return response;
+        return response;
+      });
     },
     db,
     bucket,

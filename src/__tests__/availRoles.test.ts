@@ -21,7 +21,7 @@ describe("roles", () => {
     expect(upstreamRoleOf("moderator")).toBe("moderator");
     expect(upstreamRoleOf("superuser")).toBeNull();
     expect(isLibrarianOrAdmin("moderator") && isLibrarianOrAdmin("admin") && !isLibrarianOrAdmin("contributor")).toBe(true);
-    expect(ROLE_LABELS).toEqual({ engineer: "Engineer", librarian: "Librarian", admin: "Admin" });
+    expect(ROLE_LABELS).toEqual({ engineer: "Engineer", assistant: "AI Assistant", librarian: "Librarian", admin: "Admin" });
   });
 
   it("a disabled account has its own sign-in message", () => {

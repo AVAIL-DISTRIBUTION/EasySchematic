@@ -25,6 +25,7 @@ services:
       DISABLE_MAGIC_LINK: ${DISABLE_MAGIC_LINK:-1}
       SEED_LIBRARY: ${SEED_LIBRARY:-if-empty}
       MAX_SCHEMATICS_PER_USER: ${MAX_SCHEMATICS_PER_USER:-0}
+      AI_TOKEN_RATE_LIMIT: ${AI_TOKEN_RATE_LIMIT:-120}
     volumes:
       - api-data:/data
 
