@@ -114,7 +114,8 @@ Extron (`powerNote`): пассивные сабвуферы → «passive», `HO
 «bus-powered (eBUS)». Оба — в `catalogRules.ts` (нормализатор и `fill:catalog-ports`); `normalize:library` применяет R4
 и к verified с портами сообщества — изменённый verified → draft с причиной (`SIGNAL_RULE_REASON`). Линтер: «HDBaseT/DTP/XTP
 must be hdbaset» не для Pass-Through / over в подписи и не для ir / serial. Стенсил: из мастеров с одним артикулом
-побеждает нарисованный для меньшего числа изделий (`indexStencils`). Слоты шасси из документа —
+побеждает нарисованный для меньшего числа изделий (`indexStencils`). R6 — решения инженеров по портам (`docs/avail/port-decisions.json`, `applyPortDecisions`; модель → порт → поля),
+применяются раньше R2–R5. Слоты шасси из документа —
 `_avail.slotsSource = "document: <URL>"`, цитата — `_avail.slotsNote` (Cable Cubby F55).
 
 ### Даташиты: список и обработка

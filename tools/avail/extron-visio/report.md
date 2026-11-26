@@ -18,8 +18,8 @@ Levels of these cards before → after (rows: before, columns: after):
 |---|---:|---:|---:|
 | none | 23 | 7 | 27 |
 | FIX | 1 | 0 | 0 |
-| B | 0 | 9 | 11 |
-| A | 0 | 0 | 564 |
+| B | 0 | 6 | 11 |
+| A | 0 | 0 | 567 |
 
 ## Filled (37)
 
@@ -652,9 +652,9 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron TLS 1035M (Black) (60-1998-102) — level FIX; unknown label "Input"
 - Extron TLS 1035M (White) (60-1998-103) — level FIX; unknown label "Input"
 - Extron TLS 835M (White) (60-1996-103) — level FIX; unknown label "Input"
-- Extron UCS 303 (60-1797-01) — level B; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
-- Extron UCS SR 501 (60-1798-13) — level B; unknown label "DEVICES"
-- Extron UCS SW 313 (60-1797-02) — level B; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
+- Extron UCS 303 (60-1797-01) — level A; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
+- Extron UCS SR 501 (60-1798-13) — level A; unknown label "DEVICES"
+- Extron UCS SW 313 (60-1797-02) — level A; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
 - Extron UCS T 503 (60-1798-12) — level A; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"
 - Extron UCS TR 910 Kit (42-375-01) — level FIX; unknown label "IN"
 - Extron VND 250 (60-1275-01) — level A; unknown label "I/O | USB"; unknown label "COMS"; unknown label "ALARM"; unknown label "TTL"; …

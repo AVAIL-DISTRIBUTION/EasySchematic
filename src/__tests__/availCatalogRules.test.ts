@@ -10,10 +10,13 @@ import { describe, expect, it } from "vitest";
 import { lintBlock } from "../avail/blockLint";
 import {
   applyCatalogRules,
+  applyPortDecisions,
   applySignalRule,
+  decisionsFor,
   EBUS_NOTE,
   HOST_NOTE,
   PASSIVE_NOTE,
+  PORT_DECISIONS,
   powerNote,
   shortenLabel,
   signalFromLabel,
@@ -217,5 +220,54 @@ describe("linter v0.11: HDBaseT/DTP/XTP must be hdbaset", () => {
   it("still for the link port itself", () => {
     expect(warns(port("1", "DTP Out", "ethernet", "bidirectional", "Network", { connectorType: "rj45" }))).toEqual(['"DTP Out": HDBaseT/DTP/XTP must be hdbaset']);
     expect(warns(port("2", "XTP In", "analog-audio", "input", "Audio Inputs"))).toEqual(['"XTP In": HDBaseT/DTP/XTP must be hdbaset']);
+  });
+});
+
+describe("R6: port decisions (docs/avail/port-decisions.json)", () => {
+  const ucs = (label: string, modelNumber: string, ports: Record<string, unknown>[]) => extron(ports, { label, modelNumber, deviceType: "switcher" });
+
+  it("UCS 303 / UCS SW 313: USB-C with DP Alt → Video Inputs, notes; the port moves into its section", () => {
+    for (const [label, pn] of [["Extron UCS 303", "60-1797-01"], ["Extron UCS SW 313", "60-1797-02"]]) {
+      const b = ucs(label, pn, [
+        port("h", "HDMI In", "hdmi", "input", "Video Inputs", { connectorType: "hdmi" }),
+        port("pw", "AC Power", "power", "input", "Power", { connectorType: "iec" }),
+        port("c", "USB-C In (DP Alt, 60W PD)", "usb", "input", "", { connectorType: "usb-c", notes: "DP Alt + USB host + 60 W PD" }),
+      ]);
+      expect(lintBlock(b).warnings.some((w) => w.startsWith('"USB-C In (DP Alt, 60W PD)": no section'))).toBe(true);
+      const { block, changes } = applyCatalogRules(b);
+      expect(changes.filter((c) => c.rule === "R6").map((c) => c.field)).toEqual(["ports[c].section", "ports[c].notes"]);
+      expect(block.ports.map((p) => p.id)).toEqual(["h", "c", "pw"]);
+      expect(block.ports[1]).toMatchObject({ section: "Video Inputs", signalType: "usb", connectorType: "usb-c", notes: "DP Alt Mode video + USB data" });
+      expect(lintBlock(block).level).toBe("A");
+      expect(applyCatalogRules(block).changes).toEqual([]);
+    }
+  });
+
+  it("UCS SR 501: IR/Serial → serial in Control", () => {
+    const b = ucs("Extron UCS SR 501", "60-1798-13", [
+      port("pw", "Power", "power", "input", "Power", { connectorType: "barrel" }),
+      port("i", "IR/Serial", "ir", "bidirectional", "Control", { notes: "2-pole, programmable" }),
+    ]);
+    const { block } = applyCatalogRules(b);
+    expect(block.ports[1]).toMatchObject({ label: "IR/Serial", signalType: "serial", direction: "bidirectional", section: "Control", notes: "IR or RS-232, programmable" });
+    expect(lintBlock(block).warnings.filter((w) => w.includes("IR/Serial"))).toEqual([]);
+  });
+
+  it("MLC 226 IP: PWR SNS → Power Sense, gpio input; matched again by the new label", () => {
+    const b = ucs("Extron MLC 226 IP", "60-600-02", [port("s", "PWR SNS", "gpio", "bidirectional", "Digital I/O", { notes: "Power Sensor" })]);
+    const { block, changes } = applyPortDecisions(b);
+    expect(block.ports[0]).toMatchObject({ label: "Power Sense", direction: "input", signalType: "gpio", notes: "current sensor input" });
+    expect(changes.map((c) => c.field)).toEqual(["ports[s].label", "ports[s].direction", "ports[s].notes"]);
+    expect(applyPortDecisions(block).changes).toEqual([]);
+    // The decision and the standard disagree: gpio is bidirectional (4.3).
+    expect(lintBlock(block).warnings).toContain('"Power Sense": gpio must be bidirectional');
+  });
+
+  it("only the named model (label or part number) and port", () => {
+    const other = ucs("Extron UCS 302", "60-1797-09", [port("c", "USB-C In (DP Alt, 60W PD)", "usb", "input", "", { connectorType: "usb-c" })]);
+    expect(applyPortDecisions(other).changes).toEqual([]);
+    expect(decisionsFor({ manufacturer: "Extron", label: "Extron UCS 303 (renamed)", modelNumber: "60-1797-01" })).toHaveLength(1);
+    expect(decisionsFor({ manufacturer: "Biamp", label: "Extron UCS 303" })).toEqual([]);
+    for (const d of PORT_DECISIONS) expect(d.models.length).toBeGreaterThan(0);
   });
 });

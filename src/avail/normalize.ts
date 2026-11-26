@@ -378,6 +378,7 @@ const RULE_NOTES: Record<RuleChange["rule"], string> = {
   R3: "label over 28 characters: In / Out, qualifier to notes (R3)",
   R4: "signal type from the label: Relay → contact-closure, eBUS → ebus (R4)",
   R5: "power note by device group: passive acoustics, powered by host (R5)",
+  R6: "port decision of AVAIL engineers, docs/avail/port-decisions.json (R6)",
 };
 
 /** Changes that were applied (not the "manual" notes). */

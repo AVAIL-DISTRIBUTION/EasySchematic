@@ -9,9 +9,9 @@ Nov 26, 2026 · ветка `avail/extron-b-fixes`
 | | A | B | FIX (не в базе) |
 |---|---:|---:|---:|
 | до (`master`) | 1026 | **47** (draft 40, raw 7) | — |
-| после | 1055 | **20** (draft 17, raw 3) | — |
+| после | 1058 | **17** (draft 14, raw 3) | — |
 
-27 шаблонов перешли B → A, понижений нет. Кроме того, загрузятся две карточки Cable Cubby F55 (70-1295-02/-03). Раньше
+30 шаблонов перешли B → A, понижений нет. Кроме того, загрузятся две карточки Cable Cubby F55 (70-1295-02/-03). Раньше
 они были FIX и в базу не попадали, теперь у них уровень A.
 
 ## Что сделано
@@ -45,8 +45,17 @@ Nov 26, 2026 · ветка `avail/extron-b-fixes`
    PC 1224. Теперь при равном качестве выигрывает мастер, нарисованный для меньшего числа изделий
    (`indexStencils`). У OCS остаются порты сообщества: собственный мастер не рисует разъёмы и уровень понизил бы.
    Поэтому у OCS источник db, и `approve:catalog` их не утвердит — нужна сверка по даташиту.
+6. **R6, решения инженеров по портам** — `docs/avail/port-decisions.json` (модель → порт → поля). Применяют нормализатор
+   и `fill:catalog-ports`, поэтому порты, заново скопированные из базы, решение сохраняют. Если меняется секция, порт
+   встаёт в порядок стандарта.
+   - UCS 303, UCS SW 313: «USB-C In (DP Alt, 60W PD)» → Video Inputs, usb, usb-c, notes «DP Alt Mode video + USB data»
+     (как DTP3 T 322 D);
+   - UCS SR 501: «IR/Serial» → Control, serial, notes «IR or RS-232, programmable»;
+   - MLC 226 IP: «PWR SNS» → «Power Sense», input, gpio, notes «current sensor input». Решение расходится со
+     стандартом (4.3: gpio — bidirectional), поэтому шаблон остаётся на B с замечанием «gpio must be bidirectional».
+   - IN1804 DI и DI/DO «IR Thru (In)» не меняются — на сверку по руководству IN1804.
 
-## B → A (27)
+## B → A (30)
 
 | Шаблон | Артикул | Статус | Было | Что закрыло | approve:catalog |
 |---|---|---|---|---|---|
@@ -72,11 +81,14 @@ Nov 26, 2026 · ветка `avail/extron-b-fixes`
 | One USB 2.0 A F-F on Pigtail (Black / White) | 70-1180-02 / -03 | draft | то же | слоты F55 | **да** (datasheet) |
 | One USB 3.2 A F to B F on Pigtail (Black / White) | 70-1240-02 / -03 | draft | то же | слоты F55 | **да** (datasheet) |
 | One USB-C F to HDMI F on Pigtail (Black / White) | 70-1243-12 / -13 | draft | то же | слоты F55 | **да** (datasheet) |
+| UCS 303 | 60-1797-01 | draft | USB-C DP Alt без секции | R6 | нет (db) |
+| UCS SW 313 | 60-1797-02 | draft | то же | R6 | нет (db) |
+| UCS SR 501 | 60-1798-13 | draft | «IR/Serial»: ir bidirectional | R6 | нет (db) |
 
 Итого `approve:catalog -- --dry-run`: утвердит Extron 494 (было 483), на ревью уровень B — Extron 12 (было 25). Карточки
 Cable Cubby F55 (A, без портов, источник портов не записан) — в «no source». Их утверждает библиотекарь в рабочем окне.
 
-## Осталось на B (20) и почему
+## Осталось на B (17) и почему
 
 **Нет данных в карточке** (W «no weightKg» / «no powerDrawW/voltage»). Заполняются по даташиту, правилом не решаются:
 
@@ -92,14 +104,12 @@ Cable Cubby F55 (A, без портов, источник портов не за
 | WFA 100 EU / US | 60-1944-02 / -01 | мощность / напряжение |
 | XTP SFR HD 4K MM / SM | 60-1278-31 / -32 | мощность / напряжение |
 
-**Порт требует решения по панели или даташиту:**
+**Порты:**
 
-| Шаблон | Артикул | Статус | Замечание | Что решить |
+| Шаблон | Артикул | Статус | Замечание | Что дальше |
 |---|---|---|---|---|
-| UCS 303, UCS SW 313 | 60-1797-01 / -02 | draft | «USB-C In (DP Alt, 60W PD)»: нет секции | USB-C с видео: Video Inputs или USB — по даташиту (4.1) |
-| UCS SR 501 | 60-1798-13 | draft | «IR/Serial»: ir bidirectional | общий разъём IR и RS-232: разделить на два порта с `exclusiveGroup` или указать направление IR |
-| IN1804 DI, IN1804 DI/DO | 60-1699-12 / -14 | raw | «IR Thru (In)»: ir bidirectional | вход или выход — по панели (подпись говорит и Thru, и In) |
-| MLC 226 IP | 60-600-02 | raw | «PWR SNS»: капс | подпись с шелкографии — «Power Sense»? Реле этого шаблона исправил R4 |
+| IN1804 DI, IN1804 DI/DO | 60-1699-12 / -14 | raw | «IR Thru (In)»: ir bidirectional | решение: не менять, сверка по руководству IN1804 |
+| MLC 226 IP | 60-600-02 | raw | «Power Sense»: gpio must be bidirectional | решение R6 (gpio, input) расходится со стандартом 4.3. Для уровня A: direction bidirectional или signal sensor / contact-closure input (секция Control). Реле этого шаблона исправил R4 |
 
 ## Команды на сервере (после мержа и выхода образа)
 
@@ -107,9 +117,9 @@ Cable Cubby F55 (A, без портов, источник портов не за
 cd /srv/easyschematic/deploy/avail
 ./backup.sh
 ./update.sh                                                    # новый образ api и app
-docker compose exec api npm run import:catalog -- --dry-run    # 14 карточек Extron изменились, F55 загрузятся
+docker compose exec api npm run import:catalog -- --dry-run    # 17 карточек Extron изменились, F55 загрузятся
 docker compose exec api npm run import:catalog
-docker compose exec api npm run normalize:library -- --dry-run # R4 для raw/draft базы и verified с портами сообщества
+docker compose exec api npm run normalize:library -- --dry-run # R4–R6 для raw/draft базы (MLC 226 IP), R4 для verified с портами сообщества
 docker compose exec api npm run normalize:library
 docker compose exec api npm run approve:catalog -- --dry-run   # ожидается +11 Extron (DTP3 T 202 EU/MK, MLC 62 RS EU, One … on Pigtail)
 docker compose exec api npm run approve:catalog
@@ -119,5 +129,5 @@ docker compose exec api npm run approve:catalog
 
 - утверждает Cable Cubby F55 ×2;
 - просматривает A-шаблоны с портами сообщества из таблицы выше (IPCP Pro xi, IN1808 IPCP Q LinkLicense, SF SUB,
-  IPA T RLY4, OCS 100), сохранённый фильтр Review queue;
+  IPA T RLY4, OCS 100, UCS 303 / SW 313 / SR 501), сохранённый фильтр Review queue;
 - для OCS 100C/W сверяет порты с даташитом.

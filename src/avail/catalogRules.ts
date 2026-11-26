@@ -12,13 +12,16 @@
  *        Extron passive subwoofers (only speaker-level inputs, no power port; a speaker is passive to
  *        the linter already) → "passive" in the notes of the first input; Extron devices powered by
  *        their host (HOST_POWERED) → "powered by host" (on an eBUS port "bus-powered (eBUS)") in the notes
- *        of the port that powers them.
+ *        of the port that powers them;
+ *   R6 — port decisions of AVAIL engineers (docs/avail/port-decisions.json): the named port of the
+ *        named model gets the decided fields.
  *
  * (R1 — a slots-only chassis without a power input needs no power figures — is a linter rule,
  * blockLint.ts.) Used by the normalizer (Edit → Normalize, normalize:library) and by
  * fill:catalog-ports, so catalog cards keep them whatever source their ports come from.
  * Pure, no Node or browser dependencies.
  */
+import portDecisionsJson from "../../docs/avail/port-decisions.json";
 import { BLOCK_SECTIONS, sectionBase } from "./sections";
 
 type Obj = Record<string, unknown>;
@@ -144,8 +147,56 @@ export function powerNote(block: Obj): { index: number; note: string } | null {
   return { index: 0, note: PASSIVE_NOTE };
 }
 
+export interface PortDecision {
+  manufacturer: string;
+  models: string[];
+  partNumbers?: string[];
+  port: string;
+  set: Record<string, string>;
+  decision: string;
+}
+export const PORT_DECISIONS: readonly PortDecision[] = (portDecisionsJson as unknown as { decisions: PortDecision[] }).decisions;
+
+const lowerTrim = (v: unknown) => str(v).trim().toLowerCase();
+
+/** R6: the decisions for this template (by label "<manufacturer> <model>" or part number). */
+export function decisionsFor(block: Obj, decisions: readonly PortDecision[] = PORT_DECISIONS): PortDecision[] {
+  const label = lowerTrim(block.label);
+  const pn = lowerTrim(block.modelNumber);
+  return decisions.filter(
+    (d) =>
+      lowerTrim(block.manufacturer) === d.manufacturer.toLowerCase() &&
+      (d.models.some((m) => label === `${d.manufacturer} ${m}`.toLowerCase()) || (!!pn && (d.partNumbers ?? []).some((x) => x.toLowerCase() === pn))),
+  );
+}
+
+/** R6 on a copy of the block: the decided fields on the named ports (matched by the old or the new label). */
+export function applyPortDecisions<T extends Obj>(block: T, decisions: readonly PortDecision[] = PORT_DECISIONS): { block: T; changes: RuleChange[] } {
+  const changes: RuleChange[] = [];
+  const mine = decisionsFor(block, decisions);
+  if (!mine.length || !Array.isArray(block.ports)) return { block, changes };
+  let touched = false;
+  const ports = (block.ports as Port[]).map((p) => {
+    const l = lowerTrim(p?.label);
+    const d = mine.find((x) => l === x.port.toLowerCase() || (x.set.label && l === x.set.label.toLowerCase()));
+    if (!d) return p;
+    const next: Port = { ...p };
+    for (const [k, v] of Object.entries(d.set)) {
+      if (next[k] === v) continue;
+      changes.push({ rule: "R6", field: `ports[${str(p.id) || str(p.label)}].${k}`, from: next[k] ?? null, to: v });
+      next[k] = v;
+    }
+    if (next === p || JSON.stringify(next) === JSON.stringify(p)) return p;
+    touched = true;
+    return next;
+  });
+  if (!touched) return { block, changes };
+  const moved = changes.some((c) => c.field.endsWith(".section"));
+  return { block: { ...block, ports: moved ? inSectionOrder(ports) : ports } as T, changes };
+}
+
 export interface RuleChange {
-  rule: "R2" | "R3" | "R4" | "R5";
+  rule: "R2" | "R3" | "R4" | "R5" | "R6";
   field: string;
   from: unknown;
   to: unknown;
@@ -183,18 +234,19 @@ function inSectionOrder(ports: Port[]): Port[] {
   return out;
 }
 
-/** Applies R2–R5 to a copy of the block; returns it with the changes (same object when none). */
+/** Applies R6, R2–R5 to a copy of the block; returns it with the changes (same object when none). */
 export function applyCatalogRules<T extends Obj>(block: T): { block: T; changes: RuleChange[] } {
-  const changes: RuleChange[] = [];
-  let out: Obj = block;
-  const v = voltageFromPowerNotes(block);
+  const r6 = applyPortDecisions(block);
+  const changes: RuleChange[] = [...r6.changes];
+  let out: Obj = r6.block;
+  const v = voltageFromPowerNotes(out);
   if (v) {
     changes.push({ rule: "R2", field: "voltage", from: block.voltage ?? null, to: v });
     out = { ...out, voltage: v };
   }
-  if (Array.isArray(block.ports)) {
+  if (Array.isArray(out.ports)) {
     let touched = false;
-    const ports = (block.ports as Port[]).map((p) => {
+    const ports = (out.ports as Port[]).map((p) => {
       const s = p && typeof p.label === "string" ? shortenLabel(p.label) : null;
       if (!s) return p;
       touched = true;

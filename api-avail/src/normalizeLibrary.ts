@@ -163,7 +163,8 @@ export function normalizeLibrary(
       // Decided changes — slot families (which cards fit), categories (category plan, BoQ
       // defaults: one error may replace another), notes — are written whenever they do not make
       // the template worse.
-      const slotChange = changes.some((c) => !c.manual && /^(slots\[|slotFamily|category$|ports\[.*\]\.notes$)/.test(c.field));
+      // Port decisions of engineers (R6, port-decisions.json) are decided too.
+      const slotChange = changes.some((c) => !c.manual && (/^(slots\[|slotFamily|category$|ports\[.*\]\.notes$)/.test(c.field) || c.note.endsWith("(R6)")));
       const improves =
         RANK[after.level] > RANK[before.level] ||
         (RANK[after.level] === RANK[before.level] && issues(after) < issues(before)) ||
