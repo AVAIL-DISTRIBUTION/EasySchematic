@@ -13,6 +13,8 @@ export interface AvailUser {
   createdAt: string;
   lastLoginAt: string | null;
   active: boolean;
+  /** Service account (email on .invalid): shown as System, role and access fixed. */
+  system?: boolean;
 }
 
 export interface AuditRecord {

@@ -11,13 +11,14 @@
  *   GET /avail/audit                 librarian or admin: the audit log, newest first;
  *                                    ?entity=user|template&entityId=&actor=&before=<id>&limit=
  *
- * The last active admin can be neither demoted nor disabled (409). Every change is written to
+ * The last active admin can be neither demoted nor disabled (409); neither can a system account
+ * (email on .invalid, e.g. vendor-responses@avail.invalid: 409, `system: true` in the list). Every change is written to
  * the audit log. Upstream's PUT /users/:id/role and /users/:id/ban are served by these routes
  * (server.ts), so the guard and the log cannot be bypassed.
  */
 import type { app as UpstreamAppValue } from "../../api/src/index";
 import { requireAdminOrToken, requireModeratorOrToken } from "../../api/src/auth";
-import { availRoleOf, upstreamRoleOf, type AvailRole } from "../../src/avail/roles";
+import { availRoleOf, isSystemAccount, upstreamRoleOf, type AvailRole } from "../../src/avail/roles";
 import { ADMIN_TOKEN_ACTOR, AUDIT_PAGE, listAudit, writeAuditD1, type AuditEntity } from "./audit";
 
 type UpstreamApp = typeof UpstreamAppValue;
@@ -32,6 +33,8 @@ export interface AvailUser {
   createdAt: string;
   lastLoginAt: string | null;
   active: boolean;
+  /** Service account (email on .invalid): role and access cannot be changed. */
+  system: boolean;
 }
 
 interface UserRow {
@@ -55,6 +58,7 @@ function toUser(r: UserRow): AvailUser {
     createdAt: r.created_at,
     lastLoginAt: r.last_login_at,
     active: !r.banned,
+    system: isSystemAccount(r.email),
   };
 }
 
@@ -81,6 +85,8 @@ async function otherActiveAdmins(db: D1Database, exceptId: string): Promise<numb
   return r?.n ?? 0;
 }
 
+export const SYSTEM_ACCOUNT_ERROR = "This is a system account: its role and access cannot be changed.";
+
 export const LAST_ADMIN_ERROR = "The last active admin cannot be demoted or disabled. Make another user an admin first.";
 
 /** Role change; shared by PUT /avail/users/:id/role and upstream's PUT /users/:id/role. */
@@ -93,6 +99,7 @@ async function changeRole(c: Ctx): Promise<Response> {
   const db = c.env.easyschematic_db;
   const user = await getUser(db, c.req.param("id")!);
   if (!user) return c.json({ error: "User not found" }, 404);
+  if (isSystemAccount(user.email)) return c.json({ error: SYSTEM_ACCOUNT_ERROR }, 409);
   if (user.role === role) return c.json(toUser(user), 200, NO_CACHE);
   if (user.role === "admin" && !user.banned && (await otherActiveAdmins(db, user.id)) === 0) {
     return c.json({ error: LAST_ADMIN_ERROR }, 409);
@@ -113,6 +120,7 @@ async function changeAccess(c: Ctx, active: boolean | null): Promise<Response> {
   const db = c.env.easyschematic_db;
   const user = await getUser(db, c.req.param("id")!);
   if (!user) return c.json({ error: "User not found" }, 404);
+  if (isSystemAccount(user.email)) return c.json({ error: SYSTEM_ACCOUNT_ERROR }, 409);
   if (!user.banned === active) return c.json(toUser(user), 200, NO_CACHE);
   if (!active && user.role === "admin" && (await otherActiveAdmins(db, user.id)) === 0) {
     return c.json({ error: LAST_ADMIN_ERROR }, 409);

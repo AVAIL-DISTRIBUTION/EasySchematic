@@ -178,7 +178,9 @@ Editor upstream на временной копии шаблона из базы 
 
 Пользователи — `api-avail/src/users.ts`: `GET /avail/users`, `PUT /avail/users/:id/role` `{role: engineer|librarian|admin}`,
 `PUT /avail/users/:id/active` `{active}` (admin или `ADMIN_TOKEN`). Последнего активного админа нельзя понизить или
-отключить (409). Отключение = `users.banned`: сессии удаляются, запрос с кукой отключённого выполняется анонимно,
+отключить (409). Служебные аккаунты (email на `.invalid`, например `vendor-responses@avail.invalid`;
+`isSystemAccount` в `src/avail/roles.ts`) — в списке `system: true`, на странице Users метка System без смены роли и
+Enable/Disable; API отказывает в смене роли и доступа (409). Отключение = `users.banned`: сессии удаляются, запрос с кукой отключённого выполняется анонимно,
 вход через Google заканчивается `?error=account_disabled` (`api-avail/src/requestAudit.ts`). `PUT /users/:id/role` и
 `/users/:id/ban` upstream перенаправляются на наши маршруты — защита и журнал не обходятся. В редакторе: меню
 аккаунта — роль, Users (admin), Audit log (librarian, admin); `src/avail/AdminUi.tsx`, `adminApi.ts`.

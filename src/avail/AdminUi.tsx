@@ -171,30 +171,46 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
                   <td className="px-4 py-1.5">{u.name || "—"}</td>
                   <td className="px-2 py-1.5">{u.email}</td>
                   <td className="px-2 py-1.5">
-                    <select
-                      aria-label={`Role of ${u.email}`}
-                      value={u.role}
-                      disabled={busy === u.id}
-                      onChange={(e) => apply(u.id, () => setUserRole(u.id, e.target.value as AvailRole))}
-                      className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-transparent cursor-pointer"
-                    >
-                      {AVAIL_ROLES.map((r) => (
-                        <option key={r} value={r}>
-                          {ROLE_LABELS[r]}
-                        </option>
-                      ))}
-                    </select>
+                    {u.system ? (
+                      <span
+                        data-testid="avail-user-system"
+                        className="rounded px-1.5 py-px bg-gray-100 text-gray-700"
+                        title="System account: its role and access cannot be changed"
+                      >
+                        System
+                      </span>
+                    ) : (
+                      <select
+                        aria-label={`Role of ${u.email}`}
+                        value={u.role}
+                        disabled={busy === u.id}
+                        onChange={(e) => apply(u.id, () => setUserRole(u.id, e.target.value as AvailRole))}
+                        className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-transparent cursor-pointer"
+                      >
+                        {AVAIL_ROLES.map((r) => (
+                          <option key={r} value={r}>
+                            {ROLE_LABELS[r]}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                   </td>
                   <td className="px-2 py-1.5">{when(u.lastLoginAt)}</td>
                   <td className="px-2 py-1.5">
-                    <span className={u.active ? "text-green-700" : "text-red-700"}>{u.active ? "Active" : "Disabled"}</span>{" "}
-                    <button
-                      disabled={busy === u.id}
-                      onClick={() => apply(u.id, () => setUserActive(u.id, !u.active))}
-                      className="ml-1 underline cursor-pointer disabled:opacity-40"
-                    >
-                      {u.active ? "Disable" : "Enable"}
-                    </button>
+                    {u.system ? (
+                      <span className="text-[var(--color-text-muted)]">System</span>
+                    ) : (
+                      <>
+                        <span className={u.active ? "text-green-700" : "text-red-700"}>{u.active ? "Active" : "Disabled"}</span>{" "}
+                        <button
+                          disabled={busy === u.id}
+                          onClick={() => apply(u.id, () => setUserActive(u.id, !u.active))}
+                          className="ml-1 underline cursor-pointer disabled:opacity-40"
+                        >
+                          {u.active ? "Disable" : "Enable"}
+                        </button>
+                      </>
+                    )}
                   </td>
                 </tr>
               ))}

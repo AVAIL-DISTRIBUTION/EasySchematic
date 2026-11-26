@@ -45,3 +45,12 @@ export function upstreamRoleOf(role: unknown): UpstreamRole | null {
 export function isLibrarianOrAdmin(upstream: unknown): boolean {
   return upstream === "moderator" || upstream === "admin";
 }
+
+/**
+ * Service accounts (the authors of automatic notes and changes, e.g. vendor-responses@avail.invalid):
+ * an email on the reserved .invalid domain nobody can sign in with. The Users page marks them
+ * System; their role and access cannot be changed.
+ */
+export function isSystemAccount(email: unknown): boolean {
+  return typeof email === "string" && /\.invalid$/i.test(email.trim());
+}

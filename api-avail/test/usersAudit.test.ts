@@ -7,7 +7,7 @@ import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { refuseDisabledSignIn } from "../src/requestAudit";
 import { configFromEnv, createApiServer, type ApiServer } from "../src/server";
-import { LAST_ADMIN_ERROR } from "../src/users";
+import { LAST_ADMIN_ERROR, SYSTEM_ACCOUNT_ERROR } from "../src/users";
 
 const ADMIN_TOKEN = "test-admin-token-0123456789";
 const BEARER = { Authorization: `Bearer ${ADMIN_TOKEN}` };
@@ -132,6 +132,28 @@ const template = (id: string, label = "Extron DTP3 T 203") => ({
   category: "AV distribution / Extenders",
   referenceUrl: "https://www.extron.com/product/dtp3t203",
   ports: [{ id: "1", label: "HDMI In", signalType: "hdmi", direction: "input", section: "Video Inputs", connectorType: "hdmi" }],
+});
+
+describe("system accounts (.invalid)", () => {
+  it("are listed as system; their role and access cannot be changed, nothing is logged", async () => {
+    const admin = user("admin", "boss@avail.test");
+    const sys = user("contributor", "vendor-responses@avail.invalid");
+    const list = await json<{ email: string; system: boolean }[]>(req("/avail/users", { headers: { Cookie: admin.cookie } }));
+    expect(list.map((u) => [u.email, u.system])).toEqual([
+      ["boss@avail.test", false],
+      ["vendor-responses@avail.invalid", true],
+    ]);
+    for (const res of [
+      await put(`/avail/users/${sys.id}/role`, { role: "librarian" }, admin.cookie),
+      await put(`/avail/users/${sys.id}/active`, { active: false }, admin.cookie),
+      await put(`/users/${sys.id}/role`, { role: "moderator" }),
+    ]) {
+      expect(res.status).toBe(409);
+      expect((await json(res)).error).toBe(SYSTEM_ACCOUNT_ERROR);
+    }
+    expect(api.db.sqlite.prepare("SELECT role, banned FROM users WHERE id = ?").get(sys.id)).toEqual({ role: "contributor", banned: 0 });
+    expect(audit()).toEqual([]);
+  });
 });
 
 describe("audit log of templates", () => {

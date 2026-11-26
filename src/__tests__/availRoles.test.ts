@@ -10,7 +10,7 @@ import { auditChanges, fetchAudit, setUserActive, setUserRole, type AuditRecord 
 import { getAdminPage, openAdminPage } from "../avail/adminPages";
 import { AUTH_ERROR_MESSAGES } from "../avail/auth";
 import { resetForTests, setRole } from "../avail/libraryMode";
-import { availRoleOf, isLibrarianOrAdmin, ROLE_LABELS, upstreamRoleOf } from "../avail/roles";
+import { availRoleOf, isLibrarianOrAdmin, isSystemAccount, ROLE_LABELS, upstreamRoleOf } from "../avail/roles";
 
 describe("roles", () => {
   it("AVAIL names over upstream's values; unknown is the least privileged", () => {
@@ -95,5 +95,15 @@ describe("account menu", () => {
     expect(getAdminPage()).toBe("users");
     openAdminPage(null);
     expect(getAdminPage()).toBeNull();
+  });
+});
+
+describe("isSystemAccount", () => {
+  it("is an email on the .invalid domain", () => {
+    expect(isSystemAccount("vendor-responses@avail.invalid")).toBe(true);
+    expect(isSystemAccount(" X@Y.INVALID ")).toBe(true);
+    expect(isSystemAccount("ceo@avail-int.com")).toBe(false);
+    expect(isSystemAccount("invalid@avail.test")).toBe(false);
+    expect(isSystemAccount(null)).toBe(false);
   });
 });
