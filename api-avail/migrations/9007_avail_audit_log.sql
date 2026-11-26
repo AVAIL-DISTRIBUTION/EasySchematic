@@ -1,18 +1,21 @@
 -- AVAIL: audit log (step 2.1) — who changed what and when: role and access changes of users,
--- every change of a template (created, updated, deleted) and of its status.
+-- every change of a template (created, updated, deleted) and of its status, and one summary
+-- entry per CLI run that writes the database (import:*, apply:*, normalize:library,
+-- approve:catalog; not --dry-run).
 --
 -- actor:     user email, "admin-token" (Authorization: Bearer ADMIN_TOKEN), "system" (automatic,
 --            e.g. a verified template moved to draft below level A) or "cli:<command>"
 -- actor_id:  users.id when the actor is a person
--- entity:    'user' | 'template'; entity_id has no foreign key, so the log outlives deletions
--- action:    role, access (user); created, updated, deleted, status (template)
+-- entity:    'user' | 'template' | 'run'; entity_id has no foreign key, so the log outlives deletions
+--            (run: entity_id = the command, after = { command, args, commit, counts })
+-- action:    role, access (user); created, updated, deleted, status (template); run (run)
 -- before / after: JSON of what changed — only the changed fields for an update
 CREATE TABLE avail_audit_log (
   id           INTEGER PRIMARY KEY AUTOINCREMENT,
   at           TEXT NOT NULL DEFAULT (datetime('now')),
   actor        TEXT NOT NULL,
   actor_id     TEXT,
-  entity       TEXT NOT NULL CHECK (entity IN ('user', 'template')),
+  entity       TEXT NOT NULL CHECK (entity IN ('user', 'template', 'run')),
   entity_id    TEXT NOT NULL,
   entity_label TEXT,
   action       TEXT NOT NULL,

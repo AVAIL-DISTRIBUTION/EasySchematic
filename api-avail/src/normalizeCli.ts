@@ -13,6 +13,8 @@ import { D1DatabaseShim } from "./d1";
 import { formatNormalizeReport, normalizeLibrary } from "./normalizeLibrary";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { relintAll, syncLintLevels } from "./templateMeta";
+import { cliArgs, writeRunAudit } from "./audit";
+import { normalizeRunCounts } from "./runCounts";
 
 let dryRun = false;
 try {
@@ -28,8 +30,12 @@ const db = new D1DatabaseShim(path.join(config.dataDir, "easyschematic.sqlite"))
 try {
   applyAllMigrations(db.sqlite, config, (m) => console.log(m));
   syncLintLevels(db.sqlite);
-  process.stdout.write(formatNormalizeReport(normalizeLibrary(db.sqlite, { dryRun })));
-  if (!dryRun) relintAll(db.sqlite);
+  const report = normalizeLibrary(db.sqlite, { dryRun });
+  process.stdout.write(formatNormalizeReport(report));
+  if (!dryRun) {
+    writeRunAudit(db.sqlite, { command: "normalize:library", args: cliArgs(), counts: normalizeRunCounts(report) });
+    relintAll(db.sqlite);
+  }
 } catch (err) {
   console.error(`normalize failed: ${err instanceof Error ? err.message : String(err)}`);
   process.exitCode = 1;

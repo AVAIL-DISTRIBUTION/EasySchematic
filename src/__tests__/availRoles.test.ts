@@ -40,6 +40,9 @@ describe("audit change lines", () => {
     expect(long.endsWith("…")).toBe(true);
     expect(auditChanges(rec({ action: "role", entity: "user", before: { role: "engineer" }, after: { role: "librarian" } }))).toEqual(["role: engineer → librarian"]);
     expect(auditChanges(rec({ action: "created", after: { label: "X" } }))).toEqual([]);
+    expect(auditChanges(rec({ entity: "run", action: "run", after: { command: "import:catalog", args: [], commit: "0123456789abcdef", counts: { created: 5, updated: 3 } } }))).toEqual([
+      "created 5, updated 3", "commit 0123456789ab",
+    ]);
   });
 });
 

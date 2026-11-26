@@ -21,6 +21,8 @@ import { formatImportAvailReport, importAvailLibrary, type AvailLibraryFile } fr
 import { applyAllMigrations, configFromEnv } from "./server";
 import { parseSeedMode, seedLibrary } from "./seed";
 import { relintAll, syncLintLevels } from "./templateMeta";
+import { cliArgs, writeRunAudit } from "./audit";
+import { availRunCounts } from "./runCounts";
 
 const USAGE = "usage: npm run import:avail [-- --dry-run] [-- --dir <library/avail>]";
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -62,6 +64,7 @@ try {
   const report = importAvailLibrary(db.sqlite, files, { dryRun: values["dry-run"], hidden });
   process.stdout.write(formatImportAvailReport(report, dir));
   if (!report.dryRun) {
+    writeRunAudit(db.sqlite, { command: "import:avail", args: cliArgs(), counts: availRunCounts(report) });
     syncLintLevels(db.sqlite);
     relintAll(db.sqlite);
   }

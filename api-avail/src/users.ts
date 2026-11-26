@@ -153,7 +153,7 @@ export function registerUserRoutes(app: UpstreamApp): void {
   app.get("/avail/audit", async (c) => {
     if (!requireModeratorOrToken(c)) return c.json({ error: "Librarian or admin access required" }, 403);
     const entity = c.req.query("entity");
-    if (entity && entity !== "user" && entity !== "template") return c.json({ error: "entity must be user or template" }, 400);
+    if (entity && entity !== "user" && entity !== "template" && entity !== "run") return c.json({ error: "entity must be user, template or run" }, 400);
     const num = (v: string | undefined) => (v && /^\d+$/.test(v) ? Number(v) : undefined);
     const entries = await listAudit(c.env.easyschematic_db, {
       entity: entity as AuditEntity | undefined,

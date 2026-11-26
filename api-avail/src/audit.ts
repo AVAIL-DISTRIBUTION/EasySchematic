@@ -10,11 +10,12 @@
  *   - CLIs that change statuses (approve:catalog).
  * Read by GET /avail/audit (librarian and admin).
  */
+import { execFileSync } from "node:child_process";
 import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 
-export type AuditEntity = "user" | "template";
-export type AuditAction = "role" | "access" | "created" | "updated" | "deleted" | "status";
+export type AuditEntity = "user" | "template" | "run";
+export type AuditAction = "role" | "access" | "created" | "updated" | "deleted" | "status" | "run";
 
 export interface AuditEntry {
   actor: string;
@@ -61,6 +62,52 @@ export async function writeAuditD1(db: D1Database, entries: readonly AuditEntry[
   if (!entries.length) return;
   await db.batch(entries.map((e) => db.prepare(INSERT).bind(...params(e))));
 }
+
+// ---------------------------------------------------------------------------- CLI runs
+
+/** Commit of the running code: AVAIL_COMMIT (the image's build arg), else git, else "unknown". */
+export function runningCommit(env: NodeJS.ProcessEnv = process.env): string {
+  if (env.AVAIL_COMMIT && env.AVAIL_COMMIT !== "unknown") return env.AVAIL_COMMIT;
+  try {
+    return execFileSync("git", ["rev-parse", "HEAD"], { stdio: ["ignore", "pipe", "ignore"] }).toString().trim() || "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+
+/** Totals of a run; the usual ones first, anything else a command reports after them. */
+export interface RunCounts {
+  created?: number;
+  updated?: number;
+  hidden?: number;
+  approved?: number;
+  deleted?: number;
+  [k: string]: number | undefined;
+}
+
+/**
+ * One summary entry per CLI run that wrote the database (decision 2026-11-26: not one per
+ * template; --dry-run writes nothing): the command with its arguments, the commit, the totals.
+ */
+export function writeRunAudit(
+  sqlite: Database.Database,
+  run: { command: string; args?: readonly string[]; counts: RunCounts },
+  commit: string = runningCommit(),
+): void {
+  const args = [...(run.args ?? [])];
+  const counts = Object.fromEntries(Object.entries(run.counts).filter(([, v]) => typeof v === "number"));
+  writeAudit(sqlite, [{
+    actor: SYSTEM_ACTOR,
+    entity: "run",
+    entityId: run.command,
+    entityLabel: [`npm run ${run.command}`, ...args].join(" "),
+    action: "run",
+    after: { command: run.command, args, commit, counts },
+  }]);
+}
+
+/** CLI arguments as typed (without node and the script). */
+export const cliArgs = (): string[] => process.argv.slice(2);
 
 // ---------------------------------------------------------------------------- template diff
 

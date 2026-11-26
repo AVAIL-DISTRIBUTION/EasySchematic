@@ -185,10 +185,13 @@ Editor upstream на временной копии шаблона из базы 
 Журнал изменений — таблица `avail_audit_log` (миграция 9007; `api-avail/src/audit.ts`): кто (email, `admin-token`,
 `system`, `cli:<команда>`), когда, что (user / template + id и название), действие (role, access, created, updated,
 deleted, status), было → стало (JSON, у updated — только изменённые поля). Пишут: смена роли и доступа; смена статуса
-(Review, Approve, автоматическое понижение verified, `approve:catalog`); любая запись шаблона через маршруты upstream
-(`server.ts` снимает шаблоны до и после запроса; приписываются шаблоны из пути запроса и новые). `GET /avail/audit
-[?entity=&entityId=&actor=&before=&limit=]` — librarian и admin. Загрузки CLI (`import:*`, `apply:*`, `normalize:library`)
-в журнал пока не пишутся.
+(Review, Approve, автоматическое понижение verified); любая запись шаблона через маршруты upstream
+(`server.ts` снимает шаблоны до и после запроса; приписываются шаблоны из пути запроса и новые). Запуски CLI, пишущие в базу
+(`import:*`, `apply:*`, `normalize:library`, `approve:catalog`) — одна сводная запись на запуск (entity `run`, actor
+`system`): команда и аргументы, коммит образа (`AVAIL_COMMIT` из build-arg `SOURCE_COMMIT`, локально — git), итоговые
+счётчики (created / updated / hidden / approved / deleted и свои; `api-avail/src/runCounts.ts`); `--dry-run` не пишется,
+по шаблонам CLI записей не пишет. `GET /avail/audit [?entity=user|template|run&entityId=&actor=&before=&limit=]` —
+librarian и admin.
 
 Первого админа назначают в базе:
 `docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','<email>')"`

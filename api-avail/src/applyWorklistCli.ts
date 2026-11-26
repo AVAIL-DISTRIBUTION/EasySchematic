@@ -19,6 +19,8 @@ import { applyAllMigrations, configFromEnv } from "./server";
 import { syncLintLevels } from "./templateMeta";
 import { WORKLIST_FOLLOWUPS } from "./worklistFollowups";
 import { readWorklist, worklistPath } from "./worklistInput";
+import { cliArgs, writeRunAudit } from "./audit";
+import { worklistRunCounts } from "./runCounts";
 
 let values: { "dry-run"?: boolean; file?: string };
 try {
@@ -35,7 +37,10 @@ try {
   applyAllMigrations(db.sqlite, config, (m) => console.error(m));
   const file = worklistPath(values.file);
   const report = applyWorklist(db.sqlite, readWorklist(file), { dryRun: values["dry-run"], followups: WORKLIST_FOLLOWUPS });
-  if (!values["dry-run"]) syncLintLevels(db.sqlite);
+  if (!values["dry-run"]) {
+    writeRunAudit(db.sqlite, { command: "apply:worklist", args: cliArgs(), counts: worklistRunCounts(report) });
+    syncLintLevels(db.sqlite);
+  }
   process.stdout.write(formatApplyWorklistReport(report, file));
 } catch (err) {
   console.error(`apply:worklist failed: ${err instanceof Error ? err.message : String(err)}`);

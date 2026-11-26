@@ -175,8 +175,8 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
 // ---------------------------------------------------------------------------- Audit log
 
 const PAGE = 100;
-type EntityFilter = "all" | "user" | "template";
-const ENTITY_FILTER_LABELS: Readonly<Record<EntityFilter, string>> = { all: "Everything", user: "Users", template: "Templates" };
+type EntityFilter = "all" | "user" | "template" | "run";
+const ENTITY_FILTER_LABELS: Readonly<Record<EntityFilter, string>> = { all: "Everything", user: "Users", template: "Templates", run: "Command runs" };
 
 export function AuditLogDialog({ onClose }: { onClose: () => void }) {
   const [entity, setEntity] = useState<EntityFilter>("all");

@@ -16,6 +16,8 @@ import { D1DatabaseShim } from "./d1";
 import { DEFAULT_UPSTREAM_URL, fetchUpstreamTemplates, formatImportReport, importTemplates } from "./importUpstream";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { relintAll, syncLintLevels } from "./templateMeta";
+import { cliArgs, writeRunAudit } from "./audit";
+import { upstreamRunCounts } from "./runCounts";
 
 const USAGE = "usage: npm run import:upstream [-- --dry-run] [-- --url <url>] [-- --file <templates.json>]";
 
@@ -46,6 +48,7 @@ try {
   const report = importTemplates(db.sqlite, templates, { dryRun: values["dry-run"] });
   process.stdout.write(formatImportReport(report, origin));
   if (!report.dryRun) {
+    writeRunAudit(db.sqlite, { command: "import:upstream", args: cliArgs(), counts: upstreamRunCounts(report) });
     syncLintLevels(db.sqlite);
     relintAll(db.sqlite);
   }

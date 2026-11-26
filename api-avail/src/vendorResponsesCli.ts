@@ -22,6 +22,8 @@ import { D1DatabaseShim } from "./d1";
 import { libraryIds } from "./libraryDir";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { applyVendorResponses, formatVendorResponsesReport, type VendorResponses } from "./vendorResponses";
+import { cliArgs, writeRunAudit } from "./audit";
+import { vendorResponsesRunCounts } from "./runCounts";
 
 const USAGE = "usage: npm run apply:vendor-responses [-- --dry-run] [-- --file <vendor-responses.json>]";
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -48,6 +50,10 @@ try {
   applyAllMigrations(db.sqlite, config, (m) => console.error(m));
   const report = applyVendorResponses(db.sqlite, input, { dryRun: values["dry-run"], libraryIds: libraryIds() });
   process.stdout.write(formatVendorResponsesReport(report, file));
+  // Blocked (curated templates in the file): nothing was written.
+  if (!report.dryRun && !report.blocked.length) {
+    writeRunAudit(db.sqlite, { command: "apply:vendor-responses", args: cliArgs(), counts: vendorResponsesRunCounts(report) });
+  }
   if (report.blocked.length) process.exitCode = 1;
 } catch (err) {
   console.error(`apply:vendor-responses failed: ${err instanceof Error ? err.message : String(err)}`);

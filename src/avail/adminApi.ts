@@ -20,10 +20,10 @@ export interface AuditRecord {
   at: string;
   actor: string;
   actorId: string | null;
-  entity: "user" | "template";
+  entity: "user" | "template" | "run";
   entityId: string;
   entityLabel: string | null;
-  action: "role" | "access" | "created" | "updated" | "deleted" | "status";
+  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run";
   before: Record<string, unknown> | null;
   after: Record<string, unknown> | null;
 }
@@ -47,7 +47,7 @@ export const setUserRole = (id: string, role: AvailRole) =>
 export const setUserActive = (id: string, active: boolean) =>
   call<AvailUser>(`/avail/users/${encodeURIComponent(id)}/active`, { method: "PUT", body: JSON.stringify({ active }) });
 
-export function fetchAudit(q: { entity?: "user" | "template"; before?: number; limit?: number } = {}): Promise<AuditRecord[]> {
+export function fetchAudit(q: { entity?: "user" | "template" | "run"; before?: number; limit?: number } = {}): Promise<AuditRecord[]> {
   const p = new URLSearchParams();
   if (q.entity) p.set("entity", q.entity);
   if (q.before) p.set("before", String(q.before));
@@ -66,6 +66,7 @@ export const AUDIT_ACTION_LABELS: Readonly<Record<AuditRecord["action"], string>
   updated: "Template edited",
   deleted: "Template deleted",
   status: "Status changed",
+  run: "Command run",
 };
 
 function short(v: unknown, max = 60): string {
@@ -79,6 +80,12 @@ function short(v: unknown, max = 60): string {
  * template is new), a deleted one says so; ports and other long values are shortened.
  */
 export function auditChanges(r: AuditRecord): string[] {
+  if (r.action === "run") {
+    const a = r.after ?? {};
+    const counts = (a.counts ?? {}) as Record<string, number>;
+    const totals = Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(", ");
+    return [...(totals ? [totals] : []), `commit ${String(a.commit ?? "unknown").slice(0, 12)}`];
+  }
   if (r.action === "created") return [];
   if (r.action === "deleted") return [];
   const before = r.before ?? {};

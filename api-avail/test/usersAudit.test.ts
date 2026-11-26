@@ -176,3 +176,30 @@ describe("audit log of templates", () => {
     expect((await req("/avail/audit?entity=other", { headers: BEARER })).status).toBe(400);
   });
 });
+
+describe("audit log of CLI runs", () => {
+  it("one summary entry per run: command, arguments, commit, totals; readable as entity=run", async () => {
+    const { writeRunAudit, runningCommit } = await import("../src/audit");
+    writeRunAudit(api.db.sqlite, { command: "import:catalog", args: ["--min-level", "A"], counts: { created: 5, updated: 3, hidden: undefined } }, "abc123");
+    const rows = audit();
+    expect(rows).toEqual([
+      expect.objectContaining({ actor: "system", entity: "run", entity_id: "import:catalog", entity_label: "npm run import:catalog --min-level A", action: "run" }),
+    ]);
+    expect(JSON.parse(rows[0].after as string)).toEqual({ command: "import:catalog", args: ["--min-level", "A"], commit: "abc123", counts: { created: 5, updated: 3 } });
+    const list = await json<{ entity: string }[]>(req("/avail/audit?entity=run", { headers: BEARER }));
+    expect(list).toHaveLength(1);
+    expect(runningCommit({ AVAIL_COMMIT: "deadbeef" })).toBe("deadbeef");
+  });
+
+  it("approve:catalog counts approved and left for review", async () => {
+    const { approveRunCounts, catalogRunCounts } = await import("../src/runCounts");
+    expect(approveRunCounts({ dryRun: false, rows: [{ result: "approved" }, { result: "source db" }, { result: "approved" }] } as never)).toEqual({ approved: 2, leftForReview: 1 });
+    expect(
+      catalogRunCounts({
+        counts: { inserted: 2, updated: 1, unchanged: 4, "below-min": 9 },
+        superseded: [{ action: "hidden" }, { action: "listed" }],
+        removed: [{}],
+      } as never),
+    ).toEqual({ created: 2, updated: 1, hidden: 1, deleted: 1, unchanged: 4, belowMin: 9 });
+  });
+});
