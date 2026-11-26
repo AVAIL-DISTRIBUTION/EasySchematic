@@ -92,11 +92,39 @@ const RACK_FORMS = new Set(["full", "half", "shelf-only"]);
  * in a rack: by category or device type. A block with a rack form (full, half, shelf-only)
  * stands in a rack whatever its category.
  */
-export function isRoomMounted(block: { category?: unknown; deviceType?: unknown; rackForm?: unknown }): boolean {
+export function isRoomMounted(block: RoomMountedInput): boolean {
   if (typeof block.rackForm === "string" && RACK_FORMS.has(block.rackForm)) return false;
   if (typeof block.deviceType === "string" && ROOM_MOUNTED_TYPES.has(block.deviceType)) return true;
   const c = typeof block.category === "string" ? block.category.trim() : "";
-  return ROOM_MOUNTED_CATEGORIES.some((m) => c === m || c.startsWith(`${m} /`));
+  if (ROOM_MOUNTED_CATEGORIES.some((m) => c === m || c.startsWith(`${m} /`))) return true;
+  return mountedByName(block);
+}
+
+export interface RoomMountedInput {
+  category?: unknown;
+  deviceType?: unknown;
+  rackForm?: unknown;
+  label?: unknown;
+  shortName?: unknown;
+  manufacturer?: unknown;
+  /** The catalog card's description (library/catalog _avail, or the database's catalog meta). */
+  _avail?: { description?: unknown } | null;
+}
+
+/**
+ * Mounting words in the name or the catalog description (standard 3.2, v0.9): a wallplate, a
+ * decorator-style or in-wall / in-ceiling unit, an AAP / MAAP plate, a Cable Cubby, a table or
+ * under-table box.
+ */
+export const ROOM_MOUNTED_WORDS_RE = /\b(wall ?plates?|decorator(?:-style)?|in-wall|in-ceiling|ceiling|m?aap|cable cubby|under-table|table)\b/i;
+/** Extron's Decorator-Style models end in " D": "DTP3 T 322 D", "NBP 106 D (White)", "DTP3 R 201 D, White". */
+const EXTRON_DECORATOR_RE = /\sD(?=$|[\s,(])/;
+
+export function mountedByName(block: RoomMountedInput): boolean {
+  const str = (v: unknown) => (typeof v === "string" ? v : "");
+  const name = `${str(block.label)} ${str(block.shortName)}`;
+  if (ROOM_MOUNTED_WORDS_RE.test(name) || ROOM_MOUNTED_WORDS_RE.test(str(block._avail?.description))) return true;
+  return /^extron$/i.test(str(block.manufacturer).trim()) && EXTRON_DECORATOR_RE.test(str(block.label).replace(/^Extron\s+/i, "").trim());
 }
 
 /** modelNumber of a Generic block: "Generic Room PC" → "GEN-ROOM-PC". */

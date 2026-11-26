@@ -1,6 +1,6 @@
 # AVAIL Device Block Standard / Стандарт блока устройства AVAIL
 
-Nov 20, 2026 · @Dmitri Martakov · v0.8 draft (Nov 25, 2026: ослабление правил оформления — ошибки только то, что ломает схему или спецификацию, оформление — предупреждения; общая секция Control, см. 8.1) · ранее v0.7 draft (Nov 25, 2026: габариты только для того, что стоит в шкафу; «no ports»; каталог library/catalog) · v0.6 draft (Nov 28, 2026: Audio I/O, Telephony, пометки питания, PoE по классу; Nov 27: Sync, слоты и платы, разъём из сигнала) · ранее v0.4 draft (Nov 23, 2026: таксономия, вендоры, Generic; Nov 25, 2026: два уровня вендоров, решения о вендорах, питание по шине)
+Nov 20, 2026 · @Dmitri Martakov · v0.9 draft (Nov 26, 2026: монтаж в помещении по названию и описанию, см. 3.2) · ранее v0.8 draft (Nov 25, 2026: ослабление правил оформления — ошибки только то, что ломает схему или спецификацию, оформление — предупреждения; общая секция Control, см. 8.1) · ранее v0.7 draft (Nov 25, 2026: габариты только для того, что стоит в шкафу; «no ports»; каталог library/catalog) · v0.6 draft (Nov 28, 2026: Audio I/O, Telephony, пометки питания, PoE по классу; Nov 27: Sync, слоты и платы, разъём из сигнала) · ранее v0.4 draft (Nov 23, 2026: таксономия, вендоры, Generic; Nov 25, 2026: два уровня вендоров, решения о вендорах, питание по шине)
 
 ## 1. Назначение
 
@@ -118,9 +118,10 @@ Generic — вендор для всего, что нужно в проекте,
 Для оборудования, которое монтируется в помещении (потолок, стена, стол, экран), габариты и вес для уровня A **не обязательны**. Такими считаются:
 
 - категории: Audio Products / Speakers, Microphones (вся группа), Connectivity / Architectural, Control Systems / Touch panels, Control Systems / Button Panel, Videocameras (вся группа), Displays (вся группа), Projection (вся группа), Mounts, UC / Video conference systems, UC / Speakerphones;
-- типы устройств: speaker, subwoofer, wired-mic, wall-plate, table-box, touch-screen, button-panel, camera, ptz-camera, display, monitor, projector, screen, video-bar, antenna.
+- типы устройств: speaker, subwoofer, wired-mic, wall-plate, table-box, touch-screen, button-panel, camera, ptz-camera, display, monitor, projector, screen, video-bar, antenna;
+- с v0.9 — по названию (label, shortName) и описанию карточки каталога: слова «Wallplate», «Decorator» / «Decorator-Style», «In-Wall», «In-Ceiling», «Ceiling», «AAP», «MAAP», «Cable Cubby», «Table», «Under-Table»; у Extron — модель с суффиксом « D» (Decorator-Style: DTP3 T 322 D, NBP 106 D). В базе описание берётся из `avail_template_meta.catalog`, поэтому уровень шаблона в базе совпадает с уровнем файла каталога.
 
-Если у шаблона задан `rackForm` (full, half, shelf-only), устройство стоит в шкафу и габариты обязательны, какой бы ни была категория. Плата в слоте габаритов не требует (5.1). Опубликованные производителем габариты заполняются всё равно: они нужны для планировок. Список — `ROOM_MOUNTED_CATEGORIES` / `ROOM_MOUNTED_TYPES` в `src/avail/blockLint.ts`.
+Если у шаблона задан `rackForm` (full, half, shelf-only), устройство стоит в шкафу и габариты обязательны, какой бы ни была категория. Плата в слоте габаритов не требует (5.1). Опубликованные производителем габариты заполняются всё равно: они нужны для планировок. Список — `ROOM_MOUNTED_CATEGORIES` / `ROOM_MOUNTED_TYPES` / `ROOM_MOUNTED_WORDS_RE` в `src/avail/blockLint.ts`.
 
 ## 4. Порты
 

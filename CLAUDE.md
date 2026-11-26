@@ -93,6 +93,16 @@ variant of db, no source, level B / FIX). Библиотека отдаёт у �
 `useAvailFilteredTemplates`). На сервере: `./backup.sh`, затем `docker compose exec api npm run approve:catalog -- --dry-run`,
 затем без `--dry-run`.
 
+Очередь ревью (шаг 2.3): `npm run report:review-queue [-- --db <снимок>] [-- --out <md>]` (`api-avail/src/reviewQueueCli.ts`,
+группировка — `src/avail/reviewQueue.ts`, предлагаемые правила — `api-avail/src/reviewRules.ts`) → `docs/avail/review-queue.md`:
+draft каталога, которые не утвердит `approve:catalog` (уровень B; источник db / variant of db / нет), по причине (правило
+линтера для B, источник для A) и семейству, с предложением (rule / data / manual). По умолчанию — по `library/catalog`
+(что загрузит `import:catalog`, минус утверждаемое); `--db` — по базе с загруженным каталогом. Только читает. Раздел
+«Proposed rules» моделирует правила, которые закрыли бы массовые причины без выдумывания данных, — не применяются без
+решения. Стандарт v0.9 (3.2): монтаж в помещении и по названию/описанию (`mountedByName`); линтер в базе видит описание
+и rackForm каталога (`blockOfRow` в `templateMeta.ts`: `lintRow`, `syncLintLevels`, `relintAll`, `setTemplateStatus`,
+`approve:catalog`).
+
 Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
 не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
 deviceType, питание не input (кроме явных выходов). Оформление (секции вне словаря, порядок, подписи, капс, длина,
@@ -381,6 +391,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из стенсилов Extron и снимка базы (`npm run fill:catalog-ports`), пишет только файлы и отчёт стенсилов |
 | `src/extronVisioCli.ts` | стенсилы Extron → `tools/avail/extron-visio/extron-visio-blocks.json` (`npm run parse:extron-visio`); zip читает `xlsx.ts` (`readZipText`) |
 | `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня B и выше в базу (`npm run import:catalog [-- --min-level A|B]`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
+| `src/reviewQueueCli.ts`, `src/reviewRules.ts` | отчёт очереди ревью `docs/avail/review-queue.md` (`npm run report:review-queue`), предлагаемые правила |
 | `src/approveCatalog.ts`, `src/approveCatalogCli.ts` | утверждение draft каталога уровня A по источнику портов (`npm run approve:catalog [-- --dry-run]`), миграция 9006 (`approved_via = bulk-source`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |

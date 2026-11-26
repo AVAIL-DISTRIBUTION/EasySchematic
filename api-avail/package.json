@@ -22,7 +22,8 @@
     "parse:extron-visio": "tsx src/extronVisioCli.ts",
     "import:catalog": "tsx src/importCatalogCli.ts",
     "import:intake": "tsx src/importIntakeCli.ts",
-    "approve:catalog": "tsx src/approveCatalogCli.ts"
+    "approve:catalog": "tsx src/approveCatalogCli.ts",
+    "report:review-queue": "tsx src/reviewQueueCli.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.11",
