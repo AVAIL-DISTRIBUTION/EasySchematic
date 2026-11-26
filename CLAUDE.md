@@ -76,6 +76,7 @@ PR всегда открываем в `master` нашего форка, **ник
 | `tools/avail/fixtures/engineer-blocks.json` | 22 блока, отобранные инженерами (тестовые данные) |
 | `tools/avail/incoming/avail-biamp-templates.json` | 4 шаблона Biamp из пилота (исходник) |
 | `src/avail/vendorDecisions.ts` | правила решений о вендорах: `VendorRules.classify`, `genericTemplate` («Generic <тип>»), `completeness` |
+| `src/avail/intake.ts` | форма сбора → карточки каталога (`npm run import:intake`), правила — `docs/avail/intake.md` |
 | `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, стенсилов Extron, снимка базы и вариантов (`fill:catalog-ports`) |
 | `src/avail/extronVisio.ts`, `extronStencil.ts` | стенсилы Extron Visio: мастер → порты (`parse:extron-visio`), применение к каталогу и сравнение |
 
@@ -287,6 +288,17 @@ phoenix; notes «2-pole captive screw — Extron convention, verify». Шасс�
 слоты вариантов той же модели (без региона, AC, цвета), если они совпадают, иначе число из описания («for 4 AAP
 Modules»), иначе причина в `_avail.portsMissing`; откуда слоты — `_avail.slotsSource`; собственные разъёмы шасси
 остаются портами. Линтер: шасси только со слотами — не «no ports», но слот без `slotFamily` — W.
+
+Форма сбора (шаг 1.10, [`docs/avail/intake.md`](docs/avail/intake.md)): шаблон
+`tools/avail/intake/avail-intake-template.xlsx` (листы Instructions / Products / Lists) и правила — источник
+истины формата; промпт для ИИ-ассистента — `tools/avail/intake/avail-intake-ai-prompt.md`. `npm run import:intake --
+<файл.xlsx> [--dry-run]` (в `api-avail`; логика — `src/avail/intake.ts`, CLI `importIntakeCli.ts`) проверяет строки
+(обязательные колонки, значения из списков по справочникам, числа без единиц, http-ссылки, уникальность артикулов,
+габариты для Rack form), отчёт E/W по строкам; корректные строки пишет в `library/catalog/<vendor>/*.json` и
+`index.json` (id `avail-<vendor>-<артикул>`, `_avail`: status awaiting-ports, variant, source, datasheetUrl, note,
+intakeFile). Существующую карточку обновляет непустыми ячейками (пустые не стирают), порты и слоты не трогает;
+прежний `_avail.source` остаётся, источник формы — `intakeSource`. Код выхода 1 при строках с ошибками. Списки листа
+Lists сверяет тест `api-avail/test/intake.test.ts` (справочник меняется PR-ом вместе с шаблоном).
 
 **Приоритет источников данных** (каталог и библиотека): документ производителя (даташит, руководство,
 A&E-спецификация) > карточка каталога (`library/catalog`) > шаблон из базы. Карточка главнее базы
