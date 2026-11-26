@@ -20,6 +20,21 @@ export interface AvailUser {
   system?: boolean;
   /** Access tokens that work now (AI Assistant users). */
   activeTokens?: number;
+  /** Claude connections (OAuth) that work now. */
+  activeClaudeAccess?: number;
+}
+
+/** A Claude connection of a user (OAuth, api-avail/src/oauth.ts): the client, when granted, last use. */
+export interface ClaudeAccess {
+  id: string;
+  client: string;
+  createdAt: string;
+  lastUsedAt: string | null;
+  expiresAt: string;
+  state: "active" | "expired" | "revoked";
+  revokedAt: string | null;
+  revokedBy: string | null;
+  revokedReason: string | null;
 }
 
 /** An AI Assistant's access token as the admin sees it (no value: shown once, when created). */
@@ -64,6 +79,10 @@ export const createToken = (userId: string, name: string, expiresAt: string) =>
   call<{ token: AccessToken; value: string }>(`/avail/users/${encodeURIComponent(userId)}/tokens`, { method: "POST", body: JSON.stringify({ name, expiresAt }) });
 
 export const revokeToken = (id: string) => call<AccessToken>(`/avail/tokens/${encodeURIComponent(id)}/revoke`, { method: "POST", body: "{}" });
+
+export const fetchClaudeAccess = (userId: string) => call<ClaudeAccess[]>(`/avail/users/${encodeURIComponent(userId)}/oauth`);
+
+export const revokeClaudeAccess = (id: string) => call<ClaudeAccess>(`/avail/oauth/grants/${encodeURIComponent(id)}/revoke`, { method: "POST", body: "{}" });
 
 /** Expiry choices for a new token: days from today → the date (YYYY-MM-DD). */
 export const TOKEN_EXPIRY_DAYS = [30, 90, 365] as const;

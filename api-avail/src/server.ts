@@ -22,6 +22,7 @@ import { EMPTY_PROPOSAL_PATH, emptyProposal, pendingEmptyProposals, registerProp
 import { beginProposalOverrides, endProposalOverrides, registerOverrideRoutes, type ProposalOverrideScope } from "./overrides";
 import { logTokenRequest, pendingRefusals, rateLimitFromEnv, REFUSAL_PATH, registerAccessTokenRoutes, resolveAccessToken, TokenRateLimiter } from "./accessTokens";
 import { registerAssistantRoutes } from "./assistant";
+import { issuerOf, registerOAuthRoutes, resolveOAuthToken } from "./oauth";
 import { handleMcp, MCP_PATH, mcpUnauthorized } from "./mcp";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
@@ -37,6 +38,7 @@ registerAccessTokenRoutes(upstreamApp);
 registerAssistantRoutes(upstreamApp);
 registerOverrideRoutes(upstreamApp);
 registerProposalGuardRoutes(upstreamApp);
+registerOAuthRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
@@ -274,7 +276,9 @@ export function createApiServer(config: ApiConfig): ApiServer {
       let token: { id: string; name: string; userId: string; email: string } | null = null;
       let incoming = raw;
       try {
-        const t = resolveAccessToken(db.sqlite, raw, limiter);
+        // Or an OAuth connection of Claude (oauth.ts): Bearer avail_oa_… acts as the user who connected it.
+        let t = resolveAccessToken(db.sqlite, raw, limiter);
+        if (t.kind === "none") t = resolveOAuthToken(db.sqlite, raw, limiter, issuerOf(config.vars.API_PUBLIC_URL, raw.url), config.vars.GOOGLE_ALLOWED_DOMAIN ?? "");
         if (t.kind === "refused") {
           const internal = internalAnswer(raw, REFUSAL_PATH);
           pendingRefusals.set(internal, t);
@@ -296,11 +300,13 @@ export function createApiServer(config: ApiConfig): ApiServer {
         if (new URL(incoming.url).pathname.replace(/\/+$/, "") === MCP_PATH) {
           const origin = incoming.headers.get("Origin");
           if (origin && !allowedOrigins.includes(origin)) return new Response(JSON.stringify({ error: "Origin not allowed" }), { status: 403, headers: { "Content-Type": "application/json" } });
-          if (!token) return mcpUnauthorized();
+          if (!token) return mcpUnauthorized(issuerOf(config.vars.API_PUBLIC_URL, incoming.url));
+          const role = (db.sqlite.prepare("SELECT role FROM users WHERE id = ?").get(token.userId) as { role: string } | undefined)?.role ?? "";
           const cookie = incoming.headers.get("Cookie") ?? "";
           const forwarded = incoming.headers.get("X-Forwarded-For");
           return handleMcp(incoming, {
             token,
+            role,
             sqlite: db.sqlite,
             appOrigin,
             call: (p, init = {}) =>

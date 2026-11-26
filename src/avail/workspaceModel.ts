@@ -9,7 +9,7 @@ import { lintBlock, type BlockLevel, type BlockLintResult } from "./blockLint";
 import { findCategory } from "./library";
 import { allPairs, pairKey } from "./duplicates";
 import { slotLibraryContext } from "./slotFamilies";
-import { LIFECYCLE_LABELS, lifecycleOf, lifecycleShort, lifecycleText, sameLifecycle, type Lifecycle, type LifecycleInfo } from "./lifecycle";
+import { LIFECYCLE_LABELS, lifecycleOf, withLifecycle, lifecycleShort, lifecycleText, sameLifecycle, type Lifecycle, type LifecycleInfo } from "./lifecycle";
 import { storedForm } from "./templatePatch";
 
 export type WsStatus = "verified" | "draft" | "raw" | "hidden";
@@ -147,15 +147,28 @@ export function wsLifecycle(a: Pick<WsInfo, "lifecycle" | "availableFrom" | "eol
   return lifecycleOf({ lifecycle: a.lifecycle, availableFrom: a.availableFrom, eolDate: a.eolDate });
 }
 
+/** The slot context of the whole library (which cards fit which chassis), for the linter. */
+export function workspaceLintContext(templates: readonly DeviceTemplate[]) {
+  return slotLibraryContext(templates.map((t) => ({ slotFamily: t.slotFamily ?? null, slots: (t.slots as { slotFamily?: string; slotFamilies?: string[] }[] | undefined) ?? null })));
+}
+
+/**
+ * A template linted as the server does when it saves it: with the library's slot context and the
+ * template's lifecycle (Normalize preview, proposals).
+ */
+export function lintAsStored(t: object, lifecycle: LifecycleInfo, ctx?: ReturnType<typeof workspaceLintContext>) {
+  return lintBlock(withLifecycle(t, lifecycle), ctx);
+}
+
 /** Table rows: one per template, linted with the whole library's slot context. */
 export function buildRows(templates: readonly WsTemplate[]): WsRow[] {
   const labels = new Map(templates.map((t) => [t.id ?? "", t.label]));
-  const ctx = slotLibraryContext(templates.map((t) => ({ slotFamily: t.slotFamily ?? null, slots: (t.slots as { slotFamily?: string; slotFamilies?: string[] }[] | undefined) ?? null })));
+  const ctx = workspaceLintContext(templates);
   return templates.map((t) => {
     const a = t.avail;
     const lifecycle = wsLifecycle(a);
     // The linter reads the lifecycle from _avail (estimates of an upcoming product, v0.12).
-    const lint = lintBlock(lifecycle.lifecycle === "active" ? t : { ...t, _avail: lifecycle }, ctx);
+    const lint = lintBlock(withLifecycle(t, lifecycle), ctx);
     const row: WsRow = {
       id: t.id ?? "",
       template: t,

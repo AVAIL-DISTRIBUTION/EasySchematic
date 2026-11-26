@@ -10,8 +10,7 @@ import { changeTemplatesStatus, loadRole, saveLibraryTemplate } from "./api";
 import { auditActor, auditChanges, AUDIT_ACTION_LABELS, fetchAudit, type AuditRecord } from "./adminApi";
 import { AVAIL_APP_NAME } from "./brand";
 import { AvailLogo } from "./BrandUi";
-import { lintBlock } from "./blockLint";
-import { LIFECYCLE_LABELS, LIFECYCLES, lifecycleText, parseLifecycleInput, type Lifecycle, type LifecycleInfo } from "./lifecycle";
+import { carriedLifecycle, LIFECYCLE_LABELS, LIFECYCLES, lifecycleOf, lifecycleText, parseLifecycleInput, type Lifecycle, type LifecycleInfo } from "./lifecycle";
 import { categoryOptions } from "./referenceLists";
 import { AvailListPicker } from "./ListPicker";
 import { AvailLintResult } from "./LibraryUi";
@@ -71,6 +70,8 @@ import {
   type StatusAction,
   type WsFilter,
   type WsRow,
+  lintAsStored,
+  workspaceLintContext,
 } from "./workspaceModel";
 import { BULK_BATCH, bulkReport, chunks, runBulk, selectionAfter } from "./workspaceBulk";
 import { buildXlsx } from "./xlsxWrite";
@@ -947,7 +948,10 @@ function DetailsPanel({
     return rest;
   }, [t]);
   const normalized = useMemo(() => (normalize ? normalizeBlock(plain as unknown as Record<string, unknown>) : null), [normalize, plain]);
-  const after = useMemo(() => (normalized ? lintBlock(normalized.template) : null), [normalized]);
+  // Linted as the save will be: the library's slot context and the template's lifecycle (an upcoming
+  // product's estimates do not lower the level).
+  const lintCtx = useMemo(() => workspaceLintContext(rows.map((r) => r.template)), [rows]);
+  const after = useMemo(() => (normalized ? lintAsStored(normalized.template, row.lifecycle, lintCtx) : null), [normalized, row.lifecycle, lintCtx]);
 
   const setStatus = async (status: "verified" | "hidden") => {
     setBusy(true);
@@ -1389,7 +1393,7 @@ function ProposalsTab() {
     () => (proposal && before ? diffTemplates(before as unknown as Record<string, unknown>, proposal.data as unknown as Record<string, unknown>) : null),
     [proposal, before],
   );
-  const lintAfter = useMemo(() => (proposal ? lintBlock(proposal.data) : null), [proposal]);
+  const lintAfter = useMemo(() => (proposal ? lintAsStored(proposal.data, (before && carriedLifecycle(before)) ?? lifecycleOf(null)) : null), [proposal, before]);
 
   const decide = async (accept: boolean) => {
     if (!proposal) return;

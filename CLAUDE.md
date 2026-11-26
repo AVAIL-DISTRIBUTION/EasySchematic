@@ -396,6 +396,23 @@ remove}`, остальное берётся из текущего шаблона
 запросов по токену). Ссылки — от `API_PUBLIC_URL` без пути. Текст записей журнала — `src/avail/auditText.ts` (чистый,
 для API и редактора). Подключение в claude.ai и Claude Code — `deploy/avail/README.md`.
 
+OAuth для коннектора (шаг 2.8; `api-avail/src/oauth.ts`, миграция 9013, клиент `src/avail/ClaudeAccessUi.tsx`):
+- `/mcp` принимает и `Bearer avail_oa_…` — токен OAuth 2.1 по спецификации авторизации MCP: discovery
+  `/.well-known/oauth-protected-resource[/…]` и `/.well-known/oauth-authorization-server[/…]` (издатель — `API_PUBLIC_URL`;
+  401 без токена отдаёт `resource_metadata`), динамическая регистрация `/oauth/register` (redirect — https или loopback),
+  `/oauth/authorize` (не вошёл — `/auth/google/start?returnTo=` на тот же запрос; вошёл — страница согласия; PKCE S256
+  обязателен), `/oauth/token` (код, refresh с ротацией; доступ 1 ч, refresh 30 дней), `/oauth/revoke`.
+- Подключаться могут вошедшие через Google пользователи домена `GOOGLE_ALLOWED_DOMAIN`, не отключённые, не служебные и не
+  AI Assistant. Токен превращается во внутреннюю сессию пользователя (как токены AI Assistant), поэтому роль и права —
+  его; журнал — от него, в колонке `token` — «via Claude» (`auditActor`: «email via Claude»). Инструменты MCP по роли
+  (`toolsFor`): engineer — чтение (`/templates?include=raw`), линтер, нормализатор, `propose_change`; librarian, admin,
+  AI Assistant — все. Статические токены `avail_ai_…` работают как прежде.
+- Users: колонка Claude access (`GET /avail/users/:id/oauth`, `POST /avail/oauth/grants/:id/revoke`, admin);
+  отключение пользователя отзывает подключения. Caddy проксирует корневые `/.well-known/oauth-*` в API.
+- Предпросмотры линтера учитывают жизненный цикл, как сохранение: `/avail/lint` и `/avail/normalize` (и MCP) — `_avail` /
+  `availLifecycle` шаблона, иначе сохранённые по id (с заметками каталога, `storedAvail`); панель Normalize и Proposals —
+  `lintAsStored` (`withLifecycle` в `lifecycle.ts`).
+
 Первого админа назначают в базе:
 `docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','<email>')"`
 (пользователь должен один раз войти).
@@ -574,6 +591,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/migrate.ts` | при старте применяет `api/migrations/*.sql`, затем наши `api-avail/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
 | `src/users.ts`, `src/audit.ts`, `src/requestAudit.ts` | пользователи и роли (`/avail/users`), журнал (`/avail/audit`), отключённые пользователи и журнал записей шаблонов вокруг каждого запроса |
 | `src/mcp.ts` | удалённый MCP-сервер библиотеки `/mcp` (инструменты поиска, карточки, линтера, черновиков, предложений, журнала) |
+| `src/oauth.ts` | OAuth 2.1 коннектора Claude: discovery, регистрация клиента, вход и согласие, токены, подключения в Users |
 | `src/accessTokens.ts`, `src/assistant.ts` | токены AI Assistant (выдача, проверка, частота, отзыв) и возможности роли (черновик, линтер, нормализатор) |
 | `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |

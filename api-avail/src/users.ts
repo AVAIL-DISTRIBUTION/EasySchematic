@@ -22,6 +22,8 @@ import type { app as UpstreamAppValue } from "../../api/src/index";
 import { requireAdminOrToken, requireModeratorOrToken } from "../../api/src/auth";
 import { availRoleOf, canReadAudit, isAssistant, isSystemAccount, upstreamRoleOf, type AvailRole } from "../../src/avail/roles";
 import { revokeUserTokens } from "./accessTokens";
+import type { D1DatabaseShim } from "./d1";
+import { revokeUserGrants } from "./oauth";
 import { ADMIN_TOKEN_ACTOR, AUDIT_PAGE, listAudit, writeAuditD1, type AuditEntity } from "./audit";
 
 type UpstreamApp = typeof UpstreamAppValue;
@@ -40,6 +42,8 @@ export interface AvailUser {
   system: boolean;
   /** Access tokens that work now (AI Assistant users; step 2.5). */
   activeTokens: number;
+  /** Claude connections (OAuth, step 2.8) that work now. */
+  activeClaudeAccess: number;
 }
 
 interface UserRow {
@@ -51,6 +55,7 @@ interface UserRow {
   created_at: string;
   last_login_at: string | null;
   active_tokens?: number;
+  active_oauth?: number;
 }
 
 const NO_CACHE = { "Cache-Control": "no-store" };
@@ -66,6 +71,7 @@ function toUser(r: UserRow): AvailUser {
     active: !r.banned,
     system: isSystemAccount(r.email),
     activeTokens: r.active_tokens ?? 0,
+    activeClaudeAccess: r.active_oauth ?? 0,
   };
 }
 
@@ -139,11 +145,13 @@ async function changeAccess(c: Ctx, active: boolean | null): Promise<Response> {
     // Disabled: signed out everywhere at once.
     ...(active ? [] : [db.prepare("DELETE FROM sessions WHERE user_id = ?").bind(user.id)]),
   ]);
-  // Disabled: every access token of theirs is revoked.
+  // Disabled: every access token and Claude connection of theirs is revoked.
   const revoked = active ? [] : await revokeUserTokens(db, user.id, actorOf(auth).actor, "user disabled");
+  const claude = active ? [] : revokeUserGrants((db as unknown as D1DatabaseShim).sqlite, user.id, actorOf(auth).actor, "user disabled");
   await writeAuditD1(db, [{
     ...actorOf(auth), entity: "user", entityId: user.id, entityLabel: user.email, action: "access",
-    before: { active: !user.banned }, after: { active, ...(revoked.length ? { tokensRevoked: revoked.map((t) => t.name) } : {}) },
+    before: { active: !user.banned },
+    after: { active, ...(revoked.length ? { tokensRevoked: revoked.map((t) => t.name) } : {}), ...(claude.length ? { claudeAccessRevoked: claude.map((g) => g.client) } : {}) },
   }]);
   return c.json(toUser({ ...user, banned: active ? 0 : 1 }), 200, NO_CACHE);
 }
@@ -154,7 +162,8 @@ export function registerUserRoutes(app: UpstreamApp): void {
     const { results } = await c.env.easyschematic_db
       .prepare(
         `SELECT id, email, name, role, banned, created_at, last_login_at,
-                (SELECT COUNT(*) FROM avail_access_tokens t WHERE t.user_id = users.id AND t.revoked_at IS NULL AND t.expires_at > datetime('now')) AS active_tokens
+                (SELECT COUNT(*) FROM avail_access_tokens t WHERE t.user_id = users.id AND t.revoked_at IS NULL AND t.expires_at > datetime('now')) AS active_tokens,
+                (SELECT COUNT(*) FROM avail_oauth_grants g WHERE g.user_id = users.id AND g.revoked_at IS NULL AND g.refresh_expires_at > datetime('now')) AS active_oauth
            FROM users ORDER BY email`,
       )
       .all<UserRow>();
