@@ -37,7 +37,7 @@
       "from": "Extron DTP Systems Engineering Drawings/DTP - DTP3 Receivers Eng.vssx",
       "label": "DTP3 R 201 D, Black",
       "match": "part-number",
-      "level": "B"
+      "level": "A"
     }
   },
   "ports": [

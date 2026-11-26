@@ -36,7 +36,7 @@
       "label": "Extron IPA T RLY4",
       "match": "part-number",
       "status": "raw",
-      "level": "FIX"
+      "level": "B"
     }
   },
   "ports": [

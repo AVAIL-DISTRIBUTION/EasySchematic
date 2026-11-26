@@ -15,11 +15,11 @@
  * the audit log per run (not one per template).
  */
 import type Database from "better-sqlite3";
-import { rowToTemplate, type TemplateRow } from "../../api/src/db";
+import type { TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { catalogIndex, describeOrigin, parseCatalogMeta, portsOrigin, type PortsOriginInfo } from "../../src/avail/portsOrigin";
 import { AVAIL_CATALOG_SOURCE } from "./importCatalog";
-import { BUMP_LIBRARY_VERSION, slotContext } from "./templateMeta";
+import { blockOfRow, BUMP_LIBRARY_VERSION, slotContext } from "./templateMeta";
 
 export const APPROVE_CATALOG_USER = "approve-catalog";
 
@@ -71,7 +71,7 @@ export function approveCatalog(sqlite: Database.Database, options: { dryRun?: bo
     .all(AVAIL_CATALOG_SOURCE) as (TemplateRow & { avail_source: string; avail_catalog: string | null })[];
 
   const rows: ApproveCatalogRow[] = drafts.map((r) => {
-    const level = lintBlock(rowToTemplate(r), ctx).level;
+    const level = lintBlock(blockOfRow(r, r.avail_catalog), ctx).level;
     const origin = portsOrigin({ source: r.avail_source, catalog: parseCatalogMeta(r.avail_catalog) }, byFile);
     const left = leftReason(origin, level);
     return {

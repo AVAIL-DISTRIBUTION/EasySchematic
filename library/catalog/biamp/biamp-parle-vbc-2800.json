@@ -39,7 +39,7 @@
       "label": "Biamp Parle VBC 2800",
       "match": "model-name",
       "status": "raw",
-      "level": "FIX"
+      "level": "B"
     }
   },
   "ports": [

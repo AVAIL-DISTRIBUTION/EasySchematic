@@ -95,9 +95,29 @@ export function slotContext(sqlite: Database.Database): SlotLibraryContext {
   return slotContextOfRows(sqlite.prepare(SLOT_ROWS).all() as { slot_family: string | null; slots: string | null }[]);
 }
 
-/** Standard level of a stored template row (with the library's slot context when given). */
-export function lintRow(row: TemplateRow, library?: SlotLibraryContext): BlockLevel {
-  return lintBlock(rowToTemplate(row), library).level;
+/**
+ * A stored template as the linter sees it: the template, plus what import:catalog moved to
+ * avail_template_meta.catalog and the standard reads — the catalog description (room-mounted by
+ * name, 3.2) and rackForm. With it a template lints in the database as its catalog file does.
+ */
+export function blockOfRow(row: TemplateRow, catalogJson?: string | null): object {
+  const t = rowToTemplate(row) as unknown as Record<string, unknown>;
+  if (!catalogJson) return t;
+  try {
+    const c = JSON.parse(catalogJson) as { description?: unknown; rackForm?: unknown };
+    return {
+      ...t,
+      ...(typeof c.rackForm === "string" ? { rackForm: c.rackForm } : {}),
+      ...(typeof c.description === "string" ? { _avail: { description: c.description } } : {}),
+    };
+  } catch {
+    return t;
+  }
+}
+
+/** Standard level of a stored template row (with the library's slot context and its catalog meta when given). */
+export function lintRow(row: TemplateRow & { avail_catalog?: string | null }, library?: SlotLibraryContext): BlockLevel {
+  return lintBlock(blockOfRow(row, row.avail_catalog), library).level;
 }
 
 /**
@@ -108,7 +128,7 @@ export function lintRow(row: TemplateRow, library?: SlotLibraryContext): BlockLe
 export function relintAll(sqlite: Database.Database): number {
   const ctx = slotContext(sqlite);
   const rows = sqlite
-    .prepare("SELECT t.*, m.lint_level AS avail_level FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id")
+    .prepare("SELECT t.*, m.lint_level AS avail_level, m.catalog AS avail_catalog FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id")
     .all() as (TemplateRow & { avail_level: BlockLevel | null })[];
   const upsert = sqlite.prepare(
     `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at)
@@ -156,7 +176,7 @@ export interface SyncResult {
 export function syncLintLevels(sqlite: Database.Database): SyncResult {
   const stale = sqlite
     .prepare(
-      `SELECT t.*, m.status AS avail_status FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
+      `SELECT t.*, m.status AS avail_status, m.catalog AS avail_catalog FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
         WHERE m.template_id IS NULL OR m.lint_level IS NULL OR m.linted_version IS NULL OR m.linted_version <> t.version`,
     )
     .all() as (TemplateRow & { avail_status: TemplateStatus | null })[];
@@ -229,9 +249,10 @@ export async function setTemplateStatus(
 ): Promise<SetStatusResult> {
   const row = await db.prepare("SELECT * FROM templates WHERE id = ?").bind(templateId).first<TemplateRow>();
   if (!row) return { ok: false, reason: "not_found" };
-  const previous = (await db.prepare("SELECT status FROM avail_template_meta WHERE template_id = ?").bind(templateId).first<{ status: TemplateStatus }>())?.status ?? "raw";
+  const prev = await db.prepare("SELECT status, catalog FROM avail_template_meta WHERE template_id = ?").bind(templateId).first<{ status: TemplateStatus; catalog: string | null }>();
+  const previous = prev?.status ?? "raw";
   const { results: slotRows } = await db.prepare(SLOT_ROWS).all<{ slot_family: string | null; slots: string | null }>();
-  const lint = lintBlock(rowToTemplate(row), slotContextOfRows(slotRows));
+  const lint = lintBlock(blockOfRow(row, prev?.catalog), slotContextOfRows(slotRows));
   if (status === "verified" && lint.level !== "A") return { ok: false, reason: "not_level_a", lint };
   await db.batch([
     db

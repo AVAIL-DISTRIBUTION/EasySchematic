@@ -40,7 +40,7 @@
       "label": "Extron UCS 303",
       "match": "part-number",
       "status": "raw",
-      "level": "FIX"
+      "level": "B"
     }
   },
   "ports": [
