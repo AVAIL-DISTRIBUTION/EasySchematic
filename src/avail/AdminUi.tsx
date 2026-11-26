@@ -3,9 +3,10 @@
  * Audit log (librarian and admin). Mounted from upstream's UserMenuButton: the entries inside its
  * dropdown, the dialogs next to it (they outlive the dropdown).
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { AUDIT_ACTION_LABELS, auditChanges, fetchAudit, fetchUsers, setUserActive, setUserRole, type AuditRecord, type AvailUser } from "./adminApi";
+import { TokensPanel } from "./TokensUi";
+import { AUDIT_ACTION_LABELS, auditActor, auditChanges, fetchAudit, fetchUsers, setUserActive, setUserRole, type AuditRecord, type AvailUser } from "./adminApi";
 import { openAdminPage, useAdminPage, type AdminPage } from "./adminPages";
 import { loadRole } from "./api";
 import { isAvailBuild } from "./brand";
@@ -124,10 +125,12 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
   const [users, setUsers] = useState<AvailUser[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
+  const [tokensOf, setTokensOf] = useState<string | null>(null);
 
-  useEffect(() => {
+  const reload = useCallback(() => {
     fetchUsers().then(setUsers, (e: Error) => setError(e.message));
   }, []);
+  useEffect(reload, [reload]);
 
   const apply = async (id: string, change: () => Promise<AvailUser>) => {
     setBusy(id);
@@ -163,11 +166,13 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
                 <th className="px-2 py-2 font-medium">Role</th>
                 <th className="px-2 py-2 font-medium">Last sign-in</th>
                 <th className="px-2 py-2 font-medium">Access</th>
+                <th className="px-2 py-2 font-medium">Tokens</th>
               </tr>
             </thead>
             <tbody>
               {users.map((u) => (
-                <tr key={u.id} data-testid="avail-user-row" className={`border-t border-[var(--color-border)] ${u.active ? "" : "text-[var(--color-text-muted)]"}`}>
+                <Fragment key={u.id}>
+                <tr data-testid="avail-user-row" className={`border-t border-[var(--color-border)] ${u.active ? "" : "text-[var(--color-text-muted)]"}`}>
                   <td className="px-4 py-1.5">{u.name || "—"}</td>
                   <td className="px-2 py-1.5">{u.email}</td>
                   <td className="px-2 py-1.5">
@@ -212,7 +217,29 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
                       </>
                     )}
                   </td>
+                  <td className="px-2 py-1.5">
+                    {u.role === "assistant" ? (
+                      <button
+                        data-testid="avail-user-tokens"
+                        className="underline cursor-pointer"
+                        onClick={() => setTokensOf((t) => (t === u.id ? null : u.id))}
+                        title="Access tokens: this AI Assistant signs in with them instead of Google"
+                      >
+                        {u.activeTokens ? `${u.activeTokens} active` : "None"} · {tokensOf === u.id ? "Hide" : "Manage"}
+                      </button>
+                    ) : (
+                      <span className="text-[var(--color-text-muted)]">—</span>
+                    )}
+                  </td>
                 </tr>
+                {tokensOf === u.id && (
+                  <tr className="bg-[var(--color-surface-hover)]">
+                    <td colSpan={6} className="px-4">
+                      <TokensPanel user={u} onChanged={reload} />
+                    </td>
+                  </tr>
+                )}
+                </Fragment>
               ))}
             </tbody>
           </table>
@@ -290,7 +317,7 @@ export function AuditLogDialog({ onClose }: { onClose: () => void }) {
             {rows.map((r) => (
               <tr key={r.id} data-testid="avail-audit-row" className="border-t border-[var(--color-border)] align-top">
                 <td className="px-4 py-1.5 whitespace-nowrap">{r.at}</td>
-                <td className="px-2 py-1.5">{r.actor}</td>
+                <td className="px-2 py-1.5">{auditActor(r)}</td>
                 <td className="px-2 py-1.5">
                   <div>{AUDIT_ACTION_LABELS[r.action]}</div>
                   <div className="text-[var(--color-text-muted)]">{r.entityLabel ?? r.entityId}</div>

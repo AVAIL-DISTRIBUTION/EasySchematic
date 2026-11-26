@@ -10,12 +10,15 @@
  *   - CLIs that change statuses (approve:catalog).
  * Read by GET /avail/audit (librarian and admin).
  */
+import { AsyncLocalStorage } from "node:async_hooks";
 import { execFileSync } from "node:child_process";
 import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 
 export type AuditEntity = "user" | "template" | "run";
-export type AuditAction = "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate";
+export type AuditAction =
+  | "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate"
+  | "token" | "request";
 
 export interface AuditEntry {
   actor: string;
@@ -26,6 +29,8 @@ export interface AuditEntry {
   action: AuditAction;
   before?: unknown;
   after?: unknown;
+  /** The access token the change was made with (its name); default: the current request's. */
+  token?: string | null;
 }
 
 export interface AuditRecord extends Omit<AuditEntry, "before" | "after"> {
@@ -39,13 +44,20 @@ export interface AuditRecord extends Omit<AuditEntry, "before" | "after"> {
 export const SYSTEM_ACTOR = "system";
 export const ADMIN_TOKEN_ACTOR = "admin-token";
 
-const INSERT = `INSERT INTO avail_audit_log (actor, actor_id, entity, entity_id, entity_label, action, before, after)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+/**
+ * The request being served (server.ts): the access token it signed in with, so every audit entry
+ * written while serving it names the token (step 2.5).
+ */
+export const requestContext = new AsyncLocalStorage<{ token: { id: string; name: string } | null }>();
+
+const INSERT = `INSERT INTO avail_audit_log (actor, actor_id, entity, entity_id, entity_label, action, before, after, token)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
 const json = (v: unknown) => (v === undefined || v === null ? null : JSON.stringify(v));
 
 function params(e: AuditEntry): unknown[] {
-  return [e.actor, e.actorId ?? null, e.entity, e.entityId, e.entityLabel ?? null, e.action, json(e.before), json(e.after)];
+  const token = e.token !== undefined ? e.token : (requestContext.getStore()?.token?.name ?? null);
+  return [e.actor, e.actorId ?? null, e.entity, e.entityId, e.entityLabel ?? null, e.action, json(e.before), json(e.after), token];
 }
 
 /** Writes entries with better-sqlite3 (server wrapper, CLIs); no-op for an empty list. */
@@ -231,7 +243,7 @@ export async function listAudit(db: D1Database, q: AuditQuery): Promise<AuditRec
   const sql = `SELECT * FROM avail_audit_log ${where.length ? `WHERE ${where.join(" AND ")}` : ""} ORDER BY id DESC LIMIT ${limit}`;
   const { results } = await db.prepare(sql).bind(...args).all<{
     id: number; at: string; actor: string; actor_id: string | null; entity: AuditEntity; entity_id: string;
-    entity_label: string | null; action: AuditAction; before: string | null; after: string | null;
+    entity_label: string | null; action: AuditAction; before: string | null; after: string | null; token: string | null;
   }>();
   const parse = (s: string | null) => (s ? (JSON.parse(s) as unknown) : null);
   return results.map((r) => ({
@@ -245,5 +257,6 @@ export async function listAudit(db: D1Database, q: AuditQuery): Promise<AuditRec
     action: r.action,
     before: parse(r.before),
     after: parse(r.after),
+    token: r.token ?? null,
   }));
 }

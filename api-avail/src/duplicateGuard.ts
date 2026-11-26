@@ -1,7 +1,8 @@
 /**
  * Duplicate guard on save (step 2.4), run by server.ts before upstream's routes:
  *
- *   POST /templates                  a new template
+ *   POST /templates                  a new template (also POST /avail/templates/draft, an AI
+ *                                    Assistant's draft)
  *   PUT  /templates/:id              a saved template (Edit → Save to library), when its
  *                                    manufacturer or modelNumber changes
  *   POST /submissions/:id/approve    an accepted proposal (create; update as for PUT), with the
@@ -38,7 +39,8 @@ async function body(request: Request): Promise<Obj | null> {
 /** What the request would write, or null when it is not a template save. */
 async function planned(sqlite: Database.Database, request: Request): Promise<Planned | null> {
   const p = new URL(request.url).pathname.replace(/\/+$/, "");
-  if (request.method === "POST" && p === "/templates") {
+  // A new template: upstream's POST /templates, or an AI Assistant's draft (assistant.ts).
+  if (request.method === "POST" && (p === "/templates" || p === "/avail/templates/draft")) {
     const b = await body(request);
     return b ? { id: null, data: b } : null;
   }

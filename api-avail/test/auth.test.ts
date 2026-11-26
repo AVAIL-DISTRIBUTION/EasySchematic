@@ -132,7 +132,8 @@ async function googleLogin(api: ApiServer, claims: Record<string, unknown>) {
   return req(api, `/auth/google/callback?code=abc&state=${state}`);
 }
 
-const userCount = (api: ApiServer) => (api.db.sqlite.prepare("SELECT COUNT(*) AS n FROM users").get() as { n: number }).n;
+// People only: the AI Assistant service account (migration 9010) is always there.
+const userCount = (api: ApiServer) => (api.db.sqlite.prepare("SELECT COUNT(*) AS n FROM users WHERE email NOT LIKE '%.invalid'").get() as { n: number }).n;
 
 describe("GOOGLE_ALLOWED_DOMAIN", () => {
   const env = { ALLOWED_ORIGINS: OURS, API_PUBLIC_URL: API, GOOGLE_ALLOWED_DOMAIN: "avail-int.com", DISABLE_MAGIC_LINK: "1" };

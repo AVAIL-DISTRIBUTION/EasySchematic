@@ -5,10 +5,12 @@
  *
  *   GET /avail/users                 admin (session or ADMIN_TOKEN): every user with name, email,
  *                                    role, created, last sign-in, active
- *   PUT /avail/users/:id/role        admin: { "role": "engineer" | "librarian" | "admin" }
+ *   PUT /avail/users/:id/role        admin: { "role": "engineer" | "assistant" | "librarian" | "admin" };
+ *                                    leaving AI Assistant revokes the user's access tokens
  *                                    (upstream's contributor / moderator / admin also accepted)
  *   PUT /avail/users/:id/active      admin: { "active": true | false }; disabling deletes sessions
- *   GET /avail/audit                 librarian or admin: the audit log, newest first;
+ *                                    and revokes access tokens
+ *   GET /avail/audit                 librarian, admin or AI Assistant: the audit log, newest first;
  *                                    ?entity=user|template&entityId=&actor=&before=<id>&limit=
  *
  * The last active admin can be neither demoted nor disabled (409); neither can a system account
@@ -18,7 +20,8 @@
  */
 import type { app as UpstreamAppValue } from "../../api/src/index";
 import { requireAdminOrToken, requireModeratorOrToken } from "../../api/src/auth";
-import { availRoleOf, isSystemAccount, upstreamRoleOf, type AvailRole } from "../../src/avail/roles";
+import { availRoleOf, canReadAudit, isAssistant, isSystemAccount, upstreamRoleOf, type AvailRole } from "../../src/avail/roles";
+import { revokeUserTokens } from "./accessTokens";
 import { ADMIN_TOKEN_ACTOR, AUDIT_PAGE, listAudit, writeAuditD1, type AuditEntity } from "./audit";
 
 type UpstreamApp = typeof UpstreamAppValue;
@@ -35,6 +38,8 @@ export interface AvailUser {
   active: boolean;
   /** Service account (email on .invalid): role and access cannot be changed. */
   system: boolean;
+  /** Access tokens that work now (AI Assistant users; step 2.5). */
+  activeTokens: number;
 }
 
 interface UserRow {
@@ -45,6 +50,7 @@ interface UserRow {
   banned: number;
   created_at: string;
   last_login_at: string | null;
+  active_tokens?: number;
 }
 
 const NO_CACHE = { "Cache-Control": "no-store" };
@@ -59,6 +65,7 @@ function toUser(r: UserRow): AvailUser {
     lastLoginAt: r.last_login_at,
     active: !r.banned,
     system: isSystemAccount(r.email),
+    activeTokens: r.active_tokens ?? 0,
   };
 }
 
@@ -95,7 +102,7 @@ async function changeRole(c: Ctx): Promise<Response> {
   if (!auth) return c.json({ error: "Admin access required" }, 403);
   const body = await readJson(c);
   const role = upstreamRoleOf(body?.role);
-  if (!role) return c.json({ error: "role must be engineer, librarian or admin" }, 400);
+  if (!role) return c.json({ error: "role must be engineer, assistant, librarian or admin" }, 400);
   const db = c.env.easyschematic_db;
   const user = await getUser(db, c.req.param("id")!);
   if (!user) return c.json({ error: "User not found" }, 404);
@@ -105,9 +112,11 @@ async function changeRole(c: Ctx): Promise<Response> {
     return c.json({ error: LAST_ADMIN_ERROR }, 409);
   }
   await db.prepare("UPDATE users SET role = ? WHERE id = ?").bind(role, user.id).run();
+  // No longer an AI Assistant: their access tokens stop working (accessTokens.ts checks the role too).
+  const revoked = isAssistant(user.role) ? await revokeUserTokens(db, user.id, actorOf(auth).actor, "role changed") : [];
   await writeAuditD1(db, [{
     ...actorOf(auth), entity: "user", entityId: user.id, entityLabel: user.email, action: "role",
-    before: { role: availRoleOf(user.role) }, after: { role: availRoleOf(role) },
+    before: { role: availRoleOf(user.role) }, after: { role: availRoleOf(role), ...(revoked.length ? { tokensRevoked: revoked.map((t) => t.name) } : {}) },
   }]);
   return c.json(toUser({ ...user, role }), 200, NO_CACHE);
 }
@@ -130,9 +139,11 @@ async function changeAccess(c: Ctx, active: boolean | null): Promise<Response> {
     // Disabled: signed out everywhere at once.
     ...(active ? [] : [db.prepare("DELETE FROM sessions WHERE user_id = ?").bind(user.id)]),
   ]);
+  // Disabled: every access token of theirs is revoked.
+  const revoked = active ? [] : await revokeUserTokens(db, user.id, actorOf(auth).actor, "user disabled");
   await writeAuditD1(db, [{
     ...actorOf(auth), entity: "user", entityId: user.id, entityLabel: user.email, action: "access",
-    before: { active: !user.banned }, after: { active },
+    before: { active: !user.banned }, after: { active, ...(revoked.length ? { tokensRevoked: revoked.map((t) => t.name) } : {}) },
   }]);
   return c.json(toUser({ ...user, banned: active ? 0 : 1 }), 200, NO_CACHE);
 }
@@ -141,7 +152,11 @@ export function registerUserRoutes(app: UpstreamApp): void {
   app.get("/avail/users", async (c) => {
     if (!requireAdminOrToken(c)) return c.json({ error: "Admin access required" }, 403);
     const { results } = await c.env.easyschematic_db
-      .prepare("SELECT id, email, name, role, banned, created_at, last_login_at FROM users ORDER BY email")
+      .prepare(
+        `SELECT id, email, name, role, banned, created_at, last_login_at,
+                (SELECT COUNT(*) FROM avail_access_tokens t WHERE t.user_id = users.id AND t.revoked_at IS NULL AND t.expires_at > datetime('now')) AS active_tokens
+           FROM users ORDER BY email`,
+      )
       .all<UserRow>();
     return c.json(results.map(toUser), 200, NO_CACHE);
   });
@@ -159,7 +174,7 @@ export function registerUserRoutes(app: UpstreamApp): void {
   });
 
   app.get("/avail/audit", async (c) => {
-    if (!requireModeratorOrToken(c)) return c.json({ error: "Librarian or admin access required" }, 403);
+    if (!requireModeratorOrToken(c) && !canReadAudit(c.get("user")?.role)) return c.json({ error: "Librarian, admin or AI Assistant access required" }, 403);
     const entity = c.req.query("entity");
     if (entity && entity !== "user" && entity !== "template" && entity !== "run") return c.json({ error: "entity must be user, template or run" }, 400);
     const num = (v: string | undefined) => (v && /^\d+$/.test(v) ? Number(v) : undefined);

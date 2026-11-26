@@ -249,6 +249,7 @@ Editor upstream на временной копии шаблона из базы 
 | Роль | users.role | Права |
 |------|-----------|-------|
 | Engineer | contributor (по умолчанию для нового пользователя) | схемы, библиотека verified + draft, свои шаблоны, предложение правки блока (submissions upstream) |
+| AI Assistant | assistant (наше значение; для upstream — обычный пользователь) | вход по токену; чтение библиотеки, данных рабочего окна, журнала и проектов, к которым есть доступ (свои и по ссылке `/shared/:token`); черновики шаблонов, предложения правок, линтер и нормализатор без сохранения. Не может утверждать, скрывать, удалять, сливать дубли, решать «не дубли», менять роли и доступ, массовые действия |
 | Librarian | moderator | + правка, утверждение, скрытие шаблонов, массовые операции, журнал изменений |
 | Admin | admin | + пользователи и роли |
 
@@ -296,6 +297,27 @@ Save to library), Approve, Hide. Данные — `GET /avail/workspace/template
 линтер предложенной версии; Accept → `/submissions/:id/approve` (правка записывается, уровень и статус — по обычным
 правилам), Reject с комментарием → `/:id/reject`. Решение пишется в журнал отдельной записью (action `proposal`:
 accepted / rejected, комментарий, автор; `requestAudit.ts` `readProposalDecision`), сама правка — как обычное updated.
+
+AI Assistant и токены (шаг 2.5; `api-avail/src/accessTokens.ts`, `assistant.ts`, миграция 9010):
+- Токен — `Authorization: Bearer avail_ai_…`, без Google. Выдаёт admin в Users (строка пользователя с ролью AI Assistant →
+  Tokens → имя и срок, обязательный, не больше 366 дней; кнопки 30 / 90 дней / 1 год); значение показывается один раз, в базе —
+  SHA-256 (`avail_access_tokens.token_hash`) и последние 4 символа (`hint`). Список — создан кем и когда, срок, последнее
+  использование, состояние (Active / Expired / Revoked), Revoke. API: `GET|POST /avail/users/:id/tokens`, `POST
+  /avail/tokens/:id/revoke` (admin).
+- Сервер (`server.ts` → `resolveAccessToken`) проверяет токен до всего остального и подменяет заголовок на внутреннюю сессию
+  (строка `sessions` со сроком токена, `avail_access_tokens.session_id`), поэтому проверки upstream работают как для обычного
+  пользователя. 401 с текстом: неизвестный токен, отозван (дата), истёк (дата), пользователь отключён, пользователь больше не AI
+  Assistant. 429 с `Retry-After` — больше `AI_TOKEN_RATE_LIMIT` запросов в минуту на токен (по умолчанию 120, счётчик в памяти).
+  Ответы отдаёт внутренний маршрут приложения — CORS работает.
+- Отключение пользователя отзывает все его токены; смена роли с AI Assistant — тоже (причина в `revoked_reason`).
+- Служебный пользователь `claude@avail.invalid` (id `avail-ai-assistant`, миграция 9010) — роль AI Assistant, в Users метка System
+  (роль и доступ не меняются), токены выдавать можно.
+- Журнал: всё, что сделано по токену, пишется от пользователя токена, в колонке `avail_audit_log.token` — имя токена
+  (`requestContext` в `audit.ts`, AsyncLocalStorage на время запроса); каждый запрос на запись по токену — запись `request`
+  (метод, путь, статус); выдача и отзыв — `token` (entity user). В журнале и истории шаблона: «actor (token “имя”)».
+- Возможности роли: `POST /avail/templates/draft` (новый шаблон в статусе draft, meta source `ai-assistant`, проверка дублей
+  409 как у `POST /templates`), `POST /avail/lint` и `POST /avail/normalize` `{template}` — результат без сохранения (любой
+  вошедший); предложения — `POST /submissions` upstream; `GET /avail/audit` и `GET /avail/workspace/templates` открыты для роли.
 
 Первого админа назначают в базе:
 `docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','<email>')"`
@@ -474,6 +496,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/r2.ts` | шим R2 поверх файлов: `get/put/delete/list/head` с http/custom-метаданными; `DATA_DIR/r2/objects/*` + `DATA_DIR/r2/meta/*.json` |
 | `src/migrate.ts` | при старте применяет `api/migrations/*.sql`, затем наши `api-avail/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
 | `src/users.ts`, `src/audit.ts`, `src/requestAudit.ts` | пользователи и роли (`/avail/users`), журнал (`/avail/audit`), отключённые пользователи и журнал записей шаблонов вокруг каждого запроса |
+| `src/accessTokens.ts`, `src/assistant.ts` | токены AI Assistant (выдача, проверка, частота, отзыв) и возможности роли (черновик, линтер, нормализатор) |
 | `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
 | `src/importAvail.ts`, `src/importAvailCli.ts` | загрузка курируемой библиотеки `library/avail` (`npm run import:avail`); в образе — `/app/library`, `AVAIL_LIBRARY_DIR` |
@@ -564,6 +587,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `ALLOWED_ORIGINS` | — (как upstream: `*.easyschematic.live` + loopback) | origin через запятую; **заменяет** список upstream для CORS с cookie и для `returnTo` |
 | `GOOGLE_ALLOWED_DOMAIN` | — (любой аккаунт Google) | домен(ы) Workspace через запятую; вход только при совпадении claim `hd` |
 | `DISABLE_MAGIC_LINK` | — (вход по почте включён) | `1` — вход по почте отключён (403). Без него ограничение домена обходится через magic-link, сервер пишет предупреждение |
+| `AI_TOKEN_RATE_LIMIT` | `120` | запросов в минуту на один токен AI Assistant (сверх — 429) |
 | `MAX_SCHEMATICS_PER_USER` | — (как upstream: 10) | сколько схем может сохранить пользователь; `0` — без лимита (в `deploy/avail` — `0`); нецелое или отрицательное значение = 10 |
 | `SUPPORT_FORWARD_EMAIL` | — | не используется (почта отключена) |
 

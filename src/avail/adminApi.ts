@@ -15,6 +15,24 @@ export interface AvailUser {
   active: boolean;
   /** Service account (email on .invalid): shown as System, role and access fixed. */
   system?: boolean;
+  /** Access tokens that work now (AI Assistant users). */
+  activeTokens?: number;
+}
+
+/** An AI Assistant's access token as the admin sees it (no value: shown once, when created). */
+export interface AccessToken {
+  id: string;
+  userId: string;
+  name: string;
+  hint: string;
+  createdBy: string;
+  createdAt: string;
+  expiresAt: string;
+  lastUsedAt: string | null;
+  revokedAt: string | null;
+  revokedBy: string | null;
+  revokedReason: string | null;
+  state: "active" | "expired" | "revoked";
 }
 
 export interface AuditRecord {
@@ -25,9 +43,11 @@ export interface AuditRecord {
   entity: "user" | "template" | "run";
   entityId: string;
   entityLabel: string | null;
-  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate";
+  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate" | "token" | "request";
   before: Record<string, unknown> | null;
   after: Record<string, unknown> | null;
+  /** The access token the change was made with (its name). */
+  token?: string | null;
 }
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
@@ -48,6 +68,24 @@ export const setUserRole = (id: string, role: AvailRole) =>
 
 export const setUserActive = (id: string, active: boolean) =>
   call<AvailUser>(`/avail/users/${encodeURIComponent(id)}/active`, { method: "PUT", body: JSON.stringify({ active }) });
+
+export const fetchTokens = (userId: string) => call<AccessToken[]>(`/avail/users/${encodeURIComponent(userId)}/tokens`);
+
+export const createToken = (userId: string, name: string, expiresAt: string) =>
+  call<{ token: AccessToken; value: string }>(`/avail/users/${encodeURIComponent(userId)}/tokens`, { method: "POST", body: JSON.stringify({ name, expiresAt }) });
+
+export const revokeToken = (id: string) => call<AccessToken>(`/avail/tokens/${encodeURIComponent(id)}/revoke`, { method: "POST", body: "{}" });
+
+/** Expiry choices for a new token: days from today → the date (YYYY-MM-DD). */
+export const TOKEN_EXPIRY_DAYS = [30, 90, 365] as const;
+export function expiryDate(days: number, today: Date = new Date()): string {
+  return new Date(today.getTime() + days * 86_400_000).toISOString().slice(0, 10);
+}
+
+/** Who did it: the actor, and the token when it was done with one. */
+export function auditActor(r: AuditRecord): string {
+  return r.token ? `${r.actor} (token “${r.token}”)` : r.actor;
+}
 
 export function fetchAudit(q: { entity?: "user" | "template" | "run"; entityId?: string; before?: number; limit?: number } = {}): Promise<AuditRecord[]> {
   const p = new URLSearchParams();
@@ -72,6 +110,8 @@ export const AUDIT_ACTION_LABELS: Readonly<Record<AuditRecord["action"], string>
   run: "Command run",
   proposal: "Proposal decided",
   "not-duplicate": "Not a duplicate",
+  token: "Access token",
+  request: "API request",
 };
 
 function short(v: unknown, max = 60): string {
@@ -103,6 +143,15 @@ export function auditChanges(r: AuditRecord): string[] {
     if (typeof a.notDuplicateOf === "string") return [`Marked as not a duplicate of ${String(a.notDuplicateOfLabel ?? a.notDuplicateOf)}: ${String(a.comment ?? "")}`];
     const of = String(b.notDuplicateOfLabel ?? b.notDuplicateOf ?? "?");
     return [a.removed === "undone" ? `Undone: not a duplicate of ${of}` : `Decision on ${of} removed: ${String(a.removed ?? "")}`];
+  }
+  if (r.action === "token") {
+    const a = r.after ?? {};
+    if (typeof a.created === "string") return [`Created “${a.created}”, expires ${String(a.expiresAt ?? "").slice(0, 10)}`];
+    return [`Revoked “${String(a.revoked ?? "")}”: ${String(a.reason ?? "")}`];
+  }
+  if (r.action === "request") {
+    const a = r.after ?? {};
+    return [`${String(a.method ?? "")} ${String(a.path ?? "")} → ${String(a.status ?? "")}`];
   }
   if (r.action === "created") return [];
   if (r.action === "deleted") return [];
