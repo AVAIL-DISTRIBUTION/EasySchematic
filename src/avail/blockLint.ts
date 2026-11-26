@@ -229,8 +229,10 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
         break;
       }
     }
-    // A card in a slot is powered by its chassis (standard "Slots and cards").
-    const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive" || truthy(d.slotFamily);
+    // A card in a slot is powered by its chassis (standard "Slots and cards"). A chassis whose
+    // only connections are slots and that has no power input is passive (v0.10, R1: CCD drawers).
+    const slotsOnly = truthy(d.slots) && !truthy(d.ports);
+    const passive = deviceType === "speaker" || deviceType === "antenna" || deviceType === "passive" || truthy(d.slotFamily) || slotsOnly;
     // A USB bus-powered device draws a published wattage at the bus voltage: powerDrawW is enough.
     const usbPowered = asArray(d.ports).some((p) => typeof asObj(p).notes === "string" && USB_BUS_POWER_RE.test(asObj(p).notes as string));
     const otherPowered = asArray(d.ports).some((p) => typeof asObj(p).notes === "string" && NO_POWER_FIGURE_RE.test(asObj(p).notes as string));

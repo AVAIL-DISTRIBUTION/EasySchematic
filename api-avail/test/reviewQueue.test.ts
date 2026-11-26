@@ -72,23 +72,17 @@ describe("proposed rules", () => {
     warnings: lintBlock(t).warnings, origin: { origin: "manufacturer", kind: "stencil" }, where,
   });
 
-  it("R2 voltage from the power notes, R3 label wording; simulated on copies, the cards stay as they are", () => {
-    const noVolt = card({ voltage: undefined, ports: [card().ports[0], { ...card().ports[1], notes: "External 12VDC PSU" }] });
-    const longLabel = card({ ports: [{ ...card().ports[0], label: "HDMI Output 1 (Buffered Mirror)", direction: "output", section: "Video Outputs" }, card().ports[1]] });
-    expect(PROPOSED_RULES[1].apply(noVolt)!.t.voltage).toBe("12V DC");
-    expect((PROPOSED_RULES[2].apply(longLabel)!.t.ports as { label: string; notes?: string }[])[0]).toMatchObject({ label: "HDMI Out 1 (Buffered Mirror)" }); // 28: fits after In/Out
-    const templates = new Map([["a", noVolt], ["b", longLabel]]);
-    const md = proposedRules([item(noVolt, "a"), item(longLabel, "b")], templates).join("\n");
-    expect(md).toContain("| R2. Voltage from the power input's notes | 1 | 1 | 1 | 1 |");
-    expect(md).toMatch(/\| R3\. .* \| 1 \| 1 \| 1 \| 1 \|/);
-    expect(noVolt.voltage).toBeUndefined();
-    expect(longLabel.ports[0].label).toBe("HDMI Output 1 (Buffered Mirror)");
+  it("none pending: the section says R1–R3 were applied", () => {
+    expect(PROPOSED_RULES).toEqual([]);
+    expect(proposedRules([], new Map()).join("\n")).toMatch(/R1 .*R2 .*R3 .*applied in standard v0\.10/s);
   });
 
-  it("R1: a slots-only chassis without a power input no longer needs power figures", () => {
-    const chassis = card({ ports: [], powerDrawW: undefined, voltage: undefined, deviceType: "table-box", slots: [{ id: "s1", label: "Slot 1", slotFamily: "extron-cubby-aap" }] });
-    expect(lintBlock(chassis).warnings).toContain("no powerDrawW/voltage (or poeDrawW)");
-    const md = proposedRules([item(chassis, "c")], new Map([["c", chassis]])).join("\n");
-    expect(md).toMatch(/\| R1\. .* \| 1 \| 1 \| 1 \| 1 \|/);
+  it("a candidate rule is simulated on copies: alone, with all, approvable; the card stays as it is", () => {
+    const noWeight = card({ label: "Extron DTP3 T 101 Rack", _avail: { status: "ports-filled", portsSource: { kind: "stencil" } }, heightMm: 44, widthMm: 100, depthMm: 100 });
+    expect(lintBlock(noWeight).warnings).toEqual(["no weightKg"]);
+    const rule = { id: "RX", title: "Weight from somewhere", text: "test", apply: (t: Record<string, unknown>) => ({ t: { ...t, weightKg: 1 } }) };
+    const md = proposedRules([item(noWeight, "a")], new Map([["a", noWeight]]), [rule]).join("\n");
+    expect(md).toContain("| RX. Weight from somewhere | 1 | 1 | 1 | 1 |");
+    expect((noWeight as Record<string, unknown>).weightKg).toBeUndefined();
   });
 });

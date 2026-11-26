@@ -2,16 +2,15 @@
 
 Draft catalog templates that `approve:catalog` leaves for an engineer. Source: library/catalog (1789 files); generated 2026-11-26 by `npm run report:review-queue` (api-avail).
 
-In the queue: **380** — level B 91, level A with ports not from the manufacturer 289.
+In the queue: **379** — level B 73, level A with ports not from the manufacturer 306.
 
-By ports source: db 312, manufacturer (datasheet) 37, manufacturer (stencil) 14, variant of db 13, no source 4.
+By ports source: db 312, manufacturer (datasheet) 36, manufacturer (stencil) 14, variant of db 13, no source 4.
 
 A template is counted under every reason it has; **only** — templates for which this is the only reason (closing it moves them on: B → A, or to approval).
 
 | Group | Reason | Templates | Only | Families (top) | Proposal |
 |---|---|---:|---:|---|---|
-| Level B | no powerDrawW/voltage (or poeDrawW) | 54 | 34 | Biamp voltera 16, Extron fox3 5, Biamp evoko 3, Biamp parlé 3 | **data** — Power draw and voltage from the data sheet. Proposed rules R1 (slots-only chassis) and R2 (voltage from the power notes) close a few; the rest needs the data sheet. |
-| Level B | label longer than 28 characters | 15 | 0 | Extron dtp3 13, Extron in1608 2 | **rule** — Proposed rule R3 (In / Out wording, a long qualifier to notes) closes these without new data; otherwise shorten by hand to the silkscreen. |
+| Level B | no powerDrawW/voltage (or poeDrawW) | 51 | 33 | Biamp voltera 16, Extron fox3 5, Biamp evoko 3, Biamp parlé 3 | **data** — Power draw and voltage from the data sheet. Rules R1 (slots-only chassis) and R2 (voltage from the power notes) of v0.10 already closed what they can; the rest needs the data sheet. |
 | Level B | no weightKg | 12 | 6 | Extron fox3 5, Biamp vocia 2, Extron dtp3 2, Biamp apprimo 1 | **data** — Dimensions and weight from the data sheet; room-mounted devices (by category, type or mounting words in the name) need none — rule v0.9 applied. |
 | Level B | no power port | 7 | 1 | Biamp parlé 2, Extron sf 2, Biamp crowd 1, Biamp d-diwac 1 | **data** — Add the power input from the data sheet, or the bus-power note ("PoE", "bus-powered (USB)") on the port that powers it. |
 | Level B | a relay must be contact-closure | 5 | 0 | Extron ipcp 5 | **manual** — Signal type against the label: check the panel and correct the signal (or the label). |
@@ -22,27 +21,18 @@ A template is counted under every reason it has; **only** — templates for whic
 | Level B | HDBaseT/DTP/XTP must be hdbaset | 2 | 0 | Extron in1808 2 | **manual** — Signal type against the label: check the panel and correct the signal (or the label). |
 | Level B | section … is not in the vocabulary | 1 | 0 | Biamp voltera 1 | **rule** — The normalizer puts the port into the section of its signal when it can tell; the rest by hand. |
 | Level B | ir must be input or output, not bidirectional | 1 | 0 | Extron ucs 1 | **manual** — Check the direction on the panel (the normalizer sets it only when the label says In / Out). |
-| Ports source | db | 312 | 274 | Extron fox3 50, Extron quantum 22, Extron ca 16, Extron dtp3 16 | **manual** — Community ports: an engineer compares them with the data sheet in Review, then Verify — or ports from the data sheet (portsSource datasheet) and approve:catalog. |
+| Ports source | db | 312 | 289 | Extron fox3 50, Extron quantum 22, Extron ca 16, Extron dtp3 16 | **manual** — Community ports: an engineer compares them with the data sheet in Review, then Verify — or ports from the data sheet (portsSource datasheet) and approve:catalog. |
 | Ports source | variant of db | 13 | 13 | Extron ca 6, Extron cable 4, Biamp parlé 1, Extron dtp 1 | **manual** — Follows the variant it copied: review that one (or give it data-sheet ports), then fill:catalog-ports again. |
-| Ports source | no source | 4 | 2 | Extron cable 2, Extron ccd 2 | **data** — Ports from the data sheet with portsSource datasheet. |
+| Ports source | no source | 4 | 4 | Extron cable 2, Extron ccd 2 | **data** — Ports from the data sheet with portsSource datasheet. |
 
-## Level B: no powerDrawW/voltage (or poeDrawW) (54)
+## Level B: no powerDrawW/voltage (or poeDrawW) (51)
 
-Proposal: **data** — Power draw and voltage from the data sheet. Proposed rules R1 (slots-only chassis) and R2 (voltage from the power notes) close a few; the rest needs the data sheet.
+Proposal: **data** — Power draw and voltage from the data sheet. Rules R1 (slots-only chassis) and R2 (voltage from the power notes) of v0.10 already closed what they can; the rest needs the data sheet.
 
-- Vendors: Biamp 36, Extron 18
-- Device types: amplifier 16, fiber-transmitter 7, adapter 4, wired-mic 4, control-expansion 3, wireless-presentation 3, button-panel 2, power-supply 2
-- Families: Biamp voltera 16, Extron fox3 5, Biamp evoko 3, Biamp parlé 3, Biamp bma 2, Biamp easyconnect 2, Biamp modena 2, Extron ccd 2, Extron ocs 2, Extron sf 2, Extron wfa 2, Extron xtp 2
+- Vendors: Biamp 35, Extron 16
+- Device types: amplifier 16, fiber-transmitter 7, adapter 4, wired-mic 4, control-expansion 3, button-panel 2, power-supply 2, subwoofer 2
+- Families: Biamp voltera 16, Extron fox3 5, Biamp evoko 3, Biamp parlé 3, Biamp bma 2, Biamp easyconnect 2, Biamp modena 2, Extron ocs 2, Extron sf 2, Extron wfa 2, Extron xtp 2, Biamp d-diwac 1
 - Examples: Biamp BMA 360D-I Black; Biamp BMA 360D-I White; Biamp D-DIWAC; Biamp EasyConnect MPX 250; Biamp EasyConnect USB-C Adapter
-
-## Level B: label longer than 28 characters (15)
-
-Proposal: **rule** — Proposed rule R3 (In / Out wording, a long qualifier to notes) closes these without new data; otherwise shorten by hand to the silkscreen.
-
-- Vendors: Extron 15
-- Device types: router 13, presentation-system 2
-- Families: Extron dtp3 13, Extron in1608 2
-- Examples: Extron DTP3 CrossPoint 622 IPCP A LL; Extron DTP3 CrossPoint 622 IPCP A SL LL; Extron DTP3 CrossPoint 622 IPCP A SL; Extron DTP3 CrossPoint 622 IPCP A; Extron DTP3 CrossPoint 642 IPCP A LL
 
 ## Level B: no weightKg (12)
 
@@ -170,37 +160,8 @@ Catalog cards that only the new rule makes room-mounted (category and device typ
 - B→B: 2
 - FIX→FIX: 13
 
-## Proposed rules (not applied)
+## Proposed rules
 
-Mass reasons a rule could close without inventing data, simulated on the queue's level-B templates. **Alone** — B → A with this rule only; **with all** — B → A with every proposed rule (and the rules already in force).
-
-| Rule | Applies to | B → A alone | B → A with all | Of those, approvable (manufacturer ports) |
-|---|---:|---:|---:|---:|
-| R1. Slots-only chassis without a power input need no power figures | 2 | 2 | 2 | 0 |
-| R2. Voltage from the power input's notes | 1 | 1 | 1 | 1 |
-| R3. Port label wording: Input / Output → In / Out, a long qualifier to notes | 15 | 15 | 15 | 0 |
-
-With every proposed rule: **18** of 91 level-B templates reach A; 1 of them have ports from the manufacturer and would be approved by approve:catalog, the rest still need the ports review (source db).
-
-### R1. Slots-only chassis without a power input need no power figures
-
-A chassis whose only connections are slots (Cable Cubby drawers CCD 220 / 320) and that has no power input is passive: powerDrawW / voltage are not required, as for passive devices (3.1). Reads only the ports and slots the card has.
-
-- Applies to: Extron CCD 220; Extron CCD 320
-- B → A alone: Extron CCD 220; Extron CCD 320
-
-### R2. Voltage from the power input's notes
-
-When the card has powerDrawW but no voltage, and the notes of its single power input state exactly one voltage ("External 12VDC …", "12 V 2 A DC"), that voltage is the card's voltage. The value is already in the card.
-
-- Applies to: Biamp MAX Connect
-- B → A alone: Biamp MAX Connect
-
-### R3. Port label wording: Input / Output → In / Out, a long qualifier to notes
-
-Labels over 28 characters ("HDMI Output 1 (Buffered Mirror)", "DTP3/XTP/HDBT Scaled Output 2", "USB 2.0 (Rear, Communication)"): the standard's form In / Out (4.2), and when still too long the bracket moves to notes. Words change, the facts stay — a normalizer rule.
-
-- Applies to: Extron DTP3 CrossPoint 622 IPCP A LL; Extron DTP3 CrossPoint 622 IPCP A SL LL; Extron DTP3 CrossPoint 622 IPCP A SL; Extron DTP3 CrossPoint 622 IPCP A; Extron DTP3 CrossPoint 642 IPCP A LL; Extron DTP3 CrossPoint 642 IPCP A SL LL; Extron DTP3 CrossPoint 642 IPCP A SL; Extron DTP3 CrossPoint 662 IPCP A LL; Extron DTP3 CrossPoint 662 IPCP A SL LL; Extron DTP3 CrossPoint 662 IPCP A SL; Extron DTP3 CrossPoint 884 IPCP A LL; Extron DTP3 CrossPoint 884 IPCP A; …
-- B → A alone: Extron DTP3 CrossPoint 622 IPCP A LL; Extron DTP3 CrossPoint 622 IPCP A SL LL; Extron DTP3 CrossPoint 622 IPCP A SL; Extron DTP3 CrossPoint 622 IPCP A; Extron DTP3 CrossPoint 642 IPCP A LL; Extron DTP3 CrossPoint 642 IPCP A SL LL; Extron DTP3 CrossPoint 642 IPCP A SL; Extron DTP3 CrossPoint 662 IPCP A LL; Extron DTP3 CrossPoint 662 IPCP A SL LL; Extron DTP3 CrossPoint 662 IPCP A SL; Extron DTP3 CrossPoint 884 IPCP A LL; Extron DTP3 CrossPoint 884 IPCP A; Extron DTP3 CrossPoint 884; Extron IN1608 xi IPCP Q MA 70 (LinkLicense); Extron IN1608 xi IPCP Q SA (LinkLicense)
+None at the moment. R1 (slots-only chassis need no power figures), R2 (voltage from the power input's notes) and R3 (port labels: In / Out, a long qualifier to notes) were applied in standard v0.10.
 
 Not proposed as rules (they would invent data): power draw of devices whose card has none (Biamp Voltera amplifiers, FOX3 endpoints — from the data sheet); passive subwoofers (SF 10C SUB, SF 8CT SUB — active ones exist, the data sheet decides); dimensions of rack devices.

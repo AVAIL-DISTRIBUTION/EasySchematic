@@ -162,5 +162,6 @@
       "connectorType": "other",
       "notes": "100-240 V AC mains inlet (appliance coupler) with switch and fuse; IEC inlet type not stated; inlet type not stated (\"appliance coupler\")"
     }
-  ]
+  ],
+  "voltage": "100-240V AC"
 }

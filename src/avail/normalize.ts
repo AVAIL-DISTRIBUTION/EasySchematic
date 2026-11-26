@@ -32,6 +32,7 @@ import { canonicalFamily, familyInfo } from "./slotFamilies";
 import { BIDIRECTIONAL_SIGNALS, CONFIGURABLE_NOTE, directionFromLabel, SIGNAL_CONNECTORS, sectionBase, targetSection } from "./sections";
 
 export { BIDIRECTIONAL_SIGNALS, sectionByPurpose } from "./sections";
+import { applyCatalogRules } from "./catalogRules";
 import { defaultCategoryFor, findCategory, findVendor, normalizeManufacturer } from "./library";
 
 export interface NormalizeChange {
@@ -359,7 +360,17 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
     t.ports = sorted;
   }
 
-  return { template: t as unknown as T, changes };
+  // --- R2 voltage from the power input's notes, R3 long port labels (v0.10, catalogRules.ts)
+  const ruled = applyCatalogRules(t);
+  for (const c of ruled.changes) {
+    changes.push({
+      field: c.field,
+      from: c.from,
+      to: c.to,
+      note: c.rule === "R2" ? "voltage stated by the power input (R2)" : "label over 28 characters: In / Out, qualifier to notes (R3)",
+    });
+  }
+  return { template: ruled.block as unknown as T, changes };
 }
 
 /** Changes that were applied (not the "manual" notes). */

@@ -103,6 +103,41 @@ draft каталога, которые не утвердит `approve:catalog` (
 и rackForm каталога (`blockOfRow` в `templateMeta.ts`: `lintRow`, `syncLintLevels`, `relintAll`, `setTemplateStatus`,
 `approve:catalog`).
 
+Стандарт v0.10 (правила R1–R3 по очереди ревью): R1 — шасси только со слотами без портов не требует powerDrawW/voltage
+(`blockLint.ts`); R2 — voltage из подписи/notes единственного входа питания, если там ровно одно напряжение; R3 — подписи
+длиннее 28: Input/Output → In/Out, затем уточнение в скобках → notes (`src/avail/catalogRules.ts`; применяют нормализатор
+и `fill:catalog-ports` для всех карточек каталога, поэтому порты, заново скопированные из базы, их сохраняют).
+
+### Даташиты: список и обработка
+
+Список — `npm run report:datasheets` (api-avail; `src/avail/datasheetList.ts`, `api-avail/src/datasheetListCli.ts`) →
+`docs/avail/datasheets-to-download.md` и `.xlsx` рядом: карточки каталога с портами сообщества (portsSource `db` и variant
+от db) Extron и Biamp, сгруппированные так, чтобы один документ (A&E-спецификация со страницы продукта) закрыл максимум
+артикулов: общая страница продукта (`referenceUrl`) или модель без варианта (цвет, MM/SM, регион). Колонки: Vendor,
+Family, Models, Part numbers, Product page, Cards it closes; по убыванию «сколько закроет». После обработки документа
+строка из списка уходит (перезапустить команду).
+
+Порядок обработки скачанного (любая сессия может выполнить):
+
+1. PDF лежат в `/Users/dmartakov/avail/datasheets/<vendor>/` (`extron/`, `biamp/`), имя файла — как скачано; в git
+   их не кладём. Строку списка, которую закрывает документ, находим по странице продукта / моделям / артикулам.
+2. Для каждой карточки группы (`library/catalog/<vendor>/…json`) сверяем порты с документом: число и тип разъёмов
+   на задней и передней панели, сигнал, направление, разъём, notes (полюса клеммника, PoE-класс, режимы USB-C) — по
+   стандарту (`docs/avail/device-block-standard.md`, разделы 4–5). **При расхождении приоритет у документа**: порты
+   карточки заменяются портами по документу. Поля карточки (габариты, вес, мощность, напряжение) — заполняем пустые;
+   если документ расходится с карточкой, приоритет у документа, старое значение — в `_avail.notes`.
+3. `_avail.portsSource = { "kind": "datasheet", "from": "<vendor>/<имя файла>.pdf" }` (при необходимости `note` —
+   страница / раздел документа). Варианты из той же группы (цвет, регион, MM/SM) получают те же порты и тот же
+   `portsSource` — копией: `fill:catalog-ports` переносит порты на варианты только без портов, а варианты из базы
+   свои порты имеют. Чего в документе нет — не выдумываем: перечисляем в `_avail.portsMissing`.
+4. `cd api-avail && npm run fill:catalog-ports -- --db ../tools/avail/incoming/db/easyschematic.sqlite` (порты из
+   datasheet не трогает, применяет R2/R3 и правило 12 V DC Extron, сравнивает со стенсилами);
+   `npm run avail:check-library`; `npm run report:datasheets`; `npm run report:review-queue`.
+5. Коммит в ветку `avail/datasheets-<vendor>-<семейство>` («Catalog: <Vendor> <family> ports from the data sheets»),
+   PR в master с разделами «что сделано / как проверить». После мержа на сервере: `./backup.sh`, `docker compose exec
+   api npm run import:catalog`, затем `approve:catalog -- --dry-run` и `approve:catalog` — карточки уровня A с
+   `datasheet` утвердятся.
+
 Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
 не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
 deviceType, питание не input (кроме явных выходов). Оформление (секции вне словаря, порядок, подписи, капс, длина,
@@ -391,6 +426,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/fillCatalogPortsCli.ts`, `src/catalogFiles.ts` | порты каталога `library/catalog` из стенсилов Extron и снимка базы (`npm run fill:catalog-ports`), пишет только файлы и отчёт стенсилов |
 | `src/extronVisioCli.ts` | стенсилы Extron → `tools/avail/extron-visio/extron-visio-blocks.json` (`npm run parse:extron-visio`); zip читает `xlsx.ts` (`readZipText`) |
 | `src/importCatalog.ts`, `src/importCatalogCli.ts` | каталог уровня B и выше в базу (`npm run import:catalog [-- --min-level A|B]`); в образе — `/app/library/catalog`, `AVAIL_CATALOG_DIR` |
+| `src/datasheetListCli.ts`, `src/xlsxWrite.ts` | список даташитов к скачиванию `docs/avail/datasheets-to-download.md` / `.xlsx` (`npm run report:datasheets`); минимальная запись xlsx |
 | `src/reviewQueueCli.ts`, `src/reviewRules.ts` | отчёт очереди ревью `docs/avail/review-queue.md` (`npm run report:review-queue`), предлагаемые правила |
 | `src/approveCatalog.ts`, `src/approveCatalogCli.ts` | утверждение draft каталога уровня A по источнику портов (`npm run approve:catalog [-- --dry-run]`), миграция 9006 (`approved_via = bulk-source`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |

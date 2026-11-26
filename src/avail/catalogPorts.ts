@@ -22,6 +22,7 @@
  * reads the files and the snapshot itself.
  */
 import { lintBlock, type BlockLevel } from "./blockLint";
+import { applyCatalogRules } from "./catalogRules";
 import { chassisSlotsFromDescription, comparePorts, indexStencils, normalizedPorts, stencilFor, stencilPortsFor, withExtronDcPower } from "./extronStencil";
 import type { StencilBlock } from "./extronVisio";
 import { normalizeManufacturer } from "./library";
@@ -406,6 +407,9 @@ export function fillCatalogPorts(
 
   // Extron 12 V DC rule on every card with automatic ports (db, variant; stencil already has it).
   for (const [f, t] of result) result.set(f, dcPower(t));
+  // R2 voltage from the power input's notes, R3 long port labels (v0.10): on every card, so
+  // ports copied again from the database keep them.
+  for (const [f, t] of result) result.set(f, applyCatalogRules(t).block);
 
   // Extron chassis without slots: the slots of their variants (same model without region, AC
   // or colour) when all of them agree, else the count from the description, else the reason.

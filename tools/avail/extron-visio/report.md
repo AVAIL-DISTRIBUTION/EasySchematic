@@ -16,15 +16,15 @@ Levels of these cards before → after (rows: before, columns: after):
 
 | before \ after | FIX | B | A |
 |---|---:|---:|---:|
-| none | 23 | 8 | 26 |
-| FIX | 6 | 3 | 0 |
-| B | 0 | 13 | 13 |
-| A | 0 | 0 | 550 |
+| none | 23 | 7 | 27 |
+| FIX | 1 | 0 | 0 |
+| B | 0 | 15 | 13 |
+| A | 0 | 0 | 556 |
 
 ## Filled (37)
 
 - Extron Cable Cubby 100 USB Power (60-1592-12) — level A
-- Extron DTP3 R 201 D, White (60-2072-53) — level B
+- Extron DTP3 R 201 D, White (60-2072-53) — level A
 - Extron DTP3 R 331 (60-2092-53) — level B
 - Extron DTP3 T 322 D (Black) (60-2066-52) — level A
 - Extron DTP3 T 322 D (White) (60-2066-53) — level A
@@ -302,8 +302,8 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron NetPA U 2002 SB (60-1757-01) — A → A; analog-audio output: 0 → 2; ethernet bidirectional: 1 → 0; speaker-level output: 2 → 1
 - Extron NF 4C LP-1 (60-2056-13) — A → A; ethernet bidirectional: 1 → 0
 - Extron NF 4C S LP (70-1360-23) — A → A; speaker-level input: 1 → 0; speaker-level output: 0 → 1
-- Extron OCS 100C (60-1664-01) — FIX → B; ebus bidirectional: 1 → 0; power input: 0 → 2; power output: 0 → 2
-- Extron OCS 100W (60-1665-01) — FIX → B; ebus bidirectional: 1 → 0; power input: 0 → 2; power output: 0 → 2
+- Extron OCS 100C (60-1664-01) — B → B; ebus bidirectional: 1 → 0; power input: 0 → 2; power output: 0 → 2
+- Extron OCS 100W (60-1665-01) — B → B; ebus bidirectional: 1 → 0; power input: 0 → 2; power output: 0 → 2
 - Extron PC 101 (60-1378-01) — A → A; contact-closure input: 1 → 0; serial bidirectional: 0 → 1; tally output: 0 → 1
 - Extron PI 115 (60-1233-02) — A → A; same ports by signal and direction
 - Extron PI 130 (60-1361-02) — A → A; same ports by signal and direction
@@ -358,7 +358,7 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron TLS 525M (60-1561-113) — A → A; gpio bidirectional: 1 → 0; usb bidirectional: 0 → 1
 - Extron TLS 725M NC (60-1563-112) — A → A; gpio bidirectional: 1 → 0; usb bidirectional: 0 → 1
 - Extron TLSI 201 (60-1669-101) — A → A; hdmi input: 0 → 1
-- Extron UCS 601 (60-2042-01) — FIX → B; usb bidirectional: 0 → 4; usb input: 1 → 0; usb output: 3 → 0
+- Extron UCS 601 (60-2042-01) — B → B; usb bidirectional: 0 → 4; usb input: 1 → 0; usb output: 3 → 0
 - Extron UPI 100 (60-2062-01) — A → A; same ports by signal and direction
 - Extron USB Extender Plus D R (60-1473-23) — A → A; usb bidirectional: 0 → 5; usb input: 1 → 0; usb output: 4 → 0
 - Extron USB Extender Plus D T (60-1473-13) — A → A; usb bidirectional: 0 → 2; usb input: 1 → 0; usb output: 1 → 0
@@ -573,12 +573,12 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron DTP T SW4 HD 4K (60-1625-01) — level A; pin-level drawing: "C/G/T/+V"
 - Extron DTP3 CrossPoint 42 (60-1925-01) — level A; unknown connector "[F TYPE A]" (DTP3OUT)
 - Extron DTP3 CrossPoint 42 USB (60-1925-02) — level FIX; unknown label "DTP3/"
-- Extron DTP3 CrossPoint 622 IPCP A (60-1570-12) — level B; unknown label "DISABLED"; unknown label "Selectable I/O"
-- Extron DTP3 CrossPoint 622 IPCP A SL (60-1570-13) — level B; unknown label "DISABLED"; unknown label "Selectable I/O"
-- Extron DTP3 CrossPoint 642 IPCP A SL (60-1661-13) — level B; unknown label "DISABLED"; unknown label "Selectable I/O"
-- Extron DTP3 CrossPoint 662 IPCP A SL (60-1694-13) — level B; unknown label "DISABLED"; unknown label "Selectable I/O"
-- Extron DTP3 CrossPoint 884 (60-1696-01) — level B; unknown label "DISABLED"; unknown label "Selectable I/O"
-- Extron DTP3 CrossPoint 884 IPCP A (60-1696-12) — level B; unknown label "DISABLED"; unknown label "Selectable I/O"
+- Extron DTP3 CrossPoint 622 IPCP A (60-1570-12) — level A; unknown label "DISABLED"; unknown label "Selectable I/O"
+- Extron DTP3 CrossPoint 622 IPCP A SL (60-1570-13) — level A; unknown label "DISABLED"; unknown label "Selectable I/O"
+- Extron DTP3 CrossPoint 642 IPCP A SL (60-1661-13) — level A; unknown label "DISABLED"; unknown label "Selectable I/O"
+- Extron DTP3 CrossPoint 662 IPCP A SL (60-1694-13) — level A; unknown label "DISABLED"; unknown label "Selectable I/O"
+- Extron DTP3 CrossPoint 884 (60-1696-01) — level A; unknown label "DISABLED"; unknown label "Selectable I/O"
+- Extron DTP3 CrossPoint 884 IPCP A (60-1696-12) — level A; unknown label "DISABLED"; unknown label "Selectable I/O"
 - Extron DTP3 IN2004 DI/DO (60-1962-03) — level A; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"
 - Extron DTP3 IN2004 DO (60-1962-02) — level A; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"
 - Extron FF 220T (42-141-23) — level A; unknown label "FF220T"; no ports drawn
@@ -593,7 +593,7 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron FOX3 T 211 MM (60-2090-11) — level A; unknown connector "[F TYPE A]" (DisplayPort); unknown label "LOOP"
 - Extron FOX3 T 211 SM (60-2090-12) — level A; unknown connector "[F TYPE A]" (DisplayPort); unknown label "LOOP"
 - Extron IN2004 (60-1962-01) — level A; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"
-- Extron IPA T RLY4 (60-545-03) — level FIX; pin-level drawing: "C"; pin-level drawing: "NO"; pin-level drawing: "C | Relay 1"; pin-level drawing: "NC"; …
+- Extron IPA T RLY4 (60-545-03) — level B; pin-level drawing: "C"; pin-level drawing: "NO"; pin-level drawing: "C | Relay 1"; pin-level drawing: "NC"; …
 - Extron IPL EXP PDU4H (Standard) (60-1956-01) — level FIX; unknown label "Man. control [3 POLE CS]"
 - Extron IPL EXP RIO8 (60-1907-01) — level FIX; unknown label "+V OUT/ DIGITAL I/O"
 - Extron IPL T PCS4i (60-544-09) — level FIX; unknown label "Alarm"
@@ -611,7 +611,7 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron NF 4C LP-4 Package (42-337-43) — level A; unknown label "NF 4C S LP"; duplicate port "Speaker Out 3"
 - Extron PS 125 (60-1954-01) — level A; row without a label: 01; row without a label: 12V [2 POLE CS]; row without a label: 02; row without a label: 03; …
 - Extron PS 128 (60-1580-02) — level A; row without a label: 1; row without a label: 12V [2 POLE CS]; row without a label: 2; row without a label: 3; …
-- Extron SF 10C SUB (60-1610-01) — level FIX; no ports drawn
+- Extron SF 10C SUB (60-1610-01) — level B; no ports drawn
 - Extron SF 26CT (60-1310-03) — level A; no ports drawn
 - Extron SF 26CT LP (60-1881-03) — level A; no ports drawn
 - Extron SF 26PT (Black, Pair) (60-1752-02) — level A; no ports drawn
@@ -623,7 +623,7 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron SF 3CT LP (60-1311-03) — level A; no ports drawn
 - Extron SF 3PT (Removable Grille, Black, 70/100V, Pair) (60-1736-12) — level A; no ports drawn
 - Extron SF 3PT (Removable Grille, White, 70/100V, Pair) (60-1736-13) — level A; no ports drawn
-- Extron SF 8CT SUB (60-1941-03) — level FIX; no ports drawn
+- Extron SF 8CT SUB (60-1941-03) — level B; no ports drawn
 - Extron ShareLink Pro 2000 (60-1971-01) — level A; row without a label: [RJ-45 F]
 - Extron ShareLink Pro 2000 Miracast & ShareNext Kit EU (42-350-02) — level A; unknown label "WFA | USB"; row without a label: [RJ-45 F]
 - Extron ShareLink Pro 2000 Miracast & ShareNext Kit US (42-350-01) — level A; unknown label "WFA | USB"; row without a label: [RJ-45 F]
@@ -652,9 +652,9 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron TLS 1035M (Black) (60-1998-102) — level FIX; unknown label "Input"
 - Extron TLS 1035M (White) (60-1998-103) — level FIX; unknown label "Input"
 - Extron TLS 835M (White) (60-1996-103) — level FIX; unknown label "Input"
-- Extron UCS 303 (60-1797-01) — level FIX; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
+- Extron UCS 303 (60-1797-01) — level B; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
 - Extron UCS SR 501 (60-1798-13) — level B; unknown label "DEVICES"
-- Extron UCS SW 313 (60-1797-02) — level FIX; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
+- Extron UCS SW 313 (60-1797-02) — level B; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"; duplicate port "Contact/Tally 3"
 - Extron UCS T 503 (60-1798-12) — level A; pin-level drawing: "C"; pin-level drawing: "T"; pin-level drawing: "+V"
 - Extron UCS TR 910 Kit (42-375-01) — level FIX; unknown label "IN"
 - Extron VND 250 (60-1275-01) — level A; unknown label "I/O | USB"; unknown label "COMS"; unknown label "ALARM"; unknown label "TTL"; …

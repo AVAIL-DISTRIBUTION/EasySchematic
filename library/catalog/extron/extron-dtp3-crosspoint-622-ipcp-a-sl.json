@@ -146,7 +146,7 @@
       "id": "port-10"
     },
     {
-      "label": "DTP3/XTP/HDBT Scaled Output 2",
+      "label": "DTP3/XTP/HDBT Scaled Out 2",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
@@ -155,7 +155,7 @@
       "id": "port-11"
     },
     {
-      "label": "HDMI Output 1 (Buffered Mirror)",
+      "label": "HDMI Out 1 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -164,7 +164,7 @@
       "id": "port-12"
     },
     {
-      "label": "HDMI Output 2 (Buffered Mirror)",
+      "label": "HDMI Out 2 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -481,12 +481,12 @@
       "id": "port-20"
     },
     {
-      "label": "USB 3.0 (Rear, Communication)",
+      "label": "USB 3.0",
       "signalType": "usb",
       "direction": "input",
       "connectorType": "usb-a",
       "section": "USB",
-      "notes": "Rear-panel USB 3.0 (USB 3.1 Gen 1, 5 Gbps) Type A communication port. Compatible USB 1.0/1.1/2.0. 900 mA max source current.",
+      "notes": "Rear, Communication; Rear-panel USB 3.0 (USB 3.1 Gen 1, 5 Gbps) Type A communication port. Compatible USB 1.0/1.1/2.0. 900 mA max source current.",
       "id": "port-28"
     },
     {

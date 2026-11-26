@@ -99,5 +99,6 @@
       "connectorType": "barrel",
       "notes": "12 V 2 A DC, external adapter; optional when PoE+ powered"
     }
-  ]
+  ],
+  "voltage": "12V DC"
 }

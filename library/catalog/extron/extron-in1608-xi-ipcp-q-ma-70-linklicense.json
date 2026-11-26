@@ -254,12 +254,13 @@
       "id": "port-29"
     },
     {
-      "label": "IPCP Serial 1 (RS-232/422/485)",
+      "label": "IPCP Serial 1",
       "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Serial",
-      "id": "port-30"
+      "id": "port-30",
+      "notes": "RS-232/422/485"
     },
     {
       "label": "IPCP Serial 2 (RS-232)",

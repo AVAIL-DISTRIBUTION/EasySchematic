@@ -181,7 +181,7 @@
       "id": "port-14"
     },
     {
-      "label": "DTP3/XTP/HDBT Scaled Output 2",
+      "label": "DTP3/XTP/HDBT Scaled Out 2",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
@@ -190,7 +190,7 @@
       "id": "port-15"
     },
     {
-      "label": "DTP3/XTP/HDBT Scaled Output 3",
+      "label": "DTP3/XTP/HDBT Scaled Out 3",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
@@ -199,7 +199,7 @@
       "id": "port-16"
     },
     {
-      "label": "DTP3/XTP/HDBT Scaled Output 4",
+      "label": "DTP3/XTP/HDBT Scaled Out 4",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
@@ -208,7 +208,7 @@
       "id": "port-17"
     },
     {
-      "label": "DTP3/XTP/HDBT Scaled Output 5",
+      "label": "DTP3/XTP/HDBT Scaled Out 5",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
@@ -217,7 +217,7 @@
       "id": "port-18"
     },
     {
-      "label": "DTP3/XTP/HDBT Scaled Output 6",
+      "label": "DTP3/XTP/HDBT Scaled Out 6",
       "signalType": "hdbaset",
       "direction": "output",
       "connectorType": "rj45",
@@ -226,7 +226,7 @@
       "id": "port-19"
     },
     {
-      "label": "HDMI Output 1 (Buffered Mirror)",
+      "label": "HDMI Out 1 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -235,7 +235,7 @@
       "id": "port-20"
     },
     {
-      "label": "HDMI Output 2 (Buffered Mirror)",
+      "label": "HDMI Out 2 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -244,7 +244,7 @@
       "id": "port-21"
     },
     {
-      "label": "HDMI Output 3 (Buffered Mirror)",
+      "label": "HDMI Out 3 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -253,7 +253,7 @@
       "id": "port-22"
     },
     {
-      "label": "HDMI Output 4 (Buffered Mirror)",
+      "label": "HDMI Out 4 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -262,7 +262,7 @@
       "id": "port-23"
     },
     {
-      "label": "HDMI Output 5 (Buffered Mirror)",
+      "label": "HDMI Out 5 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -271,7 +271,7 @@
       "id": "port-24"
     },
     {
-      "label": "HDMI Output 6 (Buffered Mirror)",
+      "label": "HDMI Out 6 (Buffered Mirror)",
       "signalType": "hdmi",
       "direction": "output",
       "connectorType": "hdmi",
@@ -433,12 +433,12 @@
       "id": "port-34"
     },
     {
-      "label": "USB 3.0 (Rear, Communication)",
+      "label": "USB 3.0",
       "signalType": "usb",
       "direction": "input",
       "connectorType": "usb-a",
       "section": "USB",
-      "notes": "Rear-panel USB 3.0 (USB 3.1 Gen 1, 5 Gbps) Type A communication port. Compatible USB 1.0/1.1/2.0. 900 mA max source current.",
+      "notes": "Rear, Communication; Rear-panel USB 3.0 (USB 3.1 Gen 1, 5 Gbps) Type A communication port. Compatible USB 1.0/1.1/2.0. 900 mA max source current.",
       "id": "port-42"
     },
     {

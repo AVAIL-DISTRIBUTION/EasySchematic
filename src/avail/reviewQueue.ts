@@ -66,9 +66,9 @@ export function sourceReason(o: PortsOriginInfo): string | null {
 /** Proposals per reason (first match); the rest is manual. */
 const PROPOSALS: { re: RegExp; proposal: Proposal }[] = [
   { re: /^no (heightMm|widthMm|depthMm|weightKg)$/, proposal: { kind: "data", text: "Dimensions and weight from the data sheet; room-mounted devices (by category, type or mounting words in the name) need none — rule v0.9 applied." } },
-  { re: /^no powerDrawW\/voltage/, proposal: { kind: "data", text: "Power draw and voltage from the data sheet. Proposed rules R1 (slots-only chassis) and R2 (voltage from the power notes) close a few; the rest needs the data sheet." } },
+  { re: /^no powerDrawW\/voltage/, proposal: { kind: "data", text: "Power draw and voltage from the data sheet. Rules R1 (slots-only chassis) and R2 (voltage from the power notes) of v0.10 already closed what they can; the rest needs the data sheet." } },
   { re: /^no power port$/, proposal: { kind: "data", text: "Add the power input from the data sheet, or the bus-power note (\"PoE\", \"bus-powered (USB)\") on the port that powers it." } },
-  { re: /^label longer than 28 characters$/, proposal: { kind: "rule", text: "Proposed rule R3 (In / Out wording, a long qualifier to notes) closes these without new data; otherwise shorten by hand to the silkscreen." } },
+  { re: /^label longer than 28 characters$/, proposal: { kind: "manual", text: "Rule R3 (v0.10) already shortened what wording can; what is left — shorten by hand to the silkscreen, details to notes." } },
   { re: /^label in all caps$/, proposal: { kind: "rule", text: "The normalizer already rewrites all-caps labels: run normalize:library on these." } },
   { re: /^(no section|section … is not in the vocabulary)$/, proposal: { kind: "rule", text: "The normalizer puts the port into the section of its signal when it can tell; the rest by hand." } },
   { re: /must be input or output, not bidirectional$/, proposal: { kind: "manual", text: "Check the direction on the panel (the normalizer sets it only when the label says In / Out)." } },
