@@ -4,9 +4,10 @@
  */
 import type { DeviceTemplate } from "../types";
 import { setRole, type TemplateStatus, type UserRole } from "./libraryMode";
+import { DEFAULT_API_URL } from "./upstream";
 
 export function apiUrl(): string {
-  return import.meta.env?.VITE_TEMPLATE_API_URL ?? "https://api.easyschematic.live";
+  return import.meta.env?.VITE_TEMPLATE_API_URL ?? DEFAULT_API_URL;
 }
 
 let rolePromise: Promise<UserRole | null> | null = null;

@@ -11,9 +11,10 @@ import { registerTypes } from "./typeRegistry";
 import { withRepairedSlots } from "./slotDefinitions";
 import { isCustomTypeKind, typeDefsFromRecords, type CustomTypeRecord } from "./customTypes/model";
 import { isAvailLibrary, libraryQuery, noteCachedLibrary, noteLibraryResponse } from "./avail/libraryMode";
+import { DEFAULT_API_URL } from "./avail/upstream";
 
 const API_URL =
-  import.meta.env?.VITE_TEMPLATE_API_URL ?? "https://api.easyschematic.live";
+  import.meta.env?.VITE_TEMPLATE_API_URL ?? DEFAULT_API_URL;
 
 let cached: DeviceTemplate[] | null = null;
 

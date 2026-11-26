@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { checkSession, createDraft, createHandoff } from "../templateApi";
+import { DEFAULT_DEVICES_URL } from "../avail/upstream";
 
 const STORAGE_KEY = "easyschematic-pending-submission";
 const MAX_AGE_MS = 30 * 60 * 1000; // 30 minutes
 
 const DEVICES_URL =
-  import.meta.env.VITE_DEVICES_URL ?? "https://devices.easyschematic.live";
+  import.meta.env.VITE_DEVICES_URL || DEFAULT_DEVICES_URL;
 
 export default function PendingSubmissionBanner() {
   const [visible, setVisible] = useState(false);

@@ -1,15 +1,16 @@
 # AVAIL DISTRIBUTION: type-check and test api-avail (D1/R2 shims, migrations,
 # seed, end-to-end smoke against the upstream app in api/src), and check the curated
-# library: every library/avail/*.json must be at standard level A.
+# library: every library/avail/*.json must be at standard level A; and the AVAIL frontend
+# build has no links to upstream's public services (job avail-dist).
 name: AVAIL api tests
 
 on:
   push:
     branches: [master]
-    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", "library/**", ".github/workflows/avail-api-test.yml"]
+    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", "library/**", "public/**", "index.html", "vite.config.ts", "vite.avail.ts", ".github/workflows/avail-api-test.yml"]
   pull_request:
     branches: [master]
-    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", "library/**", ".github/workflows/avail-api-test.yml"]
+    paths: ["api/**", "api-avail/**", "src/**", "docs/avail/**", "library/**", "public/**", "index.html", "vite.config.ts", "vite.avail.ts", ".github/workflows/avail-api-test.yml"]
 
 jobs:
   test:
@@ -34,3 +35,25 @@ jobs:
       - run: cd api-avail && npm run typecheck
       - run: cd api-avail && npm test
       - run: cd api-avail && npm run build
+
+  # The AVAIL frontend build has no links to upstream's public services (devices / api / docs
+  # easyschematic.live, support mail…), except the upstream site on About (src/avail/distCheck.ts).
+  avail-dist:
+    if: github.repository == 'AVAIL-DISTRIBUTION/EasySchematic'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run generate-fallback
+      - run: npx vite build
+        env:
+          VITE_AVAIL: "1"
+          VITE_TEMPLATE_API_URL: https://sch.example.invalid/api
+          VITE_AUTH_GOOGLE_ONLY: "1"
+      - run: npm run avail:check-dist -- dist

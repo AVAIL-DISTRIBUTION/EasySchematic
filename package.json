@@ -47,7 +47,8 @@
     "test:e2e": "playwright test",
     "test:e2e:install": "playwright install chromium",
     "avail:lint": "npx tsx src/avail/blockLintCli.ts",
-    "avail:check-library": "npx tsx src/avail/checkLibraryCli.ts"
+    "avail:check-library": "npx tsx src/avail/checkLibraryCli.ts",
+    "avail:check-dist": "npx tsx src/avail/distCheckCli.ts"
   },
   "overrides": {
     "serialize-javascript": "^7.0.5"

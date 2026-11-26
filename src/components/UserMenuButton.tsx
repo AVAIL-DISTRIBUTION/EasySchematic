@@ -4,6 +4,7 @@ import { clearCache } from "../cloudCache";
 import LoginDialog from "./LoginDialog";
 import { isAvailBuild } from "../avail/brand";
 import { AvailAccountMenuItems, AvailAdminDialogs } from "../avail/AdminUi";
+import { AVAIL_BUILD, DEFAULT_DEVICES_URL } from "../avail/upstream";
 
 interface User {
   id: string;
@@ -90,9 +91,9 @@ export default function UserMenuButton() {
             <p className="text-xs truncate" style={{ color: "var(--color-text-muted)" }}>{user.email}</p>
           </div>
           <AvailAccountMenuItems onPick={() => setDropdownOpen(false)} />
-          {!isAvailBuild() && (
+          {!AVAIL_BUILD && !isAvailBuild() && (
           <a
-            href="https://devices.easyschematic.live"
+            href={DEFAULT_DEVICES_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setDropdownOpen(false)}

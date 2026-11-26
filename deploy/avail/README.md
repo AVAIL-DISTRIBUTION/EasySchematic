@@ -21,7 +21,8 @@ Basic auth нет: доступ ограничен входом через Googl
    Variables), чтобы фронтенд собрался с нашими адресами:
    - `VITE_TEMPLATE_API_URL` = `https://sch.avail-int.com/api`
    - `VITE_AUTH_GOOGLE_ONLY` = `1`
-   - `VITE_DEVICES_URL` — по желанию (сайт базы устройств; без переменной ссылка ведёт на upstream)
+   - `VITE_DEVICES_URL` — не задаётся: в сборке AVAIL нет ссылок на сайт базы устройств upstream
+     (workflow передаёт пустое значение; предложения и рабочее окно `/library` — наши)
    - `VITE_DOCS_URL` — по желанию (наша документация для Help → Documentation; без переменной пункта нет)
 
    `VITE_AVAIL=1` (интерфейс AVAIL: вход вместо лендинга, брендинг, умолчания) и `SOURCE_COMMIT`

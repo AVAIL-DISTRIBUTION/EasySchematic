@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { requestLogin } from "../templateApi";
 import { isGoogleOnly } from "../avail/auth";
+import { DEFAULT_API_URL } from "../avail/upstream";
 
 const API_URL =
-  import.meta.env?.VITE_TEMPLATE_API_URL ?? "https://api.easyschematic.live";
+  import.meta.env?.VITE_TEMPLATE_API_URL ?? DEFAULT_API_URL;
 
 interface Props {
   open: boolean;

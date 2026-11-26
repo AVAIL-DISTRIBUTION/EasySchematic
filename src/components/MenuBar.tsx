@@ -28,6 +28,7 @@ import { useTheme } from "../hooks/useTheme";
 import { AVAIL_MARK, isAvailBuild } from "../avail/brand";
 import { AvailAboutDialog, AvailHeaderBrand } from "../avail/BrandUi";
 import { availHelpMenu, AVAIL_HIDDEN_VIEW_ITEMS } from "../avail/menus";
+import { AVAIL_BUILD, DEFAULT_DEVICES_URL, UPSTREAM_DOCS_URL } from "../avail/upstream";
 
 // ─── Menu data types ─────────────────────────────────────────────
 
@@ -724,16 +725,16 @@ export default function MenuBar() {
       { type: "item", label: "Room Distances...", onClick: () => setShowRoomDistances(true) },
     ],
     // AVAIL build: our Help (no easyschematic.live links), see src/avail/menus.ts.
-    Help: isAvailBuild() ? availHelpMenu(() => setShowAboutDialog(true)) : [
+    Help: AVAIL_BUILD || isAvailBuild() ? availHelpMenu(() => setShowAboutDialog(true)) : [
       {
         type: "item",
         label: "Documentation \u2197",
-        onClick: () => window.open("https://docs.easyschematic.live", "_blank", "noopener,noreferrer"),
+        onClick: () => window.open(UPSTREAM_DOCS_URL, "_blank", "noopener,noreferrer"),
       },
       {
         type: "item",
         label: "Device Database \u2197",
-        onClick: () => window.open("https://devices.easyschematic.live", "_blank", "noopener,noreferrer"),
+        onClick: () => window.open(DEFAULT_DEVICES_URL, "_blank", "noopener,noreferrer"),
       },
       { type: "separator" },
       {
