@@ -7,6 +7,7 @@ import { apiUrl } from "./api";
 import { apiError } from "./apiError";
 import type { LifecycleInfo } from "./lifecycle";
 import type { WsTemplate } from "./workspaceModel";
+import type { PatchConflict, Resolution, TemplatePatch } from "./templatePatch";
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${apiUrl()}${path}`, {
@@ -69,7 +70,7 @@ export interface Proposal {
   action: "create" | "update";
   templateId: string | null;
   data: DeviceTemplate;
-  status: "pending" | "deferred" | "approved" | "rejected";
+  status: "pending" | "deferred" | "approved" | "rejected" | "withdrawn";
   createdAt: string;
   reviewedAt: string | null;
   reviewerNote: string | null;
@@ -81,7 +82,29 @@ export interface Proposal {
 export const fetchPendingProposals = () => call<Proposal[]>("/submissions/pending");
 export const fetchMyProposals = () => call<Proposal[]>("/submissions/mine");
 
-export const acceptProposal = (id: string) => call<{ ok?: boolean }>(`/submissions/${encodeURIComponent(id)}/approve`, { method: "POST", body: "{}" });
+/** Accept; with a proposal stored as a patch, `resolutions` choose the side of each conflict. */
+export const acceptProposal = (id: string, resolutions: Record<string, Resolution> = {}) =>
+  call<{ ok?: boolean }>(`/submissions/${encodeURIComponent(id)}/approve`, { method: "POST", body: JSON.stringify({ resolutions }) });
+
+/** A pending proposal as its edit (api-avail/src/proposals.ts): base, patch, what changes, conflicts with the template now. */
+export type ProposalPatchInfo =
+  | { id: string; templateId: string | null; legacy: true }
+  | {
+      id: string;
+      templateId: string;
+      legacy: false;
+      baseVersion: number;
+      currentVersion: number;
+      base: Record<string, unknown>;
+      patch: TemplatePatch;
+      changes: string[];
+      conflicts: PatchConflict[];
+    };
+
+export const fetchProposalPatches = () => call<ProposalPatchInfo[]>("/avail/proposals/pending");
+
+/** The author withdraws a pending proposal. */
+export const withdrawProposal = (id: string) => call<{ id: string; status: string }>(`/avail/proposals/${encodeURIComponent(id)}/withdraw`, { method: "POST", body: "{}" });
 
 export const rejectProposal = (id: string, note: string) =>
   call<{ ok?: boolean }>(`/submissions/${encodeURIComponent(id)}/reject`, { method: "POST", body: JSON.stringify({ note }) });

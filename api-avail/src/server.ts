@@ -23,6 +23,7 @@ import { beginProposalOverrides, endProposalOverrides, registerOverrideRoutes, t
 import { logTokenRequest, pendingRefusals, rateLimitFromEnv, REFUSAL_PATH, registerAccessTokenRoutes, resolveAccessToken, TokenRateLimiter } from "./accessTokens";
 import { registerAssistantRoutes } from "./assistant";
 import { issuerOf, registerOAuthRoutes, resolveOAuthToken } from "./oauth";
+import { applyProposalSource, beginSubmissionPatch, endSubmissionPatch, pendingProposalRefusals, prepareApprove, PROPOSAL_REFUSAL_PATH, registerProposalRoutes, type ApprovePlan } from "./proposals";
 import { handleMcp, MCP_PATH, mcpUnauthorized } from "./mcp";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
@@ -39,6 +40,7 @@ registerAssistantRoutes(upstreamApp);
 registerOverrideRoutes(upstreamApp);
 registerProposalGuardRoutes(upstreamApp);
 registerOAuthRoutes(upstreamApp);
+registerProposalRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
@@ -189,7 +191,32 @@ export function createApiServer(config: ApiConfig): ApiServer {
 
   async function serve(incoming: Request): Promise<Response> {
     // Disabled users run signed out; upstream's user admin calls go to ours (users.ts).
-    const { request, actor } = resolveActor(db.sqlite, userRouteRewrite(incoming), config.vars.ADMIN_TOKEN);
+    const resolved = resolveActor(db.sqlite, userRouteRewrite(incoming), config.vars.ADMIN_TOKEN);
+    let request = resolved.request;
+    const actor = resolved.actor;
+    // Accept of a proposal stored as a patch (proposals.ts): the patch over the template now, or 409 on conflicts.
+    let approvePlan: ApprovePlan | null = null;
+    try {
+      const plan = await prepareApprove(db.sqlite, request);
+      if (plan && "status" in plan) {
+        const internal = internalAnswer(request, PROPOSAL_REFUSAL_PATH);
+        pendingProposalRefusals.set(internal, plan);
+        return await upstream.fetch(internal, bindings, ctx);
+      }
+      if (plan) {
+        approvePlan = plan;
+        request = plan.request;
+      }
+    } catch (err) {
+      log(`proposal patch failed: ${String(err)}`);
+    }
+    // An update proposal through upstream's route: its patch is recorded once upstream stores it.
+    let submissionPatch: Awaited<ReturnType<typeof beginSubmissionPatch>> = null;
+    try {
+      submissionPatch = await beginSubmissionPatch(db.sqlite, request);
+    } catch (err) {
+      log(`proposal patch read failed: ${String(err)}`);
+    }
     // A save that would duplicate another template (same manufacturer + part number): 409.
     try {
       const conflict = await duplicateConflict(db.sqlite, request);
@@ -236,9 +263,23 @@ export function createApiServer(config: ApiConfig): ApiServer {
     let response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
     if (overrides && response.status < 400) {
       try {
-        endProposalOverrides(db.sqlite, overrides, actor);
+        endProposalOverrides(db.sqlite, overrides, actor, approvePlan ? approvePlan.patch : null);
       } catch (err) {
         log(`override write failed: ${String(err)}`);
+      }
+    }
+    if (approvePlan && response.status < 400) {
+      try {
+        applyProposalSource(db.sqlite, approvePlan, actor);
+      } catch (err) {
+        log(`proposal source failed: ${String(err)}`);
+      }
+    }
+    if (submissionPatch) {
+      try {
+        await endSubmissionPatch(db.sqlite, submissionPatch, response);
+      } catch (err) {
+        log(`proposal patch write failed: ${String(err)}`);
       }
     }
     if (proposal && response.status < 400) {

@@ -333,6 +333,25 @@ nothing…» (`api-avail/src/proposalGuard.ts`; редактор, MCP, API).
 правилам), Reject с комментарием → `/:id/reject`. Решение пишется в журнал отдельной записью (action `proposal`:
 accepted / rejected, комментарий, автор; `requestAudit.ts` `readProposalDecision`), сама правка — как обычное updated.
 
+Предложения как правки (шаг 2.9; `api-avail/src/proposals.ts`, миграция 9014 `avail_proposals`, логика —
+`src/avail/templatePatch.ts`: `patchFromEdit`, `patchConflicts`, `applyPatchResolved`, `patchScope`):
+- Предложение хранит правку (patch: поля верхнего уровня, порты по id — update / add / remove) и шаблон, от которого
+  построено (версия и форма хранения). `submissions.data` upstream по-прежнему полный шаблон, но при Accept он не
+  пишется: `server.ts` (`prepareApprove`) применяет правку к текущему шаблону и передаёт upstream результат в `data`.
+  Изменилось с тех пор то же поле или порт (и не в предложенное значение) — 409 `{error, conflicts: [{key, label, base,
+  current, proposed}]}`; Accept с `resolutions: {<key>: "current" | "proposed"}` выбирает сторону. Правку записывают и
+  upstream `POST /submissions` (редактор, API — `beginSubmissionPatch`), и `POST /avail/proposals` `{templateId, patch |
+  data, comment}` (MCP `propose_change`). Предложения без строки в `avail_proposals` (созданные до 9014) принимаются
+  как раньше — целым шаблоном, во вкладке Proposals помечены.
+- Переопределения при Accept — только по полям и портам правки (`endProposalOverrides` с `patchScope`).
+- Комментарий со ссылкой на документ (PDF, data sheet / spec — `documentLink`) при правке портов делает его источником
+  портов: `catalog.portsSource = {kind: datasheet, from: <URL>}`, и `datasheetUrl`, если его не было (журнал — updated).
+- Вкладка Proposals: «сейчас → станет» по правке поверх текущего шаблона, таблица конфликтов «при создании / сейчас /
+  предложено» с выбором, выбор нескольких и массовые Accept / Reject (конфликтные остаются, отчёт). `GET
+  /avail/proposals/pending` — правка, изменения и конфликты. Автор отзывает своё: `POST /avail/proposals/:id/withdraw`
+  (статус `withdrawn`, журнал `proposal` withdrawn; в редакторе — Withdraw у своих предложений).
+- Лимит `POST /avail/proposals`: 30 в час и 30 ожидающих (как upstream); librarian и admin через коннектор (токен) — 200.
+
 Переопределения (шаг 2.7; `src/avail/overrides.ts` — чистая логика, `api-avail/src/overrides.ts`, миграция 9011
 `avail_overrides`): принятое предложение правки не теряется при импорте.
 - Accept предложения update (вкладка Proposals или `POST /submissions/:id/approve` по API): `server.ts` читает шаблон до

@@ -12,13 +12,14 @@ import { fetchLibraryTemplate } from "./api";
 import { isAvailLibrary } from "./libraryMode";
 import { deviceDataToTemplate } from "./templateEdit";
 import { useAvailState } from "./useAvail";
-import { fetchMyProposals, proposeChange, type Proposal } from "./workspaceApi";
+import { fetchMyProposals, proposeChange, withdrawProposal, type Proposal } from "./workspaceApi";
 
 const STATUS_TEXT: Readonly<Record<Proposal["status"], string>> = {
   pending: "waiting for review",
   deferred: "deferred",
   approved: "accepted",
   rejected: "rejected",
+  withdrawn: "withdrawn by you",
 };
 
 export function AvailProposeChange({ nodeId, build }: { nodeId: string | null; build: () => Record<string, unknown> | null }) {
@@ -30,6 +31,7 @@ export function AvailProposeChange({ nodeId, build }: { nodeId: string | null; b
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
   const [mine, setMine] = useState<Proposal[]>([]);
+  const [reload, setReload] = useState(0);
 
   const engineer = role === "contributor";
   useEffect(() => {
@@ -42,7 +44,7 @@ export function AvailProposeChange({ nodeId, build }: { nodeId: string | null; b
     return () => {
       live = false;
     };
-  }, [engineer, templateId, message]);
+  }, [engineer, templateId, message, reload]);
 
   if (!engineer || !templateId || !isAvailLibrary()) return null;
 
@@ -63,6 +65,16 @@ export function AvailProposeChange({ nodeId, build }: { nodeId: string | null; b
       setMessage({ ok: false, text: e instanceof Error ? e.message : String(e) });
     } finally {
       setBusy(false);
+    }
+  };
+
+  const withdraw = async (p: Proposal) => {
+    if (!window.confirm("Withdraw this proposal? Librarians will no longer see it.")) return;
+    try {
+      await withdrawProposal(p.id);
+      setReload((n) => n + 1);
+    } catch (e) {
+      setMessage({ ok: false, text: e instanceof Error ? e.message : String(e) });
     }
   };
 
@@ -101,9 +113,14 @@ export function AvailProposeChange({ nodeId, build }: { nodeId: string | null; b
       {mine.length > 0 && (
         <div className="text-[var(--color-text-muted)]">
           {mine.map((p) => (
-            <div key={p.id}>
+            <div key={p.id} data-testid="avail-my-proposal">
               Your proposal of {p.createdAt}: {STATUS_TEXT[p.status]}
               {p.reviewerNote ? ` — “${p.reviewerNote}”` : ""}
+              {(p.status === "pending" || p.status === "deferred") && (
+                <button className="ml-2 underline cursor-pointer" onClick={() => void withdraw(p)}>
+                  Withdraw
+                </button>
+              )}
             </div>
           ))}
         </div>

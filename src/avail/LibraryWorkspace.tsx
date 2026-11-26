@@ -30,10 +30,13 @@ import {
   mergeTemplates,
   undoNotDuplicates,
   fetchOverrides,
+  fetchProposalPatches,
+  type ProposalPatchInfo,
   removeOverride,
   type TemplateOverride,
 } from "./workspaceApi";
 import { ErrorText } from "./ErrorText";
+import { applyPatchResolved, type Resolution } from "./templatePatch";
 import {
   activeFilterCount,
   buildRows,
@@ -1364,11 +1367,25 @@ function NotDuplicatesDialog({
 
 // ============================================================================ Proposals tab
 
+/** A value in the conflicts table: "—" for none, JSON for objects. */
+function conflictValue(v: unknown): string {
+  if (v === null || v === undefined || v === "") return "—";
+  return typeof v === "object" ? JSON.stringify(v) : String(v);
+}
+
+/**
+ * Proposals (step 2.2; as edits since step 2.9): the edit applied to the template as it is now, the
+ * conflicts with what changed since ("at creation / now / proposed", choose a side), Accept / Reject,
+ * and the same for several at once.
+ */
 function ProposalsTab() {
   const [list, setList] = useState<Proposal[] | null>(null);
   const [current, setCurrent] = useState<Record<string, DeviceTemplate>>({});
+  const [patches, setPatches] = useState<Record<string, ProposalPatchInfo>>({});
   const [error, setError] = useState<string | null>(null);
   const [open, setOpen] = useState<string | null>(null);
+  const [checked, setChecked] = useState<Set<string>>(new Set());
+  const [choices, setChoices] = useState<Record<string, Resolution>>({});
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<ReactNode>(null);
@@ -1376,9 +1393,12 @@ function ProposalsTab() {
   const reload = useCallback(async () => {
     setError(null);
     try {
-      const [proposals, templates] = await Promise.all([fetchPendingProposals(), fetchWorkspace()]);
-      setList(proposals.filter((p) => p.action === "update"));
+      const [proposals, templates, infos] = await Promise.all([fetchPendingProposals(), fetchWorkspace(), fetchProposalPatches()]);
+      const updates = proposals.filter((p) => p.action === "update");
+      setList(updates);
       setCurrent(Object.fromEntries(templates.map((t) => [t.id!, t])));
+      setPatches(Object.fromEntries(infos.map((i) => [i.id, i])));
+      setChecked((c) => new Set([...c].filter((id) => updates.some((p) => p.id === id))));
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     }
@@ -1389,21 +1409,33 @@ function ProposalsTab() {
 
   const proposal = list?.find((p) => p.id === open) ?? null;
   const before = proposal?.templateId ? current[proposal.templateId] : undefined;
-  const diff = useMemo(
-    () => (proposal && before ? diffTemplates(before as unknown as Record<string, unknown>, proposal.data as unknown as Record<string, unknown>) : null),
-    [proposal, before],
-  );
-  const lintAfter = useMemo(() => (proposal ? lintAsStored(proposal.data, (before && carriedLifecycle(before)) ?? lifecycleOf(null)) : null), [proposal, before]);
+  const info = proposal ? patches[proposal.id] : undefined;
+  const asPatch = info && !info.legacy ? info : null;
+  const conflicts = asPatch?.conflicts ?? [];
+  const unresolved = conflicts.filter((c) => !choices[c.key]).length;
+  // What Accept writes: the edit over the template now (conflicts: the chosen side, else proposed), or a
+  // legacy proposal's whole snapshot.
+  const after = useMemo(() => {
+    if (!proposal || !before) return null;
+    return asPatch ? applyPatchResolved(before, asPatch.base, asPatch.patch, choices) : (proposal.data as unknown as Record<string, unknown>);
+  }, [proposal, before, asPatch, choices]);
+  const diff = useMemo(() => (before && after ? diffTemplates(before as unknown as Record<string, unknown>, after) : null), [before, after]);
+  const lintAfter = useMemo(() => (after ? lintAsStored(after, (before && carriedLifecycle(before)) ?? lifecycleOf(null)) : null), [after, before]);
+
+  const decideOne = async (p: Proposal, accept: boolean, resolutions: Record<string, Resolution> = {}) => {
+    if (accept) await acceptProposal(p.id, resolutions);
+    else await rejectProposal(p.id, note.trim());
+  };
 
   const decide = async (accept: boolean) => {
     if (!proposal) return;
     setBusy(true);
     try {
-      if (accept) await acceptProposal(proposal.id);
-      else await rejectProposal(proposal.id, note.trim());
+      await decideOne(proposal, accept, choices);
       setMessage(`${accept ? "Accepted" : "Rejected"}: ${proposal.data.label}. The decision is in the audit log.`);
       setOpen(null);
       setNote("");
+      setChoices({});
       await reload();
     } catch (e) {
       setMessage(
@@ -1411,35 +1443,119 @@ function ProposalsTab() {
           Failed: <ErrorText error={e} />
         </>,
       );
+      await reload();
     } finally {
       setBusy(false);
     }
   };
 
+  const decideChecked = async (accept: boolean) => {
+    const chosen = (list ?? []).filter((p) => checked.has(p.id));
+    if (!chosen.length) return;
+    setBusy(true);
+    const lines: ReactNode[] = [];
+    let done = 0;
+    for (const p of chosen) {
+      try {
+        await decideOne(p, accept);
+        done++;
+      } catch (e) {
+        lines.push(
+          <div key={p.id}>
+            {p.data.label}: <ErrorText error={e} />
+          </div>,
+        );
+      }
+    }
+    setMessage(
+      <div>
+        <div>
+          {accept ? "Accepted" : "Rejected"} {done} of {chosen.length}.
+          {accept && lines.length > 0 ? " Proposals with conflicts are left: open each to choose." : ""}
+        </div>
+        {lines}
+      </div>,
+    );
+    setChecked(new Set());
+    setNote("");
+    await reload();
+    setBusy(false);
+  };
+
   if (error) return <div className="p-4 text-red-700">Could not load the proposals: {error}</div>;
   if (!list) return <Center>Loading proposals…</Center>;
+  const allChecked = list.length > 0 && list.every((p) => checked.has(p.id));
   return (
     <div className="flex-1 flex min-h-0" data-testid="avail-ws-proposals">
-      <div className="w-96 shrink-0 border-r border-[var(--color-border)] overflow-y-auto">
+      <div className="w-96 shrink-0 border-r border-[var(--color-border)] overflow-y-auto flex flex-col">
         {message != null && <div className="px-3 py-2 bg-blue-50 border-b border-blue-200">{message}</div>}
+        {list.length > 0 && (
+          <div className="px-3 py-2 border-b border-[var(--color-border)] flex flex-col gap-1.5" data-testid="avail-ws-proposals-bulk">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" checked={allChecked} onChange={() => setChecked(allChecked ? new Set() : new Set(list.map((p) => p.id)))} />
+              Select all ({list.length})
+            </label>
+            {checked.size > 0 && (
+              <>
+                <input
+                  value={note}
+                  onChange={(e) => setNote(e.target.value)}
+                  placeholder="Comment to the authors (needed to reject)"
+                  aria-label="Comment to the authors"
+                  className="border border-[var(--color-border)] rounded px-1 py-0.5"
+                />
+                <div className="flex gap-2">
+                  <button className={btnPrimary} disabled={busy} onClick={() => void decideChecked(true)}>
+                    Accept selected ({checked.size})
+                  </button>
+                  <button className={btnPlain} disabled={busy || !note.trim()} onClick={() => void decideChecked(false)}>
+                    Reject selected ({checked.size})
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        )}
         {list.length === 0 && <div className="p-3 text-[var(--color-text-muted)]">No proposals waiting.</div>}
-        {list.map((p) => (
-          <button
-            key={p.id}
-            data-testid="avail-ws-proposal"
-            onClick={() => {
-              setOpen(p.id);
-              setNote("");
-            }}
-            className={`w-full text-left px-3 py-2 border-b border-gray-100 cursor-pointer ${open === p.id ? "bg-blue-100" : "hover:bg-[var(--color-surface-hover)]"}`}
-          >
-            <div className="font-semibold">{p.data.label}</div>
-            <div className="text-[var(--color-text-muted)]">
-              {p.submitterName ?? p.submitterEmail} · {p.createdAt}
+        {list.map((p) => {
+          const pi = patches[p.id];
+          const nConflicts = pi && !pi.legacy ? pi.conflicts.length : 0;
+          return (
+            <div key={p.id} className={`flex items-start gap-2 px-3 py-2 border-b border-gray-100 ${open === p.id ? "bg-blue-100" : "hover:bg-[var(--color-surface-hover)]"}`}>
+              <input
+                type="checkbox"
+                aria-label={`Select ${p.data.label}`}
+                checked={checked.has(p.id)}
+                onChange={() =>
+                  setChecked((c) => {
+                    const n = new Set(c);
+                    if (n.has(p.id)) n.delete(p.id);
+                    else n.add(p.id);
+                    return n;
+                  })
+                }
+                className="mt-1"
+              />
+              <button
+                data-testid="avail-ws-proposal"
+                onClick={() => {
+                  setOpen(p.id);
+                  setNote("");
+                  setChoices({});
+                }}
+                className="flex-1 text-left cursor-pointer"
+              >
+                <div className="font-semibold">{p.data.label}</div>
+                <div className="text-[var(--color-text-muted)]">
+                  {p.submitterName ?? p.submitterEmail} · {p.createdAt}
+                </div>
+                {pi && !pi.legacy && <div className="truncate">{pi.changes.join(", ")}</div>}
+                {nConflicts > 0 && <div className="text-amber-800">{nConflicts === 1 ? "1 conflict" : `${nConflicts} conflicts`} with later changes</div>}
+                {p.submitterNote && <div className="truncate text-[var(--color-text-muted)]">{p.submitterNote}</div>}
+              </button>
             </div>
-            {p.submitterNote && <div className="truncate">{p.submitterNote}</div>}
-          </button>
-        ))}
+          );
+        })}
       </div>
       <div className="flex-1 overflow-y-auto p-4">
         {!proposal && <div className="text-[var(--color-text-muted)]">Pick a proposal to compare it with the library template.</div>}
@@ -1449,17 +1565,64 @@ function ProposalsTab() {
               <div className="text-sm font-semibold text-[var(--color-text-heading)]">{proposal.data.label}</div>
               <div className="text-[var(--color-text-muted)]">
                 Proposed by {proposal.submitterEmail ?? proposal.submitterName} on {proposal.createdAt}
+                {asPatch && asPatch.baseVersion !== asPatch.currentVersion ? ` · the template changed since (version ${asPatch.baseVersion} → ${asPatch.currentVersion})` : ""}
               </div>
               {proposal.submitterNote && <div className="mt-1 p-2 bg-gray-50 border border-gray-200 rounded">“{proposal.submitterNote}”</div>}
             </div>
             {!before && <div className="text-red-700">The template is no longer in the library.</div>}
-            {diff && diffIsEmpty(diff) && <div>The proposal changes nothing.</div>}
+            {info?.legacy && (
+              <div className="text-amber-900 border border-amber-200 bg-amber-50 rounded p-2">
+                This proposal was made before proposals kept only their edit: Accept writes its whole template, including what changed in the library since.
+              </div>
+            )}
+            {conflicts.length > 0 && (
+              <div data-testid="avail-ws-conflicts" className="border border-amber-300 bg-amber-50 rounded p-2 flex flex-col gap-1">
+                <div className="font-semibold text-amber-900">
+                  The template changed since this proposal was made. Choose for each value: {unresolved > 0 ? `${unresolved} left` : "all chosen"}.
+                </div>
+                <table className="w-full">
+                  <thead className="text-left text-[var(--color-text-muted)]">
+                    <tr>
+                      <th className="pr-2">What</th>
+                      <th className="pr-2">At creation</th>
+                      <th className="pr-2">Now</th>
+                      <th className="pr-2">Proposed</th>
+                      <th>Keep</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {conflicts.map((c) => (
+                      <tr key={c.key} data-testid="avail-ws-conflict" className="border-t border-amber-200 align-top">
+                        <td className="pr-2 py-0.5">{c.label}</td>
+                        <td className="pr-2 py-0.5 break-all text-[var(--color-text-muted)]">{conflictValue(c.base)}</td>
+                        <td className="pr-2 py-0.5 break-all">{conflictValue(c.current)}</td>
+                        <td className="pr-2 py-0.5 break-all">{conflictValue(c.proposed)}</td>
+                        <td className="py-0.5 whitespace-nowrap">
+                          {(["current", "proposed"] as const).map((side) => (
+                            <label key={side} className="mr-2 cursor-pointer">
+                              <input
+                                type="radio"
+                                name={`conflict-${c.key}`}
+                                checked={choices[c.key] === side}
+                                onChange={() => setChoices((ch) => ({ ...ch, [c.key]: side }))}
+                              />{" "}
+                              {side === "current" ? "Now" : "Proposed"}
+                            </label>
+                          ))}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            {diff && diffIsEmpty(diff) && <div>With these choices the proposal changes nothing.</div>}
             {diff && diff.fields.length > 0 && (
               <table className="w-full" data-testid="avail-ws-diff-fields">
                 <thead className="text-left text-[var(--color-text-muted)]">
                   <tr>
                     <th className="pr-2">Field</th>
-                    <th className="pr-2">Was</th>
+                    <th className="pr-2">Now</th>
                     <th>Becomes</th>
                   </tr>
                 </thead>
@@ -1509,12 +1672,12 @@ function ProposalsTab() {
                 <button className={btnPlain} disabled={busy || !note.trim()} onClick={() => void decide(false)} title={note.trim() ? "" : "Write a comment for the author first"}>
                   Reject
                 </button>
-                <button className={btnPrimary} disabled={busy || !before} onClick={() => void decide(true)}>
+                <button className={btnPrimary} disabled={busy || !before || unresolved > 0} onClick={() => void decide(true)} title={unresolved > 0 ? "Choose a side for every conflict first" : ""}>
                   Accept
                 </button>
               </div>
               <div className="text-[var(--color-text-muted)]">
-                Accept writes the proposed template to the library; its level and status follow the usual rules (a verified template below level A becomes a draft).
+                Accept changes only what the proposal changes, over the template as it is now; its level and status follow the usual rules (a verified template below level A becomes a draft).
               </div>
             </div>
           </div>

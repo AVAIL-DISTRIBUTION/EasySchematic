@@ -64,6 +64,7 @@ export function auditChanges(r: AuditRecord): string[] {
     const a = r.after ?? {};
     const who = typeof a.submitter === "string" ? ` (proposed by ${a.submitter})` : "";
     const note = typeof a.note === "string" ? `: ${a.note}` : "";
+    if (a.decision === "withdrawn") return ["Withdrawn by the author"];
     return [`${a.decision === "accepted" ? "Accepted" : "Rejected"}${who}${note}`];
   }
   if (r.action === "not-duplicate") {
