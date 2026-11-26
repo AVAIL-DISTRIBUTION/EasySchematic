@@ -578,12 +578,20 @@ npm run build       # esbuild → dist/server.mjs (better-sqlite3 остаётс
   `ghcr.io/avail-distribution/easyschematic` (фронтенд) и
   `ghcr.io/avail-distribution/easyschematic-api` (API).
 - `.github/workflows/avail-api-test.yml` — typecheck, тесты и сборка `api-avail`
-  на PR и push в `master`.
+  на PR и push в `master`; job `avail-dist` — сборка AVAIL и `avail:check-dist`.
 - Адреса фронтенда вшиваются при сборке (`import.meta.env`): build-args
   `VITE_TEMPLATE_API_URL`, `VITE_DEVICES_URL`, `VITE_AUTH_GOOGLE_ONLY`, `VITE_DOCS_URL`
   (плюс `VITE_AVAIL=1` и `SOURCE_COMMIT` — задаёт сам workflow) в
   `Dockerfile.avail`, в CI берутся из repository variables (`vars.*`). Пустое значение
-  = дефолт приложения. В коде наши адреса не хардкодим.
+  = дефолт приложения. В коде наши адреса не хардкодим. `VITE_DEVICES_URL` в сборке AVAIL пустой.
+- Сборка AVAIL не ведёт на сервисы upstream (devices / api / docs.easyschematic.live, почта
+  поддержки): адреса upstream — в `src/avail/upstream.ts` за константой `AVAIL_BUILD`
+  (`import.meta.env.VITE_AVAIL`; Vite подставляет её при сборке, и ветки upstream выпадают из
+  бандла); лендинг заменяется пустым модулем, строка про docs в приветственной заметке
+  `defaultSchematic.json` убирается, `_headers` и `sitemap.xml` не попадают в dist, `robots.txt` —
+  Disallow (`vite.avail.ts`). Разрешена одна ссылка — сайт upstream на странице About.
+  `npm run avail:check-dist [-- <dist>]` (`src/avail/distCheck.ts`) проверяет dist; его запускают
+  `Dockerfile.avail` после `vite build` и job `avail-dist` в `avail-api-test.yml` на PR.
 - `deploy/avail/` — продакшен на сервере: `docker-compose.yml` (caddy + app + api на
   образах из GHCR), `Caddyfile` (`handle_path /api/*` → api, остальное → app, без basic
   auth), `.env.example`, `update.sh` (pull + up -d), `backup.sh` (снимок SQLite + `r2/`,
