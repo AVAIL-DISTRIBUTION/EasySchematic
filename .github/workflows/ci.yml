@@ -55,8 +55,17 @@ jobs:
       - name: MCP server build + tests
         run: cd mcp-server && npm test
 
+      # AVAIL: apt mirrors sometimes list a package version security.ubuntu.com already dropped
+      # (404 on a .deb). Retry with a fresh index instead of failing the build.
       - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
+        run: |
+          for i in 1 2 3; do
+            npx playwright install --with-deps chromium && exit 0
+            echo "Playwright install failed (attempt $i), refreshing the apt index"
+            sleep 20
+            sudo apt-get update || true
+          done
+          exit 1
 
       # playwright.config.ts starts its own `npm run dev` when CI is set. There's no
       # API worker here and no .env.local, so the app runs on the bundled device
