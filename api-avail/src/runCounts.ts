@@ -23,7 +23,7 @@ export const availRunCounts = (r: ImportAvailReport): RunCounts => ({
 });
 
 export const normalizeRunCounts = (r: NormalizeLibraryReport): RunCounts => ({
-  updated: r.improved, processed: r.processed, notWritten: r.sameLevelNotWritten,
+  updated: r.improved, processed: r.processed, notWritten: r.sameLevelNotWritten, verifiedToDraft: r.verifiedToDraft.length,
 });
 
 export const vendorCleanupRunCounts = (r: VendorCleanupReport): RunCounts => ({

@@ -25,6 +25,28 @@
   "widthMm": 285,
   "depthMm": 171,
   "weightKg": 2.1,
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "extron-cubby-flex55"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "extron-cubby-flex55"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "extron-cubby-flex55"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "extron-cubby-flex55"
+    }
+  ],
   "_avail": {
     "status": "awaiting-ports",
     "variant": "No AC, Black",
@@ -35,7 +57,8 @@
     "notes": "[AVAIL] dims from Extron specifications",
     "source": "extron-blocks-v4.csv",
     "libraryNotes": "slot family renamed to the library name; new slot family \"extron-cubby-flex55\"",
-    "portsMissing": "number of extron-cubby-flex55 openings: not drawn in the Extron stencil and not in the description"
+    "slotsSource": "document: https://www.extron.com/Power-Modules/prodsubtype-587",
+    "slotsNote": "Extron: \"Most Cable Cubby F55 enclosures include standard connectivity hardware for up to four full-size Flex55 and EU modules\""
   },
   "ports": []
 }

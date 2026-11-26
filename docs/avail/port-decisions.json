@@ -1,0 +1,29 @@
+{
+  "about": "Port decisions of AVAIL engineers (standard v0.11, R6): applied by the normalizer (normalize:library) and fill:catalog-ports, so ports copied again from the database keep them. A template matches by its label (manufacturer + model) or part number; the port by its label (old or new). Fields in set replace the port's.",
+  "decisions": [
+    {
+      "manufacturer": "Extron",
+      "models": ["UCS 303", "UCS SW 313"],
+      "partNumbers": ["60-1797-01", "60-1797-02"],
+      "port": "USB-C In (DP Alt, 60W PD)",
+      "set": { "section": "Video Inputs", "signalType": "usb", "connectorType": "usb-c", "notes": "DP Alt Mode video + USB data" },
+      "decision": "USB-C with DP Alt is a video input, as on DTP3 T 322 D"
+    },
+    {
+      "manufacturer": "Extron",
+      "models": ["UCS SR 501"],
+      "partNumbers": ["60-1798-13"],
+      "port": "IR/Serial",
+      "set": { "section": "Control", "signalType": "serial", "direction": "bidirectional", "notes": "IR or RS-232, programmable" },
+      "decision": "shared IR / RS-232 port: serial in Control"
+    },
+    {
+      "manufacturer": "Extron",
+      "models": ["MLC 226 IP"],
+      "partNumbers": ["60-600-02"],
+      "port": "PWR SNS",
+      "set": { "label": "Power Sense", "direction": "input", "signalType": "sensor", "section": "Control", "notes": "current sensor input" },
+      "decision": "power sense input of the MLC: a sensor input in Control"
+    }
+  ]
+}

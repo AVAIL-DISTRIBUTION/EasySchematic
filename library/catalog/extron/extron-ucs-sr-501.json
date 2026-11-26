@@ -102,12 +102,12 @@
     },
     {
       "label": "IR/Serial",
-      "signalType": "ir",
+      "signalType": "serial",
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Control",
       "id": "port-13",
-      "notes": "2-pole, programmable"
+      "notes": "IR or RS-232, programmable"
     },
     {
       "label": "Digital I/O (configurable)",

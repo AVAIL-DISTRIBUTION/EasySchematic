@@ -61,6 +61,15 @@
       "section": "Video Inputs"
     },
     {
+      "label": "USB-C In (DP Alt, 60W PD)",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "id": "port-2",
+      "notes": "DP Alt Mode video + USB data",
+      "section": "Video Inputs"
+    },
+    {
       "label": "HDMI Out",
       "signalType": "hdmi",
       "direction": "output",
@@ -171,14 +180,6 @@
       "connectorType": "iec",
       "section": "Power",
       "id": "port-16"
-    },
-    {
-      "label": "USB-C In (DP Alt, 60W PD)",
-      "signalType": "usb",
-      "direction": "input",
-      "connectorType": "usb-c",
-      "id": "port-2",
-      "notes": "DP Alt + USB host + 60 W PD"
     }
   ]
 }

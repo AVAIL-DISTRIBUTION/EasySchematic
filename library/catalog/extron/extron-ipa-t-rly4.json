@@ -82,7 +82,7 @@
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Control",
-      "notes": "5-pole 3.5mm captive screw — control input + DC power from a host (12VDC). Carries serial control commands.",
+      "notes": "5-pole 3.5mm captive screw — control input + DC power from a host (12VDC). Carries serial control commands.; powered by host",
       "id": "port-0"
     }
   ]
