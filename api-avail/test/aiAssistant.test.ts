@@ -143,7 +143,7 @@ describe("what the AI Assistant may do", () => {
     // A draft that duplicates another template: 409, as for any save.
     expect((await send("POST", "/avail/templates/draft", tpl("", "Extron DTP3 T 203 copy", "60-1"), ai)).status).toBe(409);
 
-    const proposal = await send("POST", "/submissions", { action: "update", templateId: "v1", data: tpl("", "Extron DTP3 T 203", "60-1"), submitterNote: "HDMI port note", source: "manual" }, ai);
+    const proposal = await send("POST", "/submissions", { action: "update", templateId: "v1", data: { ...tpl("", "Extron DTP3 T 203", "60-1"), powerDrawW: 6 }, submitterNote: "HDMI port note", source: "manual" }, ai);
     expect(proposal.status).toBeLessThan(300);
   });
 
@@ -154,7 +154,8 @@ describe("what the AI Assistant may do", () => {
     insert(tpl("v2", "Extron DTP3 T 203 B", "60-1"), "draft");
     const { value } = await issue(admin.cookie);
     const ai = bearer(value);
-    const sub = await json<{ id: string }>(send("POST", "/submissions", { action: "update", templateId: "v1", data: tpl("", "Extron DTP3 T 203", "60-1"), submitterNote: "x", source: "manual" }, ai));
+    const sub = await json<{ id: string }>(send("POST", "/submissions", { action: "update", templateId: "v1", data: { ...tpl("", "Extron DTP3 T 203", "60-1"), powerDrawW: 7 }, submitterNote: "x", source: "manual" }, ai));
+    expect(sub.id).toBeTruthy();
     const refused: [string, string, unknown][] = [
       ["PUT", "/avail/templates/v1/status", { status: "verified" }],
       ["PUT", "/avail/templates/v1/status", { status: "hidden" }],

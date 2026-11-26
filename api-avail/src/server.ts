@@ -18,6 +18,7 @@ import { registerUserRoutes } from "./users";
 import { duplicateConflict } from "./duplicateGuard";
 import { CONFLICT_PATH, pendingConflicts, registerDuplicateRoutes } from "./duplicates";
 import { registerNotDuplicateRoutes } from "./notDuplicates";
+import { EMPTY_PROPOSAL_PATH, emptyProposal, pendingEmptyProposals, registerProposalGuardRoutes } from "./proposalGuard";
 import { beginProposalOverrides, endProposalOverrides, registerOverrideRoutes, type ProposalOverrideScope } from "./overrides";
 import { logTokenRequest, pendingRefusals, rateLimitFromEnv, REFUSAL_PATH, registerAccessTokenRoutes, resolveAccessToken, TokenRateLimiter } from "./accessTokens";
 import { registerAssistantRoutes } from "./assistant";
@@ -35,6 +36,7 @@ registerNotDuplicateRoutes(upstreamApp);
 registerAccessTokenRoutes(upstreamApp);
 registerAssistantRoutes(upstreamApp);
 registerOverrideRoutes(upstreamApp);
+registerProposalGuardRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
@@ -196,6 +198,17 @@ export function createApiServer(config: ApiConfig): ApiServer {
       }
     } catch (err) {
       log(`duplicate check failed: ${String(err)}`);
+    }
+    // An update proposal that changes nothing: 400 (proposalGuard.ts).
+    try {
+      const refusal = await emptyProposal(db.sqlite, request);
+      if (refusal) {
+        const internal = internalAnswer(request, EMPTY_PROPOSAL_PATH);
+        pendingEmptyProposals.set(internal, refusal);
+        return await upstream.fetch(internal, bindings, ctx);
+      }
+    } catch (err) {
+      log(`proposal check failed: ${String(err)}`);
     }
     // Template writes through upstream's routes: snapshot before, log what changed after.
     let audit: ReturnType<typeof beginTemplateAudit> | null = null;
