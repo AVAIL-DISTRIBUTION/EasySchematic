@@ -8,6 +8,7 @@ import {
   buildRows,
   builtInFilters,
   categoryTree,
+  completeFilter,
   diffIsEmpty,
   diffTemplates,
   EMPTY_FILTER,
@@ -99,10 +100,28 @@ describe("filters", () => {
   });
 
   it("built-in saved filters: review queue, my edits only when signed in", () => {
-    expect(builtInFilters(null).map((f) => f.name)).toEqual(["Review queue", "Drafts to fix", "Unverified", "Hidden"]);
+    expect(builtInFilters(null).map((f) => f.name)).toEqual(["Review queue", "Drafts to fix", "Unverified", "Approved without document check", "Hidden"]);
     const mine = builtInFilters("eng@avail.test").find((f) => f.name === "My edits")!;
     expect(filterRows(rows, mine.filter).map((r) => r.id)).toEqual(["b"]);
     expect(filterRows(rows, builtInFilters(null)[0].filter).map((r) => r.id)).toEqual(["a"]);
+  });
+
+  it("Approved without document check: verified, community ports, bulk-approved", () => {
+    const lib = buildRows([
+      ...LIB,
+      tpl("d", {}, { status: "verified", approvedVia: "bulk", approvedBy: "lib@avail.test", portsOrigin: "community", portsSource: "db" }),
+      tpl("e", {}, { status: "verified", approvedVia: "bulk", portsOrigin: "manufacturer" }),
+      tpl("f", {}, { status: "draft", approvedVia: "bulk", portsOrigin: "community", portsSource: "db" }),
+    ]);
+    const preset = builtInFilters(null).find((f) => f.name === "Approved without document check")!;
+    // b is verified with community ports but approved in the Review card: not in the set.
+    expect(filterRows(lib, preset.filter).map((r) => r.id)).toEqual(["d"]);
+    expect(activeFilterCount(preset.filter)).toBe(3);
+    // An older saved filter without the new fields still works once completed.
+    const old = { ...EMPTY_FILTER } as Partial<typeof EMPTY_FILTER>;
+    delete old.origins;
+    delete old.approvedVia;
+    expect(filterRows(lib, completeFilter(old)).length).toBe(lib.length);
   });
 
   it("facets and the category tree count rows", () => {

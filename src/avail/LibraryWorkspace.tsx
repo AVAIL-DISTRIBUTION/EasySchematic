@@ -31,8 +31,10 @@ import {
   builtInFilters,
   BULK_LABELS,
   BULK_STATUS,
+  APPROVAL_LABELS,
   categoryTree,
   COLUMNS,
+  completeFilter,
   DEFAULT_COLUMNS,
   diffIsEmpty,
   diffTemplates,
@@ -41,6 +43,7 @@ import {
   facet,
   filterRows,
   LEVELS,
+  ORIGIN_LABELS,
   planBulk,
   ruleLabel,
   sortRows,
@@ -53,6 +56,7 @@ import {
   type WsFilter,
   type WsRow,
 } from "./workspaceModel";
+import { BULK_BATCH, bulkReport, chunks, runBulk } from "./workspaceBulk";
 import { buildXlsx } from "./xlsxWrite";
 import "./avail.css";
 
@@ -175,24 +179,14 @@ function TemplatesTab() {
   const selectedRows = useMemo(() => (rows ?? []).filter((r) => selected.has(r.id)), [rows, selected]);
   const focused = useMemo(() => rows?.find((r) => r.id === focus) ?? null, [rows, focus]);
 
-  const runPlan = async (plan: BulkPlan) => {
-    const ids = plan.change.map((c) => c.row.id);
-    const lines: string[] = [];
-    try {
-      if (plan.action === "category") {
-        const r = await changeTemplatesCategory(ids, plan.category!);
-        lines.push(`Category set to ${r.category}: ${r.updated.length} changed, ${r.unchanged.length} already there, ${r.failed.length} not found.`);
-      } else {
-        const r = await changeTemplatesStatus(ids, BULK_STATUS[plan.action]);
-        lines.push(`${BULK_LABELS[plan.action]}: ${r.updated.length} changed, ${r.failed.length} refused.`);
-        for (const f of r.failed) lines.push(`Refused: ${f.label ?? f.id}: ${f.reason === "not_level_a" ? `level ${f.level}` : "not found"}`);
-      }
-      for (const x of plan.refused) lines.push(`Not sent: ${x.row.template.label}: ${x.reason}`);
-      lines.push("Every change is in the audit log.");
-    } catch (e) {
-      lines.push(`Failed: ${e instanceof Error ? e.message : String(e)}`);
-    }
-    setDialog({ kind: "report", title: `${BULK_LABELS[plan.action]} — report`, lines });
+  /** Runs a bulk action in batches of 500 (the API's limit), with progress, then one report. */
+  const runPlan = async (plan: BulkPlan, onProgress: (batch: number, of: number) => void) => {
+    const send =
+      plan.action === "category"
+        ? (ids: string[]) => changeTemplatesCategory(ids, plan.category!)
+        : (ids: string[]) => changeTemplatesStatus(ids, BULK_STATUS[plan.action as Exclude<BulkAction, "category">]);
+    const outcome = await runBulk(plan, send, onProgress);
+    setDialog({ kind: "report", title: `${BULK_LABELS[plan.action]} — report`, lines: bulkReport(plan, outcome) });
     await reload();
   };
 
@@ -277,7 +271,7 @@ function TemplatesTab() {
       </div>
       {focused && <DetailsPanel row={focused} onClose={() => setFocus(null)} onChanged={reload} onReport={(title, lines) => setDialog({ kind: "report", title, lines })} />}
 
-      {dialog?.kind === "plan" && <PlanDialog plan={dialog.plan} onClose={() => setDialog(null)} onRun={(p) => void runPlan(p)} />}
+      {dialog?.kind === "plan" && <PlanDialog plan={dialog.plan} onClose={() => setDialog(null)} onRun={runPlan} />}
       {dialog?.kind === "category" && (
         <CategoryDialog
           onClose={() => setDialog(null)}
@@ -403,7 +397,7 @@ function FilterSidebar({ rows, filter, onChange }: { rows: WsRow[]; filter: WsFi
   const [custom, setCustom] = useState<SavedFilter[]>(() => load(FILTERS_KEY, []));
   const presets = useMemo(() => [...builtInFilters(me), ...custom], [me, custom]);
   const set = <K extends keyof WsFilter>(k: K, v: WsFilter[K]) => onChange({ ...filter, [k]: v });
-  const toggle = <K extends "vendors" | "categories" | "deviceTypes" | "statuses" | "levels" | "portsSources" | "rules" | "approvedBy">(k: K, v: string) => {
+  const toggle = <K extends "vendors" | "categories" | "deviceTypes" | "statuses" | "levels" | "portsSources" | "rules" | "approvedBy" | "origins" | "approvedVia">(k: K, v: string) => {
     const list = filter[k] as string[];
     set(k, (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]) as WsFilter[K]);
   };
@@ -437,7 +431,7 @@ function FilterSidebar({ rows, filter, onChange }: { rows: WsRow[]; filter: WsFi
         <div className="flex flex-wrap gap-1">
           {presets.map((p) => (
             <span key={p.name} className="inline-flex items-center border border-gray-300 rounded">
-              <button className="px-1.5 py-0.5 cursor-pointer hover:bg-[var(--color-surface-hover)]" onClick={() => onChange(p.filter)}>
+              <button className="px-1.5 py-0.5 cursor-pointer hover:bg-[var(--color-surface-hover)]" onClick={() => onChange(completeFilter(p.filter))}>
                 {p.name}
               </button>
               {!p.builtIn && (
@@ -499,6 +493,9 @@ function FilterSidebar({ rows, filter, onChange }: { rows: WsRow[]; filter: WsFi
       <Section title="Device type">
         <CheckList items={types} on={filter.deviceTypes} onToggle={(v) => toggle("deviceTypes", v)} />
       </Section>
+      <Section title="Ports origin">
+        <Chips values={(Object.keys(ORIGIN_LABELS) as (keyof typeof ORIGIN_LABELS)[]).map((o) => ({ value: o, label: ORIGIN_LABELS[o] }))} on={filter.origins} onToggle={(v) => toggle("origins", v)} />
+      </Section>
       <Section title="Ports source">
         <CheckList items={sources} on={filter.portsSources} onToggle={(v) => toggle("portsSources", v)} />
       </Section>
@@ -507,6 +504,9 @@ function FilterSidebar({ rows, filter, onChange }: { rows: WsRow[]; filter: WsFi
       </Section>
       <Section title="Changed since">
         <input type="date" value={filter.changedSince} onChange={(e) => set("changedSince", e.target.value)} className="border border-[var(--color-border)] rounded px-1" aria-label="Changed since" />
+      </Section>
+      <Section title="Approved how">
+        <Chips values={(Object.keys(APPROVAL_LABELS) as (keyof typeof APPROVAL_LABELS)[]).map((a) => ({ value: a, label: APPROVAL_LABELS[a] }))} on={filter.approvedVia} onToggle={(v) => toggle("approvedVia", v)} />
       </Section>
       <Section title="Approved by">
         <CheckList items={approvers} on={filter.approvedBy} onToggle={(v) => toggle("approvedBy", v)} />
@@ -585,17 +585,27 @@ function Modal({ title, onClose, children, testId, footer }: { title: string; on
 }
 
 /** The summary before a bulk action runs: what changes, what stays, what will be refused. */
-function PlanDialog({ plan, onClose, onRun }: { plan: BulkPlan; onClose: () => void; onRun: (p: BulkPlan) => void }) {
+function PlanDialog({
+  plan,
+  onClose,
+  onRun,
+}: {
+  plan: BulkPlan;
+  onClose: () => void;
+  onRun: (p: BulkPlan, onProgress: (batch: number, of: number) => void) => Promise<void>;
+}) {
   const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState<{ batch: number; of: number } | null>(null);
+  const batches = chunks(plan.change).length;
   const what = plan.action === "category" ? `${BULK_LABELS.category} to ${plan.category}` : BULK_LABELS[plan.action];
   return (
     <Modal
       title={`${what} — what will change`}
-      onClose={onClose}
+      onClose={busy ? () => {} : onClose}
       testId="avail-ws-plan"
       footer={
         <>
-          <button className={btnPlain} onClick={onClose}>
+          <button className={btnPlain} onClick={onClose} disabled={busy} title={busy ? "The batches already sent cannot be undone; wait for the report" : ""}>
             Cancel
           </button>
           <button
@@ -603,10 +613,10 @@ function PlanDialog({ plan, onClose, onRun }: { plan: BulkPlan; onClose: () => v
             disabled={busy || plan.change.length === 0}
             onClick={() => {
               setBusy(true);
-              onRun(plan);
+              void onRun(plan, (batch, of) => setProgress({ batch, of }));
             }}
           >
-            {busy ? "Working…" : `${BULK_LABELS[plan.action]} ${plan.change.length}`}
+            {busy ? (progress ? `Batch ${progress.batch} of ${progress.of}…` : "Working…") : `${BULK_LABELS[plan.action]} ${plan.change.length}`}
           </button>
         </>
       }
@@ -615,7 +625,16 @@ function PlanDialog({ plan, onClose, onRun }: { plan: BulkPlan; onClose: () => v
         <div>
           <b>{plan.change.length}</b> will change, <b>{plan.unchanged.length}</b> already as asked, <b>{plan.refused.length}</b> will be refused.
           {plan.action === "approve" && " The server checks level A again for every template."}
+          {batches > 1 && ` Sent in ${batches} batches of up to ${BULK_BATCH}.`}
         </div>
+        {busy && progress && (
+          <div data-testid="avail-ws-progress" className="flex items-center gap-2">
+            <progress value={progress.batch - 0.5} max={progress.of} className="flex-1" aria-label="Progress of the bulk action" />
+            <span>
+              Batch {progress.batch} of {progress.of}
+            </span>
+          </div>
+        )}
         {plan.change.length > 0 && (
           <table className="w-full">
             <tbody>
