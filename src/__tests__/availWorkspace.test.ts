@@ -100,7 +100,7 @@ describe("filters", () => {
   });
 
   it("built-in saved filters: review queue, my edits only when signed in", () => {
-    expect(builtInFilters(null).map((f) => f.name)).toEqual(["Review queue", "Drafts to fix", "Unverified", "Approved without document check", "Hidden"]);
+    expect(builtInFilters(null).map((f) => f.name)).toEqual(["Review queue", "Drafts to fix", "Unverified", "Approved without document check", "Possible duplicates", "Hidden"]);
     const mine = builtInFilters("eng@avail.test").find((f) => f.name === "My edits")!;
     expect(filterRows(rows, mine.filter).map((r) => r.id)).toEqual(["b"]);
     expect(filterRows(rows, builtInFilters(null)[0].filter).map((r) => r.id)).toEqual(["a"]);

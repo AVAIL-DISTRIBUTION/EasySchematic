@@ -53,7 +53,8 @@ export async function runBulk(
       out.updated.push(...r.updated);
       out.unchanged.push(...(r.unchanged ?? []));
       for (const f of r.failed) {
-        const reason = f.reason === "not_level_a" ? `level ${f.level ?? "?"}, verified needs A` : f.reason === "not_found" ? "not found" : f.reason;
+        const reason =
+          f.reason === "not_level_a" ? `level ${f.level ?? "?"}, verified needs A` : f.reason === "not_found" ? "not found" : f.reason === "primary" ? "the primary itself" : f.reason;
         out.refused.push({ id: f.id, label: f.label ?? null, reason });
       }
     } catch (e) {
@@ -66,8 +67,21 @@ export async function runBulk(
 const MAX_LINES = 50;
 
 /** The report after a bulk action: totals over all batches, then what was refused or failed. */
+/**
+ * The selection after a bulk action (step 2.4): cleared when every batch went through; when a batch
+ * failed as a whole, its templates stay selected so the action can be run again for them.
+ */
+export function selectionAfter(o: BulkOutcome): Set<string> {
+  return new Set(o.failedBatches.flatMap((b) => b.ids));
+}
+
 export function bulkReport(plan: BulkPlan, o: BulkOutcome): string[] {
-  const what = plan.action === "category" ? `Category set to ${plan.category}` : BULK_LABELS[plan.action];
+  const what =
+    plan.action === "category"
+      ? `Category set to ${plan.category}`
+      : plan.action === "merge"
+        ? `Merged into ${plan.primary?.template.label ?? "the primary"}`
+        : BULK_LABELS[plan.action];
   const notSent = o.failedBatches.reduce((n, b) => n + b.ids.length, 0);
   const lines = [
     `${what}: ${o.updated.length} changed` +

@@ -15,6 +15,8 @@ import { registerAvailRoutes } from "./routes";
 import { auditsTemplates, beginTemplateAudit, endTemplateAudit, proposalAuditEntry, readProposalDecision, refuseDisabledSignIn, resolveActor, userRouteRewrite, type ProposalDecision } from "./requestAudit";
 import { writeAudit } from "./audit";
 import { registerUserRoutes } from "./users";
+import { duplicateConflict } from "./duplicateGuard";
+import { CONFLICT_PATH, pendingConflicts, registerDuplicateRoutes } from "./duplicates";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -23,6 +25,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 // (Hono builds its router on the first match and refuses new routes after that).
 registerAvailRoutes(upstreamApp);
 registerUserRoutes(upstreamApp);
+registerDuplicateRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
@@ -154,6 +157,21 @@ export function createApiServer(config: ApiConfig): ApiServer {
     fetch: async (incoming) => {
       // Disabled users run signed out; upstream's user admin calls go to ours (users.ts).
       const { request, actor } = resolveActor(db.sqlite, userRouteRewrite(incoming), config.vars.ADMIN_TOKEN);
+      // A save that would duplicate another template (same manufacturer + part number): 409.
+      try {
+        const conflict = await duplicateConflict(db.sqlite, request);
+        if (conflict) {
+          // Answered by an internal route, so the app's CORS and security headers apply.
+          const url = new URL(request.url);
+          url.pathname = CONFLICT_PATH;
+          url.search = "";
+          const internal = new Request(url, { method: request.method, headers: request.headers });
+          pendingConflicts.set(internal, conflict);
+          return await upstream.fetch(internal, bindings, ctx);
+        }
+      } catch (err) {
+        log(`duplicate check failed: ${String(err)}`);
+      }
       // Template writes through upstream's routes: snapshot before, log what changed after.
       let audit: ReturnType<typeof beginTemplateAudit> | null = null;
       try {
