@@ -186,18 +186,18 @@
     {
       "id": "tpl-17",
       "label": "Network 1",
-      "signalType": "ethernet",
+      "signalType": "avb",
       "direction": "bidirectional",
-      "section": "Network",
+      "section": "AVB",
       "connectorType": "rj45",
       "notes": "1000Base-T: Dante, AES67, AVB and Tesira / VenueTune control; converged, split or redundant; PoE+ from the switch keeps the processor running without mains"
     },
     {
       "id": "tpl-18",
       "label": "Network 2",
-      "signalType": "ethernet",
+      "signalType": "avb",
       "direction": "bidirectional",
-      "section": "Network",
+      "section": "AVB",
       "connectorType": "rj45",
       "notes": "1000Base-T: Dante, AES67, AVB and Tesira / VenueTune control; converged, split or redundant"
     },

@@ -115,20 +115,20 @@
     {
       "id": "tpl-14",
       "label": "LAN 1",
-      "signalType": "ethernet",
+      "signalType": "avb",
       "direction": "bidirectional",
-      "section": "Network",
+      "section": "AVB",
       "connectorType": "rj45",
-      "notes": "Dual network ports (media / control): AVB media network on Qt X 300; the data sheet does not say which port is media"
+      "notes": "The panel marks the ports 1 and 2 only; the data sheet: dual network ports (media / control), AVB media network on Qt X 300"
     },
     {
       "id": "tpl-15",
       "label": "LAN 2",
-      "signalType": "ethernet",
+      "signalType": "avb",
       "direction": "bidirectional",
-      "section": "Network",
+      "section": "AVB",
       "connectorType": "rj45",
-      "notes": "Dual network ports (media / control): AVB media network on Qt X 300; the data sheet does not say which port is media"
+      "notes": "The panel marks the ports 1 and 2 only; the data sheet: dual network ports (media / control), AVB media network on Qt X 300"
     },
     {
       "id": "tpl-8",
