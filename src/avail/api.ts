@@ -5,6 +5,7 @@
 import type { DeviceTemplate } from "../types";
 import { setRole, type TemplateStatus, type UserRole } from "./libraryMode";
 import { DEFAULT_API_URL } from "./upstream";
+import { apiError } from "./apiError";
 
 export function apiUrl(): string {
   return import.meta.env?.VITE_TEMPLATE_API_URL ?? DEFAULT_API_URL;
@@ -97,7 +98,7 @@ export async function fetchLibraryTemplate(templateId: string): Promise<DeviceTe
   return (await res.json()) as DeviceTemplate;
 }
 
-/** PUT /templates/:id (moderator/admin session); throws with the API's error message. */
+/** PUT /templates/:id (moderator/admin session); throws ApiError (409 duplicate: with the existing template). */
 export async function saveLibraryTemplate(templateId: string, template: Omit<DeviceTemplate, "id" | "version">): Promise<void> {
   const res = await fetch(`${apiUrl()}/templates/${encodeURIComponent(templateId)}`, {
     method: "PUT",
@@ -106,8 +107,7 @@ export async function saveLibraryTemplate(templateId: string, template: Omit<Dev
     body: JSON.stringify(template),
   });
   if (res.ok) return;
-  const body = (await res.json().catch(() => ({}))) as { error?: string };
-  throw new Error(body.error ?? `HTTP ${res.status}`);
+  throw apiError(res.status, await res.json().catch(() => ({})));
 }
 
 export interface BatchStatusFailure {

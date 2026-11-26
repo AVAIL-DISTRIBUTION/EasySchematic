@@ -20,7 +20,7 @@ export function duplicateRows(groups: readonly DupGroup[]): (string | number)[][
   return rows;
 }
 
-export function formatDuplicates(groups: readonly DupGroup[], meta: { source: string; date: string; total: number }): string {
+export function formatDuplicates(groups: readonly DupGroup[], meta: { source: string; date: string; total: number; notDuplicates?: number }): string {
   const dups = groups.reduce((n, g) => n + g.members.length - 1, 0);
   const by = (r: string) => groups.filter((g) => g.reasons.includes(r as never)).length;
   const esc = (s: string) => s.replace(/\|/g, "\\|");
@@ -29,7 +29,8 @@ export function formatDuplicates(groups: readonly DupGroup[], meta: { source: st
     "",
     `Source: ${meta.source}; ${meta.total} templates (hidden ones left out). Generated ${meta.date} by \`npm run report:duplicates\` (api-avail); the same table — \`duplicates.xlsx\`.`,
     "",
-    `**${groups.length}** groups, **${dups}** templates to merge into a primary. Same manufacturer + part number: ${by("same part number")} groups; same normalized model: ${by("same model")}.`,
+    `**${groups.length}** groups, **${dups}** templates to merge into a primary. Same manufacturer + part number: ${by("same part number")} groups; same normalized model: ${by("same model")}.` +
+      (meta.notDuplicates ? ` Pairs marked "not duplicates" by a librarian, left out: ${meta.notDuplicates}.` : ""),
     "",
     "A pair is a duplicate when the manufacturer and modelNumber match, or the label without the manufacturer, punctuation, case and variant words " +
       "(colour, MM / SM, region, LinkLicense…) matches — and the variant is the same; templates that differ only by the variant are variants, not duplicates. " +

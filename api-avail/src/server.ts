@@ -17,6 +17,7 @@ import { writeAudit } from "./audit";
 import { registerUserRoutes } from "./users";
 import { duplicateConflict } from "./duplicateGuard";
 import { CONFLICT_PATH, pendingConflicts, registerDuplicateRoutes } from "./duplicates";
+import { registerNotDuplicateRoutes } from "./notDuplicates";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -26,6 +27,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 registerAvailRoutes(upstreamApp);
 registerUserRoutes(upstreamApp);
 registerDuplicateRoutes(upstreamApp);
+registerNotDuplicateRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;

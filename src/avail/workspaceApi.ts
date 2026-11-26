@@ -4,6 +4,7 @@
  */
 import type { DeviceTemplate } from "../types";
 import { apiUrl } from "./api";
+import { apiError } from "./apiError";
 import type { WsTemplate } from "./workspaceModel";
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
@@ -14,7 +15,7 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
     headers: { ...(init?.body ? { "Content-Type": "application/json" } : {}), ...init?.headers },
   });
   const body = (await res.json().catch(() => ({}))) as T & { error?: string };
-  if (!res.ok) throw new Error(body.error ?? `HTTP ${res.status}`);
+  if (!res.ok) throw apiError(res.status, body);
   return body;
 }
 
@@ -39,6 +40,14 @@ export const mergeTemplates = (primary: string, ids: string[]) =>
     method: "POST",
     body: JSON.stringify({ primary, ids }),
   });
+
+/** POST /avail/templates/not-duplicates: every pair of the ids is decided "not duplicates" (step 2.4). */
+export const markNotDuplicates = (ids: string[], comment: string) =>
+  call<{ pairs: [string, string][]; unchanged: [string, string][] }>("/avail/templates/not-duplicates", { method: "POST", body: JSON.stringify({ ids, comment }) });
+
+/** POST /avail/templates/not-duplicates/undo: the decision on the pair is removed. */
+export const undoNotDuplicates = (a: string, b: string) =>
+  call<{ removed: [string, string] }>("/avail/templates/not-duplicates/undo", { method: "POST", body: JSON.stringify({ a, b }) });
 
 /** An upstream submission: a proposed template edit (action "update") with the engineer's comment. */
 export interface Proposal {

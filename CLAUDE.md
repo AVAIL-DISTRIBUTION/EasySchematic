@@ -154,6 +154,20 @@ verified > draft > raw; каталог / library > сообщество; пор�
   <primary>», запись в журнал (`after.duplicateOf`). В рабочем окне: фильтр «Possible duplicates», колонка «Duplicate of»
   (группа вместе, основной первым), действие «Merge into…» (выбор основного, предложенный — основной группы);
   `/library?template=<id>` открывает шаблон. После массового действия выделение сбрасывается (неудачные пакеты остаются).
+- «Не дубли» (`api-avail/src/notDuplicates.ts`, миграция 9009 `avail_not_duplicates`, попарно `id_a < id_b` с комментарием,
+  автором, временем и производителем + modelNumber обоих на момент решения): `POST /avail/templates/not-duplicates`
+  `{ids: 2..50, comment}` (librarian/admin, комментарий обязателен) помечает каждую пару выборки; `POST
+  /avail/templates/not-duplicates/undo` `{a, b}` снимает. Помеченная пара не считается дублем в группах (`duplicateGroups(…,
+  notDuplicates)`; группа держится через третий шаблон, если его пары не помечены), в `report:duplicates` (число пар — в
+  отчёте) и в проверке 409 (`findDuplicate`). Сменился производитель или modelNumber (по ключам: регистр и пунктуация не
+  в счёт) или шаблон удалён — решение снимается автоматически (`dropStaleNotDuplicates` в `syncLintLevels`: после каждой
+  записи API, при старте и после CLI). Журнал — action `not-duplicate`, запись на каждый шаблон пары (отметка, Undo,
+  автоснятие от `system`). В рабочем окне: массовое действие «Not duplicates» (выбраны 2+ шаблона одной группы) и в
+  панели деталей — блок группы с «Not duplicates…», «Marked as not a duplicate of <шаблон>» с комментарием, кто и когда,
+  Undo. `GET /avail/workspace/templates` отдаёт у шаблона `avail.notDuplicates`.
+- Ошибка 409 при сохранении (Save to library, Normalize в панели, Accept предложения, Not duplicates): название
+  существующего шаблона в тексте — ссылка на его карточку `/library?template=<id>` (`src/avail/apiError.ts`,
+  `ErrorText.tsx`; в рабочем окне карточка открывается на месте).
 
 Стандарт v0.8 (8.1): ошибки (E) — только то, что ломает схему или спецификацию: нет портов (шасси со слотами —
 не ошибка), нет connectorType, нет категории или она не лист таксономии, нет modelNumber / manufacturer /
@@ -473,6 +487,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/datasheetListCli.ts`, `src/xlsxWrite.ts` | список даташитов к скачиванию `docs/avail/datasheets-to-download.md` / `.xlsx` (`npm run report:datasheets`); минимальная запись xlsx |
 | `src/reviewQueueCli.ts`, `src/reviewRules.ts` | отчёт очереди ревью `docs/avail/review-queue.md` (`npm run report:review-queue`), предлагаемые правила |
 | `src/duplicates.ts`, `src/duplicateGuard.ts`, `src/duplicatesCli.ts` | дубликаты: кандидаты из базы, `POST /avail/templates/merge`, 409 при сохранении дубля, отчёт `npm run report:duplicates` |
+| `src/notDuplicates.ts` | решения «не дубли» (миграция 9009): отметка и Undo, автоснятие при смене производителя / modelNumber |
 | `src/approveCatalog.ts`, `src/approveCatalogCli.ts` | утверждение draft каталога уровня A по источнику портов (`npm run approve:catalog [-- --dry-run]`), миграция 9006 (`approved_via = bulk-source`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |

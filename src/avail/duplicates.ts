@@ -12,6 +12,10 @@
  * Groups join pairs transitively. Each group proposes a primary block: verified > draft > raw;
  * catalog / curated library > community; ports from a manufacturer document > database > none;
  * then level, then more ports. Pure: the CLI, the server (409 on save) and the workspace use it.
+ *
+ * A librarian may decide that two templates are not duplicates (step 2.4, "Not duplicates"): such
+ * a pair (pairKey) is never joined, and findDuplicate does not answer with it. Other pairs of the
+ * same templates still count, so a group stays together through a third template.
  */
 import { findVendor } from "./library";
 
@@ -121,8 +125,27 @@ export function comparePrimary(a: DupCandidate, b: DupCandidate): number {
   );
 }
 
-/** Duplicate groups of the library (hidden templates left out), largest first. */
-export function duplicateGroups(all: readonly DupCandidate[]): DupGroup[] {
+/** Key of an unordered pair of template ids ("Not duplicates" decisions). */
+export function pairKey(a: string, b: string): string {
+  return a < b ? `${a}\u0000${b}` : `${b}\u0000${a}`;
+}
+
+/** Pairs decided "not duplicates": a set of pairKey. */
+export type NotDuplicatePairs = ReadonlySet<string>;
+
+/** Every pair of the ids, each once (the pairs a "Not duplicates" decision on a selection marks). */
+export function allPairs(ids: readonly string[]): [string, string][] {
+  const u = [...new Set(ids)].sort();
+  const out: [string, string][] = [];
+  for (let i = 0; i < u.length; i++) for (let j = i + 1; j < u.length; j++) out.push([u[i], u[j]]);
+  return out;
+}
+
+/**
+ * Duplicate groups of the library (hidden templates left out), largest first. Pairs in
+ * `notDuplicates` are not joined.
+ */
+export function duplicateGroups(all: readonly DupCandidate[], notDuplicates: NotDuplicatePairs = new Set()): DupGroup[] {
   const list = all.filter((c) => c.status !== "hidden");
   const parent = list.map((_, i) => i);
   const find = (i: number): number => (parent[i] === i ? i : (parent[i] = find(parent[i])));
@@ -134,7 +157,8 @@ export function duplicateGroups(all: readonly DupCandidate[]): DupGroup[] {
     if (ra !== rb) parent[rb] = ra;
     why.set(find(a), reasons);
   };
-  const seen = new Map<string, number>();
+  // Templates sharing a key; each joins every earlier one it is not decided apart from.
+  const seen = new Map<string, number[]>();
   list.forEach((c, i) => {
     const variant = variantOf(c);
     const man = manufacturerKey(c.manufacturer);
@@ -144,9 +168,13 @@ export function duplicateGroups(all: readonly DupCandidate[]): DupGroup[] {
     const model = normalizedModel(c.label, c.manufacturer);
     if (man && model) keys.push([`model|${man}|${model}|${variant}`, "same model"]);
     for (const [k, reason] of keys) {
-      const j = seen.get(k);
-      if (j === undefined) seen.set(k, i);
-      else join(j, i, reason);
+      const earlier = seen.get(k);
+      if (!earlier) {
+        seen.set(k, [i]);
+        continue;
+      }
+      for (const j of earlier) if (!notDuplicates.has(pairKey(list[j].id, c.id))) join(j, i, reason);
+      earlier.push(i);
     }
   });
   const groups = new Map<number, DupCandidate[]>();
@@ -172,11 +200,13 @@ export function duplicateIndex(groups: readonly DupGroup[]): Map<string, { prima
 
 /**
  * The template a new or changed one would duplicate (server, step 2.4): same manufacturer and
- * modelNumber, not hidden, not itself, and the same variant (a different variant is allowed).
+ * modelNumber, not hidden, not itself, not decided "not duplicates" with it, and the same variant
+ * (a different variant is allowed).
  */
 export function findDuplicate(
   t: { id?: string | null; label: string; manufacturer?: string | null; modelNumber?: string | null; variant?: string | null },
   existing: readonly Pick<DupCandidate, "id" | "label" | "manufacturer" | "modelNumber" | "status" | "variant">[],
+  notDuplicates: NotDuplicatePairs = new Set(),
 ): Pick<DupCandidate, "id" | "label"> | null {
   const man = manufacturerKey(t.manufacturer ?? "");
   const pk = partKey(t.modelNumber ?? "");
@@ -184,6 +214,7 @@ export function findDuplicate(
   const variant = variantOf({ label: t.label, manufacturer: t.manufacturer ?? "", variant: t.variant ?? null });
   for (const e of existing) {
     if (e.id === t.id || e.status === "hidden") continue;
+    if (t.id && notDuplicates.has(pairKey(t.id, e.id))) continue;
     if (manufacturerKey(e.manufacturer) !== man || partKey(e.modelNumber) !== pk) continue;
     if (variantOf(e) !== variant) continue;
     return { id: e.id, label: e.label };

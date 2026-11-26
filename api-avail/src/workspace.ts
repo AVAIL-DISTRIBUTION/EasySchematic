@@ -6,7 +6,8 @@
  *                                            with its workspace data: status, level, status reason,
  *                                            updated, approved (by, how, when), ports origin and
  *                                            source, data sheet link, who edited it (audit log)
- *                                            and its possible duplicate group (step 2.4)
+ *                                            and its possible duplicate group (step 2.4), with
+ *                                            the "not duplicates" decisions it is part of
  *   POST /avail/templates/category/batch     { ids, category } → { category, updated, unchanged, failed }
  *                                            leaf category of the taxonomy; each change goes to the
  *                                            audit log; levels are re-linted after the request
@@ -23,6 +24,7 @@ import { catalogIndex, parseCatalogMeta, portsOrigin, type PortsOrigin } from ".
 import { duplicateGroups, duplicateIndex } from "../../src/avail/duplicates";
 import { ADMIN_TOKEN_ACTOR, writeAuditD1, type AuditEntry } from "./audit";
 import { candidatesOf } from "./duplicates";
+import { notDuplicatesById, pairSetOf, SELECT_PAIRS, type NotDuplicateOf, type NotDuplicateRow } from "./notDuplicates";
 import { BUMP_LIBRARY_VERSION, type ApprovalMethod, type TemplateStatus } from "./templateMeta";
 
 type UpstreamApp = typeof UpstreamAppValue;
@@ -55,6 +57,8 @@ export interface WorkspaceInfo {
   lastAt: string | null;
   /** Possible duplicate (step 2.4): the group's proposed primary and size; null when none. */
   duplicate: { primary: string; size: number } | null;
+  /** "Not duplicates" decisions this template is part of (step 2.4). */
+  notDuplicates: NotDuplicateOf[];
 }
 
 type Row = TemplateRow & {
@@ -96,7 +100,7 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
     const { results: audit } = await db
       .prepare(
         `SELECT entity_id, actor, MAX(at) AS at, MAX(id) AS id FROM avail_audit_log
-          WHERE entity = 'template' GROUP BY entity_id, actor ORDER BY id DESC`,
+          WHERE entity = 'template' AND action <> 'not-duplicate' GROUP BY entity_id, actor ORDER BY id DESC`,
       )
       .all<{ entity_id: string; actor: string; at: string; id: number }>();
     const editors = new Map<string, { actor: string; at: string }[]>();
@@ -106,7 +110,9 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
       editors.set(a.entity_id, list);
     }
     const byFile = catalogIndex(results.map((r) => parseCatalogMeta(r.avail_catalog)));
-    const dupes = duplicateIndex(duplicateGroups(candidatesOf(results)));
+    const { results: pairs } = await db.prepare(SELECT_PAIRS).all<NotDuplicateRow>();
+    const dupes = duplicateIndex(duplicateGroups(candidatesOf(results), pairSetOf(pairs)));
+    const apart = notDuplicatesById(pairs, new Map(results.map((r) => [r.id, r.label])));
 
     const templates = results.map((row) => {
       const catalog = parseCatalogMeta(row.avail_catalog);
@@ -133,6 +139,7 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
         lastActor: edits[0]?.actor ?? null,
         lastAt: edits[0]?.at ?? null,
         duplicate: dupes.get(row.id) ?? null,
+        notDuplicates: apart.get(row.id) ?? [],
       };
       return { ...rowToTemplate(row), avail: info };
     });

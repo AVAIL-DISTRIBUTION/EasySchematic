@@ -11,6 +11,7 @@ import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel, type BlockLintResult } from "../../src/avail/blockLint";
 import { slotLibraryContext, type SlotLibraryContext } from "../../src/avail/slotFamilies";
 import { SYSTEM_ACTOR, writeAudit, writeAuditD1, type AuditEntry } from "./audit";
+import { dropStaleNotDuplicates } from "./notDuplicates";
 
 export const TEMPLATE_STATUSES = ["verified", "draft", "raw", "hidden"] as const;
 export type TemplateStatus = (typeof TEMPLATE_STATUSES)[number];
@@ -174,6 +175,8 @@ export interface SyncResult {
  * by status).
  */
 export function syncLintLevels(sqlite: Database.Database): SyncResult {
+  // "Not duplicates" decisions whose template changed its manufacturer or part number (or is gone).
+  dropStaleNotDuplicates(sqlite);
   const stale = sqlite
     .prepare(
       `SELECT t.*, m.status AS avail_status, m.catalog AS avail_catalog FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id

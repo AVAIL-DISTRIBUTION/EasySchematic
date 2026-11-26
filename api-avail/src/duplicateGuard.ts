@@ -7,7 +7,7 @@
  *   POST /submissions/:id/approve    an accepted proposal (create; update as for PUT), with the
  *                                    librarian's edited data when the request carries it
  *
- * If another template (not hidden, not flagged) has the same manufacturer + modelNumber and the
+ * If another template (not hidden, not flagged, not decided "not duplicates" with this one) has the same manufacturer + modelNumber and the
  * same variant (src/avail/duplicates.ts findDuplicate), the request is refused with 409 and a link
  * to it. A template whose variant differs (colour, MM / SM, the catalog's variant field) is allowed.
  * Existing duplicates can still be edited as long as their manufacturer and part number stay.
@@ -15,6 +15,7 @@
 import type Database from "better-sqlite3";
 import { findDuplicate } from "../../src/avail/duplicates";
 import { loadCandidates } from "./duplicates";
+import { loadNotDuplicates } from "./notDuplicates";
 
 type Obj = Record<string, unknown>;
 const str = (v: unknown) => (typeof v === "string" ? v : "");
@@ -88,7 +89,7 @@ export async function duplicateConflict(sqlite: Database.Database, request: Requ
     }
   }
   const variant = plan.data._avail && typeof plan.data._avail === "object" ? str((plan.data._avail as Obj).variant) : str(plan.data.variant);
-  const dup = findDuplicate({ id: plan.id, label: str(plan.data.label), manufacturer: man, modelNumber: pn, variant: variant || null }, loadCandidates(sqlite));
+  const dup = findDuplicate({ id: plan.id, label: str(plan.data.label), manufacturer: man, modelNumber: pn, variant: variant || null }, loadCandidates(sqlite), loadNotDuplicates(sqlite));
   if (!dup) return null;
   return {
     error: `A template for ${man} ${pn} already exists: ${dup.label}. Edit that one, or mark this one as a variant.`,
