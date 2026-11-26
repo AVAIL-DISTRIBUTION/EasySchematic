@@ -12,6 +12,8 @@ import { applyMigrations, type MigrationResult } from "./migrate";
 import { parseSeedMode, seedLibrary, type SeedResult } from "./seed";
 import { installMailStub } from "./mail";
 import { registerAvailRoutes } from "./routes";
+import { auditsTemplates, beginTemplateAudit, endTemplateAudit, refuseDisabledSignIn, resolveActor, userRouteRewrite } from "./requestAudit";
+import { registerUserRoutes } from "./users";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -19,6 +21,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 // Our routes (/avail/...) join the upstream app once, before it serves any request
 // (Hono builds its router on the first match and refuses new routes after that).
 registerAvailRoutes(upstreamApp);
+registerUserRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
@@ -147,8 +150,25 @@ export function createApiServer(config: ApiConfig): ApiServer {
   const ctx = executionContext(log);
 
   return {
-    fetch: async (request) => {
-      const response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
+    fetch: async (incoming) => {
+      // Disabled users run signed out; upstream's user admin calls go to ours (users.ts).
+      const { request, actor } = resolveActor(db.sqlite, userRouteRewrite(incoming), config.vars.ADMIN_TOKEN);
+      // Template writes through upstream's routes: snapshot before, log what changed after.
+      let audit: ReturnType<typeof beginTemplateAudit> | null = null;
+      try {
+        if (auditsTemplates(request)) audit = beginTemplateAudit(db.sqlite, request);
+      } catch (err) {
+        log(`audit snapshot failed: ${String(err)}`);
+      }
+      let response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
+      if (audit && response.status < 400) {
+        try {
+          endTemplateAudit(db.sqlite, audit, actor);
+        } catch (err) {
+          log(`audit write failed: ${String(err)}`);
+        }
+      }
+      if (new URL(request.url).pathname === "/auth/google/callback") response = await refuseDisabledSignIn(db.sqlite, response);
       // Whatever route saved a template (PUT /templates/:id, POST /templates, an approved
       // submission…), upstream bumped its version: re-lint the changed ones (a verified
       // one that fell below level A becomes draft).

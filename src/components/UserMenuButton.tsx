@@ -3,6 +3,7 @@ import { checkSession, logout } from "../templateApi";
 import { clearCache } from "../cloudCache";
 import LoginDialog from "./LoginDialog";
 import { isAvailBuild } from "../avail/brand";
+import { AvailAccountMenuItems, AvailAdminDialogs } from "../avail/AdminUi";
 
 interface User {
   id: string;
@@ -88,6 +89,7 @@ export default function UserMenuButton() {
           <div className="px-3 py-2 border-b" style={{ borderColor: "var(--color-border)" }}>
             <p className="text-xs truncate" style={{ color: "var(--color-text-muted)" }}>{user.email}</p>
           </div>
+          <AvailAccountMenuItems onPick={() => setDropdownOpen(false)} />
           {!isAvailBuild() && (
           <a
             href="https://devices.easyschematic.live"
@@ -108,6 +110,7 @@ export default function UserMenuButton() {
           </button>
         </div>
       )}
+      <AvailAdminDialogs />
     </div>
   );
 }

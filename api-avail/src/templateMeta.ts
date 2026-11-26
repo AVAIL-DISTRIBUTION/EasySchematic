@@ -10,6 +10,7 @@ import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel, type BlockLintResult } from "../../src/avail/blockLint";
 import { slotLibraryContext, type SlotLibraryContext } from "../../src/avail/slotFamilies";
+import { SYSTEM_ACTOR, writeAudit, writeAuditD1, type AuditEntry } from "./audit";
 
 export const TEMPLATE_STATUSES = ["verified", "draft", "raw", "hidden"] as const;
 export type TemplateStatus = (typeof TEMPLATE_STATUSES)[number];
@@ -168,15 +169,22 @@ export function syncLintLevels(sqlite: Database.Database): SyncResult {
      WHERE template_id = ? AND status = 'verified'`,
   );
   const demoted: string[] = [];
+  const audit: AuditEntry[] = [];
   sqlite.transaction(() => {
     for (const row of stale) {
       const level = lintRow(row, ctx);
       upsert.run(row.id, level, row.version);
       if (row.avail_status === "verified" && level !== "A") {
-        demote.run(demotionReason(level, row.version), row.id);
+        const reason = demotionReason(level, row.version);
+        demote.run(reason, row.id);
         demoted.push(row.id);
+        audit.push({
+          actor: SYSTEM_ACTOR, entity: "template", entityId: row.id, entityLabel: row.label, action: "status",
+          before: { status: "verified" }, after: { status: "draft", reason },
+        });
       }
     }
+    writeAudit(sqlite, audit);
     if (demoted.length) sqlite.prepare(BUMP_LIBRARY_VERSION).run();
   })();
   return { linted: stale.length, demoted };
@@ -213,9 +221,11 @@ export async function setTemplateStatus(
   status: TemplateStatus,
   updatedBy: string,
   via: ApprovalMethod = "review",
+  actorId: string | null = null,
 ): Promise<SetStatusResult> {
   const row = await db.prepare("SELECT * FROM templates WHERE id = ?").bind(templateId).first<TemplateRow>();
   if (!row) return { ok: false, reason: "not_found" };
+  const previous = (await db.prepare("SELECT status FROM avail_template_meta WHERE template_id = ?").bind(templateId).first<{ status: TemplateStatus }>())?.status ?? "raw";
   const { results: slotRows } = await db.prepare(SLOT_ROWS).all<{ slot_family: string | null; slots: string | null }>();
   const lint = lintBlock(rowToTemplate(row), slotContextOfRows(slotRows));
   if (status === "verified" && lint.level !== "A") return { ok: false, reason: "not_level_a", lint };
@@ -236,6 +246,12 @@ export async function setTemplateStatus(
       .bind(templateId, status, lint.level, row.version, updatedBy, status === "verified" ? via : null, status),
     db.prepare(BUMP_LIBRARY_VERSION),
   ]);
+  if (previous !== status) {
+    await writeAuditD1(db, [{
+      actor: updatedBy, actorId, entity: "template", entityId: templateId, entityLabel: row.label, action: "status",
+      before: { status: previous }, after: { status, ...(status === "verified" ? { approvedVia: via } : {}) },
+    }]);
+  }
   const meta = await getTemplateMeta(db, templateId);
   return { ok: true, meta: meta! };
 }

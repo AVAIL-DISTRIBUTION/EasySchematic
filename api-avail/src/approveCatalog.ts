@@ -18,6 +18,7 @@ import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { catalogIndex, describeOrigin, parseCatalogMeta, portsOrigin, type PortsOriginInfo } from "../../src/avail/portsOrigin";
 import { AVAIL_CATALOG_SOURCE } from "./importCatalog";
+import { writeAudit } from "./audit";
 import { BUMP_LIBRARY_VERSION, slotContext } from "./templateMeta";
 
 export const APPROVE_CATALOG_USER = "approve-catalog";
@@ -96,6 +97,13 @@ export function approveCatalog(sqlite: Database.Database, options: { dryRun?: bo
     );
     sqlite.transaction(() => {
       for (const r of approve) update.run(r.reason, versions.get(r.id) ?? null, APPROVE_CATALOG_USER, r.id);
+      writeAudit(
+        sqlite,
+        approve.map((r) => ({
+          actor: `cli:${APPROVE_CATALOG_USER}`, entity: "template" as const, entityId: r.id, entityLabel: r.label, action: "status" as const,
+          before: { status: "draft" }, after: { status: "verified", approvedVia: "bulk-source", reason: r.reason },
+        })),
+      );
       sqlite.prepare(BUMP_LIBRARY_VERSION).run();
     })();
   }
