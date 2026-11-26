@@ -18,10 +18,10 @@ describe("intake template", () => {
     expect(sheets.get("Products")![0]).toEqual([...INTAKE_COLUMNS]);
   });
 
-  it("Lists match the reference data (vendors, categories, device types, rack forms, sources)", () => {
+  it("Lists match the reference data (vendors, categories, device types, rack forms, sources, lifecycles)", () => {
     const lists = sheets.get("Lists")!;
     const col = (i: number) => lists.slice(1).map((r) => (r[i] ?? "").trim()).filter(Boolean);
-    expect(intakeListsDiff({ vendors: col(0), categories: col(1), deviceTypes: col(3), rackForms: col(4), sources: col(5) })).toEqual([]);
+    expect(intakeListsDiff({ vendors: col(0), categories: col(1), deviceTypes: col(3), rackForms: col(4), sources: col(5), lifecycles: col(6) })).toEqual([]);
   });
 
   it("example rows are recognised and valid", () => {

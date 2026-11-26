@@ -15,7 +15,7 @@
 | --- | --- |
 | Instructions | Правила заполнения (английский — форму заполняют вендоры) |
 | Products | Данные: строка 1 — заголовки, серые курсивные строки — примеры (удалить перед отправкой; `import:intake` пропускает строки с Note «EXAMPLE ROW…») |
-| Lists | Выпадающие списки: Vendors, Categories (+ Schematic block?), Device types, Rack form, Source |
+| Lists | Выпадающие списки: Vendors, Categories (+ Schematic block?), Device types, Rack form, Source, Lifecycle |
 
 Списки листа Lists совпадают со справочниками репозитория (тест `api-avail/test/intake.test.ts`):
 Vendors = `docs/avail/avail-vendors.json`, Categories = листовые категории `docs/avail/avail-taxonomy.json`,
@@ -51,6 +51,8 @@ Device types ⊆ типы редактора (`src/deviceTypeCategories.ts`) и 
 | MSRP (USD) | Прайс, USD | `unitCost` |
 | Source * | Откуда большая часть значений (Lists) | `_avail.source` (у существующей карточки — `_avail.intakeSource`) |
 | Note | Необычное: оценки, расхождения источников, почему поле пустое | `_avail.note` |
+| Lifecycle | Из Lists: Active (по умолчанию, можно не заполнять), Upcoming (анонсирован, ещё не поставляется), EoL (снят с производства). Стандарт 3.3 | `_avail.lifecycle` (active / upcoming / eol); значение в строке заменяет жизненный цикл карточки целиком |
+| Lifecycle date | Upcoming — когда начнутся поставки, EoL — с какого времени (необязательно): `2027`, `2027-Q3`, `2027-09`, `2027-09-15` | `_avail.availableFrom` / `_avail.eolDate` |
 
 Rack form → поля каталога: «1U Full rack» … «10U Full rack» → `full` + число U; «1U 1/2 rack» → `half`;
 «1U 1/4 rack», «1U 1/8 rack», «Shelf» → `shelf-only`; «Non-rack» → без `rackForm`.
@@ -61,7 +63,8 @@ Rack form → поля каталога: «1U Full rack» … «10U Full rack» 
 
 - нет обязательной колонки в заголовке или неизвестная колонка — не загружается ничего;
 - пустое обязательное поле;
-- значение не из списка (Vendor, Category — листовая, Device type, Rack form, Source); псевдоним вендора;
+- значение не из списка (Vendor, Category — листовая, Device type, Rack form, Source, Lifecycle); псевдоним вендора;
+- Lifecycle date не в формате `2027` / `2027-Q3` / `2027-09` / `2027-09-15` или без Lifecycle Upcoming / EoL;
 - число с единицами или отрицательное («12.5 W»);
 - ссылка не http(s);
 - повтор артикула (вендор + артикул) в файле;
@@ -72,6 +75,7 @@ Rack form → поля каталога: «1U Full rack» … «10U Full rack» 
 - нет габаритов у того, что не монтируется в помещении (стандарт 3.2) и без Rack form;
 - PoE в Input voltage без PoE draw; сетевое / DC-питание без Power draw;
 - нет Datasheet URL;
+- Lifecycle Upcoming без Lifecycle date;
 - BoQ-категория; Model без вендора в начале;
 - `expansion-card` без «Card for slot families»; семейство слотов не из `docs/avail/slot-families.json`.
 

@@ -23,7 +23,7 @@ import { formatReviewQueue, reviewQueue, type QueueItem } from "../../src/avail/
 import { catalogDir, readCatalog, type CatalogFileText } from "./catalogFiles";
 import { AVAIL_CATALOG_SOURCE, partKey } from "./importCatalog";
 import { libraryDir } from "./libraryDir";
-import { blockOfRow, slotContext } from "./templateMeta";
+import { blockOfRow, LIFECYCLE_SELECT, slotContext } from "./templateMeta";
 import { DELETED_TEMPLATES } from "./vendorResponses";
 import { proposedRules } from "./reviewRules";
 
@@ -83,7 +83,7 @@ function fromDb(file: string): { items: QueueItem[]; source: string } {
     const byFile = catalogIndex(metas.map((m) => parseCatalogMeta(m.catalog)));
     const rows = sqlite
       .prepare(
-        `SELECT t.*, m.catalog AS avail_catalog FROM templates t JOIN avail_template_meta m ON m.template_id = t.id
+        `SELECT t.*, m.catalog AS avail_catalog, ${LIFECYCLE_SELECT} FROM templates t JOIN avail_template_meta m ON m.template_id = t.id
           WHERE m.status = 'draft' AND m.source = ? AND t.flagged_for_deletion = 0`,
       )
       .all(AVAIL_CATALOG_SOURCE) as (TemplateRow & { avail_catalog: string | null })[];

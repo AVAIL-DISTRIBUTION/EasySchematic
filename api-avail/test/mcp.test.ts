@@ -175,8 +175,21 @@ describe("reading tools", () => {
     const p = await tool<{ total: number; offset: number; items: Record<string, unknown>[] }>("search_templates", { limit: 2, offset: 1 });
     expect([p.data.total, p.data.offset, p.data.items.length]).toEqual([5, 1, 2]);
     const e1 = (await tool<{ items: Record<string, unknown>[] }>("search_templates", { text: "60-1" })).data.items[0];
-    expect(e1).toEqual({ id: "e1", label: "Extron DTP3 T 203", part: "60-1", category: "AV distribution / Extenders", type: "hdbaset-extender", status: "verified", level: "A", ports: "manufacturer" });
+    expect(e1).toEqual({ id: "e1", label: "Extron DTP3 T 203", part: "60-1", category: "AV distribution / Extenders", type: "hdbaset-extender", status: "verified", level: "A", ports: "manufacturer", lifecycle: "active" });
     await expect(tool("search_templates", { level: "Z" })).rejects.toThrow(/-32602 level must be one of A, B, FIX/);
+  });
+
+  it("lifecycle: search_templates filter, in the items and in get_template", async () => {
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET lifecycle = 'upcoming', available_from = '2027-Q3' WHERE template_id = 'e2'").run();
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET lifecycle = 'eol' WHERE template_id = 'b1'").run();
+    resetMcpCache();
+    const search = async (a: Record<string, unknown>) => (await tool<{ items: Record<string, unknown>[] }>("search_templates", a)).data.items;
+    expect(await search({ lifecycle: "upcoming" })).toEqual([expect.objectContaining({ id: "e2", lifecycle: "upcoming", available_from: "2027-Q3" })]);
+    expect((await search({ lifecycle: "eol" })).map((i) => i.id)).toEqual(["b1"]);
+    expect((await search({ lifecycle: "active" })).map((i) => i.id).sort()).toEqual(["e1", "e3", "e4"]);
+    await expect(tool("search_templates", { lifecycle: "retired" })).rejects.toThrow(/-32602 lifecycle must be one of upcoming, active, eol/);
+    expect((await tool<Record<string, unknown>>("get_template", { id: "e2" })).data.lifecycle).toEqual({ state: "upcoming", available_from: "2027-Q3" });
+    expect((await tool<Record<string, unknown>>("get_template", { id: "e1" })).data.lifecycle).toEqual({ state: "active" });
   });
 
   it("get_template: card, ports by section, lint, ports source, links, duplicates, history", async () => {
@@ -301,6 +314,20 @@ describe("propose_change: partial edits (patch)", () => {
     expect(data.raw).toMatchObject({ id: "ocs", thermalBtuh: 2.6, voltage: "24V DC (included PC 1224)", heightMm: 114 });
     expect(data.raw.ports.map((p) => p.id)).toEqual(["relay", "occ", "photo", "pwr"]);
     expect(data.raw).not.toHaveProperty("avail");
+  });
+
+  it("get_template gives raw and the lifecycle together; raw sent back proposes no lifecycle change", async () => {
+    insert(ocs());
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET lifecycle = 'upcoming', available_from = '2027-Q3' WHERE template_id = 'ocs'").run();
+    resetMcpCache();
+    const { data } = await tool<{ lifecycle: unknown; raw: Record<string, unknown> & { ports: { id: string }[] } }>("get_template", { id: "ocs", history: 0 });
+    expect(data.lifecycle).toEqual({ state: "upcoming", available_from: "2027-Q3" });
+    expect(data.raw).toMatchObject({ id: "ocs", thermalBtuh: 2.6, availLifecycle: { lifecycle: "upcoming", availableFrom: "2027-Q3" } });
+    expect(data.raw.ports.map((p) => p.id)).toEqual(["relay", "occ", "photo", "pwr"]);
+    // The whole raw back with one change: the proposal changes only that field, not the lifecycle.
+    const p = await tool<{ proposal_id: string; changes: string[] }>("propose_change", { template_id: "ocs", template: { ...data.raw, voltage: "24V DC" }, comment: "Spec: 24 VDC" });
+    expect(p.data.changes).toEqual(["voltage"]);
+    expect(proposalData(p.data.proposal_id)).not.toHaveProperty("availLifecycle");
   });
 
   it("one field: the rest stays (regression: thermalBtuh lost on OCS 100C); accepted → only that field changed", async () => {

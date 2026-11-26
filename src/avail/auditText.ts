@@ -11,7 +11,7 @@ export interface AuditRecord {
   entity: "user" | "template" | "run";
   entityId: string;
   entityLabel: string | null;
-  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate" | "token" | "request" | "proposed" | "override";
+  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate" | "token" | "request" | "proposed" | "override" | "lifecycle";
   before: Record<string, unknown> | null;
   after: Record<string, unknown> | null;
   /** The access token the change was made with (its name). */
@@ -38,6 +38,7 @@ export const AUDIT_ACTION_LABELS: Readonly<Record<AuditRecord["action"], string>
   request: "API request",
   proposed: "Change proposed",
   override: "Override",
+  lifecycle: "Lifecycle changed",
 };
 
 function short(v: unknown, max = 60): string {

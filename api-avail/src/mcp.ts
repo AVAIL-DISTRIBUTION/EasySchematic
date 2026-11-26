@@ -17,6 +17,7 @@ import { auditChanges, type AuditRecord } from "../../src/avail/auditText";
 import { describeChange, portLabelMap, portsBySection } from "../../src/avail/libraryView";
 import type { NormalizeChange } from "../../src/avail/normalize";
 import { buildRows, builtInFilters, EMPTY_FILTER, filterRows, type WsFilter, type WsRow, type WsTemplate } from "../../src/avail/workspaceModel";
+import { LIFECYCLES } from "../../src/avail/lifecycle";
 import { applyTemplatePatch, describeEditChanges, editChanges, NO_CHANGE_ERROR, noChanges, storedForm } from "../../src/avail/templatePatch";
 import { writeAudit } from "./audit";
 
@@ -115,6 +116,9 @@ function brief(r: WsRow) {
     status: r.status,
     level: r.level,
     ports: r.template.avail.portsOrigin,
+    lifecycle: r.lifecycle.lifecycle,
+    available_from: r.lifecycle.availableFrom,
+    eol_date: r.lifecycle.eolDate,
   };
 }
 
@@ -131,6 +135,7 @@ function searchFilter(a: Json): { filter: WsFilter; rule?: string } {
   const status = oneOf(a, "status", STATUSES);
   const level = oneOf(a, "level", LEVELS);
   const origin = oneOf(a, "ports_source", ORIGINS);
+  const lifecycle = oneOf(a, "lifecycle", LIFECYCLES);
   return {
     filter: {
       ...EMPTY_FILTER,
@@ -140,6 +145,7 @@ function searchFilter(a: Json): { filter: WsFilter; rule?: string } {
       statuses: status ? [status] : [],
       levels: level ? [level] : [],
       origins: origin ? [origin] : [],
+      lifecycles: lifecycle ? [lifecycle] : [],
       text: str(a, "text") ?? "",
     },
     rule: str(a, "lint_rule")?.toLowerCase(),
@@ -148,10 +154,14 @@ function searchFilter(a: Json): { filter: WsFilter; rule?: string } {
 
 const matchVendor = (rows: WsRow[], vendor?: string) => (vendor ? rows.filter((r) => r.vendor.toLowerCase() === vendor.toLowerCase()) : rows);
 
-/** The template as stored (get_template raw): every data field, ports with ids; no workspace data. */
-function rawTemplate(t: WsRow["template"]): Json {
-  const { avail: _a, ...raw } = t as unknown as Json & { avail?: unknown };
-  return raw;
+/**
+ * The template as stored (get_template raw): every data field, ports with ids, and its lifecycle as
+ * the library gives it (availLifecycle; not an edit field — propose_change ignores it); no other
+ * workspace data.
+ */
+function rawTemplate(r: WsRow): Json {
+  const { avail: _a, ...raw } = r.template as unknown as Json & { avail?: unknown };
+  return { ...raw, availLifecycle: r.lifecycle };
 }
 
 function historyEntry(r: AuditRecord) {
@@ -183,7 +193,7 @@ export const TOOLS: readonly Tool[] = [
     name: "search_templates",
     title: "Search templates",
     description:
-      "Find library templates. All filters combine. Hidden templates only with status=hidden. Returns {total, offset, items[]}: id, label, part number, category, device type, status, lint level, ports origin.",
+      "Find library templates. All filters combine. Hidden templates only with status=hidden. Returns {total, offset, items[]}: id, label, part number, category, device type, status, lint level, ports origin, lifecycle (upcoming with available_from, active, eol with eol_date).",
     inputSchema: {
       type: "object",
       properties: {
@@ -195,6 +205,7 @@ export const TOOLS: readonly Tool[] = [
         level: { type: "string", enum: [...LEVELS], description: "Standard level from the linter" },
         ports_source: { type: "string", enum: [...ORIGINS], description: "Where the ports come from: manufacturer document, community database, nothing recorded" },
         lint_rule: { type: "string", description: 'Part of a linter message, e.g. "no power port" or "connectorType"' },
+        lifecycle: { type: "string", enum: [...LIFECYCLES], description: "Product lifecycle: upcoming (announced, not shipping yet), active, eol (end of life)" },
         ...PAGE_PROPS,
       },
       additionalProperties: false,
@@ -213,7 +224,7 @@ export const TOOLS: readonly Tool[] = [
     name: "get_template",
     title: "Get template",
     description:
-      "One template in full: card, ports by section, linter result, ports source, product and data sheet links, possible duplicates, its history from the audit log, and raw: the template exactly as stored (every field, ports with their ids), the base for propose_change.",
+      "One template in full: card, lifecycle (upcoming/active/eol, date), ports by section, lint, ports source, links, possible duplicates, audit history, and raw: the template as stored (every field, port ids, availLifecycle), the base for propose_change.",
     inputSchema: {
       type: "object",
       properties: { id: { type: "string", description: "Template id" }, history: { type: "integer", minimum: 0, maximum: 100, description: "History entries (default 20)" } },
@@ -242,6 +253,7 @@ export const TOOLS: readonly Tool[] = [
         type: t.deviceType,
         status: av.status,
         status_reason: av.statusReason ?? undefined,
+        lifecycle: { state: r.lifecycle.lifecycle, available_from: r.lifecycle.availableFrom, eol_date: r.lifecycle.eolDate },
         level: r.level,
         lint: { errors: r.lint.errors, warnings: r.lint.warnings },
         ports_source: { origin: av.portsOrigin, kind: av.portsSource ?? undefined, from: av.portsFrom ?? undefined },
@@ -260,7 +272,7 @@ export const TOOLS: readonly Tool[] = [
         possible_duplicates: group.length ? group.map((g) => ({ id: g.id, label: g.template.label, status: g.status })) : undefined,
         not_duplicates: av.notDuplicates?.length ? av.notDuplicates.map((d) => ({ id: d.id, label: d.label, comment: d.comment })) : undefined,
         history: history?.ok ? ((await history.json()) as AuditRecord[]).map(historyEntry) : undefined,
-        raw: rawTemplate(t),
+        raw: rawTemplate(r),
       };
     },
   },

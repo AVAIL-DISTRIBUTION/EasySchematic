@@ -59,6 +59,10 @@ export interface CatalogAvail extends Obj {
   portsMissing?: string;
   /** Where a chassis got its slots when it had none (step 1.10): "variant: <file>", "description: …". */
   slotsSource?: string;
+  /** Product lifecycle (src/avail/lifecycle.ts): upcoming / active (default) / eol, and its date. */
+  lifecycle?: "upcoming" | "active" | "eol";
+  availableFrom?: string;
+  eolDate?: string;
 }
 
 export interface CatalogTemplate extends Obj {

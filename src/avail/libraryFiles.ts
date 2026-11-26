@@ -12,6 +12,7 @@
  * Pure functions, no Node or browser dependencies: the CLI, the tests and the API
  * importer (api-avail/src/importAvail.ts) read the files themselves.
  */
+import { isLifecycle, isLifecycleDate, LIFECYCLES } from "./lifecycle";
 import { lintBlock, type BlockLintResult } from "./blockLint";
 import { normalizeManufacturer } from "./library";
 
@@ -149,6 +150,21 @@ export interface CatalogCheckReport {
 }
 
 /**
+ * Problems of a catalog card's lifecycle (`_avail.lifecycle`, src/avail/lifecycle.ts): a known
+ * state, a date in a known format, and only the date that goes with the state.
+ */
+export function catalogLifecycleProblems(a: Record<string, unknown>): string[] {
+  const out: string[] = [];
+  if (a.lifecycle !== undefined && !isLifecycle(a.lifecycle)) out.push(`_avail.lifecycle must be one of ${LIFECYCLES.join(", ")}`);
+  for (const k of ["availableFrom", "eolDate"] as const) {
+    if (a[k] !== undefined && !isLifecycleDate(a[k])) out.push(`_avail.${k} must be 2027, 2027-Q3, 2027-09 or 2027-09-15`);
+  }
+  if (a.availableFrom !== undefined && a.lifecycle !== "upcoming") out.push("_avail.availableFrom is only for lifecycle upcoming");
+  if (a.eolDate !== undefined && a.lifecycle !== "eol") out.push("_avail.eolDate is only for lifecycle eol");
+  return out;
+}
+
+/**
  * Checks the product catalog (library/catalog, step 1.9). The catalog is work in progress:
  * any level is allowed (FIX included) and only reported. Required: a JSON object with id,
  * ports array and _avail, file "<vendor>/<slug(label)>.json" (or "…-<slug(part number)>.json" when
@@ -169,6 +185,7 @@ export function checkCatalog(entries: readonly LibraryEntry[], index?: unknown):
     if (typeof t.id !== "string" || !t.id.trim()) problems.push("no id");
     if (!Array.isArray(t.ports)) problems.push("no ports array");
     if (!isObj(t._avail)) problems.push("no _avail");
+    else problems.push(...catalogLifecycleProblems(t._avail));
     const vendor = slug(typeof t.manufacturer === "string" ? t.manufacturer : "");
     const expected = `${vendor}/${libraryFileName(t)}`;
     // Two labels with the same slug ("Modena Hub", "Modena Hub+"): the part number tells them apart.

@@ -14,8 +14,13 @@
 
 type Obj = Record<string, unknown>;
 
-/** Keys that are not template data: identity, version, what the API and the workspace add. */
-const NOT_DATA = new Set(["id", "version", "avail", "lastEditedBy", "submittedBy", "createdAt", "updatedAt", "availStatus", "availLevel", "availPortsOrigin"]);
+/**
+ * Keys that are not template data: identity, version, what the API and the workspace add. The
+ * lifecycle (availLifecycle) is set with Set lifecycle, not by an edit of the template.
+ */
+const NOT_DATA = new Set([
+  "id", "version", "avail", "lastEditedBy", "submittedBy", "createdAt", "updatedAt", "availStatus", "availLevel", "availPortsOrigin", "availLifecycle",
+]);
 
 const isEmpty = (v: unknown) => v === null || v === undefined || v === "" || (Array.isArray(v) && v.length === 0);
 

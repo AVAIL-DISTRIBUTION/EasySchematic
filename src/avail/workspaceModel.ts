@@ -9,6 +9,7 @@ import { lintBlock, type BlockLevel, type BlockLintResult } from "./blockLint";
 import { findCategory } from "./library";
 import { allPairs, pairKey } from "./duplicates";
 import { slotLibraryContext } from "./slotFamilies";
+import { LIFECYCLE_LABELS, lifecycleOf, lifecycleShort, lifecycleText, sameLifecycle, type Lifecycle, type LifecycleInfo } from "./lifecycle";
 import { storedForm } from "./templatePatch";
 
 export type WsStatus = "verified" | "draft" | "raw" | "hidden";
@@ -36,6 +37,10 @@ export interface WsInfo {
   duplicate?: { primary: string; size: number } | null;
   /** "Not duplicates" decisions this template is part of: the other template, comment, who, when. */
   notDuplicates?: WsNotDuplicate[];
+  /** Product lifecycle (src/avail/lifecycle.ts); missing = active. */
+  lifecycle?: Lifecycle;
+  availableFrom?: string | null;
+  eolDate?: string | null;
 }
 
 export interface WsNotDuplicate {
@@ -70,6 +75,9 @@ export interface WsRow {
   duplicateOf: string;
   /** Sort key keeping a duplicate group together, primary first. */
   duplicateKey: string;
+  /** Product lifecycle and its text ("Upcoming, available from 2027-Q3", "Active", "EoL"). */
+  lifecycle: LifecycleInfo;
+  lifecycleText: string;
   /** Lower-case text searched by the search box. */
   haystack: string;
 }
@@ -134,13 +142,20 @@ function modelOf(t: DeviceTemplate): string {
   return man && t.label.toLowerCase().startsWith(`${man.toLowerCase()} `) ? t.label.slice(man.length + 1) : t.label;
 }
 
+/** Lifecycle of a template's workspace info. */
+export function wsLifecycle(a: Pick<WsInfo, "lifecycle" | "availableFrom" | "eolDate">): LifecycleInfo {
+  return lifecycleOf({ lifecycle: a.lifecycle, availableFrom: a.availableFrom, eolDate: a.eolDate });
+}
+
 /** Table rows: one per template, linted with the whole library's slot context. */
 export function buildRows(templates: readonly WsTemplate[]): WsRow[] {
   const labels = new Map(templates.map((t) => [t.id ?? "", t.label]));
   const ctx = slotLibraryContext(templates.map((t) => ({ slotFamily: t.slotFamily ?? null, slots: (t.slots as { slotFamily?: string; slotFamilies?: string[] }[] | undefined) ?? null })));
   return templates.map((t) => {
-    const lint = lintBlock(t, ctx);
     const a = t.avail;
+    const lifecycle = wsLifecycle(a);
+    // The linter reads the lifecycle from _avail (estimates of an upcoming product, v0.12).
+    const lint = lintBlock(lifecycle.lifecycle === "active" ? t : { ...t, _avail: lifecycle }, ctx);
     const row: WsRow = {
       id: t.id ?? "",
       template: t,
@@ -163,6 +178,8 @@ export function buildRows(templates: readonly WsTemplate[]): WsRow[] {
           : `${labels.get(a.duplicate.primary) ?? a.duplicate.primary} (${a.duplicate.size})`
         : "",
       duplicateKey: a.duplicate ? `${labels.get(a.duplicate.primary) ?? ""}|${a.duplicate.primary}|${a.duplicate.primary === t.id ? 0 : 1}` : "",
+      lifecycle,
+      lifecycleText: lifecycleText(lifecycle),
       haystack: "",
     };
     row.haystack = [t.label, row.partNumber, row.vendor, row.category, row.deviceType, ...(t.searchTerms ?? []), t.id ?? ""].join(" ").toLowerCase();
@@ -192,12 +209,14 @@ export interface WsFilter {
   editedBy: string;
   /** Only templates in a possible duplicate group (step 2.4). */
   duplicates: boolean;
+  /** Product lifecycle: upcoming, active, eol. */
+  lifecycles: Lifecycle[];
   text: string;
 }
 
 export const EMPTY_FILTER: WsFilter = {
   vendors: [], categories: [], deviceTypes: [], statuses: [], levels: [], portsSources: [], rules: [],
-  changedSince: "", approvedBy: [], origins: [], approvedVia: [], editedBy: "", duplicates: false, text: "",
+  changedSince: "", approvedBy: [], origins: [], approvedVia: [], editedBy: "", duplicates: false, lifecycles: [], text: "",
 };
 
 /** A filter with every field (saved filters from an older page may lack the newer ones). */
@@ -223,6 +242,7 @@ export function filterRows(rows: readonly WsRow[], f: WsFilter): WsRow[] {
       (!f.approvedVia.length || (r.template.avail.approvedVia !== null && f.approvedVia.includes(r.template.avail.approvedVia))) &&
       (!f.editedBy || r.template.avail.editors.includes(f.editedBy)) &&
       (!f.duplicates || r.duplicateOf !== "") &&
+      (!f.lifecycles.length || f.lifecycles.includes(r.lifecycle.lifecycle)) &&
       text.every((w) => r.haystack.includes(w)),
   );
 }
@@ -230,7 +250,7 @@ export function filterRows(rows: readonly WsRow[], f: WsFilter): WsRow[] {
 export function activeFilterCount(f: WsFilter): number {
   return (
     f.vendors.length + f.categories.length + f.deviceTypes.length + f.statuses.length + f.levels.length + f.portsSources.length +
-    f.rules.length + f.approvedBy.length + f.origins.length + f.approvedVia.length + (f.changedSince ? 1 : 0) + (f.editedBy ? 1 : 0) + (f.duplicates ? 1 : 0) + (f.text.trim() ? 1 : 0)
+    f.rules.length + f.approvedBy.length + f.origins.length + f.approvedVia.length + f.lifecycles.length + (f.changedSince ? 1 : 0) + (f.editedBy ? 1 : 0) + (f.duplicates ? 1 : 0) + (f.text.trim() ? 1 : 0)
   );
 }
 
@@ -291,7 +311,8 @@ export function categoryTree(rows: readonly WsRow[]): { group: string; count: nu
 // ---------------------------------------------------------------------------- columns
 
 export type ColumnId =
-  | "vendor" | "model" | "partNumber" | "category" | "deviceType" | "level" | "status" | "portsSource" | "ew" | "updatedAt" | "approved" | "duplicateOf";
+  | "vendor" | "model" | "partNumber" | "category" | "deviceType" | "level" | "status" | "portsSource" | "ew" | "updatedAt" | "approved" | "duplicateOf"
+  | "lifecycle";
 
 export interface ColumnDef {
   id: ColumnId;
@@ -303,6 +324,7 @@ export interface ColumnDef {
 }
 
 const LEVEL_ORDER: Record<BlockLevel, number> = { A: 0, B: 1, FIX: 2 };
+const LIFECYCLE_ORDER: Record<Lifecycle, number> = { upcoming: 0, active: 1, eol: 2 };
 
 export const COLUMNS: readonly ColumnDef[] = [
   { id: "vendor", label: "Vendor", width: 110, value: (r) => r.vendor },
@@ -317,9 +339,16 @@ export const COLUMNS: readonly ColumnDef[] = [
   { id: "updatedAt", label: "Updated", width: 140, value: (r) => r.updatedAt },
   { id: "approved", label: "Approved by", width: 200, value: (r) => (r.approvedBy ? `${r.approvedBy}${r.approvedVia ? ` (${r.approvedVia})` : ""}` : "") },
   { id: "duplicateOf", label: "Duplicate of", width: 220, value: (r) => r.duplicateOf, sort: (r) => r.duplicateKey },
+  {
+    id: "lifecycle",
+    label: "Lifecycle",
+    width: 130,
+    value: (r) => lifecycleShort(r.lifecycle),
+    sort: (r) => `${LIFECYCLE_ORDER[r.lifecycle.lifecycle]}|${r.lifecycle.availableFrom ?? r.lifecycle.eolDate ?? ""}`,
+  },
 ];
 
-export const DEFAULT_COLUMNS: readonly ColumnId[] = ["vendor", "model", "partNumber", "category", "deviceType", "level", "status", "portsSource", "ew", "updatedAt", "approved"];
+export const DEFAULT_COLUMNS: readonly ColumnId[] = ["vendor", "model", "partNumber", "category", "deviceType", "level", "status", "lifecycle", "portsSource", "ew", "updatedAt", "approved"];
 
 export function sortRows(rows: readonly WsRow[], by: ColumnId, desc: boolean): WsRow[] {
   const col = COLUMNS.find((c) => c.id === by)!;
@@ -335,7 +364,7 @@ export function sortRows(rows: readonly WsRow[], by: ColumnId, desc: boolean): W
 
 // ---------------------------------------------------------------------------- bulk actions
 
-export type BulkAction = "approve" | "draft" | "hide" | "unhide" | "category" | "merge";
+export type BulkAction = "approve" | "draft" | "hide" | "unhide" | "category" | "lifecycle" | "merge";
 
 export const BULK_LABELS: Readonly<Record<BulkAction, string>> = {
   approve: "Approve",
@@ -343,11 +372,13 @@ export const BULK_LABELS: Readonly<Record<BulkAction, string>> = {
   hide: "Hide",
   unhide: "Unhide",
   category: "Change category",
+  lifecycle: "Set lifecycle",
   merge: "Merge into…",
 };
 
 /** Target status of a status action. */
-export const BULK_STATUS: Readonly<Record<Exclude<BulkAction, "category" | "merge">, WsStatus>> = { approve: "verified", draft: "draft", hide: "hidden", unhide: "draft" };
+export type StatusAction = Exclude<BulkAction, "category" | "lifecycle" | "merge">;
+export const BULK_STATUS: Readonly<Record<StatusAction, WsStatus>> = { approve: "verified", draft: "draft", hide: "hidden", unhide: "draft" };
 
 export interface BulkPlan {
   action: BulkAction;
@@ -359,6 +390,8 @@ export interface BulkPlan {
   refused: { row: WsRow; reason: string }[];
   /** For category: the target path. */
   category?: string;
+  /** For lifecycle: the lifecycle to set. */
+  lifecycle?: LifecycleInfo;
   /** For merge: the primary template (stays), the others become hidden as its duplicates. */
   primary?: WsRow;
 }
@@ -393,8 +426,20 @@ export function planMerge(rows: readonly WsRow[], primary: WsRow): BulkPlan {
   return plan;
 }
 
+/** Set lifecycle: the templates whose lifecycle (state or date) differs from the one asked. */
+export function planLifecycle(rows: readonly WsRow[], lifecycle: LifecycleInfo): BulkPlan {
+  const plan: BulkPlan = { action: "lifecycle", change: [], unchanged: [], refused: [], lifecycle };
+  for (const row of rows) {
+    if (sameLifecycle(row.lifecycle, lifecycle)) plan.unchanged.push(row);
+    else plan.change.push({ row, from: row.lifecycleText, to: lifecycleText(lifecycle) });
+  }
+  return plan;
+}
+
+export { LIFECYCLE_LABELS };
+
 /** What a bulk action would do to the selection: the summary shown before it runs. */
-export function planBulk(action: Exclude<BulkAction, "merge">, rows: readonly WsRow[], category?: string): BulkPlan {
+export function planBulk(action: Exclude<BulkAction, "merge" | "lifecycle">, rows: readonly WsRow[], category?: string): BulkPlan {
   const plan: BulkPlan = { action, change: [], unchanged: [], refused: [], ...(category ? { category } : {}) };
   for (const row of rows) {
     if (action === "category") {
@@ -427,9 +472,9 @@ export function planBulk(action: Exclude<BulkAction, "merge">, rows: readonly Ws
 /** Rows of the selection for the xlsx export: header + one line per template. */
 export function exportTable(rows: readonly WsRow[]): (string | number)[][] {
   return [
-    ["Vendor", "Model", "Part number", "Category", "Device type", "Level", "Status", "Ports source", "Errors", "Warnings", "Updated", "Approved by", "Approved how", "Reference URL", "Data sheet", "Template id", "Lint messages"],
+    ["Vendor", "Model", "Part number", "Category", "Device type", "Level", "Status", "Lifecycle", "Ports source", "Errors", "Warnings", "Updated", "Approved by", "Approved how", "Reference URL", "Data sheet", "Template id", "Lint messages"],
     ...rows.map((r) => [
-      r.vendor, r.model, r.partNumber, r.category, r.deviceType, r.level, STATUS_LABELS[r.status], r.portsSource,
+      r.vendor, r.model, r.partNumber, r.category, r.deviceType, r.level, STATUS_LABELS[r.status], r.lifecycleText, r.portsSource,
       r.lint.errors.length, r.lint.warnings.length, r.updatedAt, r.approvedBy, r.approvedVia, r.template.referenceUrl ?? "",
       r.template.avail.datasheetUrl ?? "", r.id, [...r.lint.errors.map((m) => `E ${m}`), ...r.lint.warnings.map((m) => `W ${m}`)].join("\n"),
     ]),
