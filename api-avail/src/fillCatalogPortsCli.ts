@@ -14,6 +14,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 import Database from "better-sqlite3";
+import { overridesInForce } from "./overrides";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { fillCatalogPorts, formatFillReport, formatStencilReport, type PortDonor, type TemplateStatusName } from "../../src/avail/catalogPorts";
@@ -70,6 +71,8 @@ try {
   const rows = sqlite
     .prepare("SELECT t.*, m.status AS avail_status FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id")
     .all() as (TemplateRow & { avail_status: TemplateStatusName | null })[];
+  // Overrides: the snapshot's (accepted proposals) and docs/avail/overrides.json.
+  const overrides = overridesInForce(sqlite);
   sqlite.close();
   const db: PortDonor[] = rows
     .filter((r) => !deleted.has(r.id))
@@ -89,7 +92,7 @@ try {
 
   // Extron Visio stencils (npm run parse:extron-visio); without the file, no stencil step.
   const stencils = existsSync(stencilFile) ? (JSON.parse(readFileSync(stencilFile, "utf8")) as StencilFile).blocks : [];
-  const report = fillCatalogPorts(files, { library, db, stencils });
+  const report = fillCatalogPorts(files, { library, db, stencils, overrides });
   if (!values["dry-run"]) {
     const texts = new Map(files.map((f) => [f.file, f.text]));
     for (const f of report.changed) writeCatalogFile(dir, f, texts.get(f.file));

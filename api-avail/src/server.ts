@@ -18,6 +18,7 @@ import { registerUserRoutes } from "./users";
 import { duplicateConflict } from "./duplicateGuard";
 import { CONFLICT_PATH, pendingConflicts, registerDuplicateRoutes } from "./duplicates";
 import { registerNotDuplicateRoutes } from "./notDuplicates";
+import { beginProposalOverrides, endProposalOverrides, registerOverrideRoutes, type ProposalOverrideScope } from "./overrides";
 import { logTokenRequest, pendingRefusals, rateLimitFromEnv, REFUSAL_PATH, registerAccessTokenRoutes, resolveAccessToken, TokenRateLimiter } from "./accessTokens";
 import { registerAssistantRoutes } from "./assistant";
 import { handleMcp, MCP_PATH, mcpUnauthorized } from "./mcp";
@@ -33,6 +34,7 @@ registerDuplicateRoutes(upstreamApp);
 registerNotDuplicateRoutes(upstreamApp);
 registerAccessTokenRoutes(upstreamApp);
 registerAssistantRoutes(upstreamApp);
+registerOverrideRoutes(upstreamApp);
 
 export interface ApiConfig {
   dataDir: string;
@@ -209,7 +211,21 @@ export function createApiServer(config: ApiConfig): ApiServer {
     } catch (err) {
       log(`proposal audit read failed: ${String(err)}`);
     }
+    // An accepted update proposal: what it changes becomes overrides (overrides.ts), read the template now.
+    let overrides: ProposalOverrideScope | null = null;
+    try {
+      overrides = await beginProposalOverrides(db.sqlite, request);
+    } catch (err) {
+      log(`override read failed: ${String(err)}`);
+    }
     let response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
+    if (overrides && response.status < 400) {
+      try {
+        endProposalOverrides(db.sqlite, overrides, actor);
+      } catch (err) {
+        log(`override write failed: ${String(err)}`);
+      }
+    }
     if (proposal && response.status < 400) {
       try {
         writeAudit(db.sqlite, [proposalAuditEntry(proposal, actor)]);

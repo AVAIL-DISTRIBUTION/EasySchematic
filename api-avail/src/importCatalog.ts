@@ -17,6 +17,11 @@
  * The template gets the file without `_avail` and `rackForm`; those go to
  * avail_template_meta.catalog (migration 9005) with the file path.
  *
+ * Overrides (accepted proposals, port decisions; overrides.ts, migration 9011) are applied over the
+ * file: a decided field or port keeps its value. Where the file itself changed an overridden value,
+ * the override stays and the report lists it ("catalog changed a field overridden by …"). The level
+ * is the overridden template's; a change of the template's overrides counts as a file change.
+ *
  * Superseded: other templates of a model the catalog loaded (colour variant or base model, matched
  * by label without the variant) — raw ones become hidden with status_reason "superseded by catalog
  * (<file>)", verified and draft are only listed in the report. Rows any catalog file matched by part
@@ -36,6 +41,8 @@ import type { CatalogFileText } from "./catalogFiles";
 import { AVAIL_LIBRARY_SOURCE, fileHash } from "./importAvail";
 import { BUMP_LIBRARY_VERSION, type TemplateMetaRow, type TemplateStatus } from "./templateMeta";
 import { DELETED_TEMPLATES, type DeletedTemplatesFile } from "./vendorResponses";
+import { applyOverrides, describeConflict, describeOverride, overrideConflicts, overridesFor, type Override } from "../../src/avail/overrides";
+import { overridesInForce } from "./overrides";
 
 export const AVAIL_CATALOG_SOURCE = "avail-catalog";
 
@@ -68,6 +75,10 @@ export interface ImportCatalogReport {
    * are only listed.
    */
   superseded: { id: string; label: string; status: TemplateStatus; action: "hidden" | "listed"; by: string }[];
+  /** Loaded files whose template has overrides: how many values the overrides kept. */
+  overridden: { file: string; id: string; label: string; applied: number }[];
+  /** Where a catalog file changed a value an override decides: the override stays. */
+  conflicts: { file: string; id: string; label: string; text: string }[];
 }
 
 export const SUPERSEDED_REASON = "superseded by catalog";
@@ -80,6 +91,8 @@ export interface ImportCatalogOptions {
   /** Templates of library/avail (id, manufacturer, modelNumber): never touched. */
   curated?: { id: string; manufacturer?: string; modelNumber?: string }[];
   deletedList?: DeletedTemplatesFile;
+  /** Overrides to apply (default: the database's and docs/avail/overrides.json, overridesInForce). */
+  overrides?: readonly Override[];
 }
 
 type Row = TemplateRow & Record<string, string | number | null>;
@@ -125,7 +138,8 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
   const deletedList = options.deletedList ?? DELETED_TEMPLATES;
   const counts = { inserted: 0, updated: 0, unchanged: 0, "below-min": 0, curated: 0, deleted: 0, duplicate: 0, invalid: 0 };
   const minLevel = options.minLevel ?? "B";
-  const report: ImportCatalogReport = { dryRun: !!options.dryRun, minLevel, loadedByLevel: { A: 0, B: 0 }, rows: [], counts, removed: [], superseded: [] };
+  const report: ImportCatalogReport = { dryRun: !!options.dryRun, minLevel, loadedByLevel: { A: 0, B: 0 }, rows: [], counts, removed: [], superseded: [], overridden: [], conflicts: [] };
+  const overrides = options.overrides ?? overridesInForce(sqlite);
 
   const curatedIds = new Set((options.curated ?? []).map((c) => c.id));
   const curatedKeys = new Set((options.curated ?? []).map((c) => partKey(c.manufacturer, c.modelNumber)).filter(Boolean));
@@ -205,11 +219,15 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
         report.rows.push({ file: file.file, id: "?", label: "?", level: "FIX", action: "invalid", note: "not a template (id, label, deviceType, ports)" });
         return;
       }
-      const level = lintBlock(t).level;
       const parts = [t.modelNumber, t._avail?.altPartNumber].map((p) => partKey(t.manufacturer, p)).filter(Boolean);
       const existing = bySourceId.get(t.id) ?? byId.get(t.id) ?? parts.map((k) => byPart.get(k)).find(Boolean);
       const m = existing ? meta.get(existing.id) : undefined;
       const id = existing?.id ?? t.id;
+      // Overrides of the template (matched by the database id, part number or label) over the file.
+      const card = { ...t, id };
+      const mine = overridesFor(card, overrides);
+      const over = mine.length ? applyOverrides(card, mine) : null;
+      const level = lintBlock(over ? over.block : t).level;
       if (existing) matchedByFile.add(existing.id);
       const base = { file: file.file, id, label: t.label, level };
       const loaded = () => {
@@ -232,7 +250,7 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       if (prev) return skip("duplicate", `same template as ${prev}`);
       claimed.set(id, file.file);
 
-      const hash = fileHash(file.text);
+      const hash = mine.length ? fileHash(`${file.text}\n${mine.map(describeOverride).join("\n")}`) : fileHash(file.text);
       if (existing && m?.source === AVAIL_CATALOG_SOURCE && m.upstream_id === t.id && m.source_hash === hash) {
         counts.unchanged++;
         report.rows.push({ ...base, action: "unchanged", status: m.status });
@@ -240,7 +258,11 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
         return;
       }
 
-      const { template, catalog } = splitCatalogTemplate(t, file.file);
+      const { template, catalog } = splitCatalogTemplate(over ? (over.block as CatalogTemplate) : t, file.file);
+      if (over) {
+        if (over.changes.length) report.overridden.push({ file: file.file, id, label: t.label, applied: over.changes.length });
+        for (const c of overrideConflicts(card, mine)) report.conflicts.push({ file: file.file, id, label: t.label, text: describeConflict(c) });
+      }
       const sortOrder = existing ? existing.sort_order : 200000 + index;
       const row = templateToRow({ ...template, id, sortOrder }) as Row;
       const dataChanged = !existing || columns.some((c) => (existing[c] ?? null) !== (row[c] ?? null));
@@ -347,6 +369,14 @@ export function formatImportCatalogReport(r: ImportCatalogReport, dir: string, v
   if (listed.length) {
     lines.push("", `Same model as a catalog file, left as is (verified / draft): ${listed.length}`);
     for (const x of listed) lines.push(`  ${x.status.padEnd(8)} ${x.id} ${x.label} — ${x.by}`);
+  }
+  if (r.overridden.length) {
+    lines.push("", `Templates with overrides kept over the catalog (accepted proposals, port decisions): ${r.overridden.length}`);
+    if (verbose) for (const x of r.overridden) lines.push(`  ${x.id} ${x.label} — ${x.applied} values`);
+  }
+  if (r.conflicts.length) {
+    lines.push("", `Catalog changed a field overridden by a proposal or a decision: ${r.conflicts.length} (the override stays; remove it in the library workspace to take the catalog's value)`);
+    for (const x of r.conflicts) lines.push(`  ${x.file} (${x.id}): ${x.text}`);
   }
   lines.push("");
   for (const x of r.rows) {

@@ -1,0 +1,78 @@
+{
+  "about": "Overrides: decided values of templates that imports must not lose (step 2.7, src/avail/overrides.ts). Accepted proposals (export:overrides writes them from the database) and the port decisions of AVAIL engineers (standard v0.11, R6). import:catalog, fill:catalog-ports and normalize:library apply them over the catalog and the database. A template matches by templateId, manufacturer + modelNumber or label; a port by its label as it was (port), its new label or portId. kind field: value replaces the field (null removes it); kind port: op set replaces the listed fields, add adds the port, remove drops it. base: the value before the decision (absent = unknown).",
+  "overrides": [
+    {
+      "manufacturer": "Extron",
+      "modelNumber": "60-1797-01",
+      "label": "Extron UCS 303",
+      "kind": "port",
+      "port": "USB-C In (DP Alt, 60W PD)",
+      "op": "set",
+      "value": {
+        "section": "Video Inputs",
+        "signalType": "usb",
+        "connectorType": "usb-c",
+        "notes": "DP Alt Mode video + USB data"
+      },
+      "source": "port decision",
+      "comment": "USB-C with DP Alt is a video input, as on DTP3 T 322 D",
+      "acceptedBy": "AVAIL engineers",
+      "acceptedAt": "2026-11-26"
+    },
+    {
+      "manufacturer": "Extron",
+      "modelNumber": "60-1797-02",
+      "label": "Extron UCS SW 313",
+      "kind": "port",
+      "port": "USB-C In (DP Alt, 60W PD)",
+      "op": "set",
+      "value": {
+        "section": "Video Inputs",
+        "signalType": "usb",
+        "connectorType": "usb-c",
+        "notes": "DP Alt Mode video + USB data"
+      },
+      "source": "port decision",
+      "comment": "USB-C with DP Alt is a video input, as on DTP3 T 322 D",
+      "acceptedBy": "AVAIL engineers",
+      "acceptedAt": "2026-11-26"
+    },
+    {
+      "manufacturer": "Extron",
+      "modelNumber": "60-1798-13",
+      "label": "Extron UCS SR 501",
+      "kind": "port",
+      "port": "IR/Serial",
+      "op": "set",
+      "value": {
+        "section": "Control",
+        "signalType": "serial",
+        "direction": "bidirectional",
+        "notes": "IR or RS-232, programmable"
+      },
+      "source": "port decision",
+      "comment": "shared IR / RS-232 port: serial in Control",
+      "acceptedBy": "AVAIL engineers",
+      "acceptedAt": "2026-11-26"
+    },
+    {
+      "manufacturer": "Extron",
+      "modelNumber": "60-600-02",
+      "label": "Extron MLC 226 IP",
+      "kind": "port",
+      "port": "PWR SNS",
+      "op": "set",
+      "value": {
+        "label": "Power Sense",
+        "direction": "input",
+        "signalType": "sensor",
+        "section": "Control",
+        "notes": "current sensor input"
+      },
+      "source": "port decision",
+      "comment": "power sense input of the MLC: a sensor input in Control",
+      "acceptedBy": "AVAIL engineers",
+      "acceptedAt": "2026-11-26"
+    }
+  ]
+}

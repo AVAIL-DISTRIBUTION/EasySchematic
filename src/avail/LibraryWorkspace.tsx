@@ -27,6 +27,9 @@ import {
   markNotDuplicates,
   mergeTemplates,
   undoNotDuplicates,
+  fetchOverrides,
+  removeOverride,
+  type TemplateOverride,
 } from "./workspaceApi";
 import { ErrorText } from "./ErrorText";
 import {
@@ -961,6 +964,7 @@ function DetailsPanel({
       <div className="px-3 py-2 flex flex-col gap-3">
         {a.statusReason && <div className="text-amber-900">Status note: {a.statusReason}</div>}
         <DuplicateDecisions row={row} rows={rows} onFocus={onFocus} onNotDuplicates={onNotDuplicates} onChanged={onChanged} onReport={onReport} />
+        <TemplateOverrides row={row} onChanged={onChanged} onReport={onReport} />
         <table className="w-full">
           <tbody>
             {deviceCardRows(t as never).map((r) => (
@@ -1032,6 +1036,68 @@ function DetailsPanel({
         </div>
       </div>
     </aside>
+  );
+}
+
+/**
+ * Overrides in the details panel (step 2.7): values decided by accepted proposals and port decisions
+ * that imports keep, with their source and comment; "Remove override" lets the next import replace
+ * the value (the template keeps it until then).
+ */
+function TemplateOverrides({ row, onChanged, onReport }: { row: WsRow; onChanged: () => Promise<void>; onReport: (title: string, lines: ReactNode[]) => void }) {
+  const t = row.template;
+  const [list, setList] = useState<TemplateOverride[] | null>(null);
+  const [busy, setBusy] = useState(false);
+  useEffect(() => {
+    let live = true;
+    fetchOverrides(t.id!).then(
+      (l) => live && setList(l),
+      () => live && setList([]),
+    );
+    return () => {
+      live = false;
+    };
+  }, [t]);
+  if (!list?.length) return null;
+
+  const remove = async (o: TemplateOverride) => {
+    if (!window.confirm(`Remove the override "${o.text}"? The template keeps its current value; the next catalog import or normalization may replace it.`)) return;
+    setBusy(true);
+    try {
+      await removeOverride(t.id!, o.key);
+      await onChanged();
+    } catch (e) {
+      onReport("Remove override", [`Could not remove the override: ${e instanceof Error ? e.message : String(e)}`]);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div data-testid="avail-ws-overrides" className="border border-blue-200 bg-blue-50 rounded p-2 flex flex-col gap-1.5">
+      <div className="font-semibold" title="Decided values that catalog imports and the normalizer keep">
+        Overrides ({list.length})
+      </div>
+      {list.map((o) => (
+        <div key={o.key} data-testid="avail-ws-override" className="border-t border-blue-100 pt-1">
+          <div className="flex items-start gap-2">
+            <div className="flex-1 font-mono text-[10px] break-all">{o.text}</div>
+            <button className={btnPlain} disabled={busy} onClick={() => void remove(o)}>
+              Remove override
+            </button>
+          </div>
+          <div>
+            Source: {o.source}
+            {o.fromFile ? " (docs/avail/overrides.json)" : ""}
+          </div>
+          {o.comment && <div className="italic break-words">“{o.comment}”</div>}
+          <div className="text-[var(--color-text-muted)]">
+            {o.acceptedBy}
+            {o.acceptedAt ? `, ${o.acceptedAt}` : ""}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
 

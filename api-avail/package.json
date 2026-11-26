@@ -25,7 +25,8 @@
     "approve:catalog": "tsx src/approveCatalogCli.ts",
     "report:review-queue": "tsx src/reviewQueueCli.ts",
     "report:datasheets": "tsx src/datasheetListCli.ts",
-    "report:duplicates": "tsx src/duplicatesCli.ts"
+    "report:duplicates": "tsx src/duplicatesCli.ts",
+    "export:overrides": "tsx src/exportOverridesCli.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.11",

@@ -75,3 +75,24 @@ export const rejectProposal = (id: string, note: string) =>
 /** POST /submissions (action update): an engineer proposes an edited copy of a library template. */
 export const proposeChange = (templateId: string, data: Omit<DeviceTemplate, "id" | "version">, comment: string) =>
   call<Proposal>("/submissions", { method: "POST", body: JSON.stringify({ action: "update", templateId, data, submitterNote: comment, source: "manual" }) });
+
+/** An override of a template (step 2.7): a decided value imports keep (src/avail/overrides.ts). */
+export interface TemplateOverride {
+  /** "db:<id>" or "file:<n>" (only in docs/avail/overrides.json). */
+  key: string;
+  kind: "field" | "port";
+  text: string;
+  source: string;
+  comment: string;
+  acceptedBy: string;
+  acceptedAt: string | null;
+  fromFile: boolean;
+}
+
+/** GET /avail/templates/:id/overrides: the overrides in force for the template. */
+export const fetchOverrides = async (templateId: string) =>
+  (await call<{ overrides: TemplateOverride[] }>(`/avail/templates/${encodeURIComponent(templateId)}/overrides`)).overrides;
+
+/** POST /avail/templates/:id/overrides/remove: the override no longer applies (the value stays). */
+export const removeOverride = (templateId: string, key: string) =>
+  call<{ removed: string }>(`/avail/templates/${encodeURIComponent(templateId)}/overrides/remove`, { method: "POST", body: JSON.stringify({ key }) });

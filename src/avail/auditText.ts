@@ -11,7 +11,7 @@ export interface AuditRecord {
   entity: "user" | "template" | "run";
   entityId: string;
   entityLabel: string | null;
-  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate" | "token" | "request" | "proposed";
+  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate" | "token" | "request" | "proposed" | "override";
   before: Record<string, unknown> | null;
   after: Record<string, unknown> | null;
   /** The access token the change was made with (its name). */
@@ -37,6 +37,7 @@ export const AUDIT_ACTION_LABELS: Readonly<Record<AuditRecord["action"], string>
   token: "Access token",
   request: "API request",
   proposed: "Change proposed",
+  override: "Override",
 };
 
 function short(v: unknown, max = 60): string {
@@ -81,6 +82,12 @@ export function auditChanges(r: AuditRecord): string[] {
   if (r.action === "proposed") {
     const a = r.after ?? {};
     return [`Proposal ${String(a.proposal ?? "")}: ${String(a.comment ?? "")}`];
+  }
+  if (r.action === "override") {
+    const a = r.after ?? {};
+    const b = r.before ?? {};
+    if (Array.isArray(a.added)) return [`Overrides from ${String(a.source ?? "")}:`, ...a.added.map((x) => `  ${String(x)}`)];
+    return [`Override removed (${String(b.source ?? "")}): ${String(b.override ?? "")}`];
   }
   if (r.action === "created") return [];
   if (r.action === "deleted") return [];
