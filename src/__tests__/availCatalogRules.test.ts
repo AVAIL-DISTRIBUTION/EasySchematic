@@ -253,14 +253,20 @@ describe("R6: port decisions (docs/avail/port-decisions.json)", () => {
     expect(lintBlock(block).warnings.filter((w) => w.includes("IR/Serial"))).toEqual([]);
   });
 
-  it("MLC 226 IP: PWR SNS → Power Sense, gpio input; matched again by the new label", () => {
-    const b = ucs("Extron MLC 226 IP", "60-600-02", [port("s", "PWR SNS", "gpio", "bidirectional", "Digital I/O", { notes: "Power Sensor" })]);
-    const { block, changes } = applyPortDecisions(b);
-    expect(block.ports[0]).toMatchObject({ label: "Power Sense", direction: "input", signalType: "gpio", notes: "current sensor input" });
-    expect(changes.map((c) => c.field)).toEqual(["ports[s].label", "ports[s].direction", "ports[s].notes"]);
+  it("MLC 226 IP: PWR SNS → Power Sense, sensor input in Control; matched again by the new label", () => {
+    const b = ucs("Extron MLC 226 IP", "60-600-02", [
+      port("pw", "Power", "power", "input", "Power", { connectorType: "iec" }),
+      port("s", "PWR SNS", "gpio", "bidirectional", "Digital I/O", { notes: "Power Sensor" }),
+    ]);
+    expect(lintBlock(b).warnings).toContain('"PWR SNS": label in all caps');
+    const { block, changes } = applyCatalogRules(b);
+    expect(block.ports.map((p) => p.id)).toEqual(["s", "pw"]);
+    expect(block.ports[0]).toMatchObject({ label: "Power Sense", direction: "input", signalType: "sensor", section: "Control", notes: "current sensor input" });
+    expect(changes.filter((c) => c.rule === "R6").map((c) => c.field)).toEqual([
+      "ports[s].label", "ports[s].direction", "ports[s].signalType", "ports[s].section", "ports[s].notes",
+    ]);
     expect(applyPortDecisions(block).changes).toEqual([]);
-    // The decision and the standard disagree: gpio is bidirectional (4.3).
-    expect(lintBlock(block).warnings).toContain('"Power Sense": gpio must be bidirectional');
+    expect(lintBlock(block).warnings.filter((w) => w.includes("Power Sense"))).toEqual([]);
   });
 
   it("only the named model (label or part number) and port", () => {

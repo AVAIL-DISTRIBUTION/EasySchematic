@@ -22,8 +22,8 @@
       "models": ["MLC 226 IP"],
       "partNumbers": ["60-600-02"],
       "port": "PWR SNS",
-      "set": { "label": "Power Sense", "direction": "input", "signalType": "gpio", "notes": "current sensor input" },
-      "decision": "power sense input of the MLC"
+      "set": { "label": "Power Sense", "direction": "input", "signalType": "sensor", "section": "Control", "notes": "current sensor input" },
+      "decision": "power sense input of the MLC: a sensor input in Control"
     }
   ]
 }

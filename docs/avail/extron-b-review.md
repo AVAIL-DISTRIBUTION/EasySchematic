@@ -9,9 +9,9 @@ Nov 26, 2026 · ветка `avail/extron-b-fixes`
 | | A | B | FIX (не в базе) |
 |---|---:|---:|---:|
 | до (`master`) | 1026 | **47** (draft 40, raw 7) | — |
-| после | 1058 | **17** (draft 14, raw 3) | — |
+| после | 1059 | **16** (draft 14, raw 2) | — |
 
-30 шаблонов перешли B → A, понижений нет. Кроме того, загрузятся две карточки Cable Cubby F55 (70-1295-02/-03). Раньше
+31 шаблон перешёл B → A, понижений нет. Кроме того, загрузятся две карточки Cable Cubby F55 (70-1295-02/-03). Раньше
 они были FIX и в базу не попадали, теперь у них уровень A.
 
 ## Что сделано
@@ -51,11 +51,10 @@ Nov 26, 2026 · ветка `avail/extron-b-fixes`
    - UCS 303, UCS SW 313: «USB-C In (DP Alt, 60W PD)» → Video Inputs, usb, usb-c, notes «DP Alt Mode video + USB data»
      (как DTP3 T 322 D);
    - UCS SR 501: «IR/Serial» → Control, serial, notes «IR or RS-232, programmable»;
-   - MLC 226 IP: «PWR SNS» → «Power Sense», input, gpio, notes «current sensor input». Решение расходится со
-     стандартом (4.3: gpio — bidirectional), поэтому шаблон остаётся на B с замечанием «gpio must be bidirectional».
+   - MLC 226 IP: «PWR SNS» → «Power Sense», sensor, input, секция Control, notes «current sensor input».
    - IN1804 DI и DI/DO «IR Thru (In)» не меняются — на сверку по руководству IN1804.
 
-## B → A (30)
+## B → A (31)
 
 | Шаблон | Артикул | Статус | Было | Что закрыло | approve:catalog |
 |---|---|---|---|---|---|
@@ -84,11 +83,12 @@ Nov 26, 2026 · ветка `avail/extron-b-fixes`
 | UCS 303 | 60-1797-01 | draft | USB-C DP Alt без секции | R6 | нет (db) |
 | UCS SW 313 | 60-1797-02 | draft | то же | R6 | нет (db) |
 | UCS SR 501 | 60-1798-13 | draft | «IR/Serial»: ir bidirectional | R6 | нет (db) |
+| MLC 226 IP | 60-600-02 | raw | «PWR SNS» капс; реле gpio | R6, R4 | — (не каталог) |
 
 Итого `approve:catalog -- --dry-run`: утвердит Extron 494 (было 483), на ревью уровень B — Extron 12 (было 25). Карточки
 Cable Cubby F55 (A, без портов, источник портов не записан) — в «no source». Их утверждает библиотекарь в рабочем окне.
 
-## Осталось на B (17) и почему
+## Осталось на B (16) и почему
 
 **Нет данных в карточке** (W «no weightKg» / «no powerDrawW/voltage»). Заполняются по даташиту, правилом не решаются:
 
@@ -109,7 +109,6 @@ Cable Cubby F55 (A, без портов, источник портов не за
 | Шаблон | Артикул | Статус | Замечание | Что дальше |
 |---|---|---|---|---|
 | IN1804 DI, IN1804 DI/DO | 60-1699-12 / -14 | raw | «IR Thru (In)»: ir bidirectional | решение: не менять, сверка по руководству IN1804 |
-| MLC 226 IP | 60-600-02 | raw | «Power Sense»: gpio must be bidirectional | решение R6 (gpio, input) расходится со стандартом 4.3. Для уровня A: direction bidirectional или signal sensor / contact-closure input (секция Control). Реле этого шаблона исправил R4 |
 
 ## Команды на сервере (после мержа и выхода образа)
 
