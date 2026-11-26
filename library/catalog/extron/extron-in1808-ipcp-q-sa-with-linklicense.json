@@ -42,7 +42,7 @@
       "label": "Extron IN1808 IPCP Q SA LL",
       "match": "part-number",
       "status": "raw",
-      "level": "B"
+      "level": "A"
     }
   },
   "ports": [

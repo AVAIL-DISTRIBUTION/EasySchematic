@@ -50,6 +50,10 @@ const POWER_OUTPUT_LABEL_RE = /\b(12\s?v|24\s?v|48\s?v|tally|lamp)\b/i;
 const POWER_SOURCE_TYPES = new Set(["power-distribution", "power-supply", "24vdc-power-supply", "pdu", "ups", "antenna-distribution"]);
 // Python's \b is Unicode-aware: a letter or digit of any script before "dtp" is not a boundary.
 const HDBASET_RE = /(?<![\p{L}\p{N}_])(dtp|xtp|hdbaset)/u;
+/** Signals an HDBaseT link carries alongside video (IR, RS-232): such ports name the link, they are not it. */
+const HDBASET_CARRIED_SIGNALS = new Set(["ir", "serial"]);
+/** "Pass-Through", "Pass-thru", "Passthrough", "over": the port rides on the link. */
+const OVER_LINK_RE = /pass[\s-]?th(?:rough|ru)|(?<![\p{L}\p{N}_])over(?![\p{L}\p{N}_])/u;
 const GENERIC_PREFIX = `${GENERIC_VENDOR} `;
 /** Notes of the port that powers a bus-powered device: "bus-powered (USB)" or "PoE". */
 const USB_BUS_POWER_RE = /bus-powered \(USB\)/i;
@@ -298,7 +302,11 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
     const lower = l.toLowerCase();
     if (lower.includes("relay") && sig !== "contact-closure") W.push(`${tag}: a relay must be contact-closure`);
     if (lower.includes("ebus") && sig !== "ebus") W.push(`${tag}: eBUS must be ebus`);
-    if (HDBASET_RE.test(lower) && sig !== "hdbaset" && sig !== "power") W.push(`${tag}: HDBaseT/DTP/XTP must be hdbaset`);
+    // v0.11: a port that only names the link it rides on ("IR Pass-Through (DTP2 Out)", "RS-232
+    // over XTP") or carries IR / serial is not the HDBaseT port itself.
+    if (HDBASET_RE.test(lower) && sig !== "hdbaset" && sig !== "power" && !HDBASET_CARRIED_SIGNALS.has(String(sig)) && !OVER_LINK_RE.test(lower)) {
+      W.push(`${tag}: HDBaseT/DTP/XTP must be hdbaset`);
+    }
   }
   if (order.some((v, i) => i > 0 && v < order[i - 1])) W.push("sections are not in the standard order");
   // Slots and cards against the library (only when the caller knows the library).

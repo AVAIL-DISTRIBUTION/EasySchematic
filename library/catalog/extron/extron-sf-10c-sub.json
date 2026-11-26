@@ -45,7 +45,8 @@
       "direction": "input",
       "connectorType": "phoenix",
       "id": "port-0",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "notes": "passive"
     }
   ]
 }

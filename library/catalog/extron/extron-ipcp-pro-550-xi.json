@@ -118,14 +118,6 @@
       "connectorType": "phoenix"
     },
     {
-      "id": "tpl-25",
-      "label": "eBUS",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "section": "Serial",
-      "connectorType": "phoenix"
-    },
-    {
       "id": "tpl-9",
       "label": "IR 1",
       "signalType": "ir",
@@ -192,64 +184,64 @@
     {
       "id": "tpl-17",
       "label": "Relay 1",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-18",
       "label": "Relay 2",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-19",
       "label": "Relay 3",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-20",
       "label": "Relay 4",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-21",
       "label": "Relay 5",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-22",
       "label": "Relay 6",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-23",
       "label": "Relay 7",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-24",
       "label": "Relay 8",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
@@ -284,6 +276,14 @@
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Digital I/O"
+    },
+    {
+      "id": "tpl-25",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "phoenix"
     },
     {
       "id": "tpl-26",

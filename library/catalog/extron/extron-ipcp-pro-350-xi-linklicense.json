@@ -137,16 +137,16 @@
     {
       "id": "tpl-8",
       "label": "Relay 3",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-9",
       "label": "Relay 4",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },

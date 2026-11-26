@@ -38,7 +38,14 @@ export function indexStencils(blocks: readonly StencilBlock[]): Map<string, Sten
     for (const pn of b.partNumbers) {
       const k = norm(pn);
       const cur = out.get(k);
-      if (!cur || rank(b) < rank(cur) || (rank(b) === rank(cur) && b.ports.length > cur.ports.length)) out.set(k, b);
+      // Same quality: the master drawn for fewer products wins (OCS 100C's own master over PC 1224,
+      // whose Part # lists the sensors it powers), then the one with more ports.
+      const better =
+        !cur ||
+        rank(b) < rank(cur) ||
+        (rank(b) === rank(cur) && (b.partNumbers.length < cur.partNumbers.length ||
+          (b.partNumbers.length === cur.partNumbers.length && b.ports.length > cur.ports.length)));
+      if (better) out.set(k, b);
     }
   }
   return out;

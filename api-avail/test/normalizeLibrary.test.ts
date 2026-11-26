@@ -7,7 +7,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { templateToRow } from "../../api/src/db";
-import { formatNormalizeReport, normalizeLibrary, reasonKey } from "../src/normalizeLibrary";
+import { formatNormalizeReport, normalizeLibrary, reasonKey, SIGNAL_RULE_REASON } from "../src/normalizeLibrary";
 import { configFromEnv, createApiServer, type ApiServer } from "../src/server";
 import { syncLintLevels } from "../src/templateMeta";
 
@@ -111,6 +111,44 @@ describe("normalizeLibrary", () => {
     const r = normalizeLibrary(api.db.sqlite);
     expect(r.processed).toBe(0);
     expect(["v", "h", "o"].map(row)).toEqual(snapshot);
+  });
+
+  it("verified with community ports: R4 only, then draft with the reason; others stay verified", () => {
+    const relay = (id: string) => ({
+      id,
+      label: `Extron IPCP Pro ${id}`,
+      manufacturer: "Extron",
+      modelNumber: `60-${id}`,
+      deviceType: "control-processor",
+      category: "Control Systems / Control Processors",
+      ports: [
+        { id: "p", label: "Power", signalType: "power", direction: "input", section: "Power", connectorType: "iec" },
+        { id: "r", label: "Relay 1", signalType: "gpio", direction: "bidirectional", section: "Relays", connectorType: "phoenix" },
+      ],
+    });
+    insert(relay("c"), "verified");
+    insert(relay("m"), "verified");
+    insert(relay("n"), "verified");
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET source = 'easyschematic.live' WHERE template_id IN ('c', 'n')").run();
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET source = 'avail-library' WHERE template_id = 'm'").run();
+    api.db.sqlite.prepare("UPDATE templates SET manufacturer = 'Blackmagic Design' WHERE id = 'n'").run();
+    const untouched = ["m", "n"].map(row);
+
+    const dry = normalizeLibrary(api.db.sqlite, { dryRun: true });
+    expect(dry.verifiedToDraft).toEqual([{ id: "c", label: "Extron IPCP Pro c", level: expect.any(String), changes: 2 }]);
+    expect(meta("c").status).toBe("verified");
+
+    const r = normalizeLibrary(api.db.sqlite);
+    expect(r.verifiedToDraft.map((x) => x.id)).toEqual(["c"]);
+    expect(meta("c")).toMatchObject({ status: "draft", status_reason: SIGNAL_RULE_REASON });
+    expect(meta("c").status_changed_at).toBeTruthy();
+    const ports = JSON.parse(String(row("c").ports)) as { id: string; signalType: string; direction: string }[];
+    expect(ports.find((p) => p.id === "r")).toMatchObject({ signalType: "contact-closure", direction: "output" });
+    expect(row("c").version).toBe(2);
+    expect(["m", "n"].map(row)).toEqual(untouched);
+    expect(meta("m").status).toBe("verified");
+    expect(formatNormalizeReport(r)).toContain("Verified with community ports changed by the signal-type rule (R4) → draft: 1\n  Extron IPCP Pro c (c): 2 changes");
+    expect(normalizeLibrary(api.db.sqlite).verifiedToDraft).toEqual([]);
   });
 
   it("dry run reports the same but writes nothing", () => {

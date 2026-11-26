@@ -108,6 +108,15 @@ draft каталога, которые не утвердит `approve:catalog` (
 длиннее 28: Input/Output → In/Out, затем уточнение в скобках → notes (`src/avail/catalogRules.ts`; применяют нормализатор
 и `fill:catalog-ports` для всех карточек каталога, поэтому порты, заново скопированные из базы, их сохраняют).
 
+Стандарт v0.11 (разбор Extron уровня B, `docs/avail/extron-b-review.md`): R4 — тип сигнала по подписи («Relay N» →
+contact-closure, выход, секция Relays; eBUS → ebus, Expansion; `signalFromLabel`); R5 — пометки питания по группам
+Extron (`powerNote`): пассивные сабвуферы → «passive», `HOST_POWERED` (OCS 100C/W, IPA T RLY4) → «powered by host» /
+«bus-powered (eBUS)». Оба — в `catalogRules.ts` (нормализатор и `fill:catalog-ports`); `normalize:library` применяет R4
+и к verified с портами сообщества — изменённый verified → draft с причиной (`SIGNAL_RULE_REASON`). Линтер: «HDBaseT/DTP/XTP
+must be hdbaset» не для Pass-Through / over в подписи и не для ir / serial. Стенсил: из мастеров с одним артикулом
+побеждает нарисованный для меньшего числа изделий (`indexStencils`). Слоты шасси из документа —
+`_avail.slotsSource = "document: <URL>"`, цитата — `_avail.slotsNote` (Cable Cubby F55).
+
 ### Даташиты: список и обработка
 
 Список — `npm run report:datasheets` (api-avail; `src/avail/datasheetList.ts`, `api-avail/src/datasheetListCli.ts`) →

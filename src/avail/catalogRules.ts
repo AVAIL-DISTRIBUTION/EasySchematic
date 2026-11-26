@@ -5,13 +5,22 @@
  *   R2 — voltage: a block with powerDrawW but no voltage takes the voltage its single power input
  *        states in its label or notes ("External 12VDC …", "12 V 2 A DC"), when it states exactly one;
  *   R3 — port labels over 28 characters: Input / Output → In / Out (4.2); still too long, the
- *        trailing bracket moves to the notes.
+ *        trailing bracket moves to the notes;
+ *   R4 — signal type from the label: "Relay N" (also "IPCP Relay N") → contact-closure, an output
+ *        unless it says input, section Relays; "eBUS" → ebus, bidirectional, section Expansion;
+ *   R5 — power notes by group, where the device type or the manufacturer's document says so:
+ *        Extron passive subwoofers (only speaker-level inputs, no power port; a speaker is passive to
+ *        the linter already) → "passive" in the notes of the first input; Extron devices powered by
+ *        their host (HOST_POWERED) → "powered by host" (on an eBUS port "bus-powered (eBUS)") in the notes
+ *        of the port that powers them.
  *
  * (R1 — a slots-only chassis without a power input needs no power figures — is a linter rule,
  * blockLint.ts.) Used by the normalizer (Edit → Normalize, normalize:library) and by
  * fill:catalog-ports, so catalog cards keep them whatever source their ports come from.
  * Pure, no Node or browser dependencies.
  */
+import { BLOCK_SECTIONS, sectionBase } from "./sections";
+
 type Obj = Record<string, unknown>;
 type Port = Obj & { label?: unknown; signalType?: unknown; direction?: unknown; notes?: unknown };
 
@@ -64,14 +73,117 @@ export function shortenLabel(label: string): { label: string; moved?: string } |
   return { label: l, ...(moved ? { moved } : {}) };
 }
 
+/** R4: "Relay 1", "IPCP Relay 4", "RELAY 2" — a relay output of the device. */
+const RELAY_LABEL_RE = /^(?:ipcp\s+)?relay\s*\d+$/i;
+const EBUS_LABEL_RE = /(?<![\p{L}\p{N}])ebus(?![\p{L}\p{N}])/iu;
+/** Sections a mistyped relay or eBUS port usually sits in; a vocabulary section otherwise stays. */
+const RELAY_FROM_SECTIONS = new Set(["", "Digital I/O", "Control", "Serial"]);
+const EBUS_FROM_SECTIONS = new Set(["", "Serial", "Control", "Digital I/O"]);
+
+/** R4 for one port: the fields to change, or null. */
+export function signalFromLabel(p: Port): Partial<Port> | null {
+  const label = str(p.label).trim();
+  const sig = str(p.signalType);
+  const section = str(p.section);
+  if (sig === "power" || section.startsWith("Slot")) return null;
+  if (RELAY_LABEL_RE.test(label) && sig !== "contact-closure") {
+    const direction = p.direction === "input" ? "input" : "output";
+    return {
+      signalType: "contact-closure",
+      ...(p.direction !== direction ? { direction } : {}),
+      ...(direction === "output" && RELAY_FROM_SECTIONS.has(section) ? { section: "Relays" } : {}),
+    };
+  }
+  if (EBUS_LABEL_RE.test(label) && sig !== "ebus") {
+    return {
+      signalType: "ebus",
+      ...(p.direction !== "bidirectional" ? { direction: "bidirectional" } : {}),
+      ...(EBUS_FROM_SECTIONS.has(section) ? { section: "Expansion" } : {}),
+    };
+  }
+  return null;
+}
+
+/**
+ * R5, host power: Extron devices that take their power from the host they plug into (Extron
+ * product pages): the port that carries it gets "powered by host".
+ */
+export const HOST_POWERED: readonly { model: RegExp; port: RegExp; why: string }[] = [
+  // Occupancy sensors: powered by the control processor they report to (eBUS port: +12V/+S/-S/G).
+  { model: /\bOCS 100[CW]\b/i, port: /ebus|^power$/i, why: "occupancy sensor powered by the control processor" },
+  // IP Link relay accessory: 12 V DC from the host on its control port.
+  { model: /\bIPA T RLY4\b/i, port: /power in/i, why: "IP Link accessory powered by the host control port" },
+];
+export const HOST_NOTE = "powered by host";
+/** On an eBUS port the standard's name for host power (3.1). */
+export const EBUS_NOTE = "bus-powered (eBUS)";
+export const PASSIVE_NOTE = "passive";
+
+/**
+ * Passive by the device type, but not passive to the linter (a "speaker" already is): subwoofers.
+ * Noting speakers too would change approved cards for nothing.
+ */
+const PASSIVE_TYPES = new Set(["subwoofer"]);
+
+const appendNote = (notes: string, add: string) => (notes ? `${notes}; ${add}` : add);
+
+/** R5: index of the port to note and the note, or null. */
+export function powerNote(block: Obj): { index: number; note: string } | null {
+  if (str(block.manufacturer) !== "Extron" || !Array.isArray(block.ports)) return null;
+  const ports = block.ports as Port[];
+  const noted = (p: Port, re: RegExp) => re.test(str(p.notes));
+  const host = HOST_POWERED.find((h) => h.model.test(`${str(block.label)} ${str(block.modelNumber)}`));
+  if (host) {
+    const index = ports.findIndex((p) => p && host.port.test(str(p.label)));
+    if (index < 0 || noted(ports[index], /\bpowered by host\b|bus-powered \(eBUS\)/i)) return null;
+    return { index, note: ports[index].signalType === "ebus" ? EBUS_NOTE : HOST_NOTE };
+  }
+  if (!PASSIVE_TYPES.has(str(block.deviceType)) || !ports.length) return null;
+  if (!ports.every((p) => p && p.signalType === "speaker-level" && p.direction === "input")) return null;
+  if (ports.some((p) => noted(p, /\bpassive\b/i))) return null;
+  return { index: 0, note: PASSIVE_NOTE };
+}
+
 export interface RuleChange {
-  rule: "R2" | "R3";
+  rule: "R2" | "R3" | "R4" | "R5";
   field: string;
   from: unknown;
   to: unknown;
 }
 
-/** Applies R2 and R3 to a copy of the block; returns it with the changes (same object when none). */
+/** R4 alone (signal type from the label), for templates whose other data stay as they are (verified). */
+export function applySignalRule<T extends Obj>(block: T): { block: T; changes: RuleChange[] } {
+  const changes: RuleChange[] = [];
+  if (!Array.isArray(block.ports)) return { block, changes };
+  let touched = false;
+  const ports = (block.ports as Port[]).map((p) => {
+    const fix = p && typeof p === "object" ? signalFromLabel(p) : null;
+    if (!fix) return p;
+    touched = true;
+    for (const [k, v] of Object.entries(fix)) {
+      changes.push({ rule: "R4", field: `ports[${str(p.id) || str(p.label)}].${k}`, from: p[k] ?? null, to: v });
+    }
+    return { ...p, ...fix };
+  });
+  if (!touched) return { block, changes };
+  const moved = changes.some((c) => c.field.endsWith(".section"));
+  return { block: { ...block, ports: moved ? inSectionOrder(ports) : ports } as T, changes };
+}
+
+/**
+ * Ports with a vocabulary section put in the standard's section order (stable); the others (slot
+ * ports, unknown sections) keep their places — what the linter's order check reads.
+ */
+function inSectionOrder(ports: Port[]): Port[] {
+  const rank = (p: Port) => (BLOCK_SECTIONS as readonly string[]).indexOf(sectionBase(str(p?.section)));
+  const at = ports.map((p, i) => (rank(p) >= 0 && !str(p?.section).startsWith("Slot") ? i : -1)).filter((i) => i >= 0);
+  const sorted = at.map((i) => ports[i]).map((p, k) => ({ p, k })).sort((a, b) => rank(a.p) - rank(b.p) || a.k - b.k).map((x) => x.p);
+  const out = [...ports];
+  at.forEach((i, k) => (out[i] = sorted[k]));
+  return out;
+}
+
+/** Applies R2–R5 to a copy of the block; returns it with the changes (same object when none). */
 export function applyCatalogRules<T extends Obj>(block: T): { block: T; changes: RuleChange[] } {
   const changes: RuleChange[] = [];
   let out: Obj = block;
@@ -91,6 +203,18 @@ export function applyCatalogRules<T extends Obj>(block: T): { block: T; changes:
       return { ...p, label: s.label, ...(s.moved ? { notes: notes ? `${s.moved}; ${notes}` : s.moved } : {}) };
     });
     if (touched) out = { ...out, ports };
+  }
+  const r4 = applySignalRule(out);
+  out = r4.block;
+  changes.push(...r4.changes);
+  const pn = powerNote(out);
+  if (pn) {
+    const ports = [...(out.ports as Port[])];
+    const p = ports[pn.index];
+    const next = appendNote(str(p.notes), pn.note);
+    changes.push({ rule: "R5", field: `ports[${str(p.id) || str(p.label)}].notes`, from: p.notes ?? null, to: next });
+    ports[pn.index] = { ...p, notes: next };
+    out = { ...out, ports };
   }
   return { block: out as T, changes };
 }

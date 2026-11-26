@@ -104,14 +104,6 @@
       "connectorType": "phoenix"
     },
     {
-      "id": "tpl-10",
-      "label": "eBUS",
-      "signalType": "serial",
-      "direction": "bidirectional",
-      "section": "Serial",
-      "connectorType": "phoenix"
-    },
-    {
       "id": "tpl-4",
       "label": "IR 1",
       "signalType": "ir",
@@ -130,32 +122,32 @@
     {
       "id": "tpl-6",
       "label": "Relay 1",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-7",
       "label": "Relay 2",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-8",
       "label": "Relay 3",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
     {
       "id": "tpl-9",
       "label": "Relay 4",
-      "signalType": "gpio",
-      "direction": "bidirectional",
+      "signalType": "contact-closure",
+      "direction": "output",
       "section": "Relays",
       "connectorType": "phoenix"
     },
@@ -190,6 +182,14 @@
       "direction": "bidirectional",
       "connectorType": "phoenix",
       "section": "Digital I/O"
+    },
+    {
+      "id": "tpl-10",
+      "label": "eBUS",
+      "signalType": "ebus",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "phoenix"
     },
     {
       "id": "tpl-18",

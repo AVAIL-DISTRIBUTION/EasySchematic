@@ -301,6 +301,15 @@ describe("stencil against the catalog", () => {
     expect(indexStencils([broken, retired, STENCIL]).get("60-1885-52")).toBe(STENCIL);
   });
 
+  it("indexStencils: of two clean masters with the part number, the one drawn for fewer products", () => {
+    // PC 1224's master lists the part numbers of the OCS 100 sensors it powers; OCS 100C has its own.
+    const shared = { ...STENCIL, model: "PC 1224", partNumbers: ["60-1885-52", "60-1886-52"], ports: [...STENCIL.ports, STENCIL.ports[0]] };
+    const own = { ...STENCIL, partNumbers: ["60-1885-52"] };
+    expect(indexStencils([shared, own]).get("60-1885-52")).toBe(own);
+    expect(indexStencils([own, shared]).get("60-1885-52")).toBe(own);
+    expect(indexStencils([shared, own]).get("60-1886-52")).toBe(shared);
+  });
+
   it("fills, replaces community ports, keeps what the stencil would lower, compares curated ones", () => {
     const files = [
       card("Extron DTP3 T 203", "60-1885-52"),

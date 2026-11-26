@@ -32,7 +32,7 @@ import { canonicalFamily, familyInfo } from "./slotFamilies";
 import { BIDIRECTIONAL_SIGNALS, CONFIGURABLE_NOTE, directionFromLabel, SIGNAL_CONNECTORS, sectionBase, targetSection } from "./sections";
 
 export { BIDIRECTIONAL_SIGNALS, sectionByPurpose } from "./sections";
-import { applyCatalogRules } from "./catalogRules";
+import { applyCatalogRules, type RuleChange } from "./catalogRules";
 import { defaultCategoryFor, findCategory, findVendor, normalizeManufacturer } from "./library";
 
 export interface NormalizeChange {
@@ -367,11 +367,18 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
       field: c.field,
       from: c.from,
       to: c.to,
-      note: c.rule === "R2" ? "voltage stated by the power input (R2)" : "label over 28 characters: In / Out, qualifier to notes (R3)",
+      note: RULE_NOTES[c.rule],
     });
   }
   return { template: ruled.block as unknown as T, changes };
 }
+
+const RULE_NOTES: Record<RuleChange["rule"], string> = {
+  R2: "voltage stated by the power input (R2)",
+  R3: "label over 28 characters: In / Out, qualifier to notes (R3)",
+  R4: "signal type from the label: Relay → contact-closure, eBUS → ebus (R4)",
+  R5: "power note by device group: passive acoustics, powered by host (R5)",
+};
 
 /** Changes that were applied (not the "manual" notes). */
 export function appliedChanges(changes: NormalizeChange[]): NormalizeChange[] {

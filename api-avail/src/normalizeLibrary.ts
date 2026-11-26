@@ -6,12 +6,19 @@
  * (E+W) and does not lower its level — a raised level always counts; its status stays as
  * it was — a human approves.
  * Written templates get version + 1 (like an upstream save) and a fresh lint level.
+ *
+ * Verified templates of our vendors whose ports come from the community (portsOrigin.ts) get
+ * the signal-type rule only (R4: "Relay N" → contact-closure, eBUS → ebus): a changed verified
+ * template becomes draft with the reason, as any changed verified template does; approve:catalog
+ * or a librarian approves it again.
  */
 import type Database from "better-sqlite3";
 import { rowToTemplate, templateToRow, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { findVendor, VENDORS } from "../../src/avail/library";
 import { normalizeBlock } from "../../src/avail/normalize";
+import { applySignalRule } from "../../src/avail/catalogRules";
+import { catalogIndex, parseCatalogMeta, portsOrigin } from "../../src/avail/portsOrigin";
 import { slotLibraryContext, slotLibraryWarnings } from "../../src/avail/slotFamilies";
 import { BUMP_LIBRARY_VERSION, type TemplateStatus } from "./templateMeta";
 
@@ -49,7 +56,12 @@ export interface NormalizeLibraryReport {
   /** Ports whose section stays unresolved, by "signalType + direction" (top 30). */
   unresolvedSections: { reason: string; count: number }[];
   levelsAfter: Record<BlockLevel, number>;
+  /** Verified templates with community ports changed by R4: now draft. */
+  verifiedToDraft: { id: string; label: string; level: BlockLevel; changes: number }[];
 }
+
+/** status_reason of a verified template changed by the signal-type rule. */
+export const SIGNAL_RULE_REASON = "signal type from the port label (standard v0.11, R4): ports changed, approve again";
 
 /** Lint message without the specific port / value: '"HDMI In": no connectorType' → "E no connectorType". */
 export function reasonKey(kind: "E" | "W", message: string): string {
@@ -85,6 +97,7 @@ export function normalizeLibrary(
     slotFamiliesWithoutCards: [],
     cardFamiliesWithoutHosts: [],
     levelsAfter: { A: 0, B: 0, FIX: 0 },
+    verifiedToDraft: [],
   };
   const reasons = new Map<string, number>();
   const manual = new Map<string, number>();
@@ -176,6 +189,33 @@ export function normalizeLibrary(
       for (const e of final.errors) reasons.set(reasonKey("E", e), (reasons.get(reasonKey("E", e)) ?? 0) + 1);
       for (const w of final.warnings) reasons.set(reasonKey("W", w), (reasons.get(reasonKey("W", w)) ?? 0) + 1);
     }
+    // Verified with community ports: R4 only; changed → draft with the reason.
+    const verified = sqlite
+      .prepare(
+        `SELECT t.*, m.source AS avail_source, m.catalog AS avail_catalog FROM templates t
+           JOIN avail_template_meta m ON m.template_id = t.id
+          WHERE m.status = 'verified' ORDER BY t.sort_order, t.label`,
+      )
+      .all() as (TemplateRow & { avail_source: string | null; avail_catalog: string | null })[];
+    const byFile = catalogIndex(
+      (sqlite.prepare("SELECT catalog FROM avail_template_meta WHERE catalog IS NOT NULL").all() as { catalog: string }[]).map((r) => parseCatalogMeta(r.catalog)),
+    );
+    const demote = sqlite.prepare(
+      `UPDATE avail_template_meta SET status = 'draft', lint_level = @level, linted_version = @version, updated_by = @by,
+         updated_at = datetime('now'), status_reason = @reason, status_changed_at = datetime('now') WHERE template_id = @id`,
+    );
+    for (const row of verified) {
+      if (!findVendor(row.manufacturer)) continue;
+      if (portsOrigin({ source: row.avail_source, catalog: parseCatalogMeta(row.avail_catalog) }, byFile).origin !== "community") continue;
+      const { block, changes } = applySignalRule(rowToTemplate(row) as unknown as Record<string, unknown>);
+      if (!changes.length) continue;
+      const level = lintBlock(block, ctx).level;
+      report.verifiedToDraft.push({ id: row.id, label: row.label, level, changes: changes.length });
+      if (options.dryRun) continue;
+      update.run(templateToRow({ ...(block as never as Parameters<typeof templateToRow>[0]), id: row.id, sortOrder: row.sort_order }));
+      demote.run({ id: row.id, level, version: row.version + 1, by: options.updatedBy ?? "normalize", reason: SIGNAL_RULE_REASON });
+      wrote = true;
+    }
     if (wrote) sqlite.prepare(BUMP_LIBRARY_VERSION).run();
   });
   run();
@@ -221,7 +261,7 @@ export function formatNormalizeReport(r: NormalizeLibraryReport): string {
   const w = Math.max(6, ...vendors.map(([n]) => n.length));
   const transitions = Object.entries(r.transitions).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(", ");
   return [
-    `Normalization of our vendors' templates (raw/draft)${r.dryRun ? " (dry run, nothing written)" : ""}`,
+    `Normalization of our vendors' templates (raw/draft; verified with community ports: R4 only)${r.dryRun ? " (dry run, nothing written)" : ""}`,
     `Processed: ${r.processed}; improved: ${r.improved}${r.dryRun ? "" : " (written)"} (level raised ${r.improved - r.fewerIssuesSameLevel}, fewer E+W at the same level ${r.fewerIssuesSameLevel}); changed without fewer E+W (not written): ${r.sameLevelNotWritten}`,
     `Transitions: ${transitions || "-"}`,
     `Levels after: A ${r.levelsAfter.A} / B ${r.levelsAfter.B} / FIX ${r.levelsAfter.FIX}`,
@@ -242,5 +282,8 @@ export function formatNormalizeReport(r: NormalizeLibraryReport): string {
     ``,
     `Unresolved port sections by signalType + direction (top 30):`,
     ...r.unresolvedSections.map((x, i) => `  ${String(i + 1).padStart(2)}. ${x.reason}: ${x.count}`),
+    ``,
+    `Verified with community ports changed by the signal-type rule (R4) → draft${r.dryRun ? " (dry run: would be)" : ""}: ${r.verifiedToDraft.length}`,
+    ...r.verifiedToDraft.map((x) => `  ${x.label} (${x.id}): ${x.changes} changes, level ${x.level}`),
   ].join("\n") + "\n";
 }
