@@ -10,6 +10,7 @@ import { findCategory } from "./library";
 import { allPairs, pairKey } from "./duplicates";
 import { slotLibraryContext } from "./slotFamilies";
 import { LIFECYCLE_LABELS, lifecycleOf, lifecycleShort, lifecycleText, sameLifecycle, type Lifecycle, type LifecycleInfo } from "./lifecycle";
+import { storedForm } from "./templatePatch";
 
 export type WsStatus = "verified" | "draft" | "raw" | "hidden";
 export type WsApproval = "review" | "bulk" | "bulk-source";
@@ -483,13 +484,13 @@ export function exportTable(rows: readonly WsRow[]): (string | number)[][] {
 // ---------------------------------------------------------------------------- proposals
 
 /** Template fields compared in a proposal ("was → becomes"); ports and slots separately. */
-const DIFF_FIELDS = [
+const DIFF_FIELDS: readonly string[] = [
   "label", "shortName", "manufacturer", "modelNumber", "deviceType", "category", "referenceUrl", "searchTerms", "heightMm", "widthMm",
   "depthMm", "weightKg", "powerDrawW", "voltage", "poeDrawW", "poeBudgetW", "powerCapacityW", "thermalBtuh", "unitCost", "slotFamily",
   "auxiliaryData", "color",
-] as const;
+];
 
-const PORT_FIELDS = ["label", "signalType", "direction", "section", "connectorType", "notes", "gender", "frontConnectorType", "rearConnectorType", "exclusiveGroup"] as const;
+const PORT_FIELDS: readonly string[] = ["label", "signalType", "direction", "section", "connectorType", "notes", "gender", "frontConnectorType", "rearConnectorType", "exclusiveGroup"];
 
 export interface FieldChange {
   field: string;
@@ -520,24 +521,38 @@ const same = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stri
 
 type PortLike = Record<string, unknown> & { id?: string; label?: string };
 
-/** "Was → becomes" of a proposed template against the current one: fields, ports (by id, else label), slots. */
-export function diffTemplates(before: Record<string, unknown>, after: Record<string, unknown>): TemplateDiff {
+/** Keys in a stable order: the known ones first (as the card lists them), then the rest. */
+function orderedKeys(known: readonly string[], keys: Iterable<string>): string[] {
+  const set = new Set(keys);
+  return [...known.filter((k) => set.has(k)), ...[...set].filter((k) => !known.includes(k)).sort()];
+}
+
+/**
+ * "Was → becomes" of a proposed template against the current one, as the library stores them
+ * (storedForm: empty values and workspace data do not count): every field that differs, ports by
+ * id (else label) with the fields that differ, slots.
+ */
+export function diffTemplates(beforeRaw: Record<string, unknown>, afterRaw: Record<string, unknown>): TemplateDiff {
+  const before = storedForm(beforeRaw);
+  const after = storedForm(afterRaw);
   const fields: FieldChange[] = [];
-  for (const f of DIFF_FIELDS) if (!same(before[f], after[f])) fields.push({ field: f, before: show(before[f]), after: show(after[f]) });
+  const keys = orderedKeys(DIFF_FIELDS, [...Object.keys(before), ...Object.keys(after)].filter((k) => k !== "ports" && k !== "slots"));
+  for (const f of keys) if (!same(before[f], after[f])) fields.push({ field: f, before: show(before[f]), after: show(after[f]) });
 
   const ports: PortChange[] = [];
-  const oldPorts = (Array.isArray(before.ports) ? before.ports : []) as PortLike[];
-  const newPorts = (Array.isArray(after.ports) ? after.ports : []) as PortLike[];
+  const oldPorts = before.ports as PortLike[];
+  const newPorts = after.ports as PortLike[];
   const matched = new Set<PortLike>();
   const find = (p: PortLike) => oldPorts.find((o) => !matched.has(o) && o.id && o.id === p.id) ?? oldPorts.find((o) => !matched.has(o) && o.label === p.label);
+  const portKeys = (...ps: PortLike[]) => orderedKeys(PORT_FIELDS, ps.flatMap((p) => Object.keys(p)).filter((k) => k !== "id"));
   for (const p of newPorts) {
     const o = find(p);
     if (!o) {
-      ports.push({ kind: "added", label: String(p.label ?? "?"), changes: PORT_FIELDS.filter((k) => p[k] !== undefined).map((k) => ({ field: k, before: "—", after: show(p[k]) })) });
+      ports.push({ kind: "added", label: String(p.label ?? "?"), changes: portKeys(p).map((k) => ({ field: k, before: "—", after: show(p[k]) })) });
       continue;
     }
     matched.add(o);
-    const changes = PORT_FIELDS.filter((k) => !same(o[k], p[k])).map((k) => ({ field: k, before: show(o[k]), after: show(p[k]) }));
+    const changes = portKeys(o, p).filter((k) => !same(o[k], p[k])).map((k) => ({ field: k, before: show(o[k]), after: show(p[k]) }));
     if (changes.length) ports.push({ kind: "changed", label: String(o.label ?? p.label ?? "?"), changes });
   }
   for (const o of oldPorts) if (!matched.has(o)) ports.push({ kind: "removed", label: String(o.label ?? "?"), changes: [] });

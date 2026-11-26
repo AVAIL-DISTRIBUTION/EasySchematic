@@ -325,7 +325,10 @@ Save to library), Approve, Hide. Данные — `GET /avail/workspace/template
 заполнена из журнала), источник портов и даташит (`catalog`), авторы правок (журнал); ETag по версии библиотеки и журналу.
 Предложения: в Device Editor у engineer для блока из шаблона библиотеки — «Propose change» (комментарий → upstream
 `POST /submissions` action update с изменённой копией), там же — его прошлые предложения с решением и комментарием.
-Вкладка Proposals: `/submissions/pending`, сравнение «было → стало» по полям, портам (по id, иначе по подписи) и слотам,
+Вкладка Proposals: `/submissions/pending`, сравнение «было → стало» в форме хранения (`storedForm`: пустые значения и данные
+рабочего окна не в счёт) — любые изменённые поля, порты (по id, иначе по подписи) со всеми изменёнными полями и слоты.
+Предложение update, которое ничего не меняет (как сохранила бы его библиотека), отклоняется сервером: 400 «The proposal changes
+nothing…» (`api-avail/src/proposalGuard.ts`; редактор, MCP, API).
 линтер предложенной версии; Accept → `/submissions/:id/approve` (правка записывается, уровень и статус — по обычным
 правилам), Reject с комментарием → `/:id/reject`. Решение пишется в журнал отдельной записью (action `proposal`:
 accepted / rejected, комментарий, автор; `requestAudit.ts` `readProposalDecision`), сама правка — как обычное updated.
@@ -383,9 +386,11 @@ Streamable HTTP без сессий — каждый POST — JSON-RPC (или �
 роли, проверка дублей (409 → `isError` с `duplicate_of` и ссылкой) и журнал — как в интерфейсе: `search_templates` (фильтры
 рабочего окна: vendor, category, device_type, status, level, ports_source = origin, lint_rule — часть сообщения линтера,
 lifecycle, text; offset/limit; hidden — только при status=hidden), `get_template` (карточка, жизненный цикл, порты по секциям, линтер, источник портов,
-ссылки на сайт, даташит и `/library?template=`, дубли, история из журнала), `lint_template`, `normalize_template` (без
+ссылки на сайт, даташит и `/library?template=`, дубли, история из журнала, `raw` — шаблон как хранится, с id портов, и `availLifecycle`), `lint_template`, `normalize_template` (без
 сохранения), `create_draft_template` (`POST /avail/templates/draft`), `propose_change` (`POST /submissions` update;
-комментарий обязателен), `review_queue`, `possible_duplicates`, `audit_log`. Строки рабочего окна кэшируются по ETag
+комментарий обязателен; `patch` — только изменённые поля верхнего уровня, `null` убирает поле, порты по id: `{update, add,
+remove}`, остальное берётся из текущего шаблона, `src/avail/templatePatch.ts`; полный `template` тоже принимается — чего в нём
+нет, удаляется; ответ и запись журнала `proposed` перечисляют изменения), `review_queue`, `possible_duplicates`, `audit_log`. Строки рабочего окна кэшируются по ETag
 `GET /avail/workspace/templates`. Журнал: создающие вызовы — `created` (черновик) и `proposed` (предложение, entity template)
 от пользователя токена с его именем; чтение и сам `/mcp` не журналируются (запись `request` — только для остальных
 запросов по токену). Ссылки — от `API_PUBLIC_URL` без пути. Текст записей журнала — `src/avail/auditText.ts` (чистый,

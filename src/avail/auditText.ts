@@ -82,7 +82,8 @@ export function auditChanges(r: AuditRecord): string[] {
   }
   if (r.action === "proposed") {
     const a = r.after ?? {};
-    return [`Proposal ${String(a.proposal ?? "")}: ${String(a.comment ?? "")}`];
+    const changes = Array.isArray(a.changes) ? a.changes.map((x) => `  ${String(x)}`) : [];
+    return [`Proposal ${String(a.proposal ?? "")}: ${String(a.comment ?? "")}`, ...changes];
   }
   if (r.action === "override") {
     const a = r.after ?? {};

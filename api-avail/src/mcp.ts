@@ -18,6 +18,7 @@ import { describeChange, portLabelMap, portsBySection } from "../../src/avail/li
 import type { NormalizeChange } from "../../src/avail/normalize";
 import { buildRows, builtInFilters, EMPTY_FILTER, filterRows, type WsFilter, type WsRow, type WsTemplate } from "../../src/avail/workspaceModel";
 import { LIFECYCLES } from "../../src/avail/lifecycle";
+import { applyTemplatePatch, describeEditChanges, editChanges, NO_CHANGE_ERROR, noChanges, storedForm } from "../../src/avail/templatePatch";
 import { writeAudit } from "./audit";
 
 export const MCP_PATH = "/mcp";
@@ -153,6 +154,16 @@ function searchFilter(a: Json): { filter: WsFilter; rule?: string } {
 
 const matchVendor = (rows: WsRow[], vendor?: string) => (vendor ? rows.filter((r) => r.vendor.toLowerCase() === vendor.toLowerCase()) : rows);
 
+/**
+ * The template as stored (get_template raw): every data field, ports with ids, and its lifecycle as
+ * the library gives it (availLifecycle; not an edit field — propose_change ignores it); no other
+ * workspace data.
+ */
+function rawTemplate(r: WsRow): Json {
+  const { avail: _a, ...raw } = r.template as unknown as Json & { avail?: unknown };
+  return { ...raw, availLifecycle: r.lifecycle };
+}
+
 function historyEntry(r: AuditRecord) {
   return { at: r.at, actor: r.actor, token: r.token ?? undefined, action: r.action, changes: auditChanges(r) };
 }
@@ -213,7 +224,7 @@ export const TOOLS: readonly Tool[] = [
     name: "get_template",
     title: "Get template",
     description:
-      "One template in full: card, lifecycle (upcoming / active / eol and its date), ports by section, linter result, ports source, product and data sheet links, possible duplicates, and its history from the audit log.",
+      "One template in full: card, lifecycle (upcoming/active/eol, date), ports by section, lint, ports source, links, possible duplicates, audit history, and raw: the template as stored (every field, port ids, availLifecycle), the base for propose_change.",
     inputSchema: {
       type: "object",
       properties: { id: { type: "string", description: "Template id" }, history: { type: "integer", minimum: 0, maximum: 100, description: "History entries (default 20)" } },
@@ -261,6 +272,7 @@ export const TOOLS: readonly Tool[] = [
         possible_duplicates: group.length ? group.map((g) => ({ id: g.id, label: g.template.label, status: g.status })) : undefined,
         not_duplicates: av.notDuplicates?.length ? av.notDuplicates.map((d) => ({ id: d.id, label: d.label, comment: d.comment })) : undefined,
         history: history?.ok ? ((await history.json()) as AuditRecord[]).map(historyEntry) : undefined,
+        raw: rawTemplate(r),
       };
     },
   },
@@ -322,15 +334,21 @@ export const TOOLS: readonly Tool[] = [
     name: "propose_change",
     title: "Propose change",
     description:
-      "Propose an edited version of a library template for librarians to review (Proposals in the library workspace). Send the whole edited template and a comment: what is wrong and the source. Returns {proposal_id, status}.",
+      "Propose an edit of a template for librarian review. Prefer patch (only what changes; the rest stays as stored); a whole template removes every field it leaves out. " +
+      "An edit that changes nothing is refused. Comment: what is wrong and the source. Returns {proposal_id, status, changes}.",
     inputSchema: {
       type: "object",
       properties: {
         template_id: { type: "string", description: "Id of the template to change" },
-        template: { ...TEMPLATE_SCHEMA, description: "The whole edited template (start from get_template's data)" },
+        patch: {
+          type: "object",
+          description:
+            'Fields to change (null removes one); ports by id: {update: [{id, ...fields}], add: [port with id], remove: [id]}. E.g. {"thermalBtuh": 2.6, "ports": {"update": [{"id": "p1", "notes": "4-pole"}]}}. Ids from get_template raw.ports',
+        },
+        template: { ...TEMPLATE_SCHEMA, description: "Instead of patch: the whole edited template (start from get_template's raw)" },
         comment: { type: "string", description: "What is wrong and where the right value comes from" },
       },
-      required: ["template_id", "template", "comment"],
+      required: ["template_id", "comment"],
       additionalProperties: false,
     },
     readOnly: false,
@@ -339,19 +357,30 @@ export const TOOLS: readonly Tool[] = [
       const comment = str(a, "comment")?.trim();
       if (!id) throw new InvalidParams("template_id is required");
       if (!comment) throw new InvalidParams("comment is required");
-      const data = obj(a, "template");
+      const hasPatch = a.patch !== undefined;
+      const hasTemplate = a.template !== undefined;
+      if (hasPatch === hasTemplate) throw new InvalidParams("Send either patch (preferred) or template");
       const current = await ctx.call(`/templates/${encodeURIComponent(id)}`);
       if (!current.ok) throw new ToolError(`Template not found: ${id}`);
-      const label = ((await current.json()) as { label?: string }).label ?? id;
-      const { id: _drop, version: _v, avail: _a, ...clean } = data as Json & { id?: unknown; version?: unknown; avail?: unknown };
-      const res = await ctx.call("/submissions", { method: "POST", body: { action: "update", templateId: id, data: clean, submitterNote: comment, source: "manual" } });
+      const stored = (await current.json()) as Json & { label?: string };
+      const label = stored.label ?? id;
+      let data: Json;
+      if (hasPatch) {
+        const r = applyTemplatePatch(stored, obj(a, "patch"));
+        if ("error" in r) throw new ToolError(r.error);
+        data = r.template;
+      } else data = storedForm(obj(a, "template"));
+      const changes = editChanges(stored, data);
+      if (noChanges(changes)) throw new ToolError(NO_CHANGE_ERROR);
+      const res = await ctx.call("/submissions", { method: "POST", body: { action: "update", templateId: id, data, submitterNote: comment, source: "manual" } });
       const b = (await res.json().catch(() => ({}))) as Json;
       if (!res.ok) throw new ToolError(String(b.error ?? `HTTP ${res.status}`));
+      const lines = describeEditChanges(changes);
       writeAudit(ctx.sqlite, [{
         actor: ctx.token.email, actorId: ctx.token.userId, entity: "template", entityId: id, entityLabel: label, action: "proposed",
-        after: { proposal: b.id, comment },
+        after: { proposal: b.id, comment, changes: lines },
       }]);
-      return { proposal_id: b.id, status: b.status ?? "pending", template: { id, link: link(ctx, id) } };
+      return { proposal_id: b.id, status: b.status ?? "pending", changes: lines, template: { id, link: link(ctx, id) } };
     },
   },
   {
@@ -435,7 +464,7 @@ const rpcResult = (id: RpcMessage["id"], result: unknown) => ({ jsonrpc: "2.0", 
 
 export const INSTRUCTIONS =
   "AVAIL device library. Read with search_templates, get_template, review_queue, possible_duplicates, audit_log. " +
-  "Check work with lint_template and normalize_template (nothing is saved). Write only through create_draft_template (new drafts) and propose_change (edits for librarian review); approving is for librarians. " +
+  "Check work with lint_template and normalize_template (nothing is saved). Write only through create_draft_template (new drafts) and propose_change (edits for librarian review: send a patch with only what changes, built on get_template's raw); approving is for librarians. " +
   "Data comes from manufacturer documents first: never guess ports or specs; cite the source in comments.";
 
 async function callTool(name: string, args: Json, ctx: McpContext): Promise<ToolResult> {

@@ -282,12 +282,104 @@ describe("creating: drafts and proposals", () => {
     expect(sub).toMatchObject({ action: "update", template_id: "e1", status: "pending", submitter_note: "Power 6 W per data sheet p. 2" });
     expect(JSON.parse(sub.data)).not.toHaveProperty("avail");
     expect(claudeLog().map((e) => [e.entity_id, e.action, JSON.parse(e.after!), e.token])).toEqual([
-      ["e1", "proposed", { proposal: data.proposal_id, comment: "Power 6 W per data sheet p. 2" }, "claude.ai connector"],
+      ["e1", "proposed", { proposal: data.proposal_id, comment: "Power 6 W per data sheet p. 2", changes: ["powerDrawW"] }, "claude.ai connector"],
     ]);
     // The library is unchanged until a librarian accepts it.
     expect(api.db.sqlite.prepare("SELECT power_draw_w FROM templates WHERE id = 'e1'").get()).toEqual({ power_draw_w: null });
     await expect(tool("propose_change", { template_id: "e1", template: edited })).rejects.toThrow(/-32602 comment is required/);
     expect(await tool("propose_change", { template_id: "nope", template: edited, comment: "x" })).toEqual({ data: { error: "Template not found: nope" }, isError: true });
+  });
+});
+
+describe("propose_change: partial edits (patch)", () => {
+  /** OCS 100C as stored: thermalBtuh, voltage, four ports. */
+  const ocs = () => ({
+    id: "ocs", label: "Extron OCS 100C", manufacturer: "Extron", modelNumber: "60-1664-01", deviceType: "control-expansion",
+    category: "Control Systems / IP Link Control Proc", referenceUrl: "https://www.extron.com/product/ocs100",
+    powerDrawW: 0.8, voltage: "24V DC (included PC 1224)", thermalBtuh: 2.6, heightMm: 114, widthMm: 114, depthMm: 36, weightKg: 0.1,
+    ports: [
+      { id: "relay", label: "Relay (SPDT)", signalType: "contact-closure", direction: "output", section: "Relays", connectorType: "other" },
+      { id: "occ", label: "Occupancy Out", signalType: "sensor", direction: "output", section: "Control", connectorType: "other" },
+      { id: "photo", label: "Occupancy + Photocell Out", signalType: "sensor", direction: "output", section: "Control", connectorType: "other" },
+      { id: "pwr", label: "24V DC In", signalType: "power", direction: "input", section: "Power", connectorType: "other" },
+    ],
+  });
+  const proposalData = (id: string) =>
+    JSON.parse((api.db.sqlite.prepare("SELECT data FROM submissions WHERE id = ?").get(id) as { data: string }).data) as Record<string, unknown> & { ports: { id: string }[] };
+  const stored = () => api.db.sqlite.prepare("SELECT voltage, thermal_btuh, ports FROM templates WHERE id = 'ocs'").get() as { voltage: string; thermal_btuh: number; ports: string };
+
+  it("get_template gives raw: the template as stored, every field and the port ids", async () => {
+    insert(ocs());
+    const { data } = await tool<{ raw: Record<string, unknown> & { ports: { id: string }[] } }>("get_template", { id: "ocs", history: 0 });
+    expect(data.raw).toMatchObject({ id: "ocs", thermalBtuh: 2.6, voltage: "24V DC (included PC 1224)", heightMm: 114 });
+    expect(data.raw.ports.map((p) => p.id)).toEqual(["relay", "occ", "photo", "pwr"]);
+    expect(data.raw).not.toHaveProperty("avail");
+  });
+
+  it("get_template gives raw and the lifecycle together; raw sent back proposes no lifecycle change", async () => {
+    insert(ocs());
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET lifecycle = 'upcoming', available_from = '2027-Q3' WHERE template_id = 'ocs'").run();
+    resetMcpCache();
+    const { data } = await tool<{ lifecycle: unknown; raw: Record<string, unknown> & { ports: { id: string }[] } }>("get_template", { id: "ocs", history: 0 });
+    expect(data.lifecycle).toEqual({ state: "upcoming", available_from: "2027-Q3" });
+    expect(data.raw).toMatchObject({ id: "ocs", thermalBtuh: 2.6, availLifecycle: { lifecycle: "upcoming", availableFrom: "2027-Q3" } });
+    expect(data.raw.ports.map((p) => p.id)).toEqual(["relay", "occ", "photo", "pwr"]);
+    // The whole raw back with one change: the proposal changes only that field, not the lifecycle.
+    const p = await tool<{ proposal_id: string; changes: string[] }>("propose_change", { template_id: "ocs", template: { ...data.raw, voltage: "24V DC" }, comment: "Spec: 24 VDC" });
+    expect(p.data.changes).toEqual(["voltage"]);
+    expect(proposalData(p.data.proposal_id)).not.toHaveProperty("availLifecycle");
+  });
+
+  it("one field: the rest stays (regression: thermalBtuh lost on OCS 100C); accepted → only that field changed", async () => {
+    insert(ocs());
+    const { data, isError } = await tool<{ proposal_id: string; changes: string[] }>("propose_change", { template_id: "ocs", patch: { voltage: "24V DC" }, comment: "Spec 5611-D6: 24 VDC" });
+    expect(isError).toBe(false);
+    expect(data.changes).toEqual(["voltage"]);
+    const d = proposalData(data.proposal_id);
+    const { id: _id, ...rest } = ocs();
+    expect(d).toEqual({ ...rest, voltage: "24V DC" });
+    const lib = user("moderator", "lib@avail.test");
+    const ok = await req(`/submissions/${data.proposal_id}/approve`, { method: "POST", headers: { Cookie: lib.cookie, "Content-Type": "application/json" }, body: "{}" });
+    expect(ok.status).toBeLessThan(300);
+    expect(stored()).toMatchObject({ voltage: "24V DC", thermal_btuh: 2.6 });
+    expect(JSON.parse(stored().ports)).toEqual(ocs().ports);
+  });
+
+  it("ports by id: update, add and remove; unknown ids are refused", async () => {
+    insert(ocs());
+    const patch = {
+      ports: {
+        update: [{ id: "occ", notes: "Blue wire" }],
+        add: [{ id: "usb", label: "USB-C Config", signalType: "usb", direction: "bidirectional", section: "Control", connectorType: "usb-c" }],
+        remove: ["photo"],
+      },
+    };
+    const { data } = await tool<{ proposal_id: string; changes: string[] }>("propose_change", { template_id: "ocs", patch, comment: "Spec 5611-D6" });
+    expect(data.changes).toEqual(['port "Occupancy Out": notes', 'port "USB-C Config" added', 'port "Occupancy + Photocell Out" removed']);
+    const d = proposalData(data.proposal_id);
+    expect(d.ports.map((p) => p.id)).toEqual(["relay", "occ", "pwr", "usb"]);
+    expect(d).toMatchObject({ thermalBtuh: 2.6, voltage: "24V DC (included PC 1224)" });
+    expect(await tool("propose_change", { template_id: "ocs", patch: { ports: { update: [{ id: "nope", notes: "x" }] } }, comment: "x" })).toMatchObject({ isError: true });
+    expect(await tool("propose_change", { template_id: "ocs", patch: { ports: { add: [{ id: "occ", label: "Dup" }] } }, comment: "x" })).toMatchObject({ isError: true });
+    await expect(tool("propose_change", { template_id: "ocs", patch: {}, template: ocs(), comment: "x" })).rejects.toThrow(/-32602 Send either patch/);
+  });
+
+  it("an edit that changes nothing is refused with a clear text: empty patch, same value, the same whole template, the API too", async () => {
+    insert(ocs());
+    const refused = { data: { error: "The proposal changes nothing: it matches the current template. Change at least one field or port." }, isError: true };
+    expect(await tool("propose_change", { template_id: "ocs", patch: {}, comment: "x" })).toEqual(refused);
+    expect(await tool("propose_change", { template_id: "ocs", patch: { thermalBtuh: 2.6, ports: { update: [{ id: "occ", label: "Occupancy Out" }] } }, comment: "x" })).toEqual(refused);
+    expect(await tool("propose_change", { template_id: "ocs", template: { ...ocs(), version: 7, avail: { status: "draft" }, hostname: "" }, comment: "x" })).toEqual(refused);
+    const eng = user("contributor", "eng@avail.test");
+    const { id: _id, ...data } = ocs();
+    const res = await req("/submissions", { method: "POST", headers: { Cookie: eng.cookie, "Content-Type": "application/json" }, body: JSON.stringify({ action: "update", templateId: "ocs", data, submitterNote: "x" }) });
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ error: refused.data.error });
+    expect(api.db.sqlite.prepare("SELECT COUNT(*) AS n FROM submissions").get()).toEqual({ n: 0 });
+    // A whole template that leaves a field out is a real change (the field would be removed): it is listed.
+    const { thermalBtuh: _t, ...without } = ocs();
+    const { data: d } = await tool<{ changes: string[] }>("propose_change", { template_id: "ocs", template: without, comment: "x" });
+    expect(d.changes).toEqual(["thermalBtuh"]);
   });
 });
 
