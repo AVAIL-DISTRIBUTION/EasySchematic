@@ -28,30 +28,29 @@
     "description": "10” Coaxial Surface Mount Indoor/Outdoor Loudspeaker w/ HF compression driver. 8 Ohm or 70V/100V operation, included indexing u-bracket and weather cover, black",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "d3b277e9-ffd2-40e4-8618-250b2eded7d4",
-      "label": "Biamp Desono EX-S10-UB-B",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Desono_Data_Sheet_EX-S10_UB-CM_Jan26_13689.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Desono_Data_Sheet_EX-S10_UB-CM_Jan26_13689.pdf"
     }
   },
   "ports": [
     {
       "id": "tpl-0",
-      "label": "INPUT",
+      "label": "Speaker In",
       "signalType": "speaker-level",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "notes": "Passive, 8 ohm or 70/100 V taps; lever-actuated 4-position terminal block with pass-through"
     },
     {
       "id": "tpl-2",
-      "label": "THRU",
+      "label": "Speaker Thru",
       "signalType": "speaker-level",
       "direction": "output",
+      "section": "Speaker Outputs",
       "connectorType": "terminal-block",
-      "section": "Speaker Outputs"
+      "notes": "Pass-through on the same terminal block"
     }
   ]
 }

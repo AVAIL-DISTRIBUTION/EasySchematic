@@ -24,7 +24,7 @@
   "widthMm": 230,
   "depthMm": 182,
   "weightKg": 1.08,
-  "voltage": "PoE 802.3af class 3",
+  "voltage": "PoE 802.3at class 3",
   "poeDrawW": 15.4,
   "unitCost": 1807,
   "_avail": {
@@ -33,23 +33,21 @@
     "description": "4-button convenience paging station with gooseneck microphone, tabletop or wall mount",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "3278db72-b25b-4f8f-a6cb-a6284578082a",
-      "label": "Biamp NPX G1040",
-      "match": "model-name",
-      "status": "raw",
-      "level": "B"
-    }
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_NPX_G1040_Dec24_13005.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_NPX_G1040_Dec24_13005.pdf"
+    },
+    "notes": "voltage was PoE 802.3af class 3 before the data sheet (2026-11-26)"
   },
   "ports": [
     {
       "id": "tpl-0",
-      "label": "AVB",
+      "label": "LAN (PoE)",
       "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "inheritsSignal": false,
-      "section": "AVB"
+      "notes": "Gigabit Ethernet; audio and control over AVB or Dante (user-selectable); PoE 802.3at class 3, 15.4 W"
     }
   ]
 }

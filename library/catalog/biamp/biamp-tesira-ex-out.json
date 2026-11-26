@@ -32,54 +32,56 @@
     "description": "Tesira 4 channel mic/line output expander PoE+",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "2db847a6-dbbd-4ac3-83a0-6d8896e9ea40",
-      "label": "Biamp Tesira EX-OUT",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_tesira_ex-in_ex-aec_ex-out_ex-io_feb20_1996.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_ex-in_ex-aec_ex-out_ex-io_feb20_1996.pdf"
     }
   },
   "ports": [
     {
       "id": "p17762064520001-out1",
-      "label": "CH 1 Out",
+      "label": "Out 1",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin plug-in barrier strip (+, -, ground); mic/line level, max +24 dBu"
     },
     {
       "id": "p17762064520002-out2",
-      "label": "CH 2 Out",
+      "label": "Out 2",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin plug-in barrier strip (+, -, ground); mic/line level, max +24 dBu"
     },
     {
       "id": "p17762064520003-out3",
-      "label": "CH 3 Out",
+      "label": "Out 3",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin plug-in barrier strip (+, -, ground); mic/line level, max +24 dBu"
     },
     {
       "id": "p17762064520004-out4",
-      "label": "CH 4 Out",
+      "label": "Out 4",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin plug-in barrier strip (+, -, ground); mic/line level, max +24 dBu"
     },
     {
       "id": "p17762064520000-avb",
-      "label": "AVB / PoE",
-      "signalType": "ethernet",
+      "label": "AVB / Control (PoE+)",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "AVB audio, configuration and control; PoE+ 802.3at class 4, 30 W"
     }
   ]
 }

@@ -28,13 +28,11 @@
     "description": "ENTASYS Full-Range 3-Way Column Loudspeaker, Black",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "decc3c91-aa03-43b4-8112-08de0f6717f9",
-      "label": "Biamp ENT-FR",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_desono_ent-fr_ent-lf_august23_2559.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_ent-fr_ent-lf_august23_2559.pdf"
+    },
+    "portsMissing": "The data sheet lists all five connectors as input connections and does not say which ones are pass-through or link to the next column."
   },
   "ports": [
     {
@@ -42,24 +40,45 @@
       "label": "Speakon In",
       "signalType": "speaker-level",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "speakon",
-      "section": "Audio Inputs"
+      "notes": "Passive, 12 ohm; bottom, NL4-compatible locking connector"
     },
     {
       "id": "tpl-1",
-      "label": "Terminal In",
-      "signalType": "analog-audio",
+      "label": "Terminal Strip In 1",
+      "signalType": "speaker-level",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "notes": "Passive; bottom, 2-terminal barrier strip"
+    },
+    {
+      "id": "p1",
+      "label": "Terminal Strip In 2",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "terminal-block",
+      "notes": "Passive; bottom, 2-terminal barrier strip"
     },
     {
       "id": "tpl-2",
       "label": "Banana In",
       "signalType": "speaker-level",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "banana",
-      "section": "Audio Inputs"
+      "notes": "Passive; bottom, banana (female)"
+    },
+    {
+      "id": "p2",
+      "label": "Banana In (Top)",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "banana",
+      "notes": "Passive; top, dual banana (male)"
     }
   ]
 }

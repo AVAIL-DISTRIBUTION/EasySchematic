@@ -29,22 +29,20 @@
     "description": "Full-Range 2-Way 12-Inch High Output 60 X 60 Grey",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "f03d09db-a5ed-4603-8af6-7ea3550187f0",
-      "label": "Biamp R.5-66MAX",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_community_r-5-66max_2486.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_r-5-66max_2486.pdf"
     }
   },
   "ports": [
     {
       "id": "tpl-0",
-      "label": "Audio In (Pigtail)",
-      "signalType": "analog-audio",
+      "label": "Speaker In (Pigtail)",
+      "signalType": "speaker-level",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "none",
-      "section": "Audio Inputs"
+      "notes": "Passive; 12 ft (3.6 m) SJOW #16 cable with stripped ends; 8 Ohm nominal, 600 W continuous (69 V)"
     }
   ]
 }

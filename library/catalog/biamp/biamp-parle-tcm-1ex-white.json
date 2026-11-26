@@ -31,32 +31,29 @@
     "description": "Expansion AVB Beamtracking ceiling microphone, white pendant",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "4648353a-cb09-4963-b2d9-436e3e7ce8bf",
-      "label": "Biamp Parlé TCM-1EX",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_Parle_TCM-1EX_Apr25_v2_13307.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Parle_TCM-1EX_Apr25_v2_13307.pdf"
     }
   },
   "ports": [
     {
       "id": "1d4f6978",
-      "label": "IN",
-      "signalType": "ethernet",
-      "connectorType": "rj45",
+      "label": "Expansion In",
+      "signalType": "custom",
       "direction": "bidirectional",
-      "inheritsSignal": false,
-      "section": "Network"
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "From a TCM-1 / TCM-1A or previous TCM-1EX plenum box; proprietary digital protocol; powered by host (TCM-1 chain); up to 10 m. Pendant mic connects to the plenum box with its own 3 m cable (2-pin 3.5 mm Phoenix)"
     },
     {
       "id": "fc5ce6ae",
-      "label": "OUT",
-      "signalType": "ethernet",
-      "connectorType": "rj45",
+      "label": "Expansion Out",
+      "signalType": "custom",
       "direction": "bidirectional",
-      "inheritsSignal": false,
-      "section": "Network"
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Daisy chain to another TCM-1EX plenum box (max 3 mics per chain); up to 10 m"
     }
   ]
 }

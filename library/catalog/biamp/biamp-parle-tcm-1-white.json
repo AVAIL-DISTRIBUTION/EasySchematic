@@ -25,7 +25,7 @@
   "widthMm": 63,
   "depthMm": 63,
   "weightKg": 0.2,
-  "voltage": "PoE 802.3af class 3",
+  "voltage": "PoE 802.3at class 3",
   "poeDrawW": 15.4,
   "unitCost": 2101,
   "_avail": {
@@ -33,32 +33,30 @@
     "description": "AVB Beamtracking™ ceiling microphone, white pendant",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "0c12cfcc-e076-400e-b2e9-4ea07794bae0",
-      "label": "Biamp Parlé TCM-1",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_parle_tcm-1_jul22_2038.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_parle_tcm-1_jul22_2038.pdf"
+    },
+    "notes": "voltage was PoE 802.3af class 3 before the data sheet (2026-11-26)"
   },
   "ports": [
     {
-      "id": "0e4ef28a",
-      "label": "Mic",
-      "signalType": "ethernet",
-      "connectorType": "rj45",
+      "id": "c1ed8af2",
+      "label": "AVB (PoE)",
+      "signalType": "avb",
       "direction": "bidirectional",
-      "inheritsSignal": false,
-      "section": "Network"
+      "section": "AVB",
+      "connectorType": "rj45",
+      "notes": "Plenum box to the AVB switch: audio, configuration and control; PoE 802.3at class 3, 15.4 W; up to 100 m. Pendant mic connects to the plenum box with its own 3 m cable (2-pin 3.5 mm Phoenix)"
     },
     {
-      "id": "c1ed8af2",
-      "label": "AVB / Control",
-      "signalType": "ethernet",
-      "connectorType": "rj45",
+      "id": "0e4ef28a",
+      "label": "Expansion Out",
+      "signalType": "custom",
       "direction": "bidirectional",
-      "inheritsSignal": false,
-      "section": "Network"
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Daisy chain to a TCM-1EX plenum box (max 3 mics per chain); up to 10 m"
     }
   ]
 }

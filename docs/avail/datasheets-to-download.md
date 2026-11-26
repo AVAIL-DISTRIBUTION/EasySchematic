@@ -1,8 +1,8 @@
 # Data sheets to download
 
-Catalog cards whose ports come from the community database (portsSource db, or a variant of a db card): **328** cards, **155** documents. Generated 2026-11-26 by `npm run report:datasheets` (api-avail); the same table — `datasheets-to-download.xlsx`.
+Catalog cards whose ports come from the community database (portsSource db, or a variant of a db card): **289** cards, **120** documents. Generated 2026-11-26 by `npm run report:datasheets` (api-avail); the same table — `datasheets-to-download.xlsx`.
 
-Biamp: 39 cards, 35 documents · Extron: 289 cards, 120 documents.
+Extron: 289 cards, 120 documents.
 
 One row — one document (the A&E specification / data sheet from the product page): the cards that share the product page or the model without the variant. Sorted by how many cards it closes. Put the PDF into `/Users/dmartakov/avail/datasheets/<vendor>/` and process it as CLAUDE.md describes ("Data sheets: processing").
 
@@ -47,10 +47,6 @@ One row — one document (the A&E specification / data sheet from the product pa
 | Extron | SF | SF 3PT (Removable Grille, Black, 70/100V, Pair); SF 3PT (Removable Grille, White, 70/100V, Pair); SF 3PT (White, 70/100V, Pair) | 60-1736-12, 60-1736-13, 60-1736-03 | [extron.com/product/sf3pt](https://www.extron.com/product/sf3pt) | 3 |
 | Extron | ShareLink Pro | ShareLink Pro 2000; ShareLink Pro 2000 Miracast & ShareNext Kit EU; ShareLink Pro 2000 Miracast & ShareNext Kit US | 60-1971-01, 42-350-02, 42-350-01 | [extron.com/product/sharelinkpro2000](https://www.extron.com/product/sharelinkpro2000) | 3 |
 | Extron | ShareLink Pro | ShareLink Pro 2500; ShareLink Pro 2500 Miracast & ShareNext Kit EU; ShareLink Pro 2500 Miracast & ShareNext Kit US | 60-1970-01, 42-351-02, 42-351-01 | [extron.com/product/sharelinkpro2500](https://www.extron.com/product/sharelinkpro2500) | 3 |
-| Biamp | Desono | Desono C-IC6 Black; Desono C-IC6 White | 920-00925-10000, 920-00925-20000 | [products.biamp.com/product-details/-/o/ecom-item/920-00925-10000](https://products.biamp.com/product-details/-/o/ecom-item/920-00925-10000) [products.biamp.com/product-details/-/o/ecom-item/920-00925-20000](https://products.biamp.com/product-details/-/o/ecom-item/920-00925-20000) | 2 |
-| Biamp | Parlé | Parlé TCM-1 Black; Parlé TCM-1 White | 920-00485-10000, 920-00485-20000 | [products.biamp.com/product-details/-/o/ecom-item/920-00485-10000](https://products.biamp.com/product-details/-/o/ecom-item/920-00485-10000) [products.biamp.com/product-details/-/o/ecom-item/920-00485-20000](https://products.biamp.com/product-details/-/o/ecom-item/920-00485-20000) | 2 |
-| Biamp | Parlé | Parlé TCM-1EX Black; Parlé TCM-1EX White | 920-00487-10000, 920-00487-20000 | [products.biamp.com/product-details/-/o/ecom-item/920-00487-10000](https://products.biamp.com/product-details/-/o/ecom-item/920-00487-10000) [products.biamp.com/product-details/-/o/ecom-item/920-00487-20000](https://products.biamp.com/product-details/-/o/ecom-item/920-00487-20000) | 2 |
-| Biamp | Parlé TTM-X | Parlé TTM-X Black; Parlé TTM-X White | 920-00510-10000, 920-00510-20000 | [products.biamp.com/product-details/-/o/ecom-item/920-00510-10000](https://products.biamp.com/product-details/-/o/ecom-item/920-00510-10000) [products.biamp.com/product-details/-/o/ecom-item/920-00510-20000](https://products.biamp.com/product-details/-/o/ecom-item/920-00510-20000) | 2 |
 | Extron | DMP | DMP 128 C P; DMP 128 C P AT | 60-1179-01, 60-1179-10 | [extron.com/product/dmp128](https://www.extron.com/product/dmp128) | 2 |
 | Extron | DTP CrossPoint | DTP CrossPoint 82 4K IPCP Q MA 70 (LinkLicense); DTP CrossPoint 82 4K IPCP Q SA (LinkLicense) | 60-1583-93A, 60-1583-92A | [extron.com/product/dtpcp4k82](https://www.extron.com/product/dtpcp4k82) | 2 |
 | Extron | DTP CrossPoint | DTP CrossPoint 86 4K IPCP Q MA 70 (LinkLicense); DTP CrossPoint 86 4K IPCP Q SA (LinkLicense) | 60-1382-93A, 60-1382-92A | [extron.com/product/dtpcp4k86](https://www.extron.com/product/dtpcp4k86) | 2 |
@@ -74,37 +70,6 @@ One row — one document (the A&E specification / data sheet from the product pa
 | Extron | XPA U | XPA U 1002-100V; XPA U 1002-70V | 60-1761-12, 60-1761-02 | [extron.com/product/xpau1002](https://www.extron.com/product/xpau1002) | 2 |
 | Extron | XPA U | XPA U 1004-100V; XPA U 1004-70V | 60-1760-12, 60-1760-02 | [extron.com/product/xpau1004](https://www.extron.com/product/xpau1004) | 2 |
 | Extron | XPA U | XPA U 2004 FX (ECO Standby); XPA U 2004 FX (Standard) | 60-2026-02, 60-2026-01 | [extron.com/product/xpau2004fx](https://www.extron.com/product/xpau2004fx) | 2 |
-| Biamp | ALC-1604D | ALC-1604D | 920-01351-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-01351-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-01351-00001) | 1 |
-| Biamp | ALC-404D | ALC-404D | 920-01353-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-01353-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-01353-00001) | 1 |
-| Biamp | Desono | Desono DX-IC6LP-TAA White | 920-10300-20100 | [products.biamp.com/product-details/-/o/ecom-item/920-10300-20100](https://products.biamp.com/product-details/-/o/ecom-item/920-10300-20100) | 1 |
-| Biamp | Desono | Desono DX-S8-UB-W White | 920-02622-20000 | [products.biamp.com/product-details/-/o/ecom-item/920-00334-20000](https://products.biamp.com/product-details/-/o/ecom-item/920-00334-20000) | 1 |
-| Biamp | ENT-FR | ENT-FR | 930-01389-00001 | [products.biamp.com/product-details/-/o/ecom-item/930-01389-00001](https://products.biamp.com/product-details/-/o/ecom-item/930-01389-00001) | 1 |
-| Biamp | EX-S10-UB-B | EX-S10-UB-B | 920-01819-10000 | [products.biamp.com/product-details/-/o/ecom-item/920-01819-10000](https://products.biamp.com/product-details/-/o/ecom-item/920-01819-10000) | 1 |
-| Biamp | NPX | NPX G1040 | 910-01808 | [products.biamp.com/product-details/-/o/ecom-item/910-01808](https://products.biamp.com/product-details/-/o/ecom-item/910-01808) | 1 |
-| Biamp | Parlé VBC | Parlé VBC 2800 | 920-01987-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-01987-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-01987-00001) | 1 |
-| Biamp | Qt X | Qt X 300 | 920-00078-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00078-00002](https://products.biamp.com/product-details/-/o/ecom-item/920-00078-00002) | 1 |
-| Biamp | R.5-66MAX | R.5-66MAX | 930-00890-00001 | [products.biamp.com/product-details/-/o/ecom-item/930-00890-00001](https://products.biamp.com/product-details/-/o/ecom-item/930-00890-00001) | 1 |
-| Biamp | R.5-96MAX | R.5-96MAX | 930-00890-00003 | [products.biamp.com/product-details/-/o/ecom-item/930-00890-00003](https://products.biamp.com/product-details/-/o/ecom-item/930-00890-00003) | 1 |
-| Biamp | Tesira | Tesira AMP-450P | 920-00010-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-00010-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00010-00001) | 1 |
-| Biamp | Tesira EX-IN | Tesira EX-IN | 920-00308-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-00308-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00308-00001) | 1 |
-| Biamp | Tesira EX-IO | Tesira EX-IO | 920-00310-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-00310-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00310-00001) | 1 |
-| Biamp | Tesira EX-LOGIC | Tesira EX-LOGIC | 920-00315-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-00315-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00315-00001) | 1 |
-| Biamp | Tesira EX-OUT | Tesira EX-OUT | 920-00309-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-00309-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00309-00001) | 1 |
-| Biamp | Tesira EX-UBT | Tesira EX-UBT | 920-00443-00001 | [products.biamp.com/product-details/-/o/ecom-item/920-00443-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00443-00001) | 1 |
-| Biamp | Tesira EX-USB | Tesira EX-USB | 910-01995 | [products.biamp.com/product-details/-/o/ecom-item/910-01995](https://products.biamp.com/product-details/-/o/ecom-item/910-01995) | 1 |
-| Biamp | Tesira SERVER | Tesira SERVER | 930-00300-00002 | [products.biamp.com/product-details/-/o/ecom-item/930-00300-00001](https://products.biamp.com/product-details/-/o/ecom-item/930-00300-00001) | 1 |
-| Biamp | Tesira SERVER-IO | Tesira SERVER-IO | 930-00278-00002 | [products.biamp.com/product-details/-/o/ecom-item/930-00278-00001](https://products.biamp.com/product-details/-/o/ecom-item/930-00278-00001) | 1 |
-| Biamp | TesiraCONNECT | TesiraCONNECT TC-5 | 920-00039-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00039-00002](https://products.biamp.com/product-details/-/o/ecom-item/920-00039-00002) | 1 |
-| Biamp | TesiraCONNECT | TesiraCONNECT TC-5D | 920-00087-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00087-00002](https://products.biamp.com/product-details/-/o/ecom-item/920-00087-00002) | 1 |
-| Biamp | TesiraFORTÉ AI | TesiraFORTÉ AI | 920-00400-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00400-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00400-00001) | 1 |
-| Biamp | TesiraFORTÉ AVB | TesiraFORTÉ AVB AI | 920-00396-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00396-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00396-00001) | 1 |
-| Biamp | TesiraFORTÉ AVB | TesiraFORTÉ AVB CI | 920-00395-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00395-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00395-00001) | 1 |
-| Biamp | TesiraFORTÉ AVB | TesiraFORTÉ AVB VT | 920-00450-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00450-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00450-00001) | 1 |
-| Biamp | TesiraFORTÉ AVB | TesiraFORTÉ AVB VT4 | 920-00452-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00452-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00452-00001) | 1 |
-| Biamp | TesiraFORTÉ DAN | TesiraFORTÉ DAN CI | 920-00447-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-00447-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-00447-00001) | 1 |
-| Biamp | Voltera A | Voltera A 600.2 | 920-01946-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-01946-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-01946-00001) | 1 |
-| Biamp | Voltera A | Voltera A 600.4 | 920-01947-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-01947-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-01947-00001) | 1 |
-| Biamp | Voltera D | Voltera D 2400.8 | 920-01957-00002 | [products.biamp.com/product-details/-/o/ecom-item/920-01957-00001](https://products.biamp.com/product-details/-/o/ecom-item/920-01957-00001) | 1 |
 | Extron | 12G | 12G HD-SDI 101 | 60-1673-01 | [extron.com/product/12ghdsdi101](https://www.extron.com/product/12ghdsdi101) | 1 |
 | Extron | Annotator | Annotator 401 | 60-1731-01 | [extron.com/product/annotator401](https://www.extron.com/product/annotator401) | 1 |
 | Extron | BUC | BUC 202 | 60-1370-01 | [extron.com/product/buc202](https://www.extron.com/product/buc202) | 1 |

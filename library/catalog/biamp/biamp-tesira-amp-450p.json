@@ -32,54 +32,56 @@
     "description": "4 channel PoE+ conferencing amplifier",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "e6d6d528-b11f-4c54-b880-1e0f49512b28",
-      "label": "Biamp Tesira AMP-450P",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_tesira_amp-450p_1970.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_amp-450p_1970.pdf"
     }
   },
   "ports": [
     {
       "id": "p17762064186281-wz6",
-      "label": "CH 1 Out",
+      "label": "Speaker Out 1",
       "signalType": "speaker-level",
       "direction": "output",
+      "section": "Speaker Outputs",
       "connectorType": "phoenix",
-      "section": "Speaker Outputs"
+      "notes": "4-pin 5.08 mm Phoenix shared by outputs 1-2; Class 2 wiring; 3 W continuous (4 channels), burst 50 W @ 4 Ohm / 30 W @ 8 Ohm"
     },
     {
       "id": "p17762064186282-4xy",
-      "label": "CH 2 Out",
+      "label": "Speaker Out 2",
       "signalType": "speaker-level",
       "direction": "output",
+      "section": "Speaker Outputs",
       "connectorType": "phoenix",
-      "section": "Speaker Outputs"
+      "notes": "4-pin 5.08 mm Phoenix shared by outputs 1-2; Class 2 wiring; 3 W continuous (4 channels), burst 50 W @ 4 Ohm / 30 W @ 8 Ohm"
     },
     {
       "id": "p17762064186283-oz6",
-      "label": "CH 3 Out",
+      "label": "Speaker Out 3",
       "signalType": "speaker-level",
       "direction": "output",
+      "section": "Speaker Outputs",
       "connectorType": "phoenix",
-      "section": "Speaker Outputs"
+      "notes": "4-pin 5.08 mm Phoenix shared by outputs 3-4; Class 2 wiring; 3 W continuous (4 channels), burst 50 W @ 4 Ohm / 30 W @ 8 Ohm"
     },
     {
       "id": "p17762064186284-h28",
-      "label": "CH 4 Out",
+      "label": "Speaker Out 4",
       "signalType": "speaker-level",
       "direction": "output",
+      "section": "Speaker Outputs",
       "connectorType": "phoenix",
-      "section": "Speaker Outputs"
+      "notes": "4-pin 5.08 mm Phoenix shared by outputs 3-4; Class 2 wiring; 3 W continuous (4 channels), burst 50 W @ 4 Ohm / 30 W @ 8 Ohm"
     },
     {
       "id": "p17762064186280-snc",
-      "label": "AVB / PoE+",
-      "signalType": "ethernet",
+      "label": "AVB / Control (PoE+)",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "AVB audio and control; PoE+ 802.3at class 4, 30 W"
     }
   ]
 }
