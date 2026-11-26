@@ -32,30 +32,29 @@
     "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "66613c78-6d1b-4398-8f76-4d9d6af2d2d1",
-      "label": "Biamp Desono DX-IC6LP-TAA White",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_desono_dx-ic6lp-taa_oct23_1938.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_desono_dx-ic6lp-taa_oct23_1938.pdf"
     }
   },
   "ports": [
     {
       "id": "tpl-0",
-      "label": "Input",
-      "signalType": "analog-audio",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 8 ohm or 70/100 V taps; 4-position Euroblock, terminals 1 (+) and 4 (-)"
     },
     {
       "id": "tpl-1",
-      "label": "Output",
-      "signalType": "analog-audio",
+      "label": "Speaker Thru",
+      "signalType": "speaker-level",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "To the next loudspeaker: terminals 2 (+) and 3 (-) on the same Euroblock"
     }
   ]
 }

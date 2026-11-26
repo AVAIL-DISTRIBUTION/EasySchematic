@@ -22,10 +22,10 @@
     "white"
   ],
   "heightMm": 18,
-  "widthMm": 106,
-  "depthMm": 106,
+  "widthMm": 110,
+  "depthMm": 110,
   "weightKg": 0.23,
-  "voltage": "PoE 802.3af class 3",
+  "voltage": "PoE 802.3at class 3",
   "poeDrawW": 15.4,
   "unitCost": 2101,
   "_avail": {
@@ -33,21 +33,30 @@
     "description": "AVB Beamtracking tabletop ceiling microphone, white",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "variant",
-      "from": "biamp/biamp-parle-ttm-x-black.json",
-      "label": "Biamp Parlé TTM-X Black",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_Parle_TTM-X_Nov25_v2_13627.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Parle_TTM-X_Nov25_v2_13627.pdf"
+    },
+    "notes": "widthMm was 106 before the data sheet (2026-11-26); depthMm was 106 before the data sheet (2026-11-26); voltage was PoE 802.3af class 3 before the data sheet (2026-11-26)"
   },
   "ports": [
     {
       "id": "52f51962",
-      "label": "AVB",
+      "label": "AVB (PoE)",
       "signalType": "avb",
-      "connectorType": "rj45",
       "direction": "bidirectional",
-      "inheritsSignal": false,
-      "section": "AVB"
+      "section": "AVB",
+      "connectorType": "rj45",
+      "notes": "Network box to the AVB switch: audio, configuration and control; PoE 802.3at class 3, 15.4 W; up to 100 m. The tabletop mic connects to the network box with its own 2 m RJ-45 cable"
+    },
+    {
+      "id": "p1",
+      "label": "Expansion Out",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Network box to one TTM-XEX microphone; up to 10 m"
     }
   ]
 }

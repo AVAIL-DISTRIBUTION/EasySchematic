@@ -34,45 +34,58 @@
     "notes": "Характеристики с сайта по артикулу 920-01987-00001; [AVAIL] from Biamp documentation: rated max 50 W",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "69787bf0-8c49-4462-a1c1-fec42aa01b11",
-      "label": "Biamp Parle VBC 2800",
-      "match": "model-name",
-      "status": "raw",
-      "level": "B"
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_Parle_VBC_2800_Sep25_v1_13544.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Parle_VBC_2800_Sep25_v1_13544.pdf"
     }
   },
   "ports": [
     {
+      "id": "tpl-2",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm, mono unbalanced; the A&E specification describes one 3.5 mm connector for audio in and ALS out",
+      "exclusiveGroup": "audio-3.5mm"
+    },
+    {
+      "id": "p1",
+      "label": "ALS Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-eighth",
+      "notes": "Assistive listening feed, 3.5 mm mono balanced",
+      "exclusiveGroup": "audio-3.5mm"
+    },
+    {
       "id": "tpl-3",
-      "label": "Ethernet",
+      "label": "LAN",
       "signalType": "ethernet",
       "direction": "bidirectional",
+      "section": "Network",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "Monitoring and control; 802.1X supported"
     },
     {
       "id": "tpl-1",
       "label": "USB 3.0",
       "signalType": "usb",
       "direction": "bidirectional",
+      "section": "USB",
       "connectorType": "usb-c",
-      "section": "USB"
+      "notes": "USB-C to the host: UVC camera up to 2160p30, audio; can power the bar (USB-C 60 W)"
     },
     {
       "id": "tpl-0",
-      "label": "Power - 12V",
+      "label": "DC Power In",
       "signalType": "power",
       "direction": "input",
+      "section": "Power",
       "connectorType": "barrel",
-      "section": "Power"
-    },
-    {
-      "id": "tpl-2",
-      "label": "Audio - IN or ALS Out",
-      "signalType": "analog-audio",
-      "direction": "bidirectional",
-      "connectorType": "trs-eighth"
+      "notes": "12 V DC, 4.74 A from the external 100-240 V AC supply; connector type not stated in the data sheet"
     }
   ]
 }

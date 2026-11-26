@@ -32,78 +32,84 @@
     "notes": "Та же модель под другим артикулом: 920-01946-00001; Характеристики с сайта по артикулу 920-01946-00001",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "4aa692f7-80bf-4fcd-bcd6-d04dae41351a",
-      "label": "Biamp Voltera A 600.2",
-      "match": "model-name",
-      "status": "raw",
-      "level": "B"
-    }
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_VolteraA_600W_Apr26_v2_13867.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_VolteraA_600W_Apr26_v2_13867.pdf"
+    },
+    "portsMissing": "Power consumption is not published (only standby < 1 W), so powerDrawW stays empty; the rear-panel USB-C connector seen in the photo is not described in the data sheet and is not modelled."
   },
   "ports": [
     {
       "id": "p17809024216910-ml0",
-      "label": "INPUT 1",
+      "label": "Line In 1",
       "signalType": "analog-audio",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "phoenix",
-      "section": "Audio Inputs"
+      "notes": "Balanced, 3-pin (+, -, ground); 8 kOhm; +4 dBu sensitivity, max +24 dBu"
     },
     {
       "id": "p17809024216911-ri7",
-      "label": "INPUT 2",
+      "label": "Line In 2",
       "signalType": "analog-audio",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "phoenix",
-      "section": "Audio Inputs"
+      "notes": "Balanced, 3-pin (+, -, ground); 8 kOhm; +4 dBu sensitivity, max +24 dBu"
     },
     {
       "id": "p17809024216912-uw1",
-      "label": "OUTPUT 1",
+      "label": "Speaker Out 1",
       "signalType": "speaker-level",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "2-pin (+, -), Class 2 wiring; 4 Ohm / 8 Ohm / 70 V / 100 V by mode switch; 300 W all channels driven, up to 600 W with power sharing"
     },
     {
       "id": "p17809024216913-blp",
-      "label": "OUTPUT 2",
+      "label": "Speaker Out 2",
       "signalType": "speaker-level",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Speaker Outputs"
-    },
-    {
-      "id": "p17809024216916-kx1",
-      "label": "LOGIC I/O",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "2-pin (+, -), Class 2 wiring; 4 Ohm / 8 Ohm / 70 V / 100 V by mode switch; 300 W all channels driven, up to 600 W with power sharing"
     },
     {
       "id": "p17809024216914-crs",
-      "label": "VC1",
+      "label": "VC In 1",
       "signalType": "control-voltage",
       "direction": "input",
+      "section": "Control",
       "connectorType": "phoenix",
-      "section": "Control"
+      "notes": "Volume control, channel 1; one shared VC connector: +5V, 2, 1, ground"
     },
     {
       "id": "p17809024216915-q7v",
-      "label": "VC2",
+      "label": "VC In 2",
       "signalType": "control-voltage",
       "direction": "input",
+      "section": "Control",
       "connectorType": "phoenix",
-      "section": "Control"
+      "notes": "Volume control, channel 2; one shared VC connector: +5V, 2, 1, ground"
+    },
+    {
+      "id": "p17809024216916-kx1",
+      "label": "Logic I/O",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "6-pin: +5V, 4, 3, 2, 1, ground; mute all (in), health (out), standby status (out), standby mode (in)"
     },
     {
       "id": "p17809024216917-72e",
-      "label": "100-240 VAC",
+      "label": "AC Power",
       "signalType": "power",
       "direction": "input",
+      "section": "Power",
       "connectorType": "iec",
-      "section": "Power"
+      "notes": "100-240 V AC, 50/60 Hz (panel: 1.5-0.7 A); standby < 1 W"
     }
   ]
 }

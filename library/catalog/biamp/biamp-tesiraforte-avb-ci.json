@@ -33,222 +33,271 @@
     "notes": "Характеристики с сайта по артикулу 920-00395-00001",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "119423ad-2e80-4a71-9fb9-97768d742507",
-      "label": "Biamp TesiraFORTÉ AVB CI",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_tesiraforte_avb_ci_8942.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesiraforte_avb_ci_8942.pdf"
     }
   },
   "ports": [
     {
       "id": "p-in1",
-      "label": "Input 1 (AEC)",
+      "label": "Mic/Line In 1",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in2",
-      "label": "Input 2 (AEC)",
+      "label": "Mic/Line In 2",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in3",
-      "label": "Input 3 (AEC)",
+      "label": "Mic/Line In 3",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in4",
-      "label": "Input 4 (AEC)",
+      "label": "Mic/Line In 4",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in5",
-      "label": "Input 5 (AEC)",
+      "label": "Mic/Line In 5",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in6",
-      "label": "Input 6 (AEC)",
+      "label": "Mic/Line In 6",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in7",
-      "label": "Input 7 (AEC)",
+      "label": "Mic/Line In 7",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in8",
-      "label": "Input 8 (AEC)",
+      "label": "Mic/Line In 8",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in9",
-      "label": "Input 9 (AEC)",
+      "label": "Mic/Line In 9",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in10",
-      "label": "Input 10 (AEC)",
+      "label": "Mic/Line In 10",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in11",
-      "label": "Input 11 (AEC)",
+      "label": "Mic/Line In 11",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-in12",
-      "label": "Input 12 (AEC)",
+      "label": "Mic/Line In 12",
       "signalType": "analog-audio",
       "direction": "input",
-      "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; AEC; phantom +48 V"
     },
     {
       "id": "p-out1",
-      "label": "Output 1",
+      "label": "Line Out 1",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-out2",
-      "label": "Output 2",
+      "label": "Line Out 2",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-out3",
-      "label": "Output 3",
+      "label": "Line Out 3",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-out4",
-      "label": "Output 4",
+      "label": "Line Out 4",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-out5",
-      "label": "Output 5",
+      "label": "Line Out 5",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-out6",
-      "label": "Output 6",
+      "label": "Line Out 6",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-out7",
-      "label": "Output 7",
+      "label": "Line Out 7",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-out8",
-      "label": "Output 8",
+      "label": "Line Out 8",
       "signalType": "analog-audio",
       "direction": "output",
-      "connectorType": "terminal-block",
-      "section": "Audio Outputs"
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Balanced, 3-pin; mic or line level"
     },
     {
       "id": "p-ctrl",
       "label": "Control",
       "signalType": "ethernet",
       "direction": "bidirectional",
+      "section": "Network",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "Gigabit Ethernet: Tesira programming and control"
     },
     {
       "id": "p-avb",
       "label": "AVB",
-      "signalType": "ethernet",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "Panel: AVB Only; 128 x 128 channels"
     },
     {
       "id": "p-rs232",
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
-      "connectorType": "terminal-block",
-      "section": "Serial"
+      "section": "Serial",
+      "connectorType": "db9"
     },
     {
       "id": "p-gpio",
-      "label": "Logic I/O",
+      "label": "Logic I/O 1",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "terminal-block",
-      "section": "Digital I/O"
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p-gpio2",
+      "label": "Logic I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p-gpio3",
+      "label": "Logic I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p-gpio4",
+      "label": "Logic I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "connectorType": "phoenix",
+      "notes": "One 6-pin connector: +5V, 4, 3, 2, 1, ground"
     },
     {
       "id": "p-usb",
       "label": "USB Audio",
       "signalType": "usb",
       "direction": "bidirectional",
+      "section": "USB",
       "connectorType": "usb-b",
-      "section": "USB"
+      "notes": "USB-B to the host: up to 8 channels of USB audio"
     },
     {
       "id": "worklist-26",
       "label": "AC Power",
       "signalType": "power",
       "direction": "input",
+      "section": "Power",
       "connectorType": "iec",
-      "section": "Power"
+      "notes": "Internal universal power supply, 100-240 V AC"
     }
   ]
 }

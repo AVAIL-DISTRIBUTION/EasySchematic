@@ -22,150 +22,210 @@
   "widthMm": 442,
   "depthMm": 373,
   "weightKg": 7.3,
-  "powerDrawW": 205,
+  "powerDrawW": 227,
   "voltage": "100-240V AC",
+  "thermalBtuh": 261,
   "unitCost": 3816,
   "_avail": {
     "status": "ports-filled",
     "description": "Amplified Loudspeaker Controller - 4 Channels X 400W + DSP Dante",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "95cdcfc7-c01d-4d16-9012-c67dc4f3bbc0",
-      "label": "Biamp ALC-404D",
-      "match": "model-name",
-      "status": "raw",
-      "level": "B"
-    }
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_community_alc_series_dec21_2557.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_community_alc_series_dec21_2557.pdf"
+    },
+    "notes": "powerDrawW was 205 before the data sheet (2026-11-26); powerDrawW and thermalBtuh from the data sheet at 1/8 power @ 4 ohm, 115 V"
   },
   "ports": [
     {
       "id": "tpl-0",
-      "label": "Analog In 1",
+      "label": "Line In 1",
       "signalType": "analog-audio",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "phoenix",
-      "section": "Audio Inputs"
+      "notes": "Balanced, 3-pin (+, ground, -) on a 12-pin block; 20 kOhm; max +20 dBu"
     },
     {
       "id": "tpl-1",
-      "label": "Analog In 2",
+      "label": "Line In 2",
       "signalType": "analog-audio",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "phoenix",
-      "section": "Audio Inputs"
+      "notes": "Balanced, 3-pin (+, ground, -) on a 12-pin block; 20 kOhm; max +20 dBu"
     },
     {
       "id": "tpl-2",
-      "label": "Analog In 3",
+      "label": "Line In 3",
       "signalType": "analog-audio",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "phoenix",
-      "section": "Audio Inputs"
+      "notes": "Balanced, 3-pin (+, ground, -) on a 12-pin block; 20 kOhm; max +20 dBu"
     },
     {
       "id": "tpl-3",
-      "label": "Analog In 4",
+      "label": "Line In 4",
       "signalType": "analog-audio",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "phoenix",
-      "section": "Audio Inputs"
+      "notes": "Balanced, 3-pin (+, ground, -) on a 12-pin block; 20 kOhm; max +20 dBu"
     },
     {
       "id": "tpl-4",
       "label": "Speaker Out 1",
-      "signalType": "analog-audio",
+      "signalType": "speaker-level",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Audio Outputs"
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Hi-Z 70/100 V or Lo-Z down to 2 ohm; up to 400 W; bridgeable per channel pair; 8-position screw terminal (+/- per channel)"
     },
     {
       "id": "tpl-5",
       "label": "Speaker Out 2",
-      "signalType": "analog-audio",
+      "signalType": "speaker-level",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Audio Outputs"
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Hi-Z 70/100 V or Lo-Z down to 2 ohm; up to 400 W; bridgeable per channel pair; 8-position screw terminal (+/- per channel)"
     },
     {
       "id": "tpl-6",
       "label": "Speaker Out 3",
-      "signalType": "analog-audio",
+      "signalType": "speaker-level",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Audio Outputs"
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Hi-Z 70/100 V or Lo-Z down to 2 ohm; up to 400 W; bridgeable per channel pair; 8-position screw terminal (+/- per channel)"
     },
     {
       "id": "tpl-7",
       "label": "Speaker Out 4",
-      "signalType": "analog-audio",
+      "signalType": "speaker-level",
       "direction": "output",
-      "connectorType": "phoenix",
-      "section": "Audio Outputs"
-    },
-    {
-      "id": "tpl-8",
-      "label": "Dante Primary",
-      "signalType": "dante",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Dante"
-    },
-    {
-      "id": "tpl-9",
-      "label": "Dante Secondary",
-      "signalType": "dante",
-      "direction": "bidirectional",
-      "connectorType": "rj45",
-      "section": "Dante"
-    },
-    {
-      "id": "tpl-11",
-      "label": "GPIO 1",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
-    },
-    {
-      "id": "tpl-12",
-      "label": "GPIO 2",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
-    },
-    {
-      "id": "tpl-13",
-      "label": "GPIO 3",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
-    },
-    {
-      "id": "tpl-14",
-      "label": "GPIO 4",
-      "signalType": "gpio",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Digital I/O"
+      "section": "Speaker Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Hi-Z 70/100 V or Lo-Z down to 2 ohm; up to 400 W; bridgeable per channel pair; 8-position screw terminal (+/- per channel)"
     },
     {
       "id": "tpl-10",
       "label": "Ethernet",
       "signalType": "ethernet",
       "direction": "bidirectional",
+      "section": "Network",
       "connectorType": "rj45",
-      "section": "Control"
+      "notes": "Fast Ethernet 100 Mbit/s: control and monitoring (ArmoniaPlus)"
+    },
+    {
+      "id": "tpl-8",
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "4 Dante input channels, assignable per channel (static or failover with analog)"
+    },
+    {
+      "id": "p1",
+      "label": "Level In 1",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Remote level potentiometer (G, wiper, +) on a 12-pin block"
+    },
+    {
+      "id": "p2",
+      "label": "Level In 2",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Remote level potentiometer (G, wiper, +) on a 12-pin block"
+    },
+    {
+      "id": "p3",
+      "label": "Level In 3",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Remote level potentiometer (G, wiper, +) on a 12-pin block"
+    },
+    {
+      "id": "p4",
+      "label": "Level In 4",
+      "signalType": "control-voltage",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Remote level potentiometer (G, wiper, +) on a 12-pin block"
+    },
+    {
+      "id": "p5",
+      "label": "Remote On In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "REM.ON IN, 2 pins of a 4-pin block"
+    },
+    {
+      "id": "p6",
+      "label": "Remote Off In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "REM.OFF IN, 2 pins of a 4-pin block"
+    },
+    {
+      "id": "tpl-11",
+      "label": "Alarm Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Per-channel fault relay, user-assignable; common, NC, NO on a 12-pin block"
+    },
+    {
+      "id": "tpl-12",
+      "label": "Alarm Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Per-channel fault relay, user-assignable; common, NC, NO on a 12-pin block"
+    },
+    {
+      "id": "tpl-13",
+      "label": "Alarm Relay 3",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Per-channel fault relay, user-assignable; common, NC, NO on a 12-pin block"
+    },
+    {
+      "id": "tpl-14",
+      "label": "Alarm Relay 4",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Per-channel fault relay, user-assignable; common, NC, NO on a 12-pin block"
     },
     {
       "id": "tpl-15",
       "label": "AC Power",
       "signalType": "power",
       "direction": "input",
-      "connectorType": "iec",
-      "section": "Power"
+      "section": "Power",
+      "connectorType": "iec-c20",
+      "notes": "IEC C20 inlet (20 A max), 100-240 V 50-60 Hz"
     }
   ]
 }
