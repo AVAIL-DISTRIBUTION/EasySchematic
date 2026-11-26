@@ -31,6 +31,7 @@ import {
   TEMPLATE_STATUSES,
   type TemplateStatus,
 } from "./templateMeta";
+import { registerWorkspaceRoutes } from "./workspace";
 
 type UpstreamApp = typeof UpstreamAppValue;
 
@@ -61,6 +62,7 @@ export function libraryStatuses(
 export function registerAvailRoutes(app: UpstreamApp): void {
   if (registered.has(app)) return;
   registered.add(app);
+  registerWorkspaceRoutes(app);
 
   app.get("/avail/templates/status", async (c) => {
     const status = c.req.query("status");

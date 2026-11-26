@@ -12,7 +12,8 @@ import { applyMigrations, type MigrationResult } from "./migrate";
 import { parseSeedMode, seedLibrary, type SeedResult } from "./seed";
 import { installMailStub } from "./mail";
 import { registerAvailRoutes } from "./routes";
-import { auditsTemplates, beginTemplateAudit, endTemplateAudit, refuseDisabledSignIn, resolveActor, userRouteRewrite } from "./requestAudit";
+import { auditsTemplates, beginTemplateAudit, endTemplateAudit, proposalAuditEntry, readProposalDecision, refuseDisabledSignIn, resolveActor, userRouteRewrite, type ProposalDecision } from "./requestAudit";
+import { writeAudit } from "./audit";
 import { registerUserRoutes } from "./users";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
@@ -160,7 +161,21 @@ export function createApiServer(config: ApiConfig): ApiServer {
       } catch (err) {
         log(`audit snapshot failed: ${String(err)}`);
       }
+      // A proposal accepted or rejected in the library workspace: read before upstream decides it.
+      let proposal: ProposalDecision | null = null;
+      try {
+        proposal = await readProposalDecision(db.sqlite, request);
+      } catch (err) {
+        log(`proposal audit read failed: ${String(err)}`);
+      }
       let response = await upstream.fetch(libraryRewrite(request), bindings, ctx);
+      if (proposal && response.status < 400) {
+        try {
+          writeAudit(db.sqlite, [proposalAuditEntry(proposal, actor)]);
+        } catch (err) {
+          log(`proposal audit write failed: ${String(err)}`);
+        }
+      }
       if (audit && response.status < 400) {
         try {
           endTemplateAudit(db.sqlite, audit, actor);

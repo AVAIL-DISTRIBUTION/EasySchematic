@@ -3,13 +3,13 @@
  * Audit log (librarian and admin). Mounted from upstream's UserMenuButton: the entries inside its
  * dropdown, the dialogs next to it (they outlive the dropdown).
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AUDIT_ACTION_LABELS, auditChanges, fetchAudit, fetchUsers, setUserActive, setUserRole, type AuditRecord, type AvailUser } from "./adminApi";
 import { openAdminPage, useAdminPage, type AdminPage } from "./adminPages";
 import { loadRole } from "./api";
 import { isAvailBuild } from "./brand";
-import { useAvailState } from "./useAvail";
+import { useAvailState, useStartTemplateEdit } from "./useAvail";
 import { AVAIL_ROLES, availRoleOf, ROLE_DESCRIPTIONS, ROLE_LABELS, type AvailRole } from "./roles";
 
 // ---------------------------------------------------------------------------- menu entries
@@ -39,6 +39,11 @@ export function AvailAccountMenuItems({ onPick }: { onPick: () => void }) {
         </button>
       )}
       {(r === "admin" || r === "librarian") && (
+        <a href="/library" onClick={onPick} className={`block ${itemClass}`} style={{ color: "var(--color-text)" }}>
+          Library workspace
+        </a>
+      )}
+      {(r === "admin" || r === "librarian") && (
         <button onClick={pick("audit")} className={itemClass} style={{ color: "var(--color-text)" }}>
           Audit log
         </button>
@@ -50,10 +55,39 @@ export function AvailAccountMenuItems({ onPick }: { onPick: () => void }) {
 /** The open admin page, if any. */
 export function AvailAdminDialogs() {
   const p = useAdminPage();
-  if (!isAvailBuild() || !p) return null;
+  if (!isAvailBuild()) return null;
+  if (!p) return <AvailEditFromUrl />;
   const close = () => openAdminPage(null);
   return createPortal(p === "users" ? <UsersDialog onClose={close} /> : <AuditLogDialog onClose={close} />, document.body);
 }
+
+/**
+ * Edit from the library workspace: /?availEdit=<template id> opens upstream's Device Editor on
+ * that library template (the same Edit session as the Review card), then drops the parameter.
+ */
+function AvailEditFromUrl() {
+  const { start, error } = useStartTemplateEdit();
+  const [id] = useState(() => new URLSearchParams(window.location.search).get(EDIT_PARAM));
+  const started = useRef(false);
+  useEffect(() => {
+    if (!id || started.current) return;
+    started.current = true;
+    const url = new URL(window.location.href);
+    url.searchParams.delete(EDIT_PARAM);
+    window.history.replaceState(null, "", url.toString());
+    void start(id);
+  }, [id, start]);
+  if (!error) return null;
+  return createPortal(
+    <div role="alert" className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-red-50 border border-red-300 text-red-800 rounded px-3 py-2 text-xs">
+      Could not open the template for editing: {error}
+    </div>,
+    document.body,
+  );
+}
+
+/** Query parameter of the workspace's Edit button. */
+export const EDIT_PARAM = "availEdit";
 
 // ---------------------------------------------------------------------------- shared frame
 
@@ -137,30 +171,46 @@ export function UsersDialog({ onClose }: { onClose: () => void }) {
                   <td className="px-4 py-1.5">{u.name || "—"}</td>
                   <td className="px-2 py-1.5">{u.email}</td>
                   <td className="px-2 py-1.5">
-                    <select
-                      aria-label={`Role of ${u.email}`}
-                      value={u.role}
-                      disabled={busy === u.id}
-                      onChange={(e) => apply(u.id, () => setUserRole(u.id, e.target.value as AvailRole))}
-                      className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-transparent cursor-pointer"
-                    >
-                      {AVAIL_ROLES.map((r) => (
-                        <option key={r} value={r}>
-                          {ROLE_LABELS[r]}
-                        </option>
-                      ))}
-                    </select>
+                    {u.system ? (
+                      <span
+                        data-testid="avail-user-system"
+                        className="rounded px-1.5 py-px bg-gray-100 text-gray-700"
+                        title="System account: its role and access cannot be changed"
+                      >
+                        System
+                      </span>
+                    ) : (
+                      <select
+                        aria-label={`Role of ${u.email}`}
+                        value={u.role}
+                        disabled={busy === u.id}
+                        onChange={(e) => apply(u.id, () => setUserRole(u.id, e.target.value as AvailRole))}
+                        className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-transparent cursor-pointer"
+                      >
+                        {AVAIL_ROLES.map((r) => (
+                          <option key={r} value={r}>
+                            {ROLE_LABELS[r]}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                   </td>
                   <td className="px-2 py-1.5">{when(u.lastLoginAt)}</td>
                   <td className="px-2 py-1.5">
-                    <span className={u.active ? "text-green-700" : "text-red-700"}>{u.active ? "Active" : "Disabled"}</span>{" "}
-                    <button
-                      disabled={busy === u.id}
-                      onClick={() => apply(u.id, () => setUserActive(u.id, !u.active))}
-                      className="ml-1 underline cursor-pointer disabled:opacity-40"
-                    >
-                      {u.active ? "Disable" : "Enable"}
-                    </button>
+                    {u.system ? (
+                      <span className="text-[var(--color-text-muted)]">System</span>
+                    ) : (
+                      <>
+                        <span className={u.active ? "text-green-700" : "text-red-700"}>{u.active ? "Active" : "Disabled"}</span>{" "}
+                        <button
+                          disabled={busy === u.id}
+                          onClick={() => apply(u.id, () => setUserActive(u.id, !u.active))}
+                          className="ml-1 underline cursor-pointer disabled:opacity-40"
+                        >
+                          {u.active ? "Disable" : "Enable"}
+                        </button>
+                      </>
+                    )}
                   </td>
                 </tr>
               ))}

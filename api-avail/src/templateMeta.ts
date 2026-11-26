@@ -36,6 +36,8 @@ export interface TemplateMeta {
   /** How the template was last approved: in the Review card or with bulk Approve. */
   approvedVia: ApprovalMethod | null;
   approvedAt: string | null;
+  /** Who last approved it (email, "admin-token" or "approve-catalog"); migration 9008. */
+  approvedBy: string | null;
 }
 
 export type ApprovalMethod = "review" | "bulk" | "bulk-source";
@@ -54,6 +56,7 @@ export interface TemplateMetaRow {
   source_hash?: string | null;
   approved_via?: ApprovalMethod | null;
   approved_at?: string | null;
+  approved_by?: string | null;
 }
 
 export function metaFromRow(r: TemplateMetaRow): TemplateMeta {
@@ -69,13 +72,14 @@ export function metaFromRow(r: TemplateMetaRow): TemplateMeta {
     statusChangedAt: r.status_changed_at ?? null,
     approvedVia: r.approved_via ?? null,
     approvedAt: r.approved_at ?? null,
+    approvedBy: r.approved_by ?? null,
   };
 }
 
 /** Every template with its status; templates without a meta row come back as raw. */
 export const SELECT_META = `SELECT t.id AS template_id, COALESCE(m.status, 'raw') AS status, m.source, m.upstream_id,
        m.lint_level, m.updated_by, m.updated_at, m.status_reason, m.status_changed_at,
-       m.approved_via, m.approved_at
+       m.approved_via, m.approved_at, m.approved_by
   FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id`;
 
 /** Slots and cards of the whole library, for the linter's slot checks. */
@@ -233,17 +237,19 @@ export async function setTemplateStatus(
     db
       .prepare(
         `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at,
-           status_reason, status_changed_at, approved_via, approved_at)
-         VALUES (?, ?, ?, ?, ?, datetime('now'), NULL, datetime('now'), ?, CASE WHEN ? = 'verified' THEN datetime('now') END)
+           status_reason, status_changed_at, approved_via, approved_at, approved_by)
+         VALUES (?, ?, ?, ?, ?, datetime('now'), NULL, datetime('now'), ?, CASE WHEN ? = 'verified' THEN datetime('now') END,
+           CASE WHEN ? = 'verified' THEN ? END)
          ON CONFLICT(template_id) DO UPDATE SET status = excluded.status, lint_level = excluded.lint_level,
            linted_version = excluded.linted_version, updated_by = excluded.updated_by, updated_at = excluded.updated_at,
            status_reason = NULL,
            status_changed_at = CASE WHEN avail_template_meta.status = excluded.status
              THEN avail_template_meta.status_changed_at ELSE excluded.status_changed_at END,
            approved_via = CASE WHEN excluded.status = 'verified' THEN excluded.approved_via ELSE avail_template_meta.approved_via END,
-           approved_at = CASE WHEN excluded.status = 'verified' THEN excluded.approved_at ELSE avail_template_meta.approved_at END`,
+           approved_at = CASE WHEN excluded.status = 'verified' THEN excluded.approved_at ELSE avail_template_meta.approved_at END,
+           approved_by = CASE WHEN excluded.status = 'verified' THEN excluded.approved_by ELSE avail_template_meta.approved_by END`,
       )
-      .bind(templateId, status, lint.level, row.version, updatedBy, status === "verified" ? via : null, status),
+      .bind(templateId, status, lint.level, row.version, updatedBy, status === "verified" ? via : null, status, status, updatedBy),
     db.prepare(BUMP_LIBRARY_VERSION),
   ]);
   if (previous !== status) {
