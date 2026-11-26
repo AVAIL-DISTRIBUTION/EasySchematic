@@ -8,8 +8,8 @@ Extron cards with a stencil master: 642; without: 414.
 |---|---:|---|
 | filled | 37 | the card had no ports, the stencil's ports are written |
 | replaced | 363 | community ports gave way to the stencil (notes kept where the port agrees) |
-| compared | 6 | curated or datasheet ports kept, compared with the stencil |
-| kept | 56 | community ports kept: the stencil would lower the level (draws no connector or power port) |
+| compared | 8 | curated or datasheet ports kept, compared with the stencil |
+| kept | 54 | community ports kept: the stencil would lower the level (draws no connector or power port) |
 | skipped | 180 | the stencil master has issues: ports from elsewhere or none |
 
 Levels of these cards before → after (rows: before, columns: after):
@@ -427,16 +427,18 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron XTP T USW 103 4K (60-1717-12) — A → A; serial bidirectional: 1 → 2; usb input: 1 → 0
 - Extron XTP T VGA (60-1231-12) — A → A; usb input: 1 → 0
 
-## Compared: curated or datasheet ports kept (6)
+## Compared: curated or datasheet ports kept (8)
 
 - Extron DMP 128 Plus C AT (60-1512-10) — agrees by signal and direction
 - Extron DTP CrossPoint 108 4K (60-1381-01) — ir bidirectional: 4 → 0; serial bidirectional: 5 → 9
 - Extron DTP3 R 201 (60-1869-63) — agrees by signal and direction
 - Extron DTP3 T 203 (60-1885-52) — agrees by signal and direction
 - Extron IPCP Pro 255Q xi (Standard) (60-1914-01) — agrees by signal and direction
+- Extron OCS 100C (60-1664-01) — contact-closure output: 1 → 0; sensor input: 0 → 2; sensor output: 2 → 0
+- Extron OCS 100W (60-1665-01) — contact-closure output: 1 → 0; sensor input: 0 → 2; sensor output: 2 → 0
 - Extron XTP II CrossPoint 1600 Frame (60-2031-01) — serial bidirectional: db9 → phoenix
 
-## Kept: the stencil would lower the level — merge by hand (56)
+## Kept: the stencil would lower the level — merge by hand (54)
 
 - Extron DTP CrossPoint 84 4K IPCP Q MA 70 (Standard) (60-1515-93) — level A; ebus bidirectional: 0 → 3; gpio bidirectional: 4 → 2; ir bidirectional: 4 → 0
 - Extron DTP CrossPoint 84 4K IPCP Q SA (Standard) (60-1515-92) — level A; ebus bidirectional: 0 → 3; gpio bidirectional: 4 → 2; ir bidirectional: 4 → 0; speaker-level output: 2 → 1
@@ -488,8 +490,6 @@ Levels of these cards before → after (rows: before, columns: after):
 - Extron IPCP Pro 360Q xi (Standard) (60-1916-01) — level A; contact-closure output: 0 → 4; ebus bidirectional: 0 → 1; gpio bidirectional: 8 → 4; serial bidirectional: 4 → 3
 - Extron NAV E 101 (60-1525-12) — level A; analog-audio input: 2 → 1; contact-closure input: 0 → 1; ir output: 0 → 1
 - Extron NAV SD 101 (60-1525-14) — level A; analog-audio output: 2 → 1; ir output: 0 → 1
-- Extron OCS 100C (60-1664-01) — level A; ebus bidirectional: 1 → 0; power input: 0 → 1; sensor input: 0 → 2
-- Extron OCS 100W (60-1665-01) — level A; ebus bidirectional: 1 → 0; power input: 0 → 1; sensor input: 0 → 2
 - Extron ShareLink Pro 2500 (60-1970-01) — level A; analog-audio input: 0 → 1; gpio bidirectional: 0 → 1; ir output: 0 → 2; power input: 0 → 1; usb bidirectional: 1 → 2
 - Extron TLP Pro 1525MG (60-1789-12) — level A; analog-audio output: 1 → 0; power input: 0 → 1; usb bidirectional: 2 → 0
 - Extron VC 50 (70-530-02) — level A; control-voltage input: 0 → 1; gpio bidirectional: 1 → 0

@@ -25,30 +25,55 @@
   "depthMm": 36,
   "weightKg": 0.1,
   "powerDrawW": 0.8,
+  "voltage": "24V DC",
   "thermalBtuh": 2.6,
   "_avail": {
     "status": "ports-filled",
     "description": "Occupancy Sensor - Ceiling Mount",
-    "notes": "[AVAIL] powered by the host device / bus — no own power input; [AVAIL] dims from Extron specifications",
+    "notes": "[AVAIL] dims from Extron specifications; [AVAIL] ports, category, voltage and thermalBtuh from proposals by claude@avail.invalid (AI Assistant) accepted in the library, per the Extron OCS 100 specification 5611-D6 (voltage in the database: \"24V DC (included PC 1224: from 12V DC or USB-C)\"); earlier the card had a community eBUS port (Sensor Out, bus-powered): the specification shows wire leads, an SPDT relay, two sensor outputs and a 24 VDC input",
     "source": "extron-blocks-v4.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "8102a555-6033-4b9c-a833-8d91f42899d4",
-      "label": "Extron OCS 100C",
-      "match": "part-number",
-      "status": "raw",
-      "level": "B"
+      "kind": "datasheet",
+      "from": "extron/ocs_100_5611-D6.pdf",
+      "note": "accepted proposals by claude@avail.invalid (template 8102a555-6033-4b9c-a833-8d91f42899d4)"
     }
   },
   "ports": [
     {
-      "label": "Sensor Out (eBUS)",
-      "signalType": "ebus",
-      "direction": "bidirectional",
-      "connectorType": "phoenix",
-      "section": "Expansion",
-      "notes": "4-pole 3.5mm captive screw — connects to a host control processor's eBUS port (+12V/+S/-S/G). Reports occupancy state. Bus-powered. Mapped to `serial` SignalType (no `acp`/`ebus` type in src/types.ts).; bus-powered (eBUS)",
-      "id": "port-0"
+      "connectorType": "other",
+      "direction": "output",
+      "id": "relay-spdt",
+      "label": "Relay (SPDT)",
+      "notes": "Isolated SPDT relay, 500 mA @ 24 VDC; wire leads",
+      "section": "Relays",
+      "signalType": "contact-closure"
+    },
+    {
+      "connectorType": "other",
+      "direction": "output",
+      "id": "occupancy-out",
+      "label": "Occupancy Out",
+      "notes": "Blue wire, occupancy only, 0-24 VDC; to a control processor digital input (Extron OCS 100 spec 5611-D6)",
+      "section": "Control",
+      "signalType": "sensor"
+    },
+    {
+      "connectorType": "other",
+      "direction": "output",
+      "id": "occupancy-photocell-out",
+      "label": "Occupancy + Photocell Out",
+      "notes": "Gray wire, occupancy + photocell, 0-24 VDC (Extron OCS 100 spec 5611-D6)",
+      "section": "Control",
+      "signalType": "sensor"
+    },
+    {
+      "connectorType": "other",
+      "direction": "input",
+      "id": "power-24v-in",
+      "label": "24V DC In",
+      "notes": "Requires 24 VDC; wire leads. Use the included PC 1224 converter from 12 VDC or USB-C (TouchLink Pro)",
+      "section": "Power",
+      "signalType": "power"
     }
   ]
 }
