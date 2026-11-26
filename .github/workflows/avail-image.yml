@@ -55,7 +55,7 @@ jobs:
           # Unset ones arrive empty and Dockerfile.avail falls back to the app defaults.
           build-args: |
             VITE_TEMPLATE_API_URL=${{ vars.VITE_TEMPLATE_API_URL }}
-            VITE_DEVICES_URL=${{ vars.VITE_DEVICES_URL }}
+            VITE_DEVICES_URL=
             VITE_AUTH_GOOGLE_ONLY=${{ vars.VITE_AUTH_GOOGLE_ONLY }}
             VITE_DOCS_URL=${{ vars.VITE_DOCS_URL }}
             VITE_AVAIL=1

@@ -80,6 +80,7 @@ import { loadTestSchematicFromUrl } from "./testSchematic/load";
 import { refreshCloudCache } from "./cloudSync";
 import { useTheme } from "./hooks/useTheme";
 import { appDocumentTitle, isAvailBuild } from "./avail/brand";
+import { AVAIL_BUILD } from "./avail/upstream";
 
 // Community signals / connectors / device types the open schematic may use: register the
 // last-good copy (or the bundled one) before the first render; DeviceLibrary's
@@ -2162,7 +2163,7 @@ export default function App() {
       <UpdatePill />
       <BetaBanner />
       <DemoBanner />
-      {!isAvailBuild() && <PendingSubmissionBanner />}
+      {!AVAIL_BUILD && !isAvailBuild() && <PendingSubmissionBanner />}
       {printView && isSchematicActive && <PrintViewBar />}
       {isSchematicActive && <PrintTitleBlock />}
       <PageTabs />

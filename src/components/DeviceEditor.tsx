@@ -70,6 +70,7 @@ import {
   type EditorShortcut,
 } from "../deviceEditorHistory";
 import { deviceEditorFields, isDeviceEditorDirty, type DeviceEditorFields, type DeviceEditorPorts } from "../deviceEditorDirty";
+import { DEFAULT_DEVICES_URL } from "../avail/upstream";
 
 /** Grouped connector dropdown order — preserves `connectorGroups()` ordering, alphabetizes within each
  *  group, and sweeps any connector missing from its groups into "Other" so a new ConnectorType
@@ -741,7 +742,7 @@ export default function DeviceEditor() {
       ...(() => { const t = searchTermsRaw.split(",").map((s) => s.trim()).filter(Boolean).slice(0, 20); return t.length > 0 ? { searchTerms: t } : {}; })(),
     };
 
-    const devicesUrl = import.meta.env.VITE_DEVICES_URL ?? "https://devices.easyschematic.live";
+    const devicesUrl = import.meta.env.VITE_DEVICES_URL || DEFAULT_DEVICES_URL;
 
     const user = await checkSession();
     if (!user) {

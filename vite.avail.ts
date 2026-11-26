@@ -7,6 +7,8 @@
  * canonical easyschematic.live, search-console verification, structured data) that do
  * not belong on an internal tool.
  */
+import { existsSync, rmSync, writeFileSync } from "node:fs";
+import path from "node:path";
 import type { Plugin } from "vite";
 
 export const AVAIL_TITLE = "AVAIL Schematic";
@@ -35,10 +37,45 @@ export function brandIndexHtml(html: string): string {
     .replace("</head>", '  <meta name="robots" content="noindex, nofollow">\n  </head>');
 }
 
+/** The welcome note of the default schematic points at upstream's docs: not in the AVAIL build. */
+const WELCOME_DOCS_RE = /<div><br><\/div><div>Full docs at <b>docs\.easyschematic\.live<\/b><\/div>/g;
+
+/** defaultSchematic.json without upstream's docs line. Pure, for tests. */
+export function stripUpstreamDocs(json: string): string {
+  return json.replace(WELCOME_DOCS_RE, "");
+}
+
+const EMPTY_LANDING = "\0avail-empty-landing";
+
+/** robots.txt of an internal tool: nothing to index (upstream's points at its public sitemap). */
+export const AVAIL_ROBOTS = "User-agent: *\nDisallow: /\n";
+/** Files of upstream's public site that the AVAIL build leaves out (Cloudflare headers, sitemap). */
+export const AVAIL_DROPPED_PUBLIC = ["_headers", "sitemap.xml"];
+
 export function availBrandingPlugin(enabled: boolean): Plugin {
+  let outDir = "dist";
   return {
     name: "avail-branding",
+    // Before Vite's own resolver, so the LandingPage stub wins.
+    enforce: "pre",
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
     transformIndexHtml: enabled ? (html) => brandIndexHtml(html) : undefined,
+    // Upstream's landing page (links to its public sites) is never shown in the AVAIL build, but a
+    // lazy import still emits its chunk: resolve it to an empty component instead.
+    resolveId: enabled ? (source) => (/(^|\/)LandingPage(\.tsx)?$/.test(source) ? EMPTY_LANDING : null) : undefined,
+    load: enabled ? (id) => (id === EMPTY_LANDING ? "export default function LandingPage() { return null; }" : null) : undefined,
+    transform: enabled
+      ? (code, id) => (/defaultSchematic\.json$/.test(id.split("?")[0]) ? { code: stripUpstreamDocs(code), map: null } : null)
+      : undefined,
+    // public/ is copied as is: drop or replace what belongs to upstream's public site.
+    closeBundle: enabled
+      ? () => {
+          for (const f of AVAIL_DROPPED_PUBLIC) rmSync(path.join(outDir, f), { force: true });
+          if (existsSync(outDir)) writeFileSync(path.join(outDir, "robots.txt"), AVAIL_ROBOTS);
+        }
+      : undefined,
   };
 }
 

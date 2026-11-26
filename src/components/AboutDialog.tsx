@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DEVICE_TEMPLATES } from "../deviceLibrary";
 import { forceFullReset } from "../sw-register";
+import { AVAIL_BUILD, UPSTREAM_SITE_URL } from "../avail/upstream";
 
 declare const __APP_VERSION__: string;
 declare const __BUILD_HASH__: string;
@@ -9,6 +10,8 @@ type Env = "prod" | "beta" | "dev";
 
 function detectEnv(): Env {
   const host = typeof window !== "undefined" ? window.location.hostname : "";
+  // AVAIL build: our own host (sch.avail-int.com) is production, localhost is dev.
+  if (AVAIL_BUILD) return host === "localhost" || host === "127.0.0.1" ? "dev" : "prod";
   if (host === "easyschematic.live" || host === "www.easyschematic.live") return "prod";
   if (host.startsWith("beta.")) return "beta";
   return "dev";
@@ -103,15 +106,21 @@ export default function AboutDialog({ onClose }: { onClose: () => void }) {
           <div className="w-full h-px bg-[var(--color-border)]" />
 
           <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs">
-            {[
-              { label: "Website", href: "https://easyschematic.live" },
+            {(AVAIL_BUILD
+              ? [
+                  // AVAIL build: only the upstream project this tool is based on.
+                  { label: "EasySchematic (upstream)", href: UPSTREAM_SITE_URL },
+                  { label: "GitHub", href: "https://github.com/duremovich/EasySchematic" },
+                ]
+              : [
+              { label: "Website", href: UPSTREAM_SITE_URL },
               { label: "Docs", href: "https://docs.easyschematic.live" },
               { label: "GitHub", href: "https://github.com/duremovich/EasySchematic" },
               { label: "Device Database", href: "https://devices.easyschematic.live" },
               { label: "Support", href: "mailto:support@easyschematic.live" },
               { label: "Report a Bug", href: "https://github.com/duremovich/EasySchematic/issues" },
               { label: "Discord", href: "https://discord.gg/dxXn3Jk2a6" },
-            ].map((link) => (
+            ]).map((link) => (
               <a
                 key={link.label}
                 href={link.href}

@@ -17,7 +17,8 @@ COPY . .
 # Deployment addresses are baked in at build time (Vite inlines import.meta.env),
 # passed as build args so they live in CI variables, not in the code:
 #   VITE_TEMPLATE_API_URL  API base, e.g. https://sch.avail-int.com/api
-#   VITE_DEVICES_URL       device database site linked from the editor
+#   VITE_DEVICES_URL       leave empty: the AVAIL build has no community device site
+#                          (proposals and the library workspace are ours, /library)
 #   VITE_AUTH_GOOGLE_ONLY  1 = login dialog offers Google only
 #   VITE_DOCS_URL          our documentation site for Help → Documentation (unset = no link)
 # VITE_AVAIL=1 turns on the AVAIL interface (sign-in gate instead of the landing page,
@@ -31,10 +32,13 @@ ARG VITE_DOCS_URL
 ARG VITE_AVAIL=1
 # Commit of this build (no .git in the context): shown in About, links its source.
 ARG SOURCE_COMMIT
+# The AVAIL build is checked for links to upstream's public services (About's upstream site
+# only, src/avail/distCheck.ts): an image with such a link does not build.
 RUN for v in VITE_TEMPLATE_API_URL VITE_DEVICES_URL VITE_AUTH_GOOGLE_ONLY VITE_DOCS_URL VITE_AVAIL; do \
       eval "[ -n \"\${$v}\" ]" || unset "$v"; \
     done; \
-    npm run generate-fallback && npx vite build
+    npm run generate-fallback && npx vite build && \
+    if [ "${VITE_AVAIL:-}" = "1" ]; then npx tsx src/avail/distCheckCli.ts dist; fi
 
 # Production stage
 FROM nginx:bookworm

@@ -7,13 +7,15 @@ import { initServiceWorkerUpdates } from "./sw-register";
 import AuthErrorNotice from "./avail/AuthErrorNotice.tsx";
 import AuthGate from "./avail/AuthGate.tsx";
 import { isAvailBuild } from "./avail/brand";
+import { AVAIL_BUILD } from "./avail/upstream";
 
 initServiceWorkerUpdates();
 
 const App = lazy(() => import("./App.tsx"));
 // AVAIL: the library workspace page (/library, librarians and admins).
 const LibraryWorkspace = lazy(() => import("./avail/LibraryWorkspace.tsx"));
-const LandingPage = lazy(() => import("./components/LandingPage.tsx"));
+// Not in the AVAIL build at all (it links to upstream's sites).
+const LandingPage = AVAIL_BUILD ? null : lazy(() => import("./components/LandingPage.tsx"));
 
 /** Show landing page at "/" for first-time visitors (no skip pref and no special path). */
 function shouldShowLanding(): boolean {
@@ -33,7 +35,7 @@ function shouldShowLanding(): boolean {
 
 function Root() {
   // AVAIL build: no landing page — sign in with Google, then straight to the editor.
-  if (isAvailBuild()) {
+  if (AVAIL_BUILD || isAvailBuild()) {
     if (/^\/library\/?$/.test(window.location.pathname)) {
       return (
         <AuthGate>
@@ -53,7 +55,7 @@ function Root() {
       </AuthGate>
     );
   }
-  if (shouldShowLanding()) {
+  if (LandingPage && shouldShowLanding()) {
     return (
       <Suspense fallback={null}>
         <LandingPage />
