@@ -103,6 +103,8 @@ export function portsSourceLabel(info: Pick<WsInfo, "portsSource" | "portsOrigin
   return PORTS_SOURCE_LABELS[info.portsSource] ?? info.portsSource;
 }
 
+export const ORIGIN_LABELS: Readonly<Record<WsInfo["portsOrigin"], string>> = { manufacturer: "Manufacturer document", community: "Community database", none: "Nothing recorded" };
+
 export const APPROVAL_LABELS: Readonly<Record<WsApproval, string>> = { review: "Review card", bulk: "Bulk approve", "bulk-source": "By source (CLI)" };
 export const STATUS_LABELS: Readonly<Record<WsStatus, string>> = { verified: "Verified", draft: "Draft", raw: "Unverified", hidden: "Hidden" };
 export const WS_STATUSES: readonly WsStatus[] = ["verified", "draft", "raw", "hidden"];
@@ -157,6 +159,10 @@ export interface WsFilter {
   /** Changed on or after this day (YYYY-MM-DD), empty = any. */
   changedSince: string;
   approvedBy: string[];
+  /** Where the ports come from: manufacturer documents, the community database, nothing recorded. */
+  origins: WsInfo["portsOrigin"][];
+  /** How the template was approved: Review card, bulk Approve, by source (CLI). */
+  approvedVia: WsApproval[];
   /** Somebody in the template's editors (audit log). */
   editedBy: string;
   text: string;
@@ -164,8 +170,13 @@ export interface WsFilter {
 
 export const EMPTY_FILTER: WsFilter = {
   vendors: [], categories: [], deviceTypes: [], statuses: [], levels: [], portsSources: [], rules: [],
-  changedSince: "", approvedBy: [], editedBy: "", text: "",
+  changedSince: "", approvedBy: [], origins: [], approvedVia: [], editedBy: "", text: "",
 };
+
+/** A filter with every field (saved filters from an older page may lack the newer ones). */
+export function completeFilter(f: Partial<WsFilter>): WsFilter {
+  return { ...EMPTY_FILTER, ...f };
+}
 
 export function filterRows(rows: readonly WsRow[], f: WsFilter): WsRow[] {
   const text = f.text.trim().toLowerCase().split(/\s+/).filter(Boolean);
@@ -181,6 +192,8 @@ export function filterRows(rows: readonly WsRow[], f: WsFilter): WsRow[] {
       (!f.rules.length || f.rules.some((k) => r.rules.includes(k))) &&
       (!f.changedSince || (r.updatedAt !== "" && r.updatedAt.slice(0, 10) >= f.changedSince)) &&
       (!f.approvedBy.length || f.approvedBy.includes(r.approvedBy)) &&
+      (!f.origins.length || f.origins.includes(r.template.avail.portsOrigin)) &&
+      (!f.approvedVia.length || (r.template.avail.approvedVia !== null && f.approvedVia.includes(r.template.avail.approvedVia))) &&
       (!f.editedBy || r.template.avail.editors.includes(f.editedBy)) &&
       text.every((w) => r.haystack.includes(w)),
   );
@@ -189,7 +202,7 @@ export function filterRows(rows: readonly WsRow[], f: WsFilter): WsRow[] {
 export function activeFilterCount(f: WsFilter): number {
   return (
     f.vendors.length + f.categories.length + f.deviceTypes.length + f.statuses.length + f.levels.length + f.portsSources.length +
-    f.rules.length + f.approvedBy.length + (f.changedSince ? 1 : 0) + (f.editedBy ? 1 : 0) + (f.text.trim() ? 1 : 0)
+    f.rules.length + f.approvedBy.length + f.origins.length + f.approvedVia.length + (f.changedSince ? 1 : 0) + (f.editedBy ? 1 : 0) + (f.text.trim() ? 1 : 0)
   );
 }
 
@@ -206,6 +219,12 @@ export function builtInFilters(me: string | null): SavedFilter[] {
     { name: "Review queue", builtIn: true, filter: { ...EMPTY_FILTER, statuses: ["draft"], levels: ["A"] } },
     { name: "Drafts to fix", builtIn: true, filter: { ...EMPTY_FILTER, statuses: ["draft"], levels: ["B", "FIX"] } },
     { name: "Unverified", builtIn: true, filter: { ...EMPTY_FILTER, statuses: ["raw"] } },
+    // Bulk-approved although the ports come from the community database, not from a manufacturer document.
+    {
+      name: "Approved without document check",
+      builtIn: true,
+      filter: { ...EMPTY_FILTER, statuses: ["verified"], origins: ["community"], approvedVia: ["bulk"] },
+    },
     ...(me ? [{ name: "My edits", builtIn: true, filter: { ...EMPTY_FILTER, editedBy: me } }] : []),
     { name: "Hidden", builtIn: true, filter: { ...EMPTY_FILTER, statuses: ["hidden"] } },
   ];

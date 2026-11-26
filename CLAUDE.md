@@ -202,10 +202,12 @@ librarian и admin.
 фильтры, колонки, сводка массовых действий, сравнение предложений), `workspaceApi.ts`, `xlsxWrite.ts` (xlsx без
 зависимостей), `ProposeUi.tsx`. Вкладка Templates: таблица всех шаблонов с виртуализацией (строки фиксированной высоты),
 колонки настраиваются (запоминаются в браузере); фильтры комбинируются — vendor, category (дерево: группа или лист),
-device type, status, level, ports source, правило линтера, изменён с даты, кем утверждён, поиск; сохранённые фильтры
-(Review queue, Drafts to fix, Unverified, My edits, Hidden + свои в браузере). Массовые действия над выделением:
+device type, status, level, ports origin (manufacturer / community / none), ports source, правило линтера, изменён с даты,
+как и кем утверждён, поиск; сохранённые фильтры (Review queue, Drafts to fix, Unverified, Approved without document check —
+verified + порты из базы сообщества + bulk, My edits, Hidden + свои в браузере). Массовые действия над выделением:
 Approve / Move to draft / Hide / Unhide (`POST /avail/templates/status/batch`, сервер проверяет уровень A), Change
-category (`POST /avail/templates/category/batch`), Export to xlsx; перед выполнением — сводка «что изменится / уже так /
+category (`POST /avail/templates/category/batch`), Export to xlsx; выборка больше 500 отправляется пачками по 500 (лимит API;
+`src/avail/workspaceBulk.ts`, прогресс «Batch N of M», упавшая пачка не останавливает остальные, один общий отчёт); перед выполнением — сводка «что изменится / уже так /
 будет отказано», после — отчёт; всё пишется в журнал. Панель деталей: карточка, порты по секциям, линтер, история из
 журнала (`GET /avail/audit?entity=template&entityId=`), ссылки на сайт и даташит; Edit (новая вкладка
 `/?availEdit=<id>` → Device Editor в сессии Edit, `AvailEditFromUrl` в `AdminUi.tsx`), Normalize (изменения и

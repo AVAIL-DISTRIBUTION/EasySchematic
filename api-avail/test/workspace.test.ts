@@ -8,7 +8,11 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { templateToRow } from "../../api/src/db";
+import { BULK_BATCH, runBulk, type BatchAnswer } from "../../src/avail/workspaceBulk";
+import { buildRows, planBulk, type WsTemplate as ModelTemplate } from "../../src/avail/workspaceModel";
+import { MAX_BATCH } from "../src/routes";
 import { configFromEnv, createApiServer, type ApiServer } from "../src/server";
+import { MAX_CATEGORY_BATCH } from "../src/workspace";
 
 const ADMIN_TOKEN = "test-admin-token-0123456789";
 let dataDir: string;
@@ -154,4 +158,54 @@ describe("proposals (upstream submissions)", () => {
     // The accepted edit itself is logged as a template update by the request audit.
     expect(api.db.sqlite.prepare("SELECT COUNT(*) AS n FROM avail_audit_log WHERE entity_id = 'a' AND action = 'updated'").get()).toEqual({ n: 1 });
   });
+});
+
+describe("bulk actions over the 500-id limit (the workspace sends batches)", () => {
+  it("the page's batch size is the API's limit", () => {
+    expect(BULK_BATCH).toBe(MAX_BATCH);
+    expect(BULK_BATCH).toBe(MAX_CATEGORY_BATCH);
+  });
+
+  it("740 templates: one request is refused, the batched run changes all of them for every action", async () => {
+    const lib = user("moderator", "lib@avail.test");
+    const ids = Array.from({ length: 740 }, (_, i) => `t${i}`);
+    api.db.sqlite.transaction(() => {
+      for (const id of ids) insert(tpl(id, { label: `Extron ${id}` }));
+    })();
+    expect((await post("/avail/templates/status/batch", { ids, status: "verified" }, lib.cookie)).status).toBe(400);
+
+    const workspace = async () => buildRows((await json<{ templates: ModelTemplate[] }>(req("/avail/workspace/templates", { headers: { Cookie: lib.cookie } }))).templates);
+    const send = (path: string, extra: Record<string, unknown>) => async (batch: string[]): Promise<BatchAnswer> => {
+      const res = await post(path, { ids: batch, ...extra }, lib.cookie);
+      if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
+      return json<BatchAnswer>(res);
+    };
+    const run = async (action: "approve" | "draft" | "hide" | "unhide") => {
+      const plan = planBulk(action, await workspace());
+      const progress: string[] = [];
+      const status = { approve: "verified", draft: "draft", hide: "hidden", unhide: "draft" }[action];
+      const o = await runBulk(plan, send("/avail/templates/status/batch", { status }), (n, m) => progress.push(`${n}/${m}`));
+      return { o, progress };
+    };
+
+    let r = await run("approve");
+    expect(r.progress).toEqual(["1/2", "2/2"]);
+    expect(r.o.updated).toHaveLength(740);
+    expect(r.o.failedBatches).toEqual([]);
+    const count = (status: string) => (api.db.sqlite.prepare("SELECT COUNT(*) AS n FROM avail_template_meta WHERE status = ?").get(status) as { n: number }).n;
+    expect(count("verified")).toBe(740);
+    expect((await run("draft")).o.updated).toHaveLength(740);
+    expect((await run("hide")).o.updated).toHaveLength(740);
+    r = await run("unhide");
+    expect(r.o.updated).toHaveLength(740);
+    expect(count("draft")).toBe(740);
+
+    const plan = planBulk("category", await workspace(), "AV distribution / Switchers");
+    const o = await runBulk(plan, send("/avail/templates/category/batch", { category: "AV distribution / Switchers" }));
+    expect(o.batches).toBe(2);
+    expect(o.updated).toHaveLength(740);
+    expect((api.db.sqlite.prepare("SELECT COUNT(*) AS n FROM templates WHERE category = 'AV distribution / Switchers'").get() as { n: number }).n).toBe(740);
+    // Every change of every batch is in the audit log.
+    expect((api.db.sqlite.prepare("SELECT COUNT(*) AS n FROM avail_audit_log WHERE action = 'updated'").get() as { n: number }).n).toBe(740);
+  }, 60_000);
 });
