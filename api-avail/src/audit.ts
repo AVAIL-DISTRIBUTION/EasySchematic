@@ -15,7 +15,7 @@ import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 
 export type AuditEntity = "user" | "template" | "run";
-export type AuditAction = "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal";
+export type AuditAction = "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate";
 
 export interface AuditEntry {
   actor: string;

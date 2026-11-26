@@ -25,7 +25,7 @@ export interface AuditRecord {
   entity: "user" | "template" | "run";
   entityId: string;
   entityLabel: string | null;
-  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal";
+  action: "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate";
   before: Record<string, unknown> | null;
   after: Record<string, unknown> | null;
 }
@@ -71,6 +71,7 @@ export const AUDIT_ACTION_LABELS: Readonly<Record<AuditRecord["action"], string>
   status: "Status changed",
   run: "Command run",
   proposal: "Proposal decided",
+  "not-duplicate": "Not a duplicate",
 };
 
 function short(v: unknown, max = 60): string {
@@ -95,6 +96,13 @@ export function auditChanges(r: AuditRecord): string[] {
     const who = typeof a.submitter === "string" ? ` (proposed by ${a.submitter})` : "";
     const note = typeof a.note === "string" ? `: ${a.note}` : "";
     return [`${a.decision === "accepted" ? "Accepted" : "Rejected"}${who}${note}`];
+  }
+  if (r.action === "not-duplicate") {
+    const b = r.before ?? {};
+    const a = r.after ?? {};
+    if (typeof a.notDuplicateOf === "string") return [`Marked as not a duplicate of ${String(a.notDuplicateOfLabel ?? a.notDuplicateOf)}: ${String(a.comment ?? "")}`];
+    const of = String(b.notDuplicateOfLabel ?? b.notDuplicateOf ?? "?");
+    return [a.removed === "undone" ? `Undone: not a duplicate of ${of}` : `Decision on ${of} removed: ${String(a.removed ?? "")}`];
   }
   if (r.action === "created") return [];
   if (r.action === "deleted") return [];

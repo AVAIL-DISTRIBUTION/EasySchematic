@@ -15,6 +15,7 @@ import Database from "better-sqlite3";
 import { duplicateGroups } from "../../src/avail/duplicates";
 import { DUPLICATE_COLUMNS, duplicateRows, formatDuplicates } from "../../src/avail/duplicatesReport";
 import { loadCandidates } from "./duplicates";
+import { loadNotDuplicates } from "./notDuplicates";
 import { configFromEnv } from "./server";
 import { writeXlsx } from "./xlsxWrite";
 
@@ -39,10 +40,11 @@ try {
   if (!existsSync(dbFile)) throw new Error(`${dbFile}: database not found (--db)`);
   const sqlite = new Database(dbFile, { readonly: true, fileMustExist: true });
   const candidates = loadCandidates(sqlite);
+  const notDuplicates = loadNotDuplicates(sqlite);
   sqlite.close();
-  const groups = duplicateGroups(candidates);
+  const groups = duplicateGroups(candidates, notDuplicates);
   const total = candidates.filter((c) => c.status !== "hidden").length;
-  writeFileSync(out, formatDuplicates(groups, { source: path.basename(dbFile), date: new Date().toISOString().slice(0, 10), total }));
+  writeFileSync(out, formatDuplicates(groups, { source: path.basename(dbFile), date: new Date().toISOString().slice(0, 10), total, notDuplicates: notDuplicates.size }));
   const xlsx = out.replace(/\.md$/, "") + ".xlsx";
   writeFileSync(xlsx, writeXlsx("Duplicates", [...DUPLICATE_COLUMNS], duplicateRows(groups), [6, 10, 38, 44, 16, 22, 11, 16, 10, 6, 6, 26]));
   const dups = groups.reduce((n, g) => n + g.members.length - 1, 0);

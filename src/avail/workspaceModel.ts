@@ -7,6 +7,7 @@
 import type { DeviceTemplate } from "../types";
 import { lintBlock, type BlockLevel, type BlockLintResult } from "./blockLint";
 import { findCategory } from "./library";
+import { allPairs, pairKey } from "./duplicates";
 import { slotLibraryContext } from "./slotFamilies";
 
 export type WsStatus = "verified" | "draft" | "raw" | "hidden";
@@ -32,6 +33,16 @@ export interface WsInfo {
   lastAt: string | null;
   /** Possible duplicate (step 2.4): the group's proposed primary and size. */
   duplicate?: { primary: string; size: number } | null;
+  /** "Not duplicates" decisions this template is part of: the other template, comment, who, when. */
+  notDuplicates?: WsNotDuplicate[];
+}
+
+export interface WsNotDuplicate {
+  id: string;
+  label: string;
+  comment: string;
+  by: string;
+  at: string;
 }
 
 export type WsTemplate = DeviceTemplate & { avail: WsInfo };
@@ -491,4 +502,35 @@ export function diffTemplates(before: Record<string, unknown>, after: Record<str
 
 export function diffIsEmpty(d: TemplateDiff): boolean {
   return !d.fields.length && !d.ports.length && !d.slots;
+}
+
+// ---------------------------------------------------------------------------- not duplicates
+
+/** The rows of a duplicate group (same proposed primary), primary first. */
+export function groupMembers(all: readonly WsRow[], primary: string): WsRow[] {
+  return all.filter((r) => r.template.avail.duplicate?.primary === primary).sort((a, b) => (a.id === primary ? -1 : b.id === primary ? 1 : a.template.label.localeCompare(b.template.label)));
+}
+
+/**
+ * "Not duplicates" on a selection: two or more templates of one possible duplicate group. Returns
+ * the group's rows, or why the action is not available.
+ */
+export function notDuplicatesGroup(selection: readonly WsRow[], all: readonly WsRow[]): { members: WsRow[] } | { error: string } {
+  if (selection.length < 2) return { error: "Select two or more templates of one duplicate group" };
+  const primaries = new Set(selection.map((r) => r.template.avail.duplicate?.primary ?? ""));
+  if (primaries.has("") || primaries.size !== 1) return { error: "The selected templates are not in one duplicate group" };
+  return { members: groupMembers(all, [...primaries][0]) };
+}
+
+/** The pairs a "Not duplicates" decision on the ids adds, and how many are decided already. */
+export function notDuplicatePairs(ids: readonly string[], rows: readonly WsRow[]): { add: [string, string][]; already: number } {
+  const decided = new Set<string>();
+  for (const r of rows) for (const d of r.template.avail.notDuplicates ?? []) decided.add(pairKey(r.id, d.id));
+  const add: [string, string][] = [];
+  let already = 0;
+  for (const [a, b] of allPairs(ids)) {
+    if (decided.has(pairKey(a, b))) already++;
+    else add.push([a, b]);
+  }
+  return { add, already };
 }

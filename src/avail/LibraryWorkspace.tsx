@@ -24,8 +24,11 @@ import {
   fetchWorkspace,
   rejectProposal,
   type Proposal,
+  markNotDuplicates,
   mergeTemplates,
+  undoNotDuplicates,
 } from "./workspaceApi";
+import { ErrorText } from "./ErrorText";
 import {
   activeFilterCount,
   buildRows,
@@ -47,6 +50,9 @@ import {
   ORIGIN_LABELS,
   planBulk,
   planMerge,
+  groupMembers,
+  notDuplicatePairs,
+  notDuplicatesGroup,
   suggestedPrimary,
   ruleLabel,
   sortRows,
@@ -159,9 +165,10 @@ function TemplatesTab() {
   const [focus, setFocus] = useState<string | null>(null);
   const [dialog, setDialog] = useState<
     | { kind: "plan"; plan: BulkPlan }
-    | { kind: "report"; lines: string[]; title: string }
+    | { kind: "report"; lines: ReactNode[]; title: string }
     | { kind: "category" }
     | { kind: "merge" }
+    | { kind: "notDuplicates"; members: WsRow[]; preselected: string[] }
     | { kind: "columns" }
     | null
   >(null);
@@ -190,6 +197,7 @@ function TemplatesTab() {
   const shown = useMemo(() => (rows ? sortRows(filterRows(rows, filter), by.by, by.desc) : []), [rows, filter, by.by, by.desc]);
   const selectedRows = useMemo(() => (rows ?? []).filter((r) => selected.has(r.id)), [rows, selected]);
   const focused = useMemo(() => rows?.find((r) => r.id === focus) ?? null, [rows, focus]);
+  const notDupGroup = useMemo(() => notDuplicatesGroup(selectedRows, rows ?? []), [selectedRows, rows]);
 
   /** Runs a bulk action in batches of 500 (the API's limit), with progress, then one report. */
   const runPlan = async (plan: BulkPlan, onProgress: (batch: number, of: number) => void) => {
@@ -261,6 +269,15 @@ function TemplatesTab() {
             >
               {BULK_LABELS.merge}
             </button>
+            <button
+              className={btnPlain}
+              data-testid="avail-ws-not-duplicates"
+              disabled={"error" in notDupGroup}
+              title={"error" in notDupGroup ? notDupGroup.error : "Mark the selected templates as different products: they no longer count as duplicates"}
+              onClick={() => "members" in notDupGroup && setDialog({ kind: "notDuplicates", members: notDupGroup.members, preselected: selectedRows.map((r) => r.id) })}
+            >
+              Not duplicates
+            </button>
             <button className={btnPlain} onClick={exportSelection}>
               Export to xlsx
             </button>
@@ -293,7 +310,30 @@ function TemplatesTab() {
           </div>
         )}
       </div>
-      {focused && <DetailsPanel row={focused} onClose={() => setFocus(null)} onChanged={reload} onReport={(title, lines) => setDialog({ kind: "report", title, lines })} />}
+      {focused && (
+        <DetailsPanel
+          row={focused}
+          rows={rows}
+          onClose={() => setFocus(null)}
+          onChanged={reload}
+          onReport={(title, lines) => setDialog({ kind: "report", title, lines })}
+          onFocus={setFocus}
+          onNotDuplicates={(members) => setDialog({ kind: "notDuplicates", members, preselected: members.map((r) => r.id) })}
+        />
+      )}
+      {dialog?.kind === "notDuplicates" && (
+        <NotDuplicatesDialog
+          members={dialog.members}
+          rows={rows}
+          preselected={dialog.preselected}
+          onClose={() => setDialog(null)}
+          onDone={async (lines) => {
+            setSelected(new Set());
+            setDialog({ kind: "report", title: "Not duplicates — report", lines });
+            await reload();
+          }}
+        />
+      )}
 
       {dialog?.kind === "plan" && <PlanDialog plan={dialog.plan} onClose={() => setDialog(null)} onRun={runPlan} />}
       {dialog?.kind === "category" && (
@@ -798,7 +838,23 @@ function ColumnsDialog({ columns, onClose, onChange }: { columns: ColumnId[]; on
 
 // ---------------------------------------------------------------------------- details panel
 
-function DetailsPanel({ row, onClose, onChanged, onReport }: { row: WsRow; onClose: () => void; onChanged: () => Promise<void>; onReport: (title: string, lines: string[]) => void }) {
+function DetailsPanel({
+  row,
+  rows,
+  onClose,
+  onChanged,
+  onReport,
+  onFocus,
+  onNotDuplicates,
+}: {
+  row: WsRow;
+  rows: WsRow[];
+  onClose: () => void;
+  onChanged: () => Promise<void>;
+  onReport: (title: string, lines: ReactNode[]) => void;
+  onFocus: (id: string) => void;
+  onNotDuplicates: (members: WsRow[]) => void;
+}) {
   const t = row.template;
   const a = t.avail;
   const [history, setHistory] = useState<AuditRecord[] | null>(null);
@@ -814,7 +870,7 @@ function DetailsPanel({ row, onClose, onChanged, onReport }: { row: WsRow; onClo
     return () => {
       live = false;
     };
-  }, [t.id]);
+  }, [t]); // the row is rebuilt after every change: the history shows it (Undo, Not duplicates, Approve…)
   const plain = useMemo(() => {
     const { avail: _a, id: _i, version: _v, ...rest } = t as DeviceTemplate & { avail: unknown; version?: number };
     return rest;
@@ -842,7 +898,11 @@ function DetailsPanel({ row, onClose, onChanged, onReport }: { row: WsRow; onClo
       onReport("Normalize", [`Saved ${appliedChanges(normalized.changes).length} changes to ${t.label}; level ${after?.level}. The edit is in the audit log.`]);
       await onChanged();
     } catch (e) {
-      onReport("Normalize", [`Failed: ${e instanceof Error ? e.message : String(e)}`]);
+      onReport("Normalize", [
+        <>
+          Failed: <ErrorText error={e} onOpen={onFocus} />
+        </>,
+      ]);
     } finally {
       setBusy(false);
     }
@@ -900,6 +960,7 @@ function DetailsPanel({ row, onClose, onChanged, onReport }: { row: WsRow; onClo
       )}
       <div className="px-3 py-2 flex flex-col gap-3">
         {a.statusReason && <div className="text-amber-900">Status note: {a.statusReason}</div>}
+        <DuplicateDecisions row={row} rows={rows} onFocus={onFocus} onNotDuplicates={onNotDuplicates} onChanged={onChanged} onReport={onReport} />
         <table className="w-full">
           <tbody>
             {deviceCardRows(t as never).map((r) => (
@@ -974,6 +1035,194 @@ function DetailsPanel({ row, onClose, onChanged, onReport }: { row: WsRow; onClo
   );
 }
 
+/**
+ * Duplicates in the details panel (step 2.4): the template's possible duplicate group with
+ * "Not duplicates…", and the decisions it is part of ("Marked as not a duplicate of …", comment,
+ * who and when) with Undo.
+ */
+function DuplicateDecisions({
+  row,
+  rows,
+  onFocus,
+  onNotDuplicates,
+  onChanged,
+  onReport,
+}: {
+  row: WsRow;
+  rows: WsRow[];
+  onFocus: (id: string) => void;
+  onNotDuplicates: (members: WsRow[]) => void;
+  onChanged: () => Promise<void>;
+  onReport: (title: string, lines: ReactNode[]) => void;
+}) {
+  const [busy, setBusy] = useState(false);
+  const group = row.template.avail.duplicate;
+  const members = useMemo(() => (group ? groupMembers(rows, group.primary) : []), [rows, group]);
+  const decisions = row.template.avail.notDuplicates ?? [];
+  if (!group && decisions.length === 0) return null;
+
+  const undo = async (other: string, label: string) => {
+    setBusy(true);
+    try {
+      await undoNotDuplicates(row.id, other);
+      await onChanged();
+    } catch (e) {
+      onReport("Undo", [`Could not undo the decision on ${label}: ${e instanceof Error ? e.message : String(e)}`]);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const link = (id: string, label: string) => (
+    <button className="underline cursor-pointer text-left" onClick={() => onFocus(id)}>
+      {label}
+    </button>
+  );
+  return (
+    <div data-testid="avail-ws-duplicates" className="flex flex-col gap-1.5">
+      {group && (
+        <div className="border border-amber-200 bg-amber-50 rounded p-2 flex flex-col gap-1">
+          <div className="font-semibold">Possible duplicates ({members.length})</div>
+          {members
+            .filter((m) => m.id !== row.id)
+            .map((m) => (
+              <div key={m.id}>
+                {link(m.id, m.template.label)}
+                <span className="text-[var(--color-text-muted)]">
+                  {" "}
+                  · {m.partNumber || "—"} · {STATUS_LABELS[m.status]}
+                  {m.id === group.primary ? " · proposed primary" : ""}
+                </span>
+              </div>
+            ))}
+          <div>
+            <button className={btnPlain} onClick={() => onNotDuplicates(members)} title="Mark templates of this group as different products">
+              Not duplicates…
+            </button>
+          </div>
+        </div>
+      )}
+      {decisions.map((d) => (
+        <div key={d.id} data-testid="avail-ws-not-duplicate" className="border border-gray-200 bg-gray-50 rounded p-2">
+          <div className="flex items-start gap-2">
+            <div className="flex-1">
+              Marked as not a duplicate of {link(d.id, d.label)}
+            </div>
+            <button className={btnPlain} disabled={busy} onClick={() => void undo(d.id, d.label)} title="Remove this decision: the pair counts as a possible duplicate again">
+              Undo
+            </button>
+          </div>
+          <div className="italic">“{d.comment}”</div>
+          <div className="text-[var(--color-text-muted)]">
+            {d.by}, {d.at}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** "Not duplicates": tick the group's templates that are different products, with a comment. */
+function NotDuplicatesDialog({
+  members,
+  rows,
+  preselected,
+  onClose,
+  onDone,
+}: {
+  members: WsRow[];
+  rows: WsRow[];
+  preselected: string[];
+  onClose: () => void;
+  onDone: (lines: ReactNode[]) => Promise<void>;
+}) {
+  const [ticked, setTicked] = useState<Set<string>>(() => new Set(preselected.filter((id) => members.some((m) => m.id === id))));
+  const [comment, setComment] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<unknown>(null);
+  const ids = members.filter((m) => ticked.has(m.id)).map((m) => m.id);
+  const { add, already } = notDuplicatePairs(ids, rows);
+  const label = (id: string) => members.find((m) => m.id === id)?.template.label ?? id;
+
+  const run = async () => {
+    setBusy(true);
+    setError(null);
+    try {
+      const r = await markNotDuplicates(ids, comment.trim());
+      await onDone([
+        `Marked as not duplicates: ${r.pairs.length} ${r.pairs.length === 1 ? "pair" : "pairs"}${r.unchanged.length ? `, ${r.unchanged.length} decided already` : ""}.`,
+        ...r.pairs.map(([a, b]) => `${label(a)} — ${label(b)}`),
+        "Every decision is in the audit log.",
+      ]);
+    } catch (e) {
+      setError(e);
+      setBusy(false);
+    }
+  };
+
+  return (
+    <Modal
+      title="Not duplicates"
+      onClose={() => !busy && onClose()}
+      testId="avail-ws-not-duplicates-dialog"
+      footer={
+        <>
+          <button className={btnPlain} onClick={onClose} disabled={busy}>
+            Cancel
+          </button>
+          <button className={btnPrimary} disabled={busy || add.length === 0 || !comment.trim()} onClick={() => void run()}>
+            {busy ? "Saving…" : `Mark ${add.length} ${add.length === 1 ? "pair" : "pairs"} as not duplicates`}
+          </button>
+        </>
+      }
+    >
+      <div className="p-4 flex flex-col gap-2">
+        <div>
+          Tick the templates that are different products. Every pair of the ticked ones stops counting as a duplicate: in the Possible duplicates filter, the
+          duplicates report and the check on save. A pair is a duplicate again when either template changes its manufacturer or model number.
+        </div>
+        <div className="flex flex-col gap-1 max-h-[40vh] overflow-y-auto">
+          {members.map((m) => (
+            <label key={m.id} className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={ticked.has(m.id)}
+                onChange={(e) =>
+                  setTicked((t) => {
+                    const n = new Set(t);
+                    if (e.target.checked) n.add(m.id);
+                    else n.delete(m.id);
+                    return n;
+                  })
+                }
+              />
+              <span className="font-semibold">{m.template.label}</span>
+              <span className="text-[var(--color-text-muted)]">
+                {m.partNumber || "—"} · {STATUS_LABELS[m.status]}
+              </span>
+            </label>
+          ))}
+        </div>
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder="Why these are different products (required): e.g. PoE and non-PoE versions, see the data sheets"
+          aria-label="Comment"
+          className="border border-[var(--color-border)] rounded p-1 h-16"
+        />
+        <div className="text-[var(--color-text-muted)]">
+          {ids.length < 2 ? "Tick two or more templates." : `${add.length} ${add.length === 1 ? "pair" : "pairs"} to mark${already ? `, ${already} decided already` : ""}.`}
+        </div>
+        {error != null && (
+          <div className="text-red-700 font-semibold">
+            <ErrorText error={error} />
+          </div>
+        )}
+      </div>
+    </Modal>
+  );
+}
+
 // ============================================================================ Proposals tab
 
 function ProposalsTab() {
@@ -983,7 +1232,7 @@ function ProposalsTab() {
   const [open, setOpen] = useState<string | null>(null);
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+  const [message, setMessage] = useState<ReactNode>(null);
 
   const reload = useCallback(async () => {
     setError(null);
@@ -1018,7 +1267,11 @@ function ProposalsTab() {
       setNote("");
       await reload();
     } catch (e) {
-      setMessage(`Failed: ${e instanceof Error ? e.message : String(e)}`);
+      setMessage(
+        <>
+          Failed: <ErrorText error={e} />
+        </>,
+      );
     } finally {
       setBusy(false);
     }
@@ -1029,7 +1282,7 @@ function ProposalsTab() {
   return (
     <div className="flex-1 flex min-h-0" data-testid="avail-ws-proposals">
       <div className="w-96 shrink-0 border-r border-[var(--color-border)] overflow-y-auto">
-        {message && <div className="px-3 py-2 bg-blue-50 border-b border-blue-200">{message}</div>}
+        {message != null && <div className="px-3 py-2 bg-blue-50 border-b border-blue-200">{message}</div>}
         {list.length === 0 && <div className="p-3 text-[var(--color-text-muted)]">No proposals waiting.</div>}
         {list.map((p) => (
           <button

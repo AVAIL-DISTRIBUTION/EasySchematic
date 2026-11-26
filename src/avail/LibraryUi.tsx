@@ -41,6 +41,7 @@ import { describeChange, deviceCardRows, portLabelMap, groupByTaxonomy, portsByS
 import { appliedChanges, normalizeBlock, type NormalizeResult } from "./normalize";
 import { applyTemplateToDeviceData, deviceDataToTemplate, editSessionFor, endEditSession } from "./templateEdit";
 import { useAvailState, useStartTemplateEdit } from "./useAvail";
+import { ErrorText } from "./ErrorText";
 import { useSchematicStore } from "../store";
 import { slotOwnedPortIds } from "../slotDefinitions";
 import type { DeviceTemplate } from "../types";
@@ -551,7 +552,7 @@ export function AvailTemplateEditBar({
   const updateDevice = useSchematicStore((s) => s.updateDevice);
   const node = useSchematicStore((s) => (nodeId ? s.nodes.find((n) => n.id === nodeId) : undefined));
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<unknown>(null);
 
   const draft = useMemo(() => {
     if (!session) return null;
@@ -586,7 +587,7 @@ export function AvailTemplateEditBar({
       }
       onSaved();
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e));
+      setError(e);
     } finally {
       setBusy(false);
     }
@@ -604,7 +605,11 @@ export function AvailTemplateEditBar({
         <div className="text-amber-900">A verified template saved below level A becomes a draft.</div>
       )}
       {normalized && <AvailNormalizePreview before={lint} result={normalized} />}
-      {error && <div className="text-red-700 font-semibold">{error}</div>}
+      {error != null && (
+        <div className="text-red-700 font-semibold">
+          <ErrorText error={error} />
+        </div>
+      )}
       <div className="flex justify-end gap-2">
         {normalized ? (
           <>
