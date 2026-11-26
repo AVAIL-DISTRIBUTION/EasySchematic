@@ -109,38 +109,93 @@
     "source": "biamp-blocks.csv",
     "libraryNotes": "slot family renamed to the library name",
     "portsSource": {
-      "kind": "db",
-      "from": "56196cc7-aaeb-4e97-8d24-d55a0839b35f",
-      "label": "Biamp\tTesira SERVER-IO",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_Tesira_SERVER-IO_Aug25_v3_13508.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Tesira_SERVER-IO_Aug25_v3_13508.pdf"
+    },
+    "portsMissing": "Slots 1-13 take up to 12 I/O cards and up to 3 network cards; slot 14 holds the factory SNC-1 card (its connectors are described as chassis ports); DSP cards (1 factory, up to 3) are internal. The data sheet does not name the serial standard."
   },
   "ports": [
+    {
+      "id": "p1",
+      "label": "Control (Primary)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Factory SNC-1 card: Ethernet configuration and control, IEEE 802.1X"
+    },
+    {
+      "id": "p2",
+      "label": "Control (Secondary)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Factory SNC-1 card: Ethernet configuration and control, IEEE 802.1X"
+    },
     {
       "id": "tpl-0",
       "label": "Serial 1",
       "signalType": "serial",
       "direction": "bidirectional",
+      "section": "Control",
       "connectorType": "db9",
-      "section": "Serial"
+      "notes": "Serial configuration and control"
     },
     {
       "id": "tpl-1",
       "label": "Serial 2",
       "signalType": "serial",
       "direction": "bidirectional",
+      "section": "Control",
       "connectorType": "db9",
-      "section": "Serial"
+      "notes": "Serial configuration and control"
+    },
+    {
+      "id": "p3",
+      "label": "Logic I/O 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "SNC-1 Logic I/O, one 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p4",
+      "label": "Logic I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "SNC-1 Logic I/O, one 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p5",
+      "label": "Logic I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "SNC-1 Logic I/O, one 6-pin connector: +5V, 4, 3, 2, 1, ground"
+    },
+    {
+      "id": "p6",
+      "label": "Logic I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "SNC-1 Logic I/O, one 6-pin connector: +5V, 4, 3, 2, 1, ground"
     },
     {
       "id": "tpl-2",
-      "label": "Power",
+      "label": "AC Power",
       "signalType": "power",
       "direction": "input",
+      "section": "Power",
       "connectorType": "iec",
-      "section": "Power"
+      "notes": "100-240 V AC 50/60 Hz, 5.5-2.3 A (panel marking); < 150 W"
     }
   ]
 }

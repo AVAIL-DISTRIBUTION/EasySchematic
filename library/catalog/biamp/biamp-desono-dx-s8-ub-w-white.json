@@ -32,30 +32,29 @@
     "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; Характеристики с сайта по артикулу 920-00334-20000",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "41e38da5-de8d-4ece-a849-a3fbb11cb18f",
-      "label": "Biamp Desono DX-S8-UB-W",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_Desono_DX-S8_UB-CM_Jan26_13665.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Desono_DX-S8_UB-CM_Jan26_13665.pdf"
     }
   },
   "ports": [
     {
       "id": "p17875508995910-ny5",
-      "label": "INPUT",
+      "label": "Speaker In",
       "signalType": "speaker-level",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "terminal-block",
-      "section": "Audio Inputs"
+      "notes": "Passive, 8 ohm or 70/100 V taps; lever-actuated 4-position terminal block with pass-through"
     },
     {
       "id": "p17875508995912-xuv",
-      "label": "THRU",
+      "label": "Speaker Thru",
       "signalType": "speaker-level",
       "direction": "output",
+      "section": "Speaker Outputs",
       "connectorType": "terminal-block",
-      "section": "Speaker Outputs"
+      "notes": "Pass-through on the same terminal block"
     }
   ]
 }

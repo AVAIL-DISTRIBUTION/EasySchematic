@@ -24,7 +24,7 @@
   "widthMm": 64,
   "depthMm": 106,
   "weightKg": 0.1,
-  "voltage": "PoE 802.3af class 2",
+  "voltage": "PoE 802.3at class 2",
   "poeDrawW": 7,
   "unitCost": 1060,
   "_avail": {
@@ -32,13 +32,11 @@
     "description": "PoE AVB/USB expander with Bluetooth® wireless technology",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "e3ce328f-d02f-4834-83b1-651981b2d7ee",
-      "label": "Biamp Tesira EX-UBT",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_Tesira_EX-UBT_Apr25_v2_13305.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Tesira_EX-UBT_Apr25_v2_13305.pdf"
+    },
+    "notes": "voltage was PoE 802.3af class 2 before the data sheet (2026-11-26)"
   },
   "ports": [
     {
@@ -46,24 +44,27 @@
       "label": "Bluetooth",
       "signalType": "bluetooth",
       "direction": "bidirectional",
+      "section": "RF",
       "connectorType": "wireless",
-      "section": "RF"
+      "notes": "Bluetooth 4.2 Class 2, Classic; HFP 1.7, A2DP 1.3; mSBC, SBC, AAC, aptX; range up to 30 m"
     },
     {
       "id": "p17762045524950-a97",
-      "label": "AVB / PoE",
-      "signalType": "ethernet",
+      "label": "AVB / Control (PoE)",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "AVB/TSN audio, configuration and control; PoE 802.3at class 2, 7 W"
     },
     {
       "id": "p17762045524951-kqc",
       "label": "USB Audio",
       "signalType": "usb",
       "direction": "bidirectional",
+      "section": "USB",
       "connectorType": "usb-b",
-      "section": "USB"
+      "notes": "USB 2.0 to the host: up to 8 x 8 channels of USB audio (Class 1 / Class 2), 16/24-bit, 48 kHz"
     }
   ]
 }

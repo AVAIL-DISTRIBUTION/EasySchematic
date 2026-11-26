@@ -24,7 +24,7 @@
   "widthMm": 216,
   "depthMm": 197,
   "weightKg": 1,
-  "voltage": "PoE 802.3af class 1",
+  "voltage": "PoE 802.3at class 1",
   "poeDrawW": 4,
   "unitCost": 818,
   "_avail": {
@@ -32,38 +32,174 @@
     "description": "Tesira PoE logic expander with 16 logic GPIO (4 GPIO are configurable for potentiometer interface)",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "172de8fa-5bf4-4c22-bf80-e47d8980fc67",
-      "label": "Biamp Tesira EX-LOGIC",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_tesira_ex-logic_feb20_1994.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesira_ex-logic_feb20_1994.pdf"
+    },
+    "notes": "voltage was PoE 802.3af class 1 before the data sheet (2026-11-26)"
   },
   "ports": [
     {
       "id": "p17762059240000-ctrl",
-      "label": "Control / PoE",
+      "label": "Ethernet (PoE)",
       "signalType": "ethernet",
       "direction": "bidirectional",
+      "section": "Network",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "Tesira control network (configuration and control); PoE 802.3at class 1, 4 W"
     },
     {
       "id": "p17762059240002-serial",
-      "label": "RS-232",
+      "label": "Serial Control Port",
       "signalType": "serial",
       "direction": "bidirectional",
-      "connectorType": "terminal-block",
-      "section": "Serial"
+      "section": "Control",
+      "connectorType": "db9",
+      "notes": "Output of command strings to other equipment"
     },
     {
       "id": "p17762059240001-gpio",
-      "label": "Logic I/O (16 pins)",
+      "label": "Logic I/O 1",
       "signalType": "gpio",
       "direction": "bidirectional",
-      "connectorType": "terminal-block",
-      "section": "Digital I/O"
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 1, 2, 3, 4, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p3",
+      "label": "Logic I/O 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 1, 2, 3, 4, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p4",
+      "label": "Logic I/O 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 1, 2, 3, 4, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p5",
+      "label": "Logic I/O 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 1, 2, 3, 4, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p6",
+      "label": "Logic I/O 5",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 5, 6, 7, 8, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p7",
+      "label": "Logic I/O 6",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 5, 6, 7, 8, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p8",
+      "label": "Logic I/O 7",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 5, 6, 7, 8, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p9",
+      "label": "Logic I/O 8",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 5, 6, 7, 8, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p10",
+      "label": "Logic I/O 9",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 9, 10, 11, 12, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p11",
+      "label": "Logic I/O 10",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 9, 10, 11, 12, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p12",
+      "label": "Logic I/O 11",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 9, 10, 11, 12, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p13",
+      "label": "Logic I/O 12",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic I/O, one 5-pin connector: 9, 10, 11, 12, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA"
+    },
+    {
+      "id": "p14",
+      "label": "Logic/VC I/O 13",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic / VC I/O, one 6-pin connector: +5V, 13, 14, 15, 16, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA; or variable voltage control 0 to +5 V (potentiometer)"
+    },
+    {
+      "id": "p15",
+      "label": "Logic/VC I/O 14",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic / VC I/O, one 6-pin connector: +5V, 13, 14, 15, 16, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA; or variable voltage control 0 to +5 V (potentiometer)"
+    },
+    {
+      "id": "p16",
+      "label": "Logic/VC I/O 15",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic / VC I/O, one 6-pin connector: +5V, 13, 14, 15, 16, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA; or variable voltage control 0 to +5 V (potentiometer)"
+    },
+    {
+      "id": "p17",
+      "label": "Logic/VC I/O 16",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic / VC I/O, one 6-pin connector: +5V, 13, 14, 15, 16, ground; contact closure or 5 V TTL in; open-collector out, sink 40 V / 300 mA; LED driver 5 V / 10 mA; or variable voltage control 0 to +5 V (potentiometer)"
     }
   ]
 }

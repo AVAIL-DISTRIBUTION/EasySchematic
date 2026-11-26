@@ -21,60 +21,59 @@
     "c-ic6",
     "white"
   ],
-  "heightMm": 277,
-  "widthMm": 277,
-  "depthMm": 150,
+  "heightMm": 276,
+  "widthMm": 276,
+  "depthMm": 151,
   "weightKg": 3.5,
   "unitCost": 276,
   "_avail": {
     "status": "ports-filled",
     "description": "In-Ceiling, Indoor 6.5\" Coaxial Loudspeaker, White (priced individually, but sold in pairs)",
-    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку",
+    "notes": "Продаётся упаковкой по 2 шт.; цена в прайсе — за штуку; heightMm was 277 before the data sheet (2026-11-26); widthMm was 277 before the data sheet (2026-11-26); depthMm was 150 before the data sheet (2026-11-26)",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "7ffd9c1e-b87e-44ec-ba01-639a6989d3c5",
-      "label": "Biamp Desono C-IC6",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/Biamp_Data_Sheet_Desono_C-IC6_Apr25_v1_13310.pdf",
+      "note": "https://products.biamp.com/api/media/file/Biamp_Data_Sheet_Desono_C-IC6_Apr25_v1_13310.pdf"
+    },
+    "portsMissing": "The data sheet lists two RJ-45 audio connectors but does not say which is in and which is thru."
   },
   "ports": [
     {
       "id": "3c2e1539",
-      "label": "Input",
+      "label": "Speaker In",
       "signalType": "speaker-level",
-      "connectorType": "terminal-block",
       "direction": "input",
-      "inheritsSignal": false,
-      "section": "Audio Inputs"
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Passive, 8 ohm; 4-pole 5.08 mm Euroblock with two parallel pairs (up to 16 AWG)"
     },
     {
       "id": "tpl-0",
-      "label": "Input",
+      "label": "Speaker In (RJ-45)",
       "signalType": "speaker-level",
       "direction": "input",
+      "section": "Audio Inputs",
       "connectorType": "rj45",
-      "inheritsSignal": false,
-      "section": "Audio Inputs"
+      "notes": "Passive; audio over category cable, e.g. from Tesira AMP-450BP"
     },
     {
       "id": "4798895c",
-      "label": "Output",
+      "label": "Speaker Thru",
       "signalType": "speaker-level",
-      "connectorType": "terminal-block",
       "direction": "output",
-      "inheritsSignal": false,
-      "section": "Speaker Outputs"
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "Second parallel pair on the same Euroblock"
     },
     {
       "id": "tpl-1",
-      "label": "Output",
+      "label": "Speaker Thru (RJ-45)",
       "signalType": "speaker-level",
       "direction": "output",
+      "section": "Speaker Outputs",
       "connectorType": "rj45",
-      "section": "Speaker Outputs"
+      "notes": "Second RJ-45; audio over category cable"
     }
   ]
 }

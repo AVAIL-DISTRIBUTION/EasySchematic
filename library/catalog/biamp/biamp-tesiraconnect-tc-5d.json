@@ -26,68 +26,73 @@
   "weightKg": 0.7,
   "powerDrawW": 132,
   "voltage": "100-240V AC",
+  "poeBudgetW": 120,
   "unitCost": 2101,
   "_avail": {
     "status": "ports-filled",
     "description": "5-port expansion device with AVB to Dante Bridging",
     "source": "biamp-blocks.csv",
     "portsSource": {
-      "kind": "db",
-      "from": "f429c4ac-cccd-48b4-bd70-cc90f5dd2762",
-      "label": "Biamp TesiraCONNECT TC-5D",
-      "match": "model-name",
-      "status": "raw",
-      "level": "A"
-    }
+      "kind": "datasheet",
+      "from": "biamp/biamp_data_sheet_tesiraconnect_tc-5d_2747.pdf",
+      "note": "https://products.biamp.com/api/media/file/biamp_data_sheet_tesiraconnect_tc-5d_2747.pdf"
+    },
+    "portsMissing": "The data sheet has no rear-panel drawing: the DC input rating and plug type of the external supply are not stated (barrel kept from the card)."
   },
   "ports": [
     {
       "id": "p17762063850000-p1",
-      "label": "Port 1 (Control / Uplink)",
-      "signalType": "ethernet",
+      "label": "LAN 1",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "1 Gb (100M/1G): DSP connection or daisy-chain to another TesiraCONNECT (up to 4); no PoE"
     },
     {
       "id": "p17762063850001-p2",
-      "label": "Port 2 (AVB / Dante / PoE+)",
-      "signalType": "ethernet",
+      "label": "LAN 2 (PoE+)",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "1 Gb (100M/1G): AVB or Dante endpoints (media network auto-detected per port); PoE+ 802.3at class 4, 30 W"
     },
     {
       "id": "p17762063850002-p3",
-      "label": "Port 3 (AVB / Dante / PoE+)",
-      "signalType": "ethernet",
+      "label": "LAN 3 (PoE+)",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "1 Gb (100M/1G): AVB or Dante endpoints (media network auto-detected per port); PoE+ 802.3at class 4, 30 W"
     },
     {
       "id": "p17762063850003-p4",
-      "label": "Port 4 (AVB / Dante / PoE+)",
-      "signalType": "ethernet",
+      "label": "LAN 4 (PoE+)",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "1 Gb (100M/1G): AVB or Dante endpoints (media network auto-detected per port); PoE+ 802.3at class 4, 30 W"
     },
     {
       "id": "p17762063850004-p5",
-      "label": "Port 5 (AVB / Dante / PoE+)",
-      "signalType": "ethernet",
+      "label": "LAN 5 (PoE+)",
+      "signalType": "avb",
       "direction": "bidirectional",
+      "section": "AVB",
       "connectorType": "rj45",
-      "section": "Network"
+      "notes": "1 Gb (100M/1G): AVB or Dante endpoints (media network auto-detected per port); PoE+ 802.3at class 4, 30 W"
     },
     {
       "id": "p17762063850005-pwr",
       "label": "Power In",
       "signalType": "power",
       "direction": "input",
+      "section": "Power",
       "connectorType": "barrel",
-      "section": "Power"
+      "notes": "External universal power supply (100-240 V AC) with locking power connector"
     }
   ]
 }
