@@ -34,6 +34,8 @@ describe("audit log: tokens and API requests", () => {
     expect(auditChanges(req)).toEqual(["POST /avail/templates/draft → 201"]);
     expect(auditActor(req)).toBe("claude@avail.invalid (token “nightly”)");
     expect(auditActor(rec({}))).toBe("boss@avail.test");
+    expect(auditChanges(rec({ action: "proposed", entity: "template", after: { proposal: "p1", comment: "Power 6 W per data sheet" } }))).toEqual(["Proposal p1: Power 6 W per data sheet"]);
+    expect(AUDIT_ACTION_LABELS.proposed).toBe("Change proposed");
   });
 });
 

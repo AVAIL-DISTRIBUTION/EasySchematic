@@ -20,6 +20,7 @@ import { CONFLICT_PATH, pendingConflicts, registerDuplicateRoutes } from "./dupl
 import { registerNotDuplicateRoutes } from "./notDuplicates";
 import { logTokenRequest, pendingRefusals, rateLimitFromEnv, REFUSAL_PATH, registerAccessTokenRoutes, resolveAccessToken, TokenRateLimiter } from "./accessTokens";
 import { registerAssistantRoutes } from "./assistant";
+import { handleMcp, MCP_PATH, mcpUnauthorized } from "./mcp";
 import { relintAll, syncLintLevels } from "./templateMeta";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -163,6 +164,15 @@ export function createApiServer(config: ApiConfig): ApiServer {
   const ctx = executionContext(log);
 
   const limiter = new TokenRateLimiter(config.tokenRateLimit);
+  const allowedOrigins = (config.vars.ALLOWED_ORIGINS ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+  /** The app's public origin for links in MCP answers: API_PUBLIC_URL without /api. */
+  const appOrigin = (() => {
+    try {
+      return config.vars.API_PUBLIC_URL ? new URL(config.vars.API_PUBLIC_URL).origin : "";
+    } catch {
+      return "";
+    }
+  })();
   /** An answer of ours served by an internal route of the app, so its CORS and security headers apply. */
   const internalAnswer = (request: Request, pathname: string) => {
     const url = new URL(request.url);
@@ -253,6 +263,27 @@ export function createApiServer(config: ApiConfig): ApiServer {
       }
       // Every audit entry written while serving the request names the token (audit.ts).
       return requestContext.run({ token: token ? { id: token.id, name: token.name } : null }, async () => {
+        // The remote MCP server (mcp.ts): AI Assistant tokens only; tools call our routes as its user.
+        if (new URL(incoming.url).pathname.replace(/\/+$/, "") === MCP_PATH) {
+          const origin = incoming.headers.get("Origin");
+          if (origin && !allowedOrigins.includes(origin)) return new Response(JSON.stringify({ error: "Origin not allowed" }), { status: 403, headers: { "Content-Type": "application/json" } });
+          if (!token) return mcpUnauthorized();
+          const cookie = incoming.headers.get("Cookie") ?? "";
+          const forwarded = incoming.headers.get("X-Forwarded-For");
+          return handleMcp(incoming, {
+            token,
+            sqlite: db.sqlite,
+            appOrigin,
+            call: (p, init = {}) =>
+              serve(
+                new Request(`http://api.internal${p}`, {
+                  method: init.method ?? "GET",
+                  headers: { Cookie: cookie, ...(forwarded ? { "X-Forwarded-For": forwarded } : {}), ...(init.body !== undefined ? { "Content-Type": "application/json" } : {}), ...init.headers },
+                  body: init.body !== undefined ? JSON.stringify(init.body) : undefined,
+                }),
+              ),
+          });
+        }
         const response = await serve(incoming);
         if (token) {
           try {

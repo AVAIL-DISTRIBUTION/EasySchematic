@@ -208,6 +208,59 @@ curl -s -X PUT https://sch.avail-int.com/api/avail/users/<id>/role -H "Authoriza
 ```
 Роль действует сразу; в открытом редакторе — после перезагрузки страницы.
 
+## AI Assistant: MCP-коннектор для Claude
+
+API отдаёт удалённый MCP-сервер библиотеки: **`https://sch.avail-int.com/api/mcp`** (Streamable HTTP, без
+сессий; Caddy проксирует `/api/*` как есть, отдельная настройка не нужна). Вход — только токен пользователя с ролью
+**AI Assistant**; без токена или с отозванным / просроченным — 401.
+
+Инструменты (по правам роли — чтение, проверка, черновики и предложения; утверждение и скрытие — только librarian):
+`search_templates`, `get_template`, `review_queue`, `possible_duplicates`, `audit_log` — чтение;
+`lint_template`, `normalize_template` — проверка без сохранения; `create_draft_template` — новый шаблон в статусе
+draft (дубль — отказ со ссылкой на существующий), `propose_change` — правка на ревью (вкладка Proposals в `/library`).
+
+### 1. Создать токен
+
+1. Меню аккаунта → **Users** (admin). Строка `claude@avail.invalid` (служебный AI Assistant, метка System) → колонка
+   Tokens → **Manage**. Для отдельного ассистента можно завести пользователя и дать ему роль AI Assistant.
+2. **Name** — для чего токен, например «claude.ai connector» (имя будет в журнале у каждого действия по токену),
+   **Expires** — срок (30 / 90 дней / 1 год, не больше года) → **Create token**.
+3. Скопировать значение `avail_ai_…` — **оно показывается один раз** (в базе только хэш). Потеряли — отозвать и создать новый.
+
+### 2. Подключить в claude.ai
+
+Settings → **Connectors** → **Add custom connector**:
+- **Name** — `AVAIL library`;
+- **Remote MCP server URL** — `https://sch.avail-int.com/api/mcp`;
+- раздел **Request headers**: заголовок `Authorization`, значение `Bearer avail_ai_…` (слово `Bearer`, пробел, токен).
+  OAuth Client ID / Secret не заполнять.
+
+Ограничения claude.ai (по [документации Anthropic](https://claude.com/docs/connectors/building/authentication)):
+заголовки запроса — бета, доступна не всем организациям; если раздела Request headers в диалоге нет, у организации
+пока нет доступа. Коннектор с заголовком добавляет Owner организации, и токен действует для всех её участников —
+в журнале все их действия будут от `claude@avail.invalid` с именем этого токена. Запросы к коннектору идут с серверов
+Anthropic, поэтому адрес должен быть доступен из интернета (он доступен).
+
+Без раздела Request headers — Claude Code:
+```bash
+claude mcp add --transport http avail-library https://sch.avail-int.com/api/mcp \
+  --header "Authorization: Bearer avail_ai_…"
+```
+
+Проверка из консоли:
+```bash
+curl -s https://sch.avail-int.com/api/mcp -H "Authorization: Bearer avail_ai_…" \
+  -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | head -c 300
+```
+
+### 3. Отозвать
+
+Users → строка пользователя → Tokens → **Manage** → **Revoke** у токена: следующий запрос получит 401 «Access token
+"…" was revoked on <дата>». Отключение пользователя (Disable) отзывает все его токены; смена роли с AI Assistant — тоже.
+Лимит — `AI_TOKEN_RATE_LIMIT` запросов в минуту на токен (по умолчанию 120), сверх — 429.
+
+Журнал (Audit log): создание черновиков и предложений — от `claude@avail.invalid (token “имя”)`; чтение не пишется.
+
 ## Бэкапы
 
 `backup.sh` делает консистентный снимок SQLite (online backup API, тот же механизм, что

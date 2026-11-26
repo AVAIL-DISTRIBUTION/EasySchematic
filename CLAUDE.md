@@ -319,6 +319,22 @@ AI Assistant и токены (шаг 2.5; `api-avail/src/accessTokens.ts`, `assi
   409 как у `POST /templates`), `POST /avail/lint` и `POST /avail/normalize` `{template}` — результат без сохранения (любой
   вошедший); предложения — `POST /submissions` upstream; `GET /avail/audit` и `GET /avail/workspace/templates` открыты для роли.
 
+Удалённый MCP-сервер (шаг 2.6; `api-avail/src/mcp.ts`): `POST /mcp` (на сервере `https://sch.avail-int.com/api/mcp`),
+Streamable HTTP без сессий — каждый POST — JSON-RPC (или пакет), ответ JSON; уведомления — 202; GET/DELETE — 405 (SSE нет);
+версии протокола 2025-06-18 / 2025-03-26 / 2024-11-05; `MCP-Protocol-Version` вне списка — 400; чужой `Origin` (не из
+`ALLOWED_ORIGINS`) — 403. Вход — только токен AI Assistant (без токена — 401 с `WWW-Authenticate`, сессия по cookie не
+подходит). Инструменты вызывают наши маршруты от пользователя токена (`server.ts` передаёт `call` → `serve`), поэтому права
+роли, проверка дублей (409 → `isError` с `duplicate_of` и ссылкой) и журнал — как в интерфейсе: `search_templates` (фильтры
+рабочего окна: vendor, category, device_type, status, level, ports_source = origin, lint_rule — часть сообщения линтера,
+text; offset/limit; hidden — только при status=hidden), `get_template` (карточка, порты по секциям, линтер, источник портов,
+ссылки на сайт, даташит и `/library?template=`, дубли, история из журнала), `lint_template`, `normalize_template` (без
+сохранения), `create_draft_template` (`POST /avail/templates/draft`), `propose_change` (`POST /submissions` update;
+комментарий обязателен), `review_queue`, `possible_duplicates`, `audit_log`. Строки рабочего окна кэшируются по ETag
+`GET /avail/workspace/templates`. Журнал: создающие вызовы — `created` (черновик) и `proposed` (предложение, entity template)
+от пользователя токена с его именем; чтение и сам `/mcp` не журналируются (запись `request` — только для остальных
+запросов по токену). Ссылки — от `API_PUBLIC_URL` без пути. Текст записей журнала — `src/avail/auditText.ts` (чистый,
+для API и редактора). Подключение в claude.ai и Claude Code — `deploy/avail/README.md`.
+
 Первого админа назначают в базе:
 `docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','<email>')"`
 (пользователь должен один раз войти).
@@ -496,6 +512,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/r2.ts` | шим R2 поверх файлов: `get/put/delete/list/head` с http/custom-метаданными; `DATA_DIR/r2/objects/*` + `DATA_DIR/r2/meta/*.json` |
 | `src/migrate.ts` | при старте применяет `api/migrations/*.sql`, затем наши `api-avail/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
 | `src/users.ts`, `src/audit.ts`, `src/requestAudit.ts` | пользователи и роли (`/avail/users`), журнал (`/avail/audit`), отключённые пользователи и журнал записей шаблонов вокруг каждого запроса |
+| `src/mcp.ts` | удалённый MCP-сервер библиотеки `/mcp` (инструменты поиска, карточки, линтера, черновиков, предложений, журнала) |
 | `src/accessTokens.ts`, `src/assistant.ts` | токены AI Assistant (выдача, проверка, частота, отзыв) и возможности роли (черновик, линтер, нормализатор) |
 | `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
