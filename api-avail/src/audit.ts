@@ -18,7 +18,7 @@ import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 export type AuditEntity = "user" | "template" | "run";
 export type AuditAction =
   | "role" | "access" | "created" | "updated" | "deleted" | "status" | "run" | "proposal" | "not-duplicate"
-  | "token" | "request";
+  | "token" | "request" | "proposed";
 
 export interface AuditEntry {
   actor: string;
