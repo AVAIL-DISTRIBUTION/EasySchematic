@@ -114,8 +114,8 @@ Extron (`powerNote`): пассивные сабвуферы → «passive», `HO
 «bus-powered (eBUS)». Оба — в `catalogRules.ts` (нормализатор и `fill:catalog-ports`); `normalize:library` применяет R4
 и к verified с портами сообщества — изменённый verified → draft с причиной (`SIGNAL_RULE_REASON`). Линтер: «HDBaseT/DTP/XTP
 must be hdbaset» не для Pass-Through / over в подписи и не для ir / serial. Стенсил: из мастеров с одним артикулом
-побеждает нарисованный для меньшего числа изделий (`indexStencils`). R6 — решения инженеров по портам (`docs/avail/port-decisions.json`, `applyPortDecisions`; модель → порт → поля),
-применяются раньше R2–R5. Слоты шасси из документа —
+побеждает нарисованный для меньшего числа изделий (`indexStencils`). R6 — переопределения (`docs/avail/overrides.json`: решения инженеров по портам и принятые предложения; `applyOverrideRule`),
+применяются раньше R2–R5 и ещё раз после них. Слоты шасси из документа —
 `_avail.slotsSource = "document: <URL>"`, цитата — `_avail.slotsNote` (Cable Cubby F55).
 
 ### Даташиты: список и обработка
@@ -307,6 +307,30 @@ Save to library), Approve, Hide. Данные — `GET /avail/workspace/template
 линтер предложенной версии; Accept → `/submissions/:id/approve` (правка записывается, уровень и статус — по обычным
 правилам), Reject с комментарием → `/:id/reject`. Решение пишется в журнал отдельной записью (action `proposal`:
 accepted / rejected, комментарий, автор; `requestAudit.ts` `readProposalDecision`), сама правка — как обычное updated.
+
+Переопределения (шаг 2.7; `src/avail/overrides.ts` — чистая логика, `api-avail/src/overrides.ts`, миграция 9011
+`avail_overrides`): принятое предложение правки не теряется при импорте.
+- Accept предложения update (вкладка Proposals или `POST /submissions/:id/approve` по API): `server.ts` читает шаблон до
+  upstream (`beginProposalOverrides`) и после (`endProposalOverrides`) и записывает каждое изменённое поле (`kind field`:
+  значение, `base` — что было) и порт (`kind port`, по подписи «как было» или id: `op set` — изменённые поля порта,
+  `add`, `remove`). Комментарий — `submitter_note` предложения (источник данных) + «Review note: …» библиотекаря,
+  `source` — «proposal <id> by <email>», `accepted_by`. Повторная правка того же поля/порта заменяет запись (поля порта
+  сливаются, исходный `base` сохраняется). Журнал — action `override` (added / removed).
+- Действуют записи базы без `removed_at` плюс записи `docs/avail/overrides.json`, которых база не знает (`overridesInForce`,
+  `mergeOverrides`). Шаблон — по id, производитель + modelNumber или label. Решения инженеров по портам (бывший
+  `port-decisions.json`) — записи файла с `source: "port decision"`.
+- `import:catalog` накладывает переопределения на карточку (уровень — с ними; хеш строки учитывает переопределения);
+  если файл каталога сменил переопределённое значение (не равно ни `base`, ни переопределению; без `base` — любое
+  отличие), значение остаётся, а в отчёте — «catalog changed a field overridden by proposal …: поле — catalog X, kept
+  Y». `fill:catalog-ports` (файл + таблица снимка `--db`) и `normalize:library` (R6 в `applyCatalogRules` до и после
+  R2–R5; у verified с R4 — тоже) их сохраняют.
+- `npm run export:overrides [-- --db <sqlite>] [-- --out <json>]` (`exportOverridesCli.ts`) → `docs/avail/overrides.json`
+  (на сервере `-- --out /data/overrides.json`, файл — в репозиторий PR-ом): действующие записи, отсортированные, без id.
+- `GET /avail/templates/:id/overrides` (librarian, admin, AI Assistant) → `{overrides: [{key, kind, text, source, comment,
+  acceptedBy, acceptedAt, fromFile}]}`; `POST /avail/templates/:id/overrides/remove` `{key: "db:<id>" | "file:<n>"}`
+  (librarian, admin): запись помечается `removed_at` (для записи файла — добавляется удалённая строка), значение шаблона
+  остаётся, следующий импорт может его заменить. В панели деталей рабочего окна — блок Overrides: что, источник,
+  комментарий, кто и когда, «Remove override».
 
 AI Assistant и токены (шаг 2.5; `api-avail/src/accessTokens.ts`, `assistant.ts`, миграция 9010):
 - Токен — `Authorization: Bearer avail_ai_…`, без Google. Выдаёт admin в Users (строка пользователя с ролью AI Assistant →
@@ -538,6 +562,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/reviewQueueCli.ts`, `src/reviewRules.ts` | отчёт очереди ревью `docs/avail/review-queue.md` (`npm run report:review-queue`), предлагаемые правила |
 | `src/duplicates.ts`, `src/duplicateGuard.ts`, `src/duplicatesCli.ts` | дубликаты: кандидаты из базы, `POST /avail/templates/merge`, 409 при сохранении дубля, отчёт `npm run report:duplicates` |
 | `src/notDuplicates.ts` | решения «не дубли» (миграция 9009): отметка и Undo, автоснятие при смене производителя / modelNumber |
+| `src/overrides.ts`, `src/exportOverridesCli.ts` | переопределения (миграция 9011): запись при Accept предложения, список и снятие, `npm run export:overrides` → `docs/avail/overrides.json` |
 | `src/approveCatalog.ts`, `src/approveCatalogCli.ts` | утверждение draft каталога уровня A по источнику портов (`npm run approve:catalog [-- --dry-run]`), миграция 9006 (`approved_via = bulk-source`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |

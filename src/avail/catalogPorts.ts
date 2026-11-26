@@ -23,6 +23,7 @@
  */
 import { lintBlock, type BlockLevel } from "./blockLint";
 import { applyCatalogRules } from "./catalogRules";
+import type { Override } from "./overrides";
 import { chassisSlotsFromDescription, comparePorts, indexStencils, normalizedPorts, stencilFor, stencilPortsFor, withExtronDcPower } from "./extronStencil";
 import type { StencilBlock } from "./extronVisio";
 import { normalizeManufacturer } from "./library";
@@ -277,7 +278,7 @@ const clone = <T>(v: T): T => JSON.parse(JSON.stringify(v)) as T;
  */
 export function fillCatalogPorts(
   files: readonly CatalogFile[],
-  sources: { library: readonly PortDonor[]; db: readonly PortDonor[]; stencils?: readonly StencilBlock[] },
+  sources: { library: readonly PortDonor[]; db: readonly PortDonor[]; stencils?: readonly StencilBlock[]; overrides?: readonly Override[] },
 ): FillReport {
   const library = new DonorIndex(sources.library);
   const db = new DonorIndex(sources.db);
@@ -409,7 +410,8 @@ export function fillCatalogPorts(
   for (const [f, t] of result) result.set(f, dcPower(t));
   // R2 voltage from the power input's notes, R3 long port labels (v0.10): on every card, so
   // ports copied again from the database keep them.
-  for (const [f, t] of result) result.set(f, applyCatalogRules(t).block);
+  // R6 — overrides (accepted proposals, port decisions; default docs/avail/overrides.json) — before and after them.
+  for (const [f, t] of result) result.set(f, applyCatalogRules(t, sources.overrides).block);
 
   // Extron chassis without slots: the slots of their variants (same model without region, AC
   // or colour) when all of them agree, else the count from the description, else the reason.

@@ -10,19 +10,19 @@ import { describe, expect, it } from "vitest";
 import { lintBlock } from "../avail/blockLint";
 import {
   applyCatalogRules,
-  applyPortDecisions,
+  applyOverrideRule,
   applySignalRule,
-  decisionsFor,
   EBUS_NOTE,
+  FILE_OVERRIDES,
   HOST_NOTE,
   PASSIVE_NOTE,
-  PORT_DECISIONS,
   powerNote,
   shortenLabel,
   signalFromLabel,
   voltageFromPowerNotes,
 } from "../avail/catalogRules";
 import { normalizeBlock } from "../avail/normalize";
+import { overridesFor } from "../avail/overrides";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const dtp3 = () => JSON.parse(readFileSync(path.join(here, "../../library/avail/extron-dtp3-t-203.json"), "utf8")) as Record<string, unknown> & { ports: Record<string, unknown>[] };
@@ -223,7 +223,7 @@ describe("linter v0.11: HDBaseT/DTP/XTP must be hdbaset", () => {
   });
 });
 
-describe("R6: port decisions (docs/avail/port-decisions.json)", () => {
+describe("R6: port decisions as overrides (docs/avail/overrides.json)", () => {
   const ucs = (label: string, modelNumber: string, ports: Record<string, unknown>[]) => extron(ports, { label, modelNumber, deviceType: "switcher" });
 
   it("UCS 303 / UCS SW 313: USB-C with DP Alt → Video Inputs, notes; the port moves into its section", () => {
@@ -235,7 +235,8 @@ describe("R6: port decisions (docs/avail/port-decisions.json)", () => {
       ]);
       expect(lintBlock(b).warnings.some((w) => w.startsWith('"USB-C In (DP Alt, 60W PD)": no section'))).toBe(true);
       const { block, changes } = applyCatalogRules(b);
-      expect(changes.filter((c) => c.rule === "R6").map((c) => c.field)).toEqual(["ports[c].section", "ports[c].notes"]);
+      const at = 'ports["USB-C In (DP Alt, 60W PD)"]';
+      expect(changes.filter((c) => c.rule === "R6").map((c) => c.field)).toEqual([`${at}.section`, `${at}.notes`]);
       expect(block.ports.map((p) => p.id)).toEqual(["h", "c", "pw"]);
       expect(block.ports[1]).toMatchObject({ section: "Video Inputs", signalType: "usb", connectorType: "usb-c", notes: "DP Alt Mode video + USB data" });
       expect(lintBlock(block).level).toBe("A");
@@ -262,18 +263,18 @@ describe("R6: port decisions (docs/avail/port-decisions.json)", () => {
     const { block, changes } = applyCatalogRules(b);
     expect(block.ports.map((p) => p.id)).toEqual(["s", "pw"]);
     expect(block.ports[0]).toMatchObject({ label: "Power Sense", direction: "input", signalType: "sensor", section: "Control", notes: "current sensor input" });
-    expect(changes.filter((c) => c.rule === "R6").map((c) => c.field)).toEqual([
-      "ports[s].label", "ports[s].direction", "ports[s].signalType", "ports[s].section", "ports[s].notes",
-    ]);
-    expect(applyPortDecisions(block).changes).toEqual([]);
+    expect(changes.filter((c) => c.rule === "R6").map((c) => c.field)).toEqual(
+      ["label", "direction", "signalType", "section", "notes"].map((k) => `ports["PWR SNS"].${k}`),
+    );
+    expect(applyOverrideRule(block).changes).toEqual([]);
     expect(lintBlock(block).warnings.filter((w) => w.includes("Power Sense"))).toEqual([]);
   });
 
   it("only the named model (label or part number) and port", () => {
     const other = ucs("Extron UCS 302", "60-1797-09", [port("c", "USB-C In (DP Alt, 60W PD)", "usb", "input", "", { connectorType: "usb-c" })]);
-    expect(applyPortDecisions(other).changes).toEqual([]);
-    expect(decisionsFor({ manufacturer: "Extron", label: "Extron UCS 303 (renamed)", modelNumber: "60-1797-01" })).toHaveLength(1);
-    expect(decisionsFor({ manufacturer: "Biamp", label: "Extron UCS 303" })).toEqual([]);
-    for (const d of PORT_DECISIONS) expect(d.models.length).toBeGreaterThan(0);
+    expect(applyOverrideRule(other).changes).toEqual([]);
+    expect(overridesFor({ manufacturer: "Extron", label: "Extron UCS 303 (renamed)", modelNumber: "60-1797-01" }, FILE_OVERRIDES)).toHaveLength(1);
+    expect(overridesFor({ manufacturer: "Biamp", label: "Extron UCS 303" }, FILE_OVERRIDES)).toEqual([]);
+    for (const o of FILE_OVERRIDES.filter((x) => x.source === "port decision")) expect(o).toMatchObject({ kind: "port", op: "set", acceptedBy: "AVAIL engineers" });
   });
 });

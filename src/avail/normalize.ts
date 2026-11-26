@@ -33,6 +33,7 @@ import { BIDIRECTIONAL_SIGNALS, CONFIGURABLE_NOTE, directionFromLabel, SIGNAL_CO
 
 export { BIDIRECTIONAL_SIGNALS, sectionByPurpose } from "./sections";
 import { applyCatalogRules, type RuleChange } from "./catalogRules";
+import type { Override } from "./overrides";
 import { defaultCategoryFor, findCategory, findVendor, normalizeManufacturer } from "./library";
 
 export interface NormalizeChange {
@@ -158,7 +159,7 @@ export function standardCaseLabel(label: string): string | null {
  * Normalizes one block. Works on library templates (DeviceTemplate) and on the data of
  * device nodes; unknown fields are carried over untouched.
  */
-export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
+export function normalizeBlock<T extends object>(input: T, options: { overrides?: readonly Override[] } = {}): NormalizeResult<T> {
   const t = structuredClone(input) as unknown as Obj;
   const changes: NormalizeChange[] = [];
 
@@ -361,7 +362,7 @@ export function normalizeBlock<T extends object>(input: T): NormalizeResult<T> {
   }
 
   // --- R2 voltage from the power input's notes, R3 long port labels (v0.10, catalogRules.ts)
-  const ruled = applyCatalogRules(t);
+  const ruled = applyCatalogRules(t, options.overrides);
   for (const c of ruled.changes) {
     changes.push({
       field: c.field,
@@ -378,7 +379,7 @@ const RULE_NOTES: Record<RuleChange["rule"], string> = {
   R3: "label over 28 characters: In / Out, qualifier to notes (R3)",
   R4: "signal type from the label: Relay → contact-closure, eBUS → ebus (R4)",
   R5: "power note by device group: passive acoustics, powered by host (R5)",
-  R6: "port decision of AVAIL engineers, docs/avail/port-decisions.json (R6)",
+  R6: "override: accepted proposal or port decision, docs/avail/overrides.json (R6)",
 };
 
 /** Changes that were applied (not the "manual" notes). */

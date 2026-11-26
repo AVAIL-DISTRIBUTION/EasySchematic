@@ -18,11 +18,21 @@ import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { findVendor, VENDORS } from "../../src/avail/library";
 import { normalizeBlock } from "../../src/avail/normalize";
 import { applySignalRule } from "../../src/avail/catalogRules";
+import { applyOverrides } from "../../src/avail/overrides";
+import { overridesInForce } from "./overrides";
 import { catalogIndex, parseCatalogMeta, portsOrigin } from "../../src/avail/portsOrigin";
 import { slotLibraryContext, slotLibraryWarnings } from "../../src/avail/slotFamilies";
 import { BUMP_LIBRARY_VERSION, type TemplateStatus } from "./templateMeta";
 
 const RANK: Record<BlockLevel, number> = { FIX: 0, B: 1, A: 2 };
+
+/** The value at a rule change's path ('ports[<id or label>].signalType'). */
+function valueAt(block: Record<string, unknown>, field: string): unknown {
+  const m = /^ports\[(.*)\]\.(\w+)$/.exec(field);
+  if (!m) return block[field];
+  const ports = Array.isArray(block.ports) ? (block.ports as Record<string, unknown>[]) : [];
+  return ports.find((p) => p?.id === m[1] || p?.label === m[1])?.[m[2]];
+}
 const NORMALIZED_STATUSES: TemplateStatus[] = ["raw", "draft"];
 
 export interface VendorStats {
@@ -99,6 +109,8 @@ export function normalizeLibrary(
     levelsAfter: { A: 0, B: 0, FIX: 0 },
     verifiedToDraft: [],
   };
+  // Overrides (accepted proposals, port decisions): the normalizer applies them last (R6).
+  const overrides = overridesInForce(sqlite);
   const reasons = new Map<string, number>();
   const manual = new Map<string, number>();
   const unresolved = new Map<string, number>();
@@ -145,7 +157,7 @@ export function normalizeLibrary(
 
       const template = rowToTemplate(row);
       const before = lintBlock(template, ctx);
-      const { template: normalized, changes } = normalizeBlock(template);
+      const { template: normalized, changes } = normalizeBlock(template, { overrides });
       const after = lintBlock(normalized, ctx);
       const key = `${before.level}→${after.level}`;
       report.transitions[key] = (report.transitions[key] ?? 0) + 1;
@@ -163,7 +175,7 @@ export function normalizeLibrary(
       // Decided changes — slot families (which cards fit), categories (category plan, BoQ
       // defaults: one error may replace another), notes — are written whenever they do not make
       // the template worse.
-      // Port decisions of engineers (R6, port-decisions.json) are decided too.
+      // Overrides (R6: accepted proposals, port decisions of engineers) are decided too.
       const slotChange = changes.some((c) => !c.manual && (/^(slots\[|slotFamily|category$|ports\[.*\]\.notes$)/.test(c.field) || c.note.endsWith("(R6)")));
       const improves =
         RANK[after.level] > RANK[before.level] ||
@@ -208,7 +220,11 @@ export function normalizeLibrary(
     for (const row of verified) {
       if (!findVendor(row.manufacturer)) continue;
       if (portsOrigin({ source: row.avail_source, catalog: parseCatalogMeta(row.avail_catalog) }, byFile).origin !== "community") continue;
-      const { block, changes } = applySignalRule(rowToTemplate(row) as unknown as Record<string, unknown>);
+      const signal = applySignalRule(rowToTemplate(row) as unknown as Record<string, unknown>);
+      if (!signal.changes.length) continue;
+      // The rule must not undo an override: what is left after them.
+      const block = applyOverrides(signal.block, overrides).block;
+      const changes = signal.changes.filter((c) => JSON.stringify(c.to) === JSON.stringify(valueAt(block, c.field)));
       if (!changes.length) continue;
       const level = lintBlock(block, ctx).level;
       report.verifiedToDraft.push({ id: row.id, label: row.label, level, changes: changes.length });

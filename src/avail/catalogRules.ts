@@ -13,16 +13,17 @@
  *        the linter already) → "passive" in the notes of the first input; Extron devices powered by
  *        their host (HOST_POWERED) → "powered by host" (on an eBUS port "bus-powered (eBUS)") in the notes
  *        of the port that powers them;
- *   R6 — port decisions of AVAIL engineers (docs/avail/port-decisions.json): the named port of the
- *        named model gets the decided fields.
+ *   R6 — overrides (docs/avail/overrides.json, src/avail/overrides.ts): accepted proposals and the port
+ *        decisions of AVAIL engineers; applied before R2–R5 (the rules see the decided ports) and again
+ *        after them (a rule never undoes a decision).
  *
  * (R1 — a slots-only chassis without a power input needs no power figures — is a linter rule,
  * blockLint.ts.) Used by the normalizer (Edit → Normalize, normalize:library) and by
  * fill:catalog-ports, so catalog cards keep them whatever source their ports come from.
  * Pure, no Node or browser dependencies.
  */
-import portDecisionsJson from "../../docs/avail/port-decisions.json";
-import { BLOCK_SECTIONS, sectionBase } from "./sections";
+import overridesJson from "../../docs/avail/overrides.json";
+import { applyOverrides, inSectionOrder, type Override, type OverridesFile } from "./overrides";
 
 type Obj = Record<string, unknown>;
 type Port = Obj & { label?: unknown; signalType?: unknown; direction?: unknown; notes?: unknown };
@@ -147,52 +148,13 @@ export function powerNote(block: Obj): { index: number; note: string } | null {
   return { index: 0, note: PASSIVE_NOTE };
 }
 
-export interface PortDecision {
-  manufacturer: string;
-  models: string[];
-  partNumbers?: string[];
-  port: string;
-  set: Record<string, string>;
-  decision: string;
-}
-export const PORT_DECISIONS: readonly PortDecision[] = (portDecisionsJson as unknown as { decisions: PortDecision[] }).decisions;
+/** The overrides of the repository (docs/avail/overrides.json): what fill:catalog-ports and the editor apply. */
+export const FILE_OVERRIDES: readonly Override[] = (overridesJson as unknown as OverridesFile).overrides;
 
-const lowerTrim = (v: unknown) => str(v).trim().toLowerCase();
-
-/** R6: the decisions for this template (by label "<manufacturer> <model>" or part number). */
-export function decisionsFor(block: Obj, decisions: readonly PortDecision[] = PORT_DECISIONS): PortDecision[] {
-  const label = lowerTrim(block.label);
-  const pn = lowerTrim(block.modelNumber);
-  return decisions.filter(
-    (d) =>
-      lowerTrim(block.manufacturer) === d.manufacturer.toLowerCase() &&
-      (d.models.some((m) => label === `${d.manufacturer} ${m}`.toLowerCase()) || (!!pn && (d.partNumbers ?? []).some((x) => x.toLowerCase() === pn))),
-  );
-}
-
-/** R6 on a copy of the block: the decided fields on the named ports (matched by the old or the new label). */
-export function applyPortDecisions<T extends Obj>(block: T, decisions: readonly PortDecision[] = PORT_DECISIONS): { block: T; changes: RuleChange[] } {
-  const changes: RuleChange[] = [];
-  const mine = decisionsFor(block, decisions);
-  if (!mine.length || !Array.isArray(block.ports)) return { block, changes };
-  let touched = false;
-  const ports = (block.ports as Port[]).map((p) => {
-    const l = lowerTrim(p?.label);
-    const d = mine.find((x) => l === x.port.toLowerCase() || (x.set.label && l === x.set.label.toLowerCase()));
-    if (!d) return p;
-    const next: Port = { ...p };
-    for (const [k, v] of Object.entries(d.set)) {
-      if (next[k] === v) continue;
-      changes.push({ rule: "R6", field: `ports[${str(p.id) || str(p.label)}].${k}`, from: next[k] ?? null, to: v });
-      next[k] = v;
-    }
-    if (next === p || JSON.stringify(next) === JSON.stringify(p)) return p;
-    touched = true;
-    return next;
-  });
-  if (!touched) return { block, changes };
-  const moved = changes.some((c) => c.field.endsWith(".section"));
-  return { block: { ...block, ports: moved ? inSectionOrder(ports) : ports } as T, changes };
+/** R6 on a copy of the block: its overrides (default: the repository's). */
+export function applyOverrideRule<T extends Obj>(block: T, overrides: readonly Override[] = FILE_OVERRIDES): { block: T; changes: RuleChange[] } {
+  const r = applyOverrides(block, overrides);
+  return { block: r.block, changes: r.changes.map((c) => ({ rule: "R6" as const, field: c.field, from: c.from, to: c.to })) };
 }
 
 export interface RuleChange {
@@ -222,21 +184,11 @@ export function applySignalRule<T extends Obj>(block: T): { block: T; changes: R
 }
 
 /**
- * Ports with a vocabulary section put in the standard's section order (stable); the others (slot
- * ports, unknown sections) keep their places — what the linter's order check reads.
+ * Applies R6, R2–R5 and R6 again to a copy of the block; returns it with the changes (same object
+ * when none). `overrides` — R6's list (default docs/avail/overrides.json; the database's for CLIs).
  */
-function inSectionOrder(ports: Port[]): Port[] {
-  const rank = (p: Port) => (BLOCK_SECTIONS as readonly string[]).indexOf(sectionBase(str(p?.section)));
-  const at = ports.map((p, i) => (rank(p) >= 0 && !str(p?.section).startsWith("Slot") ? i : -1)).filter((i) => i >= 0);
-  const sorted = at.map((i) => ports[i]).map((p, k) => ({ p, k })).sort((a, b) => rank(a.p) - rank(b.p) || a.k - b.k).map((x) => x.p);
-  const out = [...ports];
-  at.forEach((i, k) => (out[i] = sorted[k]));
-  return out;
-}
-
-/** Applies R6, R2–R5 to a copy of the block; returns it with the changes (same object when none). */
-export function applyCatalogRules<T extends Obj>(block: T): { block: T; changes: RuleChange[] } {
-  const r6 = applyPortDecisions(block);
+export function applyCatalogRules<T extends Obj>(block: T, overrides: readonly Override[] = FILE_OVERRIDES): { block: T; changes: RuleChange[] } {
+  const r6 = applyOverrideRule(block, overrides);
   const changes: RuleChange[] = [...r6.changes];
   let out: Obj = r6.block;
   const v = voltageFromPowerNotes(out);
@@ -268,5 +220,9 @@ export function applyCatalogRules<T extends Obj>(block: T): { block: T; changes:
     ports[pn.index] = { ...p, notes: next };
     out = { ...out, ports };
   }
+  // A rule must not undo a decision: R6 again (no changes unless a rule touched an overridden value).
+  const again = applyOverrideRule(out, overrides);
+  out = again.block;
+  changes.push(...again.changes);
   return { block: out as T, changes };
 }

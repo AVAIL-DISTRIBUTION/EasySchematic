@@ -16,6 +16,7 @@
     "apply:vendor-responses": "node --enable-source-maps dist/apply-vendor-responses.mjs",
     "import:catalog": "node --enable-source-maps dist/import-catalog.mjs",
     "approve:catalog": "node --enable-source-maps dist/approve-catalog.mjs",
-    "report:duplicates": "node --enable-source-maps dist/report-duplicates.mjs"
+    "report:duplicates": "node --enable-source-maps dist/report-duplicates.mjs",
+    "export:overrides": "node --enable-source-maps dist/export-overrides.mjs"
   }
 }

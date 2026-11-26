@@ -14,7 +14,7 @@ const common = {
   logLevel: "info",
 };
 
-// The API server and the CLIs run in the image: import:upstream, normalize:library, import:avail, apply:vendor-decisions, apply:generic-plan, export:worklist, apply:worklist, export:vendor-requests, apply:vendor-responses, import:catalog, approve:catalog, report:duplicates.
+// The API server and the CLIs run in the image: import:upstream, normalize:library, import:avail, apply:vendor-decisions, apply:generic-plan, export:worklist, apply:worklist, export:vendor-requests, apply:vendor-responses, import:catalog, approve:catalog, report:duplicates, export:overrides.
 await build({ ...common, entryPoints: ["src/main.ts"], outfile: "dist/server.mjs" });
 await build({ ...common, entryPoints: ["src/importCli.ts"], outfile: "dist/import-upstream.mjs" });
 await build({ ...common, entryPoints: ["src/normalizeCli.ts"], outfile: "dist/normalize-library.mjs" });
@@ -28,3 +28,4 @@ await build({ ...common, entryPoints: ["src/vendorResponsesCli.ts"], outfile: "d
 await build({ ...common, entryPoints: ["src/importCatalogCli.ts"], outfile: "dist/import-catalog.mjs" });
 await build({ ...common, entryPoints: ["src/approveCatalogCli.ts"], outfile: "dist/approve-catalog.mjs" });
 await build({ ...common, entryPoints: ["src/duplicatesCli.ts"], outfile: "dist/report-duplicates.mjs" });
+await build({ ...common, entryPoints: ["src/exportOverridesCli.ts"], outfile: "dist/export-overrides.mjs" });
