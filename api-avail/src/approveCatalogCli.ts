@@ -20,6 +20,8 @@ import { approveCatalog, formatApproveCatalogReport } from "./approveCatalog";
 import { D1DatabaseShim } from "./d1";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { syncLintLevels } from "./templateMeta";
+import { cliArgs, writeRunAudit } from "./audit";
+import { approveRunCounts } from "./runCounts";
 
 const USAGE = "usage: npm run approve:catalog [-- --dry-run] [-- --verbose]";
 
@@ -39,6 +41,7 @@ try {
   syncLintLevels(db.sqlite);
   const report = approveCatalog(db.sqlite, { dryRun: values["dry-run"] });
   process.stdout.write(formatApproveCatalogReport(report, values.verbose));
+  if (!report.dryRun) writeRunAudit(db.sqlite, { command: "approve:catalog", args: cliArgs(), counts: approveRunCounts(report) });
 } catch (err) {
   console.error(`approve:catalog failed: ${err instanceof Error ? err.message : String(err)}`);
   process.exitCode = 1;

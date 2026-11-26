@@ -11,7 +11,8 @@
  * the document ("ports from stencil (…vssx)"). verified, hidden, raw and the curated library
  * (library/avail, meta source "avail-library") are never touched.
  *
- * One transaction; a second run finds nothing to approve.
+ * One transaction; a second run finds nothing to approve. The CLI writes one summary entry to
+ * the audit log per run (not one per template).
  */
 import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";

@@ -188,19 +188,22 @@ docker compose exec api npm run normalize:library
 
 ## Роли: модераторы и админы
 
-Утверждать шаблоны (карточка ревью в библиотеке) могут модераторы и админы. Роль хранится
-в `users.role` (`contributor` / `moderator` / `admin`); пользователь появляется в базе после
-первого входа.
+Роли: **Engineer** (по умолчанию для нового пользователя), **Librarian** (правка, утверждение, скрытие
+шаблонов, журнал изменений), **Admin** (плюс пользователи и роли). В базе это `users.role` upstream —
+`contributor` / `moderator` / `admin`; пользователь появляется в базе после первого входа.
 
 Первый админ — прямо в базе:
 ```bash
 docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','boss@avail-int.com')"
 ```
-Дальше админ назначает роли через API upstream (нужна его сессия — cookie `session` из браузера):
+Дальше роли и доступ — в редакторе: меню аккаунта → **Users** (только админ): смена роли, Disable / Enable.
+Последнего активного админа понизить или отключить нельзя. Отключённый пользователь сразу выходит из системы
+и не может войти снова. Все смены ролей и доступа, правки и статусы шаблонов — в **Audit log** (librarian и admin).
+Из консоли (Bearer — `ADMIN_TOKEN`):
 ```bash
-curl -s https://sch.avail-int.com/api/users -H 'Cookie: session=<…>'                  # id пользователей
-curl -s -X PUT https://sch.avail-int.com/api/users/<id>/role -H 'Cookie: session=<…>' \
-     -H 'Content-Type: application/json' -d '{"role":"moderator"}'
+curl -s https://sch.avail-int.com/api/avail/users -H "Authorization: Bearer $ADMIN_TOKEN"
+curl -s -X PUT https://sch.avail-int.com/api/avail/users/<id>/role -H "Authorization: Bearer $ADMIN_TOKEN" \
+     -H 'Content-Type: application/json' -d '{"role":"librarian"}'
 ```
 Роль действует сразу; в открытом редакторе — после перезагрузки страницы.
 

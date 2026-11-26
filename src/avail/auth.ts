@@ -22,6 +22,7 @@ export const AUTH_ERROR_MESSAGES: Record<string, string> = {
   oauth_denied: "Google sign-in was cancelled.",
   oauth_failed: "Google did not confirm the sign-in. Please try again.",
   expired: "The sign-in took too long. Please try again.",
+  account_disabled: "Your access has been disabled by an administrator.",
 };
 
 export interface AuthError {

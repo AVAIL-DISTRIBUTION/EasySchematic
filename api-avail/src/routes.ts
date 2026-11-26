@@ -92,7 +92,7 @@ export function registerAvailRoutes(app: UpstreamApp): void {
     }
 
     const by = auth === "token" ? "admin-token" : auth.email;
-    const result = await setTemplateStatus(c.env.easyschematic_db, c.req.param("id"), status, by);
+    const result = await setTemplateStatus(c.env.easyschematic_db, c.req.param("id"), status, by, "review", auth === "token" ? null : auth.id);
     if (result.ok) return c.json(result.meta);
     if (result.reason === "not_found") return c.json({ error: "Template not found" }, 404);
     return c.json(
@@ -127,7 +127,7 @@ export function registerAvailRoutes(app: UpstreamApp): void {
     const updated: string[] = [];
     const failed: { id: string; label: string | null; reason: "not_found" | "not_level_a"; level?: string; errors?: string[]; warnings?: string[] }[] = [];
     for (const id of [...new Set(ids as string[])]) {
-      const result = await setTemplateStatus(db, id, status, by, "bulk");
+      const result = await setTemplateStatus(db, id, status, by, "bulk", auth === "token" ? null : auth.id);
       if (result.ok) {
         updated.push(id);
         continue;

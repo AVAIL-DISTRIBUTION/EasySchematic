@@ -20,6 +20,8 @@ import { libraryIds } from "./libraryDir";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { relintAll, syncLintLevels } from "./templateMeta";
 import { applyVendorDecisions, formatVendorCleanupReport } from "./vendorCleanup";
+import { cliArgs, writeRunAudit } from "./audit";
+import { vendorCleanupRunCounts } from "./runCounts";
 
 const USAGE = "usage: npm run apply:vendor-decisions [-- --dry-run]";
 
@@ -39,6 +41,7 @@ try {
   const ids = libraryIds();
   const report = applyVendorDecisions(db.sqlite, { dryRun, libraryIds: ids });
   if (!dryRun) {
+    writeRunAudit(db.sqlite, { command: "apply:vendor-decisions", args: cliArgs(), counts: vendorCleanupRunCounts(report) });
     syncLintLevels(db.sqlite);
     relintAll(db.sqlite);
   }

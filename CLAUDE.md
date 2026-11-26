@@ -167,8 +167,34 @@ Editor upstream на временной копии шаблона из базы 
 — живой линтер и Save to library (`PUT /templates/:id`); после сохранения уровень и статус
 пересчитываются, копия со схемы убирается.
 
-Роли — механизм upstream: `users.role` (`contributor` / `moderator` / `admin`),
-`PUT /users/:id/role` (только сессия админа). Первого админа назначают в базе:
+Роли (шаг 2.1) — поверх `users.role` upstream, в базе значения upstream, поэтому все проверки upstream работают как
+есть; названия и маппинг — `src/avail/roles.ts`:
+
+| Роль | users.role | Права |
+|------|-----------|-------|
+| Engineer | contributor (по умолчанию для нового пользователя) | схемы, библиотека verified + draft, свои шаблоны, предложение правки блока (submissions upstream) |
+| Librarian | moderator | + правка, утверждение, скрытие шаблонов, массовые операции, журнал изменений |
+| Admin | admin | + пользователи и роли |
+
+Пользователи — `api-avail/src/users.ts`: `GET /avail/users`, `PUT /avail/users/:id/role` `{role: engineer|librarian|admin}`,
+`PUT /avail/users/:id/active` `{active}` (admin или `ADMIN_TOKEN`). Последнего активного админа нельзя понизить или
+отключить (409). Отключение = `users.banned`: сессии удаляются, запрос с кукой отключённого выполняется анонимно,
+вход через Google заканчивается `?error=account_disabled` (`api-avail/src/requestAudit.ts`). `PUT /users/:id/role` и
+`/users/:id/ban` upstream перенаправляются на наши маршруты — защита и журнал не обходятся. В редакторе: меню
+аккаунта — роль, Users (admin), Audit log (librarian, admin); `src/avail/AdminUi.tsx`, `adminApi.ts`.
+
+Журнал изменений — таблица `avail_audit_log` (миграция 9007; `api-avail/src/audit.ts`): кто (email, `admin-token`,
+`system`, `cli:<команда>`), когда, что (user / template + id и название), действие (role, access, created, updated,
+deleted, status), было → стало (JSON, у updated — только изменённые поля). Пишут: смена роли и доступа; смена статуса
+(Review, Approve, автоматическое понижение verified); любая запись шаблона через маршруты upstream
+(`server.ts` снимает шаблоны до и после запроса; приписываются шаблоны из пути запроса и новые). Запуски CLI, пишущие в базу
+(`import:*`, `apply:*`, `normalize:library`, `approve:catalog`) — одна сводная запись на запуск (entity `run`, actor
+`system`): команда и аргументы, коммит образа (`AVAIL_COMMIT` из build-arg `SOURCE_COMMIT`, локально — git), итоговые
+счётчики (created / updated / hidden / approved / deleted и свои; `api-avail/src/runCounts.ts`); `--dry-run` не пишется,
+по шаблонам CLI записей не пишет. `GET /avail/audit [?entity=user|template|run&entityId=&actor=&before=&limit=]` —
+librarian и admin.
+
+Первого админа назначают в базе:
 `docker compose exec api node -e "require('better-sqlite3')('/data/easyschematic.sqlite').prepare('UPDATE users SET role=? WHERE email=?').run('admin','<email>')"`
 (пользователь должен один раз войти).
 
@@ -344,6 +370,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/d1.ts` | шим D1 поверх better-sqlite3: `prepare/bind/first/all/run/raw`, `batch` (одна транзакция), `exec`; файл `DATA_DIR/easyschematic.sqlite`, WAL, foreign keys ON (как в D1) |
 | `src/r2.ts` | шим R2 поверх файлов: `get/put/delete/list/head` с http/custom-метаданными; `DATA_DIR/r2/objects/*` + `DATA_DIR/r2/meta/*.json` |
 | `src/migrate.ts` | при старте применяет `api/migrations/*.sql`, затем наши `api-avail/migrations/*.sql` по порядку; учёт в таблице `d1_migrations` (как у wrangler, поэтому подходит дамп из D1) |
+| `src/users.ts`, `src/audit.ts`, `src/requestAudit.ts` | пользователи и роли (`/avail/users`), журнал (`/avail/audit`), отключённые пользователи и журнал записей шаблонов вокруг каждого запроса |
 | `src/routes.ts`, `src/templateMeta.ts` | статусы шаблонов (`/avail/templates/…/status`), библиотека с фильтром по статусу (`/avail/library/…`), `syncLintLevels` |
 | `src/importUpstream.ts`, `src/importCli.ts` | импорт сырья из публичной библиотеки (`npm run import:upstream`) |
 | `src/importAvail.ts`, `src/importAvailCli.ts` | загрузка курируемой библиотеки `library/avail` (`npm run import:avail`); в образе — `/app/library`, `AVAIL_LIBRARY_DIR` |
@@ -379,6 +406,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/components/ReportsDialog.tsx` | `AvailUnverifiedNotice` — предупреждение о блоках из непроверенных шаблонов |
 | `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
 | `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |
+| `src/components/UserMenuButton.tsx` | `AvailAccountMenuItems` (роль, Users, Audit log) и `AvailAdminDialogs` |
 | `vite.config.ts` `navigateFallbackDenylist` | service worker не отдаёт SPA на навигации в `/api/` (иначе OAuth start/callback попадают в `index.html`) |
 | `vite.config.ts` `availBrandingPlugin`, `AVAIL_MANIFEST`, `SOURCE_COMMIT` | `VITE_AVAIL=1` → `index.html` и PWA-манифест AVAIL Schematic (`vite.avail.ts`); хеш сборки из `SOURCE_COMMIT` (в Docker нет `.git`) |
 | `src/main.tsx` | `VITE_AVAIL=1` → `AuthGate` вместо лендинга |

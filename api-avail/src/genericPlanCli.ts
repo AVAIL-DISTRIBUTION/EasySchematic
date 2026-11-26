@@ -19,6 +19,8 @@ import { applyGenericPlan, formatGenericPlanReport } from "./genericPlan";
 import { libraryIds } from "./libraryDir";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { relintAll, syncLintLevels } from "./templateMeta";
+import { cliArgs, writeRunAudit } from "./audit";
+import { genericPlanRunCounts } from "./runCounts";
 
 const USAGE = "usage: npm run apply:generic-plan [-- --dry-run]";
 
@@ -37,6 +39,7 @@ try {
   applyAllMigrations(db.sqlite, config, (m) => console.log(m));
   const report = applyGenericPlan(db.sqlite, { dryRun, libraryIds: libraryIds() });
   if (!dryRun) {
+    writeRunAudit(db.sqlite, { command: "apply:generic-plan", args: cliArgs(), counts: genericPlanRunCounts(report) });
     syncLintLevels(db.sqlite);
     relintAll(db.sqlite);
   }

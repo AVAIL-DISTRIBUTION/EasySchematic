@@ -23,6 +23,8 @@ import { formatImportCatalogReport, importCatalog, parseMinLevel } from "./impor
 import { libraryDir } from "./libraryDir";
 import { applyAllMigrations, configFromEnv } from "./server";
 import { relintAll, syncLintLevels } from "./templateMeta";
+import { cliArgs, writeRunAudit } from "./audit";
+import { catalogRunCounts } from "./runCounts";
 
 const USAGE = "usage: npm run import:catalog [-- --dry-run] [-- --verbose] [-- --min-level A|B] [-- --dir <library/catalog>]";
 
@@ -59,6 +61,7 @@ try {
   const report = importCatalog(db.sqlite, files, { dryRun: values["dry-run"], curated, minLevel });
   process.stdout.write(formatImportCatalogReport(report, dir, values.verbose));
   if (!report.dryRun) {
+    writeRunAudit(db.sqlite, { command: "import:catalog", args: cliArgs(), counts: catalogRunCounts(report) });
     syncLintLevels(db.sqlite);
     relintAll(db.sqlite);
   }
