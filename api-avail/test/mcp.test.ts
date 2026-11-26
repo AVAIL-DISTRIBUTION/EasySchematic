@@ -175,8 +175,21 @@ describe("reading tools", () => {
     const p = await tool<{ total: number; offset: number; items: Record<string, unknown>[] }>("search_templates", { limit: 2, offset: 1 });
     expect([p.data.total, p.data.offset, p.data.items.length]).toEqual([5, 1, 2]);
     const e1 = (await tool<{ items: Record<string, unknown>[] }>("search_templates", { text: "60-1" })).data.items[0];
-    expect(e1).toEqual({ id: "e1", label: "Extron DTP3 T 203", part: "60-1", category: "AV distribution / Extenders", type: "hdbaset-extender", status: "verified", level: "A", ports: "manufacturer" });
+    expect(e1).toEqual({ id: "e1", label: "Extron DTP3 T 203", part: "60-1", category: "AV distribution / Extenders", type: "hdbaset-extender", status: "verified", level: "A", ports: "manufacturer", lifecycle: "active" });
     await expect(tool("search_templates", { level: "Z" })).rejects.toThrow(/-32602 level must be one of A, B, FIX/);
+  });
+
+  it("lifecycle: search_templates filter, in the items and in get_template", async () => {
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET lifecycle = 'upcoming', available_from = '2027-Q3' WHERE template_id = 'e2'").run();
+    api.db.sqlite.prepare("UPDATE avail_template_meta SET lifecycle = 'eol' WHERE template_id = 'b1'").run();
+    resetMcpCache();
+    const search = async (a: Record<string, unknown>) => (await tool<{ items: Record<string, unknown>[] }>("search_templates", a)).data.items;
+    expect(await search({ lifecycle: "upcoming" })).toEqual([expect.objectContaining({ id: "e2", lifecycle: "upcoming", available_from: "2027-Q3" })]);
+    expect((await search({ lifecycle: "eol" })).map((i) => i.id)).toEqual(["b1"]);
+    expect((await search({ lifecycle: "active" })).map((i) => i.id).sort()).toEqual(["e1", "e3", "e4"]);
+    await expect(tool("search_templates", { lifecycle: "retired" })).rejects.toThrow(/-32602 lifecycle must be one of upcoming, active, eol/);
+    expect((await tool<Record<string, unknown>>("get_template", { id: "e2" })).data.lifecycle).toEqual({ state: "upcoming", available_from: "2027-Q3" });
+    expect((await tool<Record<string, unknown>>("get_template", { id: "e1" })).data.lifecycle).toEqual({ state: "active" });
   });
 
   it("get_template: card, ports by section, lint, ports source, links, duplicates, history", async () => {

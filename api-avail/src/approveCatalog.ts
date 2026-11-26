@@ -19,7 +19,7 @@ import type { TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { catalogIndex, describeOrigin, parseCatalogMeta, portsOrigin, type PortsOriginInfo } from "../../src/avail/portsOrigin";
 import { AVAIL_CATALOG_SOURCE } from "./importCatalog";
-import { blockOfRow, BUMP_LIBRARY_VERSION, slotContext } from "./templateMeta";
+import { blockOfRow, BUMP_LIBRARY_VERSION, LIFECYCLE_SELECT, slotContext } from "./templateMeta";
 
 export const APPROVE_CATALOG_USER = "approve-catalog";
 
@@ -63,7 +63,7 @@ export function approveCatalog(sqlite: Database.Database, options: { dryRun?: bo
   const byFile = catalogIndex(metas.map((m) => parseCatalogMeta(m.catalog)));
   const drafts = sqlite
     .prepare(
-      `SELECT t.*, m.source AS avail_source, m.catalog AS avail_catalog
+      `SELECT t.*, m.source AS avail_source, m.catalog AS avail_catalog, ${LIFECYCLE_SELECT}
          FROM templates t JOIN avail_template_meta m ON m.template_id = t.id
         WHERE m.status = 'draft' AND m.source = ? AND t.flagged_for_deletion = 0
         ORDER BY t.manufacturer, t.label`,

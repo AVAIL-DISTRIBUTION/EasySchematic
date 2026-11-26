@@ -188,7 +188,7 @@ describe("xlsx export", () => {
     const rows = sheets.get("Templates")!;
     expect(rows[0].slice(0, 3)).toEqual(["Vendor", "Model", "Part number"]);
     expect(rows[1].slice(0, 3)).toEqual(["Extron", "DTP3 T 203", "60-a"]);
-    expect(rows[2][8]).toBe("0"); // errors as a number
+    expect(rows[2][9]).toBe("0"); // errors as a number (after Lifecycle and Ports source)
     expect(rows.length).toBe(4);
     expect(columnName(0)).toBe("A");
     expect(columnName(26)).toBe("AA");

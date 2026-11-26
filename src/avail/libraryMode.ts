@@ -9,6 +9,7 @@
  *   verified — checked by AVAIL; draft — being worked on; raw — not checked; hidden — mods only.
  */
 import type { DeviceTemplate } from "../types";
+import { lifecycleOf, type LifecycleInfo } from "./lifecycle";
 
 export type TemplateStatus = "verified" | "draft" | "raw" | "hidden";
 export type UserRole = "contributor" | "moderator" | "admin" | string;
@@ -39,6 +40,8 @@ let active = read(KEY_MODE) === "1";
 let showUnverified = read(KEY_SHOW_UNVERIFIED) === "1";
 let role: UserRole | null = null;
 let statuses = new Map<string, TemplateStatus>();
+/** Templates that are upcoming or EoL (availLifecycle); everything else is active. */
+let lifecycles = new Map<string, LifecycleInfo>();
 let statusesLoaded = false;
 
 // ---- change notification (useSyncExternalStore + library reloads)
@@ -82,11 +85,22 @@ export function statusOfTemplate(t: unknown): TemplateStatus | null {
   return s === "verified" || s === "draft" || s === "raw" || s === "hidden" ? s : null;
 }
 
+/** Lifecycle of a library template (availLifecycle of GET /templates); null when active or unknown. */
+export function lifecycleOfTemplate(t: unknown): LifecycleInfo | null {
+  const raw = (t as { availLifecycle?: unknown } | null)?.availLifecycle;
+  if (!raw) return null;
+  const lc = lifecycleOf(raw);
+  return lc.lifecycle === "active" ? null : lc;
+}
+
 function recordStatuses(data: readonly DeviceTemplate[]): void {
   statuses = new Map();
+  lifecycles = new Map();
   for (const t of data) {
     const s = statusOfTemplate(t);
     if (t.id && s) statuses.set(t.id, s);
+    const lc = lifecycleOfTemplate(t);
+    if (t.id && lc) lifecycles.set(t.id, lc);
   }
   statusesLoaded = true;
 }
@@ -101,6 +115,7 @@ export function noteLibraryResponse(res: Response, data: readonly DeviceTemplate
   if (isAvail) recordStatuses(data);
   else {
     statuses = new Map();
+    lifecycles = new Map();
     statusesLoaded = false;
   }
   emit();
@@ -121,6 +136,15 @@ export function noteCachedLibrary(data: readonly DeviceTemplate[]): void {
 export function blockStatus(templateId: string | undefined | null): TemplateStatus | null {
   if (!active || !statusesLoaded || !templateId) return null;
   return statuses.get(templateId) ?? "raw";
+}
+
+/**
+ * Lifecycle of the template a block on the schematic was made from: upcoming or EoL, null when
+ * active, unknown to the loaded library or outside AVAIL mode.
+ */
+export function blockLifecycle(templateId: string | undefined | null): LifecycleInfo | null {
+  if (!active || !statusesLoaded || !templateId) return null;
+  return lifecycles.get(templateId) ?? null;
 }
 
 /** Badge text, one whole string per status (ready for a translation table): verified has none. */
@@ -275,6 +299,7 @@ export function resetForTests(): void {
   portsFilter = parsePortsFilter(read(KEY_PORTS_FILTER));
   role = null;
   statuses = new Map();
+  lifecycles = new Map();
   statusesLoaded = false;
   selectMode = false;
   selected = new Set();

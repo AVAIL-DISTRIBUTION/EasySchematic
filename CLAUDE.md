@@ -118,6 +118,28 @@ must be hdbaset» не для Pass-Through / over в подписи и не дл
 применяются раньше R2–R5 и ещё раз после них. Слоты шасси из документа —
 `_avail.slotsSource = "document: <URL>"`, цитата — `_avail.slotsNote` (Cable Cubby F55).
 
+Стандарт v0.12 (3.3) — жизненный цикл продукта (`src/avail/lifecycle.ts`): `upcoming` (`availableFrom`: `2027-Q3`,
+`2027-09`…), `active` (по умолчанию), `eol` (`eolDate`, необязательно). Хранение: карточка каталога — `_avail.lifecycle` /
+`availableFrom` / `eolDate` (проверяет `avail:check-library`); форма сбора — колонки Lifecycle (Active / Upcoming / EoL)
+и Lifecycle date; база — `avail_template_meta.lifecycle` / `available_from` / `eol_date` (миграция 9012). `import:catalog`
+ставит жизненный цикл файла новой карточке и когда он изменился в файле с прошлого импорта, иначе в базе остаётся
+выставленное библиотекарем (в отчёте — «Lifecycle set from the catalog»). Линтер: «estimated from <аналог>» в notes порта или
+`_avail.notes` / `_avail.note` — W, кроме upcoming (у него значения по аналогу уровень не понижают); в базе линтер видит
+жизненный цикл через `blockOfRow` (`LIFECYCLE_SELECT`). `POST /avail/templates/lifecycle/batch` `{ids, lifecycle,
+availableFrom?, eolDate?}` (librarian, admin; ≤ 500): журнал (action `lifecycle`), уровень пересчитывается сразу,
+verified ниже A → draft (`demoted`). `GET /templates` отдаёт `availLifecycle` у upcoming / eol, рабочее окно —
+`avail.lifecycle` / `availableFrom` / `eolDate`. В редакторе: значок «Upcoming · 2027-Q3» / «EoL» у шаблона в библиотеке и
+над блоком (`AvailLifecycleBadge`, `blockLifecycle` в `libraryMode.ts`), предупреждение в Reports (`AvailLifecycleNotice`
+внутри `AvailUnverifiedNotice`); в рабочем окне — фильтр Lifecycle, колонка, массовое действие Set lifecycle; MCP —
+фильтр `lifecycle` в `search_templates`, `lifecycle` в элементах и в `get_template`.
+
+Выбор из справочников в Device Editor (сборка AVAIL; `src/avail/referenceLists.ts` — модель, `ListPicker.tsx` — поле):
+Category — листья `avail-taxonomy.json` с поиском, по группам верхнего уровня, «BoQ only» для `schematic=false`;
+Manufacturer — `avail-vendors.json` (портфель, поддерживаемые, Generic), синоним при вводе подставляет основное имя.
+Выбрать можно только значение из списка; текущее значение не из списка остаётся с пометкой «not in the list». Save to
+library не сохраняет новое значение не из списка (`listFieldErrors`); тип устройства подставляет категорию по
+`deviceTypeDefaults` (`categoryForDeviceType`). Тот же выбор категории — в массовом Change category рабочего окна.
+
 ### Даташиты: список и обработка
 
 Список — `npm run report:datasheets` (api-avail; `src/avail/datasheetList.ts`, `api-avail/src/datasheetListCli.ts`) →
@@ -360,7 +382,7 @@ Streamable HTTP без сессий — каждый POST — JSON-RPC (или �
 подходит). Инструменты вызывают наши маршруты от пользователя токена (`server.ts` передаёт `call` → `serve`), поэтому права
 роли, проверка дублей (409 → `isError` с `duplicate_of` и ссылкой) и журнал — как в интерфейсе: `search_templates` (фильтры
 рабочего окна: vendor, category, device_type, status, level, ports_source = origin, lint_rule — часть сообщения линтера,
-text; offset/limit; hidden — только при status=hidden), `get_template` (карточка, порты по секциям, линтер, источник портов,
+lifecycle, text; offset/limit; hidden — только при status=hidden), `get_template` (карточка, жизненный цикл, порты по секциям, линтер, источник портов,
 ссылки на сайт, даташит и `/library?template=`, дубли, история из журнала), `lint_template`, `normalize_template` (без
 сохранения), `create_draft_template` (`POST /avail/templates/draft`), `propose_change` (`POST /submissions` update;
 комментарий обязателен), `review_queue`, `possible_duplicates`, `audit_log`. Строки рабочего окна кэшируются по ETag
@@ -585,6 +607,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/components/DeviceLibrary.tsx` | AVAIL: `AvailLibraryToggle`, `AvailCategoryTree`, `AvailTemplateExtras`, перезагрузка по смене статусов, фильтр по источнику портов (`useAvailFilteredTemplates`) |
 | `src/components/DeviceNode.tsx` | `AvailBlockBadge` — значок статуса над блоком |
 | `src/components/DeviceEditor.tsx` | `AvailTemplateEditBar` — живой линтер и Save to library в режиме Edit (без сессии Edit не рендерится) |
+| `src/components/DeviceEditor.tsx` | сборка AVAIL: Category и Manufacturer — `AvailCategoryField` / `AvailManufacturerField` (`ListPicker.tsx`), категория по типу — `categoryForDeviceType` |
 | `src/components/ReportsDialog.tsx` | `AvailUnverifiedNotice` — предупреждение о блоках из непроверенных шаблонов |
 | `src/components/LoginDialog.tsx` | `VITE_AUTH_GOOGLE_ONLY=1` → только кнопка Google (логика в `src/avail/auth.ts`) |
 | `src/main.tsx` | монтирует `src/avail/AuthErrorNotice.tsx` — показывает причину отказа во входе |

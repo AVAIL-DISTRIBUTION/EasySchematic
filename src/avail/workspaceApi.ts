@@ -5,6 +5,7 @@
 import type { DeviceTemplate } from "../types";
 import { apiUrl } from "./api";
 import { apiError } from "./apiError";
+import type { LifecycleInfo } from "./lifecycle";
 import type { WsTemplate } from "./workspaceModel";
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
@@ -33,6 +34,19 @@ export interface CategoryBatchResult {
 
 export const changeTemplatesCategory = (ids: string[], category: string) =>
   call<CategoryBatchResult>("/avail/templates/category/batch", { method: "POST", body: JSON.stringify({ ids, category }) });
+
+export interface LifecycleBatchResult {
+  lifecycle: LifecycleInfo;
+  updated: string[];
+  unchanged: string[];
+  failed: { id: string; reason: string }[];
+  /** Verified templates that fell below level A with the new lifecycle and became draft. */
+  demoted: string[];
+}
+
+/** POST /avail/templates/lifecycle/batch: upcoming (availableFrom), active or eol (eolDate). */
+export const setTemplatesLifecycle = (ids: string[], lifecycle: LifecycleInfo) =>
+  call<LifecycleBatchResult>("/avail/templates/lifecycle/batch", { method: "POST", body: JSON.stringify({ ids, ...lifecycle }) });
 
 /** POST /avail/templates/merge: the ids become hidden "duplicate of <primary>" (step 2.4). */
 export const mergeTemplates = (primary: string, ids: string[]) =>

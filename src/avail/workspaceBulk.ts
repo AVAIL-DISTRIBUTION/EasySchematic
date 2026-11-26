@@ -1,11 +1,12 @@
 /**
  * Library workspace bulk actions in batches. The API takes at most 500 template ids per request
- * (api-avail: routes.ts MAX_BATCH for status, workspace.ts MAX_CATEGORY_BATCH for category), so a
+ * (api-avail: routes.ts MAX_BATCH for status, workspace.ts MAX_CATEGORY_BATCH for category and lifecycle), so a
  * larger selection is sent in batches of BULK_BATCH, one after another, with progress
  * ("batch N of M"); a failed batch does not stop the rest; the results add up to one report.
  *
  * Pure (the request is passed in), for the page and the tests.
  */
+import { lifecycleText } from "./lifecycle";
 import { BULK_LABELS, type BulkPlan } from "./workspaceModel";
 
 /** Most template ids per request; equal to the API's limits (checked by api-avail/test/workspace.test.ts). */
@@ -22,12 +23,16 @@ export interface BatchAnswer {
   updated: string[];
   unchanged?: string[];
   failed: { id: string; label?: string | null; reason: string; level?: string }[];
+  /** Set lifecycle: verified templates that fell below level A and became draft. */
+  demoted?: string[];
 }
 
 export interface BulkOutcome {
   batches: number;
   updated: string[];
   unchanged: string[];
+  /** Verified templates moved to draft by the change (Set lifecycle). */
+  demoted: string[];
   /** Refused by the server (not level A, not found). */
   refused: { id: string; label: string | null; reason: string }[];
   /** Requests that failed as a whole (network, HTTP error): their ids were not changed. */
@@ -45,13 +50,14 @@ export async function runBulk(
   size: number = BULK_BATCH,
 ): Promise<BulkOutcome> {
   const parts = chunks(plan.change.map((c) => c.row.id), size);
-  const out: BulkOutcome = { batches: parts.length, updated: [], unchanged: [], refused: [], failedBatches: [] };
+  const out: BulkOutcome = { batches: parts.length, updated: [], unchanged: [], demoted: [], refused: [], failedBatches: [] };
   for (let i = 0; i < parts.length; i++) {
     onProgress(i + 1, parts.length);
     try {
       const r = await send(parts[i]);
       out.updated.push(...r.updated);
       out.unchanged.push(...(r.unchanged ?? []));
+      out.demoted.push(...(r.demoted ?? []));
       for (const f of r.failed) {
         const reason =
           f.reason === "not_level_a" ? `level ${f.level ?? "?"}, verified needs A` : f.reason === "not_found" ? "not found" : f.reason === "primary" ? "the primary itself" : f.reason;
@@ -79,7 +85,9 @@ export function bulkReport(plan: BulkPlan, o: BulkOutcome): string[] {
   const what =
     plan.action === "category"
       ? `Category set to ${plan.category}`
-      : plan.action === "merge"
+      : plan.action === "lifecycle"
+        ? `Lifecycle set to ${lifecycleText(plan.lifecycle)}`
+        : plan.action === "merge"
         ? `Merged into ${plan.primary?.template.label ?? "the primary"}`
         : BULK_LABELS[plan.action];
   const notSent = o.failedBatches.reduce((n, b) => n + b.ids.length, 0);
@@ -90,6 +98,7 @@ export function bulkReport(plan: BulkPlan, o: BulkOutcome): string[] {
       (notSent ? `, ${notSent} not changed (failed batches)` : "") +
       ` — ${o.batches} ${o.batches === 1 ? "batch" : "batches"} of up to ${BULK_BATCH}.`,
   ];
+  if (o.demoted.length) lines.push(`${o.demoted.length} verified moved to draft: below level A with this lifecycle (estimated values).`);
   for (const b of o.failedBatches) lines.push(`Batch ${b.batch} of ${o.batches} failed (${b.ids.length} templates, unchanged): ${b.error}. Run the action again for them.`);
   const label = (id: string, l: string | null) => l ?? plan.change.find((c) => c.row.id === id)?.row.template.label ?? id;
   for (const f of o.refused.slice(0, MAX_LINES)) lines.push(`Refused: ${label(f.id, f.label)}: ${f.reason}`);

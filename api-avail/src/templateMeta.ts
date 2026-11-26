@@ -9,6 +9,7 @@
 import type Database from "better-sqlite3";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import { lintBlock, type BlockLevel, type BlockLintResult } from "../../src/avail/blockLint";
+import { lifecycleOfColumns } from "../../src/avail/lifecycle";
 import { slotLibraryContext, type SlotLibraryContext } from "../../src/avail/slotFamilies";
 import { SYSTEM_ACTOR, writeAudit, writeAuditD1, type AuditEntry } from "./audit";
 import { dropStaleNotDuplicates } from "./notDuplicates";
@@ -90,34 +91,47 @@ export function slotContextOfRows(rows: { slot_family: string | null; slots: str
   );
 }
 
-const SLOT_ROWS = "SELECT slot_family, slots FROM templates WHERE flagged_for_deletion = 0";
+export const SLOT_ROWS = "SELECT slot_family, slots FROM templates WHERE flagged_for_deletion = 0";
 
 export function slotContext(sqlite: Database.Database): SlotLibraryContext {
   return slotContextOfRows(sqlite.prepare(SLOT_ROWS).all() as { slot_family: string | null; slots: string | null }[]);
 }
 
+/** Lifecycle columns of avail_template_meta (migration 9012) as selected next to a template row. */
+export interface LifecycleCols {
+  avail_lifecycle?: string | null;
+  avail_available_from?: string | null;
+  avail_eol_date?: string | null;
+}
+
+/** SELECT list of the lifecycle columns, for a query joining avail_template_meta as `m`. */
+export const LIFECYCLE_SELECT = "m.lifecycle AS avail_lifecycle, m.available_from AS avail_available_from, m.eol_date AS avail_eol_date";
+
 /**
  * A stored template as the linter sees it: the template, plus what import:catalog moved to
  * avail_template_meta.catalog and the standard reads — the catalog description (room-mounted by
- * name, 3.2) and rackForm. With it a template lints in the database as its catalog file does.
+ * name, 3.2), its notes and rackForm — and the lifecycle (avail_template_meta, v0.12). With it a
+ * template lints in the database as its catalog file does.
  */
-export function blockOfRow(row: TemplateRow, catalogJson?: string | null): object {
+export function blockOfRow(row: TemplateRow & LifecycleCols, catalogJson?: string | null): object {
   const t = rowToTemplate(row) as unknown as Record<string, unknown>;
-  if (!catalogJson) return t;
-  try {
-    const c = JSON.parse(catalogJson) as { description?: unknown; rackForm?: unknown };
-    return {
-      ...t,
-      ...(typeof c.rackForm === "string" ? { rackForm: c.rackForm } : {}),
-      ...(typeof c.description === "string" ? { _avail: { description: c.description } } : {}),
-    };
-  } catch {
-    return t;
+  const avail: Record<string, unknown> = {};
+  if (catalogJson) {
+    try {
+      const c = JSON.parse(catalogJson) as { description?: unknown; rackForm?: unknown; notes?: unknown; note?: unknown };
+      if (typeof c.rackForm === "string") t.rackForm = c.rackForm;
+      for (const k of ["description", "notes", "note"] as const) if (typeof c[k] === "string") avail[k] = c[k];
+    } catch {
+      // not JSON: the template alone
+    }
   }
+  const lc = lifecycleOfColumns({ lifecycle: row.avail_lifecycle, available_from: row.avail_available_from, eol_date: row.avail_eol_date });
+  if (lc.lifecycle !== "active") Object.assign(avail, lc);
+  return Object.keys(avail).length ? { ...t, _avail: avail } : t;
 }
 
 /** Standard level of a stored template row (with the library's slot context and its catalog meta when given). */
-export function lintRow(row: TemplateRow & { avail_catalog?: string | null }, library?: SlotLibraryContext): BlockLevel {
+export function lintRow(row: TemplateRow & LifecycleCols & { avail_catalog?: string | null }, library?: SlotLibraryContext): BlockLevel {
   return lintBlock(blockOfRow(row, row.avail_catalog), library).level;
 }
 
@@ -129,7 +143,7 @@ export function lintRow(row: TemplateRow & { avail_catalog?: string | null }, li
 export function relintAll(sqlite: Database.Database): number {
   const ctx = slotContext(sqlite);
   const rows = sqlite
-    .prepare("SELECT t.*, m.lint_level AS avail_level, m.catalog AS avail_catalog FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id")
+    .prepare(`SELECT t.*, m.lint_level AS avail_level, m.catalog AS avail_catalog, ${LIFECYCLE_SELECT} FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id`)
     .all() as (TemplateRow & { avail_level: BlockLevel | null })[];
   const upsert = sqlite.prepare(
     `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at)
@@ -179,7 +193,7 @@ export function syncLintLevels(sqlite: Database.Database): SyncResult {
   dropStaleNotDuplicates(sqlite);
   const stale = sqlite
     .prepare(
-      `SELECT t.*, m.status AS avail_status, m.catalog AS avail_catalog FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
+      `SELECT t.*, m.status AS avail_status, m.catalog AS avail_catalog, ${LIFECYCLE_SELECT} FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
         WHERE m.template_id IS NULL OR m.lint_level IS NULL OR m.linted_version IS NULL OR m.linted_version <> t.version`,
     )
     .all() as (TemplateRow & { avail_status: TemplateStatus | null })[];
@@ -252,10 +266,13 @@ export async function setTemplateStatus(
 ): Promise<SetStatusResult> {
   const row = await db.prepare("SELECT * FROM templates WHERE id = ?").bind(templateId).first<TemplateRow>();
   if (!row) return { ok: false, reason: "not_found" };
-  const prev = await db.prepare("SELECT status, catalog FROM avail_template_meta WHERE template_id = ?").bind(templateId).first<{ status: TemplateStatus; catalog: string | null }>();
+  const prev = await db
+    .prepare("SELECT status, catalog, lifecycle AS avail_lifecycle, available_from AS avail_available_from, eol_date AS avail_eol_date FROM avail_template_meta WHERE template_id = ?")
+    .bind(templateId)
+    .first<{ status: TemplateStatus; catalog: string | null } & LifecycleCols>();
   const previous = prev?.status ?? "raw";
   const { results: slotRows } = await db.prepare(SLOT_ROWS).all<{ slot_family: string | null; slots: string | null }>();
-  const lint = lintBlock(blockOfRow(row, prev?.catalog), slotContextOfRows(slotRows));
+  const lint = lintBlock(blockOfRow({ ...row, ...prev }, prev?.catalog), slotContextOfRows(slotRows));
   if (status === "verified" && lint.level !== "A") return { ok: false, reason: "not_level_a", lint };
   await db.batch([
     db

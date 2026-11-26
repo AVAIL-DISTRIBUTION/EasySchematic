@@ -20,6 +20,7 @@ import { findCategory, findVendor, GENERIC_VENDOR } from "./library";
 import { onlyAbbreviations } from "./labels";
 import { BLOCK_SECTIONS, suggestSection, wrongBidirectional } from "./sections";
 import { slotLibraryWarnings, type SlotLibraryContext } from "./slotFamilies";
+import { ESTIMATED_FROM_RE, lifecycleOf } from "./lifecycle";
 
 
 export type BlockLevel = "A" | "B" | "FIX";
@@ -246,6 +247,14 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
   }
   if (!truthy(d.searchTerms)) W.push("no searchTerms");
 
+  // v0.12: a value taken from an analog ("estimated from …" in notes) is fine for an upcoming
+  // product (no manufacturer document yet); once it ships, the manufacturer's value replaces it.
+  const avail = asObj(d._avail);
+  const upcoming = lifecycleOf(avail).lifecycle === "upcoming";
+  if (!upcoming && [avail.notes, avail.note].some((n) => typeof n === "string" && ESTIMATED_FROM_RE.test(n))) {
+    W.push("estimated from an analog (catalog notes): use the manufacturer's value");
+  }
+
   // --- ports (ports of card slots are checked with the card, not here)
   // A block with neither ports nor slots has nothing to connect on a schematic (step 1.9).
   // A chassis (Cable Cubby, frame) may have slots only: its ports come with the cards it takes,
@@ -290,6 +299,7 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
     // Abbreviations and numbers only ("IPCP LAN", "COM 1", "RS-232/IR") are how the panel reads.
     if (words.length >= 2 && l === l.toUpperCase() && !onlyAbbreviations(l)) W.push(`${tag}: label in all caps`);
     if (pyLen(l) > 28) W.push(`${tag}: label longer than 28 characters`);
+    if (!upcoming && typeof p.notes === "string" && ESTIMATED_FROM_RE.test(p.notes)) W.push(`${tag}: estimated from an analog: use the manufacturer's value`);
     if (typeof sig === "string" && BIDIR.has(sig) && p.direction !== "bidirectional") {
       W.push(`${tag}: ${sig} must be bidirectional` + (sig === "dante" ? " (Dante channels are not ports)" : ""));
     }

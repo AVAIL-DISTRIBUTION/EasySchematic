@@ -17,6 +17,7 @@ import { auditChanges, type AuditRecord } from "../../src/avail/auditText";
 import { describeChange, portLabelMap, portsBySection } from "../../src/avail/libraryView";
 import type { NormalizeChange } from "../../src/avail/normalize";
 import { buildRows, builtInFilters, EMPTY_FILTER, filterRows, type WsFilter, type WsRow, type WsTemplate } from "../../src/avail/workspaceModel";
+import { LIFECYCLES } from "../../src/avail/lifecycle";
 import { writeAudit } from "./audit";
 
 export const MCP_PATH = "/mcp";
@@ -114,6 +115,9 @@ function brief(r: WsRow) {
     status: r.status,
     level: r.level,
     ports: r.template.avail.portsOrigin,
+    lifecycle: r.lifecycle.lifecycle,
+    available_from: r.lifecycle.availableFrom,
+    eol_date: r.lifecycle.eolDate,
   };
 }
 
@@ -130,6 +134,7 @@ function searchFilter(a: Json): { filter: WsFilter; rule?: string } {
   const status = oneOf(a, "status", STATUSES);
   const level = oneOf(a, "level", LEVELS);
   const origin = oneOf(a, "ports_source", ORIGINS);
+  const lifecycle = oneOf(a, "lifecycle", LIFECYCLES);
   return {
     filter: {
       ...EMPTY_FILTER,
@@ -139,6 +144,7 @@ function searchFilter(a: Json): { filter: WsFilter; rule?: string } {
       statuses: status ? [status] : [],
       levels: level ? [level] : [],
       origins: origin ? [origin] : [],
+      lifecycles: lifecycle ? [lifecycle] : [],
       text: str(a, "text") ?? "",
     },
     rule: str(a, "lint_rule")?.toLowerCase(),
@@ -176,7 +182,7 @@ export const TOOLS: readonly Tool[] = [
     name: "search_templates",
     title: "Search templates",
     description:
-      "Find library templates. All filters combine. Hidden templates only with status=hidden. Returns {total, offset, items[]}: id, label, part number, category, device type, status, lint level, ports origin.",
+      "Find library templates. All filters combine. Hidden templates only with status=hidden. Returns {total, offset, items[]}: id, label, part number, category, device type, status, lint level, ports origin, lifecycle (upcoming with available_from, active, eol with eol_date).",
     inputSchema: {
       type: "object",
       properties: {
@@ -188,6 +194,7 @@ export const TOOLS: readonly Tool[] = [
         level: { type: "string", enum: [...LEVELS], description: "Standard level from the linter" },
         ports_source: { type: "string", enum: [...ORIGINS], description: "Where the ports come from: manufacturer document, community database, nothing recorded" },
         lint_rule: { type: "string", description: 'Part of a linter message, e.g. "no power port" or "connectorType"' },
+        lifecycle: { type: "string", enum: [...LIFECYCLES], description: "Product lifecycle: upcoming (announced, not shipping yet), active, eol (end of life)" },
         ...PAGE_PROPS,
       },
       additionalProperties: false,
@@ -206,7 +213,7 @@ export const TOOLS: readonly Tool[] = [
     name: "get_template",
     title: "Get template",
     description:
-      "One template in full: card, ports by section, linter result, ports source, product and data sheet links, possible duplicates, and its history from the audit log.",
+      "One template in full: card, lifecycle (upcoming / active / eol and its date), ports by section, linter result, ports source, product and data sheet links, possible duplicates, and its history from the audit log.",
     inputSchema: {
       type: "object",
       properties: { id: { type: "string", description: "Template id" }, history: { type: "integer", minimum: 0, maximum: 100, description: "History entries (default 20)" } },
@@ -235,6 +242,7 @@ export const TOOLS: readonly Tool[] = [
         type: t.deviceType,
         status: av.status,
         status_reason: av.statusReason ?? undefined,
+        lifecycle: { state: r.lifecycle.lifecycle, available_from: r.lifecycle.availableFrom, eol_date: r.lifecycle.eolDate },
         level: r.level,
         lint: { errors: r.lint.errors, warnings: r.lint.warnings },
         ports_source: { origin: av.portsOrigin, kind: av.portsSource ?? undefined, from: av.portsFrom ?? undefined },

@@ -43,6 +43,11 @@ import { BUMP_LIBRARY_VERSION, type TemplateMetaRow, type TemplateStatus } from 
 import { DELETED_TEMPLATES, type DeletedTemplatesFile } from "./vendorResponses";
 import { applyOverrides, describeConflict, describeOverride, overrideConflicts, overridesFor, type Override } from "../../src/avail/overrides";
 import { overridesInForce } from "./overrides";
+import { ACTIVE, lifecycleColumns, lifecycleOf, lifecycleOfColumns, lifecycleText, sameLifecycle, type LifecycleInfo } from "../../src/avail/lifecycle";
+import { parseCatalogMeta } from "../../src/avail/portsOrigin";
+
+/** `_avail` lifecycle keys of a lifecycle: absent dates are cleared. */
+const lifecycleFields = (lc: LifecycleInfo) => ({ lifecycle: lc.lifecycle, availableFrom: lc.availableFrom, eolDate: lc.eolDate });
 
 export const AVAIL_CATALOG_SOURCE = "avail-catalog";
 
@@ -79,6 +84,8 @@ export interface ImportCatalogReport {
   overridden: { file: string; id: string; label: string; applied: number }[];
   /** Where a catalog file changed a value an override decides: the override stays. */
   conflicts: { file: string; id: string; label: string; text: string }[];
+  /** Templates whose lifecycle the catalog set (new card, or the file's lifecycle changed). */
+  lifecycle: { file: string; id: string; label: string; from: string; to: string }[];
 }
 
 export const SUPERSEDED_REASON = "superseded by catalog";
@@ -138,7 +145,7 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
   const deletedList = options.deletedList ?? DELETED_TEMPLATES;
   const counts = { inserted: 0, updated: 0, unchanged: 0, "below-min": 0, curated: 0, deleted: 0, duplicate: 0, invalid: 0 };
   const minLevel = options.minLevel ?? "B";
-  const report: ImportCatalogReport = { dryRun: !!options.dryRun, minLevel, loadedByLevel: { A: 0, B: 0 }, rows: [], counts, removed: [], superseded: [], overridden: [], conflicts: [] };
+  const report: ImportCatalogReport = { dryRun: !!options.dryRun, minLevel, loadedByLevel: { A: 0, B: 0 }, rows: [], counts, removed: [], superseded: [], overridden: [], conflicts: [], lifecycle: [] };
   const overrides = options.overrides ?? overridesInForce(sqlite);
 
   const curatedIds = new Set((options.curated ?? []).map((c) => c.id));
@@ -147,7 +154,7 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
   const withPart = deletedList.templates.filter((d): d is typeof d & { partNumber: string } => typeof (d as { partNumber?: unknown }).partNumber === "string");
   const deletedKeys = new Set(withPart.map((d) => partKey(d.vendor, d.partNumber)));
 
-  const getMeta = () => new Map((sqlite.prepare("SELECT * FROM avail_template_meta").all() as (TemplateMetaRow & { catalog?: string | null })[]).map((m) => [m.template_id, m]));
+  const getMeta = () => new Map((sqlite.prepare("SELECT * FROM avail_template_meta").all() as (TemplateMetaRow & { catalog?: string | null; lifecycle?: string | null; available_from?: string | null; eol_date?: string | null })[]).map((m) => [m.template_id, m]));
 
   const columns = Object.keys(templateToRow({ id: "x", label: "x", deviceType: "x", category: "", ports: [] }));
   const insertTemplate = sqlite.prepare(`INSERT INTO templates (${columns.join(", ")}, version) VALUES (${columns.map((c) => `@${c}`).join(", ")}, 1)`);
@@ -156,6 +163,9 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
        version = version + 1, updated_at = datetime('now') WHERE id = @id`,
   );
   const versionOf = sqlite.prepare("SELECT version FROM templates WHERE id = ?");
+  const setLifecycle = sqlite.prepare(
+    "UPDATE avail_template_meta SET lifecycle = @lifecycle, available_from = @available_from, eol_date = @eol_date WHERE template_id = @id",
+  );
   const upsertMeta = sqlite.prepare(
     `INSERT INTO avail_template_meta (template_id, status, source, upstream_id, lint_level, linted_version, updated_by, updated_at,
        status_reason, status_changed_at, source_hash, catalog)
@@ -227,7 +237,14 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       const card = { ...t, id };
       const mine = overridesFor(card, overrides);
       const over = mine.length ? applyOverrides(card, mine) : null;
-      const level = lintBlock(over ? over.block : t).level;
+      // Lifecycle (migration 9012): the card's when it is new or its lifecycle changed in the file
+      // since the last import; otherwise the database keeps what a librarian set (Set lifecycle).
+      const fileLc = lifecycleOf(t._avail);
+      const prevLc = m?.catalog ? lifecycleOf(parseCatalogMeta(m.catalog)) : null;
+      const curLc = m ? lifecycleOfColumns(m) : ACTIVE;
+      const lc = !existing || !prevLc || !sameLifecycle(prevLc, fileLc) ? fileLc : curLc;
+      const linted = over ? (over.block as CatalogTemplate) : t;
+      const level = lintBlock({ ...linted, _avail: { ...linted._avail, ...lifecycleFields(lc) } }).level;
       if (existing) matchedByFile.add(existing.id);
       const base = { file: file.file, id, label: t.label, level };
       const loaded = () => {
@@ -290,6 +307,10 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
         source_hash: hash,
         catalog,
       });
+      if (!sameLifecycle(curLc, lc)) {
+        setLifecycle.run({ id, ...lifecycleColumns(lc) });
+        report.lifecycle.push({ file: file.file, id, label: t.label, from: lifecycleText(curLc), to: lifecycleText(lc) });
+      }
       changed = true;
       loaded();
       const action = existing ? "updated" : "inserted";
@@ -377,6 +398,10 @@ export function formatImportCatalogReport(r: ImportCatalogReport, dir: string, v
   if (r.conflicts.length) {
     lines.push("", `Catalog changed a field overridden by a proposal or a decision: ${r.conflicts.length} (the override stays; remove it in the library workspace to take the catalog's value)`);
     for (const x of r.conflicts) lines.push(`  ${x.file} (${x.id}): ${x.text}`);
+  }
+  if (r.lifecycle.length) {
+    lines.push("", `Lifecycle set from the catalog: ${r.lifecycle.length}`);
+    for (const x of r.lifecycle) lines.push(`  ${x.file} (${x.id}): ${x.from} → ${x.to}`);
   }
   lines.push("");
   for (const x of r.rows) {

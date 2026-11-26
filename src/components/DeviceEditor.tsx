@@ -40,6 +40,8 @@ import { installedSlotsToDefinitions, slotOwnedPortIds } from "../slotDefinition
 import { AvailTemplateEditBar } from "../avail/LibraryUi";
 import { acceptedFamilies } from "../avail/slotFamilies";
 import { isAvailBuild } from "../avail/brand";
+import { AvailCategoryField, AvailManufacturerField } from "../avail/ListPicker";
+import { categoryForDeviceType } from "../avail/referenceLists";
 import { availSaveActions } from "../avail/menus";
 import { groupHeaderColor } from "../avail/headerColors";
 import { carriesPowerCapacity } from "../deviceTypeCategories";
@@ -1270,19 +1272,21 @@ export default function DeviceEditor() {
             <Field label="Device Type">
               <DeviceTypeField
                 value={deviceType}
-                onChange={(type, cat) => {
+                onChange={(type, upstreamCat) => {
                   setDeviceType(type);
+                  // AVAIL build: the taxonomy default of the type, not upstream's category names.
+                  const cat = categoryForDeviceType(type, upstreamCat, isAvailBuild());
                   if (cat && cat !== "Other") setCategory((c) => c || cat);
                 }}
               />
             </Field>
             <Field label="Manufacturer">
-              <input
+              {isAvailBuild() ? <AvailManufacturerField value={manufacturer} onChange={setManufacturer} /> : <input
                 className="w-full bg-[var(--color-surface)] border border-[var(--color-border)] rounded px-2 py-1.5 text-xs text-[var(--color-text-heading)] outline-none focus:border-blue-500"
                 value={manufacturer}
                 onChange={(e) => setManufacturer(e.target.value)}
                 placeholder="e.g. Sony"
-              />
+              />}
             </Field>
             <Field label="Model Number">
               <input
@@ -1293,12 +1297,12 @@ export default function DeviceEditor() {
               />
             </Field>
             <Field label="Category">
-              <input
+              {isAvailBuild() ? <AvailCategoryField value={category} onChange={setCategory} /> : <input
                 className="w-full bg-[var(--color-surface)] border border-[var(--color-border)] rounded px-2 py-1.5 text-xs text-[var(--color-text-heading)] outline-none focus:border-blue-500"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 placeholder="e.g. video"
-              />
+              />}
             </Field>
             <Field label="Reference URL">
               <input

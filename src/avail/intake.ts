@@ -18,13 +18,14 @@ import { isRoomMounted } from "./blockLint";
 import { AWAITING_PORTS, type CatalogAvail, type CatalogFile, type CatalogTemplate } from "./catalogPorts";
 import { findCategory, findVendor, TAXONOMY, VENDORS } from "./library";
 import { libraryFileName, slug } from "./libraryFiles";
+import { INTAKE_LIFECYCLES, isLifecycleDate, normalizeLifecycleDate } from "./lifecycle";
 
 /** Columns of the Products sheet, in template order; `*` marks the required ones. */
 export const INTAKE_COLUMNS = [
   "Vendor *", "Category *", "Device type *", "Model *", "Part number *", "Alt part number", "Variant", "Short name",
   "Input voltage", "Power draw (W)", "PoE draw (W)", "PoE budget (W)", "Heat (BTU/h)", "Height (mm)", "Width (mm)",
   "Depth (mm)", "Weight (kg)", "Rack form", "Slot families (chassis)", "Card for slot families", "Reference URL *",
-  "Datasheet URL", "Description", "MSRP (USD)", "Source *", "Note",
+  "Datasheet URL", "Description", "MSRP (USD)", "Source *", "Note", "Lifecycle", "Lifecycle date",
 ] as const;
 
 type Column = (typeof INTAKE_COLUMNS)[number] extends `${infer N} *` | infer N ? N : never;
@@ -144,6 +145,13 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
     else if (v["Device type"] && !DEVICE_TYPES.has(v["Device type"])) errors.push(`Device type "${v["Device type"]}" is not in the list`);
     if (v["Rack form"] && !(v["Rack form"] in RACK_FORMS)) errors.push(`Rack form "${v["Rack form"]}" is not in the list`);
     if (v.Source && !(SOURCES as readonly string[]).includes(v.Source)) errors.push(`Source "${v.Source}" is not in the list`);
+    // Lifecycle: Active / Upcoming / EoL; the date is when an upcoming product ships or an EoL one ended.
+    const lc = v.Lifecycle ? INTAKE_LIFECYCLES[v.Lifecycle] : undefined;
+    if (v.Lifecycle && !lc) errors.push(`Lifecycle "${v.Lifecycle}" is not in the list`);
+    const lcDate = v["Lifecycle date"];
+    if (lcDate && !isLifecycleDate(normalizeLifecycleDate(lcDate))) errors.push(`Lifecycle date "${lcDate}" must be 2027, 2027-Q3, 2027-09 or 2027-09-15`);
+    else if (lcDate && lc !== "upcoming" && lc !== "eol") errors.push("Lifecycle date is only for Upcoming (available from) or EoL (end of life)");
+    if (lc === "upcoming" && !lcDate) warnings.push("Lifecycle Upcoming without Lifecycle date: when does it ship?");
 
     for (const [col] of NUMBERS) {
       const x = v[col];
@@ -251,6 +259,13 @@ export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
   a.source = v.Source!;
   if (v["Datasheet URL"]) a.datasheetUrl = v["Datasheet URL"];
   if (v.Note) a.note = v.Note;
+  const lc = v.Lifecycle ? INTAKE_LIFECYCLES[v.Lifecycle] : undefined;
+  if (lc) {
+    a.lifecycle = lc;
+    const date = v["Lifecycle date"] ? normalizeLifecycleDate(v["Lifecycle date"]) : undefined;
+    if (date && lc === "upcoming") a.availableFrom = date;
+    if (date && lc === "eol") a.eolDate = date;
+  }
   a.intakeFile = intakeFile;
   return card;
 }
@@ -280,7 +295,13 @@ export function mergeCard(existing: CatalogTemplate, row: CatalogTemplate): Cata
       // The card keeps where it first came from; the intake's source is recorded next to it.
       const prev = existing._avail?.source;
       const src = prev && prev !== source ? { intakeSource: source } : { source };
-      set("_avail", { ...existing._avail, ...rowAvail, ...src });
+      // A lifecycle in the row replaces the card's whole lifecycle (state and date).
+      const base = { ...existing._avail };
+      if (rowAvail.lifecycle) {
+        delete base.availableFrom;
+        delete base.eolDate;
+      }
+      set("_avail", { ...base, ...rowAvail, ...src });
     } else if ((CARD_KEYS as readonly string[]).includes(k) && row[k] !== undefined) set(k, row[k]);
     else set(k, val);
   }
@@ -398,7 +419,14 @@ export function formatIntakeReport(r: IntakeResult, intakeFile: string, dryRun: 
 }
 
 /** The Lists sheet of the template must match the reference data (vendors, categories, device types). */
-export function intakeListsDiff(lists: { vendors: string[]; categories: string[]; deviceTypes: string[]; rackForms: string[]; sources: string[] }): string[] {
+export function intakeListsDiff(lists: {
+  vendors: string[];
+  categories: string[];
+  deviceTypes: string[];
+  rackForms: string[];
+  sources: string[];
+  lifecycles: string[];
+}): string[] {
   const out: string[] = [];
   const cmp = (what: string, got: string[], want: string[]) => {
     const g = new Set(got);
@@ -412,6 +440,7 @@ export function intakeListsDiff(lists: { vendors: string[]; categories: string[]
   cmp("Categories", lists.categories, TAXONOMY.categories.filter((c) => c.leaf).map((c) => c.path));
   cmp("Rack form", lists.rackForms, Object.keys(RACK_FORMS));
   cmp("Source", lists.sources, [...SOURCES]);
+  cmp("Lifecycle", lists.lifecycles, Object.keys(INTAKE_LIFECYCLES));
   const unknownTypes = lists.deviceTypes.filter((t) => !DEVICE_TYPES.has(t));
   if (unknownTypes.length) out.push(`Device types: not in the reference data: ${unknownTypes.join(", ")}`);
   return out;

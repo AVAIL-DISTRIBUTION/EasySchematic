@@ -11,6 +11,12 @@
  *   POST /avail/templates/category/batch     { ids, category } → { category, updated, unchanged, failed }
  *                                            leaf category of the taxonomy; each change goes to the
  *                                            audit log; levels are re-linted after the request
+ *   POST /avail/templates/lifecycle/batch    { ids, lifecycle, availableFrom?, eolDate? } →
+ *                                            { lifecycle, updated, unchanged, failed } (librarian,
+ *                                            admin): upcoming / active / eol (src/avail/lifecycle.ts);
+ *                                            each change goes to the audit log (action lifecycle); the
+ *                                            level is re-linted at once (estimates, standard v0.12) and
+ *                                            a verified template that falls below A becomes draft
  *
  * Status changes (approve, draft, hide, unhide) use POST /avail/templates/status/batch (routes.ts);
  * proposals use upstream's submissions (/submissions/pending, /:id/approve, /:id/reject).
@@ -20,13 +26,25 @@ import { requireModeratorOrToken } from "../../api/src/auth";
 import { rowToTemplate, type TemplateRow } from "../../api/src/db";
 import type { BlockLevel } from "../../src/avail/blockLint";
 import { findCategory } from "../../src/avail/library";
+import { lintBlock } from "../../src/avail/blockLint";
+import { lifecycleColumns, lifecycleOfColumns, parseLifecycleInput, sameLifecycle, type Lifecycle } from "../../src/avail/lifecycle";
 import { canReadAudit } from "../../src/avail/roles";
 import { catalogIndex, parseCatalogMeta, portsOrigin, type PortsOrigin } from "../../src/avail/portsOrigin";
 import { duplicateGroups, duplicateIndex } from "../../src/avail/duplicates";
 import { ADMIN_TOKEN_ACTOR, writeAuditD1, type AuditEntry } from "./audit";
 import { candidatesOf } from "./duplicates";
 import { notDuplicatesById, pairSetOf, SELECT_PAIRS, type NotDuplicateOf, type NotDuplicateRow } from "./notDuplicates";
-import { BUMP_LIBRARY_VERSION, type ApprovalMethod, type TemplateStatus } from "./templateMeta";
+import {
+  blockOfRow,
+  BUMP_LIBRARY_VERSION,
+  demotionReason,
+  LIFECYCLE_SELECT,
+  SLOT_ROWS,
+  slotContextOfRows,
+  type ApprovalMethod,
+  type LifecycleCols,
+  type TemplateStatus,
+} from "./templateMeta";
 
 type UpstreamApp = typeof UpstreamAppValue;
 
@@ -60,9 +78,13 @@ export interface WorkspaceInfo {
   duplicate: { primary: string; size: number } | null;
   /** "Not duplicates" decisions this template is part of (step 2.4). */
   notDuplicates: NotDuplicateOf[];
+  /** Product lifecycle (migration 9012): upcoming (availableFrom), active, eol (eolDate). */
+  lifecycle: Lifecycle;
+  availableFrom: string | null;
+  eolDate: string | null;
 }
 
-type Row = TemplateRow & {
+type Row = TemplateRow & LifecycleCols & {
   updated_at: string | null;
   avail_status: TemplateStatus;
   avail_source: string | null;
@@ -77,6 +99,12 @@ type Row = TemplateRow & {
 
 /** People, not automation: system, CLI runs, lint. */
 const isPerson = (actor: string) => actor !== "system" && actor !== "lint" && !actor.startsWith("cli:") && actor !== "anonymous";
+
+/** lifecycle / availableFrom / eolDate of the workspace info from the stored columns. */
+function lifecycleInfo(row: LifecycleCols): Pick<WorkspaceInfo, "lifecycle" | "availableFrom" | "eolDate"> {
+  const lc = lifecycleOfColumns({ lifecycle: row.avail_lifecycle, available_from: row.avail_available_from, eol_date: row.avail_eol_date });
+  return { lifecycle: lc.lifecycle, availableFrom: lc.availableFrom ?? null, eolDate: lc.eolDate ?? null };
+}
 
 export function registerWorkspaceRoutes(app: UpstreamApp): void {
   app.get("/avail/workspace/templates", async (c) => {
@@ -93,7 +121,8 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
     const { results } = await db
       .prepare(
         `SELECT t.*, COALESCE(m.status, 'raw') AS avail_status, m.source AS avail_source, m.catalog AS avail_catalog,
-                m.lint_level AS avail_level, m.status_reason, m.status_changed_at, m.approved_by, m.approved_via, m.approved_at
+                m.lint_level AS avail_level, m.status_reason, m.status_changed_at, m.approved_by, m.approved_via, m.approved_at,
+                ${LIFECYCLE_SELECT}
            FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id
           WHERE t.flagged_for_deletion = 0
           ORDER BY t.manufacturer, t.label`,
@@ -142,6 +171,7 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
         lastAt: edits[0]?.at ?? null,
         duplicate: dupes.get(row.id) ?? null,
         notDuplicates: apart.get(row.id) ?? [],
+        ...lifecycleInfo(row),
       };
       return { ...rowToTemplate(row), avail: info };
     });
@@ -201,5 +231,81 @@ export function registerWorkspaceRoutes(app: UpstreamApp): void {
       await writeAuditD1(db, entries);
     }
     return c.json({ category: cat.path, updated, unchanged, failed });
+  });
+
+  app.post("/avail/templates/lifecycle/batch", async (c) => {
+    const auth = requireModeratorOrToken(c);
+    if (!auth) return c.json({ error: "Librarian or admin access required" }, 403);
+    let body: unknown;
+    try {
+      body = await c.req.json();
+    } catch {
+      return c.json({ error: "Invalid JSON" }, 400);
+    }
+    const { ids, ...rest } = (body ?? {}) as { ids?: unknown };
+    const parsed = parseLifecycleInput(rest);
+    if (!parsed.ok) return c.json({ error: parsed.error }, 400);
+    if (!Array.isArray(ids) || ids.length === 0 || ids.length > MAX_CATEGORY_BATCH || !ids.every((id) => typeof id === "string" && id !== "")) {
+      return c.json({ error: `ids must be 1 to ${MAX_CATEGORY_BATCH} template ids` }, 400);
+    }
+    const value = parsed.value;
+    const cols = lifecycleColumns(value);
+    const actor = auth === "token" ? { actor: ADMIN_TOKEN_ACTOR, actorId: null } : { actor: auth.email, actorId: auth.id };
+    const db = c.env.easyschematic_db;
+    const { results: slotRows } = await db.prepare(SLOT_ROWS).all<{ slot_family: string | null; slots: string | null }>();
+    const ctx = slotContextOfRows(slotRows);
+    const updated: string[] = [];
+    const unchanged: string[] = [];
+    const failed: { id: string; reason: "not_found" }[] = [];
+    /** Verified templates that fell below level A with the new lifecycle (estimates of an upcoming product). */
+    const demoted: string[] = [];
+    const entries: AuditEntry[] = [];
+    const statements: D1PreparedStatement[] = [];
+    for (const id of [...new Set(ids as string[])]) {
+      const row = await db
+        .prepare(`SELECT t.*, COALESCE(m.status, 'raw') AS avail_status, m.catalog AS avail_catalog, ${LIFECYCLE_SELECT}
+                    FROM templates t LEFT JOIN avail_template_meta m ON m.template_id = t.id WHERE t.id = ?`)
+        .bind(id)
+        .first<Row>();
+      if (!row) {
+        failed.push({ id, reason: "not_found" });
+        continue;
+      }
+      const before = lifecycleOfColumns({ lifecycle: row.avail_lifecycle, available_from: row.avail_available_from, eol_date: row.avail_eol_date });
+      if (sameLifecycle(before, value)) {
+        unchanged.push(id);
+        continue;
+      }
+      // The level with the new lifecycle: estimates count against a product that ships (v0.12).
+      const level = lintBlock(blockOfRow({ ...row, avail_lifecycle: cols.lifecycle, avail_available_from: cols.available_from, avail_eol_date: cols.eol_date }, row.avail_catalog), ctx).level;
+      const demote = row.avail_status === "verified" && level !== "A";
+      const reason = demote ? demotionReason(level, row.version) : null;
+      statements.push(
+        db
+          .prepare(
+            `INSERT INTO avail_template_meta (template_id, status, lint_level, linted_version, updated_by, updated_at, lifecycle, available_from, eol_date)
+             VALUES (?, 'raw', ?, ?, ?, datetime('now'), ?, ?, ?)
+             ON CONFLICT(template_id) DO UPDATE SET lint_level = excluded.lint_level, linted_version = excluded.linted_version,
+               updated_by = excluded.updated_by, updated_at = excluded.updated_at, lifecycle = excluded.lifecycle,
+               available_from = excluded.available_from, eol_date = excluded.eol_date,
+               status = CASE WHEN ? = 1 THEN 'draft' ELSE avail_template_meta.status END,
+               status_reason = CASE WHEN ? = 1 THEN ? ELSE avail_template_meta.status_reason END,
+               status_changed_at = CASE WHEN ? = 1 THEN datetime('now') ELSE avail_template_meta.status_changed_at END`,
+          )
+          .bind(id, level, row.version, actor.actor, cols.lifecycle, cols.available_from, cols.eol_date, demote ? 1 : 0, demote ? 1 : 0, reason, demote ? 1 : 0),
+      );
+      const show = (v: typeof before) => ({ lifecycle: v.lifecycle, ...(v.availableFrom ? { availableFrom: v.availableFrom } : {}), ...(v.eolDate ? { eolDate: v.eolDate } : {}) });
+      entries.push({ ...actor, entity: "template", entityId: id, entityLabel: row.label, action: "lifecycle", before: show(before), after: show(value) });
+      if (demote) {
+        demoted.push(id);
+        entries.push({ ...actor, entity: "template", entityId: id, entityLabel: row.label, action: "status", before: { status: "verified" }, after: { status: "draft", reason } });
+      }
+      updated.push(id);
+    }
+    if (statements.length) {
+      await db.batch([...statements, db.prepare(BUMP_LIBRARY_VERSION)]);
+      await writeAuditD1(db, entries);
+    }
+    return c.json({ lifecycle: value, updated, unchanged, failed, demoted });
   });
 }

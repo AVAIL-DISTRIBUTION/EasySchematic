@@ -109,7 +109,7 @@ describe("workspace: possible duplicates and Merge into…", () => {
   });
 
   it("after a bulk action the selection is cleared; a failed batch stays selected", () => {
-    expect([...selectionAfter({ batches: 1, updated: ["a"], unchanged: [], refused: [], failedBatches: [] })]).toEqual([]);
-    expect([...selectionAfter({ batches: 2, updated: ["a"], unchanged: [], refused: [], failedBatches: [{ batch: 2, ids: ["b", "c"], error: "HTTP 500" }] })]).toEqual(["b", "c"]);
+    expect([...selectionAfter({ batches: 1, updated: ["a"], unchanged: [], demoted: [], refused: [], failedBatches: [] })]).toEqual([]);
+    expect([...selectionAfter({ batches: 2, updated: ["a"], unchanged: [], demoted: [], refused: [], failedBatches: [{ batch: 2, ids: ["b", "c"], error: "HTTP 500" }] })]).toEqual(["b", "c"]);
   });
 });

@@ -22,8 +22,10 @@ import {
   type TemplateStatusInfo,
 } from "./api";
 import {
+  blockLifecycle,
   blockStatus,
   clearSelection,
+  lifecycleOfTemplate,
   isSelected,
   notifyLibraryChanged,
   PORTS_FILTER_LABELS,
@@ -37,6 +39,8 @@ import {
   type PortsFilter,
   type TemplateStatus,
 } from "./libraryMode";
+import { lifecycleBadge, lifecycleBlocks, lifecycleText, type LifecycleInfo } from "./lifecycle";
+import { listFieldErrors } from "./referenceLists";
 import { describeChange, deviceCardRows, portLabelMap, groupByTaxonomy, portsBySection, REVIEW_CHECKLIST, unverifiedBlocks } from "./libraryView";
 import { appliedChanges, normalizeBlock, type NormalizeResult } from "./normalize";
 import { applyTemplateToDeviceData, deviceDataToTemplate, editSessionFor, endEditSession } from "./templateEdit";
@@ -63,13 +67,27 @@ export function AvailStatusBadge({ status, className = "" }: { status: TemplateS
   );
 }
 
-/** Badge over a device block on the schematic (just above its top right corner, not exported). */
+/** Lifecycle badge: "Upcoming · 2027-Q3" (blue), "EoL" (grey); nothing for an active product. */
+export function AvailLifecycleBadge({ lifecycle, className = "" }: { lifecycle: LifecycleInfo | null; className?: string }) {
+  const text = lifecycleBadge(lifecycle);
+  if (!text || !lifecycle) return null;
+  const color = lifecycle.lifecycle === "upcoming" ? "bg-sky-100 text-sky-800" : "bg-slate-300 text-slate-800";
+  return (
+    <span title={lifecycleText(lifecycle)} className={`text-[8px] rounded px-1 py-px font-normal shrink-0 whitespace-nowrap ${color} ${className}`}>
+      {text}
+    </span>
+  );
+}
+
+/** Badges over a device block on the schematic (just above its top right corner, not exported): status, lifecycle. */
 export function AvailBlockBadge({ templateId }: { templateId?: string }) {
   useAvailState();
   const status = blockStatus(templateId);
-  if (!statusBadge(status)) return null;
+  const lifecycle = blockLifecycle(templateId);
+  if (!statusBadge(status) && !lifecycle) return null;
   return (
-    <div className="avail-export-hide absolute bottom-full right-0 mb-px z-10 pointer-events-none leading-none">
+    <div className="avail-export-hide absolute bottom-full right-0 mb-px z-10 pointer-events-none leading-none flex gap-0.5">
+      <AvailLifecycleBadge lifecycle={lifecycle} className="shadow-sm" />
       <AvailStatusBadge status={status} className="shadow-sm" />
     </div>
   );
@@ -85,7 +103,8 @@ export function AvailTemplateExtras({ template }: { template: DeviceTemplate }) 
   const edit = useStartTemplateEdit();
   if (!active) return null;
   const status = statusOfTemplate(template);
-  if (!statusBadge(status) && !(moderator && template.id)) return null;
+  const lifecycle = lifecycleOfTemplate(template);
+  if (!statusBadge(status) && !lifecycle && !(moderator && template.id)) return null;
   const stop = (e: React.SyntheticEvent) => e.stopPropagation();
   return (
     <span className="flex items-center gap-1">
@@ -100,6 +119,7 @@ export function AvailTemplateExtras({ template }: { template: DeviceTemplate }) 
           className="cursor-pointer"
         />
       )}
+      <AvailLifecycleBadge lifecycle={lifecycle} />
       <AvailStatusBadge status={status} />
       {moderator && template.id && (
         <>
@@ -561,7 +581,11 @@ export function AvailTemplateEditBar({
     const slots = (node?.data as { slots?: Parameters<typeof slotOwnedPortIds>[0] } | undefined)?.slots;
     return deviceDataToTemplate(data, session.original, slotOwnedPortIds(slots));
   }, [session, build, node]);
-  const lint = useMemo(() => (draft ? lintBlock(draft) : null), [draft]);
+  // The template's lifecycle from the loaded library: estimates of an upcoming product are fine (v0.12).
+  const lifecycle = session ? blockLifecycle(session.templateId) : null;
+  const lint = useMemo(() => (draft ? lintBlock(lifecycle ? { ...draft, _avail: lifecycle } : draft) : null), [draft, lifecycle]);
+  // Category and manufacturer only from the reference lists (a value already there may stay).
+  const listErrors = useMemo(() => (draft && session ? listFieldErrors(session.original, draft) : []), [draft, session]);
   const [showNormalize, setShowNormalize] = useState(false);
   const normalized = useMemo(
     () => (showNormalize && draft ? normalizeBlock(draft as unknown as Record<string, unknown>) : null),
@@ -605,6 +629,11 @@ export function AvailTemplateEditBar({
         <div className="text-amber-900">A verified template saved below level A becomes a draft.</div>
       )}
       {normalized && <AvailNormalizePreview before={lint} result={normalized} />}
+      {listErrors.map((m) => (
+        <div key={m} data-testid="avail-list-error" className="text-red-700 font-semibold">
+          {m}
+        </div>
+      ))}
       {error != null && (
         <div className="text-red-700 font-semibold">
           <ErrorText error={error} />
@@ -641,7 +670,12 @@ export function AvailTemplateEditBar({
             >
               Normalize
             </button>
-            <button onClick={() => save(draft)} disabled={busy} className={`${btn} border-blue-600 bg-blue-600 text-white hover:bg-blue-700`}>
+            <button
+              onClick={() => save(draft)}
+              disabled={busy || listErrors.length > 0}
+              title={listErrors.length ? "Pick the category and the manufacturer from the lists" : undefined}
+              className={`${btn} border-blue-600 bg-blue-600 text-white hover:bg-blue-700`}
+            >
               Save to library
             </button>
           </>
@@ -684,8 +718,56 @@ function AvailNormalizePreview({ before, result }: { before: BlockLintResult; re
   );
 }
 
-/** Warning in the schematic reports when the project has blocks from unverified templates. */
+/**
+ * Warnings in the schematic reports: blocks from unverified templates, and blocks of upcoming or
+ * EoL products.
+ */
 export function AvailUnverifiedNotice({ nodes }: { nodes: readonly { id: string; type?: string; data: unknown }[] }) {
+  return (
+    <>
+      <UnverifiedBlocksNotice nodes={nodes} />
+      <AvailLifecycleNotice nodes={nodes} />
+    </>
+  );
+}
+
+/** Warning in the schematic reports when the project has blocks of upcoming or EoL products. */
+export function AvailLifecycleNotice({ nodes }: { nodes: readonly { id: string; type?: string; data: unknown }[] }) {
+  useAvailState();
+  // Not memoized: the library's lifecycles change without the nodes changing.
+  const blocks = lifecycleBlocks(nodes, blockLifecycle);
+  if (blocks.length === 0) return null;
+  const upcoming = blocks.filter((b) => b.lifecycle.lifecycle === "upcoming");
+  const eol = blocks.filter((b) => b.lifecycle.lifecycle === "eol");
+  const list = (bs: typeof blocks) => {
+    const names = bs.slice(0, 8).map((b) => `${b.label} (${lifecycleText(b.lifecycle)})`).join(", ");
+    return bs.length > 8 ? `${names} (+${bs.length - 8} more)` : names;
+  };
+  return (
+    <div data-testid="avail-lifecycle-notice" className="px-4 py-2 border-b border-amber-200 bg-amber-50 text-xs text-amber-800 shrink-0">
+      {upcoming.length > 0 && (
+        <div>
+          <div className="font-semibold">
+            {upcoming.length === 1 ? "This project has 1 block of an upcoming product." : `This project has ${upcoming.length} blocks of upcoming products.`}
+          </div>
+          <div>Blocks: {list(upcoming)}</div>
+          <div>Upcoming products are not shipping yet; some of their values may be estimated. Check availability before ordering.</div>
+        </div>
+      )}
+      {eol.length > 0 && (
+        <div className={upcoming.length ? "mt-1" : ""}>
+          <div className="font-semibold">
+            {eol.length === 1 ? "This project has 1 block of an end-of-life product." : `This project has ${eol.length} blocks of end-of-life products.`}
+          </div>
+          <div>Blocks: {list(eol)}</div>
+          <div>End-of-life products may no longer be available: consider replacing them.</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function UnverifiedBlocksNotice({ nodes }: { nodes: readonly { id: string; type?: string; data: unknown }[] }) {
   useAvailState();
   const blocks = useMemo(() => unverifiedBlocks(nodes), [nodes]);
   if (blocks.length === 0) return null;

@@ -11,7 +11,9 @@ import { auditActor, auditChanges, AUDIT_ACTION_LABELS, fetchAudit, type AuditRe
 import { AVAIL_APP_NAME } from "./brand";
 import { AvailLogo } from "./BrandUi";
 import { lintBlock } from "./blockLint";
-import { TAXONOMY } from "./library";
+import { LIFECYCLE_LABELS, LIFECYCLES, lifecycleText, parseLifecycleInput, type Lifecycle, type LifecycleInfo } from "./lifecycle";
+import { categoryOptions } from "./referenceLists";
+import { AvailListPicker } from "./ListPicker";
 import { AvailLintResult } from "./LibraryUi";
 import { describeChange, deviceCardRows, portLabelMap, portsBySection } from "./libraryView";
 import { appliedChanges, normalizeBlock } from "./normalize";
@@ -20,6 +22,7 @@ import { getSignedInUser } from "./session";
 import {
   acceptProposal,
   changeTemplatesCategory,
+  setTemplatesLifecycle,
   fetchPendingProposals,
   fetchWorkspace,
   rejectProposal,
@@ -52,6 +55,7 @@ import {
   LEVELS,
   ORIGIN_LABELS,
   planBulk,
+  planLifecycle,
   planMerge,
   groupMembers,
   notDuplicatePairs,
@@ -61,10 +65,10 @@ import {
   sortRows,
   STATUS_LABELS,
   WS_STATUSES,
-  type BulkAction,
   type BulkPlan,
   type ColumnId,
   type SavedFilter,
+  type StatusAction,
   type WsFilter,
   type WsRow,
 } from "./workspaceModel";
@@ -170,6 +174,7 @@ function TemplatesTab() {
     | { kind: "plan"; plan: BulkPlan }
     | { kind: "report"; lines: ReactNode[]; title: string }
     | { kind: "category" }
+    | { kind: "lifecycle" }
     | { kind: "merge" }
     | { kind: "notDuplicates"; members: WsRow[]; preselected: string[] }
     | { kind: "columns" }
@@ -207,9 +212,11 @@ function TemplatesTab() {
     const send =
       plan.action === "category"
         ? (ids: string[]) => changeTemplatesCategory(ids, plan.category!)
-        : plan.action === "merge"
-          ? (ids: string[]) => mergeTemplates(plan.primary!.id, ids)
-          : (ids: string[]) => changeTemplatesStatus(ids, BULK_STATUS[plan.action as Exclude<BulkAction, "category" | "merge">]);
+        : plan.action === "lifecycle"
+          ? (ids: string[]) => setTemplatesLifecycle(ids, plan.lifecycle!)
+          : plan.action === "merge"
+            ? (ids: string[]) => mergeTemplates(plan.primary!.id, ids)
+            : (ids: string[]) => changeTemplatesStatus(ids, BULK_STATUS[plan.action as StatusAction]);
     const outcome = await runBulk(plan, send, onProgress);
     // Done: the selection is cleared (failed batches stay selected to run again).
     setSelected(selectionAfter(outcome));
@@ -256,13 +263,16 @@ function TemplatesTab() {
         {selected.size > 0 && (
           <div data-testid="avail-ws-bulk" className="flex items-center gap-2 px-3 py-1.5 border-b border-[var(--color-border)] bg-blue-50">
             <span className="font-semibold">Bulk actions for {selected.size}:</span>
-            {(["approve", "draft", "hide", "unhide"] as Exclude<BulkAction, "category" | "merge">[]).map((a) => (
+            {(["approve", "draft", "hide", "unhide"] as StatusAction[]).map((a) => (
               <button key={a} className={btnPlain} onClick={() => setDialog({ kind: "plan", plan: planBulk(a, selectedRows) })}>
                 {BULK_LABELS[a]}
               </button>
             ))}
             <button className={btnPlain} onClick={() => setDialog({ kind: "category" })}>
               {BULK_LABELS.category}
+            </button>
+            <button className={btnPlain} onClick={() => setDialog({ kind: "lifecycle" })}>
+              {BULK_LABELS.lifecycle}
             </button>
             <button
               className={btnPlain}
@@ -344,6 +354,9 @@ function TemplatesTab() {
           onClose={() => setDialog(null)}
           onPick={(category) => setDialog({ kind: "plan", plan: planBulk("category", selectedRows, category) })}
         />
+      )}
+      {dialog?.kind === "lifecycle" && (
+        <LifecycleDialog onClose={() => setDialog(null)} onPick={(lifecycle) => setDialog({ kind: "plan", plan: planLifecycle(selectedRows, lifecycle) })} />
       )}
       {dialog?.kind === "merge" && (
         <MergeDialog rows={selectedRows} onClose={() => setDialog(null)} onPick={(primary) => setDialog({ kind: "plan", plan: planMerge(selectedRows, primary) })} />
@@ -467,7 +480,7 @@ function FilterSidebar({ rows, filter, onChange }: { rows: WsRow[]; filter: WsFi
   const [custom, setCustom] = useState<SavedFilter[]>(() => load(FILTERS_KEY, []));
   const presets = useMemo(() => [...builtInFilters(me), ...custom], [me, custom]);
   const set = <K extends keyof WsFilter>(k: K, v: WsFilter[K]) => onChange({ ...filter, [k]: v });
-  const toggle = <K extends "vendors" | "categories" | "deviceTypes" | "statuses" | "levels" | "portsSources" | "rules" | "approvedBy" | "origins" | "approvedVia">(k: K, v: string) => {
+  const toggle = <K extends "vendors" | "categories" | "deviceTypes" | "statuses" | "levels" | "portsSources" | "rules" | "approvedBy" | "origins" | "approvedVia" | "lifecycles">(k: K, v: string) => {
     const list = filter[k] as string[];
     set(k, (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]) as WsFilter[K]);
   };
@@ -531,6 +544,9 @@ function FilterSidebar({ rows, filter, onChange }: { rows: WsRow[]; filter: WsFi
       </Section>
       <Section title="Status">
         <Chips values={WS_STATUSES.map((s) => ({ value: s, label: STATUS_LABELS[s] }))} on={filter.statuses} onToggle={(v) => toggle("statuses", v)} />
+      </Section>
+      <Section title="Lifecycle">
+        <Chips values={LIFECYCLES.map((l) => ({ value: l, label: LIFECYCLE_LABELS[l] }))} on={filter.lifecycles} onToggle={(v) => toggle("lifecycles", v)} />
       </Section>
       <Section title="Level">
         <Chips values={LEVELS.map((l) => ({ value: l, label: l }))} on={filter.levels} onToggle={(v) => toggle("levels", v)} />
@@ -713,7 +729,9 @@ function PlanDialog({
   const what =
     plan.action === "category"
       ? `${BULK_LABELS.category} to ${plan.category}`
-      : plan.action === "merge"
+      : plan.action === "lifecycle"
+        ? `${BULK_LABELS.lifecycle}: ${lifecycleText(plan.lifecycle)}`
+        : plan.action === "merge"
         ? `Merge into ${plan.primary?.template.label ?? "…"}`
         : BULK_LABELS[plan.action];
   return (
@@ -784,9 +802,10 @@ function PlanDialog({
   );
 }
 
+const CATEGORY_OPTIONS = categoryOptions();
+
 function CategoryDialog({ onClose, onPick }: { onClose: () => void; onPick: (path: string) => void }) {
-  const leaves = useMemo(() => TAXONOMY.categories.filter((c) => c.leaf).map((c) => c.path), []);
-  const [value, setValue] = useState(leaves[0] ?? "");
+  const [value, setValue] = useState("");
   return (
     <Modal
       title="Change category"
@@ -797,21 +816,70 @@ function CategoryDialog({ onClose, onPick }: { onClose: () => void; onPick: (pat
           <button className={btnPlain} onClick={onClose}>
             Cancel
           </button>
-          <button className={btnPrimary} onClick={() => onPick(value)}>
+          <button className={btnPrimary} disabled={!value} onClick={() => onPick(value)}>
             Show what will change
           </button>
         </>
       }
     >
-      <div className="p-4">
-        <select value={value} onChange={(e) => setValue(e.target.value)} className="border border-[var(--color-border)] rounded px-1 py-0.5 w-full" aria-label="Category">
-          {leaves.map((l) => (
-            <option key={l} value={l}>
-              {l}
-              {TAXONOMY.categories.find((c) => c.path === l)?.schematic === false ? " (BoQ only)" : ""}
-            </option>
+      <div className="p-4 flex flex-col gap-1 min-h-80">
+        <div className="text-[var(--color-text-muted)]">Leaf category of the taxonomy; “BoQ only” items are not schematic blocks.</div>
+        <AvailListPicker value={value} onChange={setValue} options={CATEGORY_OPTIONS} placeholder="Search categories…" ariaLabel="Category" autoFocus />
+      </div>
+    </Modal>
+  );
+}
+
+/** Set lifecycle: upcoming (with when it ships), active, or EoL (with the date, optional). */
+function LifecycleDialog({ onClose, onPick }: { onClose: () => void; onPick: (lifecycle: LifecycleInfo) => void }) {
+  const [state, setState] = useState<Lifecycle>("upcoming");
+  const [date, setDate] = useState("");
+  const input = state === "upcoming" ? { lifecycle: state, availableFrom: date } : state === "eol" ? { lifecycle: state, eolDate: date } : { lifecycle: state };
+  const parsed = parseLifecycleInput(input);
+  return (
+    <Modal
+      title="Set lifecycle"
+      onClose={onClose}
+      testId="avail-ws-lifecycle"
+      footer={
+        <>
+          <button className={btnPlain} onClick={onClose}>
+            Cancel
+          </button>
+          <button className={btnPrimary} disabled={!parsed.ok} onClick={() => parsed.ok && onPick(parsed.value)}>
+            Show what will change
+          </button>
+        </>
+      }
+    >
+      <div className="p-4 flex flex-col gap-2">
+        <div className="flex gap-3">
+          {LIFECYCLES.map((l) => (
+            <label key={l} className="flex items-center gap-1 cursor-pointer">
+              <input type="radio" name="avail-lifecycle" checked={state === l} onChange={() => setState(l)} /> {LIFECYCLE_LABELS[l]}
+            </label>
           ))}
-        </select>
+        </div>
+        {state !== "active" && (
+          <label className="flex flex-col gap-0.5">
+            <span>{state === "upcoming" ? "Available from (optional)" : "End of life since (optional)"}</span>
+            <input
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              placeholder={state === "upcoming" ? "2027-Q3" : "2026-06"}
+              aria-label={state === "upcoming" ? "Available from" : "End of life date"}
+              className="border border-[var(--color-border)] rounded px-1 py-0.5 w-40"
+            />
+            <span className="text-[var(--color-text-muted)]">Year, quarter, month or day: 2027, 2027-Q3, 2027-09, 2027-09-15.</span>
+          </label>
+        )}
+        {!parsed.ok && <div className="text-red-700">{parsed.error}</div>}
+        {state === "upcoming" && (
+          <div className="text-[var(--color-text-muted)]">Values estimated from an analog (“estimated from …” in notes) do not lower the level of an upcoming product.</div>
+        )}
+        {state !== "upcoming" && (
+          <div className="text-[var(--color-text-muted)]">A verified template with estimated values falls below level A and becomes a draft.</div>
+        )}
       </div>
     </Modal>
   );
@@ -963,6 +1031,7 @@ function DetailsPanel({
       )}
       <div className="px-3 py-2 flex flex-col gap-3">
         {a.statusReason && <div className="text-amber-900">Status note: {a.statusReason}</div>}
+        {row.lifecycle.lifecycle !== "active" && <div data-testid="avail-ws-lifecycle-note" className="text-sky-900">Lifecycle: {row.lifecycleText}</div>}
         <DuplicateDecisions row={row} rows={rows} onFocus={onFocus} onNotDuplicates={onNotDuplicates} onChanged={onChanged} onReport={onReport} />
         <TemplateOverrides row={row} onChanged={onChanged} onReport={onReport} />
         <table className="w-full">
