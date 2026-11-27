@@ -490,8 +490,13 @@ Modules»), иначе причина в `_avail.portsMissing`; откуда с�
 где документ разъём не называет, по корпусу (`wyrestormBody`) — настольная / полочная коробка (rackForm shelf-only) с DC →
 `barrel` (locking DC, threaded bushing), напряжение — блока питания (voltage карточки); настенная (`-IW`, `-UK`, `-US`; in-wall,
 wall plate, gang в названии / описании) → `phoenix` 2-pin; стоечная (full / half) с сетевым входом → `iec`. Коробка или
-настенная с PoH / PoC без порта питания получает «<V>V DC In» (локальный блок — альтернатива). notes порта — «Wyrestorm
-convention: … — verify». Камеры, бары, панели, сетевые устройства не на стойке — не трогает. Отчёт —
+настенная с PoH / PoC без порта питания получает «<V>V DC In» (локальный блок — альтернатива). Дополнение того же дня
+(spec sheets RXV-35-4K, NHD-500 / 600, EX-35-H2, MX KIT full range): AC power cord в комплекте (MX / MXV, матрицы
+комплектов, IDB-300 / 400) → `iec`; камеры, видео- и аудиобары → `barrel` без фиксации (внешний адаптер); только PoE
+(keypad, touch-screen: SYN-KEY10, SYN-TOUCH10) → без порта питания, «PoE» на LAN; RS-232 → `phoenix` 3-pin; аудио
+symmetric (balanced) → `phoenix` 5-pin, несимметричное стерео → `trs-eighth`; IR → `trs-eighth` (TS излучатель, TRS приёмник);
+что notes порта уже называют (3.5mm, 8-pin Mini DIN, N-pin) — как названо. notes порта — «Wyrestorm convention: … —
+verify». Отчёт —
 `docs/avail/wyrestorm-intake.md`.
 
 Форма сбора (шаг 1.10, [`docs/avail/intake.md`](docs/avail/intake.md)): шаблон

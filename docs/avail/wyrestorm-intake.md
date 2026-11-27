@@ -7,52 +7,44 @@
 - Строк Keep: 174 → карточки `library/catalog/wyrestorm/` (174), Exclude: 17 (не загружаются).
 - Комплекты: 29 в `docs/avail/kits.json` — 4 с листа Kits, 25 пар TX/RX; у компонентов `_avail.kit.kitPartNumbers`, артикул комплекта убран из Alt part number.
 - Источник портов: страница продукта wyrestorm.com — 150 карточек (`portsSource.kind = datasheet`, раздел Technical Specifications; PDF спецификаций — только в партнёрской папке SharePoint, недоступны), снимок базы (порты сообщества) — 5, без портов — 19.
-- Уровни линтера (после соглашения о разъёме питания): A 12, B 89, FIX 73. В базу `import:catalog` грузит A и B (101: 65 новых, 36 обновят шаблоны базы); FIX остаются в каталоге до данных.
+- Уровни линтера (после соглашения о разъёмах): A 19, B 105, FIX 50. В базу `import:catalog` грузит A и B (124: 80 новых, 44 обновят шаблоны базы); FIX остаются в каталоге до данных.
 
-## Разъём питания: соглашение Wyrestorm (решение 2026-11-27)
+## Соглашение Wyrestorm о разъёмах (решения 2026-11-27)
 
-Где документ разъём питания не называет (`src/avail/wyrestormPower.ts`, применяет `fill:catalog-ports`; источник соглашения — spec sheets EX-100-H2, RXV-35-4K, NHD-400, NHD-500-IW-TX):
+Только где страница разъём не называет; notes порта — «Wyrestorm convention: … — verify». Код — `src/avail/wyrestormPower.ts`, применяет `fill:catalog-ports`. Источник — spec sheets Wyrestorm: EX-100-H2, RXV-35-4K, NHD-400, NHD-500-IW-TX, NHD-500 / 600, EX-35-H2, MX KIT full range.
 
+**Питание**
 - настольные / полочные коробки с DC — `barrel` (locking DC, threaded bushing), напряжение — блока питания (поле voltage карточки со страницы);
-- настенные (`-IW`, `-UK`, `-US`; in-wall / wall plate / gang в названии или описании) — `phoenix`, 2-pin;
-- стоечные с сетевым входом — `iec`;
-- коробки и настенные с PoH / PoC без своего порта питания получают порт питания (локальный блок — альтернатива питанию по линии);
-- notes порта: «Wyrestorm convention: locking DC barrel (threaded bushing) / 2-pin phoenix (in-wall) / IEC — verify».
+- настенные (`-IW`, `-UK`, `-US`; in-wall / wall plate / gang) — `phoenix`, 2-pin;
+- стоечные с сетевым входом и всё, к чему в комплекте AC power cord (матрицы MX / MXV, в т.ч. матрицы комплектов, IDB-300 / IDB-400 с сетевым входом) — `iec`;
+- камеры, видео- и аудиобары с внешним адаптером (CAM-210 / 420, HALO-VX10, APO-210-UC) — `barrel` без фиксации;
+- питание только по PoE (SYN-KEY10, SYN-TOUCH10) — без отдельного порта питания, «PoE» в notes LAN;
+- коробки и настенные с PoH / PoC без своего порта питания — порт локального блока (альтернатива питанию по линии).
 
-Разъём, названный документом, не меняется. Соглашение применено к 109 карточкам. Не подпадают (другой корпус) — разъём питания остаётся пустым до документа:
+**Сигналы**
+- RS-232 — `phoenix` 3-pin; симметричное аналоговое аудио — `phoenix` 5-pin; несимметричное стерео — 3.5 мм (`trs-eighth`);
+- IR — 3.5 мм: TS у излучателя (IR Out), TRS у приёмника (IR In);
+- что notes порта уже называют со страницы (3.5mm, 8-pin Mini DIN, N-pin) — берётся как названо; аудио без указания, симметричное ли оно, — без разъёма.
 
+Питание без разъёма осталось у:
 - AMP-2120-DNT: AC Power In
-- APO-210-UC: 24V DC In
-- CAM-210-NDI-PTZ: 12V DC In
-- CAM-210-PTZ: 12V DC In
-- CAM-420-PTZ: 12V DC In
-- HALO-VX10 v2: 12V DC In
-- IDB-300-BTN: AC In
-- IDB-400-MS-C: AC Mains In
-- IDB-400-MS: Mains In
-- MX-0404-KIT-MATRIX: AC In
-- MX-0808-H2A-MK2: AC Power In
-- MX-0808-KIT-MATRIX: AC Power In
-- MXV-0404-H2A-KIT-MATRIX: AC In
-- MXV-0808-H2A-70 v3: AC Power In
-- MXV-0808-H2A v3: AC Power In
-- SYN-KEY10: 12V DC In
-- SYN-TOUCH10 v3: 12V DC In
 
-## Почему FIX (73)
+## Почему FIX (50)
 
 - Без портов: 19 (ниже).
-- С портами, но у порта нет разъёма (документ не называет): 54. Чаще всего:
-  - RS-232: 9
-  - Audio Out: 8
-  - 12V DC In: 6
-  - AC Power In: 5
+- С портами, но у порта нет разъёма (страница не называет, соглашение не покрывает): 31. Чаще всего:
   - USB Host: 5
-  - IR In: 5
-  - IR Out: 5
-  - Line In: 4
-  - Audio In: 4
   - Mic In 1: 3
+  - Mic In 2: 3
+  - Audio Out: 3
+  - Mains Outlet: 3
+  - Trigger In: 2
+  - Line In: 2
+  - Audio In: 2
+  - USB Device 1: 2
+  - USB Device 2: 2
+  - USB Device 3: 2
+  - USB Device 4: 2
 
 ## Без портов и почему
 
@@ -120,8 +112,8 @@
 
 ## Шаблоны Wyrestorm в базе (снимок 2026-11-25, 55, все raw от сообщества)
 
-- Совпали по производителю + артикулу: 49. `import:catalog` обновит 37 (карточка A/B; raw → draft): APO-SKY-MIC, CAM-0402-BRG, CAM-0402-NDI-BRG, COM-MIC-HUB, CON-ANLG-DNT, CON-DNT-ANLG, CON-DNT-XLR, CON-USBC-DNT, CON-XLR-DNT, EX-35-8K-RX, EX-35-8K-TX, EXP-CON-AUD-H2, EXP-MX-0402-H2, MX-0403-H3-MST, MX-1007-HYB, NHD-120-TX, NHD-124-TX, NHD-128-NDI-TRX, NHD-150-RX, NHD-500-E-RX, NHD-600-E-RX, NHD-600-E-TX, NHD-CTL-PRO-V2, NHD-USB-TRX, RX-35-POH, RX-70-4K, RX3-100, RXV-35-4K, RXV-35-SCL, RXV-70-4K-G2, RXV-70-G2-SCL, SW-0204-VW, SW-130-TX-UK, SW-515-RX, SW-620-TX-W, SW-640L-TX-W, TS-280-EU.
-- Совпали, но карточка FIX — в базе остаётся версия сообщества, пока карточка не дойдёт до B: 12 (AMP-2120-DNT, EXA-100-EARC-RX, EXA-100-EARC-TX, IDB-300-BTN, MXV-0808-H2A v3, MXV-0808-H2A-70 v3, NHD-120-IW-TX, NHD-500-E-TX, NHD-500-TX v2, NHD-510-TX, NHD-600-TRX, NHD-600-TRXF).
+- Совпали по производителю + артикулу: 49. `import:catalog` обновит 45 (карточка A/B; raw → draft): APO-SKY-MIC, CAM-0402-BRG, CAM-0402-NDI-BRG, COM-MIC-HUB, CON-ANLG-DNT, CON-DNT-ANLG, CON-DNT-XLR, CON-USBC-DNT, CON-XLR-DNT, EX-35-8K-RX, EX-35-8K-TX, EXA-100-EARC-RX, EXP-CON-AUD-H2, EXP-MX-0402-H2, MX-0403-H3-MST, MX-1007-HYB, MXV-0808-H2A v3, MXV-0808-H2A-70 v3, NHD-120-IW-TX, NHD-120-TX, NHD-124-TX, NHD-128-NDI-TRX, NHD-150-RX, NHD-500-E-RX, NHD-500-E-TX, NHD-510-TX, NHD-600-E-RX, NHD-600-E-TX, NHD-600-TRX, NHD-600-TRXF, NHD-CTL-PRO-V2, NHD-USB-TRX, RX-35-POH, RX-70-4K, RX3-100, RXV-35-4K, RXV-35-SCL, RXV-70-4K-G2, RXV-70-G2-SCL, SW-0204-VW, SW-130-TX-UK, SW-515-RX, SW-620-TX-W, SW-640L-TX-W, TS-280-EU.
+- Совпали, но карточка FIX — в базе остаётся версия сообщества, пока карточка не дойдёт до B: 4 (AMP-2120-DNT, EXA-100-EARC-TX, IDB-300-BTN, NHD-500-TX v2).
 - Без настоящего артикула / артикул не совпал — кандидаты в дубли (6), решить в рабочем окне (Possible duplicates / Merge into… / Not duplicates):
   - «Wyrestorm EX-70-G2 RX» (modelNumber `EX-70-G2 (Receiver)`) ↔ карточки: EX-70-G2-RX, EX-70-G2-TX
   - «Wyrestorm EX-70-G2 TX» (modelNumber `EX-70-G2 (Transmitter)`) ↔ карточки: EX-70-G2-RX, EX-70-G2-TX
