@@ -3,7 +3,7 @@
  */
 import { describe, expect, it } from "vitest";
 import type { CatalogFile, CatalogTemplate } from "../avail/catalogPorts";
-import { cardFromRow, importIntake, INTAKE_COLUMNS, intakeId, mergeCard, validateIntake, type IntakeIndexEntry } from "../avail/intake";
+import { cardFromRow, formatIntakeReport, importIntake, INTAKE_COLUMNS, intakeId, mergeCard, validateIntake, type IntakeIndexEntry } from "../avail/intake";
 
 const HEADER = [...INTAKE_COLUMNS];
 type Row = Partial<Record<string, string>>;
@@ -133,5 +133,51 @@ describe("importIntake", () => {
     const again = importIntake(sheet(DSP), files, first.index, "a.xlsx");
     expect(again.actions.map((a) => a.action)).toEqual(["unchanged"]);
     expect(again.write).toEqual([]);
+  });
+});
+
+describe("review decision (Decision / Reason columns)", () => {
+  /** A reviewed sheet: the template columns plus Decision and Reason. */
+  const reviewed = (...rows: Row[]) => {
+    const names = [...HEADER.map((h) => h.replace(/\s*\*$/, "")), "Decision", "Reason"];
+    return [[...HEADER, "Decision", "Reason"], ...rows.map((r) => names.map((n) => r[n] ?? ""))];
+  };
+  const kit = { ...DSP, "Part number": "910-K", Source: "?", Decision: "Exclude", Reason: "kit / bundle" };
+
+  it("imports Keep rows only; Exclude rows are skipped without validation and counted by reason", () => {
+    const r = importIntake(reviewed({ ...DSP, Decision: "Keep" }, kit, { ...kit, "Part number": "910-9" }, { ...kit, "Part number": "910-L", Reason: "" }), [], [], "r.xlsx");
+    expect(r.fatal).toEqual([]);
+    expect(r.rows.map((x) => x.partNumber)).toEqual(["910-9"]);
+    expect(r.rows[0].errors).toEqual([]);
+    expect(r.excluded).toEqual([
+      { row: 3, partNumber: "910-K", reason: "kit / bundle" },
+      { row: 4, partNumber: "910-9", reason: "kit / bundle" },
+      { row: 5, partNumber: "910-L", reason: "" },
+    ]);
+    expect(r.actions.map((a) => a.action)).toEqual(["created"]);
+    const report = formatIntakeReport(r, "r.xlsx", true);
+    expect(report).toContain("Excluded by the review (Decision = Exclude): 3");
+    expect(report).toContain("     2  kit / bundle");
+    expect(report).toContain("     1  (no reason)");
+  });
+
+  it("stops on Check, empty or unknown decisions and lists them; nothing is imported", () => {
+    const r = importIntake(
+      reviewed({ ...DSP, Decision: "keep" }, { ...kit, Decision: "Check", Reason: "your call" }, { ...kit, "Part number": "910-M", Decision: "" }, { ...kit, "Part number": "910-N", Decision: "Maybe" }),
+      [], [], "r.xlsx",
+    );
+    expect(r.unresolved.map((u) => [u.row, u.partNumber, u.decision])).toEqual([[3, "910-K", "Check"], [4, "910-M", ""], [5, "910-N", "Maybe"]]);
+    expect(r.fatal).toEqual(["3 rows are not decided (Decision must be Keep or Exclude; Check means the review is not finished)"]);
+    expect(r.write).toEqual([]);
+    const report = formatIntakeReport(r, "r.xlsx", false);
+    expect(report).toContain('row 3    910-K: Decision "Check" (your call)');
+    expect(report).toContain("row 4    910-M: Decision empty");
+    expect(report).toContain("FAILED: nothing imported");
+  });
+
+  it("without a Decision column every row is imported, as before", () => {
+    const r = importIntake(sheet(DSP, { ...DSP, "Part number": "910-10" }), [], [], "a.xlsx");
+    expect(r.excluded).toEqual([]);
+    expect(r.actions.length).toBe(2);
   });
 });

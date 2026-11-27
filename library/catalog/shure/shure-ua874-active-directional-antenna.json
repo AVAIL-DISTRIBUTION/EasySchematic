@@ -1,0 +1,65 @@
+{
+  "id": "avail-shure-ua874v",
+  "label": "Shure UA874 (Active Directional Antenna)",
+  "shortName": "UA874",
+  "manufacturer": "Shure",
+  "modelNumber": "UA874V",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua874",
+  "searchTerms": [
+    "ua874v",
+    "ua874",
+    "shure",
+    "active",
+    "directional",
+    "antenna"
+  ],
+  "heightMm": 559,
+  "widthMm": 435,
+  "depthMm": 68,
+  "weightKg": 0.765,
+  "voltage": "10-15V DC (coax bias)",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Active Directional Antenna",
+    "rackFormSource": "Non-rack",
+    "description": "Active Directional Antenna",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA874V/en-US.pdf",
+    "note": "Powered via coax bias from receiver/distribution amp, 75 mA; W not published. Dimensions/weight from UA874V guide. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 0.002 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA874V-user-guide.pdf",
+      "note": "Interface p.1; specifications p.3"
+    },
+    "notes": "Weight changed 0.8 kg -> 0.765 kg per UA874V guide p.3."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm; 10-15 V DC bias (75 mA) from the receiver over the same coax; 174-216 MHz; receive only"
+    },
+    {
+      "id": "p2",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from transmitters"
+    }
+  ]
+}

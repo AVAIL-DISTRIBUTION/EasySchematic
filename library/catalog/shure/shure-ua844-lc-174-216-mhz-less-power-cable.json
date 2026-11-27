@@ -1,0 +1,151 @@
+{
+  "id": "avail-shure-ua844-v-lc-e",
+  "label": "Shure UA844+/LC (174-216 MHz, Less power cable)",
+  "shortName": "UA844+/LC",
+  "manufacturer": "Shure",
+  "modelNumber": "UA844+V/LC-E",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua844plc",
+  "searchTerms": [
+    "ua844+v/lc-e",
+    "ua844+/lc",
+    "shure",
+    "less",
+    "power",
+    "cable",
+    "174-216",
+    "mhz"
+  ],
+  "heightMm": 45,
+  "widthMm": 483,
+  "depthMm": 172,
+  "weightKg": 1.62,
+  "voltage": "14-18V DC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "174-216 MHz, Less power cable",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Antenna Distribution System (less cable)",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA844SWBplus/en-US.pdf",
+    "note": "Less power cable (LC) version; data from UA844+ user guide. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 3.992 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA844SWBplus-user-guide.pdf",
+      "note": "Model variations and front/rear panels p.4; cascading p.6; specifications pp.7-8"
+    },
+    "notes": "Weight changed 1.6 kg -> 1.62 kg per UA844+ guide p.7. /LC: same unit, ships without the locking DC cords and with 2 instead of 10 short BNC cables (guide p.6).; Variant \"Less power cable\" → \"174-216 MHz, Less power cable\" (from the part number; the intake form gave one Variant to several part numbers)",
+    "portsMissing": "The guide does not state the number of RF outputs per channel in text (5 per channel assumed from 'up to five receivers' and the 10 supplied BNC cables); the front-panel Antenna A/B connectors (front-mount antenna hardware) are not modelled separately. Number of RF output jacks per antenna channel is not stated in the UA844+ user guide (panel drawing not in the PDF): RF Out A / RF Out B are modelled once each; verify against the rear panel."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF In A",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; antenna input with 15 V DC bias (150 mA max); 174-216 MHz (V)"
+    },
+    {
+      "id": "p2",
+      "label": "RF In B",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; antenna input with 15 V DC bias (150 mA max); 174-216 MHz (V)"
+    },
+    {
+      "id": "p3",
+      "label": "RF Out A",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, to receiver antenna inputs A; the guide (p.4) names \"RF Output A\" but does not state how many jacks (one system supports up to five receivers, cascade included)"
+    },
+    {
+      "id": "p4",
+      "label": "RF Out B",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, to receiver antenna inputs B; the guide (p.4) names \"RF Output B\" but does not state how many jacks (one system supports up to five receivers, cascade included)"
+    },
+    {
+      "id": "p5",
+      "label": "Cascade Out A",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to antenna input A of a secondary UA844+"
+    },
+    {
+      "id": "p6",
+      "label": "Cascade Out B",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to antenna input B of a secondary UA844+"
+    },
+    {
+      "id": "p7",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC (2.54 A) from the external power supply; 14-18 V DC range; Shure does not name the connector"
+    },
+    {
+      "id": "p8",
+      "label": "DC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "14-18 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; not for other distribution systems; Shure does not name the connector"
+    },
+    {
+      "id": "p9",
+      "label": "DC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "14-18 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; not for other distribution systems; Shure does not name the connector"
+    },
+    {
+      "id": "p10",
+      "label": "DC Out 3",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "14-18 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; not for other distribution systems; Shure does not name the connector"
+    },
+    {
+      "id": "p11",
+      "label": "DC Out 4",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "14-18 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; not for other distribution systems; Shure does not name the connector"
+    }
+  ]
+}

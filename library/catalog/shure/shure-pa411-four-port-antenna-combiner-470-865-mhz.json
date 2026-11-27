@@ -1,0 +1,143 @@
+{
+  "id": "avail-shure-pa411-e",
+  "label": "Shure PA411 (Four Port Antenna Combiner, 470-865 Mhz)",
+  "shortName": "PA411",
+  "manufacturer": "Shure",
+  "modelNumber": "PA411-E",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/pa411",
+  "searchTerms": [
+    "pa411-e",
+    "pa411",
+    "shure",
+    "four",
+    "port",
+    "antenna",
+    "combiner",
+    "470-865",
+    "mhz"
+  ],
+  "heightMm": 42,
+  "widthMm": 177,
+  "depthMm": 198,
+  "weightKg": 1.62,
+  "voltage": "15V DC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Four Port Antenna Combiner, 470-865 Mhz",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Antenna Combiner for PSM 300 Wireless Systems",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/PA411/pa411-specification-sheet-english.pdf",
+    "note": "Power draw in W not published. Price list net weight 1.996 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/pa411-specification-sheet-english.pdf",
+      "note": "Overview and specifications, p.1"
+    },
+    "notes": "Dimensions changed W 198 / D 177 mm -> W 177 / D 198 mm (spec sheet: 42 x 177 x 198 mm H x W x D) and weight 1.3 kg -> 1.62 kg per PA411 spec sheet p.1.",
+    "portsMissing": "The PA411 spec sheet gives the panels only as drawings: DC input and DC output connector types and the number of RF output connectors (one main output assumed) are not stated in text."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF In 1",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; from a PSM300 transmitter; 470-865 MHz; 4.5-15 dBm operating, 20 dBm max per channel"
+    },
+    {
+      "id": "p2",
+      "label": "RF In 2",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; from a PSM300 transmitter; 470-865 MHz; 4.5-15 dBm operating, 20 dBm max per channel"
+    },
+    {
+      "id": "p3",
+      "label": "RF In 3",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; from a PSM300 transmitter; 470-865 MHz; 4.5-15 dBm operating, 20 dBm max per channel"
+    },
+    {
+      "id": "p4",
+      "label": "RF In 4",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; from a PSM300 transmitter; 470-865 MHz; 4.5-15 dBm operating, 20 dBm max per channel"
+    },
+    {
+      "id": "p5",
+      "label": "Antenna Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; main RF output to a 1/4-wave PSM antenna; 470-865 MHz; gain -5 to 0 dB"
+    },
+    {
+      "id": "p6",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC; Shure does not name the connector"
+    },
+    {
+      "id": "p7",
+      "label": "DC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V DC to a PSM300 transmitter via accessory power cable; 1.4 A max combined from all outputs; Shure does not name the connector"
+    },
+    {
+      "id": "p8",
+      "label": "DC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V DC to a PSM300 transmitter via accessory power cable; 1.4 A max combined from all outputs; Shure does not name the connector"
+    },
+    {
+      "id": "p9",
+      "label": "DC Out 3",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V DC to a PSM300 transmitter via accessory power cable; 1.4 A max combined from all outputs; Shure does not name the connector"
+    },
+    {
+      "id": "p10",
+      "label": "DC Out 4",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V DC to a PSM300 transmitter via accessory power cable; 1.4 A max combined from all outputs; Shure does not name the connector"
+    }
+  ]
+}

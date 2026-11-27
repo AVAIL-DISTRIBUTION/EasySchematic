@@ -1,0 +1,62 @@
+{
+  "id": "avail-shure-mxp-5b",
+  "label": "Shure MXP-5 (Black)",
+  "shortName": "MXP-5",
+  "manufacturer": "Shure",
+  "modelNumber": "MXP-5B",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers/mxp-5",
+  "searchTerms": [
+    "mxp-5b",
+    "mxp-5",
+    "shure",
+    "black"
+  ],
+  "heightMm": 111.9,
+  "widthMm": 340,
+  "depthMm": 340,
+  "weightKg": 3.28,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Ceiling-Mount Passive Loudspeaker",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXP-5/en-US.pdf",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXP-5-user-guide.pdf",
+      "note": "MXP-5 user guide pp.4-6 (Parts, Specifications, Transformer taps) and p.12 (4-pin IN/OUT wiring drawing)"
+    },
+    "notes": "Dimensions published as 340 x 340 x 111.9 mm (p.5); taken as W x D x H (ceiling loudspeaker)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "IN +/- of the 4-pin block 5.08 mm; 4 ohm or 70 V / 100 V transformer taps (1.875-15 W) via tap selector; 28 W max (IEC 60268-5)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out (Loop)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "OUT +/- of the same 4-pin block, parallel loop-through to the next 70 V / 100 V loudspeaker"
+    }
+  ]
+}

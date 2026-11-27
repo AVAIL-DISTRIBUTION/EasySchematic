@@ -1,0 +1,89 @@
+{
+  "id": "avail-shure-aniusb-matrix",
+  "label": "Shure ANIUSB-MATRIX (4Ch In/2Ch Out Usb Matrix Mix,Dnte,Block)",
+  "shortName": "ANIUSB-MATRIX",
+  "manufacturer": "Shure",
+  "modelNumber": "ANIUSB-MATRIX",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/mixers/aniusb-matrix",
+  "searchTerms": [
+    "aniusb-matrix",
+    "shure",
+    "4ch",
+    "in/2ch",
+    "out",
+    "usb",
+    "matrix",
+    "mix",
+    "dnte",
+    "block"
+  ],
+  "heightMm": 40,
+  "widthMm": 140,
+  "depthMm": 128,
+  "weightKg": 0.668,
+  "voltage": "PoE 802.3af class 0",
+  "poeDrawW": 6.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "4Ch In/2Ch Out Usb Matrix Mix,Dnte,Block",
+    "rackFormSource": "Shelf",
+    "description": "ANIUSB-MATRIX USB Audio Network Interface with Matrix Mixing",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/file/259908",
+    "note": "1/3 rack unit - mounts in CRT1 tray; Shelf selected. Price list net weight 0.856 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/pubs-259908.pdf",
+      "note": "ANIUSB-MATRIX spec sheet p.1 (Analog Connections, USB Connections, Network Connections)"
+    },
+    "notes": "weightKg: card had 0.7, document gives 0.668 (pubs-259908.pdf)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin block, active balanced, line / aux level"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin block, impedance balanced, line / aux / mic level"
+    },
+    {
+      "id": "p3",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante 4 in / 2 out and control; the only power input, PoE class 0 (6.5 W max), PoE+ compatible"
+    },
+    {
+      "id": "p4",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 2.0 Type B, 1 in / 1 out (summed mono)"
+    }
+  ]
+}

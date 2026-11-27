@@ -1,0 +1,170 @@
+{
+  "id": "avail-shure-adtddc-g56",
+  "label": "Shure ADTD (Band G56 (470-636 MHz), DC powered)",
+  "shortName": "ADTD",
+  "manufacturer": "Shure",
+  "modelNumber": "ADTDDC=-G56",
+  "deviceType": "iem-transmitter",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/in-ear-monitoring/adpsm/adtd",
+  "searchTerms": [
+    "adtddc=-g56",
+    "adtd",
+    "shure",
+    "band",
+    "g56",
+    "(470-636",
+    "mhz)",
+    "dc",
+    "powered"
+  ],
+  "heightMm": 44,
+  "widthMm": 482,
+  "depthMm": 385,
+  "weightKg": 4.9,
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band G56 (470-636 MHz), DC powered",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Axient Digital PSM Wireless Dual Transmitter",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/ADPSM/en-US.pdf",
+    "note": "ADTDE: 100-240 V AC, 1.2 A max (6.2 A with AC outlet loaded); W not published. ADTDDC: 12-48 V DC, 10.1 A max, 4.9 kg. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ADPSM-user-guide.pdf",
+      "note": "p.9-11 ADTQ/ADTD front and back panel; p.25-27 preset antennas; p.81-82 specifications"
+    },
+    "portsMissing": "The ADPSM guide gives no connector counts or panel labels: audio inputs derived as one L/R combo pair per channel and antenna outputs from the preset text (ADTQ 4, ADTD 2); DC input connector type not stated. Front-panel 3.5 mm monitor jack is not modelled.",
+    "notes": "weightKg was 4.7 before the data sheet (shure/ADPSM-user-guide.pdf, 2026-11-27)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1 L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "combo-xlr-trs",
+      "notes": "Channel 1 left; combo XLR / 1/4\" TRS, balanced, +4 dBu / -10 dBV; AES3 on XLR when the rear input switch is set to AES3; either jack for mono"
+    },
+    {
+      "id": "p2",
+      "label": "Audio In 1 R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "combo-xlr-trs",
+      "notes": "Channel 1 right; combo XLR / 1/4\" TRS, balanced, +4 dBu / -10 dBV; AES3 on XLR when the rear input switch is set to AES3; either jack for mono"
+    },
+    {
+      "id": "p3",
+      "label": "Audio In 2 L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "combo-xlr-trs",
+      "notes": "Channel 2 left; combo XLR / 1/4\" TRS, balanced, +4 dBu / -10 dBV; AES3 on XLR when the rear input switch is set to AES3; either jack for mono"
+    },
+    {
+      "id": "p4",
+      "label": "Audio In 2 R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "combo-xlr-trs",
+      "notes": "Channel 2 right; combo XLR / 1/4\" TRS, balanced, +4 dBu / -10 dBV; AES3 on XLR when the rear input switch is set to AES3; either jack for mono"
+    },
+    {
+      "id": "p5",
+      "label": "Antenna Out A",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm transmit antenna output; Band G56 470-636 MHz"
+    },
+    {
+      "id": "p6",
+      "label": "Antenna Out B",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm transmit antenna output; Band G56 470-636 MHz"
+    },
+    {
+      "id": "p7",
+      "label": "IEM (Wireless)",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link to ADXR bodypack receivers (up to 2 stereo channels, licence dependent); Band G56 470-636 MHz"
+    },
+    {
+      "id": "p8",
+      "label": "Ctrl 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control; 10/100/1000 Mbps"
+    },
+    {
+      "id": "p9",
+      "label": "Ctrl 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control; 10/100/1000 Mbps"
+    },
+    {
+      "id": "p10",
+      "label": "Dante (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 audio inputs"
+    },
+    {
+      "id": "p11",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante redundant port"
+    },
+    {
+      "id": "p12",
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC locking, 100-240 V AC 50-60 Hz, 1.2 A max (6.2 A max with the outlet loaded)"
+    },
+    {
+      "id": "p13",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "DC module: 12-48 V DC, 10.1 A max; redundant supply; connector type not stated in the guide"
+    }
+  ]
+}

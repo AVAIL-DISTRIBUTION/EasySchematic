@@ -1,0 +1,64 @@
+{
+  "id": "avail-shure-pa805db-rsma",
+  "label": "Shure PA805DB-RSMA (Passive Directional Antenna 2.4& 5.8Ghz)",
+  "shortName": "PA805DB-RSMA",
+  "manufacturer": "Shure",
+  "modelNumber": "PA805DB-RSMA",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/pa805db_rsma",
+  "searchTerms": [
+    "pa805db-rsma",
+    "shure",
+    "passive",
+    "directional",
+    "antenna",
+    "2.4&",
+    "5.8ghz"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Passive Directional Antenna 2.4& 5.8Ghz",
+    "rackFormSource": "Non-rack",
+    "description": "Passive Dual Band Directional Antenna",
+    "source": "Manufacturer site",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/PA805DB-RSMA/en-US.pdf",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/PA805DB-RSMA-user-guide.pdf",
+      "note": "Installation p.4; specifications pp.6-7"
+    }
+  },
+  "heightMm": 105,
+  "widthMm": 164,
+  "depthMm": 27.5,
+  "weightKg": 0.0567,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "Reverse SMA, 50 ohm, passive; to ANTENNA A/B port of a receiver or antenna/power distribution system; 2.39-2.51 GHz and 5.0-6.0 GHz"
+    },
+    {
+      "id": "p2",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from 2.4/5.8 GHz transmitters; directional, 6.2 dBi at 2.45 GHz, 8.4 dBi at 5.785 GHz"
+    }
+  ]
+}

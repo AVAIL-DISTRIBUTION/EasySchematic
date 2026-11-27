@@ -1,0 +1,69 @@
+{
+  "id": "avail-shure-mxcwncs-e",
+  "label": "Shure MXCWNCS (Networked Charging Station, 10Bay Sb930)",
+  "shortName": "MXCWNCS",
+  "manufacturer": "Shure",
+  "modelNumber": "MXCWNCS-E",
+  "deviceType": "charging-station",
+  "category": "Audio Products / Discussion Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/mxcw/mxcwncs",
+  "searchTerms": [
+    "mxcwncs-e",
+    "mxcwncs",
+    "shure",
+    "networked",
+    "charging",
+    "station",
+    "10bay",
+    "sb930"
+  ],
+  "heightMm": 72.4,
+  "widthMm": 438.9,
+  "depthMm": 193.5,
+  "weightKg": 2.825,
+  "voltage": "100-240V AC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Networked Charging Station, 10Bay Sb930",
+    "rackFormSource": "Shelf",
+    "description": "MXCWNCS Networked Charging Station",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/MXCWNCS/MXCW_Datasheet_Systempage_EN_letter_1809.pdf",
+    "note": "Input 100-240 V AC 2 A max; power in W not published. Price list net weight 3.81 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXCW_Datasheet_Systempage_EN_letter_1809.pdf",
+      "note": "Microflex Complete Wireless system data sheet p.5 (MXCWNCS specifications)"
+    },
+    "portsMissing": "Mains voltage and power draw are not given in the MXCW system data sheet (card voltage kept from the intake).",
+    "notes": "weightKg: card had 2.8, document gives 2.825 (MXCW_Datasheet_Systempage_EN_letter_1809.pdf)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100 Ethernet; remote battery charge monitoring"
+    },
+    {
+      "id": "p2",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC inlet, IEC power cable included"
+    }
+  ]
+}

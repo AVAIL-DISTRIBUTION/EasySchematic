@@ -1,0 +1,151 @@
+{
+  "id": "avail-shure-pa421b-e",
+  "label": "Shure PA421B (4-Ch Antenna Combiner 470-865 Mhz)",
+  "shortName": "PA421B",
+  "manufacturer": "Shure",
+  "modelNumber": "PA421B-E",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/pa421b",
+  "searchTerms": [
+    "pa421b-e",
+    "pa421b",
+    "shure",
+    "4-ch",
+    "antenna",
+    "combiner",
+    "470-865",
+    "mhz"
+  ],
+  "heightMm": 43,
+  "widthMm": 401,
+  "depthMm": 365,
+  "weightKg": 4.3,
+  "powerDrawW": 98,
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "4-Ch Antenna Combiner 470-865 Mhz",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Antenna Combiner for PSM Wireless Systems",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/PA421B/pa421b-specification-sheet-english.pdf",
+    "note": "Price list net weight 6.493 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/pa421b-specification-sheet-english.pdf",
+      "note": "Features and specifications, p.1"
+    },
+    "portsMissing": "The PA421B spec sheet does not state the DC output connector type or the signal direction of the expansion port."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF In 1",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, active (0 dB gain); from a PSM transmitter; 470-865 MHz; +15 V bias only after Shure service modification"
+    },
+    {
+      "id": "p2",
+      "label": "RF In 2",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, active (0 dB gain); from a PSM transmitter; 470-865 MHz; +15 V bias only after Shure service modification"
+    },
+    {
+      "id": "p3",
+      "label": "RF In 3",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, active (0 dB gain); from a PSM transmitter; 470-865 MHz; +15 V bias only after Shure service modification"
+    },
+    {
+      "id": "p4",
+      "label": "RF In 4",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, active (0 dB gain); from a PSM transmitter; 470-865 MHz; +15 V bias only after Shure service modification"
+    },
+    {
+      "id": "p5",
+      "label": "Antenna Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; main output to the antenna; 470-865 MHz"
+    },
+    {
+      "id": "p6",
+      "label": "Expansion",
+      "signalType": "rf",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; daisy-chains a second combiner; <4 dB insertion loss, 33 dBm (2 W) operating range; direction not stated"
+    },
+    {
+      "id": "p7",
+      "label": "DC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC, 660 mA (9.9 W) max per output to compatible IEM transmitters; DC power output cables included; Shure does not name the connector"
+    },
+    {
+      "id": "p8",
+      "label": "DC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC, 660 mA (9.9 W) max per output to compatible IEM transmitters; DC power output cables included; Shure does not name the connector"
+    },
+    {
+      "id": "p9",
+      "label": "DC Out 3",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC, 660 mA (9.9 W) max per output to compatible IEM transmitters; DC power output cables included; Shure does not name the connector"
+    },
+    {
+      "id": "p10",
+      "label": "DC Out 4",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC, 660 mA (9.9 W) max per output to compatible IEM transmitters; DC power output cables included; Shure does not name the connector"
+    },
+    {
+      "id": "p11",
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "100-240 V AC 50-60 Hz, 1.09 A at 100 V AC, 98 W max; IEC power cord"
+    }
+  ]
+}

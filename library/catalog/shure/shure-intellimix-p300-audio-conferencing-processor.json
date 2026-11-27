@@ -1,0 +1,115 @@
+{
+  "id": "avail-shure-p300-imx",
+  "label": "Shure IntelliMix P300 (Audio Conferencing Processor)",
+  "shortName": "IntelliMix P300",
+  "manufacturer": "Shure",
+  "modelNumber": "P300-IMX",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/mixers/p300",
+  "searchTerms": [
+    "p300-imx",
+    "intellimix p300",
+    "shure",
+    "intellimix",
+    "p300",
+    "audio",
+    "conferencing",
+    "processor"
+  ],
+  "heightMm": 40,
+  "widthMm": 210,
+  "depthMm": 226,
+  "weightKg": 1.71,
+  "poeDrawW": 17.5,
+  "voltage": "PoE+ 802.3at class 4",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Audio Conferencing Processor",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Audio Conferencing Processor",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/mxa310-p300/p300-imx-spec-sheet-en.pdf",
+    "note": "Half-rack width; rack mount via CRT1 tray. Price list net weight 0.864 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/p300-imx-spec-sheet-en.pdf",
+      "note": "Specifications p.3 (General, USB, Network, Power, Dimensions, Weight), p.5 (Mobile pin assignments)"
+    },
+    "notes": "Card value replaced by the spec sheet p.3: weightKg was 1.7."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Active balanced, 3-pin block; input impedance 9.6 kOhm; line / aux level"
+    },
+    {
+      "id": "p2",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "Active balanced, 3-pin block; input impedance 9.6 kOhm; line / aux level"
+    },
+    {
+      "id": "p3",
+      "label": "Mobile (TRRS)",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm TRRS for a phone: tip / ring 1 audio in (L / R), ring 2 ground, sleeve audio out to phone"
+    },
+    {
+      "id": "p4",
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Impedance balanced, 3-pin block; output impedance 80 Ohm; line / aux / mic level"
+    },
+    {
+      "id": "p5",
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Impedance balanced, 3-pin block; output impedance 80 Ohm; line / aux / mic level"
+    },
+    {
+      "id": "p6",
+      "label": "Dante (PoE+)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante 10 in / 8 out and control; the only power input, PoE+ 802.3at Type 2 class 4 (17.5 W max)"
+    },
+    {
+      "id": "p7",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-b",
+      "notes": "USB 2.0 Type B, 2 in / 2 out (summed mono), 48 kHz"
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "id": "avail-shure-scm810e",
+  "label": "Shure SCM810 (Microphone Mixer)",
+  "shortName": "SCM810",
+  "manufacturer": "Shure",
+  "modelNumber": "SCM810E",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-ASIA/products/mixers/scm810",
+  "searchTerms": [
+    "scm810e",
+    "scm810",
+    "shure",
+    "microphone",
+    "mixer"
+  ],
+  "heightMm": 44.5,
+  "widthMm": 483,
+  "depthMm": 317,
+  "weightKg": 4.3,
+  "voltage": "230V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Microphone Mixer",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "SCM810 Eight Channel Automatic Mixer",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/SCM810/en-US.pdf",
+    "note": "SCM810E: 230 V AC nominal, 50/60 Hz, 100 mA per user guide; power in W not published. Product not listed on Shure MEA site; reference = Shure Asia page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/SCM810-user-guide.pdf",
+      "note": "SCM810 user guide pp.4-7 (Front and Rear Panel Features), pp.10-12 (linking, link cables), pp.12-14 (specifications)"
+    },
+    "notes": "datasheetUrl was https://content-files.shure.com/Pubs/SCM810/us_pro_scm810_specsheet.pdf (spec sheet without connector details); replaced by the user guide."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Input 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p2",
+      "label": "Input 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p3",
+      "label": "Input 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p4",
+      "label": "Input 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p5",
+      "label": "Input 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p6",
+      "label": "Input 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p7",
+      "label": "Input 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p8",
+      "label": "Input 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin removable block, active balanced; mic / mic + 46 V phantom / line switch"
+    },
+    {
+      "id": "p9",
+      "label": "Aux In (Front)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, aux / line level; not gated"
+    },
+    {
+      "id": "p10",
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Removable block, active balanced line level (mic level by internal modification)"
+    },
+    {
+      "id": "p11",
+      "label": "Direct Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ"
+    },
+    {
+      "id": "p12",
+      "label": "Direct Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ"
+    },
+    {
+      "id": "p13",
+      "label": "Direct Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ"
+    },
+    {
+      "id": "p14",
+      "label": "Direct Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ"
+    },
+    {
+      "id": "p15",
+      "label": "Direct Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ"
+    },
+    {
+      "id": "p16",
+      "label": "Direct Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ"
+    },
+    {
+      "id": "p17",
+      "label": "Direct Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ"
+    },
+    {
+      "id": "p18",
+      "label": "Direct Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. phone jack, non-gated aux level, pre-fader / pre-EQ; AUX/D.O. switch turns this jack into the rear AUX IN"
+    },
+    {
+      "id": "p19",
+      "label": "Phones (Front)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in. headphone jack with level control; 8-200 ohm"
+    },
+    {
+      "id": "p20",
+      "label": "Mic Logic",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "db25",
+      "notes": "DB-25 male: per-channel GATE OUT, MUTE IN, OVERRIDE IN logic; not RS-232"
+    },
+    {
+      "id": "p21",
+      "label": "Link In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Expansion",
+      "connectorType": "mini-din-8",
+      "notes": "Mixer link bus (audio and automix control) from the previous SCM810; up to 50 mixers"
+    },
+    {
+      "id": "p22",
+      "label": "Link Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Expansion",
+      "connectorType": "mini-din-8",
+      "notes": "Mixer link bus to the next SCM810; link cable 95A1143 (mini DIN-8)"
+    },
+    {
+      "id": "p23",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC inlet with rocker switch; 230 V AC, 100 mA (SCM810E)"
+    }
+  ]
+}

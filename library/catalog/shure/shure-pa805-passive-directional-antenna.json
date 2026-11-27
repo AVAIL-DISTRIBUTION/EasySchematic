@@ -1,0 +1,63 @@
+{
+  "id": "avail-shure-pa805z",
+  "label": "Shure PA805 (Passive Directional Antenna)",
+  "shortName": "PA805",
+  "manufacturer": "Shure",
+  "modelNumber": "PA805Z",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/pa805",
+  "searchTerms": [
+    "pa805z",
+    "pa805",
+    "shure",
+    "passive",
+    "directional",
+    "antenna"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Passive Directional Antenna",
+    "rackFormSource": "Non-rack",
+    "description": "Directional Antenna",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/PA805/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/PA805-user-guide.pdf",
+      "note": "Installation p.1; specifications p.2"
+    }
+  },
+  "heightMm": 226,
+  "widthMm": 234,
+  "depthMm": 27.9,
+  "weightKg": 0.227,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm, passive; from ANTENNA OUT of a PSM transmitter or antenna combiner; 1240-1930 MHz (PA805Z)"
+    },
+    {
+      "id": "p2",
+      "label": "IEM (Wireless)",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link to IEM bodypack receivers; directional (cardioid), 100 degree beam width"
+    }
+  ]
+}

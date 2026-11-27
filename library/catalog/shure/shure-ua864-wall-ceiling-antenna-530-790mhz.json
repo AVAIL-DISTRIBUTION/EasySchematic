@@ -1,0 +1,65 @@
+{
+  "id": "avail-shure-ua864hi",
+  "label": "Shure UA864 (Wall/Ceiling Antenna, 530-790Mhz)",
+  "shortName": "UA864",
+  "manufacturer": "Shure",
+  "modelNumber": "UA864HI",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua864",
+  "searchTerms": [
+    "ua864hi",
+    "ua864",
+    "shure",
+    "wall/ceiling",
+    "antenna",
+    "530-790mhz"
+  ],
+  "heightMm": 176,
+  "widthMm": 176,
+  "depthMm": 51,
+  "weightKg": 0.487,
+  "voltage": "10-15V DC (coax bias)",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Wall/Ceiling Antenna, 530-790Mhz",
+    "rackFormSource": "Non-rack",
+    "description": "Wall-Mounted Wideband Active Antenna",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA864/en-US.pdf",
+    "note": "Powered via coax bias from receiver/distribution amp, 75 mA; W not published. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA864-user-guide.pdf",
+      "note": "Connecting to a receiver p.5; specifications pp.6-7"
+    },
+    "notes": "Weight changed 0.5 kg -> 0.487 kg per UA864 guide p.7."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm; 10-15 V DC bias (75 mA) from the receiver or distribution system over the same coax (UABIAST if none); 530-790 MHz (UA864HI)"
+    },
+    {
+      "id": "p2",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from transmitters"
+    }
+  ]
+}

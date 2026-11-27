@@ -1,0 +1,57 @@
+{
+  "id": "avail-shure-mxa710b-2ft",
+  "label": "Shure MXA710 (Black, 2 ft)",
+  "shortName": "MXA710",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA710B-2FT",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mxa710",
+  "searchTerms": [
+    "mxa710b-2ft",
+    "mxa710",
+    "shure",
+    "black",
+    "2",
+    "ft"
+  ],
+  "heightMm": 22.09,
+  "widthMm": 636,
+  "depthMm": 60,
+  "weightKg": 0.91,
+  "poeDrawW": 10,
+  "voltage": "PoE 802.3af class 0",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black, 2 ft",
+    "rackFormSource": "Non-rack",
+    "description": "MXA710 Linear Array Microphone",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/mxa710/mxa710-spec-sheet-letter-en.pdf",
+    "note": "Weight: 2FT 0.91 kg, 4FT 1.67 kg (user guide).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/mxa710-spec-sheet-letter-en.pdf",
+      "note": "Specifications p.1 (connector RJ45, PoE class 0, 10 W, weight, dimensions H x W x L, channel count)"
+    },
+    "notes": "Variant \"Black\" → \"Black, 2 ft\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 and control, PoE class 0 (10 W max). Dante channels: 4 direct outs, 1 automix out, 1 AEC reference in"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "avail-shure-mx400smp",
+  "label": "Shure MX400SMP (Surface Mount Preamp)",
+  "shortName": "MX400SMP",
+  "manufacturer": "Shure",
+  "modelNumber": "MX400SMP",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Gooseneck microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/mx400smp",
+  "searchTerms": [
+    "mx400smp",
+    "shure",
+    "surface",
+    "mount",
+    "preamp"
+  ],
+  "weightKg": 0.125,
+  "voltage": "48-52V DC phantom",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Surface Mount Preamp",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Surface Mount Preamp",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MX4xx/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MX4xx-user-guide.pdf",
+      "note": "MX405/410/415 user guide pp.9-13 (MX400SMP, 5-pin XLR pin assignments, LED logic) and pp.19-21 (specifications)"
+    },
+    "portsMissing": "Dimensions of the MX400SMP are not given in the MX4xx user guide."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Gooseneck In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Keyed twist-lock socket for MX405 / MX410 / MX415 gooseneck (audio and LED)"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-5",
+      "notes": "5-pin XLR: active balanced audio (pin 4 +, pin 2 -) plus LED IN logic; powered by 48-52 V DC phantom (8 mA)"
+    }
+  ]
+}

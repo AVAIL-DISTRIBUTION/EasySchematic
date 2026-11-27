@@ -1,0 +1,64 @@
+{
+  "id": "avail-shure-pa805swb",
+  "label": "Shure PA805 (Unidirectional Super Wideband Antenna)",
+  "shortName": "PA805",
+  "manufacturer": "Shure",
+  "modelNumber": "PA805SWB",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/pa805",
+  "searchTerms": [
+    "pa805swb",
+    "pa805",
+    "shure",
+    "unidirectional",
+    "super",
+    "wideband",
+    "antenna"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Unidirectional Super Wideband Antenna",
+    "rackFormSource": "Non-rack",
+    "description": "Directional Antenna",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/PA805/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/PA805-user-guide.pdf",
+      "note": "Installation p.1; specifications p.2"
+    }
+  },
+  "heightMm": 334,
+  "widthMm": 378,
+  "depthMm": 27,
+  "weightKg": 0.319,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm, passive; from ANTENNA OUT of a PSM transmitter or antenna combiner; 470-952 MHz (PA805SWB)"
+    },
+    {
+      "id": "p2",
+      "label": "IEM (Wireless)",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link to IEM bodypack receivers; directional (cardioid), 100 degree beam width"
+    }
+  ]
+}

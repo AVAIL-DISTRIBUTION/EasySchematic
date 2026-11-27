@@ -1,0 +1,64 @@
+{
+  "id": "avail-shure-ua860swb",
+  "label": "Shure UA860SWB (Antenna, 1/2 Wave Omni)",
+  "shortName": "UA860SWB",
+  "manufacturer": "Shure",
+  "modelNumber": "UA860SWB",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua860swb",
+  "searchTerms": [
+    "ua860swb",
+    "shure",
+    "antenna",
+    "1/2",
+    "wave",
+    "omni"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Antenna, 1/2 Wave Omni",
+    "rackFormSource": "Non-rack",
+    "description": "Omnidirectional Antenna",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA860SWB/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA860SWB-user-guide.pdf",
+      "note": "Installation and specifications p.1"
+    },
+    "notes": "Width/depth = 39 mm diameter (guide p.1: 284 mm H x 39 mm dia.); weight without cable."
+  },
+  "heightMm": 284,
+  "widthMm": 39,
+  "depthMm": 39,
+  "weightKg": 0.275,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm, passive; to receiver or antenna distribution system; 470-1100 MHz"
+    },
+    {
+      "id": "p2",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from transmitters; omnidirectional dipole"
+    }
+  ]
+}
