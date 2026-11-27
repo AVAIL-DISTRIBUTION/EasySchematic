@@ -26,6 +26,7 @@ import { isRoomMounted } from "./blockLint";
 import { AWAITING_PORTS, type CatalogAvail, type CatalogFile, type CatalogTemplate } from "./catalogPorts";
 import { findCategory, findVendor, TAXONOMY, VENDORS } from "./library";
 import { libraryFileName, slug } from "./libraryFiles";
+import { isPriceKey } from "./prices";
 import { INTAKE_LIFECYCLES, isLifecycleDate, normalizeLifecycleDate } from "./lifecycle";
 import { canonicalFamily } from "./slotFamilies";
 
@@ -34,7 +35,7 @@ export const INTAKE_COLUMNS = [
   "Vendor *", "Category *", "Device type *", "Model *", "Part number *", "Alt part number", "Variant", "Short name",
   "Input voltage", "Power draw (W)", "PoE draw (W)", "PoE budget (W)", "Heat (BTU/h)", "Height (mm)", "Width (mm)",
   "Depth (mm)", "Weight (kg)", "Rack form", "Slot families (chassis)", "Card for slot families", "Reference URL *",
-  "Datasheet URL", "Description", "MSRP (USD)", "Source *", "Note", "Lifecycle", "Lifecycle date",
+  "Datasheet URL", "Description", "Source *", "Note", "Lifecycle", "Lifecycle date",
 ] as const;
 
 type Column = (typeof INTAKE_COLUMNS)[number] extends `${infer N} *` | infer N ? N : never;
@@ -87,7 +88,6 @@ const NUMBERS: [Column, keyof CatalogTemplate & string][] = [
   ["Width (mm)", "widthMm"],
   ["Depth (mm)", "depthMm"],
   ["Weight (kg)", "weightKg"],
-  ["MSRP (USD)", "unitCost"],
 ];
 const DIMENSIONS: Column[] = ["Height (mm)", "Width (mm)", "Depth (mm)", "Weight (kg)"];
 export const EXAMPLE_NOTE_RE = /^\s*EXAMPLE ROW\b/i;
@@ -110,6 +110,10 @@ export interface IntakeValidation {
   excluded: { row: number; partNumber: string; reason: string }[];
   /** Rows the review has not decided yet (Decision = Check, empty or unknown): the import stops. */
   unresolved: { row: number; partNumber: string; decision: string; reason: string }[];
+  /** Price columns of an older form (MSRP (USD)…): accepted and ignored — no prices in the public repository. */
+  ignored?: string[];
+  /** Rows with a value in an ignored price column. */
+  pricedRows?: number;
 }
 
 /** A number cell: "12.5" → 12.5; Excel float noise is rounded to 6 decimals. */
@@ -134,8 +138,9 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
   if (headerAt < 0) return { fatal: ["the Products sheet is empty"], ...none };
   const header = sheet[headerAt].map(name);
   const fatal = REQUIRED_COLUMNS.filter((c) => !header.includes(c)).map((c) => `required column "${c}" is missing`);
+  const ignored = header.filter((h) => h && isPriceKey(h));
   const known = [...INTAKE_COLUMNS.map(name), ...REVIEW_COLUMNS] as string[];
-  const unknown = header.filter((h) => h && !known.includes(h));
+  const unknown = header.filter((h) => h && !ignored.includes(h) && !known.includes(h));
   if (unknown.length) fatal.push(`unknown columns: ${unknown.join(", ")} (use the template avail-intake-template.xlsx)`);
   if (fatal.length) return { fatal, ...none };
 
@@ -145,14 +150,16 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
   const decisionAt = header.indexOf("Decision");
   const reasonAt = header.indexOf("Reason");
   const seen = new Map<string, number>();
+  let pricedRows = 0;
   sheet.slice(headerAt + 1).forEach((cells, i) => {
     if (!cells.some((c) => c && c.trim())) return;
     const v: IntakeRow = {};
     header.forEach((h, k) => {
       const x = (cells[k] ?? "").trim();
-      if (h && x && !(REVIEW_COLUMNS as readonly string[]).includes(h)) v[h as Column] = x;
+      if (h && x && !ignored.includes(h) && !(REVIEW_COLUMNS as readonly string[]).includes(h)) v[h as Column] = x;
     });
     const rowNo = headerAt + i + 2;
+    if (ignored.length && ignored.some((h) => (cells[header.indexOf(h)] ?? "").trim())) pricedRows++;
     if (decisionAt >= 0 && !EXAMPLE_NOTE_RE.test(v.Note ?? "")) {
       const raw = (cells[decisionAt] ?? "").trim();
       const decision = DECISIONS.find((d) => d.toLowerCase() === raw.toLowerCase());
@@ -249,7 +256,7 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
   if (unresolved.length) {
     fatal.push(`${unresolved.length} rows are not decided (Decision must be Keep or Exclude; Check means the review is not finished)`);
   }
-  return { fatal, rows, excluded, unresolved };
+  return { fatal, rows, excluded, unresolved, ...(ignored.length ? { ignored, pricedRows } : {}) };
 }
 
 /** Catalog id of a part number: "avail-extron-60-1572-15". */
@@ -600,6 +607,9 @@ export function formatIntakeReport(r: IntakeResult, intakeFile: string, dryRun: 
     lines.push("FAILED: nothing imported");
     return lines.join("\n") + "\n";
   }
+  if (r.ignored?.length) {
+    lines.push(`Ignored columns (prices are not stored in the repository): ${r.ignored.join(", ")}; filled in ${r.pricedRows ?? 0} rows, not imported`);
+  }
   const n = (a: string) => r.actions.filter((x) => x.action === a).length;
   const invalid = r.rows.filter((x) => !x.example && x.errors.length).length;
   const examples = r.rows.filter((x) => x.example).length;
@@ -617,8 +627,6 @@ export function formatIntakeReport(r: IntakeResult, intakeFile: string, dryRun: 
   const real = r.rows.filter((x) => !x.example);
   const renamed = real.filter((x) => x.values.Model && x.values.Vendor && findVendor(x.values.Vendor) && !x.values.Model.startsWith(`${findVendor(x.values.Vendor)!.name} `)).length;
   if (renamed) lines.push(`Model names written with the canonical vendor name: ${renamed}`);
-  const priced = real.filter((x) => x.values["MSRP (USD)"]).length;
-  if (priced) lines.push(`MSRP (USD) filled in ${priced} rows: not imported (the repository is public, prices stay out)`);
   if (r.kits.length) {
     lines.push("", `Kits (docs/avail/kits.json): ${r.kits.length}`);
     for (const k of r.kits) lines.push(`  ${k.partNumber} = ${k.components.map((c) => `${c.qty} × ${c.partNumber}`).join(" + ")}  [${k.source}]`);

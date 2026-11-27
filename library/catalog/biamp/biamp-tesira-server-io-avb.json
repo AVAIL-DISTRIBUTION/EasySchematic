@@ -27,7 +27,6 @@
   "weightKg": 8.2,
   "powerDrawW": 150,
   "voltage": "100-240V AC",
-  "unitCost": 9445,
   "_avail": {
     "status": "awaiting-ports",
     "slotFamilies": [

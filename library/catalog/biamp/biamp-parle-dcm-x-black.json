@@ -27,7 +27,6 @@
   "weightKg": 0.62,
   "voltage": "PoE 802.3af Class 3",
   "poeDrawW": 13,
-  "unitCost": 1800,
   "_avail": {
     "status": "ports-filled",
     "description": "Devio UCX Beamtracking™ ceiling microphone, black surface mount",

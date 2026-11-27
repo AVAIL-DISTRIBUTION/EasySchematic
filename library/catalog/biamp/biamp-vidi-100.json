@@ -26,7 +26,6 @@
   "weightKg": 0.34,
   "powerDrawW": 3,
   "voltage": "USB bus-powered",
-  "unitCost": 150,
   "_avail": {
     "status": "ports-filled",
     "description": "4K conferencing camera",

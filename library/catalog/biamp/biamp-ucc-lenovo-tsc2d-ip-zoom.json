@@ -26,7 +26,6 @@
   "weightKg": 1.01,
   "powerDrawW": 170,
   "voltage": "100-240V AC",
-  "unitCost": 9800,
   "_avail": {
     "status": "ports-filled",
     "description": "UC Compute - Lenovo ThinkSmart Dual LAN with Cat5 Based Connection - ZOOM Room",

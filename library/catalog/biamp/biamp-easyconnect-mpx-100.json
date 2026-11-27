@@ -27,7 +27,6 @@
   "weightKg": 0.86,
   "powerDrawW": 150,
   "voltage": "100-240V AC",
-  "unitCost": 1325,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "usb-switch",

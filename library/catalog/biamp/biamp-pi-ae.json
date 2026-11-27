@@ -22,7 +22,6 @@
   "widthMm": 70,
   "depthMm": 95,
   "weightKg": 0.13,
-  "unitCost": 193,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "poe-injector",

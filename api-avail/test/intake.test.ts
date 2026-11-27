@@ -7,7 +7,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { INTAKE_COLUMNS, intakeListsDiff, KITS_COLUMNS, kitsOfIntake, validateIntake } from "../../src/avail/intake";
+import { importIntake, INTAKE_COLUMNS, intakeListsDiff, KITS_COLUMNS, kitsOfIntake, validateIntake } from "../../src/avail/intake";
 import { readXlsx } from "../src/xlsx";
 
 const template = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../tools/avail/intake/avail-intake-template.xlsx");
@@ -38,5 +38,24 @@ describe("intake template", () => {
       expect(r.example).toBe(true);
       expect(r.errors).toEqual([]);
     }
+  });
+
+  it("has no price column (the repository is public)", () => {
+    expect(sheets.get("Products")![0].some((h) => /msrp|price|cost/i.test(h))).toBe(false);
+  });
+
+  it("import:intake reads the Kits sheet of a form made from this template", () => {
+    const products = sheets.get("Products")!;
+    const header = products[0];
+    const note = header.indexOf("Note");
+    const pnAt = header.indexOf("Part number *");
+    const row = [...products[1]];
+    row[note] = "";
+    const pn = row[pnAt];
+    const kits = [sheets.get("Kits")![0], ["KIT-TEST-1", pn, "2", "https://example.com/kit"]];
+    const r = importIntake([header, row], [], [], "avail-intake-test.xlsx", kits);
+    expect(r.fatal).toEqual([]);
+    expect(r.kits).toEqual([expect.objectContaining({ partNumber: "KIT-TEST-1", components: [expect.objectContaining({ partNumber: pn, qty: 2 })] })]);
+    expect(r.write[0].template).not.toHaveProperty("unitCost");
   });
 });

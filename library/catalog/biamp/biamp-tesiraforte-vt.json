@@ -25,7 +25,6 @@
   "weightKg": 3.63,
   "powerDrawW": 35,
   "voltage": "100-240V AC",
-  "unitCost": 4664,
   "_avail": {
     "status": "ports-filled",
     "description": "Fixed I/O DSP with 12 analog inputs, 8 analog outputs, 8 channels configurable USB audio, AEC technology (all 12 inputs), 2 channel VoIP, and standard FXO telephone interface",

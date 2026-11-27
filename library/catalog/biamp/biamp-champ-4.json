@@ -24,7 +24,6 @@
   "weightKg": 7.5,
   "powerDrawW": 400,
   "voltage": "230V AC",
-  "unitCost": 550,
   "_avail": {
     "status": "ports-filled",
     "description": "High End, very dynamic 4-channel low impedance power amplifier, convection cooled. 4 x 125 watts @ 4 ohms, black 1U 19\" rack mounted",

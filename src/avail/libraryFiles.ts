@@ -15,6 +15,7 @@
 import { isLifecycle, isLifecycleDate, LIFECYCLES } from "./lifecycle";
 import { lintBlock, type BlockLintResult } from "./blockLint";
 import { normalizeManufacturer } from "./library";
+import { priceFields } from "./prices";
 
 /** File name of a template: its label (manufacturer + model) in lower-case Latin, words joined by "-". */
 export function libraryFileName(template: { label?: unknown }): string {
@@ -59,6 +60,12 @@ function isObj(v: unknown): v is Obj {
   return !!v && typeof v === "object" && !Array.isArray(v);
 }
 
+/** The repository is public: no prices in library files (src/avail/prices.ts). */
+function priceProblems(t: Obj): string[] {
+  const fields = priceFields(t);
+  return fields.length ? [`price fields are not allowed in the repository: ${fields.join(", ")}`] : [];
+}
+
 /** Manufacturer + model key used to spot two files describing the same product. */
 export function productKey(t: { manufacturer?: unknown; modelNumber?: unknown; label?: unknown }): string {
   const norm = (s: unknown) => (typeof s === "string" ? s : "").trim().replace(/\s+/g, " ").toLowerCase();
@@ -83,6 +90,7 @@ export function checkLibraryFile(entry: LibraryEntry, requireLevelA = true): Lib
   const expected = libraryFileName(t);
   if (entry.file !== expected) problems.push(`file name must be ${expected}`);
   if (requireLevelA && lint.level !== "A") problems.push(`standard level ${lint.level}, library/avail/ needs A`);
+  problems.push(...priceProblems(t));
   return { file: entry.file, label, lint, problems };
 }
 
@@ -186,6 +194,7 @@ export function checkCatalog(entries: readonly LibraryEntry[], index?: unknown):
     if (!Array.isArray(t.ports)) problems.push("no ports array");
     if (!isObj(t._avail)) problems.push("no _avail");
     else problems.push(...catalogLifecycleProblems(t._avail));
+    problems.push(...priceProblems(t));
     const vendor = slug(typeof t.manufacturer === "string" ? t.manufacturer : "");
     const expected = `${vendor}/${libraryFileName(t)}`;
     // Two labels with the same slug ("Modena Hub", "Modena Hub+"): the part number tells them apart.

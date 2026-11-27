@@ -25,7 +25,6 @@
   "depthMm": 55,
   "weightKg": 0.25,
   "voltage": "12V DC",
-  "unitCost": 700,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "paging-station",

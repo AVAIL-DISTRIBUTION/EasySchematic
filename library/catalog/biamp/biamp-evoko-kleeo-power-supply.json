@@ -27,7 +27,6 @@
   "depthMm": 32.1,
   "weightKg": 0.05,
   "voltage": "100-240V AC",
-  "unitCost": 53,
   "_avail": {
     "status": "ports-filled",
     "description": "Power supply for Kleeo Desk Manager",

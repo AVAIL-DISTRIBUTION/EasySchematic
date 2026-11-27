@@ -25,7 +25,6 @@
   "weightKg": 0.38,
   "powerDrawW": 60,
   "voltage": "12V DC",
-  "unitCost": 1484,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Wall side extension system - 30 ft (10m) for EasyConnect MPX 250",

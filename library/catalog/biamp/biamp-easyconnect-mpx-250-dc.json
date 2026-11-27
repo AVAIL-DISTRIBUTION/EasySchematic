@@ -23,7 +23,6 @@
   ],
   "powerDrawW": 200,
   "voltage": "100-240V AC (20V DC adapter)",
-  "unitCost": 2544,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Multi-unit direct connection hub for EasyConnect MPX 250",

@@ -25,7 +25,6 @@
   "depthMm": 17,
   "weightKg": 0.09,
   "voltage": "12V DC",
-  "unitCost": 526,
   "_avail": {
     "status": "ports-filled",
     "description": "8-button control pad with 1 bidirectional RS-232 port, 1 unidirectional RS-232 port, 3 GPIO; EU, white",

@@ -18,7 +18,6 @@
     "ent-750tw",
     "biamp"
   ],
-  "unitCost": 630,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "audio-transformer",

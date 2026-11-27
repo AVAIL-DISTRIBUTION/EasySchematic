@@ -27,7 +27,6 @@
   "weightKg": 1,
   "powerDrawW": 132,
   "voltage": "100-240V AC",
-  "unitCost": 2650,
   "_avail": {
     "status": "ports-filled",
     "description": "AV interface and host device for Crowd Mics",

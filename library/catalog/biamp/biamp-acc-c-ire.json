@@ -18,7 +18,6 @@
     "acc-c-ire",
     "biamp"
   ],
-  "unitCost": 129,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "ir-emitter",

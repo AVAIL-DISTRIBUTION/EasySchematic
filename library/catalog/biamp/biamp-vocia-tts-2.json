@@ -26,7 +26,6 @@
   "weightKg": 5.4,
   "powerDrawW": 300,
   "voltage": "100-240V AC",
-  "unitCost": 13780,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Text-to-speech engine, voice fonts and nurse call included",

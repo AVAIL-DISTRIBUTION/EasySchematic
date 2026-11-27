@@ -23,7 +23,6 @@
   "depthMm": 305,
   "weightKg": 4.6,
   "voltage": "230V AC",
-  "unitCost": 676,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "audio-player",

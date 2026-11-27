@@ -26,7 +26,6 @@
   "weightKg": 0.1,
   "voltage": "PoE 802.3at class 2",
   "poeDrawW": 7,
-  "unitCost": 1060,
   "_avail": {
     "status": "ports-filled",
     "description": "PoE AVB/USB expander with Bluetooth® wireless technology",

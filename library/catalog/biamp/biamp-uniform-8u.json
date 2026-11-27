@@ -25,7 +25,6 @@
   "weightKg": 0.08,
   "voltage": "PoE 802.3af class 1",
   "poeDrawW": 4,
-  "unitCost": 700,
   "_avail": {
     "status": "ports-filled",
     "description": "8-button E Ink control pad with Ethernet, 1 bidirectional RS-232 port, 2 unidirectional RS-232 ports, 3 GPIO; PoE (IEEE 802.3at Class 1, 4W)",

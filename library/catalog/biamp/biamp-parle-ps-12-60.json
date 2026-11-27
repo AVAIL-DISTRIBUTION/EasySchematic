@@ -26,7 +26,6 @@
   "powerDrawW": 60,
   "powerCapacityW": 60,
   "voltage": "100-240V AC",
-  "unitCost": 159,
   "_avail": {
     "status": "awaiting-ports",
     "description": "12 V 60W optional power supply for ABC 2500(a), VBC 2500a, VBC 2800",

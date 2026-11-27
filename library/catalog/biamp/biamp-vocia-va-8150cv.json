@@ -25,7 +25,6 @@
   "depthMm": 444,
   "weightKg": 10.9,
   "voltage": "100-240V AC",
-  "unitCost": 10261,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia 8-channel, 150W constant voltage amplifier",

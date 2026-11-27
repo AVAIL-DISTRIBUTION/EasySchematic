@@ -24,7 +24,6 @@
   "weightKg": 21.7,
   "powerDrawW": 2200,
   "voltage": "115-230V AC",
-  "unitCost": 1692,
   "_avail": {
     "status": "awaiting-ports",
     "description": "8 Channel class D amplifier 8 x 250 Watts (RMS @ 4 Ohms), 8 x 350 Watts (Dynamic @ 4 Ohms) or in bridge mode 4 x 500 Watts ( RMS @8 Ohms), fan cooled, 2 U, 19\"",

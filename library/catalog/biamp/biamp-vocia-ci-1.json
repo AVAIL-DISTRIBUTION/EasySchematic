@@ -26,7 +26,6 @@
   "weightKg": 2.8,
   "powerDrawW": 15,
   "voltage": "24V DC",
-  "unitCost": 1459,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia Control Interface for use between fire alarm and Vocia LSI-16 or Vocia LSI-16e (EN54-16 certified)",

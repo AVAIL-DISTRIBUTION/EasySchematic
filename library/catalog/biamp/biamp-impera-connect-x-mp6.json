@@ -27,7 +27,6 @@
   "weightKg": 0.11,
   "voltage": "PoE 802.3af class 1",
   "poeDrawW": 4,
-  "unitCost": 424,
   "_avail": {
     "status": "ports-filled",
     "description": "Ethernet connected multi-port control extender, 1 bidirectional RS-232, 2 unidirectional RS-232/IR, 3 GPIO",

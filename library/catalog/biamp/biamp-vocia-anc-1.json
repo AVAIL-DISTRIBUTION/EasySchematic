@@ -22,7 +22,6 @@
   ],
   "voltage": "PoE 802.3af class 2",
   "poeDrawW": 6.49,
-  "unitCost": 1096,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia Ambient Noise Compensation Device, surface-mountable, networked ambient microphone input device",

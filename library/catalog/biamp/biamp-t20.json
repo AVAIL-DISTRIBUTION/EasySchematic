@@ -22,7 +22,6 @@
   "widthMm": 70,
   "depthMm": 34,
   "weightKg": 0.3,
-  "unitCost": 23,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "audio-transformer",

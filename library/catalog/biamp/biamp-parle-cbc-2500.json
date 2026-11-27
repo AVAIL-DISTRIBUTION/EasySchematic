@@ -27,7 +27,6 @@
   "weightKg": 4.4,
   "powerDrawW": 60,
   "voltage": "12V DC / USB-C PD",
-  "unitCost": 2650,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Ceiling mounted audio conference bar - cable mount",

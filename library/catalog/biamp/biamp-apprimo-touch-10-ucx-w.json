@@ -22,7 +22,6 @@
     "ucx-w"
   ],
   "voltage": "PoE+ 802.3at",
-  "unitCost": 2600,
   "_avail": {
     "status": "awaiting-ports",
     "description": "10-inch wall mounted touch panel for Devio UCX with Wi-Fi 6, PoE+ or USB-C powered",

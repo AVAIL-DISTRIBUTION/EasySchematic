@@ -27,7 +27,6 @@
   "weightKg": 0.2,
   "voltage": "PoE+ 802.3at Class 4",
   "poeDrawW": 30,
-  "unitCost": 2565,
   "_avail": {
     "status": "ports-filled",
     "description": "AVB Beamtracking ceiling microphone with PoE+ amplifier, white pendant",

@@ -25,7 +25,6 @@
   "depthMm": 228,
   "powerDrawW": 30,
   "voltage": "24V DC",
-  "unitCost": 4316,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia VoIP interface; allows real-time live direct paging from a VoIP system into the Vocia platform; 4-lines",

@@ -27,7 +27,6 @@
   "weightKg": 3.63,
   "powerDrawW": 35,
   "voltage": "100-240V AC",
-  "unitCost": 3850,
   "_avail": {
     "status": "ports-filled",
     "description": "Fixed I/O DSP with 4 analog inputs, 4 analog outputs, 8 channels configurable USB audio, 32 x 32 channels of Dante, AEC technology (all 4 inputs), 2 channel VoIP, and standard FXO telephone interface",

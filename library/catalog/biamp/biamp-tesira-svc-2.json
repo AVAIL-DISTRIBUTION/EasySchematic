@@ -21,7 +21,6 @@
     "tesira",
     "svc-2"
   ],
-  "unitCost": 829,
   "slotFamily": "biamp-tesira-server-card",
   "_avail": {
     "status": "ports-filled",

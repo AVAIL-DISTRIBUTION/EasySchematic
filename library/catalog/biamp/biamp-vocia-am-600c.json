@@ -21,7 +21,6 @@
     "vocia",
     "am-600c"
   ],
-  "unitCost": 1342,
   "slotFamily": "biamp-vocia-va-8600",
   "_avail": {
     "status": "awaiting-ports",

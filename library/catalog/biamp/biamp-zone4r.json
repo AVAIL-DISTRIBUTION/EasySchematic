@@ -23,7 +23,6 @@
   "depthMm": 40,
   "weightKg": 0.14,
   "powerDrawW": 0.1,
-  "unitCost": 182,
   "_avail": {
     "status": "ports-filled",
     "description": "Digital wall control panel for use with ZONE4 for music volume adjustment, MIC volume adjustment and source selection",

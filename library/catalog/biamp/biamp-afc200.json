@@ -18,7 +18,6 @@
     "afc200",
     "biamp"
   ],
-  "unitCost": 206,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "audio-transformer",

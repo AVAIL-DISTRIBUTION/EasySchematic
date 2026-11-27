@@ -24,7 +24,6 @@
   "weightKg": 21.7,
   "powerDrawW": 1050,
   "voltage": "230V AC",
-  "unitCost": 800,
   "_avail": {
     "status": "ports-filled",
     "description": "2-channel 100 volt power amplifier, 2 x 240 watts bridgeable into 1 x 480 watts with program and priority input per channel, 24V priority output, tone control, 230V AC - 24V DC",

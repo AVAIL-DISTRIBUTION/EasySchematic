@@ -26,7 +26,6 @@
   "weightKg": 0.07,
   "powerDrawW": 15,
   "voltage": "5V DC",
-  "unitCost": 293,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "usb-switch",

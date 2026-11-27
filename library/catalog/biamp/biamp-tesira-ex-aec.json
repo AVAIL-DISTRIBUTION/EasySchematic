@@ -26,7 +26,6 @@
   "weightKg": 1.4,
   "voltage": "PoE+ 802.3at",
   "poeDrawW": 30,
-  "unitCost": 2332,
   "_avail": {
     "status": "ports-filled",
     "description": "Tesira 4 channel mic/line input expander with AEC and PoE+",

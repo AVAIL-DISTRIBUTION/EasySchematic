@@ -27,7 +27,6 @@
   "depthMm": 25,
   "weightKg": 1.3,
   "voltage": "12V DC / PoE 802.3af",
-  "unitCost": 1696,
   "_avail": {
     "status": "ports-filled",
     "description": "Self-hosted room booking display with mounting kits for standard and glass walls",

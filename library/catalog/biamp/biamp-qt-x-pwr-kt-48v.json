@@ -25,7 +25,6 @@
   "powerDrawW": 50,
   "powerCapacityW": 50,
   "voltage": "100-240V AC",
-  "unitCost": 159,
   "_avail": {
     "status": "awaiting-ports",
     "description": "48V Power Supply Kit for Qt X 8XX models",

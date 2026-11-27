@@ -26,7 +26,6 @@
   "weightKg": 3.63,
   "powerDrawW": 35,
   "voltage": "100-240V AC",
-  "unitCost": 4781,
   "_avail": {
     "status": "ports-filled",
     "description": "Fixed I/O DSP with 12 analog inputs, 8 analog outputs, 8 channels configurable USB audio, 128 x 128 channels of AVB, and AEC technology (all 12 inputs)",

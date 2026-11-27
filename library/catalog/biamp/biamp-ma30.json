@@ -24,7 +24,6 @@
   "weightKg": 2.4,
   "powerDrawW": 60,
   "voltage": "100-240V AC",
-  "unitCost": 350,
   "_avail": {
     "status": "ports-filled",
     "description": "9.5\" mixing amplifier 70 - 100 volt / 30 watts, 1 mic/line input, 2 stereo line inputs, left to right 4 level priority system, Emergency in, paging mic with chime, 24V override output",

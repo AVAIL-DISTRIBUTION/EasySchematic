@@ -31,7 +31,7 @@ const DSP: Row = {
   Vendor: "Biamp", Category: "Audio Products / DSP", "Device type": "audio-dsp", Model: "Biamp TesiraFORTÉ X 900",
   "Part number": "910-9", "Input voltage": "100-240V AC", "Power draw (W)": "60", "Height (mm)": "44", "Width (mm)": "483",
   "Depth (mm)": "300", "Weight (kg)": "3.2", "Rack form": "1U Full rack", "Reference URL": "https://www.biamp.com/x",
-  "Datasheet URL": "https://www.biamp.com/x.pdf", Description: "DSP", "MSRP (USD)": "4000", Source: "Manufacturer datasheet",
+  "Datasheet URL": "https://www.biamp.com/x.pdf", Description: "DSP", Source: "Manufacturer datasheet",
 };
 
 describe("validateIntake", () => {
@@ -92,7 +92,7 @@ describe("cards", () => {
     expect(t.label).toBe("Biamp TesiraFORTÉ X 900 (Black)");
     expect(t.shortName).toBe("TesiraFORTÉ X 900");
     expect(t).toMatchObject({ heightMm: 44, weightKg: 3.2, powerDrawW: 60, voltage: "100-240V AC", rackForm: "full", slotFamily: "a" });
-    // Prices stay out of the public repository: MSRP (USD) is checked but not written.
+    // Prices stay out of the public repository: the form has no MSRP column, no unitCost.
     expect(t).not.toHaveProperty("unitCost");
     expect(t._avail).toEqual({
       status: "awaiting-ports", variant: "Black", altPartNumber: "910-9K", rackFormSource: "1U Full rack", rackUnits: 1, cardFamilies: ["a", "b"],
@@ -204,8 +204,9 @@ describe("reviewed forms, vendor names, prices", () => {
     "MSRP (USD)": "500", Source: "Manufacturer site",
   };
   const rev = (...rows: Row[]) => {
-    const names = [...HEADER.map((h) => h.replace(/\s*\*$/, "")), "Decision", "Reason", "Data gaps"];
-    return [[...HEADER, "Decision", "Reason", "Data gaps"], ...rows.map((r) => names.map((n) => r[n] ?? ""))];
+    // A reviewed form made from an older template still has the MSRP (USD) column: it is ignored.
+    const names = [...HEADER.map((h) => h.replace(/\s*\*$/, "")), "MSRP (USD)", "Decision", "Reason", "Data gaps"];
+    return [[...HEADER, "MSRP (USD)", "Decision", "Reason", "Data gaps"], ...rows.map((r) => names.map((n) => r[n] ?? ""))];
   };
 
   it("the model starts with the canonical vendor name; MSRP is not written; the report says both", () => {
@@ -215,7 +216,7 @@ describe("reviewed forms, vendor names, prices", () => {
     expect(t).not.toHaveProperty("unitCost");
     const report = formatIntakeReport(r, "w.xlsx", true);
     expect(report).toContain("Model names written with the canonical vendor name: 1");
-    expect(report).toContain("MSRP (USD) filled in 1 rows: not imported (the repository is public, prices stay out)");
+    expect(report).toContain("Ignored columns (prices are not stored in the repository): MSRP (USD); filled in 1 rows, not imported");
   });
 
   it("a reviewed Keep row without Reference URL or rack dimensions is a warning; without a review, an error", () => {
@@ -279,5 +280,21 @@ describe("withoutPrices", () => {
     expect(withoutPrices("Kit MSRP 6352.6 USD; Price list status: New.")).toBe("Price list status: New.");
     expect(withoutPrices("Costs $120 street.")).toBe("");
     expect(withoutPrices("PoE class 1 only published - class maximum 3.84 W used.")).toBe("PoE class 1 only published - class maximum 3.84 W used.");
+  });
+});
+
+describe("prices", () => {
+  it("an MSRP column of an older form is accepted and ignored: no unitCost on the card", () => {
+    const names = [...HEADER.map((h) => h.replace(/\s*\*$/, "")), "MSRP (USD)"];
+    const old = [[...HEADER, "MSRP (USD)"], names.map((n) => ({ ...DSP, "MSRP (USD)": "4000" } as Row)[n] ?? "")];
+    const r = importIntake(old, [], [], "old.xlsx");
+    expect(r.fatal).toEqual([]);
+    expect(r.ignored).toEqual(["MSRP (USD)"]);
+    expect(r.write[0].template).not.toHaveProperty("unitCost");
+    expect(formatIntakeReport(r, "old.xlsx", true)).toContain("Ignored columns (prices are not stored in the repository): MSRP (USD)");
+  });
+
+  it("the form has no price column", () => {
+    expect(HEADER.some((h) => /msrp|price|cost/i.test(h))).toBe(false);
   });
 });

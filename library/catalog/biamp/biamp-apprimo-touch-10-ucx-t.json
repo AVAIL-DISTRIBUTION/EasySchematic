@@ -26,7 +26,6 @@
   "depthMm": 154.8,
   "voltage": "PoE+ 802.3at",
   "poeDrawW": 25.5,
-  "unitCost": 2600,
   "_avail": {
     "status": "ports-filled",
     "description": "10-inch tabletop touch panel for Devio UCX with USB-C input, BYOM Switch, optional 65W USB-C device charging, Wi-Fi 6, PoE+ or USB-C powered",

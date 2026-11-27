@@ -27,7 +27,6 @@
   "powerDrawW": 15,
   "voltage": "24V DC / PoE 802.3af class 3",
   "poeDrawW": 15.4,
-  "unitCost": 2565,
   "_avail": {
     "status": "awaiting-ports",
     "slotFamilies": [

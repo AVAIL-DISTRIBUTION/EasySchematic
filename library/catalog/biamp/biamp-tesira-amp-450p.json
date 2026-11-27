@@ -26,7 +26,6 @@
   "weightKg": 0.7,
   "voltage": "PoE+ 802.3at",
   "poeDrawW": 30,
-  "unitCost": 1028,
   "_avail": {
     "status": "ports-filled",
     "description": "4 channel PoE+ conferencing amplifier",
