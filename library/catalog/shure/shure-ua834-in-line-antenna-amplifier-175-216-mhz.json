@@ -63,7 +63,7 @@
       "direction": "output",
       "section": "RF",
       "connectorType": "bnc",
-      "notes": "BNC female, 50 ohm; to receiver or UA844/UA845 antenna input; amplifier powered by 10-15 V DC bias (0.60-0.72 W) from this connection; gain +6 / +12 dB"
+      "notes": "BNC female, 50 ohm; to receiver or UA844/UA845 antenna input; amplifier powered by 10-15 V DC bias (0.60-0.72 W) from this connection; gain +6 / +12 dB; bus-powered (coax bias)"
     }
   ]
 }

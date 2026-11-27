@@ -27,6 +27,7 @@
   "widthMm": 482,
   "depthMm": 286,
   "weightKg": 3.89,
+  "powerDrawW": 112,
   "voltage": "100-240V AC",
   "rackForm": "full",
   "_avail": {
@@ -45,7 +46,7 @@
       "note": "p.12-14 front and back panel; p.61-64 specifications; DC module p.64"
     },
     "portsMissing": "Rear USB port (factory use only) and front-panel headphone monitor jack are not modelled.",
-    "notes": "weightKg was 3.9 before the data sheet (shure/ANX4-user-guide.pdf, 2026-11-27)"
+    "notes": "weightKg was 3.9 before the data sheet (shure/ANX4-user-guide.pdf, 2026-11-27); powerDrawW 112 W computed from the ANX4 user guide (shure/ANX4-user-guide.pdf, AC Power In: 100-240 V AC, 1.4 A max, low-line voltage): 100 × 1.4 = 140 VA × 0.8 (AVAIL utilisation factor), as accepted for ANX4E (proposal 3f84040f); cascade outlet load not included. Computed: V × A × 0.8; the DC module is an alternative supply for the same load (same figure as the AC model, as for ADTD / ADTQ DC)"
   },
   "ports": [
     {

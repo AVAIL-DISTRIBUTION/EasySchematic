@@ -28,6 +28,7 @@
   "widthMm": 482.6,
   "depthMm": 285.7,
   "weightKg": 3.7,
+  "powerDrawW": 105.6,
   "voltage": "110-240V AC",
   "rackForm": "full",
   "_avail": {
@@ -46,7 +47,7 @@
       "note": "p.5-6 front and back panel; p.25-27 specifications"
     },
     "portsMissing": "Front-panel headphone monitor jack is not modelled.",
-    "notes": "voltage was 100-240V AC before the data sheet (shure/AD600-user-guide.pdf, 2026-11-27)"
+    "notes": "voltage was 100-240V AC before the data sheet (shure/AD600-user-guide.pdf, 2026-11-27); powerDrawW 105.6 W computed from the AD600 user guide (shure/AD600-user-guide.pdf, AC Power In: 110-240 V AC, 1.2 A current drain, low-line voltage): 110 × 1.2 = 132 VA × 0.8 (AVAIL utilisation factor), as accepted for AD600E (proposal f1750ad3); cascade outlet load not included. Computed: V × A × 0.8"
   },
   "ports": [
     {

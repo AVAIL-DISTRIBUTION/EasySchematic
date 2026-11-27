@@ -27,6 +27,7 @@
   "widthMm": 67,
   "depthMm": 49,
   "weightKg": 0.049,
+  "powerDrawW": 3.97,
   "voltage": "12.4V DC",
   "_avail": {
     "status": "ports-filled",
@@ -41,6 +42,11 @@
       "kind": "datasheet",
       "from": "shure/UABIAST-user-guide.pdf",
       "note": "Connecting to a device p.3; specifications pp.3-4"
+    },
+    "notes": "powerDrawW 3.97 W computed from the UABIAST user guide (shure/UABIAST-user-guide.pdf, DC In: 12.4 V DC, 400 mA from PS24): 12.4 × 0.4 = 4.96 VA × 0.8 (AVAIL utilisation factor), as accepted by proposal 371e537a; mostly bias power passed up the coax to UA834 / UA874. Computed: V × A × 0.8",
+    "passThroughPower": {
+      "enabled": true,
+      "powers": "12 V DC bias over the coax to active antennas and in-line amplifiers: up to three UA834, or two UA834 and one UA874"
     }
   },
   "ports": [

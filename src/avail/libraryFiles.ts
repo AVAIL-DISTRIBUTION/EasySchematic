@@ -13,6 +13,7 @@
  * importer (api-avail/src/importAvail.ts) read the files themselves.
  */
 import { isLifecycle, isLifecycleDate, LIFECYCLES } from "./lifecycle";
+import { passThroughPowerProblems } from "./passThroughPower";
 import { lintBlock, type BlockLintResult } from "./blockLint";
 import { normalizeManufacturer } from "./library";
 import { priceFields } from "./prices";
@@ -193,7 +194,7 @@ export function checkCatalog(entries: readonly LibraryEntry[], index?: unknown):
     if (typeof t.id !== "string" || !t.id.trim()) problems.push("no id");
     if (!Array.isArray(t.ports)) problems.push("no ports array");
     if (!isObj(t._avail)) problems.push("no _avail");
-    else problems.push(...catalogLifecycleProblems(t._avail));
+    else problems.push(...catalogLifecycleProblems(t._avail), ...passThroughPowerProblems(t._avail));
     problems.push(...priceProblems(t));
     const vendor = slug(typeof t.manufacturer === "string" ? t.manufacturer : "");
     const expected = `${vendor}/${libraryFileName(t)}`;

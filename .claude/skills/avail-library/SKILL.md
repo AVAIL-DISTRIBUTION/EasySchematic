@@ -160,7 +160,11 @@ shortName, searchTerms, шапка, color, schematic=false) и пробелы в
 общая для serial, IR, реле, Digital I/O, tally; нормализатор секции словаря не трогает.
 
 Питание по шине (стандарт 3.1): устройство с питанием по USB или PoE без порта питания
-проходит линтер, если в notes питающего порта написано «bus-powered (USB)» или «PoE».
+проходит линтер, если в notes питающего порта написано «bus-powered (USB)» или «PoE». Стандарт v0.13: питание по
+коаксиалу (смещение DC от приёмника / распределителя: UA834, UA874) — «bus-powered (coax bias)» в notes любого порта или
+«coax bias» в voltage; порт питания не нужен, powerDrawW и voltage — нужны. Транзитное питание — `_avail.passThroughPower`
+`{enabled: true, powers: "<what it powers>"}` (`src/avail/passThroughPower.ts`, форму проверяет `avail:check-library`):
+powerDrawW блока включает подключённые устройства (UA844+, PA411, UABIAST); правило расчёта — навык avail-documents, 8.
 
 ### Курируемая библиотека
 
@@ -498,7 +502,7 @@ Modules»), иначе причина в `_avail.portsMissing`; откуда с�
 wall plate, gang в названии / описании) → `phoenix` 2-pin; стоечная (full / half) с сетевым входом → `iec`. Коробка или
 настенная с PoH / PoC без порта питания получает «<V>V DC In» (локальный блок — альтернатива). Дополнение того же дня
 (spec sheets RXV-35-4K, NHD-500 / 600, EX-35-H2, MX KIT full range): AC power cord в комплекте (MX / MXV, матрицы
-комплектов, IDB-300 / 400) → `iec`; камеры, видео- и аудиобары → `barrel` без фиксации (внешний адаптер); только PoE
+комплектов, IDB-300 / 400) → `iec`; любой сетевой вход 100–240 V AC → `iec` независимо от корпуса (дополнение: AMP-2120-DNT; низковольтный AC «24V AC» — по документу); камеры, видео- и аудиобары → `barrel` без фиксации (внешний адаптер); только PoE
 (keypad, touch-screen: SYN-KEY10, SYN-TOUCH10) → без порта питания, «PoE» на LAN; RS-232 → `phoenix` 3-pin; аудио
 симметричное (balanced) → `phoenix` 5-pin, несимметричное стерео → `trs-eighth`; IR → `trs-eighth` (TS излучатель, TRS приёмник);
 что notes порта уже называют (3.5mm, 8-pin Mini DIN, N-pin) — как названо. notes порта — «Wyrestorm convention: … —
