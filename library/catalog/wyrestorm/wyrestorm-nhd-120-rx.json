@@ -1,0 +1,101 @@
+{
+  "id": "avail-wyrestorm-nhd-120-rx",
+  "label": "Wyrestorm NHD-120-RX",
+  "shortName": "NHD-120-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-120-RX",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-120-rx/",
+  "searchTerms": [
+    "nhd-120-rx",
+    "wyrestorm"
+  ],
+  "powerDrawW": 3.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 12.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K30Hz Decoder | PoE | Audio De-embed | Video Wall | IR & RS232 Routing",
+    "source": "Manufacturer site",
+    "note": "3.6 W max published for DC adapter; PoE draw not published - 802.3af class maximum 12.95 W used. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-120-rx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pin",
+      "id": "port-1"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE (802.3af compliant); also carries the AV stream",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; API controlled from CTL",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX; 3.5mm TS jack",
+      "id": "port-4"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX; 3.5mm TS jack",
+      "id": "port-5"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 1A",
+      "id": "port-6"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "avail-wyrestorm-ex-70-h2l-rx",
+  "label": "Wyrestorm EX-70-H2L-RX (Receiver (RX) of set EX-70-H2L)",
+  "shortName": "EX-70-H2L-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-70-H2L-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-70-h2l/",
+  "searchTerms": [
+    "ex-70-h2l-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-70-h2l"
+  ],
+  "heightMm": 15.2,
+  "widthMm": 136.4,
+  "depthMm": 74.2,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-70-H2L",
+    "rackFormSource": "Shelf",
+    "description": "HDMI2.0 4K60Hz Video HDMI Extender Set | HDBaseT | DSC | 4K60Hz 4:4:4 | EDID | Loop-out | Audio De-embed | Bi-directional PoC | Pattern for easy installation/testing | CEC Passthrough | RS232 & 2-way IR Passthrough (4K/1080P: 70m/230ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-70-H2L (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-70-H2L"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-70-h2l/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "link type is not named HDBaseT on the page; IR In/IR Out/Audio Out/HDMI/UTP: connector not published except RJ45; RS-232 pass-through: no connector listed; Micro-USB firmware port: page does not say which unit has it"
+  },
+  "ports": [
+    {
+      "label": "UTP In",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "UTP In (RJ45); PoC from the transmitter",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "section": "IR",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "id": "port-4"
+    }
+  ]
+}

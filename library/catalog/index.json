@@ -1,6 +1,6 @@
 {
  "version": 1,
- "count": 1789,
+ "count": 1963,
  "templates": [
   {
    "file": "extron/extron-nav-10e-101-mm.json",
@@ -14313,6 +14313,1398 @@
    "partNumber": "910-00336",
    "deviceType": "expansion-card",
    "category": "Audio Products / Power Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-amp-2120.json",
+   "id": "avail-wyrestorm-amp-2120",
+   "label": "Wyrestorm AMP-2120",
+   "partNumber": "AMP-2120",
+   "deviceType": "amplifier",
+   "category": "Audio Products / Power Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-con-anlg-dnt.json",
+   "id": "avail-wyrestorm-con-anlg-dnt",
+   "label": "Wyrestorm CON-ANLG-DNT",
+   "partNumber": "CON-ANLG-DNT",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-con-dnt-anlg.json",
+   "id": "avail-wyrestorm-con-dnt-anlg",
+   "label": "Wyrestorm CON-DNT-ANLG",
+   "partNumber": "CON-DNT-ANLG",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-con-usbc-dnt.json",
+   "id": "avail-wyrestorm-con-usbc-dnt",
+   "label": "Wyrestorm CON-USBC-DNT",
+   "partNumber": "CON-USBC-DNT",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-con-xlr-dnt.json",
+   "id": "avail-wyrestorm-con-xlr-dnt",
+   "label": "Wyrestorm CON-XLR-DNT",
+   "partNumber": "CON-XLR-DNT",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-con-dnt-xlr.json",
+   "id": "avail-wyrestorm-con-dnt-xlr",
+   "label": "Wyrestorm CON-DNT-XLR",
+   "partNumber": "CON-DNT-XLR",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-dsp-88-dnt.json",
+   "id": "avail-wyrestorm-dsp-88-dnt",
+   "label": "Wyrestorm DSP-88-DNT",
+   "partNumber": "DSP-88-DNT",
+   "deviceType": "audio-dsp",
+   "category": "Audio Products / DSP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-h2l-tx-transmitter-tx-of-set-ex-70-h2l.json",
+   "id": "avail-wyrestorm-ex-70-h2l-tx",
+   "label": "Wyrestorm EX-70-H2L-TX (Transmitter (TX) of set EX-70-H2L)",
+   "partNumber": "EX-70-H2L-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-h2l-rx-receiver-rx-of-set-ex-70-h2l.json",
+   "id": "avail-wyrestorm-ex-70-h2l-rx",
+   "label": "Wyrestorm EX-70-H2L-RX (Receiver (RX) of set EX-70-H2L)",
+   "partNumber": "EX-70-H2L-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-60d-kvm-tx-transmitter-tx-of-set-ex-60d-kvm.json",
+   "id": "avail-wyrestorm-ex-60d-kvm-tx",
+   "label": "Wyrestorm EX-60D-KVM-TX (Transmitter (TX) of set EX-60D-KVM)",
+   "partNumber": "EX-60D-KVM-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-60d-kvm-rx-receiver-rx-of-set-ex-60d-kvm.json",
+   "id": "avail-wyrestorm-ex-60d-kvm-rx",
+   "label": "Wyrestorm EX-60D-KVM-RX (Receiver (RX) of set EX-60D-KVM)",
+   "partNumber": "EX-60D-KVM-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-kvm-h2-tx-transmitter-tx-of-set-ex-40-kvm-h2.json",
+   "id": "avail-wyrestorm-ex-40-kvm-h2-tx",
+   "label": "Wyrestorm EX-40-KVM-H2-TX (Transmitter (TX) of set EX-40-KVM-H2)",
+   "partNumber": "EX-40-KVM-H2-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-kvm-h2-rx-receiver-rx-of-set-ex-40-kvm-h2.json",
+   "id": "avail-wyrestorm-ex-40-kvm-h2-rx",
+   "label": "Wyrestorm EX-40-KVM-H2-RX (Receiver (RX) of set EX-40-KVM-H2)",
+   "partNumber": "EX-40-KVM-H2-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-h2-tx-transmitter-tx-of-set-ex-100-kvm-h2.json",
+   "id": "avail-wyrestorm-ex-100-kvm-h2-tx",
+   "label": "Wyrestorm EX-100-KVM-H2-TX (Transmitter (TX) of set EX-100-KVM-H2)",
+   "partNumber": "EX-100-KVM-H2-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-h2-rx-receiver-rx-of-set-ex-100-kvm-h2.json",
+   "id": "avail-wyrestorm-ex-100-kvm-h2-rx",
+   "label": "Wyrestorm EX-100-KVM-H2-RX (Receiver (RX) of set EX-100-KVM-H2)",
+   "partNumber": "EX-100-KVM-H2-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-400-eu-c-eu-mains-outlet-customizable-ports.json",
+   "id": "avail-wyrestorm-idb-400-eu-c",
+   "label": "Wyrestorm IDB-400-EU-C (EU mains outlet, customizable ports)",
+   "partNumber": "IDB-400-EU-C",
+   "deviceType": "table-box",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-sw48-410-v2.json",
+   "id": "avail-wyrestorm-nhd-sw48-410-v2",
+   "label": "Wyrestorm NHD-SW48-410 (v2)",
+   "partNumber": "NHD-SW48-410 v2",
+   "deviceType": "network-switch",
+   "category": "Networking / Switches"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-0402n-ink.json",
+   "id": "avail-wyrestorm-sw-0402n-ink",
+   "label": "Wyrestorm SW-0402N-INK",
+   "partNumber": "SW-0402N-INK",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-620l-tx-w.json",
+   "id": "avail-wyrestorm-sw-620l-tx-w",
+   "label": "Wyrestorm SW-620L-TX-W",
+   "partNumber": "SW-620L-TX-W",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-660-tx-w.json",
+   "id": "avail-wyrestorm-sw-660-tx-w",
+   "label": "Wyrestorm SW-660-TX-W",
+   "partNumber": "SW-660-TX-W",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-ctl-fl10.json",
+   "id": "avail-wyrestorm-syn-ctl-fl10",
+   "label": "Wyrestorm SYN-CTL-FL10",
+   "partNumber": "SYN-CTL-FL10",
+   "deviceType": "control-processor",
+   "category": "Control Systems / Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-ctl-hub-io-10.json",
+   "id": "avail-wyrestorm-syn-ctl-hub-io-10",
+   "label": "Wyrestorm SYN-CTL-HUB-IO-10",
+   "partNumber": "SYN-CTL-HUB-IO-10",
+   "deviceType": "control-expansion",
+   "category": "Control Systems / Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-ctl-hub-ir-06.json",
+   "id": "avail-wyrestorm-syn-ctl-hub-ir-06",
+   "label": "Wyrestorm SYN-CTL-HUB-IR-06",
+   "partNumber": "SYN-CTL-HUB-IR-06",
+   "deviceType": "control-expansion",
+   "category": "Control Systems / Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-ctl-hub-rl-04.json",
+   "id": "avail-wyrestorm-syn-ctl-hub-rl-04",
+   "label": "Wyrestorm SYN-CTL-HUB-RL-04",
+   "partNumber": "SYN-CTL-HUB-RL-04",
+   "deviceType": "control-expansion",
+   "category": "Control Systems / Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-ctl-hub-rs-03.json",
+   "id": "avail-wyrestorm-syn-ctl-hub-rs-03",
+   "label": "Wyrestorm SYN-CTL-HUB-RS-03",
+   "partNumber": "SYN-CTL-HUB-RS-03",
+   "deviceType": "control-expansion",
+   "category": "Control Systems / Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-key12-uk-eu-eu-uk-back-box.json",
+   "id": "avail-wyrestorm-syn-key12-uk-eu",
+   "label": "Wyrestorm SYN-KEY12-UK-EU (EU & UK back box)",
+   "partNumber": "SYN-KEY12-UK-EU",
+   "deviceType": "keypad",
+   "category": "Control Systems / Button Panel"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-key12-us-us-back-box-gang.json",
+   "id": "avail-wyrestorm-syn-key12-us",
+   "label": "Wyrestorm SYN-KEY12-US (US back box/gang)",
+   "partNumber": "SYN-KEY12-US",
+   "deviceType": "keypad",
+   "category": "Control Systems / Button Panel"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-tp10-b.json",
+   "id": "avail-wyrestorm-syn-tp10-b",
+   "label": "Wyrestorm SYN-TP10-B",
+   "partNumber": "SYN-TP10-B",
+   "deviceType": "touch-screen",
+   "category": "Control Systems / Touch panels"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-touch10-v3.json",
+   "id": "avail-wyrestorm-syn-touch10-v3",
+   "label": "Wyrestorm SYN-TOUCH10 (v3)",
+   "partNumber": "SYN-TOUCH10 v3",
+   "deviceType": "touch-screen",
+   "category": "Control Systems / Touch panels"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-ctl-hub.json",
+   "id": "avail-wyrestorm-syn-ctl-hub",
+   "label": "Wyrestorm SYN-CTL-HUB",
+   "partNumber": "SYN-CTL-HUB",
+   "deviceType": "control-expansion",
+   "category": "Control Systems / Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-syn-key10.json",
+   "id": "avail-wyrestorm-syn-key10",
+   "label": "Wyrestorm SYN-KEY10",
+   "partNumber": "SYN-KEY10",
+   "deviceType": "keypad",
+   "category": "Control Systems / Button Panel"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ts-280-eu.json",
+   "id": "avail-wyrestorm-ts-280-eu",
+   "label": "Wyrestorm TS-280-EU",
+   "partNumber": "TS-280-EU",
+   "deviceType": "touch-screen",
+   "category": "Control Systems / Touch panels"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-120-tx.json",
+   "id": "avail-wyrestorm-nhd-120-tx",
+   "label": "Wyrestorm NHD-120-TX",
+   "partNumber": "NHD-120-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-120-rx.json",
+   "id": "avail-wyrestorm-nhd-120-rx",
+   "label": "Wyrestorm NHD-120-RX",
+   "partNumber": "NHD-120-RX",
+   "deviceType": "avoip-decoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-120-iw-tx.json",
+   "id": "avail-wyrestorm-nhd-120-iw-tx",
+   "label": "Wyrestorm NHD-120-IW-TX",
+   "partNumber": "NHD-120-IW-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-124-tx.json",
+   "id": "avail-wyrestorm-nhd-124-tx",
+   "label": "Wyrestorm NHD-124-TX",
+   "partNumber": "NHD-124-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-128-ndi-trx.json",
+   "id": "avail-wyrestorm-nhd-128-ndi-trx",
+   "label": "Wyrestorm NHD-128-NDI-TRX",
+   "partNumber": "NHD-128-NDI-TRX",
+   "deviceType": "gateway",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-150-rx.json",
+   "id": "avail-wyrestorm-nhd-150-rx",
+   "label": "Wyrestorm NHD-150-RX",
+   "partNumber": "NHD-150-RX",
+   "deviceType": "avoip-decoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-400-e-tx.json",
+   "id": "avail-wyrestorm-nhd-400-e-tx",
+   "label": "Wyrestorm NHD-400-E-TX",
+   "partNumber": "NHD-400-E-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-400-e-rx.json",
+   "id": "avail-wyrestorm-nhd-400-e-rx",
+   "label": "Wyrestorm NHD-400-E-RX",
+   "partNumber": "NHD-400-E-RX",
+   "deviceType": "avoip-decoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-500-tx-v2.json",
+   "id": "avail-wyrestorm-nhd-500-tx-v2",
+   "label": "Wyrestorm NHD-500-TX (v2)",
+   "partNumber": "NHD-500-TX v2",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-500-rx-v2.json",
+   "id": "avail-wyrestorm-nhd-500-rx-v2",
+   "label": "Wyrestorm NHD-500-RX (v2)",
+   "partNumber": "NHD-500-RX v2",
+   "deviceType": "avoip-decoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-500-e-rx.json",
+   "id": "avail-wyrestorm-nhd-500-e-rx",
+   "label": "Wyrestorm NHD-500-E-RX",
+   "partNumber": "NHD-500-E-RX",
+   "deviceType": "avoip-decoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-500-e-tx.json",
+   "id": "avail-wyrestorm-nhd-500-e-tx",
+   "label": "Wyrestorm NHD-500-E-TX",
+   "partNumber": "NHD-500-E-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-500-dnt-tx.json",
+   "id": "avail-wyrestorm-nhd-500-dnt-tx",
+   "label": "Wyrestorm NHD-500-DNT-TX",
+   "partNumber": "NHD-500-DNT-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-500-iw-tx-v2.json",
+   "id": "avail-wyrestorm-nhd-500-iw-tx-v2",
+   "label": "Wyrestorm NHD-500-IW-TX (v2)",
+   "partNumber": "NHD-500-IW-TX v2",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-510-tx.json",
+   "id": "avail-wyrestorm-nhd-510-tx",
+   "label": "Wyrestorm NHD-510-TX",
+   "partNumber": "NHD-510-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-600-trx.json",
+   "id": "avail-wyrestorm-nhd-600-trx",
+   "label": "Wyrestorm NHD-600-TRX",
+   "partNumber": "NHD-600-TRX",
+   "deviceType": "av-over-ip",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-600-trxf.json",
+   "id": "avail-wyrestorm-nhd-600-trxf",
+   "label": "Wyrestorm NHD-600-TRXF",
+   "partNumber": "NHD-600-TRXF",
+   "deviceType": "av-over-ip",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-610-tx-v2.json",
+   "id": "avail-wyrestorm-nhd-610-tx-v2",
+   "label": "Wyrestorm NHD-610-TX (v2)",
+   "partNumber": "NHD-610-TX v2",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-600-e-rx.json",
+   "id": "avail-wyrestorm-nhd-600-e-rx",
+   "label": "Wyrestorm NHD-600-E-RX",
+   "partNumber": "NHD-600-E-RX",
+   "deviceType": "avoip-decoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-600-e-tx.json",
+   "id": "avail-wyrestorm-nhd-600-e-tx",
+   "label": "Wyrestorm NHD-600-E-TX",
+   "partNumber": "NHD-600-E-TX",
+   "deviceType": "avoip-encoder",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-ctl-pro-v2.json",
+   "id": "avail-wyrestorm-nhd-ctl-pro-v2",
+   "label": "Wyrestorm NHD-CTL-PRO (v2)",
+   "partNumber": "NHD-CTL-PRO v2",
+   "deviceType": "controller",
+   "category": "AV distribution / AVoIP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-usb-trx.json",
+   "id": "avail-wyrestorm-nhd-usb-trx",
+   "label": "Wyrestorm NHD-USB-TRX",
+   "partNumber": "NHD-USB-TRX",
+   "deviceType": "usb-extender",
+   "category": "AV distribution / USB for Pro AV"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-nhd-0401-mv.json",
+   "id": "avail-wyrestorm-nhd-0401-mv",
+   "label": "Wyrestorm NHD-0401-MV",
+   "partNumber": "NHD-0401-MV",
+   "deviceType": "multiviewer",
+   "category": "Processing / Multiviewers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sr-1g-mm-sfpp.json",
+   "id": "avail-wyrestorm-sr-1g-mm-sfpp",
+   "label": "Wyrestorm SR-1G-MM-SFPP",
+   "partNumber": "SR-1G-MM-SFPP",
+   "deviceType": "expansion-card",
+   "category": "Networking / Switches"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sr-10g-mm-sfpp.json",
+   "id": "avail-wyrestorm-sr-10g-mm-sfpp",
+   "label": "Wyrestorm SR-10G-MM-SFPP",
+   "partNumber": "SR-10G-MM-SFPP",
+   "deviceType": "expansion-card",
+   "category": "Networking / Switches"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-apo-210-uc.json",
+   "id": "avail-wyrestorm-apo-210-uc",
+   "label": "Wyrestorm APO-210-UC",
+   "partNumber": "APO-210-UC",
+   "deviceType": "audio-bar",
+   "category": "UC / Speakerphones"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-apo-vx20-uc-v2.json",
+   "id": "avail-wyrestorm-apo-vx20-uc-v2",
+   "label": "Wyrestorm APO-VX20-UC (v2)",
+   "partNumber": "APO-VX20-UC v2",
+   "deviceType": "video-bar",
+   "category": "UC / Video conference systems"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-cam-210-ptz.json",
+   "id": "avail-wyrestorm-cam-210-ptz",
+   "label": "Wyrestorm CAM-210-PTZ",
+   "partNumber": "CAM-210-PTZ",
+   "deviceType": "ptz-camera",
+   "category": "Videocameras / PTZ cameras"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-cam-210-ndi-ptz.json",
+   "id": "avail-wyrestorm-cam-210-ndi-ptz",
+   "label": "Wyrestorm CAM-210-NDI-PTZ",
+   "partNumber": "CAM-210-NDI-PTZ",
+   "deviceType": "ptz-camera",
+   "category": "Videocameras / PTZ cameras"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-cam-420-ptz.json",
+   "id": "avail-wyrestorm-cam-420-ptz",
+   "label": "Wyrestorm CAM-420-PTZ",
+   "partNumber": "CAM-420-PTZ",
+   "deviceType": "ptz-camera",
+   "category": "Videocameras / PTZ cameras"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-cam-0402-brg.json",
+   "id": "avail-wyrestorm-cam-0402-brg",
+   "label": "Wyrestorm CAM-0402-BRG",
+   "partNumber": "CAM-0402-BRG",
+   "deviceType": "switcher",
+   "category": "Videocameras / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-cam-0402-ndi-brg.json",
+   "id": "avail-wyrestorm-cam-0402-ndi-brg",
+   "label": "Wyrestorm CAM-0402-NDI-BRG",
+   "partNumber": "CAM-0402-NDI-BRG",
+   "deviceType": "switcher",
+   "category": "Videocameras / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-amp-260-dnt.json",
+   "id": "avail-wyrestorm-amp-260-dnt",
+   "label": "Wyrestorm AMP-260-DNT",
+   "partNumber": "AMP-260-DNT",
+   "deviceType": "amplifier",
+   "category": "Audio Products / Power Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-amp-2120-dnt.json",
+   "id": "avail-wyrestorm-amp-2120-dnt",
+   "label": "Wyrestorm AMP-2120-DNT",
+   "partNumber": "AMP-2120-DNT",
+   "deviceType": "amplifier",
+   "category": "Audio Products / Power Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-apo-sky-mic.json",
+   "id": "avail-wyrestorm-apo-sky-mic",
+   "label": "Wyrestorm APO-SKY-MIC",
+   "partNumber": "APO-SKY-MIC",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-com-mic-hub.json",
+   "id": "avail-wyrestorm-com-mic-hub",
+   "label": "Wyrestorm COM-MIC-HUB",
+   "partNumber": "COM-MIC-HUB",
+   "deviceType": "audio-dsp",
+   "category": "Audio Products / DSP"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-g3-tx-transmitter-tx-of-set-ex-40-g3.json",
+   "id": "avail-wyrestorm-ex-40-g3-tx",
+   "label": "Wyrestorm EX-40-G3-TX (Transmitter (TX) of set EX-40-G3)",
+   "partNumber": "EX-40-G3-TX",
+   "deviceType": "hdmi-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-g3-rx-receiver-rx-of-set-ex-40-g3.json",
+   "id": "avail-wyrestorm-ex-40-g3-rx",
+   "label": "Wyrestorm EX-40-G3-RX (Receiver (RX) of set EX-40-G3)",
+   "partNumber": "EX-40-G3-RX",
+   "deviceType": "hdmi-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-g2-tx-transmitter-tx-of-set-ex-70-g2.json",
+   "id": "avail-wyrestorm-ex-70-g2-tx",
+   "label": "Wyrestorm EX-70-G2-TX (Transmitter (TX) of set EX-70-G2)",
+   "partNumber": "EX-70-G2-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-g2-rx-receiver-rx-of-set-ex-70-g2.json",
+   "id": "avail-wyrestorm-ex-70-g2-rx",
+   "label": "Wyrestorm EX-70-G2-RX (Receiver (RX) of set EX-70-G2)",
+   "partNumber": "EX-70-G2-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-g2-tx-transmitter-tx-of-set-ex-100-g2.json",
+   "id": "avail-wyrestorm-ex-100-g2-tx",
+   "label": "Wyrestorm EX-100-G2-TX (Transmitter (TX) of set EX-100-G2)",
+   "partNumber": "EX-100-G2-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-g2-rx-receiver-rx-of-set-ex-100-g2.json",
+   "id": "avail-wyrestorm-ex-100-g2-rx",
+   "label": "Wyrestorm EX-100-G2-RX (Receiver (RX) of set EX-100-G2)",
+   "partNumber": "EX-100-G2-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-35-h2-tx-transmitter-tx-of-set-ex-35-h2.json",
+   "id": "avail-wyrestorm-ex-35-h2-tx",
+   "label": "Wyrestorm EX-35-H2-TX (Transmitter (TX) of set EX-35-H2)",
+   "partNumber": "EX-35-H2-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-35-h2-rx-receiver-rx-of-set-ex-35-h2.json",
+   "id": "avail-wyrestorm-ex-35-h2-rx",
+   "label": "Wyrestorm EX-35-H2-RX (Receiver (RX) of set EX-35-H2)",
+   "partNumber": "EX-35-H2-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-35-h2-arc-tx-transmitter-tx-of-set-ex-35-h2-arc.json",
+   "id": "avail-wyrestorm-ex-35-h2-arc-tx",
+   "label": "Wyrestorm EX-35-H2-ARC-TX (Transmitter (TX) of set EX-35-H2-ARC)",
+   "partNumber": "EX-35-H2-ARC-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-35-h2-arc-rx-receiver-rx-of-set-ex-35-h2-arc.json",
+   "id": "avail-wyrestorm-ex-35-h2-arc-rx",
+   "label": "Wyrestorm EX-35-H2-ARC-RX (Receiver (RX) of set EX-35-H2-ARC)",
+   "partNumber": "EX-35-H2-ARC-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-35-8k-tx-transmitter-tx-of-set-ex-35-8k.json",
+   "id": "avail-wyrestorm-ex-35-8k-tx",
+   "label": "Wyrestorm EX-35-8K-TX (Transmitter (TX) of set EX-35-8K)",
+   "partNumber": "EX-35-8K-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-35-8k-rx-receiver-rx-of-set-ex-35-8k.json",
+   "id": "avail-wyrestorm-ex-35-8k-rx",
+   "label": "Wyrestorm EX-35-8K-RX (Receiver (RX) of set EX-35-8K)",
+   "partNumber": "EX-35-8K-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-h2-arc-tx-transmitter-tx-of-set-ex-40-h2-arc.json",
+   "id": "avail-wyrestorm-ex-40-h2-arc-tx",
+   "label": "Wyrestorm EX-40-H2-ARC-TX (Transmitter (TX) of set EX-40-H2-ARC)",
+   "partNumber": "EX-40-H2-ARC-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-h2-arc-rx-receiver-rx-of-set-ex-40-h2-arc.json",
+   "id": "avail-wyrestorm-ex-40-h2-arc-rx",
+   "label": "Wyrestorm EX-40-H2-ARC-RX (Receiver (RX) of set EX-40-H2-ARC)",
+   "partNumber": "EX-40-H2-ARC-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-h2-tx-transmitter-tx-of-set-ex-70-h2.json",
+   "id": "avail-wyrestorm-ex-70-h2-tx",
+   "label": "Wyrestorm EX-70-H2-TX (Transmitter (TX) of set EX-70-H2)",
+   "partNumber": "EX-70-H2-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-h2-rx-receiver-rx-of-set-ex-70-h2.json",
+   "id": "avail-wyrestorm-ex-70-h2-rx",
+   "label": "Wyrestorm EX-70-H2-RX (Receiver (RX) of set EX-70-H2)",
+   "partNumber": "EX-70-H2-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-h2c-tx-transmitter-tx-of-set-ex-70-h2c.json",
+   "id": "avail-wyrestorm-ex-70-h2c-tx",
+   "label": "Wyrestorm EX-70-H2C-TX (Transmitter (TX) of set EX-70-H2C)",
+   "partNumber": "EX-70-H2C-TX",
+   "deviceType": "hdmi-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-70-h2c-rx-receiver-rx-of-set-ex-70-h2c.json",
+   "id": "avail-wyrestorm-ex-70-h2c-rx",
+   "label": "Wyrestorm EX-70-H2C-RX (Receiver (RX) of set EX-70-H2C)",
+   "partNumber": "EX-70-H2C-RX",
+   "deviceType": "hdmi-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exf-300-h2-tx-transmitter-tx-of-set-exf-300-h2.json",
+   "id": "avail-wyrestorm-exf-300-h2-tx",
+   "label": "Wyrestorm EXF-300-H2-TX (Transmitter (TX) of set EXF-300-H2)",
+   "partNumber": "EXF-300-H2-TX",
+   "deviceType": "fiber-transmitter",
+   "category": "AV distribution / Fiber Optics"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exf-300-h2-rx-receiver-rx-of-set-exf-300-h2.json",
+   "id": "avail-wyrestorm-exf-300-h2-rx",
+   "label": "Wyrestorm EXF-300-H2-RX (Receiver (RX) of set EXF-300-H2)",
+   "partNumber": "EXF-300-H2-RX",
+   "deviceType": "fiber-transmitter",
+   "category": "AV distribution / Fiber Optics"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exf-10km-5k-tx-transmitter-tx-of-set-exf-10km-5k.json",
+   "id": "avail-wyrestorm-exf-10km-5k-tx",
+   "label": "Wyrestorm EXF-10KM-5K-TX (Transmitter (TX) of set EXF-10KM-5K)",
+   "partNumber": "EXF-10KM-5K-TX",
+   "deviceType": "fiber-transmitter",
+   "category": "AV distribution / Fiber Optics"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exf-10km-5k-rx-receiver-rx-of-set-exf-10km-5k.json",
+   "id": "avail-wyrestorm-exf-10km-5k-rx",
+   "label": "Wyrestorm EXF-10KM-5K-RX (Receiver (RX) of set EXF-10KM-5K)",
+   "partNumber": "EXF-10KM-5K-RX",
+   "deviceType": "fiber-transmitter",
+   "category": "AV distribution / Fiber Optics"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-kvm-5k-tx-transmitter-tx-of-set-ex-40-kvm-5k.json",
+   "id": "avail-wyrestorm-ex-40-kvm-5k-tx",
+   "label": "Wyrestorm EX-40-KVM-5K-TX (Transmitter (TX) of set EX-40-KVM-5K)",
+   "partNumber": "EX-40-KVM-5K-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-40-kvm-5k-rx-receiver-rx-of-set-ex-40-kvm-5k.json",
+   "id": "avail-wyrestorm-ex-40-kvm-5k-rx",
+   "label": "Wyrestorm EX-40-KVM-5K-RX (Receiver (RX) of set EX-40-KVM-5K)",
+   "partNumber": "EX-40-KVM-5K-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-80-kvm-tx-transmitter-tx-of-set-ex-80-kvm.json",
+   "id": "avail-wyrestorm-ex-80-kvm-tx",
+   "label": "Wyrestorm EX-80-KVM-TX (Transmitter (TX) of set EX-80-KVM)",
+   "partNumber": "EX-80-KVM-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-80-kvm-rx-receiver-rx-of-set-ex-80-kvm.json",
+   "id": "avail-wyrestorm-ex-80-kvm-rx",
+   "label": "Wyrestorm EX-80-KVM-RX (Receiver (RX) of set EX-80-KVM)",
+   "partNumber": "EX-80-KVM-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-tx-transmitter-tx-of-set-ex-100-kvm.json",
+   "id": "avail-wyrestorm-ex-100-kvm-tx",
+   "label": "Wyrestorm EX-100-KVM-TX (Transmitter (TX) of set EX-100-KVM)",
+   "partNumber": "EX-100-KVM-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-rx-receiver-rx-of-set-ex-100-kvm.json",
+   "id": "avail-wyrestorm-ex-100-kvm-rx",
+   "label": "Wyrestorm EX-100-KVM-RX (Receiver (RX) of set EX-100-KVM)",
+   "partNumber": "EX-100-KVM-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-ip-tx-transmitter-tx-of-set-ex-100-kvm-ip.json",
+   "id": "avail-wyrestorm-ex-100-kvm-ip-tx",
+   "label": "Wyrestorm EX-100-KVM-IP-TX (Transmitter (TX) of set EX-100-KVM-IP)",
+   "partNumber": "EX-100-KVM-IP-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-ip-rx-receiver-rx-of-set-ex-100-kvm-ip.json",
+   "id": "avail-wyrestorm-ex-100-kvm-ip-rx",
+   "label": "Wyrestorm EX-100-KVM-IP-RX (Receiver (RX) of set EX-100-KVM-IP)",
+   "partNumber": "EX-100-KVM-IP-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-8k-tx-transmitter-tx-of-set-ex-100-kvm-8k.json",
+   "id": "avail-wyrestorm-ex-100-kvm-8k-tx",
+   "label": "Wyrestorm EX-100-KVM-8K-TX (Transmitter (TX) of set EX-100-KVM-8K)",
+   "partNumber": "EX-100-KVM-8K-TX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-kvm-8k-rx-receiver-rx-of-set-ex-100-kvm-8k.json",
+   "id": "avail-wyrestorm-ex-100-kvm-8k-rx",
+   "label": "Wyrestorm EX-100-KVM-8K-RX (Receiver (RX) of set EX-100-KVM-8K)",
+   "partNumber": "EX-100-KVM-8K-RX",
+   "deviceType": "kvm-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-60-usb2-tx-transmitter-tx-of-set-ex-60-usb2.json",
+   "id": "avail-wyrestorm-ex-60-usb2-tx",
+   "label": "Wyrestorm EX-60-USB2-TX (Transmitter (TX) of set EX-60-USB2)",
+   "partNumber": "EX-60-USB2-TX",
+   "deviceType": "usb-extender",
+   "category": "AV distribution / USB for Pro AV"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-60-usb2-rx-receiver-rx-of-set-ex-60-usb2.json",
+   "id": "avail-wyrestorm-ex-60-usb2-rx",
+   "label": "Wyrestorm EX-60-USB2-RX (Receiver (RX) of set EX-60-USB2)",
+   "partNumber": "EX-60-USB2-RX",
+   "deviceType": "usb-extender",
+   "category": "AV distribution / USB for Pro AV"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-usb3-tx-transmitter-tx-of-set-ex-100-usb3.json",
+   "id": "avail-wyrestorm-ex-100-usb3-tx",
+   "label": "Wyrestorm EX-100-USB3-TX (Transmitter (TX) of set EX-100-USB3)",
+   "partNumber": "EX-100-USB3-TX",
+   "deviceType": "usb-extender",
+   "category": "AV distribution / USB for Pro AV"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-usb3-rx-receiver-rx-of-set-ex-100-usb3.json",
+   "id": "avail-wyrestorm-ex-100-usb3-rx",
+   "label": "Wyrestorm EX-100-USB3-RX (Receiver (RX) of set EX-100-USB3)",
+   "partNumber": "EX-100-USB3-RX",
+   "deviceType": "usb-extender",
+   "category": "AV distribution / USB for Pro AV"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-iw-usbc-tx-transmitter-tx-of-set-ex-100-iw-usbc.json",
+   "id": "avail-wyrestorm-ex-100-iw-usbc-tx",
+   "label": "Wyrestorm EX-100-IW-USBC-TX (Transmitter (TX) of set EX-100-IW-USBC)",
+   "partNumber": "EX-100-IW-USBC-TX",
+   "deviceType": "usb-extender",
+   "category": "AV distribution / USB for Pro AV"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex-100-iw-usbc-rx-receiver-rx-of-set-ex-100-iw-usbc.json",
+   "id": "avail-wyrestorm-ex-100-iw-usbc-rx",
+   "label": "Wyrestorm EX-100-IW-USBC-RX (Receiver (RX) of set EX-100-IW-USBC)",
+   "partNumber": "EX-100-IW-USBC-RX",
+   "deviceType": "usb-extender",
+   "category": "AV distribution / USB for Pro AV"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex3-100-earc-tx-transmitter-tx-of-set-ex3-100-earc.json",
+   "id": "avail-wyrestorm-ex3-100-earc-tx",
+   "label": "Wyrestorm EX3-100-EARC-TX (Transmitter (TX) of set EX3-100-EARC)",
+   "partNumber": "EX3-100-EARC-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-ex3-100-earc-rx-receiver-rx-of-set-ex3-100-earc.json",
+   "id": "avail-wyrestorm-ex3-100-earc-rx",
+   "label": "Wyrestorm EX3-100-EARC-RX (Receiver (RX) of set EX3-100-EARC)",
+   "partNumber": "EX3-100-EARC-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exa-100-earc-tx-transmitter-tx-of-set-exa-100-earc.json",
+   "id": "avail-wyrestorm-exa-100-earc-tx",
+   "label": "Wyrestorm EXA-100-EARC-TX (Transmitter (TX) of set EXA-100-EARC)",
+   "partNumber": "EXA-100-EARC-TX",
+   "deviceType": "audio-over-cat-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exa-100-earc-rx-receiver-rx-of-set-exa-100-earc.json",
+   "id": "avail-wyrestorm-exa-100-earc-rx",
+   "label": "Wyrestorm EXA-100-EARC-RX (Receiver (RX) of set EXA-100-EARC)",
+   "partNumber": "EXA-100-EARC-RX",
+   "deviceType": "audio-over-cat-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-220-tx-w.json",
+   "id": "avail-wyrestorm-sw-220-tx-w",
+   "label": "Wyrestorm SW-220-TX-W",
+   "partNumber": "SW-220-TX-W",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-620-tx-w.json",
+   "id": "avail-wyrestorm-sw-620-tx-w",
+   "label": "Wyrestorm SW-620-TX-W",
+   "partNumber": "SW-620-TX-W",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-640l-tx-w.json",
+   "id": "avail-wyrestorm-sw-640l-tx-w",
+   "label": "Wyrestorm SW-640L-TX-W",
+   "partNumber": "SW-640L-TX-W",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-0204-vw.json",
+   "id": "avail-wyrestorm-sw-0204-vw",
+   "label": "Wyrestorm SW-0204-VW",
+   "partNumber": "SW-0204-VW",
+   "deviceType": "video-wall-controller",
+   "category": "Processing / Videowall Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-0206-vw.json",
+   "id": "avail-wyrestorm-sw-0206-vw",
+   "label": "Wyrestorm SW-0206-VW",
+   "partNumber": "SW-0206-VW",
+   "deviceType": "video-wall-controller",
+   "category": "Processing / Videowall Processors"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-200-ms-multi-standard-mains.json",
+   "id": "avail-wyrestorm-idb-200-ms",
+   "label": "Wyrestorm IDB-200-MS (Multi-standard mains)",
+   "partNumber": "IDB-200-MS",
+   "deviceType": "table-box",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-300.json",
+   "id": "avail-wyrestorm-idb-300",
+   "label": "Wyrestorm IDB-300",
+   "partNumber": "IDB-300",
+   "deviceType": "table-box",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-300-btn-touch-buttons.json",
+   "id": "avail-wyrestorm-idb-300-btn",
+   "label": "Wyrestorm IDB-300-BTN (Touch buttons)",
+   "partNumber": "IDB-300-BTN",
+   "deviceType": "table-box",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-400-ms-multi-standard-mains.json",
+   "id": "avail-wyrestorm-idb-400-ms",
+   "label": "Wyrestorm IDB-400-MS (Multi-standard mains)",
+   "partNumber": "IDB-400-MS",
+   "deviceType": "table-box",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-400-ms-c-multi-standard-mains-customizable-ports.json",
+   "id": "avail-wyrestorm-idb-400-ms-c",
+   "label": "Wyrestorm IDB-400-MS-C (Multi-standard mains, customizable ports)",
+   "partNumber": "IDB-400-MS-C",
+   "deviceType": "table-box",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-usba-c.json",
+   "id": "avail-wyrestorm-idb-usba-c",
+   "label": "Wyrestorm IDB-USBA-C",
+   "partNumber": "IDB-USBA-C",
+   "deviceType": "expansion-card",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-usbc-c.json",
+   "id": "avail-wyrestorm-idb-usbc-c",
+   "label": "Wyrestorm IDB-USBC-C",
+   "partNumber": "IDB-USBC-C",
+   "deviceType": "expansion-card",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-rj45-c.json",
+   "id": "avail-wyrestorm-idb-rj45-c",
+   "label": "Wyrestorm IDB-RJ45-C",
+   "partNumber": "IDB-RJ45-C",
+   "deviceType": "expansion-card",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-hdmi-c.json",
+   "id": "avail-wyrestorm-idb-hdmi-c",
+   "label": "Wyrestorm IDB-HDMI-C",
+   "partNumber": "IDB-HDMI-C",
+   "deviceType": "expansion-card",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-idb-k2-c.json",
+   "id": "avail-wyrestorm-idb-k2-c",
+   "label": "Wyrestorm IDB-K2-C",
+   "partNumber": "IDB-K2-C",
+   "deviceType": "expansion-card",
+   "category": "Connectivity / Architectural"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0402-mst-v2.json",
+   "id": "avail-wyrestorm-mx-0402-mst-v2",
+   "label": "Wyrestorm MX-0402-MST (v2)",
+   "partNumber": "MX-0402-MST v2",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0403-h3-mst.json",
+   "id": "avail-wyrestorm-mx-0403-h3-mst",
+   "label": "Wyrestorm MX-0403-H3-MST",
+   "partNumber": "MX-0403-H3-MST",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0404-hdmi.json",
+   "id": "avail-wyrestorm-mx-0404-hdmi",
+   "label": "Wyrestorm MX-0404-HDMI",
+   "partNumber": "MX-0404-HDMI",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0808-h2a-mk2.json",
+   "id": "avail-wyrestorm-mx-0808-h2a-mk2",
+   "label": "Wyrestorm MX-0808-H2A-MK2",
+   "partNumber": "MX-0808-H2A-MK2",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0404-scl.json",
+   "id": "avail-wyrestorm-mx-0404-scl",
+   "label": "Wyrestorm MX-0404-SCL",
+   "partNumber": "MX-0404-SCL",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0804-edc.json",
+   "id": "avail-wyrestorm-mx-0804-edc",
+   "label": "Wyrestorm MX-0804-EDC",
+   "partNumber": "MX-0804-EDC",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0808-scl-v2.json",
+   "id": "avail-wyrestorm-mx-0808-scl-v2",
+   "label": "Wyrestorm MX-0808-SCL (v2)",
+   "partNumber": "MX-0808-SCL v2",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0812-scl.json",
+   "id": "avail-wyrestorm-mx-0812-scl",
+   "label": "Wyrestorm MX-0812-SCL",
+   "partNumber": "MX-0812-SCL",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-1007-hyb.json",
+   "id": "avail-wyrestorm-mx-1007-hyb",
+   "label": "Wyrestorm MX-1007-HYB",
+   "partNumber": "MX-1007-HYB",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mxv-0808-h2a-70-v3.json",
+   "id": "avail-wyrestorm-mxv-0808-h2a-70-v3",
+   "label": "Wyrestorm MXV-0808-H2A-70 (v3)",
+   "partNumber": "MXV-0808-H2A-70 v3",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mxv-0404-h2a-kit-matrix-v2.json",
+   "id": "avail-wyrestorm-mxv-0404-h2a-kit-matrix",
+   "label": "Wyrestorm MXV-0404-H2A-KIT-MATRIX (v2)",
+   "partNumber": "MXV-0404-H2A-KIT-MATRIX",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mxv-0808-h2a-v3.json",
+   "id": "avail-wyrestorm-mxv-0808-h2a-v3",
+   "label": "Wyrestorm MXV-0808-H2A v3",
+   "partNumber": "MXV-0808-H2A v3",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0404-kit-matrix.json",
+   "id": "avail-wyrestorm-mx-0404-kit-matrix",
+   "label": "Wyrestorm MX-0404-KIT-MATRIX",
+   "partNumber": "MX-0404-KIT-MATRIX",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-0808-kit-matrix-v2.json",
+   "id": "avail-wyrestorm-mx-0808-kit-matrix",
+   "label": "Wyrestorm MX-0808-KIT-MATRIX (v2)",
+   "partNumber": "MX-0808-KIT-MATRIX",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-kit-rx-v2.json",
+   "id": "avail-wyrestorm-mx-kit-rx",
+   "label": "Wyrestorm MX-KIT-RX (v2)",
+   "partNumber": "MX-KIT-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-mx-1616-scl.json",
+   "id": "avail-wyrestorm-mx-1616-scl",
+   "label": "Wyrestorm MX-1616-SCL",
+   "partNumber": "MX-1616-SCL",
+   "deviceType": "switcher",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-tx-scl-hdmi.json",
+   "id": "avail-wyrestorm-tx-scl-hdmi",
+   "label": "Wyrestorm TX-SCL-HDMI",
+   "partNumber": "TX-SCL-HDMI",
+   "deviceType": "expansion-card",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-tx-scl-hdbt.json",
+   "id": "avail-wyrestorm-tx-scl-hdbt",
+   "label": "Wyrestorm TX-SCL-HDBT",
+   "partNumber": "TX-SCL-HDBT",
+   "deviceType": "expansion-card",
+   "category": "AV distribution / Matrix Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-120-tx3.json",
+   "id": "avail-wyrestorm-sw-120-tx3",
+   "label": "Wyrestorm SW-120-TX3",
+   "partNumber": "SW-120-TX3",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-120-tx3-uk-uk-2-gang.json",
+   "id": "avail-wyrestorm-sw-120-tx3-uk",
+   "label": "Wyrestorm SW-120-TX3-UK (UK 2-gang)",
+   "partNumber": "SW-120-TX3-UK",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-120-tx3-us-us-back-box-gang.json",
+   "id": "avail-wyrestorm-sw-120-tx3-us",
+   "label": "Wyrestorm SW-120-TX3-US (US back box/gang)",
+   "partNumber": "SW-120-TX3-US",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-130-tx-uk-uk-2-gang.json",
+   "id": "avail-wyrestorm-sw-130-tx-uk",
+   "label": "Wyrestorm SW-130-TX-UK (UK 2-gang)",
+   "partNumber": "SW-130-TX-UK",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-130-tx-us-us-back-box-gang.json",
+   "id": "avail-wyrestorm-sw-130-tx-us",
+   "label": "Wyrestorm SW-130-TX-US (US back box/gang)",
+   "partNumber": "SW-130-TX-US",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-510-tx.json",
+   "id": "avail-wyrestorm-sw-510-tx",
+   "label": "Wyrestorm SW-510-TX",
+   "partNumber": "SW-510-TX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-tx-35-iw.json",
+   "id": "avail-wyrestorm-tx-35-iw",
+   "label": "Wyrestorm TX-35-IW",
+   "partNumber": "TX-35-IW",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-tx-35-iw-kvm.json",
+   "id": "avail-wyrestorm-tx-35-iw-kvm",
+   "label": "Wyrestorm TX-35-IW-KVM",
+   "partNumber": "TX-35-IW-KVM",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-tx-35-iwc-kvm.json",
+   "id": "avail-wyrestorm-tx-35-iwc-kvm",
+   "label": "Wyrestorm TX-35-IWC-KVM",
+   "partNumber": "TX-35-IWC-KVM",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rx-35-poh.json",
+   "id": "avail-wyrestorm-rx-35-poh",
+   "label": "Wyrestorm RX-35-POH",
+   "partNumber": "RX-35-POH",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rx-70-4k.json",
+   "id": "avail-wyrestorm-rx-70-4k",
+   "label": "Wyrestorm RX-70-4K",
+   "partNumber": "RX-70-4K",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rxv-70-g2-scl.json",
+   "id": "avail-wyrestorm-rxv-70-g2-scl",
+   "label": "Wyrestorm RXV-70-G2-SCL",
+   "partNumber": "RXV-70-G2-SCL",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rxv-70-4k-g2.json",
+   "id": "avail-wyrestorm-rxv-70-4k-g2",
+   "label": "Wyrestorm RXV-70-4K-G2",
+   "partNumber": "RXV-70-4K-G2",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rxv-35-scl.json",
+   "id": "avail-wyrestorm-rxv-35-scl",
+   "label": "Wyrestorm RXV-35-SCL",
+   "partNumber": "RXV-35-SCL",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rxv-35-4k.json",
+   "id": "avail-wyrestorm-rxv-35-4k",
+   "label": "Wyrestorm RXV-35-4K",
+   "partNumber": "RXV-35-4K",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rx-500.json",
+   "id": "avail-wyrestorm-rx-500",
+   "label": "Wyrestorm RX-500",
+   "partNumber": "RX-500",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rx-700.json",
+   "id": "avail-wyrestorm-rx-700",
+   "label": "Wyrestorm RX-700",
+   "partNumber": "RX-700",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-rx3-100.json",
+   "id": "avail-wyrestorm-rx3-100",
+   "label": "Wyrestorm RX3-100",
+   "partNumber": "RX3-100",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sw-515-rx.json",
+   "id": "avail-wyrestorm-sw-515-rx",
+   "label": "Wyrestorm SW-515-RX",
+   "partNumber": "SW-515-RX",
+   "deviceType": "hdbaset-extender",
+   "category": "AV distribution / Extenders"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sp-0104-h2.json",
+   "id": "avail-wyrestorm-sp-0104-h2",
+   "label": "Wyrestorm SP-0104-H2",
+   "partNumber": "SP-0104-H2",
+   "deviceType": "hdmi-splitter",
+   "category": "AV distribution / Distribution Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-sp-0108-scl.json",
+   "id": "avail-wyrestorm-sp-0108-scl",
+   "label": "Wyrestorm SP-0108-SCL",
+   "partNumber": "SP-0108-SCL",
+   "deviceType": "hdmi-splitter",
+   "category": "AV distribution / Distribution Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-halo-vx10-v2.json",
+   "id": "avail-wyrestorm-halo-vx10-v2",
+   "label": "Wyrestorm HALO-VX10 (v2)",
+   "partNumber": "HALO-VX10 v2",
+   "deviceType": "video-bar",
+   "category": "UC / Video conference systems"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-halo-com-mic.json",
+   "id": "avail-wyrestorm-halo-com-mic",
+   "label": "Wyrestorm HALO-COM-MIC",
+   "partNumber": "HALO-COM-MIC",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-con-aud-h2.json",
+   "id": "avail-wyrestorm-exp-con-aud-h2",
+   "label": "Wyrestorm EXP-CON-AUD-H2",
+   "partNumber": "EXP-CON-AUD-H2",
+   "deviceType": "audio-embedder",
+   "category": "AV distribution / Interfaces"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-sp-0102-h2.json",
+   "id": "avail-wyrestorm-exp-sp-0102-h2",
+   "label": "Wyrestorm EXP-SP-0102-H2",
+   "partNumber": "EXP-SP-0102-H2",
+   "deviceType": "hdmi-splitter",
+   "category": "AV distribution / Distribution Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-sp-0104-h2.json",
+   "id": "avail-wyrestorm-exp-sp-0104-h2",
+   "label": "Wyrestorm EXP-SP-0104-H2",
+   "partNumber": "EXP-SP-0104-H2",
+   "deviceType": "hdmi-splitter",
+   "category": "AV distribution / Distribution Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-sp-0102-8k.json",
+   "id": "avail-wyrestorm-exp-sp-0102-8k",
+   "label": "Wyrestorm EXP-SP-0102-8K",
+   "partNumber": "EXP-SP-0102-8K",
+   "deviceType": "hdmi-splitter",
+   "category": "AV distribution / Distribution Amplifiers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-mx-0402-h2.json",
+   "id": "avail-wyrestorm-exp-mx-0402-h2",
+   "label": "Wyrestorm EXP-MX-0402-H2",
+   "partNumber": "EXP-MX-0402-H2",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-sw-0401-h2.json",
+   "id": "avail-wyrestorm-exp-sw-0401-h2",
+   "label": "Wyrestorm EXP-SW-0401-H2",
+   "partNumber": "EXP-SW-0401-H2",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-sw-0201-8k.json",
+   "id": "avail-wyrestorm-exp-sw-0201-8k",
+   "label": "Wyrestorm EXP-SW-0201-8K",
+   "partNumber": "EXP-SW-0201-8K",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
+  },
+  {
+   "file": "wyrestorm/wyrestorm-exp-sw-0401-8k.json",
+   "id": "avail-wyrestorm-exp-sw-0401-8k",
+   "label": "Wyrestorm EXP-SW-0401-8K",
+   "partNumber": "EXP-SW-0401-8K",
+   "deviceType": "switcher",
+   "category": "AV distribution / Switchers"
   }
  ]
 }

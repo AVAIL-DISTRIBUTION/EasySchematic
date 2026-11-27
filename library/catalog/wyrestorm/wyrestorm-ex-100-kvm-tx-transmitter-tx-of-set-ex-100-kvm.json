@@ -1,0 +1,108 @@
+{
+  "id": "avail-wyrestorm-ex-100-kvm-tx",
+  "label": "Wyrestorm EX-100-KVM-TX (Transmitter (TX) of set EX-100-KVM)",
+  "shortName": "EX-100-KVM-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-KVM-TX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-kvm/",
+  "searchTerms": [
+    "ex-100-kvm-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-100-kvm"
+  ],
+  "heightMm": 17,
+  "widthMm": 136,
+  "depthMm": 85,
+  "weightKg": 0.4,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-100-KVM",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz KVM Extender Set | HDBaseT | 4K60Hz 4:2:0 | 1-way PoH (Tx->Rx) | USB 2.0 | Analog Audio | CEC Passthrough | RS-232 Passthrough (4K:100m/328ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-KVM (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Published power 19 W is not split by TX/RX - not entered. Dimensions published once for the set - applied to both units. Weight TX 0.44 kg / RX 0.48 kg. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-KVM"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-100-kvm/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232, Audio In, Audio Out, USB Host, DC In: connector not published; DC In voltage disputed"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "listed as HDBT OUT; HDBT 2.0",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "notes": "stereo",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "stereo",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "id": "port-5"
+    },
+    {
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "voltage not agreed on the page: 12V in the port list and 'DC 12V/3A', 20V in a third spec block",
+      "id": "port-6"
+    }
+  ]
+}

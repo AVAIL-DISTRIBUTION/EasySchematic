@@ -1,0 +1,98 @@
+{
+  "id": "avail-wyrestorm-cam-0402-brg",
+  "label": "Wyrestorm CAM-0402-BRG",
+  "shortName": "CAM-0402-BRG",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CAM-0402-BRG",
+  "deviceType": "switcher",
+  "category": "Videocameras / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/cam-0402-brg/",
+  "searchTerms": [
+    "cam-0402-brg",
+    "wyrestorm"
+  ],
+  "powerDrawW": 36,
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K Camera Bridge and Mixer| 4K30Hz | 4x Wired Inputs (2xHDMI, 2xUSB) | HDMI/USB Output | Multiview | Web & API Control | USB UVC/UAC | RS232",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/cam-0402-brg/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232 and LAN are named as control options but no port or connector is listed; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "listed as input; USB 3.0, up to 3840x2160@30Hz MJPEG",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "listed as input; USB 3.0, up to 3840x2160@30Hz MJPEG",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "listed as output; USB host, up to 3840x2160@30Hz MJPEG",
+      "id": "port-5"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "5.5/2.1mm barrel connector",
+      "id": "port-6"
+    }
+  ]
+}

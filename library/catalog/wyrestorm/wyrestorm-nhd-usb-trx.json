@@ -1,0 +1,96 @@
+{
+  "id": "avail-wyrestorm-nhd-usb-trx",
+  "label": "Wyrestorm NHD-USB-TRX",
+  "shortName": "NHD-USB-TRX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-USB-TRX",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-usb-trx/",
+  "searchTerms": [
+    "nhd-usb-trx",
+    "wyrestorm"
+  ],
+  "heightMm": 23.5,
+  "widthMm": 140,
+  "depthMm": 90,
+  "powerDrawW": 18.5,
+  "voltage": "12V DC / PoE+",
+  "poeDrawW": 18.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "USB 2.0 over IP Transceiver | 1GbE | USB-A & USB-B Ports | SFP Fiber Connectivity | PoE | USB Hub",
+    "source": "Manufacturer site",
+    "note": "18.5 W at full USB load (2.2 W no load). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-usb-trx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE+",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 3.2 Gen, 10Gbps",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 2, 10Gbps; applies to TX mode",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 2, 10Gbps; applies to TX mode",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 2, 10Gbps; applies to TX mode",
+      "id": "port-4"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC or PoE+",
+      "id": "port-5"
+    }
+  ]
+}

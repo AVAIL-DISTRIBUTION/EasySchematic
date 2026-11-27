@@ -53,6 +53,8 @@ export interface CatalogAvail extends Obj {
   status?: string;
   variant?: string;
   altPartNumber?: string;
+  /** A component of a kit sold under its own part number (docs/avail/kits.json): the kits it is in. */
+  kit?: { kitPartNumbers: string[] };
   slotFamilies?: string[];
   portsSource?: PortsSource;
   /** What a datasheet did not tell (step 3): ports or slots left out on purpose. */

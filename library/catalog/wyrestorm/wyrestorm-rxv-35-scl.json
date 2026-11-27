@@ -1,0 +1,89 @@
+{
+  "id": "avail-wyrestorm-rxv-35-scl",
+  "label": "Wyrestorm RXV-35-SCL",
+  "shortName": "RXV-35-SCL",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "RXV-35-SCL",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/rxv-35-scl/",
+  "searchTerms": [
+    "rxv-35-scl",
+    "wyrestorm"
+  ],
+  "powerDrawW": 12.4,
+  "voltage": "12V DC / PoH",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz HDBaseT Scaling Receiver | 4K60Hz 4:4:4 | PoH | Audio De-embed | IR & RS232 Passthrough (4K: 35m/115ft, 1080p: 70m/230ft) [For MXV]",
+    "source": "Manufacturer site",
+    "note": "Powered via PoH from matrix; 12V DC optional. 12.42 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "MXV-0404-H2A-KIT v2",
+        "MXV-0808-H2A-KIT"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/rxv-35-scl/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "optional DC input (voltage differs between blocks); analog and S/PDIF audio outputs are named in the first block's features and audio formats but not listed with connectors; dimensions; weight"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "PoH from the MXV matrix (1-way)",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin terminal block, 3.5mm",
+      "id": "port-2"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-4"
+    }
+  ]
+}

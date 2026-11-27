@@ -1,0 +1,74 @@
+{
+  "id": "avail-wyrestorm-ex-100-usb3-tx",
+  "label": "Wyrestorm EX-100-USB3-TX (Transmitter (TX) of set EX-100-USB3)",
+  "shortName": "EX-100-USB3-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-USB3-TX",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-usb3/",
+  "searchTerms": [
+    "ex-100-usb3-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-100-usb3"
+  ],
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-100-USB3",
+    "rackFormSource": "Shelf",
+    "description": "USB 3.2 HDBaseT Extender | 100m | PoH+| 5Gbps | 4 USB-A ports",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-USB3 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Published power 39.8 W is not split by TX/RX - not entered. 39.79 W with USB fully loaded (6.94 W no load). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-USB3"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-100-usb3/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB Host: connector type not published; 20V DC In: connector not published; page does not say the RJ45 link is HDBaseT; Max Power Consumption (39.79W / 6.94W) is not split per unit"
+  },
+  "ports": [
+    {
+      "label": "Link Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Page names it 'RJ45'",
+      "id": "port-0"
+    },
+    {
+      "label": "USB Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 1",
+      "id": "port-1"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "DC 20V 3A; locking connector",
+      "id": "port-2"
+    }
+  ]
+}

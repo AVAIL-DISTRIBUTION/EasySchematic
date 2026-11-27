@@ -1,0 +1,124 @@
+{
+  "id": "avail-wyrestorm-nhd-510-tx",
+  "label": "Wyrestorm NHD-510-TX",
+  "shortName": "NHD-510-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-510-TX",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-510-tx/",
+  "searchTerms": [
+    "nhd-510-tx",
+    "wyrestorm"
+  ],
+  "voltage": "20V DC / PoE+ 802.3at",
+  "poeDrawW": 25.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz Encoder | 4K60Hz 4:4:4 | 1GbE | HDMI Loop out | Dolby Vision & HDR | HDMI&USB-C Input | USB-C 60w PD | USB 2.0 | Audio De-embed | ARC | Dual RJ45 | SFP | PoE+ | IR & RS232 Routing | Dante AV-A/AES67",
+    "source": "Manufacturer site",
+    "note": "Only PoE+ (802.3at) published - class maximum 25.5 W used. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-510-tx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Analog Audio: connector not published; 20V DC In: connector not published; which RJ45 carries PoE is not stated; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Analog Audio",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Audio I/O",
+      "notes": "balanced, 5-pin; de-embed from active input",
+      "id": "port-2"
+    },
+    {
+      "label": "LAN (AV Stream)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE for AV stream",
+      "id": "port-3"
+    },
+    {
+      "label": "SFP",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1Gbps SFP",
+      "id": "port-4"
+    },
+    {
+      "label": "Dante AV-A / LAN",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "1GbE for Dante AV-A or network connectivity of attached source devices",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "2-way; pin count differs between blocks",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "listed as input; DP signal, USB 2.0 data, 60W USB-C charging with external 20V 6A adapter, ethernet passthrough",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB version differs between blocks",
+      "id": "port-8"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-9"
+    }
+  ]
+}

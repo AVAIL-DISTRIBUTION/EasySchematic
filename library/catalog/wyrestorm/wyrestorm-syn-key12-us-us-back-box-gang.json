@@ -1,0 +1,87 @@
+{
+  "id": "avail-wyrestorm-syn-key12-us",
+  "label": "Wyrestorm SYN-KEY12-US (US back box/gang)",
+  "shortName": "SYN-KEY12-US",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SYN-KEY12-US",
+  "deviceType": "keypad",
+  "category": "Control Systems / Button Panel",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/syn-key12-us/",
+  "searchTerms": [
+    "syn-key12-us",
+    "wyrestorm",
+    "us",
+    "back",
+    "box/gang"
+  ],
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 12.9,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "US back box/gang",
+    "rackFormSource": "Non-rack",
+    "description": "Synergy 12-button Keypad Controller with Knob | US backbox | RS-232 | GPIO | RELAY | PoE",
+    "source": "Manufacturer site",
+    "note": "Only 802.3af published - class maximum 12.95 W used; power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available Now.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/syn-key12-us/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE IEEE 802.3af",
+      "id": "port-0"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; device only",
+      "id": "port-1"
+    },
+    {
+      "label": "Relay",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "6-pin",
+      "id": "port-2"
+    },
+    {
+      "label": "GPIO",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "5-pin",
+      "id": "port-3"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pin; or power via LAN (PoE)",
+      "id": "port-4"
+    }
+  ]
+}

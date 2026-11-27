@@ -1,0 +1,145 @@
+{
+  "id": "avail-wyrestorm-rx-700",
+  "label": "Wyrestorm RX-700",
+  "shortName": "RX-700",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "RX-700",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/rx-700/",
+  "searchTerms": [
+    "rx-700",
+    "wyrestorm"
+  ],
+  "powerDrawW": 10,
+  "voltage": "18V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz HDBaseT Receiver | PoH | USB 2.0 | DSC | Audio De-embed | RS232 & IR Passthrough (4K: 100m/328ft) [For SW-130-TX]",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/rx-700/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "DC In: connector not published and voltage inconsistent on the page"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "2-way PoH",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "100 Mbps; bidirectional over HDBaseT",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-3"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-4"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "Direction set by switch",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "Device port",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "Device port",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "Device port",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "Device port",
+      "id": "port-10"
+    },
+    {
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "Page states '18V DC 3A' and elsewhere '12v DC PSU' (disagree)",
+      "id": "port-11"
+    }
+  ]
+}

@@ -486,7 +486,7 @@ Modules»), иначе причина в `_avail.portsMissing`; откуда с�
 остаются портами. Линтер: шасси только со слотами — не «no ports», но слот без `slotFamily` — W.
 
 Форма сбора (шаг 1.10, [`docs/avail/intake.md`](docs/avail/intake.md)): шаблон
-`tools/avail/intake/avail-intake-template.xlsx` (листы Instructions / Products / Lists) и правила — источник
+`tools/avail/intake/avail-intake-template.xlsx` (листы Instructions / Products / Kits / Lists) и правила — источник
 истины формата; промпт для ИИ-ассистента — `tools/avail/intake/avail-intake-ai-prompt.md`. `npm run import:intake --
 <файл.xlsx> [--dry-run]` (в `api-avail`; логика — `src/avail/intake.ts`, CLI `importIntakeCli.ts`) проверяет строки
 (обязательные колонки, значения из списков по справочникам, числа без единиц, http-ссылки, уникальность артикулов,
@@ -494,7 +494,11 @@ Modules»), иначе причина в `_avail.portsMissing`; откуда с�
 `index.json` (id `avail-<vendor>-<артикул>`, `_avail`: status awaiting-ports, variant, source, datasheetUrl, note,
 intakeFile). Существующую карточку обновляет непустыми ячейками (пустые не стирают), порты и слоты не трогает;
 прежний `_avail.source` остаётся, источник формы — `intakeSource`. Код выхода 1 при строках с ошибками. Списки листа
-Lists сверяет тест `api-avail/test/intake.test.ts` (справочник меняется PR-ом вместе с шаблоном).
+Lists сверяет тест `api-avail/test/intake.test.ts` (справочник меняется PR-ом вместе с шаблоном). Проверенная форма
+(колонки ревью Decision / Reason / Data gaps): только строки Keep; Keep без Reference URL или габаритов — предупреждение.
+MSRP в каталог не пишется (репозиторий публичный). Model с другим написанием вендора пишется с каноническим именем.
+Комплекты — лист Kits и правило пары …-TX / …-RX (Alt part number = артикул комплекта) → `docs/avail/kits.json` и
+`_avail.kit.kitPartNumbers` компонентов (`kitsOfIntake`, `mergeKits`); артикул комплекта в Alt part number не остаётся.
 
 Стандарт v0.7 (3.2): габариты и вес обязательны для того, что стоит в шкафу (в т.ч. любой `rackForm`);
 для монтируемого в помещении (`ROOM_MOUNTED_CATEGORIES` / `ROOM_MOUNTED_TYPES` в `blockLint.ts`) —

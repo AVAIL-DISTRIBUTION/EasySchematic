@@ -1,0 +1,101 @@
+{
+  "id": "avail-wyrestorm-ex-35-h2-rx",
+  "label": "Wyrestorm EX-35-H2-RX (Receiver (RX) of set EX-35-H2)",
+  "shortName": "EX-35-H2-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-35-H2-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-35-h2/",
+  "searchTerms": [
+    "ex-35-h2-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-35-h2"
+  ],
+  "voltage": "18V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-35-H2",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 4K60Hz HDMI Extender Set | HDBaseT | 4K60Hz 4:4:4 | Dolby Vision & HDR | Bi-directional PoC | CEC Passthrough | RS232 & 2-way IR Passthrough (4K: 35m/115ft, 1080p: 70m/230ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-35-H2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Published power 8.9 W is not split by TX/RX - not entered. 8.88 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-35-H2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-35-h2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "IR and RS-232 lines are not split per unit on the page, applied to both units; power input per unit not stated (one 18V PSU in the box, 2-way PoH); Max Power Consumption 8.88W not stated per unit; 18V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "2-way PoH; HDBaseT Class A",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin screw down; bidirectional over HDBaseT",
+      "id": "port-2"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX; bidirectional over HDBaseT",
+      "id": "port-3"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX; bidirectional over HDBaseT",
+      "id": "port-4"
+    },
+    {
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "18V DC 1A",
+      "id": "port-5"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "avail-wyrestorm-ex-100-iw-usbc-tx",
+  "label": "Wyrestorm EX-100-IW-USBC-TX (Transmitter (TX) of set EX-100-IW-USBC)",
+  "shortName": "EX-100-IW-USBC-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-IW-USBC-TX",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-iw-usbc/",
+  "searchTerms": [
+    "ex-100-iw-usbc-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-100-iw-usbc"
+  ],
+  "voltage": "20V DC",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-100-IW-USBC",
+    "rackFormSource": "Non-rack",
+    "description": "USB 3.2 Single Gang In-Wall HDBT-USB3 Transmitter and Receiver Kit | 100m | HDBT-USB3|",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-IW-USBC (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Published power 39.8 W is not split by TX/RX - not entered. 39.79 W with USB fully loaded (6.94 W no load). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-IW-USBC"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-100-iw-usbc/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232/IR/video: none listed; page does not name the RJ45 link type; max power consumption 39.79W not stated per unit; DC IN connector: only 'locking connector' stated"
+  },
+  "ports": [
+    {
+      "label": "RJ45 Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "RJ45 Output as the page names it",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-C Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB host",
+      "id": "port-1"
+    },
+    {
+      "label": "Micro-USB Firmware",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "firmware update port",
+      "id": "port-2"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "20V 3A; locking connector",
+      "id": "port-3"
+    }
+  ]
+}

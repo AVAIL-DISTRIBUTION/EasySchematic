@@ -1,0 +1,69 @@
+{
+  "id": "avail-wyrestorm-halo-vx10-v2",
+  "label": "Wyrestorm HALO-VX10 (v2)",
+  "shortName": "HALO-VX10",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "HALO-VX10 v2",
+  "deviceType": "video-bar",
+  "category": "UC / Video conference systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/halo-vx10-v2/",
+  "searchTerms": [
+    "halo-vx10 v2",
+    "halo-vx10",
+    "wyrestorm",
+    "v2"
+  ],
+  "voltage": "12V DC",
+  "heightMm": 97.43,
+  "widthMm": 460,
+  "depthMm": 61,
+  "weightKg": 0.81,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v2",
+    "rackFormSource": "Non-rack",
+    "description": "USB-C Video Bar | 4K Camera | 120° FOV | Auto Framing & Presenter Tracking | Stereo Speakers | Beamforming Mics",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://wyrestorm.com/wp-content/uploads/2022/05/HALO-VX10_SpecSheet_220120_EN.pdf",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/halo-vx10-v2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published; dimensions and weight include the bracket"
+  },
+  "ports": [
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "notes": "3.5mm",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "id": "port-1"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "DC 12V 2A",
+      "id": "port-2"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "id": "avail-wyrestorm-mx-0404-hdmi",
+  "label": "Wyrestorm MX-0404-HDMI",
+  "shortName": "MX-0404-HDMI",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-0404-HDMI",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-0404-hdmi/",
+  "searchTerms": [
+    "mx-0404-hdmi",
+    "wyrestorm"
+  ],
+  "powerDrawW": 10,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K HDR 4:4:4 60Hz 4x4 HDMI Matrix with Scaling Outputs & Audio De-embed",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-0404-hdmi/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "S/PDIF coaxial connector: not in the connector list; IR front panel sensor is not a port; DC In: voltage disputed and connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-7"
+    },
+    {
+      "label": "S/PDIF Out 1",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "coaxial",
+      "id": "port-8"
+    },
+    {
+      "label": "S/PDIF Out 2",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "coaxial",
+      "id": "port-9"
+    },
+    {
+      "label": "S/PDIF Out 3",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "coaxial",
+      "id": "port-10"
+    },
+    {
+      "label": "S/PDIF Out 4",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "coaxial",
+      "id": "port-11"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Mbps; IP control; Web UI",
+      "id": "port-12"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin terminal block; matrix control",
+      "id": "port-13"
+    },
+    {
+      "label": "IR Ext",
+      "signalType": "ir",
+      "direction": "bidirectional",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR extension; page lists it under Outputs and calls it Matrix Control",
+      "id": "port-14"
+    },
+    {
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 2A in one spec block, 5V DC 2A in the other",
+      "id": "port-15"
+    }
+  ]
+}

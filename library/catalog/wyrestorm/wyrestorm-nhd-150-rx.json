@@ -1,0 +1,83 @@
+{
+  "id": "avail-wyrestorm-nhd-150-rx",
+  "label": "Wyrestorm NHD-150-RX",
+  "shortName": "NHD-150-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-150-RX",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-150-rx/",
+  "searchTerms": [
+    "nhd-150-rx",
+    "wyrestorm"
+  ],
+  "powerDrawW": 3.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 12.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz Decoder | PoE | 8-Window Multiview Processing | Audio De-embed | RS232 & CEC Routing",
+    "source": "Manufacturer site",
+    "note": "3.6 W max published for DC adapter; PoE draw not published - 802.3af class maximum 12.95 W used. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-150-rx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published; whether input RJ45 and LAN RJ45 are one connector or two is not stated"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pin terminal block 3.5mm; analog audio de-embed",
+      "id": "port-1"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "AVoIP stream input (page lists '1x 1GbE 8-Pin RJ45' under inputs and one RJ-45 LAN; treated as one port); PoE (802.3af)",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; API control",
+      "id": "port-3"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 1A; or PoE",
+      "id": "port-4"
+    }
+  ]
+}

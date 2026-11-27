@@ -1,0 +1,110 @@
+{
+  "id": "avail-wyrestorm-idb-300-btn",
+  "label": "Wyrestorm IDB-300-BTN (Touch buttons)",
+  "shortName": "IDB-300-BTN",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "IDB-300-BTN",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/idb-300-btn/",
+  "searchTerms": [
+    "idb-300-btn",
+    "wyrestorm",
+    "touch",
+    "buttons"
+  ],
+  "voltage": "100-250V AC",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Touch buttons",
+    "rackFormSource": "Non-rack",
+    "description": "Dual Channel CableBox | USB-C, HDMI+USB | Touch buttons with LEDs | Retractable | Cable management bag",
+    "source": "Manufacturer site",
+    "note": "Mains outlet box: 16 A max, 3.6 kW total for connected devices; own consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/idb-300-btn/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "cable-side connections of the pass-through ports are not listed; AC In and Mains Outlet connector types are not in the connector list; mains voltage given as 100 - 250VAC (not 100-240V AC)"
+  },
+  "ports": [
+    {
+      "label": "HDMI 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "pass-through; up to 4K60 4:4:4 8bit",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "pass-through; up to 4K60 4:4:4 8bit",
+      "id": "port-1"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "RJ-45 pass-through",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "pass-through; video up to 4K30 4:4:4 8bit",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A Charging 1",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "charging port; 5V 2.4A",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-A Charging 2",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "charging port; 5V 2.4A",
+      "id": "port-5"
+    },
+    {
+      "label": "Mains Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "notes": "North American Type B outlet",
+      "id": "port-6"
+    },
+    {
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "integrated 3 m mains cable (Type B plug); 100 - 250VAC, max 16A, 50 - 60Hz",
+      "id": "port-7"
+    }
+  ]
+}

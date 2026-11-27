@@ -1,0 +1,101 @@
+{
+  "id": "avail-wyrestorm-ex-35-8k-rx",
+  "label": "Wyrestorm EX-35-8K-RX (Receiver (RX) of set EX-35-8K)",
+  "shortName": "EX-35-8K-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-35-8K-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-35-8k/",
+  "searchTerms": [
+    "ex-35-8k-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-35-8k"
+  ],
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-35-8K",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.1 8K60Hz HDMI Extender | HDBaseT | DSC | 8K60Hz 4:2:0 | 8K30Hz 4:4:4 | 4K120Hz 4:4:4 | Audio De-embed | Bi-directional PoC | CEC Passthrough | RS232 & IR Passthrough (35m/115ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-35-8K (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Published power 11.4 W is not split by TX/RX - not entered. 11.4 W per pair via PoC. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-35-8K"
+      ]
+    },
+    "portsMissing": "per-unit connectors are not listed: the page only says 'HDMI IN/OUT' and 'AUDIO OUT' (PCM 2.0ch) without unit, count or connector; link connector and signal type not published (page does not say HDBaseT); power input (DC 12V 2A; 11.4W for the pair via PoC) is not assigned to a unit",
+    "portsSource": {
+      "kind": "db",
+      "from": "f7c9515f-c616-4478-b055-a267dc64ddbf",
+      "label": "Wyrestorm EX-35-8K HDMI Extender (RX)",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "HDBT In 1",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "rj45",
+      "notes": "powered by host (PoH)"
+    },
+    {
+      "id": "tpl-1",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "tpl-2",
+      "label": "Analog Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "tpl-3",
+      "label": "RS-232 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial"
+    },
+    {
+      "id": "tpl-4",
+      "label": "IR TX 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR"
+    },
+    {
+      "id": "tpl-5",
+      "label": "IR RX 1",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR"
+    }
+  ]
+}

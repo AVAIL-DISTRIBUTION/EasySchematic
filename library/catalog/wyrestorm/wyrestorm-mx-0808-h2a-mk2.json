@@ -1,0 +1,312 @@
+{
+  "id": "avail-wyrestorm-mx-0808-h2a-mk2",
+  "label": "Wyrestorm MX-0808-H2A-MK2",
+  "shortName": "MX-0808-H2A-MK2",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-0808-H2A-MK2",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-0808-h2a-mk2/",
+  "searchTerms": [
+    "mx-0808-h2a-mk2",
+    "wyrestorm"
+  ],
+  "powerDrawW": 60,
+  "voltage": "100-240V AC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K HDR 4:4:4 60Hz HDMI 8x8 Matrix Switcher with Scaling Outputs, Balanced Audio & Custom CEC Display Power",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-0808-h2a-mk2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Audio Out and S/PDIF Out: connector not published; AC Power In: connector not published; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI In 7",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI In 8",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-7"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-8"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-9"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-10"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-11"
+    },
+    {
+      "label": "HDMI Out 5",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-12"
+    },
+    {
+      "label": "HDMI Out 6",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-13"
+    },
+    {
+      "label": "HDMI Out 7",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-14"
+    },
+    {
+      "label": "HDMI Out 8",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-15"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-16"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-17"
+    },
+    {
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-18"
+    },
+    {
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-19"
+    },
+    {
+      "label": "Audio Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-20"
+    },
+    {
+      "label": "Audio Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-21"
+    },
+    {
+      "label": "Audio Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-22"
+    },
+    {
+      "label": "Audio Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced, 5-pin",
+      "id": "port-23"
+    },
+    {
+      "label": "S/PDIF Out 1",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-24"
+    },
+    {
+      "label": "S/PDIF Out 2",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-25"
+    },
+    {
+      "label": "S/PDIF Out 3",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-26"
+    },
+    {
+      "label": "S/PDIF Out 4",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-27"
+    },
+    {
+      "label": "S/PDIF Out 5",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-28"
+    },
+    {
+      "label": "S/PDIF Out 6",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-29"
+    },
+    {
+      "label": "S/PDIF Out 7",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-30"
+    },
+    {
+      "label": "S/PDIF Out 8",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-31"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "API control",
+      "id": "port-32"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; API control",
+      "id": "port-33"
+    },
+    {
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-34"
+    }
+  ]
+}

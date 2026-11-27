@@ -1,0 +1,75 @@
+{
+  "id": "avail-wyrestorm-ex-40-g3-tx",
+  "label": "Wyrestorm EX-40-G3-TX (Transmitter (TX) of set EX-40-G3)",
+  "shortName": "EX-40-G3-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-40-G3-TX",
+  "deviceType": "hdmi-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-40-g3/",
+  "searchTerms": [
+    "ex-40-g3-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-40-g3"
+  ],
+  "voltage": "5V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-40-G3",
+    "rackFormSource": "Shelf",
+    "description": "1080p HD Extender Set with IR and PoC (1080p: 40m/131ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-40-G3 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Published power 2.5 W is not split by TX/RX - not entered. 2.5 W per TX/RX pair. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-40-G3"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-40-g3/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "power input of the transmitter: not published (page: 5V DC 1A optional for Receiver; PoC 1-way Transmitter to Receiver)"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "UTP Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "UTP link (TMDS over UTP), as the page names it; 1-way PoC Transmitter to Receiver",
+      "id": "port-1"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX, 3.5mm TRS mono",
+      "id": "port-2"
+    }
+  ]
+}

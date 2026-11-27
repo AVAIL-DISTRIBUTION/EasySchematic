@@ -1,0 +1,30 @@
+{
+  "id": "avail-wyrestorm-halo-com-mic",
+  "label": "Wyrestorm HALO-COM-MIC",
+  "shortName": "HALO-COM-MIC",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "HALO-COM-MIC",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/halo-com-mic/",
+  "searchTerms": [
+    "halo-com-mic",
+    "wyrestorm"
+  ],
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "USB Companion Mic for HALO-VX10",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsMissing": "no technical specifications on the product page"
+  },
+  "ports": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "avail-wyrestorm-nhd-sw48-410-v2",
+  "label": "Wyrestorm NHD-SW48-410 (v2)",
+  "shortName": "NHD-SW48-410",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-SW48-410 v2",
+  "deviceType": "network-switch",
+  "category": "Networking / Switches",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "nhd-sw48-410 v2",
+    "nhd-sw48-410",
+    "wyrestorm",
+    "v2"
+  ],
+  "rackForm": "full",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "v2",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "NetworkHD Configured 48-port 1GbE Switch | PoE | 4x 10Gbps SFP+",
+    "source": "Price list",
+    "note": "WyreStorm-branded switch. No product page found on wyrestorm.com (sitemap + direct URL checked); Reference URL left empty - no other manufacturer page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx"
+  },
+  "ports": []
+}

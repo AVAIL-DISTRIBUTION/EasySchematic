@@ -1,0 +1,55 @@
+{
+  "id": "avail-wyrestorm-nhd-128-ndi-trx",
+  "label": "Wyrestorm NHD-128-NDI-TRX",
+  "shortName": "NHD-128-NDI-TRX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-128-NDI-TRX",
+  "deviceType": "gateway",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-128-ndi-trx/",
+  "searchTerms": [
+    "nhd-128-ndi-trx",
+    "wyrestorm"
+  ],
+  "voltage": "20V DC / PoE",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "NDI–NHD Gateway | 8x NDI to NHD Channels | 1x NHD to NDI Channel | 4K30 | H.264/H.265 | PoE | Web UI & API Control",
+    "source": "Manufacturer site",
+    "note": "Power consumption and PoE class not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-128-ndi-trx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "LAN: the page lists 1 x RJ-45 under Video Input and again 1 x RJ-45 under Video Output, so it is not clear whether they are one physical connector or two (one is given); 20V DC In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af; carries NHD and NDI streams",
+      "id": "port-0"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "or PoE",
+      "id": "port-1"
+    }
+  ]
+}

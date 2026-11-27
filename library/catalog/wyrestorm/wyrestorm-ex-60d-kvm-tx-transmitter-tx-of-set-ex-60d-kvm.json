@@ -1,0 +1,92 @@
+{
+  "id": "avail-wyrestorm-ex-60d-kvm-tx",
+  "label": "Wyrestorm EX-60D-KVM-TX (Transmitter (TX) of set EX-60D-KVM)",
+  "shortName": "EX-60D-KVM-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-60D-KVM-TX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-60d-kvm/",
+  "searchTerms": [
+    "ex-60d-kvm-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-60d-kvm"
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 120,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-60D-KVM",
+    "rackFormSource": "Shelf",
+    "description": "1080p60Hz KVM Extender | UTP | USB 2.0 | Dual HDMI Video Streams | 1-way PoC (1080p:80m/262ft for HID devices)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-60D-KVM (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-60D-KVM"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-60d-kvm/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published; the 12V supply is listed once for the kit (assigned to TX because PoC is one-way Tx -> Rx); weight; dimensions not stated per unit"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "UTP Out",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "UTP link (page does not name it HDBaseT); one-way PoC Tx -> Rx",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-3"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-4"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "avail-wyrestorm-cam-210-ndi-ptz",
+  "label": "Wyrestorm CAM-210-NDI-PTZ",
+  "shortName": "CAM-210-NDI-PTZ",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CAM-210-NDI-PTZ",
+  "deviceType": "ptz-camera",
+  "category": "Videocameras / PTZ cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/cam-210-ndi-ptz/",
+  "searchTerms": [
+    "cam-210-ndi-ptz",
+    "wyrestorm"
+  ],
+  "powerDrawW": 12,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 12,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "1080p60 PTZ Camera | USB 3.0 | Network Streaming | 12x optical zoom | A.I. Auto-Framing | HDMI Out | NDI",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/cam-210-ndi-ptz/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232: connector not published as a connector id (page says '8-pin Mini Din'); 12V DC In: connector not published; IR is a built-in receiver (no connector)"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "Passthrough to local monitor",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100; PoE 802.3af; NDI",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB 3.0",
+      "id": "port-2"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 2A; or PoE 802.3af",
+      "id": "port-3"
+    }
+  ]
+}

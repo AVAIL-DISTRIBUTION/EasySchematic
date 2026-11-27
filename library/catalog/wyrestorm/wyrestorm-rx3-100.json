@@ -1,0 +1,109 @@
+{
+  "id": "avail-wyrestorm-rx3-100",
+  "label": "Wyrestorm RX3-100",
+  "shortName": "RX3-100",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "RX3-100",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/rx3-100/",
+  "searchTerms": [
+    "rx3-100",
+    "wyrestorm"
+  ],
+  "powerDrawW": 10.9,
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz HDBaseT 3.0 Receiver | PoH | USB2.0 | CEC | RS232 passthrough | audio De-embed (4K: 100m/328ft) [For SW-120-TX3 & MX-1007-HYB]",
+    "source": "Manufacturer site",
+    "note": "10.92 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/rx3-100/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "page lists 'Audio Out 3.5mm' and 'Line Out 2ch audio over HDBaseT' in one line; modelled as one port; 20V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "2-way PoH",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "notes": "3.5mm TRS stereo; 2ch audio over HDBaseT, 1-way from TX",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "device port",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "device port",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "device port",
+      "id": "port-6"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "20V DC 3A",
+      "id": "port-7"
+    }
+  ]
+}

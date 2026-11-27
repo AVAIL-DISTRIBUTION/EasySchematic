@@ -1,0 +1,321 @@
+{
+  "id": "avail-wyrestorm-mx-0812-scl",
+  "label": "Wyrestorm MX-0812-SCL",
+  "shortName": "MX-0812-SCL",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-0812-SCL",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-0812-scl/",
+  "searchTerms": [
+    "mx-0812-scl",
+    "wyrestorm"
+  ],
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "2U Full rack",
+    "rackUnits": 2,
+    "description": "4K60 8x12 Advanced Seamless Scaling HDMI Matrix | Video Wall Support | Multiview Support |",
+    "source": "Manufacturer site",
+    "note": "Power consumption, dimensions and weight published as TBD. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-0812-scl/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB ports (4x USB 3.0 Type A device, 2x USB 3.0 Type B host): listed in only one of two spec blocks so left out; Dante connector not listed (the 4x4 Dante inputs/outputs may be channels on the single LAN port); Line Out, AC In: connector not published; max power consumption and weight 'TBD'"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI In 7",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI In 8",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-7"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-8"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-9"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-10"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-11"
+    },
+    {
+      "label": "HDMI Out 5",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-12"
+    },
+    {
+      "label": "HDMI Out 6",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-13"
+    },
+    {
+      "label": "HDMI Out 7",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-14"
+    },
+    {
+      "label": "HDMI Out 8",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-15"
+    },
+    {
+      "label": "HDMI Out 9",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-16"
+    },
+    {
+      "label": "HDMI Out 10",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-17"
+    },
+    {
+      "label": "HDMI Out 11",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-18"
+    },
+    {
+      "label": "HDMI Out 12",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-19"
+    },
+    {
+      "label": "Line Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "line level",
+      "id": "port-20"
+    },
+    {
+      "label": "Line Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "line level",
+      "id": "port-21"
+    },
+    {
+      "label": "Line Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "line level",
+      "id": "port-22"
+    },
+    {
+      "label": "Line Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "line level",
+      "id": "port-23"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "API control (Telnet, TLS, HTTP/HTTPS for webUI)",
+      "id": "port-24"
+    },
+    {
+      "label": "Dante In 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante input on the page",
+      "id": "port-25"
+    },
+    {
+      "label": "Dante In 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante input on the page",
+      "id": "port-26"
+    },
+    {
+      "label": "Dante In 3",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante input on the page",
+      "id": "port-27"
+    },
+    {
+      "label": "Dante In 4",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante input on the page",
+      "id": "port-28"
+    },
+    {
+      "label": "Dante Out 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante output on the page",
+      "id": "port-29"
+    },
+    {
+      "label": "Dante Out 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante output on the page",
+      "id": "port-30"
+    },
+    {
+      "label": "Dante Out 3",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante output on the page",
+      "id": "port-31"
+    },
+    {
+      "label": "Dante Out 4",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "notes": "listed as Dante output on the page",
+      "id": "port-32"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-33"
+    },
+    {
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "100V-240V AC",
+      "id": "port-34"
+    }
+  ]
+}

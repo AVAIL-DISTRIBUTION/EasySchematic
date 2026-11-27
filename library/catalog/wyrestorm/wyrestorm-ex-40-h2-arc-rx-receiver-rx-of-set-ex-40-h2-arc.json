@@ -1,0 +1,79 @@
+{
+  "id": "avail-wyrestorm-ex-40-h2-arc-rx",
+  "label": "Wyrestorm EX-40-H2-ARC-RX (Receiver (RX) of set EX-40-H2-ARC)",
+  "shortName": "EX-40-H2-ARC-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-40-H2-ARC-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-40-h2-arc/",
+  "searchTerms": [
+    "ex-40-h2-arc-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-40-h2-arc"
+  ],
+  "heightMm": 21,
+  "widthMm": 195,
+  "depthMm": 94.8,
+  "weightKg": 0.4,
+  "powerDrawW": 6.6,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-40-H2-ARC",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 4K60Hz HDMI Extender Set | HDBaseT | 4K60Hz 4:4:4 | Dolby Vision & HDR | ARC | Bi-directional PoC | CEC Passthrough | RS232 & 2-way IR Passthrough (4K: 40m/131ft, 1080p: 70m/230ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-40-H2-ARC (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Up to 18.96 W when one unit powers the other; 8.4 W TX / 6.6 W RX separately. Weight per unit. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-40-H2-ARC"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-40-h2-arc/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Toslink out and analog 3-pin Phoenix out: the page does not say which unit has them; RS-232 (bi-directional, 3-pin Phoenix) and IR (bi-directional, 3.5mm TRS): the page does not say which unit has them; 12V DC In: connector not published; powerDrawW depends on the power mode; HxWxD given once without saying both units are identical"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "bi-directional power over cable",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "or power over cable from the other unit",
+      "id": "port-2"
+    }
+  ]
+}

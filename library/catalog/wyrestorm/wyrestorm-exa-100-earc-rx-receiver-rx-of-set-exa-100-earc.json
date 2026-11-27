@@ -1,0 +1,92 @@
+{
+  "id": "avail-wyrestorm-exa-100-earc-rx",
+  "label": "Wyrestorm EXA-100-EARC-RX (Receiver (RX) of set EXA-100-EARC)",
+  "shortName": "EXA-100-EARC-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EXA-100-EARC-RX",
+  "deviceType": "audio-over-cat-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/exa-100-earc/",
+  "searchTerms": [
+    "exa-100-earc-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "exa-100-earc"
+  ],
+  "heightMm": 70.2,
+  "widthMm": 25,
+  "depthMm": 120,
+  "weightKg": 0.3,
+  "voltage": "5V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EXA-100-EARC",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 Audio Only Extender | eARC | ARC | RS232 Passthrough l IR Passthrough | CEC Passthrough | 100m/327ft",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EXA-100-EARC (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Published power 3.6 W is not split by TX/RX - not entered. Dimensions published once for the set - applied to both units. Published as L x W x H 120 x 25 x 70.2 mm; 3.582 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EXA-100-EARC"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/exa-100-earc/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "S/PDIF In and IR connectors not published; power input connector not published; dimensions/weight and power consumption are given once for the set, not per unit"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "eARC/ARC",
+      "id": "port-0"
+    },
+    {
+      "label": "UTP In",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Audio Inputs",
+      "notes": "UTP link, as the page names it",
+      "id": "port-1"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "section": "IR",
+      "id": "port-2"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "id": "port-3"
+    },
+    {
+      "label": "5V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-4"
+    }
+  ]
+}

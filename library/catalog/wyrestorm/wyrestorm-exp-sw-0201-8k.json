@@ -1,0 +1,29 @@
+{
+  "id": "avail-wyrestorm-exp-sw-0201-8k",
+  "label": "Wyrestorm EXP-SW-0201-8K",
+  "shortName": "EXP-SW-0201-8K",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EXP-SW-0201-8K",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "exp-sw-0201-8k",
+    "wyrestorm"
+  ],
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Shelf",
+    "description": "8K@60/4K@120Hz HDMI 2.1 48Gbps 1:2 Splitter w/ 4k/1080p Scaling and Audio De-Embed",
+    "source": "Price list",
+    "note": "No product page found on wyrestorm.com (sitemap + direct URL checked); Reference URL left empty - no other manufacturer page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx"
+  },
+  "ports": []
+}

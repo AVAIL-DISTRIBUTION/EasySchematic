@@ -1,0 +1,96 @@
+{
+  "id": "avail-wyrestorm-apo-210-uc",
+  "label": "Wyrestorm APO-210-UC",
+  "shortName": "APO-210-UC",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "APO-210-UC",
+  "deviceType": "audio-bar",
+  "category": "UC / Speakerphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/apo-210-uc/",
+  "searchTerms": [
+    "apo-210-uc",
+    "wyrestorm"
+  ],
+  "powerDrawW": 80,
+  "voltage": "24V DC",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Apollo Series Integrated Conference Speakerphone & 4K Switcher (HDMI & USB-C) with Wireless Casting, Multiview & HDBaseT Out (4K: 40m/115ft)",
+    "source": "Manufacturer site",
+    "note": "80 W max incl. 60 W USB-C charging. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: Will go EOL soon.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/apo-210-uc/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "24V DC In: connector not published; USB-B mentioned only in feature text (host switching), not listed in specifications; RS-232 is passthrough over HDBaseT (no port); dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "carries EDID, CEC, RS-232, USB",
+      "id": "port-2"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "listed as input; USB 3.2 Gen 2x1, 10Gbps, 60W max charging",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-A",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0, 5Gbps; peripheral port",
+      "id": "port-5"
+    },
+    {
+      "label": "24V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-6"
+    }
+  ]
+}

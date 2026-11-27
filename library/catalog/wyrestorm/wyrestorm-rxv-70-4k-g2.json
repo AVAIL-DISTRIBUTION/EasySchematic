@@ -1,0 +1,91 @@
+{
+  "id": "avail-wyrestorm-rxv-70-4k-g2",
+  "label": "Wyrestorm RXV-70-4K-G2",
+  "shortName": "RXV-70-4K-G2",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "RXV-70-4K-G2",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/rxv-70-4k-g2/",
+  "searchTerms": [
+    "rxv-70-4k-g2",
+    "wyrestorm"
+  ],
+  "powerDrawW": 12.4,
+  "voltage": "18V DC / PoH",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz HDBaseT Receiver | 4K60Hz 4:4:4 | PoH | IR & RS232 Passthrough (4K: 70m/230ft, 1080p: 100m/328ft) [For MXV-70]",
+    "source": "Manufacturer site",
+    "note": "Powered via PoH from matrix; 18V DC optional. 12.42 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/rxv-70-4k-g2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "analog and S/PDIF audio outputs are listed under audio formats without connectors or counts; 18V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "1-way PoH from the matrix",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin terminal block (3.5mm)",
+      "id": "port-2"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX; 3.5mm TS mono; bidirectional over HDBaseT",
+      "id": "port-3"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX; 3.5mm TRS stereo; bidirectional over HDBaseT",
+      "id": "port-4"
+    },
+    {
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "optional; unit is powered via PoH from the matrix",
+      "id": "port-5"
+    }
+  ]
+}

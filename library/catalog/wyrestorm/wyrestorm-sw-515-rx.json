@@ -1,0 +1,191 @@
+{
+  "id": "avail-wyrestorm-sw-515-rx",
+  "label": "Wyrestorm SW-515-RX",
+  "shortName": "SW-515-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-515-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sw-515-rx/",
+  "searchTerms": [
+    "sw-515-rx",
+    "wyrestorm"
+  ],
+  "powerDrawW": 16.3,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "3-input 4K UHD 4:2:0 60Hz HDBaseT™ Switching Receiver with USB host/device ports & dual Ethernet (4K: 100m/328ft)",
+    "source": "Manufacturer site",
+    "note": "16.25 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sw-515-rx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "IR port (direction); 12V DC In: connector not published; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "bidirectional Ethernet, USB, CEC",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "3-pin",
+      "id": "port-4"
+    },
+    {
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "notes": "stereo",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "bidirectional over HDBaseT",
+      "id": "port-6"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "bidirectional over HDBaseT",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232 Control",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-8"
+    },
+    {
+      "label": "RS-232 Passthrough",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-9"
+    },
+    {
+      "label": "Relay Screen Up",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pin",
+      "id": "port-10"
+    },
+    {
+      "label": "Relay Screen Down",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Relays",
+      "notes": "3-pin",
+      "id": "port-11"
+    },
+    {
+      "label": "USB-B Host 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-12"
+    },
+    {
+      "label": "USB-B Host 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-13"
+    },
+    {
+      "label": "USB-A Device 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-14"
+    },
+    {
+      "label": "USB-A Device 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-15"
+    },
+    {
+      "label": "USB-A Device 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-16"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-17"
+    }
+  ]
+}

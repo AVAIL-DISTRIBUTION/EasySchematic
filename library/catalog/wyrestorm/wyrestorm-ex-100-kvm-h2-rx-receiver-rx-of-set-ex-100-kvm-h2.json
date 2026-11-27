@@ -1,0 +1,150 @@
+{
+  "id": "avail-wyrestorm-ex-100-kvm-h2-rx",
+  "label": "Wyrestorm EX-100-KVM-H2-RX (Receiver (RX) of set EX-100-KVM-H2)",
+  "shortName": "EX-100-KVM-H2-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-KVM-H2-RX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-kvm-h2/",
+  "searchTerms": [
+    "ex-100-kvm-h2-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-100-kvm-h2"
+  ],
+  "heightMm": 25,
+  "widthMm": 140,
+  "depthMm": 100,
+  "weightKg": 0.3,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-100-KVM-H2",
+    "rackFormSource": "Shelf",
+    "description": "4k60Hz KVM Extender | HDBaseT | 4K60Hz 4:4:4 | Loop-Out | USB 2.0 | Audio De-Embed | RS232 & 2-way IR Passthrough | 1-way PoH (Rx->Tx) (100m/328ft) /Long-Reach (150m/492ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-KVM-H2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Weight TX 0.33 / RX 0.34 kg. Power consumption not published. Page title shows EX-100-KVM (site error). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available Now.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-KVM-H2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-100-kvm-h2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Audio Out: connector not published; Balanced Audio Out: connector not published; Micro-USB firmware port: unit not specified; HxWxD given once without saying both units are identical"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "1-way PoH, powers the transmitter",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "passthrough",
+      "id": "port-2"
+    },
+    {
+      "label": "Balanced Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-4"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-5"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-10"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-11"
+    }
+  ]
+}

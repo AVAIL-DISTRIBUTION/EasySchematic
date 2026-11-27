@@ -1,0 +1,111 @@
+{
+  "id": "avail-wyrestorm-ex-40-kvm-h2-rx",
+  "label": "Wyrestorm EX-40-KVM-H2-RX (Receiver (RX) of set EX-40-KVM-H2)",
+  "shortName": "EX-40-KVM-H2-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-40-KVM-H2-RX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-40-kvm-h2/",
+  "searchTerms": [
+    "ex-40-kvm-h2-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-40-kvm-h2"
+  ],
+  "heightMm": 145,
+  "widthMm": 25,
+  "depthMm": 90.2,
+  "weightKg": 0.4,
+  "voltage": "PoC (bidirectional)",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-40-KVM-H2",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 4K60Hz KVM Extender | UTP | 4K60Hz 4:4:4 | USB 2.0 | RS232 passthrough | Audio De-embed | Bi-Directional PoC (40m/131ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-40-KVM-H2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Dimensions as published (H 145 / W 25 mm - axes likely swapped on site). Weight 0.35 kg per unit. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available Now.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-40-KVM-H2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-40-kvm-h2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB Device: connector not published; Audio Out: pin count not published; Firmware Update Micro-USB port: page does not say which unit has it; RS-232 pass-through: no connector published; power input connector/voltage not published (page only says Bidirectional POC)"
+  },
+  "ports": [
+    {
+      "label": "UTP In",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "UTP link, as the page names it; Bidirectional PoC",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Audio de-embed PCM 2.0 via Phoenix",
+      "id": "port-2"
+    },
+    {
+      "label": "USB Device 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 2.0 device, 480Mbps",
+      "id": "port-3"
+    },
+    {
+      "label": "USB Device 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 2.0 device, 480Mbps",
+      "id": "port-4"
+    },
+    {
+      "label": "USB Device 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 2.0 device, 480Mbps",
+      "id": "port-5"
+    },
+    {
+      "label": "USB Device 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 2.0 device, 480Mbps",
+      "id": "port-6"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "avail-wyrestorm-con-xlr-dnt",
+  "label": "Wyrestorm CON-XLR-DNT",
+  "shortName": "CON-XLR-DNT",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CON-XLR-DNT",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/con-xlr-dnt/",
+  "searchTerms": [
+    "con-xlr-dnt",
+    "wyrestorm"
+  ],
+  "heightMm": 125,
+  "widthMm": 54.4,
+  "depthMm": 33.4,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Analog XLR Audio Input to Dante/AES67 Output Adapter | 2-Channel | 48V Phantom Power | PoE | Adjustable Input Gain",
+    "source": "Manufacturer site",
+    "note": "PoE class 1 only published - class maximum 3.84 W used. Optional 5V DC via USB-C. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/con-xlr-dnt/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "5V DC In: only optional USB-C supply is published, main power is PoE; Audio In: sensitivity selectable -10dBV/+4dBu/+20dBu"
+  },
+  "ports": [
+    {
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs",
+      "notes": "Balanced/unbalanced; 48V phantom power per channel (toggle selectable)",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "xlr-3",
+      "section": "Audio Inputs",
+      "notes": "Balanced/unbalanced; 48V phantom power per channel (toggle selectable)",
+      "id": "port-1"
+    },
+    {
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Dante/AES67; PoE 802.3af Class 1",
+      "id": "port-2"
+    },
+    {
+      "label": "5V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Power",
+      "notes": "Optional DC 5V input via USB-C",
+      "id": "port-3"
+    }
+  ]
+}

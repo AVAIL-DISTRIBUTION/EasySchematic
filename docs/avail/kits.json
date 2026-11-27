@@ -1,0 +1,448 @@
+{
+  "about": "Kits: a part number sold as a set of blocks that each have their own catalog card (a matrix and its receivers, an extender's TX and RX). Written by import:intake from the Kits sheet and the TX/RX pair rule (src/avail/intake.ts). BoQ: the schematic blocks that make up a kit become one kit line; components beyond the kit are separate lines (.claude/skills/avail-documents).",
+  "kits": [
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-100-G2",
+      "components": [
+        {
+          "partNumber": "EX-100-G2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-100-G2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-100-IW-USBC",
+      "components": [
+        {
+          "partNumber": "EX-100-IW-USBC-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-100-IW-USBC-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-100-KVM",
+      "components": [
+        {
+          "partNumber": "EX-100-KVM-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-100-KVM-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-100-KVM-8K",
+      "components": [
+        {
+          "partNumber": "EX-100-KVM-8K-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-100-KVM-8K-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-100-KVM-H2",
+      "components": [
+        {
+          "partNumber": "EX-100-KVM-H2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-100-KVM-H2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-100-KVM-IP",
+      "components": [
+        {
+          "partNumber": "EX-100-KVM-IP-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-100-KVM-IP-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-100-USB3",
+      "components": [
+        {
+          "partNumber": "EX-100-USB3-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-100-USB3-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-35-8K",
+      "components": [
+        {
+          "partNumber": "EX-35-8K-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-35-8K-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-35-H2",
+      "components": [
+        {
+          "partNumber": "EX-35-H2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-35-H2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-35-H2-ARC",
+      "components": [
+        {
+          "partNumber": "EX-35-H2-ARC-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-35-H2-ARC-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-40-G3",
+      "components": [
+        {
+          "partNumber": "EX-40-G3-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-40-G3-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-40-H2-ARC",
+      "components": [
+        {
+          "partNumber": "EX-40-H2-ARC-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-40-H2-ARC-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-40-KVM-5K",
+      "components": [
+        {
+          "partNumber": "EX-40-KVM-5K-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-40-KVM-5K-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-40-KVM-H2",
+      "components": [
+        {
+          "partNumber": "EX-40-KVM-H2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-40-KVM-H2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-60-USB2",
+      "components": [
+        {
+          "partNumber": "EX-60-USB2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-60-USB2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-60D-KVM",
+      "components": [
+        {
+          "partNumber": "EX-60D-KVM-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-60D-KVM-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-70-G2",
+      "components": [
+        {
+          "partNumber": "EX-70-G2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-70-G2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-70-H2",
+      "components": [
+        {
+          "partNumber": "EX-70-H2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-70-H2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-70-H2C",
+      "components": [
+        {
+          "partNumber": "EX-70-H2C-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-70-H2C-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-70-H2L",
+      "components": [
+        {
+          "partNumber": "EX-70-H2L-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-70-H2L-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX-80-KVM",
+      "components": [
+        {
+          "partNumber": "EX-80-KVM-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX-80-KVM-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EX3-100-EARC",
+      "components": [
+        {
+          "partNumber": "EX3-100-EARC-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EX3-100-EARC-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EXA-100-EARC",
+      "components": [
+        {
+          "partNumber": "EXA-100-EARC-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EXA-100-EARC-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EXF-10KM-5K",
+      "components": [
+        {
+          "partNumber": "EXF-10KM-5K-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EXF-10KM-5K-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "EXF-300-H2",
+      "components": [
+        {
+          "partNumber": "EXF-300-H2-TX",
+          "qty": 1
+        },
+        {
+          "partNumber": "EXF-300-H2-RX",
+          "qty": 1
+        }
+      ],
+      "source": "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "MX-0404-KIT",
+      "components": [
+        {
+          "partNumber": "MX-0404-KIT-MATRIX",
+          "qty": 1
+        },
+        {
+          "partNumber": "MX-KIT-RX",
+          "qty": 3
+        }
+      ],
+      "source": "https://www.conferenceroomav.com/pdf/full-range-kit-specsheet-220317-en.pdf"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "MX-0808-KIT v2",
+      "components": [
+        {
+          "partNumber": "MX-0808-KIT-MATRIX",
+          "qty": 1
+        },
+        {
+          "partNumber": "MX-KIT-RX",
+          "qty": 8
+        }
+      ],
+      "source": "https://www.cbk.no/wyrestorm/136423/"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "MXV-0404-H2A-KIT v2",
+      "components": [
+        {
+          "partNumber": "MXV-0404-H2A-KIT-MATRIX",
+          "qty": 1
+        },
+        {
+          "partNumber": "RXV-35-SCL",
+          "qty": 2
+        },
+        {
+          "partNumber": "RXV-35-4K",
+          "qty": 2
+        }
+      ],
+      "source": "https://www.cbk.no/wyrestorm/136421/"
+    },
+    {
+      "vendor": "Wyrestorm",
+      "partNumber": "MXV-0808-H2A-KIT",
+      "components": [
+        {
+          "partNumber": "MXV-0808-H2A v3",
+          "qty": 1
+        },
+        {
+          "partNumber": "RXV-35-SCL",
+          "qty": 2
+        },
+        {
+          "partNumber": "RXV-35-4K",
+          "qty": 6
+        }
+      ],
+      "source": "https://www.wyrestorm.com/?p=19370"
+    }
+  ]
+}

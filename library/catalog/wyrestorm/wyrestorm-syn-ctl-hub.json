@@ -1,0 +1,113 @@
+{
+  "id": "avail-wyrestorm-syn-ctl-hub",
+  "label": "Wyrestorm SYN-CTL-HUB",
+  "shortName": "SYN-CTL-HUB",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SYN-CTL-HUB",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/syn-ctl-hub/",
+  "searchTerms": [
+    "syn-ctl-hub",
+    "wyrestorm"
+  ],
+  "powerDrawW": 2.5,
+  "voltage": "PoE / 12V DC / 5V DC (USB)",
+  "poeDrawW": 2.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Ethernet Protocol Converter for the SYN-TOUCH10 | RS232 | Relay | IR",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/syn-ctl-hub/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB Update, IR Out, Contact, Relay, RS-232, 12V DC In: connector not published; Contact: direction not published; Mini USB connector has no id in the list; 'DC 5V (USB)' supply option: port not stated"
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE",
+      "id": "port-0"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "id": "port-1"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "id": "port-2"
+    },
+    {
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "id": "port-3"
+    },
+    {
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "id": "port-4"
+    },
+    {
+      "label": "Relay 3",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "id": "port-5"
+    },
+    {
+      "label": "Relay 4",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "id": "port-6"
+    },
+    {
+      "label": "Contact",
+      "signalType": "contact-closure",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "id": "port-7"
+    },
+    {
+      "label": "USB Update",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "notes": "Mini USB, update port",
+      "id": "port-8"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-9"
+    }
+  ]
+}

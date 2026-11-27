@@ -1,0 +1,113 @@
+{
+  "id": "avail-wyrestorm-ex-60d-kvm-rx",
+  "label": "Wyrestorm EX-60D-KVM-RX (Receiver (RX) of set EX-60D-KVM)",
+  "shortName": "EX-60D-KVM-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-60D-KVM-RX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-60d-kvm/",
+  "searchTerms": [
+    "ex-60d-kvm-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-60d-kvm"
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 120,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-60D-KVM",
+    "rackFormSource": "Shelf",
+    "description": "1080p60Hz KVM Extender | UTP | USB 2.0 | Dual HDMI Video Streams | 1-way PoC (1080p:80m/262ft for HID devices)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-60D-KVM (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-60D-KVM"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-60d-kvm/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "no own power input listed (powered by PoC from the transmitter); weight; dimensions not stated per unit"
+  },
+  "ports": [
+    {
+      "label": "UTP In",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "UTP link (page does not name it HDBaseT); PoC from the transmitter",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-A 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-6"
+    }
+  ]
+}

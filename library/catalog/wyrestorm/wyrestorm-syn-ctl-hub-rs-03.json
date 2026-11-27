@@ -1,0 +1,29 @@
+{
+  "id": "avail-wyrestorm-syn-ctl-hub-rs-03",
+  "label": "Wyrestorm SYN-CTL-HUB-RS-03",
+  "shortName": "SYN-CTL-HUB-RS-03",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SYN-CTL-HUB-RS-03",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "syn-ctl-hub-rs-03",
+    "wyrestorm"
+  ],
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Shelf",
+    "description": "Synergy Control Hub | RS-232 | RS-422 | RS-485 | PoE",
+    "source": "Price list",
+    "note": "No product page found on wyrestorm.com (sitemap + direct URL checked); Reference URL left empty - no other manufacturer page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx"
+  },
+  "ports": []
+}

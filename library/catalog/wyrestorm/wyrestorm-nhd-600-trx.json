@@ -1,0 +1,153 @@
+{
+  "id": "avail-wyrestorm-nhd-600-trx",
+  "label": "Wyrestorm NHD-600-TRX",
+  "shortName": "NHD-600-TRX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-600-TRX",
+  "deviceType": "av-over-ip",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-600-trx/",
+  "searchTerms": [
+    "nhd-600-trx",
+    "wyrestorm"
+  ],
+  "powerDrawW": 24,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 24,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60 444 10GbE SDVoE Transceiver w/ PoE+, Video Wall & Multiview Processing",
+    "source": "Manufacturer site",
+    "note": "Max 24 W, average 10 W. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-600-trx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Audio In/Out: connector not published; 12V DC In: connector not published; which RJ45 carries PoE+ not stated"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In/Out",
+      "signalType": "analog-audio",
+      "direction": "bidirectional",
+      "section": "Audio I/O",
+      "notes": "5-pin balanced; configurable as input or output",
+      "id": "port-2"
+    },
+    {
+      "label": "10GbE",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10GbE 8-pin RJ45 (SDVoE link, as the page names it)",
+      "id": "port-3"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE",
+      "id": "port-4"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; 2-way",
+      "id": "port-5"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX, 3.5mm TS mono; API programmable",
+      "id": "port-6"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX, 3.5mm TRS stereo; API programmable",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 1.1",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 1.1",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 1.1",
+      "id": "port-10"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 1.1 host",
+      "id": "port-11"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V 2A DC PSU or 802.3at PoE+ compliant",
+      "id": "port-12"
+    }
+  ]
+}

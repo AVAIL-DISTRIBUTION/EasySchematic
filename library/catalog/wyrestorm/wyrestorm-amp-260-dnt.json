@@ -1,0 +1,94 @@
+{
+  "id": "avail-wyrestorm-amp-260-dnt",
+  "label": "Wyrestorm AMP-260-DNT",
+  "shortName": "AMP-260-DNT",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "AMP-260-DNT",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/amp-260-dnt/",
+  "searchTerms": [
+    "amp-260-dnt",
+    "wyrestorm"
+  ],
+  "powerDrawW": 120,
+  "voltage": "24V DC / PoE+ 802.3at",
+  "poeDrawW": 25.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "100W Network Amplifier | 2 x 50w or 4 x 25w Channel Output @ 4ohm/8ohm | Dual Power Options | Advanced DSP with Dante Integration",
+    "source": "Manufacturer site",
+    "note": "120 W with power adapter, 25.5 W on PoE+. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/amp-260-dnt/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Line In: connector not published; Line Out: connector not published; Speaker Out: connector not published; 24V DC In: connector not published; Dante 2 in / 2 out channels are carried over LAN, the page does not say which RJ-45 carries Dante or which accepts PoE+; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE+ 802.3at listed for the LAN ports",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE+ 802.3at listed for the LAN ports",
+      "id": "port-5"
+    },
+    {
+      "label": "24V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "or PoE+ 802.3at",
+      "id": "port-6"
+    }
+  ]
+}

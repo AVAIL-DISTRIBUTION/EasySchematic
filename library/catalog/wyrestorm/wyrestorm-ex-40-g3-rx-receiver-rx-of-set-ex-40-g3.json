@@ -1,0 +1,83 @@
+{
+  "id": "avail-wyrestorm-ex-40-g3-rx",
+  "label": "Wyrestorm EX-40-G3-RX (Receiver (RX) of set EX-40-G3)",
+  "shortName": "EX-40-G3-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-40-G3-RX",
+  "deviceType": "hdmi-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-40-g3/",
+  "searchTerms": [
+    "ex-40-g3-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-40-g3"
+  ],
+  "voltage": "5V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-40-G3",
+    "rackFormSource": "Shelf",
+    "description": "1080p HD Extender Set with IR and PoC (1080p: 40m/131ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-40-G3 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Published power 2.5 W is not split by TX/RX - not entered. 2.5 W per TX/RX pair. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-40-G3"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-40-g3/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "5V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "UTP In",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "UTP link (TMDS over UTP), as the page names it; PoC from the transmitter",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX, 3.5mm TRS stereo",
+      "id": "port-2"
+    },
+    {
+      "label": "5V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "Optional; 5V DC 1A",
+      "id": "port-3"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "avail-wyrestorm-mx-kit-rx",
+  "label": "Wyrestorm MX-KIT-RX (v2)",
+  "shortName": "MX-0808-KIT-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-KIT-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-0808-kit-v2/",
+  "searchTerms": [
+    "mx-kit-rx",
+    "mx-0808-kit-rx",
+    "wyrestorm",
+    "v2"
+  ],
+  "powerDrawW": 5,
+  "voltage": "18V DC / PoH",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v2",
+    "rackFormSource": "Shelf",
+    "description": "HDBaseT Receiver | 1x HDBT in | 1x HDMI out | 1-way PoH from matrix | IR [receiver of kit MX-0808-KIT v2]",
+    "source": "Manufacturer site",
+    "note": "Component of kit MX-0808-KIT v2 (1x matrix + 8x HDBaseT receiver (MX-KIT-RX)). Part number per AVAIL kit-component convention (<kit>-MATRIX / -RX / -RX-SCL); WyreStorm publishes no separate part number for this unit. Composition source: Kit page \"In the Box\": 1x MX-0808-KIT Matrix, 8x MX-KIT-RX Receivers. Price list: \"Includes 8 Receivers\". Quantity in kit: 8. WyreStorm names the receiver \"MX-KIT-RX\" (no standalone product page: /product/mx-kit-rx/ returns 404). Receivers column of kit page: 18V DC optional PSU, 4.5 W with external PSU / 5 W via PoH (5 W entered). Dimensions and weight not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "MX-0404-KIT",
+        "MX-0808-KIT v2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-0808-kit-v2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "page groups Matrix and Receivers without a per-unit split (assigned by count and signal); second RS-232 (3-pin Terminal Block) not assigned to a unit; 18V DC (Optional) input: unit not stated; power consumption garbled; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "PoH from the matrix (1-way)",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-2"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-3"
+    }
+  ]
+}

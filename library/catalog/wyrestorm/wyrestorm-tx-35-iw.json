@@ -1,0 +1,82 @@
+{
+  "id": "avail-wyrestorm-tx-35-iw",
+  "label": "Wyrestorm TX-35-IW",
+  "shortName": "TX-35-IW",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "TX-35-IW",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/tx-35-iw/",
+  "searchTerms": [
+    "tx-35-iw",
+    "wyrestorm"
+  ],
+  "powerDrawW": 7.8,
+  "voltage": "12V DC / PoH",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "4K UHD HDBaseT 1-Gang In Wall Transmitter (4K: 35m/115ft | 1080p: 70m/230ft) | work with RX-35-POH",
+    "source": "Manufacturer site",
+    "note": "PoH 1-way from receiver. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/tx-35-iw/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "HDBaseT Out: RJ45 connector inferred from HDBaseT (page does not name the connector)"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "Class B; 1-way PoH from RX",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; bidirectional passthrough",
+      "id": "port-2"
+    },
+    {
+      "label": "IR",
+      "signalType": "ir",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "IR",
+      "notes": "Rear 3-pin phoenix; passthrough; front panel IR receiver window",
+      "id": "port-3"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pin; local power, 12V DC 1A (sold separately); optional with PoH",
+      "id": "port-4"
+    }
+  ]
+}

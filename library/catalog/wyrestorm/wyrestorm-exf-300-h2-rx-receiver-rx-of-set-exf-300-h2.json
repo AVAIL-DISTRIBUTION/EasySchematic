@@ -1,0 +1,100 @@
+{
+  "id": "avail-wyrestorm-exf-300-h2-rx",
+  "label": "Wyrestorm EXF-300-H2-RX (Receiver (RX) of set EXF-300-H2)",
+  "shortName": "EXF-300-H2-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EXF-300-H2-RX",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/exf-300-h2/",
+  "searchTerms": [
+    "exf-300-h2-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "exf-300-h2"
+  ],
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EXF-300-H2",
+    "rackFormSource": "Shelf",
+    "description": "4K HDR 4:4:4 60Hz OM3 Multi-Mode Fiber Extender with Bidirectional IR or RS-232 (4K: 300m/984ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EXF-300-H2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Published power 4 W is not split by TX/RX - not entered. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EXF-300-H2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/exf-300-h2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Outputs list is not split by unit (assigned from the Inputs split); RS-232 and IR per-unit assignment not stated, listed on both ends because the page says bidirectional over OM3; 12V DC In: connector not published; power consumption 4W not stated per unit; dimensions"
+  },
+  "ports": [
+    {
+      "label": "Fiber In",
+      "signalType": "fiber",
+      "direction": "input",
+      "connectorType": "sfp",
+      "section": "Video Inputs",
+      "notes": "OM3 multimode, SFP+ fiber LC",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; bidirectional over OM3",
+      "id": "port-2"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo; bidirectional over OM3",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono; bidirectional over OM3",
+      "id": "port-4"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-5"
+    }
+  ]
+}

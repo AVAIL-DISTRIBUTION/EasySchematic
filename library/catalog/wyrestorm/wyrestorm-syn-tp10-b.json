@@ -1,0 +1,79 @@
+{
+  "id": "avail-wyrestorm-syn-tp10-b",
+  "label": "Wyrestorm SYN-TP10-B",
+  "shortName": "SYN-TP10-B",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SYN-TP10-B",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/syn-tp10-b/",
+  "searchTerms": [
+    "syn-tp10-b",
+    "wyrestorm"
+  ],
+  "heightMm": 159,
+  "widthMm": 240.4,
+  "depthMm": 37.4,
+  "weightKg": 1.1,
+  "powerDrawW": 12,
+  "voltage": "PoE / 9-24V DC",
+  "poeDrawW": 12,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Synergy 10.1” Touchpad for Synery Flow Series | PoE | Work with Synery Flow Series | Table Top Stand & Wall-Mount (US/UK/EU Compatible)",
+    "source": "Manufacturer site",
+    "note": "Dimensions published without axis order (240.4 x 159 x 37.4 mm) - assumed W x H x D. Weight 1.05 kg incl. support base. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/syn-tp10-b/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Dimension axis order not labelled on the page; net weight is quoted with support base and power base; supply is 9-24V DC (outside the standard value)"
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100 Mbps; PoE",
+      "id": "port-0"
+    },
+    {
+      "label": "RS-485",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin 3.81mm; half-duplex; page names it 'RJ485'",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-2"
+    },
+    {
+      "label": "9-24V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "2-pin; page: POE or DC 9V-24V",
+      "id": "port-3"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { INTAKE_COLUMNS, intakeListsDiff, validateIntake } from "../../src/avail/intake";
+import { INTAKE_COLUMNS, intakeListsDiff, KITS_COLUMNS, kitsOfIntake, validateIntake } from "../../src/avail/intake";
 import { readXlsx } from "../src/xlsx";
 
 const template = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../tools/avail/intake/avail-intake-template.xlsx");
@@ -16,6 +16,12 @@ const sheets = readXlsx(readFileSync(template));
 describe("intake template", () => {
   it("has the Products columns of the format, in order", () => {
     expect(sheets.get("Products")![0]).toEqual([...INTAKE_COLUMNS]);
+  });
+
+  it("has a Kits sheet with the columns the import reads, and no kit rows (only notes)", () => {
+    const kits = sheets.get("Kits")!;
+    expect(kits[0]).toEqual([...KITS_COLUMNS]);
+    expect(kitsOfIntake([], kits)).toMatchObject({ kits: [], warnings: [] });
   });
 
   it("Lists match the reference data (vendors, categories, device types, rack forms, sources, lifecycles)", () => {

@@ -1,0 +1,110 @@
+{
+  "id": "avail-wyrestorm-amp-2120",
+  "label": "Wyrestorm AMP-2120",
+  "shortName": "AMP-2120",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "AMP-2120",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/amp-2120/",
+  "searchTerms": [
+    "amp-2120",
+    "wyrestorm"
+  ],
+  "voltage": "100-240V AC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "240W Audio Amplifier | 2x120watts Low-Z Output | 1x240watts Hi-Z Output | DSP Integration | Mic/Line IN & Line Out supported | LAN & RS232 Control | Supporting 4 & 8 Ohm and 70/100V speakers",
+    "source": "Manufacturer site",
+    "note": "Power consumption not published on product page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available Now.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/amp-2120/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Mic In: connector not published; Line In: connector not published; Line Out: connector not published; Speaker Out: connector not published; RS-232: connector not published; Trigger In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "Mic In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "notes": "48V phantom power per channel, or 1x Line In",
+      "id": "port-0"
+    },
+    {
+      "label": "Mic In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "notes": "48V phantom power per channel, or 1x Line In",
+      "id": "port-1"
+    },
+    {
+      "label": "Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "notes": "balanced",
+      "id": "port-2"
+    },
+    {
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "balanced",
+      "id": "port-3"
+    },
+    {
+      "label": "Speaker Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "notes": "Hi-Z 70V/100V or Low-Z 4/8Ω",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-6"
+    },
+    {
+      "label": "Trigger In",
+      "signalType": "gpio",
+      "direction": "input",
+      "section": "Digital I/O",
+      "notes": "hardware trigger; auto-mutes speaker output on paging",
+      "id": "port-7"
+    },
+    {
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "iec",
+      "section": "Power",
+      "id": "port-8"
+    }
+  ]
+}

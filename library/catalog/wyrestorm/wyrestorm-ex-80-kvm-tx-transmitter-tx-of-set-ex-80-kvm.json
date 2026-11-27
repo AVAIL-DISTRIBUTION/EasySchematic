@@ -1,0 +1,84 @@
+{
+  "id": "avail-wyrestorm-ex-80-kvm-tx",
+  "label": "Wyrestorm EX-80-KVM-TX (Transmitter (TX) of set EX-80-KVM)",
+  "shortName": "EX-80-KVM-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-80-KVM-TX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-80-kvm/",
+  "searchTerms": [
+    "ex-80-kvm-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-80-kvm"
+  ],
+  "powerDrawW": 3.6,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-80-KVM",
+    "rackFormSource": "Shelf",
+    "description": "1080p60Hz UTP Extender | USB 2.0 | PoC",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-80-KVM (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-80-KVM"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-80-kvm/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published and 'DC' not stated on the page"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "UTP Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "UTP; 2-way PoC",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 2.0 host",
+      "id": "port-2"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "Page says 12V 2A; one adapter powers both units via 2-way PoC",
+      "id": "port-3"
+    }
+  ]
+}

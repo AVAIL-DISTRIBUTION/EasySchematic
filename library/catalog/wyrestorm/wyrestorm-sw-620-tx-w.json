@@ -1,0 +1,152 @@
+{
+  "id": "avail-wyrestorm-sw-620-tx-w",
+  "label": "Wyrestorm SW-620-TX-W",
+  "shortName": "SW-620-TX-W",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-620-TX-W",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sw-620-tx-w/",
+  "searchTerms": [
+    "sw-620-tx-w",
+    "wyrestorm"
+  ],
+  "powerDrawW": 132,
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Synergy 2-Input 4K60Hz Presentation Switcher | USB-C 60W PD | USB-C Ethernet | 2 HDMI Matrix Outputs | USB 3.0 | Dual View | Airplay & Miracast | Wireless Presentation & Conference (work with APO-DG2 & APO-DG2-PRO)",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sw-620-tx-w/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "'1 x USB 3.0 Type-C port' may be the same connector as the USB-C input (not stated); 20V DC In: connector not published and 'DC' not stated"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "Video input with MST",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "API control",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "API control",
+      "id": "port-6"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "4-pin; API control; provides 12V power",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 device port; 5V 1000mA per port",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 device port; 5V 1000mA per port",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 device port; 5V 1000mA per port",
+      "id": "port-10"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 3.0; assignable",
+      "id": "port-11"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "20V 10A",
+      "id": "port-12"
+    }
+  ]
+}

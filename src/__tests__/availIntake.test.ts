@@ -3,7 +3,20 @@
  */
 import { describe, expect, it } from "vitest";
 import type { CatalogFile, CatalogTemplate } from "../avail/catalogPorts";
-import { cardFromRow, importIntake, INTAKE_COLUMNS, intakeId, mergeCard, validateIntake, type IntakeIndexEntry } from "../avail/intake";
+import {
+  canonicalModel,
+  cardFromRow,
+  formatIntakeReport,
+  importIntake,
+  INTAKE_COLUMNS,
+  intakeId,
+  mergeCard,
+  mergeKits,
+  PAIR_SOURCE,
+  validateIntake,
+  withoutPrices,
+  type IntakeIndexEntry,
+} from "../avail/intake";
 
 const HEADER = [...INTAKE_COLUMNS];
 type Row = Partial<Record<string, string>>;
@@ -78,7 +91,9 @@ describe("cards", () => {
     expect(t.id).toBe("avail-biamp-910-9");
     expect(t.label).toBe("Biamp TesiraFORTÉ X 900 (Black)");
     expect(t.shortName).toBe("TesiraFORTÉ X 900");
-    expect(t).toMatchObject({ heightMm: 44, weightKg: 3.2, powerDrawW: 60, voltage: "100-240V AC", unitCost: 4000, rackForm: "full", slotFamily: "a" });
+    expect(t).toMatchObject({ heightMm: 44, weightKg: 3.2, powerDrawW: 60, voltage: "100-240V AC", rackForm: "full", slotFamily: "a" });
+    // Prices stay out of the public repository: MSRP (USD) is checked but not written.
+    expect(t).not.toHaveProperty("unitCost");
     expect(t._avail).toEqual({
       status: "awaiting-ports", variant: "Black", altPartNumber: "910-9K", rackFormSource: "1U Full rack", rackUnits: 1, cardFamilies: ["a", "b"],
       description: "DSP", source: "Manufacturer datasheet", datasheetUrl: "https://www.biamp.com/x.pdf", note: "n", intakeFile: "f.xlsx",
@@ -133,5 +148,136 @@ describe("importIntake", () => {
     const again = importIntake(sheet(DSP), files, first.index, "a.xlsx");
     expect(again.actions.map((a) => a.action)).toEqual(["unchanged"]);
     expect(again.write).toEqual([]);
+  });
+});
+
+describe("review decision (Decision / Reason columns)", () => {
+  /** A reviewed sheet: the template columns plus Decision and Reason. */
+  const reviewed = (...rows: Row[]) => {
+    const names = [...HEADER.map((h) => h.replace(/\s*\*$/, "")), "Decision", "Reason"];
+    return [[...HEADER, "Decision", "Reason"], ...rows.map((r) => names.map((n) => r[n] ?? ""))];
+  };
+  const kit = { ...DSP, "Part number": "910-K", Source: "?", Decision: "Exclude", Reason: "kit / bundle" };
+
+  it("imports Keep rows only; Exclude rows are skipped without validation and counted by reason", () => {
+    const r = importIntake(reviewed({ ...DSP, Decision: "Keep" }, kit, { ...kit, "Part number": "910-9" }, { ...kit, "Part number": "910-L", Reason: "" }), [], [], "r.xlsx");
+    expect(r.fatal).toEqual([]);
+    expect(r.rows.map((x) => x.partNumber)).toEqual(["910-9"]);
+    expect(r.rows[0].errors).toEqual([]);
+    expect(r.excluded).toEqual([
+      { row: 3, partNumber: "910-K", reason: "kit / bundle" },
+      { row: 4, partNumber: "910-9", reason: "kit / bundle" },
+      { row: 5, partNumber: "910-L", reason: "" },
+    ]);
+    expect(r.actions.map((a) => a.action)).toEqual(["created"]);
+    const report = formatIntakeReport(r, "r.xlsx", true);
+    expect(report).toContain("Excluded by the review (Decision = Exclude): 3");
+    expect(report).toContain("     2  kit / bundle");
+    expect(report).toContain("     1  (no reason)");
+  });
+
+  it("stops on Check, empty or unknown decisions and lists them; nothing is imported", () => {
+    const r = importIntake(
+      reviewed({ ...DSP, Decision: "keep" }, { ...kit, Decision: "Check", Reason: "your call" }, { ...kit, "Part number": "910-M", Decision: "" }, { ...kit, "Part number": "910-N", Decision: "Maybe" }),
+      [], [], "r.xlsx",
+    );
+    expect(r.unresolved.map((u) => [u.row, u.partNumber, u.decision])).toEqual([[3, "910-K", "Check"], [4, "910-M", ""], [5, "910-N", "Maybe"]]);
+    expect(r.fatal).toEqual(["3 rows are not decided (Decision must be Keep or Exclude; Check means the review is not finished)"]);
+    expect(r.write).toEqual([]);
+    const report = formatIntakeReport(r, "r.xlsx", false);
+    expect(report).toContain('row 3    910-K: Decision "Check" (your call)');
+    expect(report).toContain("row 4    910-M: Decision empty");
+    expect(report).toContain("FAILED: nothing imported");
+  });
+
+  it("without a Decision column every row is imported, as before", () => {
+    const r = importIntake(sheet(DSP, { ...DSP, "Part number": "910-10" }), [], [], "a.xlsx");
+    expect(r.excluded).toEqual([]);
+    expect(r.actions.length).toBe(2);
+  });
+});
+
+describe("reviewed forms, vendor names, prices", () => {
+  const WS: Row = {
+    Vendor: "Wyrestorm", Category: "AV distribution / Extenders", "Device type": "hdbaset-extender", Model: "WyreStorm EX-70-H2L-TX",
+    "Part number": "EX-70-H2L-TX", "Alt part number": "EX-70-H2L", "Rack form": "Shelf", "Reference URL": "https://www.wyrestorm.com/product/ex-70-h2l/",
+    "MSRP (USD)": "500", Source: "Manufacturer site",
+  };
+  const rev = (...rows: Row[]) => {
+    const names = [...HEADER.map((h) => h.replace(/\s*\*$/, "")), "Decision", "Reason", "Data gaps"];
+    return [[...HEADER, "Decision", "Reason", "Data gaps"], ...rows.map((r) => names.map((n) => r[n] ?? ""))];
+  };
+
+  it("the model starts with the canonical vendor name; MSRP is not written; the report says both", () => {
+    const r = importIntake(rev({ ...WS, Decision: "Keep", "Data gaps": "no dimensions" }), [], [], "w.xlsx");
+    const t = r.write[0].template;
+    expect(t.label).toBe("Wyrestorm EX-70-H2L-TX");
+    expect(t).not.toHaveProperty("unitCost");
+    const report = formatIntakeReport(r, "w.xlsx", true);
+    expect(report).toContain("Model names written with the canonical vendor name: 1");
+    expect(report).toContain("MSRP (USD) filled in 1 rows: not imported (the repository is public, prices stay out)");
+  });
+
+  it("a reviewed Keep row without Reference URL or rack dimensions is a warning; without a review, an error", () => {
+    const { "Reference URL": _u, ...noUrl } = WS;
+    const kept = importIntake(rev({ ...noUrl, Decision: "Keep" }), [], [], "w.xlsx");
+    expect(kept.rows[0].errors).toEqual([]);
+    expect(kept.rows[0].warnings).toEqual(expect.arrayContaining([expect.stringMatching(/^Reference URL is empty \(kept by the review\)/), expect.stringMatching(/kept by the review: level B until filled/)]));
+    expect(kept.write[0].template).not.toHaveProperty("referenceUrl");
+    const plain = validateIntake(sheet(noUrl));
+    expect(plain.rows[0].errors).toEqual(["Reference URL is empty", 'Height (mm), Width (mm), Depth (mm), Weight (kg) empty: required for rack form "Shelf"']);
+  });
+});
+
+describe("kits (sheet Kits, TX/RX pairs)", () => {
+  const row = (pn: string, alt?: string): Row => ({
+    Vendor: "Wyrestorm", Category: "AV distribution / Extenders", "Device type": "hdbaset-extender", Model: `Wyrestorm ${pn}`, "Part number": pn,
+    ...(alt ? { "Alt part number": alt } : {}), "Rack form": "Non-rack", "Reference URL": "https://www.wyrestorm.com/x", Source: "Manufacturer site",
+  });
+  const KITS = [
+    ["Kit part number (price list)", "Component part number", "Qty", "Source"],
+    ["MX-0404-KIT", "MX-0404-KIT-MATRIX", "1", "https://example.com/kit.pdf"],
+    ["MX-0404-KIT", "MX-KIT-RX", "3", "https://example.com/kit.pdf"],
+    ["", "", "", ""],
+    ["Extender kits: kit = 1 × TX + 1 × RX (a note under the table)", "", "", ""],
+  ];
+
+  it("kits from the sheet and from TX/RX pairs; the kit part number leaves Alt part number; components name their kits", () => {
+    const r = importIntake(
+      sheet(row("EX-70-H2L-TX", "EX-70-H2L"), row("EX-70-H2L-RX", "EX-70-H2L"), row("MX-0404-KIT-MATRIX", "MX-0404-KIT"), row("MX-KIT-RX"), row("EX-1-TX", "EX-1")),
+      [], [], "w.xlsx", KITS,
+    );
+    expect(r.kits).toEqual([
+      { vendor: "Wyrestorm", partNumber: "MX-0404-KIT", components: [{ partNumber: "MX-0404-KIT-MATRIX", qty: 1 }, { partNumber: "MX-KIT-RX", qty: 3 }], source: "https://example.com/kit.pdf" },
+      { vendor: "Wyrestorm", partNumber: "EX-70-H2L", components: [{ partNumber: "EX-70-H2L-TX", qty: 1 }, { partNumber: "EX-70-H2L-RX", qty: 1 }], source: PAIR_SOURCE },
+    ]);
+    const card = (pn: string) => r.write.find((f) => f.template.modelNumber === pn)!.template._avail;
+    expect(card("EX-70-H2L-TX")).toMatchObject({ kit: { kitPartNumbers: ["EX-70-H2L"] } });
+    expect(card("EX-70-H2L-TX")).not.toHaveProperty("altPartNumber");
+    expect(card("MX-0404-KIT-MATRIX")).toMatchObject({ kit: { kitPartNumbers: ["MX-0404-KIT"] } });
+    expect(card("MX-0404-KIT-MATRIX")).not.toHaveProperty("altPartNumber");
+    expect(card("MX-KIT-RX")).toMatchObject({ kit: { kitPartNumbers: ["MX-0404-KIT"] } });
+    // A TX without its RX: the alt part number stays, with a warning.
+    expect(card("EX-1-TX")).toMatchObject({ altPartNumber: "EX-1" });
+    expect(r.kitWarnings).toEqual(["Alt part number EX-1 of EX-1-TX looks like a kit, but its RX row is missing: left as Alt part number"]);
+    expect(formatIntakeReport(r, "w.xlsx", true)).toContain("MX-0404-KIT = 1 × MX-0404-KIT-MATRIX + 3 × MX-KIT-RX");
+  });
+
+  it("mergeKits: the form's kits replace those with the same vendor and part number, sorted", () => {
+    const old = { about: "x", kits: [{ vendor: "Wyrestorm", partNumber: "EX-70-H2L", components: [], source: "old" }, { vendor: "Biamp", partNumber: "K", components: [], source: "b" }] };
+    const next = mergeKits(old, [{ vendor: "Wyrestorm", partNumber: "EX-70-H2L", components: [{ partNumber: "A", qty: 1 }], source: "new" }]);
+    expect(next.kits.map((k) => `${k.vendor} ${k.partNumber} ${k.source}`)).toEqual(["Biamp K b", "Wyrestorm EX-70-H2L new"]);
+    expect(canonicalModel("WYRESTORM EX-1", "Wyrestorm")).toBe("Wyrestorm EX-1");
+    expect(canonicalModel("EX-1", "Wyrestorm")).toBe("Wyrestorm EX-1");
+  });
+});
+
+describe("withoutPrices", () => {
+  it("drops the clauses that name a price, keeps the rest", () => {
+    expect(withoutPrices("Split by AVAIL from set EX-70-H2L (TX + RX). Set MSRP 984.4 USD; per-unit price not published. Dimensions published once for the set - applied to both units."))
+      .toBe("Split by AVAIL from set EX-70-H2L (TX + RX). Dimensions published once for the set - applied to both units.");
+    expect(withoutPrices("Kit MSRP 6352.6 USD; Price list status: New.")).toBe("Price list status: New.");
+    expect(withoutPrices("Costs $120 street.")).toBe("");
+    expect(withoutPrices("PoE class 1 only published - class maximum 3.84 W used.")).toBe("PoE class 1 only published - class maximum 3.84 W used.");
   });
 });

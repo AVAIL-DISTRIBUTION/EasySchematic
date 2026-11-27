@@ -1,0 +1,121 @@
+{
+  "id": "avail-wyrestorm-amp-2120-dnt",
+  "label": "Wyrestorm AMP-2120-DNT",
+  "shortName": "AMP-2120-DNT",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "AMP-2120-DNT",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/amp-2120-dnt/",
+  "searchTerms": [
+    "amp-2120-dnt",
+    "wyrestorm"
+  ],
+  "powerDrawW": 276,
+  "voltage": "100-240V AC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Audio Amplifier | 2x120watts Low-Z Output | 1x240watts Hi-Z Output | DSP with Dante/AES67 Integration | Mic/Line IN & Line Out supported | LAN & RS232 Control | Supporting 4 & 8 Ohm and 70/100V speakers",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New, avaiable.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/amp-2120-dnt/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Mic In, Line In, Line Out, Amp Out, RS-232, Trigger In: connectors not published; Dante In/Out (2x each) are channels over the network (which RJ45 carries Dante not stated); AC Power In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "Mic In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "notes": "48V phantom power per channel",
+      "id": "port-0"
+    },
+    {
+      "label": "Mic In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "notes": "48V phantom power per channel",
+      "id": "port-1"
+    },
+    {
+      "label": "Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "notes": "Balanced",
+      "id": "port-2"
+    },
+    {
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "Balanced",
+      "id": "port-3"
+    },
+    {
+      "label": "Amp Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "notes": "Hi-Z 70V/100V (1x 240W bridged) or Low-Z 4/8 ohm (2x 120W)",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10/100",
+      "id": "port-6"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-7"
+    },
+    {
+      "label": "Trigger In",
+      "signalType": "gpio",
+      "direction": "input",
+      "section": "Digital I/O",
+      "notes": "Auto-mutes speaker output on paging",
+      "id": "port-8"
+    },
+    {
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "AC 100-240V 50/60Hz",
+      "id": "port-9"
+    }
+  ]
+}
