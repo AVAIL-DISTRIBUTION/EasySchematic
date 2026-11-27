@@ -401,10 +401,12 @@ export const TOOLS: readonly Tool[] = [
       } else data = storedForm(obj(a, "template"));
       const changes = editChanges(stored, data);
       if (noChanges(changes)) throw new ToolError(NO_CHANGE_ERROR);
-      const res = await ctx.call("/submissions", { method: "POST", body: { action: "update", templateId: id, data, submitterNote: comment, source: "manual" } });
-      const b = (await res.json().catch(() => ({}))) as Json;
+      // Stored as a patch on this version of the template (proposals.ts): accepting it later changes only
+      // these fields and ports; what others changed meanwhile is kept or shown as a conflict.
+      const res = await ctx.call("/avail/proposals", { method: "POST", body: { templateId: id, ...(hasPatch ? { patch: obj(a, "patch") } : { data }), comment } });
+      const b = (await res.json().catch(() => ({}))) as Json & { changes?: string[] };
       if (!res.ok) throw new ToolError(String(b.error ?? `HTTP ${res.status}`));
-      const lines = describeEditChanges(changes);
+      const lines = b.changes ?? describeEditChanges(changes);
       writeAudit(ctx.sqlite, [{
         actor: ctx.token.email, actorId: ctx.token.userId, entity: "template", entityId: id, entityLabel: label, action: "proposed",
         after: { proposal: b.id, comment, changes: lines },

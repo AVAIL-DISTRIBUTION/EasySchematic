@@ -32,6 +32,7 @@ import {
   type OverridesFile,
 } from "../../src/avail/overrides";
 import { canReadAudit } from "../../src/avail/roles";
+import { patchScope, type TemplatePatch } from "../../src/avail/templatePatch";
 import { ADMIN_TOKEN_ACTOR, writeAudit } from "./audit";
 import type { D1DatabaseShim } from "./d1";
 import type { RequestActor } from "./requestAudit";
@@ -205,13 +206,20 @@ export async function beginProposalOverrides(sqlite: Database.Database, request:
   return { submissionId: id, templateId: s.template_id, before: rowToTemplate(row) as unknown as Record<string, unknown>, comment, submitter: s.email };
 }
 
-/** After the approve succeeded: the overrides of what changed, stored and logged. */
-export function endProposalOverrides(sqlite: Database.Database, scope: ProposalOverrideScope, actor: RequestActor): Override[] {
+/**
+ * After the approve succeeded: the overrides of what changed, stored and logged. With the proposal's
+ * patch (proposals.ts), only the fields and ports the patch changes — not what else differs.
+ */
+export function endProposalOverrides(sqlite: Database.Database, scope: ProposalOverrideScope, actor: RequestActor, patch: TemplatePatch | null = null): Override[] {
   const row = sqlite.prepare("SELECT * FROM templates WHERE id = ?").get(scope.templateId) as TemplateRow | undefined;
   if (!row) return [];
   const after = rowToTemplate(row) as unknown as Record<string, unknown>;
   const source = `proposal ${scope.submissionId}${scope.submitter ? ` by ${scope.submitter}` : ""}`;
-  const list = overridesFromChange(scope.before, after, { source, comment: scope.comment, acceptedBy: actor.actor });
+  const all = overridesFromChange(scope.before, after, { source, comment: scope.comment, acceptedBy: actor.actor });
+  const only = patch ? patchScope(patch) : null;
+  const list = only
+    ? all.filter((o) => (o.kind === "field" ? only.fields.has(o.field ?? "") : only.ports.has(o.portId ?? "") || only.ports.has(`label:${o.port ?? ""}`)))
+    : all;
   if (!list.length) return [];
   sqlite.transaction(() => {
     storeOverrides(sqlite, list, scope.submissionId);
