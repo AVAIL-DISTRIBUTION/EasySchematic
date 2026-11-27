@@ -49,7 +49,8 @@
       "direction": "bidirectional",
       "section": "Serial",
       "notes": "8-pin Mini DIN, max length 30m",
-      "id": "port-1"
+      "id": "port-1",
+      "connectorType": "mini-din-8"
     },
     {
       "label": "USB Out",
@@ -64,7 +65,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-3"
+      "id": "port-3",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: DC barrel, external adapter (not locking) — verify"
     }
   ]
 }

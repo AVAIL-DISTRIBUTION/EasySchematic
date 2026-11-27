@@ -103,8 +103,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "integrated 3 m mains cable (Type B plug); 100 - 250VAC, max 16A, 50 - 60Hz",
-      "id": "port-7"
+      "notes": "integrated 3 m mains cable (Type B plug); 100 - 250VAC, max 16A, 50 - 60Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-7",
+      "connectorType": "iec"
     }
   ]
 }

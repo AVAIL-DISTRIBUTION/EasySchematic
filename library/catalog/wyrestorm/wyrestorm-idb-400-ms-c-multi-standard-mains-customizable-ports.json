@@ -64,8 +64,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "Integrated 3 m mains cable; 100-250V AC, max 16A, 50-60Hz",
-      "id": "port-2"
+      "notes": "Integrated 3 m mains cable; 100-250V AC, max 16A, 50-60Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-2",
+      "connectorType": "iec"
     },
     {
       "label": "Mains Outlet",

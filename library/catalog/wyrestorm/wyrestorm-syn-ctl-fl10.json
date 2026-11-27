@@ -62,32 +62,36 @@
       "signalType": "serial",
       "direction": "bidirectional",
       "section": "Serial",
-      "notes": "configurable RS-232/RS-422/RS-485 (COM1)",
-      "id": "port-2"
+      "notes": "configurable RS-232/RS-422/RS-485 (COM1); 3-pin; Wyrestorm convention: 3-pin phoenix — verify",
+      "id": "port-2",
+      "connectorType": "phoenix"
     },
     {
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "section": "Serial",
-      "notes": "COM2",
-      "id": "port-3"
+      "notes": "COM2; 3-pin; Wyrestorm convention: 3-pin phoenix — verify",
+      "id": "port-3",
+      "connectorType": "phoenix"
     },
     {
       "label": "IR Out 1",
       "signalType": "ir",
       "direction": "output",
       "section": "IR",
-      "notes": "configurable IR output / serial Tx",
-      "id": "port-4"
+      "notes": "configurable IR output / serial Tx; TS; Wyrestorm convention: 3.5 mm TS (emitter) — verify",
+      "id": "port-4",
+      "connectorType": "trs-eighth"
     },
     {
       "label": "IR Out 2",
       "signalType": "ir",
       "direction": "output",
       "section": "IR",
-      "notes": "configurable IR output / serial Tx",
-      "id": "port-5"
+      "notes": "configurable IR output / serial Tx; TS; Wyrestorm convention: 3.5 mm TS (emitter) — verify",
+      "id": "port-5",
+      "connectorType": "trs-eighth"
     },
     {
       "label": "Relay 1",

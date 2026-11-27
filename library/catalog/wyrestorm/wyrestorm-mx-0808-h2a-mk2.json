@@ -169,7 +169,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-16"
+      "id": "port-16",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 2",
@@ -177,7 +178,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-17"
+      "id": "port-17",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 3",
@@ -185,7 +187,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-18"
+      "id": "port-18",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 4",
@@ -193,7 +196,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-19"
+      "id": "port-19",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 5",
@@ -201,7 +205,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-20"
+      "id": "port-20",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 6",
@@ -209,7 +214,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-21"
+      "id": "port-21",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 7",
@@ -217,7 +223,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-22"
+      "id": "port-22",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 8",
@@ -225,7 +232,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-23"
+      "id": "port-23",
+      "connectorType": "phoenix"
     },
     {
       "label": "S/PDIF Out 1",
@@ -306,7 +314,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-34"
+      "id": "port-34",
+      "connectorType": "iec",
+      "notes": "Wyrestorm convention: IEC — verify"
     }
   ]
 }

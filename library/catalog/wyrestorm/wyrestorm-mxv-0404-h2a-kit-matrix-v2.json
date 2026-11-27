@@ -267,7 +267,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-26"
+      "id": "port-26",
+      "connectorType": "iec",
+      "notes": "Wyrestorm convention: IEC — verify"
     }
   ]
 }

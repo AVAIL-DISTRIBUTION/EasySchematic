@@ -33,10 +33,10 @@ describe("withWyrestormPower", () => {
     const named = [hdmi, dc("12V DC In", { connectorType: "phoenix" })];
     expect(withWyrestormPower(card({}), named)).toBe(named);
     const mainsBox = [dc("AC Power In")];
-    expect(withWyrestormPower(card({ voltage: "100-240V AC" }), mainsBox)).toBe(mainsBox);
-    const cam = [dc()];
-    expect(withWyrestormPower(card({ rackForm: undefined, deviceType: "ptz-camera" }), cam)).toBe(cam);
-    expect(withWyrestormPower(card({ manufacturer: "Extron" }), cam)).toBe(cam);
+    expect(withWyrestormPower(card({ modelNumber: "AMP-2120-DNT", voltage: "100-240V AC" }), mainsBox)).toBe(mainsBox);
+    const other = [dc()];
+    expect(withWyrestormPower(card({ rackForm: undefined, deviceType: "controller" }), other)).toBe(other);
+    expect(withWyrestormPower(card({ manufacturer: "Extron" }), other)).toBe(other);
   });
 
   it("a link-powered box (PoH / PoC) gets its local supply with the card's voltage; without a voltage — DC In", () => {
@@ -49,3 +49,32 @@ describe("withWyrestormPower", () => {
     expect(withWyrestormPower(card({ voltage: "12V DC" }), [hdmi])).toEqual([hdmi]);
   });
 });
+
+describe("withWyrestormPower: additions of 2026-11-27 (AC cord, adapters, PoE only, signal ports)", () => {
+  it("AC power cord matrices and IDB boxes → IEC; cameras and bars → barrel, not locking", () => {
+    expect(withWyrestormPower(card({ modelNumber: "MXV-0808-H2A v3", voltage: "100-240V AC" }), [dc("AC Power In")])[0]).toMatchObject({ connectorType: "iec", notes: WYRESTORM_NOTES.iec });
+    expect(withWyrestormPower(card({ modelNumber: "IDB-400-MS", rackForm: undefined, deviceType: "table-box", voltage: "100-250V AC" }), [dc("Mains In")])[0]).toMatchObject({ connectorType: "iec" });
+    expect(withWyrestormPower(card({ modelNumber: "CAM-210-PTZ", rackForm: undefined, deviceType: "ptz-camera" }), [dc()])[0]).toMatchObject({ connectorType: "barrel", notes: WYRESTORM_NOTES.adapter });
+  });
+
+  it("PoE-only keypads and touch panels: the unnamed power port goes, PoE on the LAN", () => {
+    const lan = { id: "l", label: "LAN", signalType: "ethernet", direction: "bidirectional", connectorType: "rj45", section: "Network" };
+    const out = withWyrestormPower(card({ modelNumber: "SYN-KEY10", rackForm: undefined, deviceType: "keypad" }), [lan, dc()]);
+    expect(out).toEqual([{ ...lan, notes: WYRESTORM_NOTES.poe }]);
+  });
+
+  it("signal ports: named in the notes first, else the convention", () => {
+    const sig = (signalType: string, direction: string, notes?: string) => ({ id: "s", label: "X", signalType, direction, section: "Control", ...(notes ? { notes } : {}) });
+    const one = (p: Record<string, unknown>) => withWyrestormPower(card({}), [p])[0];
+    expect(one(sig("serial", "bidirectional"))).toMatchObject({ connectorType: "phoenix", notes: WYRESTORM_NOTES.serial });
+    expect(one(sig("serial", "bidirectional", "8-pin Mini DIN, max length 30m"))).toMatchObject({ connectorType: "mini-din-8", notes: "8-pin Mini DIN, max length 30m" });
+    expect(one(sig("serial", "bidirectional", "debug only, 3.5mm"))).toMatchObject({ connectorType: "trs-eighth" });
+    expect(one(sig("analog-audio", "output", "5-pin balanced"))).toMatchObject({ connectorType: "phoenix", notes: "5-pin balanced" });
+    expect(one(sig("analog-audio", "output", "balanced"))).toMatchObject({ connectorType: "phoenix", notes: `balanced; ${WYRESTORM_NOTES.balanced}` });
+    expect(one(sig("analog-audio", "output", "stereo; de-embed"))).toMatchObject({ connectorType: "trs-eighth", notes: `stereo; de-embed; ${WYRESTORM_NOTES.unbalanced}` });
+    expect(one(sig("analog-audio", "input"))).not.toHaveProperty("connectorType"); // balance unknown: left
+    expect(one(sig("ir", "output"))).toMatchObject({ connectorType: "trs-eighth", notes: WYRESTORM_NOTES.irOut });
+    expect(one(sig("ir", "input"))).toMatchObject({ connectorType: "trs-eighth", notes: WYRESTORM_NOTES.irIn });
+  });
+});
+

@@ -71,23 +71,27 @@
       "signalType": "analog-audio",
       "direction": "output",
       "section": "Audio Outputs",
-      "notes": "stereo; de-embed",
-      "id": "port-2"
+      "notes": "stereo; de-embed; Wyrestorm convention: 3.5 mm (unbalanced stereo) — verify",
+      "id": "port-2",
+      "connectorType": "trs-eighth"
     },
     {
       "label": "Audio Out Pass-through",
       "signalType": "analog-audio",
       "direction": "output",
       "section": "Audio Outputs",
-      "notes": "stereo; pass-through",
-      "id": "port-3"
+      "notes": "stereo; pass-through; Wyrestorm convention: 3.5 mm (unbalanced stereo) — verify",
+      "id": "port-3",
+      "connectorType": "trs-eighth"
     },
     {
       "label": "RS-232",
       "signalType": "serial",
       "direction": "bidirectional",
       "section": "Serial",
-      "id": "port-4"
+      "id": "port-4",
+      "connectorType": "phoenix",
+      "notes": "3-pin; Wyrestorm convention: 3-pin phoenix — verify"
     },
     {
       "label": "USB Device 1",

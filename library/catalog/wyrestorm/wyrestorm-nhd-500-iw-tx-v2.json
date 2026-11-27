@@ -78,7 +78,8 @@
       "direction": "bidirectional",
       "section": "Serial",
       "notes": "3.5mm; 2-way; API programmable",
-      "id": "port-4"
+      "id": "port-4",
+      "connectorType": "trs-eighth"
     },
     {
       "label": "20V DC In",

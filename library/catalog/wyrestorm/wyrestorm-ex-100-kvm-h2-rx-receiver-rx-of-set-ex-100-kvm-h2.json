@@ -79,8 +79,9 @@
       "signalType": "analog-audio",
       "direction": "output",
       "section": "Audio Outputs",
-      "notes": "balanced",
-      "id": "port-3"
+      "notes": "balanced; 5-pin; Wyrestorm convention: 5-pin phoenix (balanced) — verify",
+      "id": "port-3",
+      "connectorType": "phoenix"
     },
     {
       "label": "RS-232",

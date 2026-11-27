@@ -60,7 +60,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "5-pin balanced",
-      "id": "port-2"
+      "id": "port-2",
+      "connectorType": "phoenix"
     },
     {
       "label": "S/PDIF Out",

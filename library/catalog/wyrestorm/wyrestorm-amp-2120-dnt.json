@@ -56,16 +56,18 @@
       "signalType": "analog-audio",
       "direction": "input",
       "section": "Audio Inputs",
-      "notes": "Balanced",
-      "id": "port-2"
+      "notes": "Balanced; 5-pin; Wyrestorm convention: 5-pin phoenix (balanced) — verify",
+      "id": "port-2",
+      "connectorType": "phoenix"
     },
     {
       "label": "Line Out",
       "signalType": "analog-audio",
       "direction": "output",
       "section": "Audio Outputs",
-      "notes": "Balanced",
-      "id": "port-3"
+      "notes": "Balanced; 5-pin; Wyrestorm convention: 5-pin phoenix (balanced) — verify",
+      "id": "port-3",
+      "connectorType": "phoenix"
     },
     {
       "label": "Amp Out",
@@ -99,7 +101,8 @@
       "direction": "bidirectional",
       "section": "Serial",
       "notes": "3-pin",
-      "id": "port-7"
+      "id": "port-7",
+      "connectorType": "phoenix"
     },
     {
       "label": "Trigger In",

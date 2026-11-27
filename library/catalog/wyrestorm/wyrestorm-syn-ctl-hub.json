@@ -50,14 +50,18 @@
       "signalType": "serial",
       "direction": "bidirectional",
       "section": "Serial",
-      "id": "port-1"
+      "id": "port-1",
+      "connectorType": "phoenix",
+      "notes": "3-pin; Wyrestorm convention: 3-pin phoenix — verify"
     },
     {
       "label": "IR Out",
       "signalType": "ir",
       "direction": "output",
       "section": "IR",
-      "id": "port-2"
+      "id": "port-2",
+      "connectorType": "trs-eighth",
+      "notes": "TS; Wyrestorm convention: 3.5 mm TS (emitter) — verify"
     },
     {
       "label": "Relay 1",

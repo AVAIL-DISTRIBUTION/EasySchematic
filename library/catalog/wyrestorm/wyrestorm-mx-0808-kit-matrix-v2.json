@@ -184,7 +184,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-16"
+      "id": "port-16",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 2",
@@ -192,7 +193,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-17"
+      "id": "port-17",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 3",
@@ -200,7 +202,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-18"
+      "id": "port-18",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 4",
@@ -208,7 +211,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "balanced, 5-pin",
-      "id": "port-19"
+      "id": "port-19",
+      "connectorType": "phoenix"
     },
     {
       "label": "LAN",
@@ -377,7 +381,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-40"
+      "id": "port-40",
+      "connectorType": "iec",
+      "notes": "Wyrestorm convention: IEC — verify"
     }
   ]
 }

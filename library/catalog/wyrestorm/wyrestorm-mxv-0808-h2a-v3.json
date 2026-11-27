@@ -439,8 +439,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "AC 100-240V 50/60Hz",
-      "id": "port-46"
+      "notes": "AC 100-240V 50/60Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-46",
+      "connectorType": "iec"
     }
   ]
 }

@@ -58,14 +58,6 @@
       "section": "USB",
       "notes": "USB 2.0 host; for transferring system configuration",
       "id": "port-1"
-    },
-    {
-      "label": "12V DC In",
-      "signalType": "power",
-      "direction": "input",
-      "section": "Power",
-      "notes": "12V 1.5A DC",
-      "id": "port-2"
     }
   ]
 }

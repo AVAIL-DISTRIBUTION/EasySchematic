@@ -52,13 +52,6 @@
       "section": "Serial",
       "notes": "3-pin; device only",
       "id": "port-1"
-    },
-    {
-      "label": "12V DC In",
-      "signalType": "power",
-      "direction": "input",
-      "section": "Power",
-      "id": "port-2"
     }
   ]
 }

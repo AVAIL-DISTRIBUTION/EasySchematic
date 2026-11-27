@@ -79,14 +79,18 @@
       "signalType": "ir",
       "direction": "input",
       "section": "IR",
-      "id": "port-3"
+      "id": "port-3",
+      "connectorType": "trs-eighth",
+      "notes": "TRS; Wyrestorm convention: 3.5 mm TRS (receiver) — verify"
     },
     {
       "label": "IR Out",
       "signalType": "ir",
       "direction": "output",
       "section": "IR",
-      "id": "port-4"
+      "id": "port-4",
+      "connectorType": "trs-eighth",
+      "notes": "TS; Wyrestorm convention: 3.5 mm TS (emitter) — verify"
     },
     {
       "label": "5V DC In",

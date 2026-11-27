@@ -74,8 +74,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "12V DC 3A",
-      "id": "port-4"
+      "notes": "12V DC 3A; Wyrestorm convention: DC barrel, external adapter (not locking) — verify",
+      "id": "port-4",
+      "connectorType": "barrel"
     }
   ]
 }

@@ -57,7 +57,8 @@
       "direction": "bidirectional",
       "section": "Audio I/O",
       "notes": "balanced, 5-pin; de-embed from active input",
-      "id": "port-2"
+      "id": "port-2",
+      "connectorType": "phoenix"
     },
     {
       "label": "LAN (AV Stream)",

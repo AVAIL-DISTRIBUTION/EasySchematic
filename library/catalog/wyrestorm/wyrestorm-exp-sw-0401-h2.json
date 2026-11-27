@@ -80,8 +80,9 @@
       "signalType": "ir",
       "direction": "input",
       "section": "IR",
-      "notes": "external IR port",
-      "id": "port-5"
+      "notes": "external IR port; TRS; Wyrestorm convention: 3.5 mm TRS (receiver) — verify",
+      "id": "port-5",
+      "connectorType": "trs-eighth"
     },
     {
       "label": "12V DC In",

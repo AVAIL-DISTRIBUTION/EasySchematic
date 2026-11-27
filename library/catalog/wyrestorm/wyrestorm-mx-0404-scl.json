@@ -105,7 +105,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "5-pin balanced",
-      "id": "port-8"
+      "id": "port-8",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out 2",
@@ -113,7 +114,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "5-pin balanced",
-      "id": "port-9"
+      "id": "port-9",
+      "connectorType": "phoenix"
     },
     {
       "label": "Toslink Out 1",

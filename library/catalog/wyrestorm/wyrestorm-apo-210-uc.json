@@ -90,7 +90,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-6"
+      "id": "port-6",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: DC barrel, external adapter (not locking) — verify"
     }
   ]
 }

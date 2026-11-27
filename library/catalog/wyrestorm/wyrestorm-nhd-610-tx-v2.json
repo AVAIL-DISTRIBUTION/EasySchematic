@@ -61,7 +61,8 @@
       "direction": "input",
       "section": "Audio Inputs",
       "notes": "5-pin; balanced",
-      "id": "port-2"
+      "id": "port-2",
+      "connectorType": "phoenix"
     },
     {
       "label": "Audio Out",
@@ -69,7 +70,8 @@
       "direction": "output",
       "section": "Audio Outputs",
       "notes": "5-pin; balanced",
-      "id": "port-3"
+      "id": "port-3",
+      "connectorType": "phoenix"
     },
     {
       "label": "10GbE",
