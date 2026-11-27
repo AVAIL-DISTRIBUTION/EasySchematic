@@ -1,0 +1,50 @@
+{
+  "id": "avail-shure-mx393-c",
+  "label": "Shure MX393 (Cardioid)",
+  "shortName": "MX393",
+  "manufacturer": "Shure",
+  "modelNumber": "MX393/C",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx393",
+  "searchTerms": [
+    "mx393/c",
+    "mx393",
+    "shure",
+    "cardioid"
+  ],
+  "widthMm": 76.2,
+  "depthMm": 108.3,
+  "weightKg": 0.172,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Cardioid",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Boundary Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/MX392/Microflex_Wired_2019_Letter_EN.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/Microflex_Wired_2019_Letter_EN.pdf",
+      "note": "p.12-13 (miniature three-pin connector, detachable cable, C129 TA3F-to-XLR); MX392/MX393 user guide p.13 (shure/MX392-MX393-user-guide.pdf)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "mini-xlr",
+      "notes": "Mic level, active balanced; 3-pin mini connector (TA3) on the mic; furnished detachable 3.7 m (12 ft) cable, TA3F to 3-pin XLR male (C129); 11-52 V DC phantom, 2.0 mA"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "avail-shure-mxwndx4ge",
+  "label": "Shure MXWNDX4G (Z11 (1.9 GHz DECT, EU/MEA))",
+  "shortName": "MXWNDX4G",
+  "manufacturer": "Shure",
+  "modelNumber": "MXWNDX4GE",
+  "deviceType": "charging-station",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/mxwndx4-8-g",
+  "searchTerms": [
+    "mxwndx4ge",
+    "mxwndx4g",
+    "shure",
+    "z11",
+    "(1.9",
+    "ghz",
+    "dect",
+    "eu/mea)"
+  ],
+  "heightMm": 49.5,
+  "widthMm": 335,
+  "depthMm": 122,
+  "weightKg": 0.76,
+  "voltage": "15V DC (USB-C PD)",
+  "rackForm": "shelf-only",
+  "powerDrawW": 45,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Z11 (1.9 GHz DECT, EU/MEA)",
+    "rackFormSource": "Shelf",
+    "description": "Networked Charging Stations for MXW neXt Gooseneck Transmitters",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXWNEXT/en-US.pdf",
+    "note": "USB 15 V / 3 A power supply (SBC10-USB45WPD) per MXW neXt user guide; dimensions not extracted. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Dimensions not published on product page or in user guide (searched both).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXWNEXT-user-guide.pdf",
+      "note": "pp.28-30 NDX hardware callouts; p.83 power supply; dual RJ45 (switched mode) p.72"
+    },
+    "notes": "Dimensions H 49.5 x W 335 x D 122 mm, weight 0.76 kg: dealer specifications (B&H, Tech Electronics); estimated from MXWNDX4 (same housing), not published for MXWNDX4G; powerDrawW 45 = PSU rating of the supplied SBC10-USB45WPD (15 V / 3 A), not a measured draw (MXW neXt user guide p.83); Docking bays (2/4/8 microphones) are not modelled as ports: microphones dock, they are not cabled"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Dual RJ45, switched mode only; connect to an MXWAPX access point to associate the docking bays with its audio channels; daisy-chain up to 5 NDX"
+    },
+    {
+      "id": "p2",
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Second RJ45 of the switched pair (daisy-chain)"
+    },
+    {
+      "id": "p3",
+      "label": "USB-C Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "Locking USB-C PD input, 15 V / 3 A from the supplied SBC10-USB45WPD power supply"
+    }
+  ]
+}

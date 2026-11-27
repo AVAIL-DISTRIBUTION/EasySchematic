@@ -1,0 +1,212 @@
+{
+  "id": "avail-shure-ad4de-a",
+  "label": "Shure AD4D (Band A (470-636 MHz))",
+  "shortName": "AD4D",
+  "manufacturer": "Shure",
+  "modelNumber": "AD4DE=-A",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/axient_digital/ad4d",
+  "searchTerms": [
+    "ad4de=-a",
+    "ad4d",
+    "shure",
+    "band",
+    "a",
+    "(470-636",
+    "mhz)"
+  ],
+  "heightMm": 44,
+  "widthMm": 483,
+  "depthMm": 333,
+  "weightKg": 4.6,
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band A (470-636 MHz)",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "AD4D Two-Channel Digital Wireless Receiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/adx2fd-sm58/axient-digital-specification-sheet-letter-en.pdf",
+    "note": "0.55 A max per user guide; W not published. Price list net weight 6.214 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/axient-digital-specification-sheet-letter-en.pdf",
+      "note": "p.3 AD4D back panel and specifications; callouts per AD4D user guide (shure/AD4D-user-guide.pdf, back panel p.8-10)"
+    },
+    "portsMissing": "Front-panel headphone monitor jack is not modelled."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "XLR Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Transformer-balanced XLR; mic/line switch (30 dB pad), ground lift"
+    },
+    {
+      "id": "p2",
+      "label": "TRS Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" transformer-balanced, +8 dBV full scale"
+    },
+    {
+      "id": "p3",
+      "label": "XLR Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Transformer-balanced XLR; mic/line switch (30 dB pad), ground lift"
+    },
+    {
+      "id": "p4",
+      "label": "TRS Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" transformer-balanced, +8 dBV full scale"
+    },
+    {
+      "id": "p5",
+      "label": "AES3 Out",
+      "signalType": "aes",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "AES3 channels 1&2; XLR per back-panel drawing; syncs to Word Clock In when connected"
+    },
+    {
+      "id": "p6",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13.5 V DC bias (150 mA max per antenna); Band A 470-636 MHz"
+    },
+    {
+      "id": "p7",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13.5 V DC bias (150 mA max per antenna); Band A 470-636 MHz"
+    },
+    {
+      "id": "p8",
+      "label": "Cascade Out C",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive, 0 dB insertion loss; passes antenna A to one additional receiver in the same band"
+    },
+    {
+      "id": "p9",
+      "label": "Cascade Out D",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive, 0 dB insertion loss; passes antenna B to one additional receiver in the same band"
+    },
+    {
+      "id": "p10",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from Axient Digital transmitters (2 channels); Band A 470-636 MHz"
+    },
+    {
+      "id": "p11",
+      "label": "Ctrl 1 (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control (Shure control, WWB); 10/100/1000 Mbps; PoE source (receiver powers one PoE device at a time, e.g. AD610)"
+    },
+    {
+      "id": "p12",
+      "label": "Ctrl 2 (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control (Shure control, WWB); 10/100/1000 Mbps; PoE source (receiver powers one PoE device at a time, e.g. AD610)"
+    },
+    {
+      "id": "p13",
+      "label": "Dante (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 audio (2 channels); split-redundant or switched network modes"
+    },
+    {
+      "id": "p14",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante redundant / switched port"
+    },
+    {
+      "id": "p15",
+      "label": "Word Clock In",
+      "signalType": "wordclock",
+      "direction": "input",
+      "section": "Sync",
+      "connectorType": "bnc",
+      "notes": "External word clock for the AES3 output; 75 ohm termination switch"
+    },
+    {
+      "id": "p16",
+      "label": "Word Clock Thru",
+      "signalType": "wordclock",
+      "direction": "output",
+      "section": "Sync",
+      "connectorType": "bnc",
+      "notes": "Passes word clock to further devices (set switch to Thru)"
+    },
+    {
+      "id": "p17",
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC locking, 100-240 V AC 50-60 Hz, 0.55 A max (user guide; spec sheet 0.68 A)"
+    },
+    {
+      "id": "p18",
+      "label": "AC Power Out (Cascade)",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Locking IEC outlet, loops mains to further devices (fused)"
+    }
+  ]
+}

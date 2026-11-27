@@ -1,0 +1,36 @@
+{
+  "id": "avail-shure-ha-4540",
+  "label": "Shure HA-4540 (Pws Tour Series Helical Antenna)",
+  "shortName": "HA-4540",
+  "manufacturer": "Shure",
+  "modelNumber": "HA-4540",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ha-4540",
+  "searchTerms": [
+    "ha-4540",
+    "shure",
+    "pws",
+    "tour",
+    "series",
+    "helical",
+    "antenna"
+  ],
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Pws Tour Series Helical Antenna",
+    "rackFormSource": "Non-rack",
+    "description": "Tour Series (TS) Helical Antenna",
+    "source": "Manufacturer site",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsMissing": "No manufacturer data sheet found (pubs.shure.com guide URL and shure.com product page checked; content-files spec sheet URLs refused)."
+  },
+  "ports": []
+}

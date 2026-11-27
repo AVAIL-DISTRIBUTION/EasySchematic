@@ -1,0 +1,53 @@
+{
+  "id": "avail-shure-mxp-3w",
+  "label": "Shure MXP-3 (White)",
+  "shortName": "MXP-3",
+  "manufacturer": "Shure",
+  "modelNumber": "MXP-3W",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers/mxp-3",
+  "searchTerms": [
+    "mxp-3w",
+    "mxp-3",
+    "shure",
+    "white"
+  ],
+  "heightMm": 283.5,
+  "widthMm": 90,
+  "depthMm": 48.5,
+  "weightKg": 0.61,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "Wall Mount Passive Loudspeaker",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXP-3/en-US.pdf",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXP-3-user-guide.pdf",
+      "note": "MXP-3 user guide p.4 (Parts) and pp.9-10 (Specifications)"
+    },
+    "notes": "Dimensions published as 283.5 x 90 x 48.5 mm without axis labels (p.10); taken in that order as H x W x D (can be wall-mounted either orientation)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "2-pin block 5.08 mm (Jiekle 2EDG-5.08); 4 ohm, 10 W max (IEC 60268-5); low impedance only"
+    }
+  ]
+}

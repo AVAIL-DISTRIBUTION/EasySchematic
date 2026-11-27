@@ -1,0 +1,61 @@
+{
+  "id": "avail-shure-ha-8091",
+  "label": "Shure HA-8091 (Domed Helical Antenna)",
+  "shortName": "HA-8091",
+  "manufacturer": "Shure",
+  "modelNumber": "HA-8091",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ha-8091",
+  "searchTerms": [
+    "ha-8091",
+    "shure",
+    "domed",
+    "helical",
+    "antenna"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Domed Helical Antenna",
+    "rackFormSource": "Non-rack",
+    "description": "Domed Helical Antenna",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/HA/HA-8091_Specsheet.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/HA-8091_Specsheet.pdf",
+      "note": "Overview and specifications, p.1"
+    }
+  },
+  "heightMm": 345,
+  "widthMm": 345,
+  "depthMm": 159,
+  "weightKg": 1.7,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF",
+      "signalType": "rf",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female right-angle, 50 ohm, passive helical; 460-900 MHz; to receiver/distribution input or from IEM transmitter/combiner"
+    },
+    {
+      "id": "p2",
+      "label": "Antenna (Wireless)",
+      "signalType": "rf",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link for microphone, in-ear and intercom systems; circular polarization, 9-11 dBi, 72 degree beam width"
+    }
+  ]
+}

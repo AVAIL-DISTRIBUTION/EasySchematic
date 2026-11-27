@@ -1,0 +1,58 @@
+{
+  "id": "avail-shure-mxn5w-c-tb-v",
+  "label": "Shure MXN5W-C (5.25\" W Networked Loudspkr + Tile Bridge)",
+  "shortName": "MXN5W-C",
+  "manufacturer": "Shure",
+  "modelNumber": "MXN5W-C+TB-V",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers/mxn5",
+  "searchTerms": [
+    "mxn5w-c+tb-v",
+    "mxn5w-c",
+    "shure",
+    "5.25\"",
+    "w",
+    "networked",
+    "loudspkr",
+    "+",
+    "tile",
+    "bridge"
+  ],
+  "weightKg": 3,
+  "voltage": "PoE+ 802.3at class 4",
+  "poeDrawW": 24,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "5.25\" W Networked Loudspkr + Tile Bridge",
+    "rackFormSource": "Non-rack",
+    "description": "Networked Loudspeaker",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/mxn5w/mxn5w-c-loudspeaker-spec-sheet-letter-en.pdf",
+    "note": "Also runs on PoE class 0 (12 W max) with reduced output.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/mxn5w-c-loudspeaker-spec-sheet-letter-en.pdf",
+      "note": "MXN5W-C spec sheet p.1 (Loudspeaker details; soft bundle MXN5W-C+TB-V = MXN5W-C + A-MXN5-TB)"
+    },
+    "notes": "Bundle with A-MXN5-TB tile bridge: loudspeaker alone is 304.8 x 304.8 x 101.6 mm, 2.95 kg (spec sheet p.1); bundle dimensions/weight not published, card values left as is."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE+)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 2 in / 1 out and control; the only power input, PoE+ class 4 (24 W max) or PoE class 0 (12 W max, reduced output)"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "avail-shure-ani4in-xlr",
+  "label": "Shure ANI4IN (4Ch Mic/Line In-Dnte,1/3Ru,Xlr)",
+  "shortName": "ANI4IN",
+  "manufacturer": "Shure",
+  "modelNumber": "ANI4IN-XLR",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/mixers/ani4in",
+  "searchTerms": [
+    "ani4in-xlr",
+    "ani4in",
+    "shure",
+    "4ch",
+    "mic/line",
+    "in-dnte",
+    "1/3ru",
+    "xlr"
+  ],
+  "heightMm": 40,
+  "widthMm": 140,
+  "depthMm": 128,
+  "weightKg": 0.672,
+  "voltage": "PoE 802.3af class 0",
+  "poeDrawW": 10,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "4Ch Mic/Line In-Dnte,1/3Ru,Xlr",
+    "rackFormSource": "Shelf",
+    "description": "ANI4IN Audio Network Interface",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/file/259906",
+    "note": "1/3 rack unit - mounts in CRT1 tray; Shelf selected. Price list net weight 0.965 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/pubs-259906.pdf",
+      "note": "ANI4IN spec sheet p.1 (Inputs: ANI4IN-XLR 4x XLR; Output 1x RJ45; logic on block version only)"
+    },
+    "notes": "weightKg: card had 0.7, document gives 0.672 (pubs-259906.pdf)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR, active balanced mic/line, +48 V phantom selectable per channel, 51 dB gain"
+    },
+    {
+      "id": "p2",
+      "label": "Audio In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR, active balanced mic/line, +48 V phantom selectable per channel, 51 dB gain"
+    },
+    {
+      "id": "p3",
+      "label": "Audio In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR, active balanced mic/line, +48 V phantom selectable per channel, 51 dB gain"
+    },
+    {
+      "id": "p4",
+      "label": "Audio In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR, active balanced mic/line, +48 V phantom selectable per channel, 51 dB gain"
+    },
+    {
+      "id": "p5",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante 4 out and control; the only power input, PoE class 0 (10 W max)"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "avail-shure-ua860v",
+  "label": "Shure UA860V (Passive Omni Directional Antenna)",
+  "shortName": "UA860V",
+  "manufacturer": "Shure",
+  "modelNumber": "UA860V",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua860v",
+  "searchTerms": [
+    "ua860v",
+    "shure",
+    "passive",
+    "omni",
+    "directional",
+    "antenna"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Passive Omni Directional Antenna",
+    "rackFormSource": "Non-rack",
+    "description": "Omnidirectional VHF Antenna",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA860V/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA860V-user-guide.pdf",
+      "note": "Installation p.1; specifications p.2"
+    },
+    "notes": "Width/depth = 39 mm diameter (guide p.2: 284 mm x 39 mm dia.); weight without cable."
+  },
+  "heightMm": 284,
+  "widthMm": 39,
+  "depthMm": 39,
+  "weightKg": 0.275,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm, passive; to receiver or antenna distribution system; 174-216 MHz"
+    },
+    {
+      "id": "p2",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from transmitters; omnidirectional dipole (UA8 antenna on top plate)"
+    }
+  ]
+}

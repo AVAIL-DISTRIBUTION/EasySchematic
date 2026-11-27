@@ -1,6 +1,6 @@
 {
  "version": 1,
- "count": 1963,
+ "count": 2158,
  "templates": [
   {
    "file": "extron/extron-nav-10e-101-mm.json",
@@ -14313,6 +14313,1566 @@
    "partNumber": "910-00336",
    "deviceType": "expansion-card",
    "category": "Audio Products / Power Amplifiers"
+  },
+  {
+   "file": "shure/shure-scm262-stereo-mixer.json",
+   "id": "avail-shure-scm262e",
+   "label": "Shure SCM262 (Stereo Mixer)",
+   "partNumber": "SCM262E",
+   "deviceType": "audio-mixer",
+   "category": "Audio Products / Mixers"
+  },
+  {
+   "file": "shure/shure-scm268-microphone-mixer.json",
+   "id": "avail-shure-scm268e",
+   "label": "Shure SCM268 (Microphone Mixer)",
+   "partNumber": "SCM268E",
+   "deviceType": "audio-mixer",
+   "category": "Audio Products / Mixers"
+  },
+  {
+   "file": "shure/shure-scm810-microphone-mixer.json",
+   "id": "avail-shure-scm810e",
+   "label": "Shure SCM810 (Microphone Mixer)",
+   "partNumber": "SCM810E",
+   "deviceType": "audio-mixer",
+   "category": "Audio Products / Mixers"
+  },
+  {
+   "file": "shure/shure-mxa-network-mute-button-network-mute-button.json",
+   "id": "avail-shure-mxa-nmb",
+   "label": "Shure MXA Network Mute Button (Network Mute Button)",
+   "partNumber": "MXA-NMB",
+   "deviceType": "button-panel",
+   "category": "Audio Products / Control"
+  },
+  {
+   "file": "shure/shure-mxa-network-mute-button-network-mute-button-no-icon.json",
+   "id": "avail-shure-mxa-nmb-blank",
+   "label": "Shure MXA Network Mute Button (Network Mute Button No Icon)",
+   "partNumber": "MXA-NMB/BLANK",
+   "deviceType": "button-panel",
+   "category": "Audio Products / Control"
+  },
+  {
+   "file": "shure/shure-ani22-2-ch-in-2-ch-out-dante-1-3-ru-block.json",
+   "id": "avail-shure-ani22-block",
+   "label": "Shure ANI22 (2 Ch In/2 Ch Out - Dante, 1/3 Ru, Block)",
+   "partNumber": "ANI22-BLOCK",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-ani22-2-ch-in-2-ch-out-dante-1-3-ru-xlr.json",
+   "id": "avail-shure-ani22-xlr",
+   "label": "Shure ANI22 (2 Ch In/2 Ch Out - Dante, 1/3 Ru, Xlr)",
+   "partNumber": "ANI22-XLR",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-ani4in-4ch-mic-line-in-dnte-lgc-1-3ru-block.json",
+   "id": "avail-shure-ani4in-block",
+   "label": "Shure ANI4IN (4Ch Mic/Line In-Dnte+Lgc,1/3Ru,Block)",
+   "partNumber": "ANI4IN-BLOCK",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-ani4in-4ch-mic-line-in-dnte-1-3ru-xlr.json",
+   "id": "avail-shure-ani4in-xlr",
+   "label": "Shure ANI4IN (4Ch Mic/Line In-Dnte,1/3Ru,Xlr)",
+   "partNumber": "ANI4IN-XLR",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-ani4out-4ch-mic-line-out-dnte-1-3ru-block.json",
+   "id": "avail-shure-ani4out-block",
+   "label": "Shure ANI4OUT (4Ch Mic/Line Out-Dnte,1/3Ru,Block)",
+   "partNumber": "ANI4OUT-BLOCK",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-ani4out-4ch-mic-line-out-dnte-1-3ru-xlr.json",
+   "id": "avail-shure-ani4out-xlr",
+   "label": "Shure ANI4OUT (4Ch Mic/Line Out-Dnte,1/3Ru,Xlr)",
+   "partNumber": "ANI4OUT-XLR",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-aniusb-c-interface-usb-c-dante.json",
+   "id": "avail-shure-aniusb-c",
+   "label": "Shure ANIUSB-C (Interface, Usb-C, Dante)",
+   "partNumber": "ANIUSB-C",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-aniusb-matrix-4ch-in-2ch-out-usb-matrix-mix-dnte-block.json",
+   "id": "avail-shure-aniusb-matrix",
+   "label": "Shure ANIUSB-MATRIX (4Ch In/2Ch Out Usb Matrix Mix,Dnte,Block)",
+   "partNumber": "ANIUSB-MATRIX",
+   "deviceType": "audio-interface",
+   "category": "Audio Products / Interfaces"
+  },
+  {
+   "file": "shure/shure-mxa320-aluminum.json",
+   "id": "avail-shure-mxa320al",
+   "label": "Shure MXA320 (Aluminum)",
+   "partNumber": "MXA320AL",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa320-black.json",
+   "id": "avail-shure-mxa320b",
+   "label": "Shure MXA320 (Black)",
+   "partNumber": "MXA320B",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa320-white.json",
+   "id": "avail-shure-mxa320w",
+   "label": "Shure MXA320 (White)",
+   "partNumber": "MXA320W",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa710-aluminum-2-ft.json",
+   "id": "avail-shure-mxa710al-2ft",
+   "label": "Shure MXA710 (Aluminum, 2 ft)",
+   "partNumber": "MXA710AL-2FT",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa710-aluminum-4-ft.json",
+   "id": "avail-shure-mxa710al-4ft",
+   "label": "Shure MXA710 (Aluminum, 4 ft)",
+   "partNumber": "MXA710AL-4FT",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa710-black-2-ft.json",
+   "id": "avail-shure-mxa710b-2ft",
+   "label": "Shure MXA710 (Black, 2 ft)",
+   "partNumber": "MXA710B-2FT",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa710-black-4-ft.json",
+   "id": "avail-shure-mxa710b-4ft",
+   "label": "Shure MXA710 (Black, 4 ft)",
+   "partNumber": "MXA710B-4FT",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa710-white-2-ft.json",
+   "id": "avail-shure-mxa710w-2ft",
+   "label": "Shure MXA710 (White, 2 ft)",
+   "partNumber": "MXA710W-2FT",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa710-white-4-ft.json",
+   "id": "avail-shure-mxa710w-4ft",
+   "label": "Shure MXA710 (White, 4 ft)",
+   "partNumber": "MXA710W-4FT",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa901-aluminum.json",
+   "id": "avail-shure-mxa901al-r",
+   "label": "Shure MXA901 (Aluminum)",
+   "partNumber": "MXA901AL-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa901-black.json",
+   "id": "avail-shure-mxa901b-r",
+   "label": "Shure MXA901 (Black)",
+   "partNumber": "MXA901B-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa901-white.json",
+   "id": "avail-shure-mxa901w-r",
+   "label": "Shure MXA901 (White)",
+   "partNumber": "MXA901W-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa902-white-square.json",
+   "id": "avail-shure-mxa902w-s",
+   "label": "Shure MXA902 (White, Square)",
+   "partNumber": "MXA902W-S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa902-white-square-60-cm.json",
+   "id": "avail-shure-mxa902w-s-60cm",
+   "label": "Shure MXA902 (White, Square 60 cm)",
+   "partNumber": "MXA902W-S-60CM",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa920-aluminum-round.json",
+   "id": "avail-shure-mxa920al-r",
+   "label": "Shure MXA920 (Aluminum, Round)",
+   "partNumber": "MXA920AL-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa920-black-round.json",
+   "id": "avail-shure-mxa920b-r",
+   "label": "Shure MXA920 (Black, Round)",
+   "partNumber": "MXA920B-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa920-white-round.json",
+   "id": "avail-shure-mxa920w-r",
+   "label": "Shure MXA920 (White, Round)",
+   "partNumber": "MXA920W-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa920-white-square.json",
+   "id": "avail-shure-mxa920w-s",
+   "label": "Shure MXA920 (White, Square)",
+   "partNumber": "MXA920W-S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa920-white-square-60-cm.json",
+   "id": "avail-shure-mxa920w-s-60cm",
+   "label": "Shure MXA920 (White, Square 60 cm)",
+   "partNumber": "MXA920W-S-60CM",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa925-black-round.json",
+   "id": "avail-shure-mxa925b-r",
+   "label": "Shure MXA925 (Black, Round)",
+   "partNumber": "MXA925B-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa925-black-square.json",
+   "id": "avail-shure-mxa925b-s",
+   "label": "Shure MXA925 (Black, Square)",
+   "partNumber": "MXA925B-S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa925-black-square-60-cm.json",
+   "id": "avail-shure-mxa925b-s-60cm",
+   "label": "Shure MXA925 (Black, Square 60 cm)",
+   "partNumber": "MXA925B-S-60CM",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa925-white-round.json",
+   "id": "avail-shure-mxa925w-r",
+   "label": "Shure MXA925 (White, Round)",
+   "partNumber": "MXA925W-R",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa925-white-square.json",
+   "id": "avail-shure-mxa925w-s",
+   "label": "Shure MXA925 (White, Square)",
+   "partNumber": "MXA925W-S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxa925-white-square-60-cm.json",
+   "id": "avail-shure-mxa925w-s-60cm",
+   "label": "Shure MXA925 (White, Square 60 cm)",
+   "partNumber": "MXA925W-S-60CM",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-mxwapx4-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwapx4-z11",
+   "label": "Shure MXWAPX4 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWAPX4=-Z11",
+   "deviceType": "access-point",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwapx4-z11-1-9-ghz-dect-eu-mea-eg-version.json",
+   "id": "avail-shure-mxwapx4eg-z11",
+   "label": "Shure MXWAPX4 (Z11 (1.9 GHz DECT, EU/MEA), EG version)",
+   "partNumber": "MXWAPX4EG=-Z11",
+   "deviceType": "access-point",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwapx8-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwapx8-z11",
+   "label": "Shure MXWAPX8 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWAPX8=-Z11",
+   "deviceType": "access-point",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwapx8-z11-1-9-ghz-dect-eu-mea-eg-version.json",
+   "id": "avail-shure-mxwapx8eg-z11",
+   "label": "Shure MXWAPX8 (Z11 (1.9 GHz DECT, EU/MEA), EG version)",
+   "partNumber": "MXWAPX8EG=-Z11",
+   "deviceType": "access-point",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwapxd2-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwapxd2e-z11",
+   "label": "Shure MXWAPXD2 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWAPXD2E=-Z11",
+   "deviceType": "access-point",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwapxd2-z11-1-9-ghz-dect-eu-mea-eg-version.json",
+   "id": "avail-shure-mxwapxd2eg-z11",
+   "label": "Shure MXWAPXD2 (Z11 (1.9 GHz DECT, EU/MEA), EG version)",
+   "partNumber": "MXWAPXD2EG=-Z11",
+   "deviceType": "access-point",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxn-5-black.json",
+   "id": "avail-shure-mxn-5b",
+   "label": "Shure MXN-5 (Black)",
+   "partNumber": "MXN-5B",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxn-5-white.json",
+   "id": "avail-shure-mxn-5w",
+   "label": "Shure MXN-5 (White)",
+   "partNumber": "MXN-5W",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxn5w-c-white.json",
+   "id": "avail-shure-mxn5w-c",
+   "label": "Shure MXN5W-C (White)",
+   "partNumber": "MXN5W-C",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxn5w-c-5-25-w-networked-loudspkr-tile-bridge.json",
+   "id": "avail-shure-mxn5w-c-tb-v",
+   "label": "Shure MXN5W-C (5.25\" W Networked Loudspkr + Tile Bridge)",
+   "partNumber": "MXN5W-C+TB-V",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxn-6-black.json",
+   "id": "avail-shure-mxn-6b",
+   "label": "Shure MXN-6 (Black)",
+   "partNumber": "MXN-6B",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxn-6-white.json",
+   "id": "avail-shure-mxn-6w",
+   "label": "Shure MXN-6 (White)",
+   "partNumber": "MXN-6W",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxn-amp-networked-dante-low-imp-70v-poe-amp.json",
+   "id": "avail-shure-mxn-amp",
+   "label": "Shure MXN-AMP (Networked Dante Low Imp/70V Poe+ Amp)",
+   "partNumber": "MXN-AMP",
+   "deviceType": "amplifier",
+   "category": "Audio Products / Power Amplifiers"
+  },
+  {
+   "file": "shure/shure-mxp-1-black.json",
+   "id": "avail-shure-mxp-1b",
+   "label": "Shure MXP-1 (Black)",
+   "partNumber": "MXP-1B",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-1-white.json",
+   "id": "avail-shure-mxp-1w",
+   "label": "Shure MXP-1 (White)",
+   "partNumber": "MXP-1W",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-3-black.json",
+   "id": "avail-shure-mxp-3b",
+   "label": "Shure MXP-3 (Black)",
+   "partNumber": "MXP-3B",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-3-white.json",
+   "id": "avail-shure-mxp-3w",
+   "label": "Shure MXP-3 (White)",
+   "partNumber": "MXP-3W",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-5-black.json",
+   "id": "avail-shure-mxp-5b",
+   "label": "Shure MXP-5 (Black)",
+   "partNumber": "MXP-5B",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-5-mxp-5b-and-new-construction-bracket.json",
+   "id": "avail-shure-mxp-5b-ncb-v",
+   "label": "Shure MXP-5 (Mxp-5B And New Construction Bracket)",
+   "partNumber": "MXP-5B-NCB-V",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-5-mxp-5b-and-tilebridge.json",
+   "id": "avail-shure-mxp-5b-tb-v",
+   "label": "Shure MXP-5 (Mxp-5B And Tilebridge)",
+   "partNumber": "MXP-5B-TB-V",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-5-white.json",
+   "id": "avail-shure-mxp-5w",
+   "label": "Shure MXP-5 (White)",
+   "partNumber": "MXP-5W",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-5-mxp-5w-and-new-construction-bracket.json",
+   "id": "avail-shure-mxp-5w-ncb-v",
+   "label": "Shure MXP-5 (Mxp-5W And New Construction Bracket)",
+   "partNumber": "MXP-5W-NCB-V",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-5-mxp-5w-and-tilebridge.json",
+   "id": "avail-shure-mxp-5w-tb-v",
+   "label": "Shure MXP-5 (Mxp-5W And Tilebridge)",
+   "partNumber": "MXP-5W-TB-V",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-6-black.json",
+   "id": "avail-shure-mxp-6b",
+   "label": "Shure MXP-6 (Black)",
+   "partNumber": "MXP-6B",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-mxp-6-white.json",
+   "id": "avail-shure-mxp-6w",
+   "label": "Shure MXP-6 (White)",
+   "partNumber": "MXP-6W",
+   "deviceType": "speaker",
+   "category": "Audio Products / Speakers"
+  },
+  {
+   "file": "shure/shure-intellimix-p300-audio-conferencing-processor.json",
+   "id": "avail-shure-p300-imx",
+   "label": "Shure IntelliMix P300 (Audio Conferencing Processor)",
+   "partNumber": "P300-IMX",
+   "deviceType": "audio-dsp",
+   "category": "Audio Products / DSP"
+  },
+  {
+   "file": "shure/shure-mxcwapt-wireless-access-point-5ghz-2-4ghz-world.json",
+   "id": "avail-shure-mxcwapt-w",
+   "label": "Shure MXCWAPT (Wireless Access Point 5Ghz/2.4Ghz,World)",
+   "partNumber": "MXCWAPT-W",
+   "deviceType": "access-point",
+   "category": "Audio Products / Discussion Systems"
+  },
+  {
+   "file": "shure/shure-mxcwncs-networked-charging-station-10bay-sb930.json",
+   "id": "avail-shure-mxcwncs-e",
+   "label": "Shure MXCWNCS (Networked Charging Station, 10Bay Sb930)",
+   "partNumber": "MXCWNCS-E",
+   "deviceType": "charging-station",
+   "category": "Audio Products / Discussion Systems"
+  },
+  {
+   "file": "shure/shure-mx202-black-cardioid-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202b-c",
+   "label": "Shure MX202 (Black, Cardioid, In-line XLR preamp)",
+   "partNumber": "MX202B/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-black-mini-shotgun-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202b-ms",
+   "label": "Shure MX202 (Black, Mini-shotgun, In-line XLR preamp)",
+   "partNumber": "MX202B/MS",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-black-no-cartridge-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202b-n",
+   "label": "Shure MX202 (Black, No cartridge, In-line XLR preamp)",
+   "partNumber": "MX202B/N",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-black-supercardioid-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202b-s",
+   "label": "Shure MX202 (Black, Supercardioid, In-line XLR preamp)",
+   "partNumber": "MX202B/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-black-cardioid-plate-mount-preamp.json",
+   "id": "avail-shure-mx202bp-c",
+   "label": "Shure MX202 (Black, Cardioid, Plate-mount preamp)",
+   "partNumber": "MX202BP/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-black-mini-shotgun-plate-mount-preamp.json",
+   "id": "avail-shure-mx202bp-ms",
+   "label": "Shure MX202 (Black, Mini-shotgun, Plate-mount preamp)",
+   "partNumber": "MX202BP/MS",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-black-no-cartridge-plate-mount-preamp.json",
+   "id": "avail-shure-mx202bp-n",
+   "label": "Shure MX202 (Black, No cartridge, Plate-mount preamp)",
+   "partNumber": "MX202BP/N",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-black-supercardioid-plate-mount-preamp.json",
+   "id": "avail-shure-mx202bp-s",
+   "label": "Shure MX202 (Black, Supercardioid, Plate-mount preamp)",
+   "partNumber": "MX202BP/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-cardioid-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202w-a-c",
+   "label": "Shure MX202 (White, Cardioid, In-line XLR preamp)",
+   "partNumber": "MX202W-A/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-mini-shotgun-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202w-a-ms",
+   "label": "Shure MX202 (White, Mini-shotgun, In-line XLR preamp)",
+   "partNumber": "MX202W-A/MS",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-no-cartridge-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202w-a-n",
+   "label": "Shure MX202 (White, No cartridge, In-line XLR preamp)",
+   "partNumber": "MX202W-A/N",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-supercardioid-in-line-xlr-preamp.json",
+   "id": "avail-shure-mx202w-a-s",
+   "label": "Shure MX202 (White, Supercardioid, In-line XLR preamp)",
+   "partNumber": "MX202W-A/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-cardioid-plate-mount-preamp.json",
+   "id": "avail-shure-mx202wp-a-c",
+   "label": "Shure MX202 (White, Cardioid, Plate-mount preamp)",
+   "partNumber": "MX202WP-A/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-mini-shotgun-plate-mount-preamp.json",
+   "id": "avail-shure-mx202wp-a-ms",
+   "label": "Shure MX202 (White, Mini-shotgun, Plate-mount preamp)",
+   "partNumber": "MX202WP-A/MS",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-no-cartridge-plate-mount-preamp.json",
+   "id": "avail-shure-mx202wp-a-n",
+   "label": "Shure MX202 (White, No cartridge, Plate-mount preamp)",
+   "partNumber": "MX202WP-A/N",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx202-white-supercardioid-plate-mount-preamp.json",
+   "id": "avail-shure-mx202wp-a-s",
+   "label": "Shure MX202 (White, Supercardioid, Plate-mount preamp)",
+   "partNumber": "MX202WP-A/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx391-cardioid.json",
+   "id": "avail-shure-mx391-c",
+   "label": "Shure MX391 (Cardioid)",
+   "partNumber": "MX391/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx391-omni.json",
+   "id": "avail-shure-mx391-o",
+   "label": "Shure MX391 (Omni)",
+   "partNumber": "MX391/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx391-supercardioid.json",
+   "id": "avail-shure-mx391-s",
+   "label": "Shure MX391 (Supercardioid)",
+   "partNumber": "MX391/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx391-white-cardioid.json",
+   "id": "avail-shure-mx391w-a-c",
+   "label": "Shure MX391 (White, Cardioid)",
+   "partNumber": "MX391W-A/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx391-white-omni.json",
+   "id": "avail-shure-mx391w-a-o",
+   "label": "Shure MX391 (White, Omni)",
+   "partNumber": "MX391W-A/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx391-white-supercardioid.json",
+   "id": "avail-shure-mx391w-a-s",
+   "label": "Shure MX391 (White, Supercardioid)",
+   "partNumber": "MX391W-A/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx392-cardioid.json",
+   "id": "avail-shure-mx392-c",
+   "label": "Shure MX392 (Cardioid)",
+   "partNumber": "MX392/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx392-omni.json",
+   "id": "avail-shure-mx392-o",
+   "label": "Shure MX392 (Omni)",
+   "partNumber": "MX392/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx392-supercardioid.json",
+   "id": "avail-shure-mx392-s",
+   "label": "Shure MX392 (Supercardioid)",
+   "partNumber": "MX392/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx392-black-cardioid.json",
+   "id": "avail-shure-mx392be-c",
+   "label": "Shure MX392 (Black, Cardioid)",
+   "partNumber": "MX392BE/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx392-black-omni.json",
+   "id": "avail-shure-mx392be-o",
+   "label": "Shure MX392 (Black, Omni)",
+   "partNumber": "MX392BE/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx392-black-supercardioid.json",
+   "id": "avail-shure-mx392be-s",
+   "label": "Shure MX392 (Black, Supercardioid)",
+   "partNumber": "MX392BE/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx393-cardioid.json",
+   "id": "avail-shure-mx393-c",
+   "label": "Shure MX393 (Cardioid)",
+   "partNumber": "MX393/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx393-omni.json",
+   "id": "avail-shure-mx393-o",
+   "label": "Shure MX393 (Omni)",
+   "partNumber": "MX393/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx393-supercardioid.json",
+   "id": "avail-shure-mx393-s",
+   "label": "Shure MX393 (Supercardioid)",
+   "partNumber": "MX393/S",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-aluminum-bidirectional.json",
+   "id": "avail-shure-mx395al-bi",
+   "label": "Shure MX395 (Aluminum, Bidirectional)",
+   "partNumber": "MX395AL/BI",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-aluminum-bidirectional-with-led.json",
+   "id": "avail-shure-mx395al-bi-led",
+   "label": "Shure MX395 (Aluminum, Bidirectional, with LED)",
+   "partNumber": "MX395AL/BI-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-aluminum-cardioid.json",
+   "id": "avail-shure-mx395al-c",
+   "label": "Shure MX395 (Aluminum, Cardioid)",
+   "partNumber": "MX395AL/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-aluminum-cardioid-with-led.json",
+   "id": "avail-shure-mx395al-c-led",
+   "label": "Shure MX395 (Aluminum, Cardioid, with LED)",
+   "partNumber": "MX395AL/C-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-aluminum-omni.json",
+   "id": "avail-shure-mx395al-o",
+   "label": "Shure MX395 (Aluminum, Omni)",
+   "partNumber": "MX395AL/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-aluminum-omni-with-led.json",
+   "id": "avail-shure-mx395al-o-led",
+   "label": "Shure MX395 (Aluminum, Omni, with LED)",
+   "partNumber": "MX395AL/O-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-black-bidirectional.json",
+   "id": "avail-shure-mx395b-bi",
+   "label": "Shure MX395 (Black, Bidirectional)",
+   "partNumber": "MX395B/BI",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-black-bidirectional-with-led.json",
+   "id": "avail-shure-mx395b-bi-led",
+   "label": "Shure MX395 (Black, Bidirectional, with LED)",
+   "partNumber": "MX395B/BI-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-black-cardioid.json",
+   "id": "avail-shure-mx395b-c",
+   "label": "Shure MX395 (Black, Cardioid)",
+   "partNumber": "MX395B/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-black-cardioid-with-led.json",
+   "id": "avail-shure-mx395b-c-led",
+   "label": "Shure MX395 (Black, Cardioid, with LED)",
+   "partNumber": "MX395B/C-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-black-omni.json",
+   "id": "avail-shure-mx395b-o",
+   "label": "Shure MX395 (Black, Omni)",
+   "partNumber": "MX395B/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-black-omni-with-led.json",
+   "id": "avail-shure-mx395b-o-led",
+   "label": "Shure MX395 (Black, Omni, with LED)",
+   "partNumber": "MX395B/O-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-white-bidirectional.json",
+   "id": "avail-shure-mx395w-bi",
+   "label": "Shure MX395 (White, Bidirectional)",
+   "partNumber": "MX395W/BI",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-white-bidirectional-with-led.json",
+   "id": "avail-shure-mx395w-bi-led",
+   "label": "Shure MX395 (White, Bidirectional, with LED)",
+   "partNumber": "MX395W/BI-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-white-cardioid.json",
+   "id": "avail-shure-mx395w-c",
+   "label": "Shure MX395 (White, Cardioid)",
+   "partNumber": "MX395W/C",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-white-cardioid-with-led.json",
+   "id": "avail-shure-mx395w-c-led",
+   "label": "Shure MX395 (White, Cardioid, with LED)",
+   "partNumber": "MX395W/C-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-white-omni.json",
+   "id": "avail-shure-mx395w-o",
+   "label": "Shure MX395 (White, Omni)",
+   "partNumber": "MX395W/O",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx395-white-omni-with-led.json",
+   "id": "avail-shure-mx395w-o-led",
+   "label": "Shure MX395 (White, Omni, with LED)",
+   "partNumber": "MX395W/O-LED",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx396-cardioid-dual.json",
+   "id": "avail-shure-mx396-c-dual",
+   "label": "Shure MX396 (Cardioid, Dual)",
+   "partNumber": "MX396/C-DUAL",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx396-cardioid-tri.json",
+   "id": "avail-shure-mx396-c-tri",
+   "label": "Shure MX396 (Cardioid, Tri)",
+   "partNumber": "MX396/C-TRI",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Wired microphones"
+  },
+  {
+   "file": "shure/shure-mx400dp-desktop-preamp.json",
+   "id": "avail-shure-mx400dp",
+   "label": "Shure MX400DP (Desktop Preamp)",
+   "partNumber": "MX400DP",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Gooseneck microphones"
+  },
+  {
+   "file": "shure/shure-mx400smp-surface-mount-preamp.json",
+   "id": "avail-shure-mx400smp",
+   "label": "Shure MX400SMP (Surface Mount Preamp)",
+   "partNumber": "MX400SMP",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Gooseneck microphones"
+  },
+  {
+   "file": "shure/shure-intellimix-bar-pro-kit-black.json",
+   "id": "avail-shure-imxbpk-b-e",
+   "label": "Shure IntelliMix Bar Pro Kit (Black)",
+   "partNumber": "IMXBPK-B-E",
+   "deviceType": "video-bar",
+   "category": "UC / Video conference systems"
+  },
+  {
+   "file": "shure/shure-intellimix-bar-pro-kit-white.json",
+   "id": "avail-shure-imxbpk-w-e",
+   "label": "Shure IntelliMix Bar Pro Kit (White)",
+   "partNumber": "IMXBPK-W-E",
+   "deviceType": "video-bar",
+   "category": "UC / Video conference systems"
+  },
+  {
+   "file": "shure/shure-adtd-band-g56-470-636-mhz-dc-powered.json",
+   "id": "avail-shure-adtddc-g56",
+   "label": "Shure ADTD (Band G56 (470-636 MHz), DC powered)",
+   "partNumber": "ADTDDC=-G56",
+   "deviceType": "iem-transmitter",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-adtd-band-g56-470-636-mhz.json",
+   "id": "avail-shure-adtde-g56",
+   "label": "Shure ADTD (Band G56 (470-636 MHz))",
+   "partNumber": "ADTDE=-G56",
+   "deviceType": "iem-transmitter",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-adtq-band-g56-470-636-mhz-dc-powered.json",
+   "id": "avail-shure-adtqdc-g56",
+   "label": "Shure ADTQ (Band G56 (470-636 MHz), DC powered)",
+   "partNumber": "ADTQDC=-G56",
+   "deviceType": "iem-transmitter",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-adtq-band-g56-470-636-mhz.json",
+   "id": "avail-shure-adtqe-g56",
+   "label": "Shure ADTQ (Band G56 (470-636 MHz))",
+   "partNumber": "ADTQE=-G56",
+   "deviceType": "iem-transmitter",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad221-combiner-470-960-mhz.json",
+   "id": "avail-shure-ad221",
+   "label": "Shure AD221 (Combiner 470-960 Mhz)",
+   "partNumber": "AD221",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad221-combiner-960-1260-mhz.json",
+   "id": "avail-shure-ad221x",
+   "label": "Shure AD221 (Combiner 960-1260 Mhz)",
+   "partNumber": "AD221X",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad8c-470-960-mhz-dc-powered.json",
+   "id": "avail-shure-ad8cdc",
+   "label": "Shure AD8C (470-960 MHz, DC powered)",
+   "partNumber": "AD8CDC",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad8c-470-960-mhz.json",
+   "id": "avail-shure-ad8ce",
+   "label": "Shure AD8C (470-960 MHz)",
+   "partNumber": "AD8CE",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad8c-960-1260-mhz-dc-powered.json",
+   "id": "avail-shure-ad8cxdc",
+   "label": "Shure AD8C (960-1260 MHz, DC powered)",
+   "partNumber": "AD8CXDC",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-pa411-four-port-antenna-combiner-470-865-mhz.json",
+   "id": "avail-shure-pa411-e",
+   "label": "Shure PA411 (Four Port Antenna Combiner, 470-865 Mhz)",
+   "partNumber": "PA411-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-pa421b-4-ch-antenna-combiner-470-865-mhz.json",
+   "id": "avail-shure-pa421b-e",
+   "label": "Shure PA421B (4-Ch Antenna Combiner 470-865 Mhz)",
+   "partNumber": "PA421B-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-pa805-unidirectional-super-wideband-antenna.json",
+   "id": "avail-shure-pa805swb",
+   "label": "Shure PA805 (Unidirectional Super Wideband Antenna)",
+   "partNumber": "PA805SWB",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-pa805-passive-directional-antenna.json",
+   "id": "avail-shure-pa805z",
+   "label": "Shure PA805 (Passive Directional Antenna)",
+   "partNumber": "PA805Z",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-pa821b-8-ch-antenna-combiner-470-865-mhz.json",
+   "id": "avail-shure-pa821b-e",
+   "label": "Shure PA821B (8-Ch Antenna Combiner 470-865 Mhz)",
+   "partNumber": "PA821B-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-sbc441-4-bay-charger-for-adxr-no-pwr-sup.json",
+   "id": "avail-shure-sbc441",
+   "label": "Shure SBC441 (4-Bay Charger For Adxr, No Pwr Sup)",
+   "partNumber": "SBC441",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-sbc441-4-bay-charger-for-adxr.json",
+   "id": "avail-shure-sbc441e",
+   "label": "Shure SBC441 (4-Bay Charger For Adxr)",
+   "partNumber": "SBC441E",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-p3t-band-k3e.json",
+   "id": "avail-shure-p3te-k3e",
+   "label": "Shure P3T (Band K3E)",
+   "partNumber": "P3TE=-K3E",
+   "deviceType": "iem-transmitter",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-p9t-band-k1e.json",
+   "id": "avail-shure-p9te-k1e",
+   "label": "Shure P9T (Band K1E)",
+   "partNumber": "P9TE=-K1E",
+   "deviceType": "iem-transmitter",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-dca901-black.json",
+   "id": "avail-shure-dca901",
+   "label": "Shure DCA901 (Black)",
+   "partNumber": "DCA901",
+   "deviceType": "wired-mic",
+   "category": "Microphones / Array microphones"
+  },
+  {
+   "file": "shure/shure-anx4-multi-rx-174mhz-2-0ghz.json",
+   "id": "avail-shure-anx4e",
+   "label": "Shure ANX4 (Multi Rx 174Mhz - 2.0Ghz)",
+   "partNumber": "ANX4E",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-anx4-dc-powered.json",
+   "id": "avail-shure-anx4e-dc",
+   "label": "Shure ANX4 (DC powered)",
+   "partNumber": "ANX4E-DC",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-anx4-less-power-cable.json",
+   "id": "avail-shure-anx4lc",
+   "label": "Shure ANX4 (Less power cable)",
+   "partNumber": "ANX4LC",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-anx4-dc-powered-less-power-cable.json",
+   "id": "avail-shure-anx4lc-dc",
+   "label": "Shure ANX4 (DC powered, Less power cable)",
+   "partNumber": "ANX4LC-DC",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad4d-band-a-470-636-mhz-dc-powered.json",
+   "id": "avail-shure-ad4d-dc-a",
+   "label": "Shure AD4D (Band A (470-636 MHz), DC powered)",
+   "partNumber": "AD4D-DC=-A",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad4d-band-a-470-636-mhz.json",
+   "id": "avail-shure-ad4de-a",
+   "label": "Shure AD4D (Band A (470-636 MHz))",
+   "partNumber": "AD4DE=-A",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad4d-band-a-470-636-mhz-np-version.json",
+   "id": "avail-shure-ad4dnp-a",
+   "label": "Shure AD4D (Band A (470-636 MHz), NP version)",
+   "partNumber": "AD4DNP=-A",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad4q-band-a-470-636-mhz-dc-powered.json",
+   "id": "avail-shure-ad4q-dc-a",
+   "label": "Shure AD4Q (Band A (470-636 MHz), DC powered)",
+   "partNumber": "AD4Q-DC=-A",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad4q-band-a-470-636-mhz.json",
+   "id": "avail-shure-ad4qe-a",
+   "label": "Shure AD4Q (Band A (470-636 MHz))",
+   "partNumber": "AD4QE=-A",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad4q-band-a-470-636-mhz-np-version.json",
+   "id": "avail-shure-ad4qnp-a",
+   "label": "Shure AD4Q (Band A (470-636 MHz), NP version)",
+   "partNumber": "AD4QNP=-A",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ulxd4d-band-g65.json",
+   "id": "avail-shure-ulxd4de-g65",
+   "label": "Shure ULXD4D (Band G65)",
+   "partNumber": "ULXD4DE=-G65",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ulxd4-band-g51.json",
+   "id": "avail-shure-ulxd4e-g51",
+   "label": "Shure ULXD4 (Band G51)",
+   "partNumber": "ULXD4E=-G51",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ulxd4q-band-g65.json",
+   "id": "avail-shure-ulxd4qe-g65",
+   "label": "Shure ULXD4Q (Band G65)",
+   "partNumber": "ULXD4QE=-G65",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-blx4-band-m17.json",
+   "id": "avail-shure-blx4e-m17",
+   "label": "Shure BLX4 (Band M17)",
+   "partNumber": "BLX4E=-M17",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-blx4r-band-m17.json",
+   "id": "avail-shure-blx4re-m17",
+   "label": "Shure BLX4R (Band M17)",
+   "partNumber": "BLX4RE=-M17",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-blx88-band-m17.json",
+   "id": "avail-shure-blx88e-m17",
+   "label": "Shure BLX88 (Band M17)",
+   "partNumber": "BLX88E=-M17",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-qlxd4-band-g51.json",
+   "id": "avail-shure-qlxd4e-g51",
+   "label": "Shure QLXD4 (Band G51)",
+   "partNumber": "QLXD4E=-G51",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-qlxd4-band-l51.json",
+   "id": "avail-shure-qlxd4tw-l51",
+   "label": "Shure QLXD4 (Band L51)",
+   "partNumber": "QLXD4TW=-L51",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-slxd4-band-g65.json",
+   "id": "avail-shure-slxd4-e-g65",
+   "label": "Shure SLXD4+ (Band G65)",
+   "partNumber": "SLXD4+E=-G65",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-slxd4d-band-g65.json",
+   "id": "avail-shure-slxd4d-e-g65",
+   "label": "Shure SLXD4D+ (Band G65)",
+   "partNumber": "SLXD4D+E=-G65",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-slxd4q-band-g65.json",
+   "id": "avail-shure-slxd4q-e-g65",
+   "label": "Shure SLXD4Q+ (Band G65)",
+   "partNumber": "SLXD4Q+E=-G65",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-slxd4qdan-band-g65.json",
+   "id": "avail-shure-slxd4qdan-e-g65",
+   "label": "Shure SLXD4QDAN+ (Band G65)",
+   "partNumber": "SLXD4QDAN+E=-G65",
+   "deviceType": "wireless-mic-receiver",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad600-dc-powered.json",
+   "id": "avail-shure-ad600-dc",
+   "label": "Shure AD600 (DC powered)",
+   "partNumber": "AD600-DC",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad600-ad-spectrum-manager-174mhz-2-0ghz.json",
+   "id": "avail-shure-ad600e",
+   "label": "Shure AD600 (Ad Spectrum Manager 174Mhz - 2.0Ghz)",
+   "partNumber": "AD600E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ad610-ad-showlink-access-point-l-ps43.json",
+   "id": "avail-shure-ad610",
+   "label": "Shure AD610 (Ad Showlink Access Point, L/Ps43)",
+   "partNumber": "AD610",
+   "deviceType": "access-point",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-axt644-antenna-directional-2-4-ghz.json",
+   "id": "avail-shure-axt644",
+   "label": "Shure AXT644 (Antenna, Directional 2.4 Ghz)",
+   "partNumber": "AXT644",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ha-4540-pws-tour-series-helical-antenna.json",
+   "id": "avail-shure-ha-4540",
+   "label": "Shure HA-4540 (Pws Tour Series Helical Antenna)",
+   "partNumber": "HA-4540",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ha-8089-helical-antenna-470-900mhz.json",
+   "id": "avail-shure-ha-8089",
+   "label": "Shure HA-8089 (Helical Antenna, 470-900Mhz)",
+   "partNumber": "HA-8089",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ha-8091-domed-helical-antenna.json",
+   "id": "avail-shure-ha-8091",
+   "label": "Shure HA-8091 (Domed Helical Antenna)",
+   "partNumber": "HA-8091",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-pa805db-rsma-passive-directional-antenna-2-4-5-8ghz.json",
+   "id": "avail-shure-pa805db-rsma",
+   "label": "Shure PA805DB-RSMA (Passive Directional Antenna 2.4& 5.8Ghz)",
+   "partNumber": "PA805DB-RSMA",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua221-uhf-passive-antenna-splitter.json",
+   "id": "avail-shure-ua221",
+   "label": "Shure UA221 (Uhf Passive Antenna Splitter)",
+   "partNumber": "UA221",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua221db-rsma-reverse-sma-passive-splitter-2-4-5-8ghz.json",
+   "id": "avail-shure-ua221db-rsma",
+   "label": "Shure UA221DB-RSMA (Reverse Sma Passive Splitter 2.4& 5.8Ghz)",
+   "partNumber": "UA221DB-RSMA",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua221-passive-antenna-splitter.json",
+   "id": "avail-shure-ua221z",
+   "label": "Shure UA221 (Passive Antenna Splitter)",
+   "partNumber": "UA221Z",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua834-in-line-antenna-amplifier-175-216-mhz.json",
+   "id": "avail-shure-ua834v",
+   "label": "Shure UA834 (In-Line Antenna Amplifier 175-216 Mhz)",
+   "partNumber": "UA834V",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua834-in-line-antenna-amplifier-470-900mhz.json",
+   "id": "avail-shure-ua834wb",
+   "label": "Shure UA834 (In-Line Antenna Amplifier 470-900Mhz)",
+   "partNumber": "UA834WB",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua844-lc-470-960-mhz-less-power-cable.json",
+   "id": "avail-shure-ua844-swb-lc-e",
+   "label": "Shure UA844+/LC (470-960 MHz, Less power cable)",
+   "partNumber": "UA844+SWB/LC-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua844-470-960-mhz.json",
+   "id": "avail-shure-ua844-swb-e",
+   "label": "Shure UA844+ (470-960 MHz)",
+   "partNumber": "UA844+SWB-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua844-lc-174-216-mhz-less-power-cable.json",
+   "id": "avail-shure-ua844-v-lc-e",
+   "label": "Shure UA844+/LC (174-216 MHz, Less power cable)",
+   "partNumber": "UA844+V/LC-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua844-174-216-mhz.json",
+   "id": "avail-shure-ua844-v-e",
+   "label": "Shure UA844+ (174-216 MHz)",
+   "partNumber": "UA844+V-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua845uwb-less-power-cable.json",
+   "id": "avail-shure-ua845uwb-lc-e",
+   "label": "Shure UA845UWB (Less power cable)",
+   "partNumber": "UA845UWB/LC-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua845uwb-ultra-wideband-ant-pwr-dist-system.json",
+   "id": "avail-shure-ua845uwb-e",
+   "label": "Shure UA845UWB (Ultra Wideband Ant/Pwr Dist System)",
+   "partNumber": "UA845UWB-E",
+   "deviceType": "antenna-distribution",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua860swb-antenna-1-2-wave-omni.json",
+   "id": "avail-shure-ua860swb",
+   "label": "Shure UA860SWB (Antenna, 1/2 Wave Omni)",
+   "partNumber": "UA860SWB",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua860v-passive-omni-directional-antenna.json",
+   "id": "avail-shure-ua860v",
+   "label": "Shure UA860V (Passive Omni Directional Antenna)",
+   "partNumber": "UA860V",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua864-wall-ceiling-antenna-650-952-mhz.json",
+   "id": "avail-shure-ua864a",
+   "label": "Shure UA864 (Wall/Ceiling Antenna,  650-952 Mhz)",
+   "partNumber": "UA864A",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua864-wall-ceiling-antenna-530-790mhz.json",
+   "id": "avail-shure-ua864hi",
+   "label": "Shure UA864 (Wall/Ceiling Antenna, 530-790Mhz)",
+   "partNumber": "UA864HI",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua864-wall-ceiling-antenna-470-698mhz.json",
+   "id": "avail-shure-ua864lo",
+   "label": "Shure UA864 (Wall/Ceiling Antenna,  470-698Mhz)",
+   "partNumber": "UA864LO",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua874-active-directional-antenna-470-698mhz.json",
+   "id": "avail-shure-ua874us",
+   "label": "Shure UA874 (Active Directional Antenna 470-698Mhz)",
+   "partNumber": "UA874US",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua874-active-directional-antenna.json",
+   "id": "avail-shure-ua874v",
+   "label": "Shure UA874 (Active Directional Antenna)",
+   "partNumber": "UA874V",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-ua874-885-68-directional-antenna-470-900mhz.json",
+   "id": "avail-shure-ua874wb",
+   "label": "Shure UA874 (885.68 Directional Antenna 470-900Mhz)",
+   "partNumber": "UA874WB",
+   "deviceType": "antenna",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-uabiast-bias-t-module-with-power-supply.json",
+   "id": "avail-shure-uabiast-e",
+   "label": "Shure UABIAST (Bias-T Module With Power Supply)",
+   "partNumber": "UABIAST-E",
+   "deviceType": "power-supply",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx2-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx2",
+   "label": "Shure MXWNDX2 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX2",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx4-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx4e",
+   "label": "Shure MXWNDX4 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX4E",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx4g-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx4ge",
+   "label": "Shure MXWNDX4G (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX4GE",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx8-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx8e",
+   "label": "Shure MXWNDX8 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX8E",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx8g-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx8ge",
+   "label": "Shure MXWNDX8G (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX8GE",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
   },
   {
    "file": "wyrestorm/wyrestorm-amp-2120.json",

@@ -1,0 +1,56 @@
+{
+  "id": "avail-shure-mxa920w-s",
+  "label": "Shure MXA920 (White, Square)",
+  "shortName": "MXA920",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA920W-S",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://pubs.shure.com/guide/MXA920/en-US",
+  "searchTerms": [
+    "mxa920w-s",
+    "mxa920",
+    "shure",
+    "white",
+    "square"
+  ],
+  "heightMm": 54.69,
+  "widthMm": 603.8,
+  "depthMm": 603.8,
+  "weightKg": 5.4,
+  "poeDrawW": 10.1,
+  "voltage": "PoE 802.3af class 0",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, Square",
+    "rackFormSource": "Non-rack",
+    "description": "Ceiling Array Microphone",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXA920/en-US.pdf",
+    "note": "Product page retired (shure.com redirects to successor MXA925); reference = official user guide. Weight: S 5.4 kg, R 5.8 kg. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXA920-user-guide.pdf",
+      "note": "MXA920 Parts p.8-9, PoE p.9, Specifications p.51-53"
+    },
+    "notes": "Variant \"White\" → \"White, Square\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 and control, PoE class 0 (10.1 W max). Dante channels: 1 automix out + 1 AEC reference in; with automatic coverage off, 8 direct outs as well"
+    }
+  ]
+}

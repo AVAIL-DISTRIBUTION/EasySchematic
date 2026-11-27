@@ -1,0 +1,55 @@
+{
+  "id": "avail-shure-mxa320b",
+  "label": "Shure MXA320 (Black)",
+  "shortName": "MXA320",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA320B",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mxa320",
+  "searchTerms": [
+    "mxa320b",
+    "mxa320",
+    "shure",
+    "black"
+  ],
+  "heightMm": 36.3,
+  "widthMm": 134,
+  "depthMm": 134,
+  "weightKg": 0.375,
+  "poeDrawW": 5,
+  "voltage": "PoE 802.3af class 0",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Table Array Microphone",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXA320/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 0.551 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXA320-user-guide.pdf",
+      "note": "MXA320 Parts p.13-14, PoE p.15, Specifications p.50-51, Dimensions p.55"
+    },
+    "notes": "Weight replaced by the user guide p.55 (0.83 lb / 375 g): weightKg was 0.4. Dimensions p.55: A 36.3 mm height, B 134 mm across."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 and control, PoE class 0 (5 W max; class 0 and class 2 sources supported). Dante channels: 4 direct outs, 1 automix out, 1 AEC reference in"
+    }
+  ]
+}

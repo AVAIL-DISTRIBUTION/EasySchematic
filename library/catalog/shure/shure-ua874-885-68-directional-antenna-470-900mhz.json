@@ -1,0 +1,66 @@
+{
+  "id": "avail-shure-ua874wb",
+  "label": "Shure UA874 (885.68 Directional Antenna 470-900Mhz)",
+  "shortName": "UA874",
+  "manufacturer": "Shure",
+  "modelNumber": "UA874WB",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua874",
+  "searchTerms": [
+    "ua874wb",
+    "ua874",
+    "shure",
+    "885.68",
+    "directional",
+    "antenna",
+    "470-900mhz"
+  ],
+  "heightMm": 316,
+  "widthMm": 359,
+  "depthMm": 36,
+  "weightKg": 0.317,
+  "voltage": "10-15V DC (coax bias)",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "885.68 Directional Antenna 470-900Mhz",
+    "rackFormSource": "Non-rack",
+    "description": "Active Directional Antenna",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA874/en-US.pdf",
+    "note": "Powered via coax bias from receiver/distribution amp, 75 mA; W not published. Dimensions/weight from UA874V guide. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 0.953 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA874-user-guide.pdf",
+      "note": "Interface p.1; specifications p.3 (UHF UA874 guide)"
+    },
+    "notes": "Linked UA874V guide covers only the VHF model; replaced by the UHF UA874 guide. Dimensions changed 559 x 435 x 68 mm -> 316 x 359 x 36 mm and weight 0.8 kg -> 0.317 kg per UA874 guide p.3."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm; 10-15 V DC bias (75 mA) from the receiver over the same coax; 470-900 MHz (UA874WB)"
+    },
+    {
+      "id": "p2",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from transmitters"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "avail-shure-mxa925b-s-60cm",
+  "label": "Shure MXA925 (Black, Square 60 cm)",
+  "shortName": "MXA925",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA925B-S-60CM",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mxa925",
+  "searchTerms": [
+    "mxa925b-s-60cm",
+    "mxa925",
+    "shure",
+    "black",
+    "square",
+    "60",
+    "cm"
+  ],
+  "heightMm": 54.69,
+  "widthMm": 593.8,
+  "depthMm": 593.8,
+  "poeDrawW": 12.5,
+  "voltage": "PoE 802.3af class 0",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black, Square 60 cm",
+    "rackFormSource": "Non-rack",
+    "description": "Ceiling Array Microphone",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXA925/en-US.pdf",
+    "note": "MXA925 user guide: PoE class 0, 12.5 W max. Weight S 5.4 kg / R 5.8 kg (by version, see Variant). Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXA925-user-guide.pdf",
+      "note": "MXA925 Parts p.9, PoE p.10, RJ45 Network Ports p.11-12, Specifications p.65-67"
+    },
+    "portsMissing": "The user guide gives weight only for MXA925-S and MXA925-R, not for the -S-60CM version; weight left empty.",
+    "notes": "Variant \"Black\" → \"Black, Square 60 cm\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (Primary, PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Port 1: Dante / AES67 and Shure control, the only PoE input, class 0 (12.5 W max). Dante channels: 1 automix out + 1 AEC reference in; with automatic coverage off, 8 direct outs as well"
+    },
+    {
+      "id": "p2",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Port 2, no PoE. Bimodal (default): secondary Shure control only; Redundant: secondary Dante audio; Switched / Split modes configurable"
+    }
+  ]
+}

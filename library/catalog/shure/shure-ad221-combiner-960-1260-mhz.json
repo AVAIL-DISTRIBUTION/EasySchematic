@@ -1,0 +1,74 @@
+{
+  "id": "avail-shure-ad221x",
+  "label": "Shure AD221 (Combiner 960-1260 Mhz)",
+  "shortName": "AD221",
+  "manufacturer": "Shure",
+  "modelNumber": "AD221X",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ad221",
+  "searchTerms": [
+    "ad221x",
+    "ad221",
+    "shure",
+    "combiner",
+    "960-1260",
+    "mhz"
+  ],
+  "heightMm": 34,
+  "widthMm": 101.4,
+  "depthMm": 92,
+  "weightKg": 0.251,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Combiner 960-1260 Mhz",
+    "rackFormSource": "Non-rack",
+    "description": "Axient Digital PSM 2-Way Passive Combiner/Splitter",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/ADPSM/en-US.pdf",
+    "note": "Passive - no power. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ADPSM-user-guide.pdf",
+      "note": "AD221 Antenna Combiner Overview p.13; AD221 specifications p.86"
+    },
+    "notes": "Weight changed 0.3 kg -> 0.251 kg per ADPSM guide p.86.",
+    "portsMissing": "The ADPSM guide gives 3 BNC connectors (two transmitter inputs and one antenna connection per the installation text) but does not print the connector names; labels are descriptive."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF In 1",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from an ADTQ/ADTD transmitter (or AD8C output); 960-1260 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p2",
+      "label": "RF In 2",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from an ADTQ/ADTD transmitter (or AD8C output); 960-1260 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p3",
+      "label": "Antenna Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; to a Shure passive antenna (960-1260 MHz); bi-directional combiner/splitter, 4 dB insertion loss typical"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "avail-shure-mxn-6b",
+  "label": "Shure MXN-6 (Black)",
+  "shortName": "MXN-6",
+  "manufacturer": "Shure",
+  "modelNumber": "MXN-6B",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers/mxn-6",
+  "searchTerms": [
+    "mxn-6b",
+    "mxn-6",
+    "shure",
+    "black"
+  ],
+  "weightKg": 2.2,
+  "voltage": "PoE+ 802.3at class 4",
+  "poeDrawW": 24,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Networked Pendant Loudspeaker",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXN-6/en-US.pdf",
+    "note": "Also runs on PoE class 0 (12 W max) with reduced output. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXN-6-user-guide.pdf",
+      "note": "MXN-6 user guide p.4 (Parts), p.9 (Connecting to Power) and pp.23-24 (Specifications)"
+    },
+    "portsMissing": "Overall height/width/depth are not filled: the MXN-6 user guide (p.24) gives dimensions only as lettered callouts on a drawing."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE+)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 2 in / 1 out and control; the only power input, PoE+ class 4 (24 W max) or PoE class 0 (12 W max, reduced output)"
+    }
+  ]
+}
