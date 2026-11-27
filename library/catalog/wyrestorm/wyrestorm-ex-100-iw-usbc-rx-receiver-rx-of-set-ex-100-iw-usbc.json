@@ -1,0 +1,94 @@
+{
+  "id": "avail-wyrestorm-ex-100-iw-usbc-rx",
+  "label": "Wyrestorm EX-100-IW-USBC-RX (Receiver (RX) of set EX-100-IW-USBC)",
+  "shortName": "EX-100-IW-USBC-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-IW-USBC-RX",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-iw-usbc/",
+  "searchTerms": [
+    "ex-100-iw-usbc-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-100-iw-usbc"
+  ],
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-100-IW-USBC",
+    "rackFormSource": "Shelf",
+    "description": "USB 3.2 Single Gang In-Wall HDBT-USB3 Transmitter and Receiver Kit | 100m | HDBT-USB3|",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-IW-USBC (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Published power 39.8 W is not split by TX/RX - not entered. 39.79 W with USB fully loaded (6.94 W no load). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-IW-USBC"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-100-iw-usbc/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232/IR/video: none listed; page does not name the RJ45 link type; power input for this unit not stated; max power consumption 39.79W not stated per unit; DC IN connector: only 'locking connector' stated"
+  },
+  "ports": [
+    {
+      "label": "RJ45 In",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "RJ45 Input as the page names it",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 1",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 1",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 1",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.2 Gen 1",
+      "id": "port-4"
+    }
+  ]
+}

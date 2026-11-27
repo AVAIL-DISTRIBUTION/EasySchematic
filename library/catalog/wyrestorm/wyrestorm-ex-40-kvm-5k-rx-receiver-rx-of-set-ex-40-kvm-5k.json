@@ -1,0 +1,130 @@
+{
+  "id": "avail-wyrestorm-ex-40-kvm-5k-rx",
+  "label": "Wyrestorm EX-40-KVM-5K-RX (Receiver (RX) of set EX-40-KVM-5K)",
+  "shortName": "EX-40-KVM-5K-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-40-KVM-5K-RX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-40-kvm-5k/",
+  "searchTerms": [
+    "ex-40-kvm-5k-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-40-kvm-5k"
+  ],
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-40-KVM-5K",
+    "rackFormSource": "Shelf",
+    "description": "5K60Hz KVM Extender Kit | HDBaseT3.0 | Uncompressed video | 5K60Hz 4:2:0 | HDMI Loop out | Audio de-embedding | Analog Audio pass-through | USB 2.0 | 1-way PoH (Rx->Tx) | CEC Passthrough | DIP Switch, RS232 control (5K&4K:40m/131ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-40-KVM-5K (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). PSU 12V 3A; power consumption and dimensions not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New, avaiable.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-40-KVM-5K"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-40-kvm-5k/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Audio De-Embed Out: connector not published; Audio Out: connector not published; 12V DC In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "1-way PoH, powers the transmitter",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio De-Embed Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; extender control, function set by DIP switch",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "id": "port-8"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-9",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

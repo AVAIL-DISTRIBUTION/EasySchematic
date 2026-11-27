@@ -1,0 +1,45 @@
+{
+  "id": "avail-wyrestorm-ex-100-kvm-8k-rx",
+  "label": "Wyrestorm EX-100-KVM-8K-RX (Receiver (RX) of set EX-100-KVM-8K)",
+  "shortName": "EX-100-KVM-8K-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-KVM-8K-RX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-kvm-8k/",
+  "searchTerms": [
+    "ex-100-kvm-8k-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-100-kvm-8k"
+  ],
+  "weightKg": 0.4,
+  "powerDrawW": 25,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Receiver (RX) of set EX-100-KVM-8K",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.1 8K60Hz KVM Extender | HDBaseT | DSC | 8K60Hz 4:2:0 | 8K30Hz 4:4:4| 4K120Hz 4:4:4 | Audio De-embed | CEC Passthrough | RS232 Passthrough | 1-way PoC (Rx->Tx) | USB 2.0 Extension (8K&5K:100m/328ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-KVM-8K (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions published inconsistently (\"25mm x 25mm / 90.2mm\") - not entered. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New, avaiable.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-KVM-8K"
+      ]
+    },
+    "portsMissing": "per-unit connectors are not listed: the page only says 'HDMI IN/OUT', 'AUDIO OUT' (PCM 2.0) and 'USB 2.0: 255Mbps' without unit, count or connector; link connector and signal type not published (page does not say HDBaseT); power input (DC 12V 3A) is not assigned to a unit; dimensions are garbled on the page"
+  },
+  "ports": []
+}

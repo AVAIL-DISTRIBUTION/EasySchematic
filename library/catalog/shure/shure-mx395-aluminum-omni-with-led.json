@@ -1,0 +1,63 @@
+{
+  "id": "avail-shure-mx395al-o-led",
+  "label": "Shure MX395 (Aluminum, Omni, with LED)",
+  "shortName": "MX395",
+  "manufacturer": "Shure",
+  "modelNumber": "MX395AL/O-LED",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx395",
+  "searchTerms": [
+    "mx395al/o-led",
+    "mx395",
+    "shure",
+    "aluminum",
+    "omni",
+    "with",
+    "led"
+  ],
+  "heightMm": 102,
+  "widthMm": 32,
+  "depthMm": 32,
+  "weightKg": 0.136,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Aluminum, Omni, with LED",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Low Profile Boundary Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/file/259948",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/pubs-259948.pdf",
+      "note": "p.1 available models (3-pin XLR / 5-pin XLR LED), logic connections, dimensions; pinout from MX395 user guide p.3-4 (shure/MX395-user-guide.pdf); white/aluminum LED models listed in Microflex_Wired_2019_Letter_EN.pdf p.7"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-5",
+      "notes": "Mic level, active balanced; 5-pin XLR male at the end of the mic body (pin 4 = audio +, pin 2 = audio -, pins 1/3 ground), shared with LED In on pin 5; furnished 5-pin XLR female for field wiring; 48-52 V DC phantom, 8.0 mA"
+    },
+    {
+      "id": "p2",
+      "label": "LED In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "xlr-5",
+      "notes": "LED control input (input only) on pin 5 of the same 5-pin XLR (shared with Audio Out); bi-colour LED ring: logic low (0 V) = green, high (+5 V) = red; active low (<=1.0 V), TTL; connect to an automixer gate output with internal pull-up, ground to pin 3"
+    }
+  ]
+}

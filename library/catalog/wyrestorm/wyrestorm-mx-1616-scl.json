@@ -1,0 +1,154 @@
+{
+  "id": "avail-wyrestorm-mx-1616-scl",
+  "label": "Wyrestorm MX-1616-SCL",
+  "shortName": "MX-1616-SCL",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-1616-SCL",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-1616-scl/",
+  "searchTerms": [
+    "mx-1616-scl",
+    "wyrestorm"
+  ],
+  "heightMm": 177.8,
+  "widthMm": 482.6,
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "4U Full rack",
+    "rackUnits": 4,
+    "slotFamilies": [
+      "wyrestorm-mx-1616-scl"
+    ],
+    "description": "16 Slot - 4K60Hz Seamless Empty Custom Matrix Chassis 4K60Hz 4:4:4",
+    "source": "Manufacturer site",
+    "note": "Height 7 in, width 19 in (converted); depth and weight TBD; power input 4-pin Phoenix (PSU spec not published). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-1616-scl/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "mains inlet and supply voltage not published; depth and weight not published",
+    "slotsSource": "document: https://www.wyrestorm.com/product/mx-1616-scl/",
+    "slotsNote": "\"16 Cards: TX-SCL-HDBT, TX-SCL-HDMI\" (Technical Specifications); each card is HDMI In + HDMI Out or HDBaseT Out + 5-pin balanced audio out"
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Web UI; matrix control and Ethernet",
+      "id": "port-0"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "db9",
+      "section": "Serial",
+      "notes": "Matrix control; routable RS-232 device control",
+      "id": "port-1"
+    },
+    {
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "4-pin; local power supply input",
+      "id": "port-2"
+    }
+  ],
+  "slots": [
+    {
+      "id": "slot-1",
+      "label": "Slot 1",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-2",
+      "label": "Slot 2",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-3",
+      "label": "Slot 3",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-4",
+      "label": "Slot 4",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-5",
+      "label": "Slot 5",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-6",
+      "label": "Slot 6",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-7",
+      "label": "Slot 7",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-8",
+      "label": "Slot 8",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-9",
+      "label": "Slot 9",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-10",
+      "label": "Slot 10",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-11",
+      "label": "Slot 11",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-12",
+      "label": "Slot 12",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-13",
+      "label": "Slot 13",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-14",
+      "label": "Slot 14",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-15",
+      "label": "Slot 15",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    },
+    {
+      "id": "slot-16",
+      "label": "Slot 16",
+      "slotFamily": "wyrestorm-mx-1616-scl"
+    }
+  ]
+}

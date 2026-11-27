@@ -13,10 +13,17 @@
  */
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
-import { formatIntakeReport, importIntake, type IntakeIndexEntry } from "../../src/avail/intake";
+import { formatIntakeReport, importIntake, mergeKits, type IntakeIndexEntry, type KitsFile } from "../../src/avail/intake";
 import { catalogDir, readCatalog, writeCatalogFile } from "./catalogFiles";
 import { readXlsx } from "./xlsx";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+/** docs/avail/kits.json: the kits of every intake form (src/avail/intake.ts kitsOfIntake). */
+const kitsFile = process.env.AVAIL_KITS_FILE ?? path.join(here, "../../docs/avail/kits.json");
+const KITS_ABOUT =
+  "Kits: a part number sold as a set of blocks that each have their own catalog card (a matrix and its receivers, an extender's TX and RX). Written by import:intake from the Kits sheet and the TX/RX pair rule (src/avail/intake.ts). BoQ: the schematic blocks that make up a kit become one kit line; components beyond the kit are separate lines (.claude/skills/avail-documents).";
 
 const USAGE = "usage: npm run import:intake -- <file.xlsx> [--dry-run] [--dir <library/catalog>]";
 
@@ -48,7 +55,7 @@ try {
   const indexDoc = JSON.parse(readFileSync(indexFile, "utf8")) as { version: number; count: number; templates: IntakeIndexEntry[] };
   const catalog = readCatalog(dir);
   const texts = new Map(catalog.map((f) => [f.file, f.text]));
-  const result = importIntake(products, catalog, indexDoc.templates, path.basename(input));
+  const result = importIntake(products, catalog, indexDoc.templates, path.basename(input), sheets.get("Kits"));
 
   if (!dryRun && !result.fatal.length) {
     for (const f of result.write) {
@@ -56,6 +63,10 @@ try {
       writeCatalogFile(dir, f, texts.get(f.file) ?? "");
     }
     for (const f of result.remove) rmSync(path.join(dir, f));
+    if (result.kits.length) {
+      const prev: KitsFile = existsSync(kitsFile) ? (JSON.parse(readFileSync(kitsFile, "utf8")) as KitsFile) : { about: KITS_ABOUT, kits: [] };
+      writeFileSync(kitsFile, JSON.stringify(mergeKits({ about: prev.about ?? KITS_ABOUT, kits: prev.kits }, result.kits), null, 2) + "\n");
+    }
     if (result.write.length || result.remove.length) {
       const doc = { ...indexDoc, count: result.index.length, templates: result.index };
       const old = readFileSync(indexFile, "utf8");

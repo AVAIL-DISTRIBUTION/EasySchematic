@@ -1,0 +1,34 @@
+{
+  "id": "avail-shure-ha-8089",
+  "label": "Shure HA-8089 (Helical Antenna, 470-900Mhz)",
+  "shortName": "HA-8089",
+  "manufacturer": "Shure",
+  "modelNumber": "HA-8089",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ha-8089",
+  "searchTerms": [
+    "ha-8089",
+    "shure",
+    "helical",
+    "antenna",
+    "470-900mhz"
+  ],
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Helical Antenna, 470-900Mhz",
+    "rackFormSource": "Non-rack",
+    "description": "Helical Antenna",
+    "source": "Manufacturer site",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsMissing": "No manufacturer data sheet found (pubs.shure.com guide URL and shure.com product page checked; content-files spec sheet URLs refused)."
+  },
+  "ports": []
+}

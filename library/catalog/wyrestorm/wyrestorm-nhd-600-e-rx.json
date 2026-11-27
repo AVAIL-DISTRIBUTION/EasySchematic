@@ -1,0 +1,114 @@
+{
+  "id": "avail-wyrestorm-nhd-600-e-rx",
+  "label": "Wyrestorm NHD-600-E-RX",
+  "shortName": "NHD-600-E-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-600-E-RX",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-600-e-tx-rx/",
+  "searchTerms": [
+    "nhd-600-e-rx",
+    "wyrestorm"
+  ],
+  "heightMm": 25,
+  "widthMm": 150,
+  "depthMm": 145.2,
+  "powerDrawW": 24,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 24,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz SDVoE Decoder | 4K60Hz 4:4:4 | 10G RJ45 | Dolby Vision & HDR | PoE+ | Ethernet Passthrough | Audio De-embed | IR & RS232",
+    "source": "Manufacturer site",
+    "note": "Max 24 W, average 10 W. Published as L x W x H 145.2 x 150 x 25 mm. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-600-e-tx-rx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "PoE+ (802.3at) compliant: page does not say which RJ45 port carries PoE; In the Box lists a 12V 1A PSU while specifications say 12V 2A; 12V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "notes": "unbalanced stereo",
+      "id": "port-1"
+    },
+    {
+      "label": "10GbE",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "10GbE SDVoE video link",
+      "id": "port-2"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; 2 way; routed; API programmable",
+      "id": "port-4"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX; 3.5mm TS mono jack",
+      "id": "port-5"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX; 3.5mm TRS stereo jack",
+      "id": "port-6"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V 2A DC; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-7",
+      "connectorType": "barrel"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "avail-shure-mxp-1b",
+  "label": "Shure MXP-1 (Black)",
+  "shortName": "MXP-1",
+  "manufacturer": "Shure",
+  "modelNumber": "MXP-1B",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers/mxp-1",
+  "searchTerms": [
+    "mxp-1b",
+    "mxp-1",
+    "shure",
+    "black"
+  ],
+  "heightMm": 157,
+  "widthMm": 127,
+  "depthMm": 127,
+  "weightKg": 0.67,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Mini Pendant Passive Loudspeaker",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXP-1/en-US.pdf",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXP-1-user-guide.pdf",
+      "note": "MXP-1 user guide p.4 (Parts) and p.6 (Specifications)"
+    },
+    "notes": "Dimensions published as 157 x 127 x 127 mm without axis labels (p.6); taken as H x W x D."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "2-pin block 5.08 mm (Jiekle 2EDG-5.08); 8 ohm, 20 W max (IEC 60268-5); low impedance only"
+    }
+  ]
+}

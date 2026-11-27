@@ -1,0 +1,56 @@
+{
+  "id": "avail-shure-mxa902w-s",
+  "label": "Shure MXA902 (White, Square)",
+  "shortName": "MXA902",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA902W-S",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mxa902",
+  "searchTerms": [
+    "mxa902w-s",
+    "mxa902",
+    "shure",
+    "white",
+    "square"
+  ],
+  "heightMm": 56.04,
+  "widthMm": 603.8,
+  "depthMm": 603.8,
+  "weightKg": 5.8,
+  "poeDrawW": 24,
+  "voltage": "PoE+ 802.3at class 4",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, Square",
+    "rackFormSource": "Non-rack",
+    "description": "Ceiling Array Microphone + Loudspeaker",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXA902/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXA902-user-guide.pdf",
+      "note": "MXA902 Parts p.9-10, PoE+ p.10, Specifications p.38-41"
+    },
+    "notes": "Variant \"White\" → \"White, Square\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE+)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 and control, PoE+ class 4 (24 W max); on a PoE (not PoE+) source the microphone works but the loudspeaker stays off. Dante channels: 1 microphone automix out, 2 loudspeaker inputs (summed; also the AEC reference)"
+    }
+  ]
+}

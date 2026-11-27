@@ -1,0 +1,63 @@
+{
+  "id": "avail-shure-mxp-6w",
+  "label": "Shure MXP-6 (White)",
+  "shortName": "MXP-6",
+  "manufacturer": "Shure",
+  "modelNumber": "MXP-6W",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers/mxp-6",
+  "searchTerms": [
+    "mxp-6w",
+    "mxp-6",
+    "shure",
+    "white"
+  ],
+  "heightMm": 278.5,
+  "widthMm": 230.2,
+  "depthMm": 230.2,
+  "weightKg": 2.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "Pendant Passive Loudspeaker",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXP-6/en-US.pdf",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXP-6-user-guide.pdf",
+      "note": "MXP-6 user guide p.4 (Parts, Specifications), p.5 (Transformer taps), p.8 (70 V parallel wiring)"
+    },
+    "portsMissing": "The MXP-6 guide does not label the 4-pin block pins; IN/OUT loop-through assumed from the MXP-5 / MXN-AMP wiring drawing (MXP-5 user guide p.12) - check the panel.",
+    "notes": "Dimensions published as 278.5 x 230.2 x 230.2 mm (p.4); taken as H x W x D (pendant)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Speaker In",
+      "signalType": "speaker-level",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "IN +/- of the 4-pin block 5.08 mm; 4 ohm or 70 V / 100 V transformer taps (1.875-15 W) via tap selector; 28 W max (IEC 60268-5)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out (Loop)",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "OUT +/- of the same 4-pin block, parallel loop-through to the next 70 V / 100 V loudspeaker"
+    }
+  ]
+}

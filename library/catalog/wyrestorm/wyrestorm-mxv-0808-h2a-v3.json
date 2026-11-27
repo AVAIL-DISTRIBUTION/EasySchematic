@@ -1,0 +1,447 @@
+{
+  "id": "avail-wyrestorm-mxv-0808-h2a-v3",
+  "label": "Wyrestorm MXV-0808-H2A v3",
+  "shortName": "MXV-0808-H2A-KIT-MATRIX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MXV-0808-H2A v3",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mxv-0808-h2a-kit/",
+  "searchTerms": [
+    "mxv-0808-h2a v3",
+    "mxv-0808-h2a-kit-matrix",
+    "wyrestorm"
+  ],
+  "powerDrawW": 168,
+  "voltage": "100-240V AC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz 4:4:4 8x8 HDBaseT Matrix | 8x HDMI in | 8x HDBT out | 4x mirrored HDMI out | 1-way PoH | 8x S/PDIF Toslink de-embed | IR | RS-232 | LAN [matrix of kit MXV-0808-H2A-KIT]",
+    "source": "Manufacturer site",
+    "note": "Component of kit MXV-0808-H2A-KIT (1x matrix + 6x standard HDBaseT receiver + 2x scaling HDBaseT receiver). Part number per AVAIL kit-component convention (<kit>-MATRIX / -RX / -RX-SCL); WyreStorm publishes no separate part number for this unit. Composition source: Kit page \"In the Box\": 1x MXV-0808-H2A v3 Matrix, 6x RXV-35-4K Receivers, 2x RXV-35-SCL Receivers. Price list: \"w/ 6 standard receivers & 2 Scaling receivers\". Quantity in kit: 1. Max power 168 W. Matrix inside the kit is named \"MXV-0808-H2A v3\" by WyreStorm; standalone MXV-0808-H2A v3 page is marked DISCONTINUED. Dimensions and weight not published on product page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "MXV-0808-H2A-KIT"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mxv-0808-h2a-kit/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "AC Power In: connector not published; IR / IR TX per-HDBaseT-port assignment not stated"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI In 5",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI In 6",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI In 7",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI In 8",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-7"
+    },
+    {
+      "label": "HDBaseT Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-8"
+    },
+    {
+      "label": "HDBaseT Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-9"
+    },
+    {
+      "label": "HDBaseT Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-10"
+    },
+    {
+      "label": "HDBaseT Out 4",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-11"
+    },
+    {
+      "label": "HDBaseT Out 5",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-12"
+    },
+    {
+      "label": "HDBaseT Out 6",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-13"
+    },
+    {
+      "label": "HDBaseT Out 7",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-14"
+    },
+    {
+      "label": "HDBaseT Out 8",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-15"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-16"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-17"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-18"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-19"
+    },
+    {
+      "label": "S/PDIF Out 1",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-20"
+    },
+    {
+      "label": "S/PDIF Out 2",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-21"
+    },
+    {
+      "label": "S/PDIF Out 3",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-22"
+    },
+    {
+      "label": "S/PDIF Out 4",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-23"
+    },
+    {
+      "label": "S/PDIF Out 5",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-24"
+    },
+    {
+      "label": "S/PDIF Out 6",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-25"
+    },
+    {
+      "label": "S/PDIF Out 7",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-26"
+    },
+    {
+      "label": "S/PDIF Out 8",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-27"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-28"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "db9",
+      "section": "Serial",
+      "notes": "DB9 female",
+      "id": "port-29"
+    },
+    {
+      "label": "IR In 1",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-30"
+    },
+    {
+      "label": "IR In 2",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-31"
+    },
+    {
+      "label": "IR In 3",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-32"
+    },
+    {
+      "label": "IR In 4",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-33"
+    },
+    {
+      "label": "IR In 5",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-34"
+    },
+    {
+      "label": "IR In 6",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-35"
+    },
+    {
+      "label": "IR In 7",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-36"
+    },
+    {
+      "label": "IR In 8",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-37"
+    },
+    {
+      "label": "IR Out 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-38"
+    },
+    {
+      "label": "IR Out 2",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-39"
+    },
+    {
+      "label": "IR Out 3",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-40"
+    },
+    {
+      "label": "IR Out 4",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-41"
+    },
+    {
+      "label": "IR Out 5",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-42"
+    },
+    {
+      "label": "IR Out 6",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-43"
+    },
+    {
+      "label": "IR Out 7",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-44"
+    },
+    {
+      "label": "IR Out 8",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-45"
+    },
+    {
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "AC 100-240V 50/60Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-46",
+      "connectorType": "iec"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "avail-wyrestorm-sw-0204-vw",
+  "label": "Wyrestorm SW-0204-VW",
+  "shortName": "SW-0204-VW",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-0204-VW",
+  "deviceType": "video-wall-controller",
+  "category": "Processing / Videowall Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sw-0204-vw/",
+  "searchTerms": [
+    "sw-0204-vw",
+    "wyrestorm"
+  ],
+  "heightMm": 42,
+  "widthMm": 215,
+  "depthMm": 140.2,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz 2-input Video Wall Processor | 2x2 or 1x4 Video Wall layouts | Web UI | RS232 control",
+    "source": "Manufacturer site",
+    "note": "Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sw-0204-vw/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published; dimensions given without axis labels; weight"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin; balanced; de-embed from selected HDMI input",
+      "id": "port-6"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Web UI",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-8"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-9",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

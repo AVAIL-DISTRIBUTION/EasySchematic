@@ -1,0 +1,111 @@
+{
+  "id": "avail-wyrestorm-sw-130-tx-uk",
+  "label": "Wyrestorm SW-130-TX-UK (UK 2-gang)",
+  "shortName": "SW-130-TX-UK",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-130-TX-UK",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sw-130-tx-uk/",
+  "searchTerms": [
+    "sw-130-tx-uk",
+    "wyrestorm",
+    "uk",
+    "2-gang"
+  ],
+  "powerDrawW": 7.8,
+  "voltage": "12V DC / PoH",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "UK 2-gang",
+    "rackFormSource": "Non-rack",
+    "description": "3-Input In-wall HDBaseT Transmitter (2 HDMI, USB-C) with USB host & CEC trigger. 2-gang UK back-box (4K: 100m/328ft)",
+    "source": "Manufacturer site",
+    "note": "PoH 1-way from receiver; PSU not included. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sw-130-tx-uk/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "PoH from the receiver (1-way from RX)",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "stereo, sent to RX over HDBaseT",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "4-pin; shares the connector with the 12V DC input",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB 3.1c audio/video input (4.5Gbps); Alt-mode",
+      "id": "port-5"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "host connection for HDMI inputs",
+      "id": "port-6"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "4-pin; shared with RS-232; primary supply is PoH from the receiver",
+      "id": "port-7"
+    }
+  ]
+}

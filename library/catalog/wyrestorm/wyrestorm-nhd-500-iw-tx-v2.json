@@ -1,0 +1,94 @@
+{
+  "id": "avail-wyrestorm-nhd-500-iw-tx-v2",
+  "label": "Wyrestorm NHD-500-IW-TX (v2)",
+  "shortName": "NHD-500-IW-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-500-IW-TX v2",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-500-iw-tx-v2/",
+  "searchTerms": [
+    "nhd-500-iw-tx v2",
+    "nhd-500-iw-tx",
+    "wyrestorm",
+    "v2"
+  ],
+  "powerDrawW": 15.4,
+  "voltage": "20V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v2",
+    "rackFormSource": "Non-rack",
+    "description": "4K60Hz 2-Gang In-Wall Encoder | 4K60Hz 4:4:4 | 1GbE | HDMI & USB-C Inputs | Dolby Vision & HDR | USB-C 60w PD | ARC | USB 2.0 | PoE | Dante AV-A/AES67",
+    "source": "Manufacturer site",
+    "note": "Max 15.4 W, average 8 W (as published). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-500-iw-tx-v2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB 2.0 Type-B Host: present in only one of two spec blocks so left out; 'USB-C In' and 'USB-C Host' modelled as one port; RS-232 and 20V DC In: connector not published; Max Power Consumption given without unit ('Max 15.4 | Average: 8w')"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "USB-C video input; also USB-C Host (up to 200Mbps upstream)",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE; PoE 802.3af compliant",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "notes": "3.5mm; 2-way; API programmable",
+      "id": "port-4",
+      "connectorType": "trs-eighth"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "20V DC 6A; 2-pin; Wyrestorm convention: 2-pin phoenix (in-wall) — verify",
+      "id": "port-5",
+      "connectorType": "phoenix"
+    }
+  ]
+}

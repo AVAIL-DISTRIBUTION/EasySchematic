@@ -1,0 +1,106 @@
+{
+  "id": "avail-wyrestorm-ex-60-usb2-rx",
+  "label": "Wyrestorm EX-60-USB2-RX (Receiver (RX) of set EX-60-USB2)",
+  "shortName": "EX-60-USB2-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-60-USB2-RX",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-60-usb2/",
+  "searchTerms": [
+    "ex-60-usb2-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-60-usb2"
+  ],
+  "heightMm": 20,
+  "widthMm": 90,
+  "depthMm": 71,
+  "voltage": "18V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-60-USB2",
+    "rackFormSource": "Shelf",
+    "description": "USB2.0 Extender Set | 60m | 480Mbps | PoC (Tx - Rx) | 1x USB Host & 4x USB-A ports",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-60-USB2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions per unit: TX 20x90x55 mm, RX 20x90x71 mm (H x W x D). Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New, avaiable.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-60-USB2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-60-usb2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "UTP In",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "USB",
+      "notes": "UTP input (RJ45) as the page names it; PoC from the transmitter",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A out",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A out",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A out",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-A 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 Type-A out",
+      "id": "port-4"
+    },
+    {
+      "id": "port-dc",
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

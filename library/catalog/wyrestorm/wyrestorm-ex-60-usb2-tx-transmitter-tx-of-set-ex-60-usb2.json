@@ -1,0 +1,78 @@
+{
+  "id": "avail-wyrestorm-ex-60-usb2-tx",
+  "label": "Wyrestorm EX-60-USB2-TX (Transmitter (TX) of set EX-60-USB2)",
+  "shortName": "EX-60-USB2-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-60-USB2-TX",
+  "deviceType": "usb-extender",
+  "category": "AV distribution / USB for Pro AV",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-60-usb2/",
+  "searchTerms": [
+    "ex-60-usb2-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-60-usb2"
+  ],
+  "heightMm": 20,
+  "widthMm": 90,
+  "depthMm": 55,
+  "voltage": "18V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-60-USB2",
+    "rackFormSource": "Shelf",
+    "description": "USB2.0 Extender Set | 60m | 480Mbps | PoC (Tx - Rx) | 1x USB Host & 4x USB-A ports",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-60-USB2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Dimensions per unit: TX 20x90x55 mm, RX 20x90x71 mm (H x W x D). Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New, avaiable.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-60-USB2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-60-usb2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "18V DC In: connector not published; weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "id": "port-0"
+    },
+    {
+      "label": "UTP Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "USB",
+      "notes": "UTP out (RJ45) as the page names it; one-way PoC Tx -> Rx",
+      "id": "port-1"
+    },
+    {
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-2",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

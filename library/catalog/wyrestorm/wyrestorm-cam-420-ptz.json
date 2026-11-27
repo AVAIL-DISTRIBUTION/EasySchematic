@@ -1,0 +1,82 @@
+{
+  "id": "avail-wyrestorm-cam-420-ptz",
+  "label": "Wyrestorm CAM-420-PTZ",
+  "shortName": "CAM-420-PTZ",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CAM-420-PTZ",
+  "deviceType": "ptz-camera",
+  "category": "Videocameras / PTZ cameras",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/cam-420-ptz/",
+  "searchTerms": [
+    "cam-420-ptz",
+    "wyrestorm"
+  ],
+  "powerDrawW": 11,
+  "voltage": "12V DC",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "4K dual-lens AI PTZ Camera | 3x Optical Zoom | USB-C & HDMI outputs | NDI | Auto Framing, Speaker Tracking, Presenter Tracking, Individuals Gallery | Web-UI",
+    "source": "Manufacturer site",
+    "note": "Product page lists 12V DC 3A and 11 W with labels swapped; interpreted as PSU 12V 3A, max 11 W. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/cam-420-ptz/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "page lists '1x USB-C/NDI Output' and '1x USB-C: USB 3.1 Gen' separately; modelled as one port; NDI transport port not stated; 12V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Web UI; API",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB video output (UVC); 5.0 Gbps",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-A",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0; peripheral expansion",
+      "id": "port-3"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 3A; Wyrestorm convention: DC barrel, external adapter (not locking) — verify",
+      "id": "port-4",
+      "connectorType": "barrel"
+    }
+  ]
+}

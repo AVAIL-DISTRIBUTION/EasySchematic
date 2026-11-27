@@ -1,0 +1,68 @@
+{
+  "id": "avail-wyrestorm-con-anlg-dnt",
+  "label": "Wyrestorm CON-ANLG-DNT",
+  "shortName": "CON-ANLG-DNT",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CON-ANLG-DNT",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/con-anlg-dnt/",
+  "searchTerms": [
+    "con-anlg-dnt",
+    "wyrestorm"
+  ],
+  "heightMm": 120,
+  "widthMm": 35,
+  "depthMm": 26,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Analog Audio Input to Dante/AES67 Output Adapter | 2-Channel | PoE | Adjustable Input Gain",
+    "source": "Manufacturer site",
+    "note": "PoE class 1 only published - class maximum 3.84 W used. Optional 5V DC via USB-C. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/con-anlg-dnt/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Input and output connector reference only; no other ports listed"
+  },
+  "ports": [
+    {
+      "label": "Line In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pin; balanced/unbalanced",
+      "id": "port-0"
+    },
+    {
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "AES67; PoE 802.3af Class 1",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C 5V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Power",
+      "notes": "Optional 5V DC input",
+      "id": "port-2"
+    }
+  ]
+}

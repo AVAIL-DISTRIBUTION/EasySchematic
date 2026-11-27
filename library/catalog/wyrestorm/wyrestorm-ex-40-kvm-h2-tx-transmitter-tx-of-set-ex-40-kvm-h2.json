@@ -1,0 +1,87 @@
+{
+  "id": "avail-wyrestorm-ex-40-kvm-h2-tx",
+  "label": "Wyrestorm EX-40-KVM-H2-TX (Transmitter (TX) of set EX-40-KVM-H2)",
+  "shortName": "EX-40-KVM-H2-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-40-KVM-H2-TX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-40-kvm-h2/",
+  "searchTerms": [
+    "ex-40-kvm-h2-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-40-kvm-h2"
+  ],
+  "heightMm": 145,
+  "widthMm": 25,
+  "depthMm": 90.2,
+  "weightKg": 0.4,
+  "voltage": "PoC (bidirectional)",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-40-KVM-H2",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 4K60Hz KVM Extender | UTP | 4K60Hz 4:4:4 | USB 2.0 | RS232 passthrough | Audio De-embed | Bi-Directional PoC (40m/131ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-40-KVM-H2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Dimensions as published (H 145 / W 25 mm - axes likely swapped on site). Weight 0.35 kg per unit. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available Now.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-40-KVM-H2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-40-kvm-h2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB Host: connector not published; Firmware Update Micro-USB port: page does not say which unit has it; RS-232 pass-through: no connector published; power input connector/voltage not published (page only says Bidirectional POC)"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "UTP Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "UTP link, as the page names it; Bidirectional PoC",
+      "id": "port-1"
+    },
+    {
+      "label": "USB Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 2.0 host",
+      "id": "port-2"
+    },
+    {
+      "id": "port-dc",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "local supply, alternative to power over the link; voltage not published; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

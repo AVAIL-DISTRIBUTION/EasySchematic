@@ -1,0 +1,82 @@
+{
+  "id": "avail-wyrestorm-nhd-120-iw-tx",
+  "label": "Wyrestorm NHD-120-IW-TX",
+  "shortName": "NHD-120-IW-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-120-IW-TX",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-120-iw-tx/",
+  "searchTerms": [
+    "nhd-120-iw-tx",
+    "wyrestorm"
+  ],
+  "powerDrawW": 12,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 12,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "4K30Hz 2-Gang In-Wall Encoder | PoE | 1GbE | Audio De-embed | IR TX",
+    "source": "Manufacturer site",
+    "note": "Max 12 W, average 6 W. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-120-iw-tx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Analog audio port: blocks disagree; Auxiliary 1GbE channel: separate connector not stated; RS-232: connector not published; 12V DC In: connector not published; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE AV stream; PoE 802.3af compliant",
+      "id": "port-1"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Configuration",
+      "notes": "debug only, 3.5mm",
+      "id": "port-3",
+      "connectorType": "trs-eighth"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-4",
+      "connectorType": "phoenix",
+      "notes": "2-pin; Wyrestorm convention: 2-pin phoenix (in-wall) — verify"
+    }
+  ]
+}

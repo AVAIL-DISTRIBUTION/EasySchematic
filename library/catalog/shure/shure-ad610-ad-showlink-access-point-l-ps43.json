@@ -1,0 +1,95 @@
+{
+  "id": "avail-shure-ad610",
+  "label": "Shure AD610 (Ad Showlink Access Point, L/Ps43)",
+  "shortName": "AD610",
+  "manufacturer": "Shure",
+  "modelNumber": "AD610",
+  "deviceType": "access-point",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ad610",
+  "searchTerms": [
+    "ad610",
+    "shure",
+    "ad",
+    "showlink",
+    "access",
+    "point",
+    "l/ps43"
+  ],
+  "heightMm": 190,
+  "widthMm": 102,
+  "depthMm": 47,
+  "weightKg": 0.464,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.84,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Ad Showlink Access Point, L/Ps43",
+    "rackFormSource": "Non-rack",
+    "description": "Diversity ShowLink Access Point",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/AD610/en-US.pdf",
+    "note": "PoE class 1 - class maximum 3.84 W used; alt. 15 V DC external PSU. Price list net weight 1.157 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/AD610-user-guide.pdf",
+      "note": "p.4-5 overview callouts; p.11-13 specifications"
+    },
+    "portsMissing": "Unit-side Ethernet connector type is not named (etherCON inferred from the furnished RJ45-to-etherCON cable).",
+    "notes": "weightKg was 0.5 before the data sheet (shure/AD610-user-guide.pdf, 2026-11-27); datasheetUrl was https://content-files.shure.com/Pubs/adx2fd-sm58/axient-digital-specification-sheet-letter-en.pdf (lacks connector counts / types; replaced by the official user guide)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Antenna A",
+      "signalType": "rf",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "SMA, 50 ohm; detachable 2.4 GHz omni antenna (or AXT644 patch)"
+    },
+    {
+      "id": "p2",
+      "label": "Antenna B",
+      "signalType": "rf",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "SMA, 50 ohm; detachable 2.4 GHz omni antenna (true diversity)"
+    },
+    {
+      "id": "p3",
+      "label": "ShowLink (Wireless)",
+      "signalType": "rf",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link: ShowLink IEEE 802.15.4, 2.40-2.4835 GHz, up to 24 Axient / Axient Digital transmitters"
+    },
+    {
+      "id": "p4",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "ethercon",
+      "notes": "Ethernet 10/100; powered by PoE Class 1 (36-57 V); furnished cable is RJ45-to-etherCON"
+    },
+    {
+      "id": "p5",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "Optional external supply PS43, 15 V DC 600 mA, locking ring; use when PoE is not available"
+    }
+  ]
+}

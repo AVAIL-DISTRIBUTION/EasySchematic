@@ -1,0 +1,123 @@
+{
+  "id": "avail-wyrestorm-exp-mx-0402-h2",
+  "label": "Wyrestorm EXP-MX-0402-H2",
+  "shortName": "EXP-MX-0402-H2",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EXP-MX-0402-H2",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/exp-mx-0402-h2/",
+  "searchTerms": [
+    "exp-mx-0402-h2",
+    "wyrestorm"
+  ],
+  "powerDrawW": 5,
+  "voltage": "5V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K/60 4:4:4 4x2 Compact HDMI matrix with audio de-embed, ARC, CEC triggering and scaling outputs",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/exp-mx-0402-h2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "IR front panel sensor is not a port; 5V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs",
+      "notes": "3.5mm analog stereo",
+      "id": "port-6"
+    },
+    {
+      "label": "S/PDIF Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "notes": "Toslink",
+      "id": "port-7"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin terminal block",
+      "id": "port-8"
+    },
+    {
+      "label": "5V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "5V DC 1A; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-9",
+      "connectorType": "barrel"
+    }
+  ]
+}

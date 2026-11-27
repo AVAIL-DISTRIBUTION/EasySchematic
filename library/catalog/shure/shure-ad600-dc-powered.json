@@ -1,0 +1,166 @@
+{
+  "id": "avail-shure-ad600-dc",
+  "label": "Shure AD600 (DC powered)",
+  "shortName": "AD600",
+  "manufacturer": "Shure",
+  "modelNumber": "AD600-DC",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ad600",
+  "searchTerms": [
+    "ad600-dc",
+    "ad600",
+    "shure",
+    "dc",
+    "powered"
+  ],
+  "heightMm": 43.2,
+  "widthMm": 482.6,
+  "depthMm": 285.7,
+  "weightKg": 3.7,
+  "voltage": "110-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "DC powered",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Axient Digital Spectrum Manager",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/AD600/en-US.pdf",
+    "note": "Current drain not extracted; W not published. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/AD600-user-guide.pdf",
+      "note": "p.5-6 front and back panel; p.27 DC module specifications"
+    },
+    "portsMissing": "Front-panel headphone monitor jack is not modelled. The guide does not say whether the DC module version keeps the AC power cascade outlet; modelled without it (as on AD4/ANX4 DC versions).",
+    "notes": "voltage was 100-240V AC before the data sheet (shure/AD600-user-guide.pdf, 2026-11-27)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, max +10 dBm; switchable 12-13.5 V DC bias (150 mA per antenna, 450 mA per device); 174-2000 MHz scan range"
+    },
+    {
+      "id": "p2",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, max +10 dBm; switchable 12-13.5 V DC bias (150 mA per antenna, 450 mA per device); 174-2000 MHz scan range"
+    },
+    {
+      "id": "p3",
+      "label": "Antenna C In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, max +10 dBm; switchable 12-13.5 V DC bias (150 mA per antenna, 450 mA per device); 174-2000 MHz scan range"
+    },
+    {
+      "id": "p4",
+      "label": "Antenna D In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, max +10 dBm; switchable 12-13.5 V DC bias (150 mA per antenna, 450 mA per device); 174-2000 MHz scan range"
+    },
+    {
+      "id": "p5",
+      "label": "Antenna E In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, max +10 dBm; switchable 12-13.5 V DC bias (150 mA per antenna, 450 mA per device); 174-2000 MHz scan range"
+    },
+    {
+      "id": "p6",
+      "label": "Antenna F In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, max +10 dBm; switchable 12-13.5 V DC bias (150 mA per antenna, 450 mA per device); 174-2000 MHz scan range"
+    },
+    {
+      "id": "p7",
+      "label": "Ctrl 1 (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control (WWB, coordination); 10/100/1000 Mbps; supports PoE"
+    },
+    {
+      "id": "p8",
+      "label": "Ctrl 2 (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control (WWB, coordination); 10/100/1000 Mbps; supports PoE"
+    },
+    {
+      "id": "p9",
+      "label": "Dante (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante audio monitoring of networked devices; redundant Dante"
+    },
+    {
+      "id": "p10",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante redundant port"
+    },
+    {
+      "id": "p11",
+      "label": "USB",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "Host port for external storage (scan data, logs); connector type not named in the guide, USB extension cable supplied"
+    },
+    {
+      "id": "p12",
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC locking, 110-240 V AC 50-60 Hz, 1.2 A current drain"
+    },
+    {
+      "id": "p13",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "xlr-4",
+      "notes": "DC module: 4-pin XLR male, 10.9-16 V DC, 5.5 A max; reverse-polarity / over-voltage protected"
+    }
+  ]
+}

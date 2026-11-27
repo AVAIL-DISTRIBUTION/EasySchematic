@@ -1,0 +1,102 @@
+{
+  "id": "avail-shure-blx4re-m17",
+  "label": "Shure BLX4R (Band M17)",
+  "shortName": "BLX4R",
+  "manufacturer": "Shure",
+  "modelNumber": "BLX4RE=-M17",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/blx_wireless/blx4r",
+  "searchTerms": [
+    "blx4re=-m17",
+    "blx4r",
+    "shure",
+    "band",
+    "m17"
+  ],
+  "heightMm": 42,
+  "widthMm": 198,
+  "depthMm": 163,
+  "weightKg": 0.998,
+  "voltage": "12-15V DC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band M17",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "BLX4R Rack-mount Wireless Receiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/BLX4R/en-US.pdf",
+    "note": "12-15 V DC @ 260 mA external PSU; W not published. Price list net weight 2.019 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/BLX4R-user-guide.pdf",
+      "note": "p.6 receiver panels; p.21 specifications"
+    },
+    "notes": "weightKg was 1 before the data sheet (shure/BLX4R-user-guide.pdf, 2026-11-27); datasheetUrl was https://content-files.shure.com/Pubs/BLX/BLX_Spec_Sheet.pdf (lacks connector counts / types; replaced by the official user guide)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR mic-level output, 200 ohm, -20.5 dBV"
+    },
+    {
+      "id": "p2",
+      "label": "Instrument Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "ts-quarter",
+      "notes": "1/4\" instrument-level output, 50 ohm, -13 dBV; screwdriver level control"
+    },
+    {
+      "id": "p3",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC; Band M17"
+    },
+    {
+      "id": "p4",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC; Band M17"
+    },
+    {
+      "id": "p5",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from BLX transmitters (1 channel); Band M17"
+    },
+    {
+      "id": "p6",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12-15 V DC 260 mA from the external supply (tip positive)"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "avail-wyrestorm-ex3-100-earc-rx",
+  "label": "Wyrestorm EX3-100-EARC-RX (Receiver (RX) of set EX3-100-EARC)",
+  "shortName": "EX3-100-EARC-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX3-100-EARC-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex3-100-earc/",
+  "searchTerms": [
+    "ex3-100-earc-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex3-100-earc"
+  ],
+  "heightMm": 23,
+  "widthMm": 115,
+  "depthMm": 190,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX3-100-EARC",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 5K60Hz HDMI Extender Set | HDBaseT | 5K60Hz 4:2:0 | 4K60Hz 4:4:4 | Test Pattern | Dolby Vision and HDR | eARC | Audio De-embedding | Bi-directional PoC | Low-bandwidth mode | CEC Passthrough | RS232 & 2-way IR Passthrough (4K:100m/328ft )(Ca",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX3-100-EARC (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Published as L x W x H 190 x 115 x 23 mm. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX3-100-EARC"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex3-100-earc/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector and per-unit supply not published; Ethernet passthrough up to 1Gb is a feature without a port; power consumption and dimensions (blocks disagree)"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "2-way PoH",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Optical In",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "toslink",
+      "section": "Audio Inputs",
+      "notes": "optical",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-3"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-4"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-5"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "2-way PoH; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-6",
+      "connectorType": "barrel"
+    }
+  ]
+}

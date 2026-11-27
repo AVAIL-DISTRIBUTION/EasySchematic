@@ -1,0 +1,55 @@
+{
+  "id": "avail-shure-mxa901w-r",
+  "label": "Shure MXA901 (White)",
+  "shortName": "MXA901",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA901W-R",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mxa901",
+  "searchTerms": [
+    "mxa901w-r",
+    "mxa901",
+    "shure",
+    "white"
+  ],
+  "heightMm": 41.66,
+  "widthMm": 342.9,
+  "depthMm": 342.9,
+  "weightKg": 2.3,
+  "poeDrawW": 10.1,
+  "voltage": "PoE 802.3af class 0",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "Ceiling Array Microphone",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXA901-R/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXA901-R-user-guide.pdf",
+      "note": "MXA901 Parts p.11-12, PoE / Dante channels p.12, Specifications p.46-48"
+    },
+    "notes": "Dimensions p.48: height 41.66 mm; 342.9 mm (13.5 in) across, labelled 'circumference' in the guide."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 and control, PoE class 0 (10.1 W max). Dante channels: 1 automix out + 1 AEC reference in; with automatic coverage off, 8 direct outs as well"
+    }
+  ]
+}

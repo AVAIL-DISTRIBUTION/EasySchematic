@@ -1,0 +1,79 @@
+{
+  "id": "avail-wyrestorm-exf-10km-5k-tx",
+  "label": "Wyrestorm EXF-10KM-5K-TX (Transmitter (TX) of set EXF-10KM-5K)",
+  "shortName": "EXF-10KM-5K-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EXF-10KM-5K-TX",
+  "deviceType": "fiber-transmitter",
+  "category": "AV distribution / Fiber Optics",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/exf-10km-5k/",
+  "searchTerms": [
+    "exf-10km-5k-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "exf-10km-5k"
+  ],
+  "heightMm": 22,
+  "widthMm": 64,
+  "depthMm": 87,
+  "weightKg": 0.2,
+  "voltage": "5V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EXF-10KM-5K",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 5K HDMI extender | Fiber | 5K60Hz 4:2:0 | 4K60Hz 4:4:4 | 10KM/6.2 Miles",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EXF-10KM-5K (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Weight published 0.35 lbs (0.16 kg). Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New, avaiable.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EXF-10KM-5K"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/exf-10km-5k/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "5V DC In: connector type not in the standard list (5.5/2.1 DC connector with screw lock); firmware update port not published; dimensions/weight given once for the set, not per unit"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "Fiber Out",
+      "signalType": "fiber",
+      "direction": "output",
+      "connectorType": "sfp",
+      "section": "Video Outputs",
+      "notes": "10G fiber, SFP+",
+      "id": "port-1"
+    },
+    {
+      "label": "5V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "5.5/2.1 DC connector with screw lock; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-2",
+      "connectorType": "barrel"
+    }
+  ]
+}

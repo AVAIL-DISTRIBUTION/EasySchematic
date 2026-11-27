@@ -1,0 +1,85 @@
+{
+  "id": "avail-wyrestorm-tx-35-iwc-kvm",
+  "label": "Wyrestorm TX-35-IWC-KVM",
+  "shortName": "TX-35-IWC-KVM",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "TX-35-IWC-KVM",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/tx-35-iwc-kvm/",
+  "searchTerms": [
+    "tx-35-iwc-kvm",
+    "wyrestorm"
+  ],
+  "heightMm": 105.6,
+  "widthMm": 45,
+  "depthMm": 45.3,
+  "weightKg": 0.2,
+  "voltage": "12V DC / PoH",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "USB C Single Gang In-Wall HDBT Transmitter | DP Alt Mode (4-Lane) | HDCP 2.2 | 35m 4K 60 4:2:0 | PoH | RS232 | USB 2.0",
+    "source": "Manufacturer site",
+    "note": "1-gang US style. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/tx-35-iwc-kvm/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "PoH from the receiver (1-way from RX)",
+      "id": "port-0"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; passthrough RS-232 and update port",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "listed as input",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-C Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Power",
+      "notes": "for device charging, will not power TX",
+      "id": "port-3"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "local power when used with a non-PoH receiver",
+      "id": "port-4"
+    }
+  ]
+}

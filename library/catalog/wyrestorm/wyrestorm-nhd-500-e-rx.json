@@ -1,0 +1,74 @@
+{
+  "id": "avail-wyrestorm-nhd-500-e-rx",
+  "label": "Wyrestorm NHD-500-E-RX",
+  "shortName": "NHD-500-E-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-500-E-RX",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-500-e/",
+  "searchTerms": [
+    "nhd-500-e-rx",
+    "wyrestorm"
+  ],
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 12.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Lite 4K60Hz Decoder | 1GbE | Dolby Vision & HDR | PoE | RS232",
+    "source": "Manufacturer site",
+    "note": "Only 802.3af published - class maximum 12.95 W used; power consumption and dimensions not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-500-e/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE 802.3af",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-2"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "or PoE 802.3af; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-3",
+      "connectorType": "barrel"
+    }
+  ]
+}

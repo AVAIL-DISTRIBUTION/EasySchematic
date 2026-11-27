@@ -1,0 +1,156 @@
+{
+  "id": "avail-shure-scm268e",
+  "label": "Shure SCM268 (Microphone Mixer)",
+  "shortName": "SCM268",
+  "manufacturer": "Shure",
+  "modelNumber": "SCM268E",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/mixers/scm268",
+  "searchTerms": [
+    "scm268e",
+    "scm268",
+    "shure",
+    "microphone",
+    "mixer"
+  ],
+  "heightMm": 44,
+  "widthMm": 218,
+  "depthMm": 162,
+  "weightKg": 1.2,
+  "voltage": "220-240V AC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Microphone Mixer",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "SCM268 4-Channel Microphone Mixer",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/SCM268/en-US.pdf",
+    "note": "SCM268E: 220-240 V AC, 50/60 Hz, 30 mA per user guide; power in W not published.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/SCM268-user-guide.pdf",
+      "note": "SCM268 user guide pp.4-6 (Front Panel, Rear Panel); spec sheet pubs.shure.com/file/259997 for levels"
+    },
+    "notes": "datasheetUrl was https://pubs.shure.com/file/259997 (spec sheet without connector details); replaced by the user guide."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Transformer balanced mic level; 12 V phantom (rear switch, inputs 1-4)"
+    },
+    {
+      "id": "p2",
+      "label": "Mic In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Transformer balanced mic level; 12 V phantom (rear switch, inputs 1-4)"
+    },
+    {
+      "id": "p3",
+      "label": "Mic In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Transformer balanced mic level; 12 V phantom (rear switch, inputs 1-4)"
+    },
+    {
+      "id": "p4",
+      "label": "Mic In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Transformer balanced mic level; 12 V phantom (rear switch, inputs 1-4)"
+    },
+    {
+      "id": "p5",
+      "label": "Aux In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Phono jack, -10 dB consumer level; shares channel 1 with Mic In 1"
+    },
+    {
+      "id": "p6",
+      "label": "Aux In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Phono jack, -10 dB consumer level; shares channel 2 with Mic In 2"
+    },
+    {
+      "id": "p7",
+      "label": "Aux In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Phono jack, -10 dB consumer level; shares channel 3 with Mic In 3"
+    },
+    {
+      "id": "p8",
+      "label": "Aux In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Phono jack, -10 dB consumer level; shares channel 4 with Mic In 4"
+    },
+    {
+      "id": "p9",
+      "label": "Aux Channel In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "Phono jack, dedicated auxiliary channel (AUX IN)"
+    },
+    {
+      "id": "p10",
+      "label": "Mic/Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Transformer balanced; mic / line level switch"
+    },
+    {
+      "id": "p11",
+      "label": "Aux Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "Phono jack, consumer level; not affected by MIC/LINE switch"
+    },
+    {
+      "id": "p12",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC inlet; 220-240 V AC, 30 mA (SCM268E); no power switch"
+    }
+  ]
+}

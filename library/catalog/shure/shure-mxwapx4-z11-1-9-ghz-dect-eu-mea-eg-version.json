@@ -1,0 +1,97 @@
+{
+  "id": "avail-shure-mxwapx4eg-z11",
+  "label": "Shure MXWAPX4 (Z11 (1.9 GHz DECT, EU/MEA), EG version)",
+  "shortName": "MXWAPX4",
+  "manufacturer": "Shure",
+  "modelNumber": "MXWAPX4EG=-Z11",
+  "deviceType": "access-point",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/microflex-wireless-next/mxwapx-4-8",
+  "searchTerms": [
+    "mxwapx4eg=-z11",
+    "mxwapx4",
+    "shure",
+    "z11",
+    "(1.9",
+    "ghz",
+    "dect",
+    "eu/mea)",
+    "eg",
+    "version"
+  ],
+  "heightMm": 48.8,
+  "widthMm": 252.7,
+  "depthMm": 202.7,
+  "weightKg": 1.111,
+  "poeDrawW": 12.95,
+  "voltage": "PoE 802.3af class 3",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Z11 (1.9 GHz DECT, EU/MEA), EG version",
+    "rackFormSource": "Non-rack",
+    "description": "Access Point Transceiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXWNEXT/en-US.pdf",
+    "note": "MXW neXt user guide: PoE class and power consumption for MXWAPX4/8 not found (typical 12.5 W listed for MXWAPXD2 only). Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXWNEXT-user-guide.pdf",
+      "note": "MXW neXt user guide pp.25-27 (APX hardware callouts), p.77 (Z11 band), pp.82-83 (MXWAPX4/8 specifications)"
+    },
+    "notes": "weightKg: card had 1.1, document gives 1.111 (MXWNEXT-user-guide.pdf). voltage: card had 'PoE', document gives 'PoE 802.3af class 3' (MXWNEXT-user-guide.pdf)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Analog Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin block (+, -, ground), balanced; line / aux / mic level"
+    },
+    {
+      "id": "p2",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from up to 4 MXW neXt transmitters; DECT Z11 1880-1900 MHz; Egypt SKU: reduced max RF power (<50 mW EIRP)"
+    },
+    {
+      "id": "p3",
+      "label": "Dante Port 1 (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Gigabit; Dante / AES67 and control; switched / split / redundant modes; powers the APX: PoE class 3 (12.95 W, 37-57 V)"
+    },
+    {
+      "id": "p4",
+      "label": "Dante Port 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Gigabit; Dante / AES67 and control; secondary port in split / redundant modes; links to MXWNDX"
+    },
+    {
+      "id": "p5",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "Locking USB-C, USB audio in / out"
+    }
+  ]
+}

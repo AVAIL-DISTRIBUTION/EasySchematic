@@ -1,0 +1,111 @@
+{
+  "id": "avail-wyrestorm-cam-0402-ndi-brg",
+  "label": "Wyrestorm CAM-0402-NDI-BRG",
+  "shortName": "CAM-0402-NDI-BRG",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CAM-0402-NDI-BRG",
+  "deviceType": "switcher",
+  "category": "Videocameras / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/cam-0402-ndi-brg/",
+  "searchTerms": [
+    "cam-0402-ndi-brg",
+    "wyrestorm"
+  ],
+  "powerDrawW": 36,
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K Video Bridge | 4x Inputs (2xHDMI, 2xUSB) + 4x NDI | HDMI/USB/NDI Output | Multiview | Web & API Control | USB UVC/UAC | RS232",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/cam-0402-ndi-brg/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232: listed as control option only, no connector published; power connector type not in the standard list"
+  },
+  "ports": [
+    {
+      "label": "USB-A In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-a",
+      "section": "Video Inputs",
+      "notes": "USB 3.0; UVC/UAC; up to 4K@30Hz MJPEG",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-A In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-a",
+      "section": "Video Inputs",
+      "notes": "USB 3.0; UVC/UAC; up to 4K@30Hz MJPEG",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "up to 4K@30Hz",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "up to 4K@30Hz",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-C Out",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-c",
+      "section": "Video Outputs",
+      "notes": "USB host out; up to 4K@30Hz MJPEG",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "up to 4K@30Hz",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "4x NDI inputs and 1x NDI output stream over LAN; Web GUI",
+      "id": "port-6"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "5.5/2.1mm barrel connector; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-7",
+      "connectorType": "barrel"
+    }
+  ]
+}

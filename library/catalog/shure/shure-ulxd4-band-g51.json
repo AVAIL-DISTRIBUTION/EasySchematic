@@ -1,0 +1,111 @@
+{
+  "id": "avail-shure-ulxd4e-g51",
+  "label": "Shure ULXD4 (Band G51)",
+  "shortName": "ULXD4",
+  "manufacturer": "Shure",
+  "modelNumber": "ULXD4E=-G51",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/ulx-d_digital_wireless/ulxd4",
+  "searchTerms": [
+    "ulxd4e=-g51",
+    "ulxd4",
+    "shure",
+    "band",
+    "g51"
+  ],
+  "heightMm": 42,
+  "widthMm": 197,
+  "depthMm": 171,
+  "weightKg": 0.913,
+  "voltage": "15V DC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band G51",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Digital Wireless Receiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/sbc450/ulx-d-specsheet.pdf",
+    "note": "15 V DC @ 0.6 A external PSU; W not published (approx. 9 W by V x A, not entered). Price list net weight 1.95 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ulx-d-specsheet.pdf",
+      "note": "p.3 ULXD4 back panel and specifications; callouts per ULXD user guide (shure/ULXD-user-guide.pdf p.8-9)"
+    },
+    "notes": "weightKg was 0.9 before the data sheet (shure/ulx-d-specsheet.pdf, 2026-11-27)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "XLR Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switch (30 dB pad)"
+    },
+    {
+      "id": "p2",
+      "label": "TRS Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" impedance-balanced, +12 dBV full scale"
+    },
+    {
+      "id": "p3",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13 V DC bias (170 mA max per antenna); Band G51 470-534 MHz"
+    },
+    {
+      "id": "p4",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13 V DC bias (170 mA max per antenna); Band G51 470-534 MHz"
+    },
+    {
+      "id": "p5",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from ULX-D transmitters; Band G51 470-534 MHz"
+    },
+    {
+      "id": "p6",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Ethernet 10/100 control (WWB, AMX/Crestron); not PoE powered"
+    },
+    {
+      "id": "p7",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC 0.6 A from the supplied external supply; Shure does not name the connector"
+    }
+  ]
+}

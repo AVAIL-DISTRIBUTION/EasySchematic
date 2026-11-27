@@ -1,0 +1,151 @@
+{
+  "id": "avail-shure-anx4e",
+  "label": "Shure ANX4 (Multi Rx 174Mhz - 2.0Ghz)",
+  "shortName": "ANX4",
+  "manufacturer": "Shure",
+  "modelNumber": "ANX4E",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/anx/anx4",
+  "searchTerms": [
+    "anx4e",
+    "anx4",
+    "shure",
+    "multi",
+    "rx",
+    "174mhz",
+    "-",
+    "2.0ghz"
+  ],
+  "heightMm": 44,
+  "widthMm": 482,
+  "depthMm": 286,
+  "weightKg": 3.89,
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Multi Rx 174Mhz - 2.0Ghz",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Scalable Wireless Receiver for Axient Digital and ULX-D Systems",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/ANX4/en-US.pdf",
+    "note": "1.4 A max AC input per user guide; W not published. Also PoE class 1 for network/ShowLink. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 4.854 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ANX4-user-guide.pdf",
+      "note": "p.12-14 front and back panel; p.61-64 specifications"
+    },
+    "portsMissing": "Rear USB port (factory use only) and front-panel headphone monitor jack are not modelled.",
+    "notes": "weightKg was 3.9 before the data sheet (shure/ANX4-user-guide.pdf, 2026-11-27)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13.5 V DC bias (150 mA max per antenna, 300 mA total); 174-2000 MHz"
+    },
+    {
+      "id": "p2",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13.5 V DC bias (150 mA max per antenna, 300 mA total); 174-2000 MHz"
+    },
+    {
+      "id": "p3",
+      "label": "Antenna C In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13.5 V DC bias (150 mA max per antenna, 300 mA total); 174-2000 MHz"
+    },
+    {
+      "id": "p4",
+      "label": "Antenna D In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 12-13.5 V DC bias (150 mA max per antenna, 300 mA total); 174-2000 MHz"
+    },
+    {
+      "id": "p5",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from ULX-D / Axient Digital transmitters (up to 8 licensed channels); 174-2000 MHz"
+    },
+    {
+      "id": "p6",
+      "label": "Ctrl 1 (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control; 10/100/1000 Mbps; supports PoE (receiver powers one PoE device at a time)"
+    },
+    {
+      "id": "p7",
+      "label": "Ctrl 2 (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Network control; 10/100/1000 Mbps; supports PoE (receiver powers one PoE device at a time)"
+    },
+    {
+      "id": "p8",
+      "label": "Dante (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante audio (all receiver channels; no analog outputs); split/redundant or switched modes"
+    },
+    {
+      "id": "p9",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante redundant port"
+    },
+    {
+      "id": "p10",
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC locking, 100-240 V AC 50-60 Hz, 1.4 A max"
+    },
+    {
+      "id": "p11",
+      "label": "AC Power Out (Cascade)",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Locking IEC outlet, cascades mains to further devices"
+    }
+  ]
+}

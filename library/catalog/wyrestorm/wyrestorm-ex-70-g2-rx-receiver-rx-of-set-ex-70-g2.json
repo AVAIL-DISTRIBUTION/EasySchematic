@@ -1,0 +1,76 @@
+{
+  "id": "avail-wyrestorm-ex-70-g2-rx",
+  "label": "Wyrestorm EX-70-G2-RX (Receiver (RX) of set EX-70-G2)",
+  "shortName": "EX-70-G2-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-70-G2-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-70-g2/",
+  "searchTerms": [
+    "ex-70-g2-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-70-g2"
+  ],
+  "powerDrawW": 17,
+  "voltage": "18V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-70-G2",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 1.4 4K60Hz HDMI Extender Set | HDBaseT | 4K60Hz 4:2:0 | Bi-directional PoC | CEC Passthrough | RS232 & 2-way IR Passthrough (4K: 35m/115ft, 1080p: 70m/230ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-70-G2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). TX 7 W / RX 17 W (RX value entered). 2-way PoH. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-70-G2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-70-g2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "IR ports (1x IR TX 3.5mm TS Mono, 1x IR RX 3.5mm TRS Stereo): the page does not say which unit has them; RS-232 (3-pin Phoenix) exists on the v2 chassis only, version of this unit not stated; 18V DC In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "2-way PoH, IEEE 802.3af 15.4W max",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "or 2-way PoH; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-2",
+      "connectorType": "barrel"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "id": "avail-wyrestorm-mxv-0404-h2a-kit-matrix",
+  "label": "Wyrestorm MXV-0404-H2A-KIT-MATRIX (v2)",
+  "shortName": "MXV-0404-H2A-KIT-MATRIX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MXV-0404-H2A-KIT-MATRIX",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mxv-0404-h2a-kit/",
+  "searchTerms": [
+    "mxv-0404-h2a-kit-matrix",
+    "wyrestorm",
+    "v2"
+  ],
+  "powerDrawW": 85,
+  "voltage": "100-240V AC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v2",
+    "rackFormSource": "Shelf",
+    "description": "4K HDR 4:4:4 60Hz 4x4 HDBaseT Matrix | 4x HDMI in | 4x HDBT out | 1-way PoH | 4x stereo RCA & 4x S/PDIF audio de-embed | IR | RS-232 | LAN [matrix of kit MXV-0404-H2A-KIT v2]",
+    "source": "Manufacturer site",
+    "note": "Component of kit MXV-0404-H2A-KIT v2 (1x matrix + 2x standard HDBaseT receiver + 2x scaling HDBaseT receiver). Part number per AVAIL kit-component convention (<kit>-MATRIX / -RX / -RX-SCL); WyreStorm publishes no separate part number for this unit. Composition source: Kit page \"In the Box\": 1x MXV-0404-H2A-KIT Matrix, 2x Standard HDBaseT Receivers, 2x Scaling HDBaseT Receivers; receiver models named in \"Additional features on receivers\": 2x RXV-35-SCL, 2x RXV-35-4K. Price list: \"with 4x Receivers\". Quantity in kit: 1. Max power 85 W published \"with 4 RXs connected via PoH\" (includes receivers). Dimensions and weight not published on product page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "MXV-0404-H2A-KIT v2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mxv-0404-h2a-kit/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "IR Ext (1x IR Ext: 3.5mm TRS Stereo): direction not published; mirrored HDMI output: mentioned in features, not listed in the outputs; AC In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDBaseT Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH to the receiver",
+      "id": "port-4"
+    },
+    {
+      "label": "HDBaseT Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH to the receiver",
+      "id": "port-5"
+    },
+    {
+      "label": "HDBaseT Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH to the receiver",
+      "id": "port-6"
+    },
+    {
+      "label": "HDBaseT Out 4",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH to the receiver",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "notes": "stereo L/R",
+      "id": "port-8"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "notes": "stereo L/R",
+      "id": "port-9"
+    },
+    {
+      "label": "Audio Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "notes": "stereo L/R",
+      "id": "port-10"
+    },
+    {
+      "label": "Audio Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "notes": "stereo L/R",
+      "id": "port-11"
+    },
+    {
+      "label": "S/PDIF Out 1",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-12"
+    },
+    {
+      "label": "S/PDIF Out 2",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-13"
+    },
+    {
+      "label": "S/PDIF Out 3",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-14"
+    },
+    {
+      "label": "S/PDIF Out 4",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-15"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-16"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "db9",
+      "section": "Serial",
+      "id": "port-17"
+    },
+    {
+      "label": "IR In 1",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-18"
+    },
+    {
+      "label": "IR In 2",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-19"
+    },
+    {
+      "label": "IR In 3",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-20"
+    },
+    {
+      "label": "IR In 4",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "id": "port-21"
+    },
+    {
+      "label": "IR Out 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "bidirectional over HDBaseT",
+      "id": "port-22"
+    },
+    {
+      "label": "IR Out 2",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "bidirectional over HDBaseT",
+      "id": "port-23"
+    },
+    {
+      "label": "IR Out 3",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "bidirectional over HDBaseT",
+      "id": "port-24"
+    },
+    {
+      "label": "IR Out 4",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "bidirectional over HDBaseT",
+      "id": "port-25"
+    },
+    {
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-26",
+      "connectorType": "iec",
+      "notes": "Wyrestorm convention: IEC — verify"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "avail-wyrestorm-ex-70-h2c-tx",
+  "label": "Wyrestorm EX-70-H2C-TX (Transmitter (TX) of set EX-70-H2C)",
+  "shortName": "EX-70-H2C-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-70-H2C-TX",
+  "deviceType": "hdmi-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-70-h2c/",
+  "searchTerms": [
+    "ex-70-h2c-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-70-h2c"
+  ],
+  "heightMm": 15,
+  "widthMm": 63,
+  "depthMm": 80,
+  "weightKg": 0.1,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-70-H2C",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 4K60Hz HDMI Extender | DSC | 4K60Hz 4:4:4 | HDMI Loop out | IR Passthrough | EDID Management | Bi-Directional PoC | ARC | 230ft/70m (Cat6/6a)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-70-H2C (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Published power 4.2 W is not split by TX/RX - not entered. Dimensions published once for the set - applied to both units. 4.2 W per pair via PoC; weight 0.13 kg per unit. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New, avaiable.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-70-H2C"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-70-h2c/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "HDMI, extender link (RJ45), IR, S/PDIF and loop-out ports: the page gives no port counts or per-unit connectors; power input per unit not stated (page says 'DC 12V/1A, PoC' and a locking DC 12V connector); dimensions 15 x 63 x 80 mm given once for the set"
+  },
+  "ports": [
+    {
+      "label": "Micro-USB Firmware",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-micro",
+      "section": "Configuration",
+      "notes": "firmware (FW) update port; both TX and RX units",
+      "id": "port-0"
+    },
+    {
+      "id": "port-dc",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

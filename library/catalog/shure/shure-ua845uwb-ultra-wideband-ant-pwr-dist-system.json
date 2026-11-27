@@ -1,0 +1,215 @@
+{
+  "id": "avail-shure-ua845uwb-e",
+  "label": "Shure UA845UWB (Ultra Wideband Ant/Pwr Dist System)",
+  "shortName": "UA845UWB",
+  "manufacturer": "Shure",
+  "modelNumber": "UA845UWB-E",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua845uwb",
+  "searchTerms": [
+    "ua845uwb-e",
+    "ua845uwb",
+    "shure",
+    "ultra",
+    "wideband",
+    "ant/pwr",
+    "dist",
+    "system"
+  ],
+  "heightMm": 44.5,
+  "widthMm": 482.6,
+  "depthMm": 295.3,
+  "weightKg": 3.32,
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Ultra Wideband Ant/Pwr Dist System",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Ultra Wideband Antenna Distribution System",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA845UWB/en-US.pdf",
+    "note": "14.1 W typical (without powered antennas/receivers on DC outputs); max not published. DC outputs 15 V, 2.5 A total. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA845UWB-user-guide.pdf",
+      "note": "System components p.3; front and rear panels pp.4-5; specifications pp.10-11"
+    },
+    "notes": "Weight changed 3.3 kg -> 3.32 kg per UA845UWB guide p.11; powerDrawW 14.1 W is the typical figure without powered antennas or receivers on the DC outputs.",
+    "portsMissing": "The guide does not state the antenna bias voltage or name the AC output and DC output connector types; front-panel antenna bulkhead adapters are not modelled."
+  },
+  "powerDrawW": 14.1,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Antenna In A",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; antenna input with DC bias (switchable on units built after 10 Aug 2018); 174-1805 MHz in 5 selectable bands"
+    },
+    {
+      "id": "p2",
+      "label": "Antenna In B",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; antenna input with DC bias (switchable on units built after 10 Aug 2018); 174-1805 MHz in 5 selectable bands"
+    },
+    {
+      "id": "p3",
+      "label": "RF Out A1",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input A; gain -2 to +2 dB"
+    },
+    {
+      "id": "p4",
+      "label": "RF Out A2",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input A; gain -2 to +2 dB"
+    },
+    {
+      "id": "p5",
+      "label": "RF Out A3",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input A; gain -2 to +2 dB"
+    },
+    {
+      "id": "p6",
+      "label": "RF Out A4",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input A; gain -2 to +2 dB"
+    },
+    {
+      "id": "p7",
+      "label": "RF Out B1",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input B; gain -2 to +2 dB"
+    },
+    {
+      "id": "p8",
+      "label": "RF Out B2",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input B; gain -2 to +2 dB"
+    },
+    {
+      "id": "p9",
+      "label": "RF Out B3",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input B; gain -2 to +2 dB"
+    },
+    {
+      "id": "p10",
+      "label": "RF Out B4",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to receiver antenna input B; gain -2 to +2 dB"
+    },
+    {
+      "id": "p11",
+      "label": "Cascade Out A",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to a fifth receiver or antenna input A of a second UA845UWB; gain -1 to +1 dB"
+    },
+    {
+      "id": "p12",
+      "label": "Cascade Out B",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to a fifth receiver or antenna input B of a second UA845UWB; gain -1 to +1 dB"
+    },
+    {
+      "id": "p13",
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "100-240 V AC 50/60 Hz, switched; 14.1 W typical without loads"
+    },
+    {
+      "id": "p14",
+      "label": "AC Out",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "AC power output for daisy-chaining up to five Shure receivers (AC daisy-chain cord supplied); connector type not named"
+    },
+    {
+      "id": "p15",
+      "label": "DC Out 1",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; Shure does not name the connector"
+    },
+    {
+      "id": "p16",
+      "label": "DC Out 2",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; Shure does not name the connector"
+    },
+    {
+      "id": "p17",
+      "label": "DC Out 3",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; Shure does not name the connector"
+    },
+    {
+      "id": "p18",
+      "label": "DC Out 4",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC to receivers (locking cord ULXD4, non-locking QLXD4/SLX4/BLX4R); 2.5 A max combined; Shure does not name the connector"
+    }
+  ]
+}

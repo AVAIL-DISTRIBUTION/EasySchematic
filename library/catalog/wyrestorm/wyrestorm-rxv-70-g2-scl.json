@@ -1,0 +1,92 @@
+{
+  "id": "avail-wyrestorm-rxv-70-g2-scl",
+  "label": "Wyrestorm RXV-70-G2-SCL",
+  "shortName": "RXV-70-G2-SCL",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "RXV-70-G2-SCL",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/rxv-70-g2-scl/",
+  "searchTerms": [
+    "rxv-70-g2-scl",
+    "wyrestorm"
+  ],
+  "powerDrawW": 12.4,
+  "voltage": "12V DC / PoH",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz HDBaseT Scaling Receiver | 4K60Hz 4:4:4 | PoH | Audio De-embed | IR & RS232 Passthrough (4K: 70m/230ft, 1080p: 100m/328ft) [For MXV-70]",
+    "source": "Manufacturer site",
+    "note": "Powered via PoH from matrix; 12V DC optional. 12.42 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/rxv-70-g2-scl/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Analog and S/PDIF audio outputs are named in the page text but no connectors are listed; DC In: connector and voltage not published consistently (12V 1A vs 18V)"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "1-way PoH from matrix",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin terminal block 3.5mm",
+      "id": "port-2"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-4"
+    },
+    {
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "Optional; page blocks disagree: '12V 1A DC' vs '18V DC'; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-5",
+      "connectorType": "barrel"
+    }
+  ]
+}

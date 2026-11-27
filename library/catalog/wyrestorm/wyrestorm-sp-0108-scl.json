@@ -1,0 +1,136 @@
+{
+  "id": "avail-wyrestorm-sp-0108-scl",
+  "label": "Wyrestorm SP-0108-SCL",
+  "shortName": "SP-0108-SCL",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SP-0108-SCL",
+  "deviceType": "hdmi-splitter",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sp-0108-scl/",
+  "searchTerms": [
+    "sp-0108-scl",
+    "wyrestorm"
+  ],
+  "powerDrawW": 6.7,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz 1x8 HDMI Splitter | Dolby Vision & HDR | EDID Management | Down-Scaling | Audio De-embed",
+    "source": "Manufacturer site",
+    "note": "6.73 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sp-0108-scl/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "S/PDIF Out: connector not published; 1x 3-pin Phoenix on the Outputs line: signal not stated; 12V DC In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 4",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 5",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI Out 6",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI Out 7",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-7"
+    },
+    {
+      "label": "HDMI Out 8",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-8"
+    },
+    {
+      "label": "S/PDIF Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "id": "port-9"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-10"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-11",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

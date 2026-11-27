@@ -1,0 +1,222 @@
+{
+  "id": "avail-shure-imxbpk-b-e",
+  "label": "Shure IntelliMix Bar Pro Kit (Black)",
+  "shortName": "IntelliMix Bar Pro Kit",
+  "manufacturer": "Shure",
+  "modelNumber": "IMXBPK-B-E",
+  "deviceType": "video-bar",
+  "category": "UC / Video conference systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/video-conferencing/imxbpk",
+  "searchTerms": [
+    "imxbpk-b-e",
+    "intellimix bar pro kit",
+    "shure",
+    "intellimix",
+    "bar",
+    "pro",
+    "kit",
+    "black"
+  ],
+  "heightMm": 122.5,
+  "widthMm": 930,
+  "depthMm": 93.6,
+  "weightKg": 5,
+  "powerDrawW": 110,
+  "voltage": "54V DC",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "All-in-one Video Conference Bar",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/IMXBPK/en-US.pdf",
+    "note": "IMXBP bar: 110 W max without expansion port use, 248.4 W max with full expansion port use (external 54 V PSU). IMXTP10 touch panel: PoE+ <25.5 W, 60.6x248.15x184 mm, 1 kg (PoE injector included). Bar dims published as L x W x H 930 x 93.6 x 122.5 mm. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 9.19 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/IMXBPK-user-guide.pdf",
+      "note": "IntelliMix Bar Pro hardware callouts p.6-8, Step 2: Connect Devices p.12-13, IntelliMix Bar Pro Specifications p.37-39"
+    },
+    "notes": "Block describes the IntelliMix Bar Pro video bar; the kit's IntelliMix Touch Panel (1x RJ45 LAN with PoE+ in, USB-C maintenance port) is cabled to EXP 4 or to the LAN (via the included PoE+ injector) and is not modelled as ports here. Voltage changed per user guide p.39 (bar input 54 V DC from the included 100-240 V AC power supply): voltage was 100-240V AC. powerDrawW 110 W is without expansion port use; 248.4 W max with full expansion port use.",
+    "portsMissing": "The user guide does not name the DC input connector type (set to other) or the pin count of the stereo output block connector."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi",
+      "notes": "Up to 3840x2160p30 / 1920x1080p60"
+    },
+    {
+      "id": "p2",
+      "label": "USB-C Content In",
+      "signalType": "usb",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "usb-c",
+      "notes": "Content ingest: USB 3.0 + DisplayPort 1.2 Alt Mode, up to 3840x2160p30; no power delivery to the source"
+    },
+    {
+      "id": "p3",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "Front-of-room display, up to 4K; use first (best HDMI-CEC support)"
+    },
+    {
+      "id": "p4",
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "Front-of-room display, up to 4K (platform-dependent)"
+    },
+    {
+      "id": "p5",
+      "label": "HDMI Out 3",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi",
+      "notes": "Front-of-room display, up to 4K (platform-dependent)"
+    },
+    {
+      "id": "p6",
+      "label": "Line Out L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Stereo analog output, balanced; L and R share one block connector (supplied)"
+    },
+    {
+      "id": "p7",
+      "label": "Line Out R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "Stereo analog output, balanced; L and R share one block connector (supplied)"
+    },
+    {
+      "id": "p8",
+      "label": "Bluetooth",
+      "signalType": "bluetooth",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Bluetooth 5.2, 2402-2480 MHz; BLE 5.4 reserved for future use"
+    },
+    {
+      "id": "p9",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "10/100/1000 Mbps; network / internet connection for Microsoft Teams Rooms and control"
+    },
+    {
+      "id": "p10",
+      "label": "Wi-Fi",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "wireless",
+      "notes": "IEEE 802.11 a/b/g/n/ac/ax, 2.4 / 5 GHz"
+    },
+    {
+      "id": "p11",
+      "label": "EXP 1 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Shure audio expansion port, 10/100/1000 Mbps, PoE+ source (30 W max per port)"
+    },
+    {
+      "id": "p12",
+      "label": "EXP 2 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Shure audio expansion port, 10/100/1000 Mbps, PoE+ source (30 W max per port)"
+    },
+    {
+      "id": "p13",
+      "label": "EXP 3 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Shure audio expansion port, 10/100/1000 Mbps, PoE+ source (30 W max per port)"
+    },
+    {
+      "id": "p14",
+      "label": "EXP 4 (PoE+)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Expansion",
+      "connectorType": "rj45",
+      "notes": "Shure audio expansion port, 10/100/1000 Mbps, PoE+ source (30 W max per port); default connection for the IntelliMix Touch Panel (network and power)"
+    },
+    {
+      "id": "p15",
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 accessory port (e.g. P300 as USB audio interface, USB mouse for setup)"
+    },
+    {
+      "id": "p16",
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-a",
+      "notes": "USB 3.0 accessory port (e.g. P300 as USB audio interface, USB mouse for setup)"
+    },
+    {
+      "id": "p17",
+      "label": "USB-C 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 3.0 Type C accessory port"
+    },
+    {
+      "id": "p18",
+      "label": "USB-C 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 3.0 Type C accessory port"
+    },
+    {
+      "id": "p19",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "54 V DC, 4.6 A from the included universal power supply (100-240 V AC, 50/60 Hz, 3.5 A in; 54 V 248.4 W out, attached 1 m DC cable)"
+    }
+  ]
+}

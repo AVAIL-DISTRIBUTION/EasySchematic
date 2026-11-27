@@ -1,0 +1,156 @@
+{
+  "id": "avail-shure-ulxd4qe-g65",
+  "label": "Shure ULXD4Q (Band G65)",
+  "shortName": "ULXD4Q",
+  "manufacturer": "Shure",
+  "modelNumber": "ULXD4QE=-G65",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/ulx-d_digital_wireless/ulxd4q",
+  "searchTerms": [
+    "ulxd4qe=-g65",
+    "ulxd4q",
+    "shure",
+    "band",
+    "g65"
+  ],
+  "heightMm": 44,
+  "widthMm": 482,
+  "depthMm": 274,
+  "weightKg": 3.45,
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band G65",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Quad-Channel Digital Wireless Receiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/sbc450/ulx-d-specsheet.pdf",
+    "note": "0.32 A max per user guide; W not published. Price list net weight 4.854 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ulx-d-specsheet.pdf",
+      "note": "p.5 ULXD4Q back panel and specifications"
+    },
+    "notes": "weightKg was 3.5 before the data sheet (shure/ulx-d-specsheet.pdf, 2026-11-27)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "XLR Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switch (30 dB pad)"
+    },
+    {
+      "id": "p2",
+      "label": "XLR Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switch (30 dB pad)"
+    },
+    {
+      "id": "p3",
+      "label": "XLR Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switch (30 dB pad)"
+    },
+    {
+      "id": "p4",
+      "label": "XLR Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switch (30 dB pad)"
+    },
+    {
+      "id": "p5",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; 12-13 V DC bias (150 mA max per antenna); Band G65"
+    },
+    {
+      "id": "p6",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; 12-13 V DC bias (150 mA max per antenna); Band G65"
+    },
+    {
+      "id": "p7",
+      "label": "Cascade Out A",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive, 0 dB insertion loss; for one additional receiver"
+    },
+    {
+      "id": "p8",
+      "label": "Cascade Out B",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive, 0 dB insertion loss; for one additional receiver"
+    },
+    {
+      "id": "p9",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from ULX-D transmitters (4 channels); Band G65"
+    },
+    {
+      "id": "p10",
+      "label": "Dante (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante audio (4 channels) and control; 10/100/1000 Mbps"
+    },
+    {
+      "id": "p11",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dual-port Ethernet, second port"
+    },
+    {
+      "id": "p12",
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "Internal supply, 100-240 V AC 50-60 Hz, 0.32 A max; IEC inlet per back-panel drawing"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "avail-shure-axt644",
+  "label": "Shure AXT644 (Antenna, Directional 2.4 Ghz)",
+  "shortName": "AXT644",
+  "manufacturer": "Shure",
+  "modelNumber": "AXT644",
+  "deviceType": "antenna",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/axt644",
+  "searchTerms": [
+    "axt644",
+    "shure",
+    "antenna",
+    "directional",
+    "2.4",
+    "ghz"
+  ],
+  "_avail": {
+    "status": "awaiting-ports",
+    "variant": "Antenna, Directional 2.4 Ghz",
+    "rackFormSource": "Non-rack",
+    "description": "Directional Antenna 2.4 GHz",
+    "source": "Manufacturer site",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsMissing": "No manufacturer data sheet found (pubs.shure.com guide URL and shure.com product page checked; content-files spec sheet URLs refused)."
+  },
+  "ports": []
+}

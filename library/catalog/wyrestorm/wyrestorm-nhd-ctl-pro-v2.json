@@ -1,0 +1,73 @@
+{
+  "id": "avail-wyrestorm-nhd-ctl-pro-v2",
+  "label": "Wyrestorm NHD-CTL-PRO (v2)",
+  "shortName": "NHD-CTL-PRO",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-CTL-PRO v2",
+  "deviceType": "controller",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-ctl-pro-v2/",
+  "searchTerms": [
+    "nhd-ctl-pro v2",
+    "nhd-ctl-pro",
+    "wyrestorm",
+    "v2"
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 120,
+  "powerDrawW": 15.4,
+  "voltage": "12V DC / PoE",
+  "poeDrawW": 15.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v2",
+    "rackFormSource": "Shelf",
+    "description": "Pro Controller for NetworkHD 500 Series w/ Advanced Setup Interface & Wizard",
+    "source": "Manufacturer site",
+    "note": "Dimensions published as 215 x 120 x 25 mm - assumed W x D x H. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-ctl-pro-v2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "power input and voltage (blocks disagree); which LAN port takes PoE; dimensions; Power Consumption 'Max 15.4' has no unit"
+  },
+  "ports": [
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Control & AV",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Control & AV",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "6-pin",
+      "id": "port-2"
+    }
+  ]
+}

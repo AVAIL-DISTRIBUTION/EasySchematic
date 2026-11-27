@@ -1,0 +1,110 @@
+{
+  "id": "avail-shure-slxd4-e-g65",
+  "label": "Shure SLXD4+ (Band G65)",
+  "shortName": "SLXD4+",
+  "manufacturer": "Shure",
+  "modelNumber": "SLXD4+E=-G65",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/slxd-plus/slxd4plus",
+  "searchTerms": [
+    "slxd4+e=-g65",
+    "slxd4+",
+    "shure",
+    "band",
+    "g65"
+  ],
+  "heightMm": 42,
+  "widthMm": 197,
+  "depthMm": 152,
+  "weightKg": 0.9,
+  "voltage": "15V DC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band G65",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "Digital Wireless Receiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/SLXD4plus/en-US.pdf",
+    "note": "15 V DC @ 360 mA external PSU; W not published (approx. 5.4 W by V x A, not entered). Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 1.927 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/SLXD4plus-user-guide.pdf",
+      "note": "p.5-6 receiver panels; p.34-35 specifications"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "XLR Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switchable"
+    },
+    {
+      "id": "p2",
+      "label": "TRS Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" instrument/aux, impedance-balanced"
+    },
+    {
+      "id": "p3",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; Band G65"
+    },
+    {
+      "id": "p4",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; Band G65"
+    },
+    {
+      "id": "p5",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from SLX-D+ transmitters (1 channel); Band G65"
+    },
+    {
+      "id": "p6",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Single-port Ethernet 10/100 (WWB, third-party control)"
+    },
+    {
+      "id": "p7",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC 360 mA from the supplied external supply (tip positive)"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "avail-wyrestorm-mx-0403-h3-mst",
+  "label": "Wyrestorm MX-0403-H3-MST",
+  "shortName": "MX-0403-H3-MST",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-0403-H3-MST",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-0403-h3-mst/",
+  "searchTerms": [
+    "mx-0403-h3-mst",
+    "wyrestorm"
+  ],
+  "powerDrawW": 200,
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Synergy 4K60Hz HDR 4x3 HDMI & USB-C Matrix Switcher with MST & HDBaseT 3.0 Output| Dual 60-Watt Charging | USB 3.2 | USB Passthrough 1Gbe | GPIO | Down-Scaling",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-0403-h3-mst/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB 3.2 / USB passthrough ports, RS-232, dual RJ-45 LAN and GPIO are mentioned in features/title but not listed with counts or connectors in the specifications; 20V DC In: connector not published and 'DC' not stated"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-C In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "HDBaseT 3.0",
+      "id": "port-6"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin",
+      "id": "port-7"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "Page says 20V; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-8",
+      "connectorType": "barrel"
+    }
+  ]
+}

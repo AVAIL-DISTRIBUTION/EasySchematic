@@ -1,0 +1,59 @@
+{
+  "id": "avail-wyrestorm-ex-100-g2-tx",
+  "label": "Wyrestorm EX-100-G2-TX (Transmitter (TX) of set EX-100-G2)",
+  "shortName": "EX-100-G2-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-G2-TX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-g2/",
+  "searchTerms": [
+    "ex-100-g2-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-100-g2"
+  ],
+  "powerDrawW": 5.5,
+  "voltage": "18V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-100-G2",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz 4:2:0 HDBaseT Extender | PoH | CEC | IR | RS232 | 100m/327ft",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-G2 (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-G2"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-100-g2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Video, HDBaseT, IR, RS-232 and CEC connectors are not listed in the specifications (page names RS-232 only as a firmware update path); 18V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "DC 18V/1A; TX and RX powered separately; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-0",
+      "connectorType": "barrel"
+    }
+  ]
+}

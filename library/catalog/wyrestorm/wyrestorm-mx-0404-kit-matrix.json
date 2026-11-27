@@ -1,0 +1,232 @@
+{
+  "id": "avail-wyrestorm-mx-0404-kit-matrix",
+  "label": "Wyrestorm MX-0404-KIT-MATRIX",
+  "shortName": "MX-0404-KIT-MATRIX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-0404-KIT-MATRIX",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-0404-kit/",
+  "searchTerms": [
+    "mx-0404-kit-matrix",
+    "wyrestorm"
+  ],
+  "powerDrawW": 48.2,
+  "voltage": "100-240V AC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K UHD 4:2:0 60Hz 4x4 HDBaseT Matrix | 4x HDMI in | 3x HDBT out | 1x HDMI out | 1-way PoH | 4x S/PDIF de-embed | IR | RS-232 | LAN [matrix of kit MX-0404-KIT]",
+    "source": "Manufacturer site",
+    "note": "Component of kit MX-0404-KIT (1x matrix + 3x HDBaseT receiver (MX-KIT-RX)). Part number per AVAIL kit-component convention (<kit>-MATRIX / -RX / -RX-SCL); WyreStorm publishes no separate part number for this unit. Composition source: Kit page \"In the Box\": 1x MX-0404-KIT Matrix, 3x MX-KIT-RX Receivers. Price list: \"with 3 RX's\". Quantity in kit: 1. Max power 48.2 W. Dimensions and weight not published on product page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "MX-0404-KIT"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-0404-kit/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "AC In: connector not published; the second spec block adds 'Analog: 2ch Analog' audio but lists no analog connector"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "HDBaseT Out 1",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-4"
+    },
+    {
+      "label": "HDBaseT Out 2",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-5"
+    },
+    {
+      "label": "HDBaseT Out 3",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "1-way PoH",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-7"
+    },
+    {
+      "label": "S/PDIF Out 1",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-8"
+    },
+    {
+      "label": "S/PDIF Out 2",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-9"
+    },
+    {
+      "label": "S/PDIF Out 3",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-10"
+    },
+    {
+      "label": "S/PDIF Out 4",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "rca",
+      "section": "Audio Outputs",
+      "id": "port-11"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-12"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "db9",
+      "section": "Serial",
+      "notes": "DB9 female",
+      "id": "port-13"
+    },
+    {
+      "label": "IR In 1",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX",
+      "id": "port-14"
+    },
+    {
+      "label": "IR In 2",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX",
+      "id": "port-15"
+    },
+    {
+      "label": "IR In 3",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX",
+      "id": "port-16"
+    },
+    {
+      "label": "IR Out 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX",
+      "id": "port-17"
+    },
+    {
+      "label": "IR Out 2",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX",
+      "id": "port-18"
+    },
+    {
+      "label": "IR Out 3",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX",
+      "id": "port-19"
+    },
+    {
+      "label": "IR Out 4",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX",
+      "id": "port-20"
+    },
+    {
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "100~240V AC 50/60Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-21",
+      "connectorType": "iec"
+    }
+  ]
+}

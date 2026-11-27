@@ -235,7 +235,10 @@
    "vendor": "Generic",
    "platform": "SFP / SFP+ cage",
    "category": "Networking / Switches",
-   "note": "industry form factor"
+   "note": "industry form factor",
+   "aliases": [
+    "sfp-plus"
+   ]
   },
   {
    "name": "qsfp",
@@ -257,6 +260,20 @@
    "platform": "microSD card slot",
    "category": "Integration Tools / Tools",
    "note": "industry form factor; media, BoQ category"
+  },
+  {
+   "name": "wyrestorm-idb-c-insert",
+   "vendor": "Wyrestorm",
+   "platform": "IDB …-C in-desk boxes: customizable connector inserts",
+   "category": "Connectivity / Architectural",
+   "note": "AVAIL name: WyreStorm publishes no name for the insert format (IDB-HDMI-C, IDB-USBA-C, IDB-RJ45-C…)"
+  },
+  {
+   "name": "wyrestorm-mx-1616-scl",
+   "vendor": "Wyrestorm",
+   "platform": "MX-1616-SCL modular matrix chassis (16 card slots)",
+   "category": "AV distribution / Matrix Switchers",
+   "note": "TX-SCL-HDMI, TX-SCL-HDBT cards"
   }
  ]
 }

@@ -1,0 +1,121 @@
+{
+  "id": "avail-shure-mxn-amp",
+  "label": "Shure MXN-AMP (Networked Dante Low Imp/70V Poe+ Amp)",
+  "shortName": "MXN-AMP",
+  "manufacturer": "Shure",
+  "modelNumber": "MXN-AMP",
+  "deviceType": "amplifier",
+  "category": "Audio Products / Power Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers/mxn-amp",
+  "searchTerms": [
+    "mxn-amp",
+    "shure",
+    "networked",
+    "dante",
+    "low",
+    "imp/70v",
+    "poe+",
+    "amp"
+  ],
+  "heightMm": 40,
+  "widthMm": 202,
+  "depthMm": 178,
+  "weightKg": 1.1,
+  "voltage": "PoE+ 802.3at class 4",
+  "poeDrawW": 25.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Networked Dante Low Imp/70V Poe+ Amp",
+    "rackFormSource": "Non-rack",
+    "description": "PoE+ Powered Multichannel Amplifier",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXN-AMP/en-US.pdf",
+    "note": "Also runs on PoE class 0 (12.95 W max). Dimensions published as 202 x 178 x 40 mm (L x W x H). Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXN-AMP-user-guide.pdf",
+      "note": "MXN-AMP user guide pp.8-12 (About, Parts, Block pin assignments, Specifications)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Line In (3.5 mm)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-eighth",
+      "notes": "3.5 mm TRS stereo line input (2 analog line-level channels)"
+    },
+    {
+      "id": "p2",
+      "label": "Speaker Out 1",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "LoZ, 2-pin block 5.08 mm (Dinkle 2ESDV-02P); 3.625 W (4-channel) or 7.25 W (2-channel); not usable together with 70V Out"
+    },
+    {
+      "id": "p3",
+      "label": "Speaker Out 2",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "LoZ, 2-pin block 5.08 mm (Dinkle 2ESDV-02P); 3.625 W (4-channel) or 7.25 W (2-channel); not usable together with 70V Out"
+    },
+    {
+      "id": "p4",
+      "label": "Speaker Out 3",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "LoZ, 2-pin block 5.08 mm (Dinkle 2ESDV-02P); 3.625 W (4-channel) or 7.25 W (2-channel); not usable together with 70V Out"
+    },
+    {
+      "id": "p5",
+      "label": "Speaker Out 4",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "LoZ, 2-pin block 5.08 mm (Dinkle 2ESDV-02P); 3.625 W (4-channel) or 7.25 W (2-channel); not usable together with 70V Out"
+    },
+    {
+      "id": "p6",
+      "label": "70V Out",
+      "signalType": "speaker-level",
+      "direction": "output",
+      "section": "Speaker Outputs",
+      "connectorType": "phoenix",
+      "notes": "70 V line, 2-pin block 7.5 mm (Dinkle 7ESDV-02P); 14.5 W; LoZ mode is default, 70V mode set in software"
+    },
+    {
+      "id": "p7",
+      "label": "Dante (PoE+)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante 4 in / 4 out and control; the only power input, PoE+ class 4 (25.5 W max) or PoE class 0 (12.95 W max)"
+    },
+    {
+      "id": "p8",
+      "label": "Logic In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "phoenix",
+      "notes": "Logic input only. 3-pin block 5.08 mm (Dinkle 2ESDV-03P): logic in, not connected, logic ground; switches between device presets 1 and 2"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "avail-shure-mxcwapt-w",
+  "label": "Shure MXCWAPT (Wireless Access Point 5Ghz/2.4Ghz,World)",
+  "shortName": "MXCWAPT",
+  "manufacturer": "Shure",
+  "modelNumber": "MXCWAPT-W",
+  "deviceType": "access-point",
+  "category": "Audio Products / Discussion Systems",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/mxcw/mxcwapt",
+  "searchTerms": [
+    "mxcwapt-w",
+    "mxcwapt",
+    "shure",
+    "wireless",
+    "access",
+    "point",
+    "5ghz/2.4ghz",
+    "world"
+  ],
+  "heightMm": 47.8,
+  "widthMm": 242.5,
+  "depthMm": 241.8,
+  "weightKg": 1.15,
+  "voltage": "PoE 37-57V",
+  "poeDrawW": 12.95,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Wireless Access Point 5Ghz/2.4Ghz,World",
+    "rackFormSource": "Non-rack",
+    "description": "MXCWAPT Access Point Transceiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/MXCWNCS/MXCW_Datasheet_Systempage_EN_letter_1809.pdf",
+    "note": "12.95 W max, 6.5 W typical (MXCW user guide). Wall/ceiling mount. Price list net weight 1.497 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXCW_Datasheet_Systempage_EN_letter_1809.pdf",
+      "note": "Microflex Complete Wireless system data sheet pp.4-5 (MXCWAPT specifications)"
+    },
+    "notes": "weightKg: card had 1.1, document gives 1.15 (MXCW_Datasheet_Systempage_EN_letter_1809.pdf)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Analog In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR-3 female, balanced, line / aux level"
+    },
+    {
+      "id": "p2",
+      "label": "Analog Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR-3 male, balanced; ground lift switch"
+    },
+    {
+      "id": "p3",
+      "label": "Conference Units (Wireless)",
+      "signalType": "rf",
+      "direction": "bidirectional",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link to and from up to 125 MXCW640 conference units; 2.4 GHz ISM / 5 GHz UNII WLAN (802.11a/g)"
+    },
+    {
+      "id": "p4",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Gigabit; Dante / AES67 10 in / 10 out and control; the only power input, PoE 802.3af class 0 (12.95 W max)"
+    }
+  ]
+}

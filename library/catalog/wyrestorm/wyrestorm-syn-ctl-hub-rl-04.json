@@ -1,0 +1,29 @@
+{
+  "id": "avail-wyrestorm-syn-ctl-hub-rl-04",
+  "label": "Wyrestorm SYN-CTL-HUB-RL-04",
+  "shortName": "SYN-CTL-HUB-RL-04",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SYN-CTL-HUB-RL-04",
+  "deviceType": "control-expansion",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "syn-ctl-hub-rl-04",
+    "wyrestorm"
+  ],
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Shelf",
+    "description": "Synergy Control Hub | 4x Relay | PoE",
+    "source": "Price list",
+    "note": "No product page found on wyrestorm.com (sitemap + direct URL checked); Reference URL left empty - no other manufacturer page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx"
+  },
+  "ports": []
+}

@@ -1,0 +1,66 @@
+{
+  "id": "avail-shure-aniusb-c",
+  "label": "Shure ANIUSB-C (Interface, Usb-C, Dante)",
+  "shortName": "ANIUSB-C",
+  "manufacturer": "Shure",
+  "modelNumber": "ANIUSB-C",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/mixers/aniusb-c",
+  "searchTerms": [
+    "aniusb-c",
+    "shure",
+    "interface",
+    "usb-c",
+    "dante"
+  ],
+  "heightMm": 28,
+  "widthMm": 90,
+  "depthMm": 139,
+  "weightKg": 0.15,
+  "voltage": "PoE 802.3af class 0",
+  "poeDrawW": 6.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Interface, Usb-C, Dante",
+    "rackFormSource": "Shelf",
+    "description": "Audio Network Interface, USB-C, Dante",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/ANIUSB-C/en-US.pdf",
+    "note": "Compact desktop/under-table interface. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 0.155 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ANIUSB-C-user-guide.pdf",
+      "note": "ANIUSB-C user guide pp.7-8 (Parts, PoE, Dante channels) and p.24 (Specifications)"
+    },
+    "notes": "weightKg: card had 0.1, document gives 0.15 (ANIUSB-C-user-guide.pdf)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante 2 in / 2 out and control; the only power input, PoE class 0 or class 2 (6.5 W max)"
+    },
+    {
+      "id": "p2",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "USB 2.0 Type C with locking feature; 1 in / 1 out summed mono, or stereo"
+    }
+  ]
+}

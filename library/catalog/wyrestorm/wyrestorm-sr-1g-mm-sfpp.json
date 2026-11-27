@@ -1,0 +1,47 @@
+{
+  "id": "avail-wyrestorm-sr-1g-mm-sfpp",
+  "label": "Wyrestorm SR-1G-MM-SFPP",
+  "shortName": "SR-1G-MM-SFPP",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SR-1G-MM-SFPP",
+  "deviceType": "expansion-card",
+  "category": "Networking / Switches",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sr-1g-mm-sfp/",
+  "searchTerms": [
+    "sr-1g-mm-sfpp",
+    "wyrestorm"
+  ],
+  "powerDrawW": 1,
+  "voltage": "3.3V DC",
+  "slotFamily": "sfp",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "SFP+ 1G Ethernet Fiber Module for Managed Switches and NHD Encoders/Decoders",
+    "source": "Manufacturer site",
+    "note": "Published as \"< 1W\". No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list: SFP+ 1G module; product page: \"1G SFP Multimode Transceiver\" (sr-1g-mm-sfp).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sr-1g-mm-sfp/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Fiber: connector id for LC duplex not in the connector list; host-powered module, no power port"
+  },
+  "ports": [
+    {
+      "label": "Fiber",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Network",
+      "notes": "LC duplex; 1.25 Gbps; 850 nm; 1000Base-SX class (550m MMF)",
+      "id": "port-0"
+    }
+  ]
+}

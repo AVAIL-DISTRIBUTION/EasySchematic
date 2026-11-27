@@ -1,0 +1,185 @@
+{
+  "id": "avail-shure-ad8ce",
+  "label": "Shure AD8C (470-960 MHz)",
+  "shortName": "AD8C",
+  "manufacturer": "Shure",
+  "modelNumber": "AD8CE",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ad8c",
+  "searchTerms": [
+    "ad8ce",
+    "ad8c",
+    "shure",
+    "8-port",
+    "combiner",
+    "470-960",
+    "mhz"
+  ],
+  "heightMm": 44,
+  "widthMm": 482,
+  "depthMm": 385,
+  "weightKg": 3.8,
+  "voltage": "100-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "470-960 MHz",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Axient Digital PSM 8-Port Antenna Combiner",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/ADPSM/en-US.pdf",
+    "note": "AD8CE: 100-240 V AC, 0.68 A max (5.68 A with AC outlet loaded); W not published. AD8CDC: 10.9-14.8 V DC, 3.3 A max, 3.9 kg. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 5.216 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ADPSM-user-guide.pdf",
+      "note": "AD8C overview pp.11-13 (rear panel); AD8C specifications pp.85-86"
+    },
+    "notes": "Variant \"8-Port Combiner\" → \"470-960 MHz\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF In 1",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p2",
+      "label": "RF In 2",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p3",
+      "label": "RF In 3",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p4",
+      "label": "RF In 4",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p5",
+      "label": "RF In 5",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p6",
+      "label": "RF In 6",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p7",
+      "label": "RF In 7",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p8",
+      "label": "RF In 8",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive; from ADTQ/ADTD transmitter RF output; 470-960 MHz; 36 dBm peak / 27 dBm average max"
+    },
+    {
+      "id": "p9",
+      "label": "Antenna Out 1",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to a Shure passive antenna (or AD221) matching 470-960 MHz; insertion loss 4:1 -8 dB, 8:1 -12 dB typical"
+    },
+    {
+      "id": "p10",
+      "label": "Antenna Out 2",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to a Shure passive antenna (or AD221) matching 470-960 MHz; insertion loss 4:1 -8 dB, 8:1 -12 dB typical"
+    },
+    {
+      "id": "p11",
+      "label": "Antenna Out 3",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; to a Shure passive antenna (or AD221) matching 470-960 MHz; insertion loss 4:1 -8 dB, 8:1 -12 dB typical"
+    },
+    {
+      "id": "p12",
+      "label": "Network 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "RJ45, 10/100 Mbps / 1 Gbps; network control"
+    },
+    {
+      "id": "p13",
+      "label": "Network 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "RJ45, 10/100 Mbps / 1 Gbps; network control"
+    },
+    {
+      "id": "p14",
+      "label": "AC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC locking, 100-240 V AC 50/60 Hz, 0.68 A max (5.68 A max with outlet loaded)"
+    },
+    {
+      "id": "p15",
+      "label": "AC Out (Cascade)",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC, 100-240 V AC 50/60 Hz, 5 A max, unswitched; loops power to further devices via IEC extension cable"
+    }
+  ]
+}

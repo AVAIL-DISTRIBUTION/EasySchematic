@@ -1,0 +1,111 @@
+{
+  "id": "avail-shure-p3te-k3e",
+  "label": "Shure P3T (Band K3E)",
+  "shortName": "P3T",
+  "manufacturer": "Shure",
+  "modelNumber": "P3TE=-K3E",
+  "deviceType": "iem-transmitter",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/in-ear-monitoring/psm300/p3t",
+  "searchTerms": [
+    "p3te=-k3e",
+    "p3t",
+    "shure",
+    "band",
+    "k3e"
+  ],
+  "heightMm": 43,
+  "widthMm": 198,
+  "depthMm": 172,
+  "weightKg": 0.783,
+  "voltage": "12-15V DC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band K3E",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "P3T Wireless Transmitter",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/PSM300/en-US.pdf",
+    "note": "260 mA max per user guide (approx. 3.9 W at 15 V, calculated). Price list net weight 2.903 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/PSM300-user-guide.pdf",
+      "note": "p.7-8 P3T front and rear panels; p.15 connections; p.25 specifications"
+    },
+    "notes": "weightKg was 0.8 before the data sheet (shure/PSM300-user-guide.pdf, 2026-11-27); datasheetUrl was https://content-files.shure.com/Pubs/PSM300/PSM300_Spec_Sheet.pdf (lacks connector counts / types; replaced by the official user guide)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1 (L)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-quarter",
+      "notes": "Left/CH1; 1/4\" TRS balanced, +4 dBu / -10 dBV switch; use for mono"
+    },
+    {
+      "id": "p2",
+      "label": "Audio In 2 (R)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-quarter",
+      "notes": "Right/CH2; 1/4\" TRS balanced, +4 dBu / -10 dBV switch"
+    },
+    {
+      "id": "p3",
+      "label": "Loop Out 1 (L)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" TRS balanced, wired directly to the matching input"
+    },
+    {
+      "id": "p4",
+      "label": "Loop Out 2 (R)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" TRS balanced, wired directly to the matching input"
+    },
+    {
+      "id": "p5",
+      "label": "Antenna Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; Band K3E 606-630 MHz; for 1/4 wave antenna, directional antenna or PA411"
+    },
+    {
+      "id": "p6",
+      "label": "IEM (Wireless)",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link to P3R / P3RA bodypack receivers (stereo); Band K3E 606-630 MHz"
+    },
+    {
+      "id": "p7",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12-15 V DC 260 mA max from the supplied PS24 supply"
+    }
+  ]
+}

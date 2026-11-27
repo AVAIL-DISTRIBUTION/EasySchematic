@@ -1,0 +1,77 @@
+{
+  "id": "avail-wyrestorm-con-dnt-xlr",
+  "label": "Wyrestorm CON-DNT-XLR",
+  "shortName": "CON-DNT-XLR",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CON-DNT-XLR",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/con-dnt-xlr/",
+  "searchTerms": [
+    "con-dnt-xlr",
+    "wyrestorm"
+  ],
+  "heightMm": 125,
+  "widthMm": 54.4,
+  "depthMm": 33.4,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Dante/AES67 Input to Analog XLR Audio Output Adapter | 2-Channel | PoE | Adjustable Output Level",
+    "source": "Manufacturer site",
+    "note": "PoE class 1 only published - class maximum 3.84 W used. Optional 5V DC via USB-C. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/con-dnt-xlr/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "Audio Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs",
+      "notes": "balanced/unbalanced",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "xlr-3",
+      "section": "Audio Outputs",
+      "notes": "balanced/unbalanced",
+      "id": "port-1"
+    },
+    {
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Dante/AES67; PoE 802.3af Class 1",
+      "id": "port-2"
+    },
+    {
+      "label": "5V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Power",
+      "notes": "optional DC 5V input",
+      "id": "port-3"
+    }
+  ]
+}

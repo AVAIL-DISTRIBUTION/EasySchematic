@@ -1,0 +1,73 @@
+{
+  "id": "avail-wyrestorm-exp-sp-0102-8k",
+  "label": "Wyrestorm EXP-SP-0102-8K",
+  "shortName": "EXP-SP-0102-8K",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EXP-SP-0102-8K",
+  "deviceType": "hdmi-splitter",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/exp-sp-0102-8k/",
+  "searchTerms": [
+    "exp-sp-0102-8k",
+    "wyrestorm"
+  ],
+  "powerDrawW": 3.5,
+  "voltage": "12V DC",
+  "thermalBtuh": 12,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "8K@60/4K@120Hz HDMI 2.1 48Gbps 1:2 Splitter w/ 4k/1080p Scaling and Audio De-Embed",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/exp-sp-0102-8k/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published; ARC and S/PDIF audio output are mentioned but no connector is listed"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 1A; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-3",
+      "connectorType": "barrel"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "avail-wyrestorm-nhd-500-rx-v2",
+  "label": "Wyrestorm NHD-500-RX (v2)",
+  "shortName": "NHD-500-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-500-RX v2",
+  "deviceType": "avoip-decoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-500-tx-rx-v2/",
+  "searchTerms": [
+    "nhd-500-rx v2",
+    "nhd-500-rx",
+    "wyrestorm",
+    "v2"
+  ],
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 25.5,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v2",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz Decoder | 4K60Hz 4:4:4 | 1GbE | Dolby Vision & HDR | USB 2.0 | Video Wall | Audio De-embed | ARC | S/PDIF | Dual RJ45 | SFP | PoE+ | CEC | IR & RS232 Routing | Dante AV-A/AES67",
+    "source": "Manufacturer site",
+    "note": "Only PoE+ (802.3at) published - class maximum 25.5 W used; power consumption and dimensions not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-500-tx-rx-v2/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Dante/AES67: listed only as an audio format, no separate port; 12V DC In: connector not published; PoE class (802.3at vs 802.3af) disputed; Audio Out: connector not published; SFP: speed/type disputed"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "S/PDIF In",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "toslink",
+      "section": "Audio Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "notes": "5-pin balanced",
+      "id": "port-2",
+      "connectorType": "phoenix"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE; PoE compliant (class disputed between blocks)",
+      "id": "port-3"
+    },
+    {
+      "label": "SFP",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1Gb SFP",
+      "id": "port-4"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; 2-way; API programmable",
+      "id": "port-5"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX, 3.5mm TS mono; API programmable",
+      "id": "port-6"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX, 3.5mm TRS stereo; API programmable",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-A HID 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "HID",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-A HID 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "HID",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-10"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-11"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 1A or PoE compliant (class disputed between blocks); Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-12",
+      "connectorType": "barrel"
+    }
+  ]
+}

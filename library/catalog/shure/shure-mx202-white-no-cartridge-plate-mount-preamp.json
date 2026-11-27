@@ -1,0 +1,52 @@
+{
+  "id": "avail-shure-mx202wp-a-n",
+  "label": "Shure MX202 (White, No cartridge, Plate-mount preamp)",
+  "shortName": "MX202",
+  "manufacturer": "Shure",
+  "modelNumber": "MX202WP-A/N",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx202",
+  "searchTerms": [
+    "mx202wp-a/n",
+    "mx202",
+    "shure",
+    "white",
+    "no",
+    "cartridge",
+    "plate-mount",
+    "preamp"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, No cartridge, Plate-mount preamp",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Overhead Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs2-api.prod.shureweb.eu/documents/public/download/3222.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MX200-user-guide.pdf",
+      "note": "p.7-8 Plate Mount Preamp Installation (input and output terminal blocks), p.10 furnished RK202PK; the spec sheet only shows the in-line RK100PK version"
+    },
+    "notes": "Variant \"White, No cartridge\" → \"White, No cartridge, Plate-mount preamp\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "terminal-block",
+      "notes": "Mic level, active balanced; screw terminal block (pin 2 = +, pin 3 = -, S = shield) on the furnished RK202PK plate-mount preamp, field-wired with 2-conductor shielded mic cable; mic cable is cut to length and lands on the preamp input terminals (R/B/S); 11-52 V DC phantom, 2.0 mA"
+    }
+  ]
+}

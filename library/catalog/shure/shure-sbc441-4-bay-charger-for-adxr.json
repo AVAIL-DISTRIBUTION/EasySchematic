@@ -1,0 +1,76 @@
+{
+  "id": "avail-shure-sbc441e",
+  "label": "Shure SBC441 (4-Bay Charger For Adxr)",
+  "shortName": "SBC441",
+  "manufacturer": "Shure",
+  "modelNumber": "SBC441E",
+  "deviceType": "charging-station",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/sbc441",
+  "searchTerms": [
+    "sbc441e",
+    "sbc441",
+    "shure",
+    "4-bay",
+    "charger",
+    "for",
+    "adxr"
+  ],
+  "heightMm": 60.3,
+  "widthMm": 78.8,
+  "depthMm": 216.5,
+  "weightKg": 0.531,
+  "voltage": "15V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "4-Bay Charger For Adxr",
+    "rackFormSource": "Shelf",
+    "description": "Axient Digital PSM 4-Bay Docking Charger",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/ADPSM/en-US.pdf",
+    "note": "15 V, 4.0 A max input (external PS60 PSU); W not published (max ~60 W by V x A). Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 1.202 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/ADPSM-user-guide.pdf",
+      "note": "4-Bay Networked Charger pp.14-15, 64; SBC441 specifications p.87"
+    },
+    "notes": "Weight changed 0.5 kg -> 0.531 kg per ADPSM guide p.87."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Ethernet 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "RJ45, 10/100 Mbps; remote monitoring in Wireless Workbench, DHCP or manual IP"
+    },
+    {
+      "id": "p2",
+      "label": "Ethernet 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "RJ45, 10/100 Mbps; network pass-through to the next charger"
+    },
+    {
+      "id": "p3",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC, 4.0 A max from the PS60 external supply; locking jack with lock nut; Shure does not name the connector"
+    }
+  ]
+}

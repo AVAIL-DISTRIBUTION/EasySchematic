@@ -1,0 +1,76 @@
+{
+  "id": "avail-wyrestorm-ex-100-kvm-ip-rx",
+  "label": "Wyrestorm EX-100-KVM-IP-RX (Receiver (RX) of set EX-100-KVM-IP)",
+  "shortName": "EX-100-KVM-IP-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-100-KVM-IP-RX",
+  "deviceType": "kvm-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-100-kvm-ip/",
+  "searchTerms": [
+    "ex-100-kvm-ip-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-100-kvm-ip"
+  ],
+  "powerDrawW": 2.5,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-100-KVM-IP",
+    "rackFormSource": "Shelf",
+    "description": "4K30Hz IP Extender set | 1GbE | Zero latency | USB2.0 | Multi-Channel audio (4k30: 100m/328ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-100-KVM-IP (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-100-KVM-IP"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-100-kvm-ip/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB ports: number and connector not published (page mentions USB 2.0 over IP and a built-in hub; SFP only in FAQ); 12V DC In: connector not published; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "compressed IP over 1G network",
+      "id": "port-1"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-2",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}
