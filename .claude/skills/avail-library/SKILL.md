@@ -494,7 +494,7 @@ wall plate, gang в названии / описании) → `phoenix` 2-pin; с
 (spec sheets RXV-35-4K, NHD-500 / 600, EX-35-H2, MX KIT full range): AC power cord в комплекте (MX / MXV, матрицы
 комплектов, IDB-300 / 400) → `iec`; камеры, видео- и аудиобары → `barrel` без фиксации (внешний адаптер); только PoE
 (keypad, touch-screen: SYN-KEY10, SYN-TOUCH10) → без порта питания, «PoE» на LAN; RS-232 → `phoenix` 3-pin; аудио
-symmetric (balanced) → `phoenix` 5-pin, несимметричное стерео → `trs-eighth`; IR → `trs-eighth` (TS излучатель, TRS приёмник);
+симметричное (balanced) → `phoenix` 5-pin, несимметричное стерео → `trs-eighth`; IR → `trs-eighth` (TS излучатель, TRS приёмник);
 что notes порта уже называют (3.5mm, 8-pin Mini DIN, N-pin) — как названо. notes порта — «Wyrestorm convention: … —
 verify». Отчёт —
 `docs/avail/wyrestorm-intake.md`.
