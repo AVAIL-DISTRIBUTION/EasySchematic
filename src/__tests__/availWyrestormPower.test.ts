@@ -1,6 +1,6 @@
 /**
  * Wyrestorm power connector convention (src/avail/wyrestormPower.ts, decision 2026-11-27): by body —
- * box → locking DC barrel, in-wall → 2-pin phoenix, rack mains → IEC; a link-powered box gets its local
+ * box → locking DC barrel, in-wall → 2-pin phoenix, any mains → IEC; a link-powered box gets its local
  * supply; a connector the document names is kept; other bodies and vendors are left alone.
  */
 import { describe, expect, it } from "vitest";
@@ -29,11 +29,19 @@ describe("withWyrestormPower", () => {
     expect(withWyrestormPower(card({ rackForm: "full", voltage: "100-240V AC" }), [dc("AC Power In")])[0]).toMatchObject({ connectorType: "iec" });
   });
 
-  it("a named connector stays; mains off the rack, other bodies and other vendors are left; same array when nothing changes", () => {
+  it("any mains input → IEC whatever the body (AMP-2120-DNT: shelf box; in-wall, other); low-voltage AC is left", () => {
+    const mains = dc("AC Power In", { notes: "AC 100-240V 50/60Hz" });
+    expect(withWyrestormPower(card({ modelNumber: "AMP-2120-DNT", deviceType: "amplifier", voltage: "100-240V AC" }), [mains])[0])
+      .toMatchObject({ connectorType: "iec", notes: `AC 100-240V 50/60Hz; ${WYRESTORM_NOTES.iec}` });
+    expect(withWyrestormPower(card({ modelNumber: "SW-1-IW", rackForm: undefined, voltage: "100-240V AC" }), [dc("AC Power In")])[0]).toMatchObject({ connectorType: "iec" });
+    expect(withWyrestormPower(card({ rackForm: undefined, deviceType: "controller", voltage: "100-240V AC" }), [dc("Mains In")])[0]).toMatchObject({ connectorType: "iec" });
+    const lowAc = [dc("24V AC In")];
+    expect(withWyrestormPower(card({ voltage: "24V AC" }), lowAc)).toBe(lowAc);
+  });
+
+  it("a named connector stays; other bodies and other vendors are left; same array when nothing changes", () => {
     const named = [hdmi, dc("12V DC In", { connectorType: "phoenix" })];
     expect(withWyrestormPower(card({}), named)).toBe(named);
-    const mainsBox = [dc("AC Power In")];
-    expect(withWyrestormPower(card({ modelNumber: "AMP-2120-DNT", voltage: "100-240V AC" }), mainsBox)).toBe(mainsBox);
     const other = [dc()];
     expect(withWyrestormPower(card({ rackForm: undefined, deviceType: "controller" }), other)).toBe(other);
     expect(withWyrestormPower(card({ manufacturer: "Extron" }), other)).toBe(other);

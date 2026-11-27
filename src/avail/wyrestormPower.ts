@@ -7,7 +7,9 @@
  *                                          supply's (the card's voltage);
  *   in-wall (-IW, -UK, -US part numbers; in-wall, wall plate, gang in the name or description)
  *                                        → phoenix, 2-pin;
- *   rack-mounted with a mains input      → iec.
+ *   rack-mounted with a mains input      → iec;
+ *   any mains input (100-240 V AC), whatever the body → iec (addition of the same day: AMP-2120-DNT,
+ *                                          a shelf box with a mains inlet).
  *
  *   AC power cord in the box (MX / MXV matrices, kit matrices, IDB-300 / IDB-400 with mains)
  *                                        → iec;
@@ -21,8 +23,8 @@
  *
  * A box or in-wall device powered over the link (PoH / PoC) also gets its power input: the local supply
  * is the alternative. Every such port says "Wyrestorm convention … — verify" in its notes. Nothing else is
- * changed: a connector the document names stays, other bodies (cameras, bars, panels, mains devices off
- * the rack) are left for a document. Pure, used by fill:catalog-ports (catalogPorts.ts).
+ * changed: a connector the document names stays, other bodies (cameras, bars, panels) and low-voltage AC
+ * inputs ("24V AC") are left for a document. Pure, used by fill:catalog-ports (catalogPorts.ts).
  */
 type Obj = Record<string, unknown>;
 const str = (v: unknown) => (typeof v === "string" ? v : "");
@@ -62,6 +64,10 @@ export function wyrestormBody(card: Obj): WyrestormBody {
 }
 
 const isAc = (p: Obj, card: Obj) => /\bAC\b|mains/i.test(`${str(p.label)} ${str(p.notes)}`) || (!/\bDC\b/i.test(str(p.label)) && /\bAC\b/i.test(str(card.voltage)) && !/\bDC\b/i.test(str(card.voltage)));
+/** A low-voltage AC supply ("24V AC") is not mains: it stays for a document. */
+const LOW_AC_RE = /\b\d{1,2}(?:\.\d+)?\s?V(?:\s?AC|AC)\b/i;
+/** A mains input: AC with no low-voltage AC figure on the port or the card. */
+const isMains = (p: Obj, card: Obj) => !LOW_AC_RE.test(`${str(p.label)} ${str(p.notes)} ${str(card.voltage)}`);
 const linkPowered = (card: Obj, ports: Obj[]) =>
   /\bPo[HC]\b|power over hdbaset/i.test([str(card.voltage), str(((card._avail ?? {}) as Obj).description), ...ports.map((p) => str(p.notes))].join(" "));
 
@@ -121,7 +127,8 @@ function powerConvention(card: Obj, list: Obj[]): Obj[] {
   const pn = str(card.modelNumber);
   const inputs = list.filter((p) => str(p.signalType) === "power" && str(p.direction) === "input" && !str(p.section).startsWith("Slot"));
   const connectorFor = (p: Obj): keyof typeof WYRESTORM_NOTES | null => {
-    if (isAc(p, card)) return body === "rack" || AC_CORD_RE.test(pn) ? "iec" : null;
+    // Mains (100-240 V AC) → IEC whatever the body (decision 2026-11-27, addition: AMP-2120-DNT).
+    if (isAc(p, card)) return isMains(p, card) || body === "rack" || AC_CORD_RE.test(pn) ? "iec" : null;
     if (ADAPTER_TYPES.has(str(card.deviceType))) return "adapter";
     return body === "wall" ? "phoenix" : body === "box" ? "barrel" : null;
   };

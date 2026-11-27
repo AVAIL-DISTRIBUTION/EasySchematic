@@ -1,6 +1,6 @@
 ---
 name: avail-documents
-description: Technical rules of the AVAIL project document chain that code must follow — signal schematic → floor plan → BoQ (equipment) → BoM (cables and installation); device codes like "CAM 1.1" linking all four; BoQ (3 sheets) and BoM (5 sheets) structure, the document palette, the TBD rule for an unknown price; floor plan scale 1:100 and route lengths (d_трассы) as the BoM cable input. Requirements for future exports (phase 5), not for current code. Use when designing exports, reports, device codes or floor plans.
+description: Technical rules of the AVAIL project document chain that code must follow — signal schematic → floor plan → BoQ (equipment) → BoM (cables and installation); device codes like "CAM 1.1" linking all four; BoQ (3 sheets) and BoM (5 sheets) structure, the document palette, the TBD rule for an unknown price; floor plan scale 1:100 and route lengths (d_трассы) as the BoM cable input; rack and room power totals (pass-through power is not counted twice). Requirements for future exports (phase 5), not for current code. Use when designing exports, reports, device codes or floor plans.
 ---
 
 # Документы проекта AVAIL: технические правила для кода
@@ -98,3 +98,17 @@ TBD-позиции. Подтверждённая цена — фон `BG_GREEN`.
 - **Длина трассы `d_трассы`** — полный маршрут кабеля от коммутатора (PSW) до устройства по трассам плана, в метрах. Это
   вход для BoM: База = `d_трассы` + расстояние до серверной + длина помещения; К заказу = База × (1 + запас),
   округлённое вверх до 5 м. Экспорт BoM берёт `d_трассы` из плана по коду устройства.
+
+## 8. Расчёт питания стойки и помещения: транзитное питание
+
+Сумма питания (стойка, помещение, ИБП) — по `powerDrawW` устройств схемы (PoE-потребители — `poeDrawW` на бюджете
+коммутатора, не в сумме сети). **Транзитное питание:** у блока с `_avail.passThroughPower = {enabled: true, powers}`
+(`src/avail/passThroughPower.ts`, `passThroughPowerOf`) `powerDrawW` уже включает устройства, которые он питает:
+Shure UA844+ (DC Out 1-4 → приёмники ULXD4 / QLXD4 / SLX4 / BLX4R, до 2.5 A), PA411 (DC Out → передатчики PSM300 P3T,
+до 1.4 A), UABIAST (смещение по коаксиалу → UA834 / UA874). Правило: **если устройство питается от такого блока (на
+схеме его вход питания соединён с выходом питания блока, или RF-порт с пометкой «bus-powered (coax bias)» — с ним по
+коаксиалу), его мощность второй раз не суммируется**; блок считается своим `powerDrawW` целиком, даже если выходы
+заняты не все (это запас по номиналу). Устройство с собственным блоком питания, подключённое к тому же блоку только
+сигналом, суммируется как обычно. В расчёте строка такого устройства показывает «powered by <код блока>» и 0 W в
+итоге; если вход питания устройства на схеме не соединён — суммируется (лучше завысить, чем недосчитать).
+

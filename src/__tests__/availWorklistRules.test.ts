@@ -52,6 +52,22 @@ describe("no power port: the powering port's notes say how it is powered", () =>
   });
 });
 
+describe("coax bias (v0.13): powered over the coax by a receiver or distributor", () => {
+  const rf = (notes: string, direction = "output") => ({ id: "r", label: "To Receiver", signalType: "rf", direction, section: "RF", connectorType: "bnc", notes });
+  const amp = (over: Record<string, unknown>) => block({ deviceType: "antenna-distribution", powerDrawW: 0.72, voltage: "10-15V DC", ...over });
+  it("\"bus-powered (coax bias)\" on any port, or \"coax bias\" in voltage: no power port needed", () => {
+    expect(lintBlock(amp({ ports: [rf("bus-powered (coax bias)")] })).warnings).not.toContain("no power port");
+    expect(lintBlock(amp({ ports: [rf("bus-powered (coax bias)", "input")] })).warnings).not.toContain("no power port");
+    expect(lintBlock(amp({ voltage: "10-15V DC (coax bias)", ports: [rf("BNC, 50 ohm")] }))).toEqual({ level: "A", errors: [], warnings: [] });
+    expect(lintBlock(amp({ ports: [rf("BNC, 50 ohm")] })).warnings).toContain("no power port");
+  });
+  it("the draw is still required: coax bias is not a power figure", () => {
+    const l = lintBlock(amp({ powerDrawW: undefined, voltage: undefined, ports: [rf("bus-powered (coax bias)")] }));
+    expect(l.warnings).not.toContain("no power port");
+    expect(l.warnings).toContain("no powerDrawW/voltage (or poeDrawW)");
+  });
+});
+
 describe("labels: more panel abbreviations and values", () => {
   it("DX, ME, EBU, PD, TB3 and number+unit tokens", () => {
     for (const l of ["DX 1", "ME 1", "AES/EBU", "USB PD", "TB3", "TB4", "12VDC", "5V DC"]) expect(onlyAbbreviations(l), l).toBe(true);

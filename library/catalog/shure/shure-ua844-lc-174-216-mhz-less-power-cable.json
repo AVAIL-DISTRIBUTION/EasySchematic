@@ -27,6 +27,7 @@
   "widthMm": 483,
   "depthMm": 172,
   "weightKg": 1.62,
+  "powerDrawW": 30.5,
   "voltage": "14-18V DC",
   "rackForm": "full",
   "_avail": {
@@ -44,8 +45,12 @@
       "from": "shure/UA844SWBplus-user-guide.pdf",
       "note": "Model variations and front/rear panels p.4; cascading p.6; specifications pp.7-8"
     },
-    "notes": "Weight changed 1.6 kg -> 1.62 kg per UA844+ guide p.7. /LC: same unit, ships without the locking DC cords and with 2 instead of 10 short BNC cables (guide p.6).; Variant \"Less power cable\" → \"174-216 MHz, Less power cable\" (from the part number; the intake form gave one Variant to several part numbers)",
-    "portsMissing": "The guide does not state the number of RF outputs per channel in text (5 per channel assumed from 'up to five receivers' and the 10 supplied BNC cables); the front-panel Antenna A/B connectors (front-mount antenna hardware) are not modelled separately. Number of RF output jacks per antenna channel is not stated in the UA844+ user guide (panel drawing not in the PDF): RF Out A / RF Out B are modelled once each; verify against the rear panel."
+    "notes": "Weight changed 1.6 kg -> 1.62 kg per UA844+ guide p.7. /LC: same unit, ships without the locking DC cords and with 2 instead of 10 short BNC cables (guide p.6).; Variant \"Less power cable\" → \"174-216 MHz, Less power cable\" (from the part number; the intake form gave one Variant to several part numbers); powerDrawW 30.5 W computed from the UA844+ user guide (shure/UA844SWBplus-user-guide.pdf, DC In: 15 V DC, 2.54 A): 15 × 2.54 = 38.1 VA × 0.8 (AVAIL utilisation factor), as accepted by proposal 14892d02; includes up to 2.5 A passed to receivers via DC Out 1-4. Computed: V × A × 0.8",
+    "portsMissing": "The guide does not state the number of RF outputs per channel in text (5 per channel assumed from 'up to five receivers' and the 10 supplied BNC cables); the front-panel Antenna A/B connectors (front-mount antenna hardware) are not modelled separately. Number of RF output jacks per antenna channel is not stated in the UA844+ user guide (panel drawing not in the PDF): RF Out A / RF Out B are modelled once each; verify against the rear panel.",
+    "passThroughPower": {
+      "enabled": true,
+      "powers": "DC Out 1-4: 14-18 V DC to wireless receivers (ULXD4, QLXD4, SLX4, BLX4R), 2.5 A max combined"
+    }
   },
   "ports": [
     {

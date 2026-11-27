@@ -64,6 +64,14 @@ const USB_BUS_POWER_RE = /bus-powered \(USB\)/i;
  * the host device over its link cable (expansion mics, HDBaseT PoH receivers, adapters) (v1.8).
  */
 const BUS_POWER_RE = /bus-powered \((?:USB|eBUS|ACP|DCP|VCH)\)|(?<!\bno )\bPoE\b|\bphantom\b|\bbattery\b|\bpassive\b|\bpowered by host\b/i;
+/**
+ * Powered over its coax by a receiver or distributor (DC bias: active antennas, in-line amplifiers such as
+ * Shure UA834 / UA874) (v0.13): "bus-powered (coax bias)" in the notes of a port (any direction: the bias
+ * comes in on the receiver-side RF connector, an output) or "coax bias" in voltage. The device still
+ * publishes its draw: powerDrawW and voltage stay required.
+ */
+const COAX_BIAS_NOTE_RE = /bus-powered \(coax bias\)/i;
+const COAX_BIAS_VOLTAGE_RE = /\bcoax(?:ial)? bias\b/i;
 /** Powered from elsewhere with no figure of its own to publish: bus, phantom, battery, passive, host. */
 const NO_POWER_FIGURE_RE = /bus-powered \((?:eBUS|ACP|DCP|VCH)\)|\bphantom\b|\bbattery\b|\bpassive\b|\bpowered by host\b/i;
 const GENERIC_MODEL_RE = /^GEN-[\p{Lu}\p{N}]+(?:-[\p{Lu}\p{N}]+)*$/u;
@@ -267,14 +275,19 @@ export function lintBlock(block: object, library?: SlotLibraryContext): BlockLin
   const ports = asArray(d.ports)
     .map(asObj)
     .filter((p) => !(typeof p.section === "string" && p.section.startsWith("Slot")));
-  // Bus power (standard 3.1): a device powered over USB or PoE has no power port when the
-  // notes of the port that powers it say so ("bus-powered (USB)" or "PoE").
+  // Bus power (standard 3.1): a device powered over USB, PoE, a bus or coax bias has no power port
+  // when the notes of the port that powers it say so ("bus-powered (USB)", "PoE", "bus-powered (coax bias)").
   // A PoE source (poeBudgetW) needs its own power input whatever its port notes say.
   // PoE comes in on an input (a PoE source needs its own power); phantom power arrives on a mic's
   // output, a battery or a bus can be noted on any port.
+  // Coax bias (v0.13) is noted on any port or in voltage, like a control bus.
+  const coaxBias =
+    (typeof d.voltage === "string" && COAX_BIAS_VOLTAGE_RE.test(d.voltage)) ||
+    ports.some((p) => typeof p.notes === "string" && COAX_BIAS_NOTE_RE.test(p.notes));
   const busPowered =
     !truthy(d.poeBudgetW) &&
-    ports.some((p) => typeof p.notes === "string" && (NO_POWER_FIGURE_RE.test(p.notes) || (p.direction !== "output" && BUS_POWER_RE.test(p.notes))));
+    (coaxBias ||
+      ports.some((p) => typeof p.notes === "string" && (NO_POWER_FIGURE_RE.test(p.notes) || (p.direction !== "output" && BUS_POWER_RE.test(p.notes)))));
   if (!ports.some((p) => p.signalType === "power") && !poe && !truthy(d.slots) && !busPowered && !truthy(d.slotFamily)) {
     // v0.8: a missing power port is a gap in the data, not a broken schematic (W).
     if (deviceType !== "speaker" && deviceType !== "antenna") W.push("no power port");
