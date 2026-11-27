@@ -32,8 +32,8 @@
       "from": "https://www.wyrestorm.com/product/apo-sky-mic/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "power input: page only says powered by the APO-VX20-UC or COM-MIC-HUB, not through which port; dimensions given without axis order; signal type of the RJ45 link not named",
-    "notes": "Spec: wyrestorm/APO-SKY-MIC_SpecSheet_241003.pdf; weight not published; power: 'Powered by the APO-VX20-UC or the COM-MIC-HUB' (no supply of its own, no figure) (2026-11-27)."
+    "portsMissing": "power: the spec sheet says only 'Powered by the APO-VX20-UC or the COM-MIC-HUB', not through which port — marked on RJ45 In (the link from the host); dimensions given without axis order; signal type of the RJ45 link not named",
+    "notes": "Spec: wyrestorm/APO-SKY-MIC_SpecSheet_241003.pdf; weight not published; power: 'Powered by the APO-VX20-UC or the COM-MIC-HUB' (no supply of its own, no figure) (2026-11-27). Power per APO-SKY-MIC_SpecSheet_241003.pdf: 'Powered by the APO-VX20-UC or the COM-MIC-HUB' — powered by host, no supply and no figure of its own (2026-11-27)."
   },
   "ports": [
     {
@@ -42,7 +42,7 @@
       "direction": "input",
       "connectorType": "rj45",
       "section": "Expansion",
-      "notes": "8-pin RJ45 female; cascading link, as the page names it",
+      "notes": "8-pin RJ45 female; cascading link, as the page names it; powered by host (APO-VX20-UC or COM-MIC-HUB) over the RJ45 link",
       "id": "port-0"
     },
     {

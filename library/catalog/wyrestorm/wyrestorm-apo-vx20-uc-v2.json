@@ -32,8 +32,8 @@
       "from": "https://www.wyrestorm.com/product/apo-vx20-uc-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "power input: not in the technical specifications; APO-SKY-MIC expansion connector: not published; WLAN and Bluetooth have no connector",
-    "notes": "Spec: wyrestorm/APO-VX20-UC v2 User Guide 260509.pdf (no spec sheet published); dimensions and weight with bracket; power consumption (max) 112 W plus up to 60 W USB-C charging per the guide; supply DC 20 V 6 A (2026-11-27)."
+    "portsMissing": "power connector type not named (guide: 'DC 20V/6A — connect to the power adapter provided'); APO-SKY-MIC expansion connector: not published; WLAN and Bluetooth have no connector",
+    "notes": "Spec: wyrestorm/APO-VX20-UC v2 User Guide 260509.pdf (no spec sheet published); dimensions and weight with bracket; power consumption (max) 112 W plus up to 60 W USB-C charging per the guide; supply DC 20 V 6 A (2026-11-27). Power port per APO-VX20-UC v2 User Guide 260509.pdf: panel item L 'DC 20V/6A', Power Supply DC 20V 6A, Power Consumption (max) 112W (+ USB-C 60W charging); the in-the-box list says '24V 6A Power Supply' — spec value 20 V taken (2026-11-27)."
   },
   "ports": [
     {
@@ -97,6 +97,15 @@
       "section": "USB",
       "notes": "USB 3.0 host",
       "id": "port-6"
+    },
+    {
+      "id": "port-7",
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "DC 20V/6A from the supplied power adapter (panel item L); 112 W max (+ USB-C 60 W charging); connector not named in the guide; Wyrestorm convention: DC barrel, external adapter (not locking) — verify",
+      "connectorType": "barrel"
     }
   ],
   "heightMm": 126.82,
