@@ -1,6 +1,6 @@
 {
  "version": 1,
- "count": 1979,
+ "count": 1984,
  "templates": [
   {
    "file": "extron/extron-nav-10e-101-mm.json",
@@ -15832,6 +15832,46 @@
    "label": "Shure UABIAST (Bias-T Module With Power Supply)",
    "partNumber": "UABIAST-E",
    "deviceType": "power-supply",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx2-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx2",
+   "label": "Shure MXWNDX2 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX2",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx4-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx4e",
+   "label": "Shure MXWNDX4 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX4E",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx4g-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx4ge",
+   "label": "Shure MXWNDX4G (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX4GE",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx8-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx8e",
+   "label": "Shure MXWNDX8 (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX8E",
+   "deviceType": "charging-station",
+   "category": "Microphones / Wireless microphones"
+  },
+  {
+   "file": "shure/shure-mxwndx8g-z11-1-9-ghz-dect-eu-mea.json",
+   "id": "avail-shure-mxwndx8ge",
+   "label": "Shure MXWNDX8G (Z11 (1.9 GHz DECT, EU/MEA))",
+   "partNumber": "MXWNDX8GE",
+   "deviceType": "charging-station",
    "category": "Microphones / Wireless microphones"
   }
  ]

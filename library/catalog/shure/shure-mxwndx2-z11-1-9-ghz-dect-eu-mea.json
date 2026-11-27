@@ -1,0 +1,59 @@
+{
+  "id": "avail-shure-mxwndx2",
+  "label": "Shure MXWNDX2 (Z11 (1.9 GHz DECT, EU/MEA))",
+  "shortName": "MXWNDX2",
+  "manufacturer": "Shure",
+  "modelNumber": "MXWNDX2",
+  "deviceType": "charging-station",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/mxwndx",
+  "searchTerms": [
+    "mxwndx2",
+    "shure",
+    "z11",
+    "(1.9",
+    "ghz",
+    "dect",
+    "eu/mea)"
+  ],
+  "heightMm": 49.5,
+  "widthMm": 200,
+  "depthMm": 122,
+  "weightKg": 0.5,
+  "rackForm": "shelf-only",
+  "voltage": "PoE 802.3af class 3",
+  "poeDrawW": 12.95,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Z11 (1.9 GHz DECT, EU/MEA)",
+    "rackFormSource": "Shelf",
+    "description": "MXWNDX Networked Docking Station",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXWNEXT/en-US.pdf",
+    "note": "MXWNDX2: PoE class 3 (37-57 V, 12.95 W). MXWNDX4/8: USB-C 15 V / 3 A PSU (SBC10-USB45WPD). Dimensions not published on extracted spec page. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Dimensions not published on product page or in user guide (searched both).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXWNEXT-user-guide.pdf",
+      "note": "pp.28-30 NDX hardware callouts; p.83 power supply; dual RJ45 (switched mode) p.72"
+    },
+    "notes": "Dimensions H 49.5 x W 200 x D 122 mm and weight 0.5 kg estimated from photos, not published; Power per MXW neXt user guide p.30, p.83: PoE class 3, 37-57 V, 12.95 W over the single RJ45; NDX2 has no USB-C power input. The requested powerDrawW 45 (SBC10-USB45WPD PSU rating) applies to NDX4/4G/8/8G only and was not used; Docking bays (2/4/8 microphones) are not modelled as ports: microphones dock, they are not cabled"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Single RJ45: network and PoE class 3 (12.95 W); NDX2 must be at the end of a daisy chain"
+    }
+  ]
+}
