@@ -24,7 +24,6 @@
   "widthMm": 30.7,
   "depthMm": 118,
   "weightKg": 0.28,
-  "unitCost": 958,
   "slotFamily": "biamp-vocia-va-8600",
   "_avail": {
     "status": "awaiting-ports",

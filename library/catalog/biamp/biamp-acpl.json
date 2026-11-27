@@ -23,7 +23,6 @@
   "depthMm": 28,
   "weightKg": 0.09,
   "powerDrawW": 0.1,
-  "unitCost": 81,
   "_avail": {
     "status": "ports-filled",
     "description": "Audio Control Panel with front panel Mic/Line inputs, volume control and power switch for SDQ5PIR",

@@ -23,7 +23,6 @@
   "depthMm": 230,
   "powerDrawW": 500,
   "voltage": "100-254V AC",
-  "unitCost": 759,
   "_avail": {
     "status": "awaiting-ports",
     "description": "4 Channel class D amplifier 4 x 100 Watts (RMS @ 4 Ohms), 4 x 110 Watts (Dynamic @ 4 Ohms) or in bridge mode 1 x 200 Watts (RMS @ 8 Ohms), convection cooled, 1 U, 19\" rackmount",

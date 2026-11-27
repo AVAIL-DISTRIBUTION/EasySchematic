@@ -26,7 +26,6 @@
   "weightKg": 1.4,
   "voltage": "PoE+ 802.3at",
   "poeDrawW": 30,
-  "unitCost": 1808,
   "_avail": {
     "status": "ports-filled",
     "description": "Tesira 2 channel mic/line input & 2 channel mic/line output expander PoE+",

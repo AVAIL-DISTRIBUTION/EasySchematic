@@ -3,7 +3,7 @@
  */
 import { describe, expect, it } from "vitest";
 import type { CatalogFile, CatalogTemplate } from "../avail/catalogPorts";
-import { cardFromRow, importIntake, INTAKE_COLUMNS, intakeId, mergeCard, validateIntake, type IntakeIndexEntry } from "../avail/intake";
+import { cardFromRow, formatIntakeReport, importIntake, INTAKE_COLUMNS, intakeId, mergeCard, validateIntake, type IntakeIndexEntry } from "../avail/intake";
 
 const HEADER = [...INTAKE_COLUMNS];
 type Row = Partial<Record<string, string>>;
@@ -18,7 +18,7 @@ const DSP: Row = {
   Vendor: "Biamp", Category: "Audio Products / DSP", "Device type": "audio-dsp", Model: "Biamp TesiraFORTÉ X 900",
   "Part number": "910-9", "Input voltage": "100-240V AC", "Power draw (W)": "60", "Height (mm)": "44", "Width (mm)": "483",
   "Depth (mm)": "300", "Weight (kg)": "3.2", "Rack form": "1U Full rack", "Reference URL": "https://www.biamp.com/x",
-  "Datasheet URL": "https://www.biamp.com/x.pdf", Description: "DSP", "MSRP (USD)": "4000", Source: "Manufacturer datasheet",
+  "Datasheet URL": "https://www.biamp.com/x.pdf", Description: "DSP", Source: "Manufacturer datasheet",
 };
 
 describe("validateIntake", () => {
@@ -78,7 +78,7 @@ describe("cards", () => {
     expect(t.id).toBe("avail-biamp-910-9");
     expect(t.label).toBe("Biamp TesiraFORTÉ X 900 (Black)");
     expect(t.shortName).toBe("TesiraFORTÉ X 900");
-    expect(t).toMatchObject({ heightMm: 44, weightKg: 3.2, powerDrawW: 60, voltage: "100-240V AC", unitCost: 4000, rackForm: "full", slotFamily: "a" });
+    expect(t).toMatchObject({ heightMm: 44, weightKg: 3.2, powerDrawW: 60, voltage: "100-240V AC", rackForm: "full", slotFamily: "a" });
     expect(t._avail).toEqual({
       status: "awaiting-ports", variant: "Black", altPartNumber: "910-9K", rackFormSource: "1U Full rack", rackUnits: 1, cardFamilies: ["a", "b"],
       description: "DSP", source: "Manufacturer datasheet", datasheetUrl: "https://www.biamp.com/x.pdf", note: "n", intakeFile: "f.xlsx",
@@ -133,5 +133,21 @@ describe("importIntake", () => {
     const again = importIntake(sheet(DSP), files, first.index, "a.xlsx");
     expect(again.actions.map((a) => a.action)).toEqual(["unchanged"]);
     expect(again.write).toEqual([]);
+  });
+});
+
+describe("prices", () => {
+  it("an MSRP column of an older form is accepted and ignored: no unitCost on the card", () => {
+    const names = [...HEADER.map((h) => h.replace(/\s*\*$/, "")), "MSRP (USD)"];
+    const old = [[...HEADER, "MSRP (USD)"], names.map((n) => ({ ...DSP, "MSRP (USD)": "4000" } as Row)[n] ?? "")];
+    const r = importIntake(old, [], [], "old.xlsx");
+    expect(r.fatal).toEqual([]);
+    expect(r.ignored).toEqual(["MSRP (USD)"]);
+    expect(r.write[0].template).not.toHaveProperty("unitCost");
+    expect(formatIntakeReport(r, "old.xlsx", true)).toContain("Ignored columns (prices are not stored in the repository): MSRP (USD)");
+  });
+
+  it("the form has no price column", () => {
+    expect(HEADER.some((h) => /msrp|price|cost/i.test(h))).toBe(false);
   });
 });

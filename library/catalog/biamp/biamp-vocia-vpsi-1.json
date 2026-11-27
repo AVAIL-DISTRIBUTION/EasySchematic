@@ -24,7 +24,6 @@
   "widthMm": 155,
   "depthMm": 80,
   "weightKg": 0.3,
-  "unitCost": 363,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia Paging Station Interface breakout device.",

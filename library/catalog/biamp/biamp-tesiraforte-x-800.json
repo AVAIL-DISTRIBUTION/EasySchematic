@@ -26,7 +26,6 @@
   "weightKg": 0.86,
   "powerDrawW": 150,
   "voltage": "100-240V AC",
-  "unitCost": 6532,
   "_avail": {
     "status": "ports-filled",
     "description": "Meeting Room DSP with 4 integrated PoE+ ports. AVB & Dante, 2x2 analog I/O, Stereo USB and 8 channels of AEC. Includes Biamp Launch automatic discovery and tuning",

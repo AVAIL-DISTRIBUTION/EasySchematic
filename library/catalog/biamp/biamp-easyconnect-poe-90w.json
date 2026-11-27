@@ -26,7 +26,6 @@
   "powerDrawW": 60,
   "voltage": "100-240V AC",
   "poeBudgetW": 90,
-  "unitCost": 400,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "poe-injector",

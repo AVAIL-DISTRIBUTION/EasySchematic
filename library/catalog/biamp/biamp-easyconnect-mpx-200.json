@@ -23,7 +23,6 @@
   ],
   "powerDrawW": 180,
   "voltage": "100-240V AC (20V DC adapter)",
-  "unitCost": 2500,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "usb-switch",

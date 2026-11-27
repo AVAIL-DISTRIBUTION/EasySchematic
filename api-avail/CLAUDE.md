@@ -34,6 +34,7 @@ Hono-приложение без изменений** под Node, а всё с�
 | `src/duplicates.ts`, `src/duplicateGuard.ts`, `src/duplicatesCli.ts` | дубликаты: кандидаты из базы, `POST /avail/templates/merge`, 409 при сохранении дубля, отчёт `npm run report:duplicates` |
 | `src/notDuplicates.ts` | решения «не дубли» (миграция 9009): отметка и Undo, автоснятие при смене производителя / modelNumber |
 | `src/overrides.ts`, `src/exportOverridesCli.ts` | переопределения (миграция 9011): запись при Accept предложения, список и снятие, `npm run export:overrides` → `docs/avail/overrides.json` |
+| `src/clearCatalogPrices.ts`, `src/clearCatalogPricesCli.ts` | очистка цен (`unit_cost`) у шаблонов каталога в базе (`npm run clear:catalog-prices [-- --dry-run]`), одна запись в журнале |
 | `src/approveCatalog.ts`, `src/approveCatalogCli.ts` | утверждение draft каталога уровня A по источнику портов (`npm run approve:catalog [-- --dry-run]`), миграция 9006 (`approved_via = bulk-source`) |
 | `migrations/9xxx_*.sql` | наши миграции, применяются после upstream, учёт в той же `d1_migrations` |
 | `package.runtime.json` | `package.json` образа API (`/app`): скрипты для `docker compose exec api npm run …` |

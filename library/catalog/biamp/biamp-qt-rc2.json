@@ -23,7 +23,6 @@
   "depthMm": 56,
   "weightKg": 0.13,
   "powerDrawW": 0.1,
-  "unitCost": 286,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "volume-control",

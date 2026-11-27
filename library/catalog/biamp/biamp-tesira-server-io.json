@@ -26,7 +26,6 @@
   "weightKg": 8.2,
   "powerDrawW": 150,
   "voltage": "100-240V AC",
-  "unitCost": 8631,
   "slots": [
     {
       "id": "slot-1791386237202-efi3",

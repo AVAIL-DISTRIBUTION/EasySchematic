@@ -25,7 +25,6 @@
   "powerDrawW": 5,
   "voltage": "12V DC / PoE 802.3af class 2",
   "poeDrawW": 7,
-  "unitCost": 583,
   "_avail": {
     "status": "ports-filled",
     "description": "Half-rack stereo pre-amplifier/mixer with 4 inputs",

@@ -48,11 +48,13 @@ Device types ⊆ типы редактора (`src/deviceTypeCategories.ts`) и 
 | Reference URL * | Страница продукта у производителя (не у реселлера) | `referenceUrl` |
 | Datasheet URL | Прямая ссылка на PDF; по ней потом заполняются порты | `_avail.datasheetUrl` |
 | Description | Краткое описание производителя | `_avail.description` |
-| MSRP (USD) | Прайс, USD | `unitCost` |
 | Source * | Откуда большая часть значений (Lists) | `_avail.source` (у существующей карточки — `_avail.intakeSource`) |
 | Note | Необычное: оценки, расхождения источников, почему поле пустое | `_avail.note` |
 | Lifecycle | Из Lists: Active (по умолчанию, можно не заполнять), Upcoming (анонсирован, ещё не поставляется), EoL (снят с производства). Стандарт 3.3 | `_avail.lifecycle` (active / upcoming / eol); значение в строке заменяет жизненный цикл карточки целиком |
 | Lifecycle date | Upcoming — когда начнутся поставки, EoL — с какого времени (необязательно): `2027`, `2027-Q3`, `2027-09`, `2027-09-15` | `_avail.availableFrom` / `_avail.eolDate` |
+
+**Цен в форме нет:** репозиторий публичный, `unitCost` в каталог не пишется. Колонка цены из старой формы
+(«MSRP (USD)» и любая другая с ценой в названии) принимается и игнорируется — в отчёте строка «Ignored columns».
 
 Rack form → поля каталога: «1U Full rack» … «10U Full rack» → `full` + число U; «1U 1/2 rack» → `half`;
 «1U 1/4 rack», «1U 1/8 rack», «Shelf» → `shelf-only`; «Non-rack» → без `rackForm`.

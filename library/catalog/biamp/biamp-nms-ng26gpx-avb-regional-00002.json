@@ -25,7 +25,6 @@
   "powerDrawW": 614,
   "voltage": "100-240V AC",
   "poeBudgetW": 480,
-  "unitCost": 4134,
   "_avail": {
     "status": "ports-filled",
     "variant": "Regional -00002",

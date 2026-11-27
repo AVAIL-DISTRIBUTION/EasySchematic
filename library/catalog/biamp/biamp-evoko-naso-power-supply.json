@@ -28,7 +28,6 @@
   "powerDrawW": 60,
   "powerCapacityW": 60,
   "voltage": "100-240V AC",
-  "unitCost": 64,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Power supply for Naso Room Manager (needed if device is not powered using Power over Ethernet (PoE))",

@@ -21,7 +21,6 @@
     "tesira",
     "avb-1"
   ],
-  "unitCost": 1096,
   "slotFamily": "biamp-tesira-server-card",
   "_avail": {
     "status": "awaiting-ports",

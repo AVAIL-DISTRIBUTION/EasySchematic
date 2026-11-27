@@ -23,7 +23,6 @@
   "depthMm": 200,
   "voltage": "100-240V AC",
   "poeBudgetW": 240,
-  "unitCost": 2332,
   "_avail": {
     "status": "ports-filled",
     "description": "AVB-enabled Netgear 10-port 1G switch, 8-ports w/ PoE+, 240W",

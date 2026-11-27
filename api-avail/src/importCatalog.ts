@@ -34,6 +34,7 @@
  */
 import type Database from "better-sqlite3";
 import { templateToRow, type TemplateRow } from "../../api/src/db";
+import { withoutPrices } from "../../src/avail/prices";
 import { lintBlock, type BlockLevel } from "../../src/avail/blockLint";
 import { modelKey, type CatalogTemplate } from "../../src/avail/catalogPorts";
 import { normalizeManufacturer } from "../../src/avail/library";
@@ -105,6 +106,9 @@ export interface ImportCatalogOptions {
 type Row = TemplateRow & Record<string, string | number | null>;
 type Template = Parameters<typeof templateToRow>[0];
 
+/** Template columns that hold a price (unitCost → unit_cost). */
+export const PRICE_COLUMNS: ReadonlySet<string> = new Set(["unit_cost"]);
+
 class DryRun extends Error {}
 
 const LEVEL_RANK: Record<BlockLevel, number> = { A: 0, B: 1, FIX: 2 };
@@ -135,7 +139,8 @@ function isCatalogTemplate(v: unknown): v is CatalogTemplate {
 
 /** The template as stored (no _avail, no rackForm) and the meta catalog JSON. */
 export function splitCatalogTemplate(t: CatalogTemplate, file: string): { template: Template & { id: string }; catalog: string } {
-  const { _avail, rackForm, ...rest } = t;
+  // No prices from the repository into the database (src/avail/prices.ts).
+  const { _avail, rackForm, ...rest } = withoutPrices(t);
   const catalog = { file, ...(rackForm !== undefined ? { rackForm } : {}), ...(_avail ?? {}) };
   return { template: rest as unknown as Template & { id: string }, catalog: JSON.stringify(catalog) };
 }
@@ -282,7 +287,9 @@ export function importCatalog(sqlite: Database.Database, files: readonly Catalog
       }
       const sortOrder = existing ? existing.sort_order : 200000 + index;
       const row = templateToRow({ ...template, id, sortOrder }) as Row;
-      const dataChanged = !existing || columns.some((c) => (existing[c] ?? null) !== (row[c] ?? null));
+      // A price left in the database by an earlier load does not count as a change of the file's data
+      // (clear:catalog-prices empties it); the row written here never carries a price.
+      const dataChanged = !existing || columns.some((c) => !PRICE_COLUMNS.has(c) && (existing[c] ?? null) !== (row[c] ?? null));
       const before: TemplateStatus | null = existing ? (m?.status ?? "raw") : null;
       let status: TemplateStatus = "draft";
       let reason: string | null = null;

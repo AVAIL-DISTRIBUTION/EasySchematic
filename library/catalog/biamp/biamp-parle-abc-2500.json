@@ -27,7 +27,6 @@
   "weightKg": 4.4,
   "powerDrawW": 60,
   "voltage": "12V DC / USB-C PD",
-  "unitCost": 1500,
   "_avail": {
     "status": "ports-filled",
     "description": "Conferencing audio bar",

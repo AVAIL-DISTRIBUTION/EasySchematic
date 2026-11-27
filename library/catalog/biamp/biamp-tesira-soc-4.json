@@ -21,7 +21,6 @@
     "tesira",
     "soc-4"
   ],
-  "unitCost": 422,
   "slotFamily": "biamp-tesira-server-card",
   "_avail": {
     "status": "ports-filled",

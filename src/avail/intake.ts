@@ -18,6 +18,7 @@ import { isRoomMounted } from "./blockLint";
 import { AWAITING_PORTS, type CatalogAvail, type CatalogFile, type CatalogTemplate } from "./catalogPorts";
 import { findCategory, findVendor, TAXONOMY, VENDORS } from "./library";
 import { libraryFileName, slug } from "./libraryFiles";
+import { isPriceKey } from "./prices";
 import { INTAKE_LIFECYCLES, isLifecycleDate, normalizeLifecycleDate } from "./lifecycle";
 
 /** Columns of the Products sheet, in template order; `*` marks the required ones. */
@@ -25,7 +26,7 @@ export const INTAKE_COLUMNS = [
   "Vendor *", "Category *", "Device type *", "Model *", "Part number *", "Alt part number", "Variant", "Short name",
   "Input voltage", "Power draw (W)", "PoE draw (W)", "PoE budget (W)", "Heat (BTU/h)", "Height (mm)", "Width (mm)",
   "Depth (mm)", "Weight (kg)", "Rack form", "Slot families (chassis)", "Card for slot families", "Reference URL *",
-  "Datasheet URL", "Description", "MSRP (USD)", "Source *", "Note", "Lifecycle", "Lifecycle date",
+  "Datasheet URL", "Description", "Source *", "Note", "Lifecycle", "Lifecycle date",
 ] as const;
 
 type Column = (typeof INTAKE_COLUMNS)[number] extends `${infer N} *` | infer N ? N : never;
@@ -68,7 +69,6 @@ const NUMBERS: [Column, keyof CatalogTemplate & string][] = [
   ["Width (mm)", "widthMm"],
   ["Depth (mm)", "depthMm"],
   ["Weight (kg)", "weightKg"],
-  ["MSRP (USD)", "unitCost"],
 ];
 const DIMENSIONS: Column[] = ["Height (mm)", "Width (mm)", "Depth (mm)", "Weight (kg)"];
 export const EXAMPLE_NOTE_RE = /^\s*EXAMPLE ROW\b/i;
@@ -87,6 +87,8 @@ export interface IntakeValidation {
   /** Problems with the sheet itself (missing required columns): nothing is imported. */
   fatal: string[];
   rows: (IntakeRowReport & { values: IntakeRow; example: boolean })[];
+  /** Price columns of an older form (MSRP (USD)…): accepted and ignored — no prices in the public repository. */
+  ignored?: string[];
 }
 
 /** A number cell: "12.5" → 12.5; Excel float noise is rounded to 6 decimals. */
@@ -110,7 +112,8 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
   if (headerAt < 0) return { fatal: ["the Products sheet is empty"], rows: [] };
   const header = sheet[headerAt].map(name);
   const fatal = REQUIRED_COLUMNS.filter((c) => !header.includes(c)).map((c) => `required column "${c}" is missing`);
-  const unknown = header.filter((h) => h && !INTAKE_COLUMNS.map(name).includes(h));
+  const ignored = header.filter((h) => h && isPriceKey(h));
+  const unknown = header.filter((h) => h && !ignored.includes(h) && !INTAKE_COLUMNS.map(name).includes(h));
   if (unknown.length) fatal.push(`unknown columns: ${unknown.join(", ")} (use the template avail-intake-template.xlsx)`);
   if (fatal.length) return { fatal, rows: [] };
 
@@ -121,7 +124,7 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
     const v: IntakeRow = {};
     header.forEach((h, k) => {
       const x = (cells[k] ?? "").trim();
-      if (h && x) v[h as Column] = x;
+      if (h && x && !ignored.includes(h)) v[h as Column] = x;
     });
     const rowNo = headerAt + i + 2;
     const errors: string[] = [];
@@ -200,7 +203,7 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
     }
     rows.push({ row: rowNo, partNumber: pn, errors, warnings, values: v, example });
   });
-  return { fatal, rows };
+  return { fatal, rows, ...(ignored.length ? { ignored } : {}) };
 }
 
 /** Catalog id of a part number: "avail-extron-60-1572-15". */
@@ -239,7 +242,7 @@ export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
   ] as [Column, string][]) if (num(col) !== undefined) t[field] = num(col);
   if (v["Input voltage"]) t.voltage = v["Input voltage"];
   for (const [col, field] of [
-    ["PoE draw (W)", "poeDrawW"], ["PoE budget (W)", "poeBudgetW"], ["Heat (BTU/h)", "thermalBtuh"], ["MSRP (USD)", "unitCost"],
+    ["PoE draw (W)", "poeDrawW"], ["PoE budget (W)", "poeBudgetW"], ["Heat (BTU/h)", "thermalBtuh"],
   ] as [Column, string][]) if (num(col) !== undefined) t[field] = num(col);
   if (rack?.rackForm) t.rackForm = rack.rackForm;
   if (cards.length) t.slotFamily = cards[0];
@@ -273,7 +276,7 @@ export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
 /** Card keys the intake owns (a row may set them on an existing card). */
 const CARD_KEYS = [
   "label", "shortName", "manufacturer", "modelNumber", "deviceType", "category", "referenceUrl", "searchTerms", "voltage",
-  "powerDrawW", "poeDrawW", "poeBudgetW", "thermalBtuh", "heightMm", "widthMm", "depthMm", "weightKg", "unitCost",
+  "powerDrawW", "poeDrawW", "poeBudgetW", "thermalBtuh", "heightMm", "widthMm", "depthMm", "weightKg",
   "rackForm", "slotFamily",
 ] as const;
 
@@ -398,6 +401,7 @@ export function formatIntakeReport(r: IntakeResult, intakeFile: string, dryRun: 
     lines.push("FAILED: nothing imported");
     return lines.join("\n") + "\n";
   }
+  if (r.ignored?.length) lines.push(`Ignored columns (prices are not stored in the repository): ${r.ignored.join(", ")}`);
   const n = (a: string) => r.actions.filter((x) => x.action === a).length;
   const invalid = r.rows.filter((x) => !x.example && x.errors.length).length;
   const examples = r.rows.filter((x) => x.example).length;

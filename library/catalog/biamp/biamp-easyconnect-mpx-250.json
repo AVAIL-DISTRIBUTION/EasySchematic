@@ -22,7 +22,6 @@
     "250"
   ],
   "voltage": "20V DC",
-  "unitCost": 3000,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "usb-switch",

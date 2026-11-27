@@ -27,5 +27,6 @@ await build({ ...common, entryPoints: ["src/vendorRequestsCli.ts"], outfile: "di
 await build({ ...common, entryPoints: ["src/vendorResponsesCli.ts"], outfile: "dist/apply-vendor-responses.mjs" });
 await build({ ...common, entryPoints: ["src/importCatalogCli.ts"], outfile: "dist/import-catalog.mjs" });
 await build({ ...common, entryPoints: ["src/approveCatalogCli.ts"], outfile: "dist/approve-catalog.mjs" });
+await build({ ...common, entryPoints: ["src/clearCatalogPricesCli.ts"], outfile: "dist/clear-catalog-prices.mjs" });
 await build({ ...common, entryPoints: ["src/duplicatesCli.ts"], outfile: "dist/report-duplicates.mjs" });
 await build({ ...common, entryPoints: ["src/exportOverridesCli.ts"], outfile: "dist/export-overrides.mjs" });

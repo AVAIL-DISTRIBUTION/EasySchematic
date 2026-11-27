@@ -23,7 +23,6 @@
   "depthMm": 364,
   "powerDrawW": 525,
   "voltage": "230V AC",
-  "unitCost": 500,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Power amplifier 240 watts @ 100 volt with program and priority input, 24V priority output, tone control, 24V DC - 230 V AC",

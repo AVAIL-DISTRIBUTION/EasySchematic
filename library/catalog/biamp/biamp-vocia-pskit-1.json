@@ -27,7 +27,6 @@
   "powerDrawW": 6,
   "voltage": "24V DC / PoE 802.3af class 2",
   "poeDrawW": 7,
-  "unitCost": 2101,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "paging-station",

@@ -26,7 +26,6 @@
   "weightKg": 1.2,
   "voltage": "PoE 802.3af class 2",
   "poeDrawW": 7,
-  "unitCost": 2215,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "paging-station",

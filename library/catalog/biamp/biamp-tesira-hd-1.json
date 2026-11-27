@@ -26,7 +26,6 @@
   "weightKg": 0.4,
   "voltage": "PoE 802.3at Class 1",
   "poeDrawW": 4,
-  "unitCost": 1085,
   "_avail": {
     "status": "ports-filled",
     "description": "Tesira Hardware Dialer",

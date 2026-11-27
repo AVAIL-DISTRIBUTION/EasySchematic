@@ -18,7 +18,6 @@
     "ds1375",
     "biamp"
   ],
-  "unitCost": 153,
   "_avail": {
     "status": "ports-filled",
     "description": "In-ceiling downward firing loudspeaker. 70V and 8 ohm compatible",

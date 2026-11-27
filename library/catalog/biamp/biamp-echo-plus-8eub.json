@@ -27,7 +27,6 @@
   "weightKg": 0.09,
   "powerDrawW": 5,
   "voltage": "12V DC",
-  "unitCost": 636,
   "_avail": {
     "status": "ports-filled",
     "description": "8-button control pad with Ethernet, 1 bidirectional RS-232 port, 1 unidirectional RS-232 port, 3 GPIO; EU, black",

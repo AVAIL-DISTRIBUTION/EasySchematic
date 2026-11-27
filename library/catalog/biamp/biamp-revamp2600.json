@@ -24,7 +24,6 @@
   "weightKg": 12.1,
   "powerDrawW": 1840,
   "voltage": "230V AC",
-  "unitCost": 899,
   "_avail": {
     "status": "ports-filled",
     "description": "2 Channel class H amplifier 2 x 600 Watts (RMS @ 4 Ohms), 2 x 840 Watts (Dynamic @ 4 Ohms), variable fan cooled, Analogue Devices DSP processor, 2 U, 19\" rackmount",

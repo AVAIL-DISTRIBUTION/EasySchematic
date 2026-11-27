@@ -26,7 +26,6 @@
   "weightKg": 0.22,
   "voltage": "100-240V AC",
   "poeBudgetW": 30,
-  "unitCost": 187,
   "_avail": {
     "status": "awaiting-ports",
     "deviceTypeSource": "poe-injector",

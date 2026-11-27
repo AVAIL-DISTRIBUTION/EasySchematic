@@ -23,7 +23,6 @@
   "depthMm": 196,
   "weightKg": 2.75,
   "powerDrawW": 25,
-  "unitCost": 1219,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Quad zone pre-amplifier: 4 stereo output zones. Inputs: 3 mono mic/line + 4 stereo line inputs",

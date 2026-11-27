@@ -26,7 +26,6 @@
   "weightKg": 3,
   "powerDrawW": 35,
   "voltage": "24V DC",
-  "unitCost": 3967,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia input device with 8 analog mic/line inputs, allows live audio paging within the Vocia platform",

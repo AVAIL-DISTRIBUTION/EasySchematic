@@ -27,7 +27,6 @@
   "weightKg": 0.62,
   "voltage": "PoE 802.3af class 3",
   "poeDrawW": 15.4,
-  "unitCost": 2565,
   "_avail": {
     "status": "ports-filled",
     "description": "AVB Beamtracking™ ceiling microphone, black surface mount",

@@ -120,6 +120,15 @@ docker compose exec api npm run import:catalog
 docker compose exec api npm run import:catalog -- --dry-run       # повтор: «inserted 0, updated 0»
 ```
 
+**Цены.** Репозиторий публичный, цен в каталоге нет, `import:catalog` их не пишет. Цены, которые оставила в базе
+прежняя загрузка каталога, очищаются отдельно (одна сводная запись в журнале, статусы не меняются):
+
+```bash
+./backup.sh
+docker compose exec api npm run clear:catalog-prices -- --dry-run   # сколько шаблонов каталога с ценой, по вендорам
+docker compose exec api npm run clear:catalog-prices
+```
+
 Найденные по производителю + артикулу шаблоны обновляются (raw → draft, verified остаётся verified,
 если данные не изменились и файл на уровне A, иначе draft с причиной), остальные создаются как draft. `library/avail`
 не трогается; Biamp SQT-1 удаляется (`docs/avail/deleted-templates.json`). Другие шаблоны той же

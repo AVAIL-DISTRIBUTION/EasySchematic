@@ -25,7 +25,6 @@
   "weightKg": 0.68,
   "voltage": "48V DC / PoE+ 802.3at",
   "poeDrawW": 30,
-  "unitCost": 1272,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "sound-masking",

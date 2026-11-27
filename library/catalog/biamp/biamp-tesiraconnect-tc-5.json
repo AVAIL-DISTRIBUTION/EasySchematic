@@ -27,7 +27,6 @@
   "powerDrawW": 132,
   "voltage": "100-240V AC",
   "poeBudgetW": 120,
-  "unitCost": 1575,
   "_avail": {
     "status": "ports-filled",
     "description": "5-port expansion device",

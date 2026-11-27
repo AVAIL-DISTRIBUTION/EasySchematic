@@ -23,7 +23,6 @@
   "depthMm": 20,
   "weightKg": 0.07,
   "powerDrawW": 0.1,
-  "unitCost": 206,
   "_avail": {
     "status": "ports-filled",
     "description": "Digital decora style wall control with 2 line LCD display. Buttons for source selection and volume control. Standard 2 wire connection.",

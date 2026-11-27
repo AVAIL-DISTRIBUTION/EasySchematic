@@ -24,7 +24,6 @@
   "weightKg": 6.1,
   "powerDrawW": 300,
   "voltage": "115-230V AC",
-  "unitCost": 746,
   "_avail": {
     "status": "ports-filled",
     "variant": "Regional -00001",

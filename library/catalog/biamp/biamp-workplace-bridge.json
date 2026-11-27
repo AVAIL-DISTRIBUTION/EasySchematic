@@ -26,7 +26,6 @@
   "weightKg": 2.4,
   "powerDrawW": 170,
   "voltage": "100-240V AC",
-  "unitCost": 5300,
   "_avail": {
     "status": "ports-filled",
     "description": "Network appliance to facilitate Workplace connection",

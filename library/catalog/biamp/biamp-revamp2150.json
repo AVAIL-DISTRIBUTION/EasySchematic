@@ -24,7 +24,6 @@
   "weightKg": 3.2,
   "powerDrawW": 400,
   "voltage": "115-230V AC",
-  "unitCost": 608,
   "_avail": {
     "status": "awaiting-ports",
     "description": "2 Channel class D amplifier 2 x 150 Watts (RMS @ 4 Ohms), 2 x 165 Watts (Dynamic @ 4 Ohms) or in bridge mode 1 x 300 Watts (RMS @ 8 Ohms), convection cooled, 1 U, 19\" rackmount",

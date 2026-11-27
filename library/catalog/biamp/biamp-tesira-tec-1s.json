@@ -26,7 +26,6 @@
   "weightKg": 0.2,
   "voltage": "PoE 802.3af class 1",
   "poeDrawW": 4,
-  "unitCost": 818,
   "_avail": {
     "status": "ports-filled",
     "description": "Tesira PoE Ethernet Control surface mount",

@@ -23,7 +23,6 @@
   "depthMm": 230,
   "powerDrawW": 175,
   "voltage": "115-230V AC",
-  "unitCost": 653,
   "_avail": {
     "status": "awaiting-ports",
     "description": "2 Channel class D amplifier 2 x 60 Watts (70/100 Volts or RMS @ 4 Ohms) or in bridge mode 1 x 120 Watts (70/100 Volts or RMS @ 8 Ohms), convection cooled, 1 U, 19\" rackmount",

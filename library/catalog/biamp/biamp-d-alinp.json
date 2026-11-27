@@ -23,7 +23,6 @@
   "depthMm": 38,
   "weightKg": 0.16,
   "powerDrawW": 0.1,
-  "unitCost": 212,
   "_avail": {
     "status": "ports-filled",
     "description": "Active Local Input Panel decora style with MIC and Line input with individual volume control. For use with any device with Line or MIC/LINE input with 24V phantom power.",

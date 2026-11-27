@@ -25,7 +25,6 @@
   "depthMm": 430,
   "weightKg": 8.3,
   "voltage": "100-240V AC",
-  "unitCost": 6784,
   "_avail": {
     "status": "ports-filled",
     "description": "Audio DSP and Amplified Loudspeaker Controller - 4 channels sharing 4800W with Dante & AVB",

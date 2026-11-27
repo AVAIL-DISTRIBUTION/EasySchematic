@@ -26,7 +26,6 @@
   "weightKg": 0.3,
   "voltage": "PoE 802.3af class 1",
   "poeDrawW": 3.84,
-  "unitCost": 583,
   "_avail": {
     "status": "ports-filled",
     "description": "Vocia End of Line Device, surface-mountable, networked speaker line supervision device",

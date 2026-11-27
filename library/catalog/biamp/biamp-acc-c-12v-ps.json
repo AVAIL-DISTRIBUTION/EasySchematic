@@ -24,7 +24,6 @@
   "powerDrawW": 60,
   "powerCapacityW": 60,
   "voltage": "100-240V AC",
-  "unitCost": 47,
   "_avail": {
     "status": "awaiting-ports",
     "description": "12V power supply",

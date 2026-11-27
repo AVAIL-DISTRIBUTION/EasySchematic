@@ -23,7 +23,6 @@
   "depthMm": 317,
   "weightKg": 1.7,
   "voltage": "100-240V AC",
-  "unitCost": 759,
   "_avail": {
     "status": "ports-filled",
     "description": "Active emitter power supply",

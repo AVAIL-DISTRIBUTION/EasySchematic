@@ -26,7 +26,6 @@
   "weightKg": 0.16,
   "voltage": "PoE 802.3af class 2",
   "poeDrawW": 7,
-  "unitCost": 1052,
   "_avail": {
     "status": "ports-filled",
     "description": "4\" touch panel, black",

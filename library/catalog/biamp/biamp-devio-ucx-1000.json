@@ -27,7 +27,6 @@
   "weightKg": 0.86,
   "powerDrawW": 150,
   "voltage": "50-57V DC",
-  "unitCost": 3000,
   "_avail": {
     "status": "ports-filled",
     "description": "Android UC meeting room hub with USB-C input and BYOM switch, supporting one display output and USB peripherals with PoE+ power for touch panel",

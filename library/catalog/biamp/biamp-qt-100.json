@@ -25,7 +25,6 @@
   "weightKg": 0.17,
   "powerDrawW": 7,
   "voltage": "100-240V AC",
-  "unitCost": 1225,
   "_avail": {
     "status": "ports-filled",
     "deviceTypeSource": "sound-masking",

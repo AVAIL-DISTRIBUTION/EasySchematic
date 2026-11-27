@@ -24,7 +24,6 @@
   "powerDrawW": 60,
   "powerCapacityW": 60,
   "voltage": "100-240V AC",
-  "unitCost": 123,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Qt-100 power supply & cord",

@@ -56,6 +56,12 @@ description: AVAIL device library reference: the AVAIL Device Block Standard and
 | `src/avail/catalogPorts.ts` | каталог `library/catalog`: порты из library/avail, стенсилов Extron, снимка базы и вариантов (`fill:catalog-ports`) |
 | `src/avail/extronVisio.ts`, `extronStencil.ts` | стенсилы Extron Visio: мастер → порты (`parse:extron-visio`), применение к каталогу и сравнение |
 
+Цены (репозиторий публичный): в `library/catalog` и `library/avail` нет `unitCost` и других полей с ценой
+(`src/avail/prices.ts`; `avail:check-library` падает на них); форма сбора колонки цены не имеет, колонку
+«MSRP (USD)» старой формы `import:intake` игнорирует; `import:catalog` цену не пишет, оставшуюся в базе цену не
+считает изменением данных; `npm run clear:catalog-prices [-- --dry-run]` (`api-avail/src/clearCatalogPrices.ts`)
+очищает `unit_cost` у шаблонов каталога (source `avail-catalog`), статусы не меняет, одна запись в журнале.
+
 Утверждение по источнику портов (шаг 1.11): `npm run approve:catalog [-- --dry-run] [-- --verbose]`
 (`api-avail/src/approveCatalog.ts`). Кандидаты — draft из каталога (meta source `avail-catalog`) уровня A по текущему
 линтеру. Источник — `src/avail/portsOrigin.ts` по `avail_template_meta.catalog.portsSource`: manufacturer (stencil,

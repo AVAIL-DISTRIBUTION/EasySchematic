@@ -26,7 +26,6 @@
   "weightKg": 1.1,
   "powerDrawW": 30,
   "voltage": "24V DC",
-  "unitCost": 3850,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia POTS interface; allows real-time live direct paging from a POTS system into the Vocia platform; 4-lines",

@@ -18,7 +18,6 @@
     "ds1398",
     "biamp"
   ],
-  "unitCost": 123,
   "_avail": {
     "status": "ports-filled",
     "description": "8 Ohm low-profile loudspeaker with clip",

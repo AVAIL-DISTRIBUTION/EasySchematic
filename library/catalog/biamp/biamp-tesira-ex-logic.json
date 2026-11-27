@@ -26,7 +26,6 @@
   "weightKg": 1,
   "voltage": "PoE 802.3at class 1",
   "poeDrawW": 4,
-  "unitCost": 818,
   "_avail": {
     "status": "ports-filled",
     "description": "Tesira PoE logic expander with 16 logic GPIO (4 GPIO are configurable for potentiometer interface)",

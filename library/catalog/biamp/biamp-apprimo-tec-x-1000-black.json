@@ -28,7 +28,6 @@
   "weightKg": 0.16,
   "voltage": "PoE 802.3af class 3",
   "poeDrawW": 15,
-  "unitCost": 712,
   "_avail": {
     "status": "ports-filled",
     "description": "Touch-enabled control pad with knob, black",

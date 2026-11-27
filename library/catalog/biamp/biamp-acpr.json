@@ -23,7 +23,6 @@
   "depthMm": 35,
   "weightKg": 0.07,
   "powerDrawW": 0.1,
-  "unitCost": 81,
   "_avail": {
     "status": "ports-filled",
     "description": "Audio Control Panel with permanently connected rear connection input and front panel input override for SDQ5PIR",

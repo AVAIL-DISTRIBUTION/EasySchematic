@@ -26,7 +26,6 @@
   "weightKg": 0.9,
   "voltage": "PoE 802.3af",
   "poeDrawW": 13,
-  "unitCost": 1200,
   "_avail": {
     "status": "ports-filled",
     "description": "The latest Evoko Naso including a 1-year Workplace Booking Plus License",

@@ -25,7 +25,6 @@
   "depthMm": 444,
   "weightKg": 10.1,
   "voltage": "100-240V AC",
-  "unitCost": 7698,
   "_avail": {
     "status": "awaiting-ports",
     "description": "Vocia 4-channel, 300W constant voltage amplifier",

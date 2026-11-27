@@ -24,7 +24,6 @@
   "weightKg": 1.91,
   "powerDrawW": 96,
   "voltage": "100-240V AC",
-  "unitCost": 1155,
   "_avail": {
     "status": "ports-filled",
     "description": "4 channel, 60W half-rack amplifier with mounting bracket",

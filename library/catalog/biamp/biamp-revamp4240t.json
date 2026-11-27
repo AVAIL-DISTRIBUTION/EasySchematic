@@ -24,7 +24,6 @@
   "weightKg": 16.7,
   "powerDrawW": 1050,
   "voltage": "115-230V AC",
-  "unitCost": 1925,
   "_avail": {
     "status": "awaiting-ports",
     "description": "4 Channel class D amplifier 4 x 240 Watts (70/100 Volts or RMS @ 4 Ohms) or in bridge mode 2 x 480 Watts (70/100 Volts or RMS @ 8 Ohms), combined convection and fan cooling, 2 U, 19\" rackmount",

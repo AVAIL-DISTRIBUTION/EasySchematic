@@ -22,6 +22,7 @@
     "parse:extron-visio": "tsx src/extronVisioCli.ts",
     "import:catalog": "tsx src/importCatalogCli.ts",
     "import:intake": "tsx src/importIntakeCli.ts",
+    "clear:catalog-prices": "tsx src/clearCatalogPricesCli.ts",
     "approve:catalog": "tsx src/approveCatalogCli.ts",
     "report:review-queue": "tsx src/reviewQueueCli.ts",
     "report:datasheets": "tsx src/datasheetListCli.ts",

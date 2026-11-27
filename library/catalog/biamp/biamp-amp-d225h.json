@@ -24,7 +24,6 @@
   "weightKg": 0.5,
   "powerDrawW": 50,
   "voltage": "24V DC",
-  "unitCost": 583,
   "_avail": {
     "status": "ports-filled",
     "description": "2 channel, 25W half-rack amplifier",

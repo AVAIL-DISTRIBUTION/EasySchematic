@@ -27,7 +27,6 @@
   "powerDrawW": 60,
   "powerCapacityW": 60,
   "voltage": "100-240V AC",
-  "unitCost": 320,
   "_avail": {
     "status": "ports-filled",
     "description": "Optional power supply accessory for Apprimo Touch 10 UCX-T supporting 65W USB-C device charging or Wi-Fi connections, 100V to 240V",
