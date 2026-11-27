@@ -1,0 +1,61 @@
+{
+  "id": "avail-wyrestorm-tx-scl-hdmi",
+  "label": "Wyrestorm TX-SCL-HDMI",
+  "shortName": "TX-SCL-HDMI",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "TX-SCL-HDMI",
+  "deviceType": "expansion-card",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "tx-scl-hdmi",
+    "wyrestorm"
+  ],
+  "slotFamily": "wyrestorm-mx-1616-scl",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "4K60Hz HDMI Scaling Output Card for MX-1616-SCL | 4K60Hz 4:4:4 | HDR | Audio De-embed(4K: 100m/328ft)",
+    "source": "Price list",
+    "note": "No product page found on wyrestorm.com (sitemap + direct URL checked); Reference URL left empty - no other manufacturer page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-1616-scl/",
+      "note": "card I/O listed on the MX-1616-SCL product page (Technical Specifications); an input/output card despite \"Output Card\" in the price list name"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "notes": "4K60 scaler",
+      "id": "port-1"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin, balanced; audio de-embedded from the input",
+      "id": "port-2"
+    }
+  ]
+}

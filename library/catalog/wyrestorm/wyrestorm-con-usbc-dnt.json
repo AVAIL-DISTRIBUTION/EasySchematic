@@ -1,0 +1,59 @@
+{
+  "id": "avail-wyrestorm-con-usbc-dnt",
+  "label": "Wyrestorm CON-USBC-DNT",
+  "shortName": "CON-USBC-DNT",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "CON-USBC-DNT",
+  "deviceType": "audio-interface",
+  "category": "Audio Products / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/con-usbc-dnt/",
+  "searchTerms": [
+    "con-usbc-dnt",
+    "wyrestorm"
+  ],
+  "heightMm": 120,
+  "widthMm": 35,
+  "depthMm": 26,
+  "voltage": "PoE 802.3af class 1",
+  "poeDrawW": 3.8,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "USB to Dante /AES67 & Dante /AES67 to USB Audio Adapter | PoE | 2x2-Channel",
+    "source": "Manufacturer site",
+    "note": "PoE class 1 only published - class maximum 3.84 W used. Optional 5V DC via USB-C. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/con-usbc-dnt/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Inputs and Outputs both list 1x RJ45 Dante/AES67 and 1x USB-C; the page does not say whether they are the same connectors (listed once each); weight"
+  },
+  "ports": [
+    {
+      "label": "Dante",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Dante",
+      "notes": "Dante/AES67; PoE 802.3af Class 1",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "USB audio; optional DC 5V input",
+      "id": "port-1"
+    }
+  ]
+}

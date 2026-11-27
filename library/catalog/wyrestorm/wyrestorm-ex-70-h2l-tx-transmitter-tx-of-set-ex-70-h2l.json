@@ -1,0 +1,104 @@
+{
+  "id": "avail-wyrestorm-ex-70-h2l-tx",
+  "label": "Wyrestorm EX-70-H2L-TX (Transmitter (TX) of set EX-70-H2L)",
+  "shortName": "EX-70-H2L-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-70-H2L-TX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-70-h2l/",
+  "searchTerms": [
+    "ex-70-h2l-tx",
+    "wyrestorm",
+    "transmitter",
+    "(tx)",
+    "of",
+    "set",
+    "ex-70-h2l"
+  ],
+  "heightMm": 15.2,
+  "widthMm": 136.4,
+  "depthMm": 74.2,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Transmitter (TX) of set EX-70-H2L",
+    "rackFormSource": "Shelf",
+    "description": "HDMI2.0 4K60Hz Video HDMI Extender Set | HDBaseT | DSC | 4K60Hz 4:4:4 | EDID | Loop-out | Audio De-embed | Bi-directional PoC | Pattern for easy installation/testing | CEC Passthrough | RS232 & 2-way IR Passthrough (4K/1080P: 70m/230ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-70-H2L (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-TX\" suffix is an AVAIL convention). Dimensions published once for the set - applied to both units. Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-70-H2L"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-70-h2l/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "link type is not named HDBaseT on the page; IR In/IR Out/Audio Out/HDMI/UTP: connector not published except RJ45; 12V DC In: connector not published; RS-232 pass-through: no connector listed; Micro-USB firmware port: page does not say which unit has it"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Loop Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "UTP Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "UTP Out (RJ45); one-way PoC to the receiver",
+      "id": "port-2"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "section": "IR",
+      "id": "port-3",
+      "connectorType": "trs-eighth",
+      "notes": "TRS; Wyrestorm convention: 3.5 mm TRS (receiver) — verify"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "id": "port-4",
+      "connectorType": "trs-eighth",
+      "notes": "TS; Wyrestorm convention: 3.5 mm TS (emitter) — verify"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "DC 12V; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-5",
+      "connectorType": "barrel"
+    }
+  ]
+}

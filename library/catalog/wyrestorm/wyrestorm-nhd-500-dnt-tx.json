@@ -1,0 +1,136 @@
+{
+  "id": "avail-wyrestorm-nhd-500-dnt-tx",
+  "label": "Wyrestorm NHD-500-DNT-TX",
+  "shortName": "NHD-500-DNT-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-500-DNT-TX",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-500-dnt-tx/",
+  "searchTerms": [
+    "nhd-500-dnt-tx",
+    "wyrestorm"
+  ],
+  "powerDrawW": 15.4,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 15.4,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz Encoder | 4K60Hz 4:4:4 | 1GbE | Dolby Vision & HDR | USB 2.0 | Audio De-embed | ARC | Dual RJ45 | SFP | PoE | IR & RS232 Routing | Dante/AES67",
+    "source": "Manufacturer site",
+    "note": "Max 15.4 W, average 8 W (as published). No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-500-dnt-tx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "5-pin Balanced Analog Out: connector not published (page says '5-pin'); USB Host: connector type not published; 12V DC In: connector not published; which RJ45 takes PoE not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "3.5mm TRS",
+      "id": "port-1"
+    },
+    {
+      "label": "Toslink Out",
+      "signalType": "spdif",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE; one of two RJ45 (Dante and main AV out); assignment not published",
+      "id": "port-3"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE; one of two RJ45 (Dante and main AV out); assignment not published",
+      "id": "port-4"
+    },
+    {
+      "label": "SFP",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "connectorType": "sfp",
+      "section": "Network",
+      "notes": "1 Gbps; 1000Base-SX / LX / LX10",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; 2-way",
+      "id": "port-6"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-7"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-8"
+    },
+    {
+      "label": "USB Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "USB 2.0",
+      "id": "port-9"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 1A; or PoE; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-10",
+      "connectorType": "barrel"
+    }
+  ]
+}

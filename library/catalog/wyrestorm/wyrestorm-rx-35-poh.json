@@ -1,0 +1,89 @@
+{
+  "id": "avail-wyrestorm-rx-35-poh",
+  "label": "Wyrestorm RX-35-POH",
+  "shortName": "RX-35-POH",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "RX-35-POH",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/rx-35-poh/",
+  "searchTerms": [
+    "rx-35-poh",
+    "wyrestorm"
+  ],
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 1.4 4K60Hz HDMI Receiver | HDBaseT | 4K60Hz 4:2:0 | PoH | RS232 & IR Passthrough (4K: 35m/115ft, 1080p: 70m/230ft) [For TX-35-IW]",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsMissing": "no technical specifications on the product page",
+    "portsSource": {
+      "kind": "db",
+      "from": "7bf70970-5089-49f1-bb61-47e73f86e1a5",
+      "label": "Wyrestorm RX-35-POH HDBaseT Receiver",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "HDBT In 1",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "rj45",
+      "notes": "powered by host"
+    },
+    {
+      "id": "tpl-1",
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "tpl-4",
+      "label": "RS-232 1",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial"
+    },
+    {
+      "id": "tpl-2",
+      "label": "IR TX 1",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR"
+    },
+    {
+      "id": "tpl-3",
+      "label": "IR RX 1",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR"
+    },
+    {
+      "id": "tpl-5",
+      "label": "Power In 1",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power"
+    }
+  ]
+}

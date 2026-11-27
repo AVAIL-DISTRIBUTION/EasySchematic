@@ -1,0 +1,111 @@
+{
+  "id": "avail-wyrestorm-ex-35-h2-arc-rx",
+  "label": "Wyrestorm EX-35-H2-ARC-RX (Receiver (RX) of set EX-35-H2-ARC)",
+  "shortName": "EX-35-H2-ARC-RX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EX-35-H2-ARC-RX",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ex-35-h2-arc/",
+  "searchTerms": [
+    "ex-35-h2-arc-rx",
+    "wyrestorm",
+    "receiver",
+    "(rx)",
+    "of",
+    "set",
+    "ex-35-h2-arc"
+  ],
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Receiver (RX) of set EX-35-H2-ARC",
+    "rackFormSource": "Shelf",
+    "description": "HDMI 2.0 4K60Hz HDMI Extender Set | HDBaseT | 4K60Hz 4:4:4 | Dolby Vision & HDR | ARC | 1-way PoH (Rx->Tx) | CEC Passthrough | RS232 & 2-way IR Passthrough (4K: 35m/115ft, 1080p: 70m/230ft)",
+    "source": "Manufacturer site",
+    "note": "Split by AVAIL from set EX-35-H2-ARC (TX + RX sold together; WyreStorm publishes no separate part numbers - \"-RX\" suffix is an AVAIL convention). Published power 8.9 W is not split by TX/RX - not entered. 8.88 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "EX-35-H2-ARC"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/ex-35-h2-arc/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Outputs list is not split by unit: HDBaseT/Toslink/Source Audio/HDMI outputs assigned from the Inputs split and feature text; 12V DC In: connector not published; power consumption 8.88W not stated per unit; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "2-way PoH 48V 15.4W",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "Toslink In",
+      "signalType": "spdif",
+      "direction": "input",
+      "connectorType": "toslink",
+      "section": "Audio Inputs",
+      "notes": "Digital Optical",
+      "id": "port-2"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-3"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-4"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "3.5mm TS mono",
+      "id": "port-5"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "2-way PoH: either unit can be powered by the other; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-6",
+      "connectorType": "barrel"
+    }
+  ]
+}

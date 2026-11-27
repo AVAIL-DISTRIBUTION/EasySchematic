@@ -1,0 +1,80 @@
+{
+  "id": "avail-wyrestorm-idb-400-ms-c",
+  "label": "Wyrestorm IDB-400-MS-C (Multi-standard mains, customizable ports)",
+  "shortName": "IDB-400-MS-C",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "IDB-400-MS-C",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/idb-400-ms-c/",
+  "searchTerms": [
+    "idb-400-ms-c",
+    "wyrestorm",
+    "multi-standard",
+    "mains",
+    "customizable",
+    "ports"
+  ],
+  "voltage": "100-250V AC",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Multi-standard mains, customizable ports",
+    "rackFormSource": "Non-rack",
+    "slotFamilies": [
+      "wyrestorm-idb-c-insert"
+    ],
+    "description": "Flip Up In-Desk Connectivity | USB Charging| Multi-Standard Mains Outlet | customized ports",
+    "source": "Manufacturer site",
+    "note": "Mains outlet box: 16 A max, 3.6 kW total for connected devices; own consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/idb-400-ms-c/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Customer defined connectors (4x): connector types not published; mains outlet connector: not in the standard list; which ports provide USB charging not stated beyond '5v 2.4a per port'"
+  },
+  "ports": [
+    {
+      "label": "USB-A Charging",
+      "signalType": "usb",
+      "direction": "output",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "Built in; USB charging 5V 2.4A per port",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-C",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "Built in; USB charging 5V 2.4A per port; up to 4K30 video passthrough",
+      "id": "port-1"
+    },
+    {
+      "label": "AC Mains In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "Integrated 3 m mains cable; 100-250V AC, max 16A, 50-60Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-2",
+      "connectorType": "iec"
+    },
+    {
+      "label": "Mains Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "notes": "British/European/Indian Standard; built in; total connected power max 3.6kW",
+      "id": "port-3"
+    }
+  ]
+}

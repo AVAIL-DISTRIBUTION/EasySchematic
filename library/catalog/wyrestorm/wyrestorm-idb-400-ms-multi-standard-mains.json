@@ -1,0 +1,84 @@
+{
+  "id": "avail-wyrestorm-idb-400-ms",
+  "label": "Wyrestorm IDB-400-MS (Multi-standard mains)",
+  "shortName": "IDB-400-MS",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "IDB-400-MS",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/idb-400-ms/",
+  "searchTerms": [
+    "idb-400-ms",
+    "wyrestorm",
+    "multi-standard",
+    "mains"
+  ],
+  "voltage": "100-250V AC",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Multi-standard mains",
+    "rackFormSource": "Non-rack",
+    "description": "Flip Up In-Desk Box w/ 2 HDMI, USBC, RJ45, USB Charging (Multi-Standard Mains)",
+    "source": "Manufacturer site",
+    "note": "Mains outlet box: 16 A max, 3.6 kW total for connected devices; own consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/idb-400-ms/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "USB-A and USB-C ports (count differs between blocks); rear/passthrough side connections not listed; Mains Outlet connector id not available; dimensions"
+  },
+  "ports": [
+    {
+      "label": "HDMI 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "listed under Inputs; passthrough",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "notes": "listed under Inputs; passthrough",
+      "id": "port-1"
+    },
+    {
+      "label": "RJ45",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "passthrough",
+      "id": "port-2"
+    },
+    {
+      "label": "Mains Outlet",
+      "signalType": "power",
+      "direction": "output",
+      "section": "Power",
+      "notes": "British/European/Indian Standard outlet",
+      "id": "port-3"
+    },
+    {
+      "label": "Mains In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "integrated 3 m mains cable (Type B plug); 100-250VAC, max 16A; Wyrestorm convention: IEC — verify",
+      "id": "port-4",
+      "connectorType": "iec"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "avail-wyrestorm-sw-620l-tx-w",
+  "label": "Wyrestorm SW-620L-TX-W",
+  "shortName": "SW-620L-TX-W",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-620L-TX-W",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "sw-620l-tx-w",
+    "wyrestorm"
+  ],
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Shelf",
+    "description": "4K30Hz 2x2 Wireless Presentation Switcher | 4K30Hz 4:4:4 | 2 HDMI Inputs | 2 HDMI Outputs | Seamless Switching | Multiview | USB-B Ethernet | Audio De-embed | USB 3.0 | Airplay & Miracast | Wireless Casting & Conferencing (work with APO-DG2 & APO-DG2",
+    "source": "Price list",
+    "note": "No product page found on wyrestorm.com (sitemap + direct URL checked); Reference URL left empty - no other manufacturer page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx"
+  },
+  "ports": []
+}

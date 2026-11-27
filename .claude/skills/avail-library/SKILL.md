@@ -485,8 +485,22 @@ phoenix; notes «2-pole captive screw — Extron convention, verify». Шасс�
 Modules»), иначе причина в `_avail.portsMissing`; откуда слоты — `_avail.slotsSource`; собственные разъёмы шасси
 остаются портами. Линтер: шасси только со слотами — не «no ports», но слот без `slotFamily` — W.
 
+Соглашение о разъёме питания Wyrestorm (решение 2026-11-27, `src/avail/wyrestormPower.ts`, применяет `fill:catalog-ports`
+ко всем карточкам Wyrestorm, кроме library; источник — spec sheets EX-100-H2, RXV-35-4K, NHD-400, NHD-500-IW-TX): только
+где документ разъём не называет, по корпусу (`wyrestormBody`) — настольная / полочная коробка (rackForm shelf-only) с DC →
+`barrel` (locking DC, threaded bushing), напряжение — блока питания (voltage карточки); настенная (`-IW`, `-UK`, `-US`; in-wall,
+wall plate, gang в названии / описании) → `phoenix` 2-pin; стоечная (full / half) с сетевым входом → `iec`. Коробка или
+настенная с PoH / PoC без порта питания получает «<V>V DC In» (локальный блок — альтернатива). Дополнение того же дня
+(spec sheets RXV-35-4K, NHD-500 / 600, EX-35-H2, MX KIT full range): AC power cord в комплекте (MX / MXV, матрицы
+комплектов, IDB-300 / 400) → `iec`; камеры, видео- и аудиобары → `barrel` без фиксации (внешний адаптер); только PoE
+(keypad, touch-screen: SYN-KEY10, SYN-TOUCH10) → без порта питания, «PoE» на LAN; RS-232 → `phoenix` 3-pin; аудио
+симметричное (balanced) → `phoenix` 5-pin, несимметричное стерео → `trs-eighth`; IR → `trs-eighth` (TS излучатель, TRS приёмник);
+что notes порта уже называют (3.5mm, 8-pin Mini DIN, N-pin) — как названо. notes порта — «Wyrestorm convention: … —
+verify». Отчёт —
+`docs/avail/wyrestorm-intake.md`.
+
 Форма сбора (шаг 1.10, [`docs/avail/intake.md`](docs/avail/intake.md)): шаблон
-`tools/avail/intake/avail-intake-template.xlsx` (листы Instructions / Products / Lists) и правила — источник
+`tools/avail/intake/avail-intake-template.xlsx` (листы Instructions / Products / Kits / Lists) и правила — источник
 истины формата; промпт для ИИ-ассистента — `tools/avail/intake/avail-intake-ai-prompt.md`. `npm run import:intake --
 <файл.xlsx> [--dry-run]` (в `api-avail`; логика — `src/avail/intake.ts`, CLI `importIntakeCli.ts`) проверяет строки
 (обязательные колонки, значения из списков по справочникам, числа без единиц, http-ссылки, уникальность артикулов,
@@ -494,7 +508,11 @@ Modules»), иначе причина в `_avail.portsMissing`; откуда с�
 `index.json` (id `avail-<vendor>-<артикул>`, `_avail`: status awaiting-ports, variant, source, datasheetUrl, note,
 intakeFile). Существующую карточку обновляет непустыми ячейками (пустые не стирают), порты и слоты не трогает;
 прежний `_avail.source` остаётся, источник формы — `intakeSource`. Колонки ревью Decision / Reason: только Keep, Exclude — в отчёт по причинам, Check — остановка со списком; без Decision — все строки. Код выхода 1 при строках с ошибками. Списки листа
-Lists сверяет тест `api-avail/test/intake.test.ts` (справочник меняется PR-ом вместе с шаблоном).
+Lists сверяет тест `api-avail/test/intake.test.ts` (справочник меняется PR-ом вместе с шаблоном). Проверенная форма
+(колонки ревью Decision / Reason / Data gaps): только строки Keep; Keep без Reference URL или габаритов — предупреждение.
+MSRP в каталог не пишется (репозиторий публичный). Model с другим написанием вендора пишется с каноническим именем.
+Комплекты — лист Kits и правило пары …-TX / …-RX (Alt part number = артикул комплекта) → `docs/avail/kits.json` и
+`_avail.kit.kitPartNumbers` компонентов (`kitsOfIntake`, `mergeKits`); артикул комплекта в Alt part number не остаётся.
 
 Стандарт v0.7 (3.2): габариты и вес обязательны для того, что стоит в шкафу (в т.ч. любой `rackForm`);
 для монтируемого в помещении (`ROOM_MOUNTED_CATEGORIES` / `ROOM_MOUNTED_TYPES` в `blockLint.ts`) —

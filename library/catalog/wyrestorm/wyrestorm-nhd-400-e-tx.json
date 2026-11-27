@@ -1,0 +1,75 @@
+{
+  "id": "avail-wyrestorm-nhd-400-e-tx",
+  "label": "Wyrestorm NHD-400-E-TX",
+  "shortName": "NHD-400-E-TX",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "NHD-400-E-TX",
+  "deviceType": "avoip-encoder",
+  "category": "AV distribution / AVoIP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/nhd-400-e-tx/",
+  "searchTerms": [
+    "nhd-400-e-tx",
+    "wyrestorm"
+  ],
+  "powerDrawW": 8,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 12.9,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Lite 4K HDR JPEG 2000 PoE Encoder for Matrix & Video Wall function (up to 16x16)",
+    "source": "Manufacturer site",
+    "note": "8 W max with PSU; PoE 802.3af - class maximum 12.95 W used. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/nhd-400-e-tx/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "page lists 'Outputs: 1x 8-pin RJ-45' and 'Ethernet: 1x LAN (PoE) 8-pin RJ-45' without saying whether they are one port or two; modelled as one; 12V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "AV over IP output (Outputs: 1x 8-pin RJ-45); 1000Base-T; PoE PD (IEEE 802.3af)",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "4-pin; 2 way (RX only); routed; API programmable",
+      "id": "port-2"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "12V DC 1A; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-3",
+      "connectorType": "barrel"
+    }
+  ]
+}

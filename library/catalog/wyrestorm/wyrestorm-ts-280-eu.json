@@ -1,0 +1,63 @@
+{
+  "id": "avail-wyrestorm-ts-280-eu",
+  "label": "Wyrestorm TS-280-EU",
+  "shortName": "TS-280-EU",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "TS-280-EU",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/ts-280-eu/",
+  "searchTerms": [
+    "ts-280-eu",
+    "wyrestorm"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "2.8\" RS-232 Multi-Purpose Touch-Screen (EU 2-Gang) as simple fixed position interface to control WyreStorm products",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsMissing": "no technical specifications on the product page",
+    "portsSource": {
+      "kind": "db",
+      "from": "eaba5d09-cc84-45bc-a552-96aa2b39ab15",
+      "label": "Wyrestorm TS-280-EU",
+      "match": "part-number",
+      "status": "raw",
+      "level": "B"
+    }
+  },
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "RS-422 (RJ-45)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Serial"
+    },
+    {
+      "id": "tpl-1",
+      "label": "RS-232 (CON-232-422)",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "other",
+      "section": "Serial"
+    },
+    {
+      "id": "tpl-2",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "other",
+      "section": "Power"
+    }
+  ]
+}

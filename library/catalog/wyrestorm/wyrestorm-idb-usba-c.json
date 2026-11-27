@@ -1,0 +1,29 @@
+{
+  "id": "avail-wyrestorm-idb-usba-c",
+  "label": "Wyrestorm IDB-USBA-C",
+  "shortName": "IDB-USBA-C",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "IDB-USBA-C",
+  "deviceType": "expansion-card",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "searchTerms": [
+    "idb-usba-c",
+    "wyrestorm"
+  ],
+  "slotFamily": "wyrestorm-idb-c-insert",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "USB 3.0 type A | Passthrough coupling socket | Front USB A female | Back USB A female",
+    "source": "Price list",
+    "note": "No product page found on wyrestorm.com (sitemap + direct URL checked); Reference URL left empty - no other manufacturer page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Coupling insert for customizable IDB boxes (slot family name is an AVAIL convention).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx"
+  },
+  "ports": []
+}

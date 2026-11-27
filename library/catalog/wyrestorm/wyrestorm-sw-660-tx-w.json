@@ -1,0 +1,185 @@
+{
+  "id": "avail-wyrestorm-sw-660-tx-w",
+  "label": "Wyrestorm SW-660-TX-W",
+  "shortName": "SW-660-TX-W",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-660-TX-W",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sw-660-tx-w/",
+  "searchTerms": [
+    "sw-660-tx-w",
+    "wyrestorm"
+  ],
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz 6x2 Wireless Presentation Switcher | 4K60Hz 4:4:4 | 2 USB-C & 4 HDMI Inputs | 2 HDMI Outputs | Seamless Switching | MST | Multiview | Dual USB-C 60W Charging | USB-C Ethernet | Audio De-embed | USB 3.0 | Relay | RS-232| Airplay & Miracast | Wi",
+    "source": "Manufacturer site",
+    "note": "PSU 20V 10A; max power consumption not published on product page. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sw-660-tx-w/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "LAN ports: count disputed (2x vs 3x RJ-45) so left out; Relay output and PA sensor (MUTE) input: counts and connectors not published; 20V DC In: connector not published; Wi-Fi antennas are not ports"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI In 3",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI In 4",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-3"
+    },
+    {
+      "label": "USB-C In 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "USB-C input with alt-mode A/V",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-C In 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "USB-C input with alt-mode A/V",
+      "id": "port-5"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-6"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-7"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin",
+      "id": "port-8"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "4-pin; API control; provides 12V power",
+      "id": "port-9"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "device port",
+      "id": "port-10"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "device port",
+      "id": "port-11"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "device port",
+      "id": "port-12"
+    },
+    {
+      "label": "USB-A 4",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "device port",
+      "id": "port-13"
+    },
+    {
+      "label": "USB-B Host 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "assignable host port",
+      "id": "port-14"
+    },
+    {
+      "label": "USB-B Host 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "assignable host port",
+      "id": "port-15"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "20V 10A; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-16",
+      "connectorType": "barrel"
+    }
+  ]
+}

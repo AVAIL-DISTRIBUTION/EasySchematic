@@ -1,0 +1,63 @@
+{
+  "id": "avail-wyrestorm-syn-touch10-v3",
+  "label": "Wyrestorm SYN-TOUCH10 (v3)",
+  "shortName": "SYN-TOUCH10",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SYN-TOUCH10 v3",
+  "deviceType": "touch-screen",
+  "category": "Control Systems / Touch panels",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/syn-touch10/",
+  "searchTerms": [
+    "syn-touch10 v3",
+    "syn-touch10",
+    "wyrestorm",
+    "v3"
+  ],
+  "heightMm": 190,
+  "widthMm": 274,
+  "depthMm": 30,
+  "weightKg": 0.7,
+  "voltage": "12V DC / PoE+ 802.3at",
+  "poeDrawW": 25.5,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v3",
+    "rackFormSource": "Non-rack",
+    "description": "Synergy 10.1” All-In-One Touchpad IP Controller | PoE | Table Top Stand & Wall-Mount (US/UK/EU Compatible)",
+    "source": "Manufacturer site",
+    "note": "Only PoE+ (802.3at) published - class maximum 25.5 W used. Dimensions published without axis order (274 x 190 x 30 mm) - assumed W x H x D. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available Now.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/syn-touch10/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Micro-USB port: function differs between spec blocks (Reserved vs OTG) so left out; 3.5mm headphone jack: function differs (Reserved vs earphone + microphone) so left out; USB for Serial (RS-232 format): only in one spec block, count/connector not published; 12V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "1GbE; PoE+ 802.3at (one spec block says PoE is optional)",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-A",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 2.0 host; for transferring system configuration",
+      "id": "port-1"
+    }
+  ]
+}

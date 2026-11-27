@@ -1,0 +1,140 @@
+{
+  "id": "avail-wyrestorm-com-mic-hub",
+  "label": "Wyrestorm COM-MIC-HUB",
+  "shortName": "COM-MIC-HUB",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "COM-MIC-HUB",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/com-mic-hub/",
+  "searchTerms": [
+    "com-mic-hub",
+    "wyrestorm"
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 120,
+  "voltage": "12V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Microphone Hub | Microphone Mixer | Background noise reduction | Audio DSP | Acoustic Echo Cancellation | Web-UI",
+    "source": "Manufacturer site",
+    "note": "Power consumption not published. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/com-mic-hub/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "12V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "Ceiling Mic",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Audio Inputs",
+      "notes": "connects and powers the ceiling microphone",
+      "id": "port-0"
+    },
+    {
+      "label": "AEC Ref",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "5-pin; unbalanced; left and right",
+      "id": "port-1"
+    },
+    {
+      "label": "WL Mic In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "3-pin; balanced input for wireless mic",
+      "id": "port-2"
+    },
+    {
+      "label": "AEC Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin; unbalanced; left and right",
+      "id": "port-3"
+    },
+    {
+      "label": "Line Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin; unbalanced; left and right; connect to AMP",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Web UI; matrix control",
+      "id": "port-5"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin",
+      "id": "port-6"
+    },
+    {
+      "label": "Trigger In",
+      "signalType": "contact-closure",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pin; contact closure or voltage input 3.3V or 5V",
+      "id": "port-7"
+    },
+    {
+      "label": "Trigger Out",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Digital I/O",
+      "notes": "2-pin; 5V",
+      "id": "port-8"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "connect to PC host",
+      "id": "port-9"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "id": "port-10",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
+    }
+  ]
+}

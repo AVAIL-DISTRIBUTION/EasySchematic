@@ -1,0 +1,192 @@
+{
+  "id": "avail-wyrestorm-sw-0402n-ink",
+  "label": "Wyrestorm SW-0402N-INK",
+  "shortName": "SW-0402N-INK",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-0402N-INK",
+  "deviceType": "switcher",
+  "category": "AV distribution / Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sw-0402n-ink/",
+  "searchTerms": [
+    "sw-0402n-ink",
+    "wyrestorm"
+  ],
+  "heightMm": 42,
+  "widthMm": 215,
+  "depthMm": 180.2,
+  "weightKg": 1.1,
+  "powerDrawW": 158,
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz 4x2 Multiview Presentation Switcher | 4K60Hz 4:4:4 | 2 HDMI & 2 USB-C Inputs | 2 HDMI Outputs | Dual NetworkHD Output | Seamless Switching | Dual Annotation Capability | Audio De-embed | USB 3.0 | Relay | RS-232 | Sygma Cloud Management",
+    "source": "Manufacturer site",
+    "note": "Idle 7.5 W, max 158 W at 4K full load. Size < 1U. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sw-0402n-ink/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "20V DC In: connector not published; Relay (named in product title) has no connector listed in the specifications"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C In 1",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "DisplayPort 1.1; 60W PD; 1000BASE-T; USB 3.0",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-C In 2",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "DisplayPort 1.1; 60W PD; 1000BASE-T; USB 3.0",
+      "id": "port-3"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-4"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-5"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin; balanced",
+      "id": "port-6"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Carries 2x NHD Stream Out (H.264/H.265); assignment not published",
+      "id": "port-7"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Carries 2x NHD Stream Out (H.264/H.265); assignment not published",
+      "id": "port-8"
+    },
+    {
+      "label": "LAN 3",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "Carries 2x NHD Stream Out (H.264/H.265); assignment not published",
+      "id": "port-9"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "4-pin; API control and 12V DC output",
+      "id": "port-10"
+    },
+    {
+      "label": "USB-A 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 device port; 1A per port",
+      "id": "port-11"
+    },
+    {
+      "label": "USB-A 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 device port; 1A per port",
+      "id": "port-12"
+    },
+    {
+      "label": "USB-A 3",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-a",
+      "section": "USB",
+      "notes": "USB 3.0 device port; 1A per port",
+      "id": "port-13"
+    },
+    {
+      "label": "USB-B Host 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 3.0; assignable",
+      "id": "port-14"
+    },
+    {
+      "label": "USB-B Host 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 3.0; assignable",
+      "id": "port-15"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "20V DC 10A; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-16",
+      "connectorType": "barrel"
+    }
+  ]
+}

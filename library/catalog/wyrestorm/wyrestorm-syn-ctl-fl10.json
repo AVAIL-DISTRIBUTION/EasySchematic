@@ -1,0 +1,145 @@
+{
+  "id": "avail-wyrestorm-syn-ctl-fl10",
+  "label": "Wyrestorm SYN-CTL-FL10",
+  "shortName": "SYN-CTL-FL10",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SYN-CTL-FL10",
+  "deviceType": "control-processor",
+  "category": "Control Systems / Processors",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/syn-ctl-fl10/",
+  "searchTerms": [
+    "syn-ctl-fl10",
+    "wyrestorm"
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 120,
+  "weightKg": 0.7,
+  "powerDrawW": 3.6,
+  "voltage": "12V DC / PoE 802.3af",
+  "poeDrawW": 3.6,
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Synergy Control Flow System | Central Controller | Node-Red | 2x RS-232 | RS-422 | RS-485 | 2x IR | 4x GPIO | 2x Relay | Low Code Programming | Sygma Cloud Management | PoE",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available in Q4 2026.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/syn-ctl-fl10/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232/422/485, RS-232, IR Out, GPIO, Relay: connector not published; power input: page gives both '12V DC; PoE' and '5V 0.2A'"
+  },
+  "ports": [
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "notes": "PoE: IEEE 802.3af PD",
+      "id": "port-0"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232/422/485",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "notes": "configurable RS-232/RS-422/RS-485 (COM1); 3-pin; Wyrestorm convention: 3-pin phoenix — verify",
+      "id": "port-2",
+      "connectorType": "phoenix"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "section": "Serial",
+      "notes": "COM2; 3-pin; Wyrestorm convention: 3-pin phoenix — verify",
+      "id": "port-3",
+      "connectorType": "phoenix"
+    },
+    {
+      "label": "IR Out 1",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "notes": "configurable IR output / serial Tx; TS; Wyrestorm convention: 3.5 mm TS (emitter) — verify",
+      "id": "port-4",
+      "connectorType": "trs-eighth"
+    },
+    {
+      "label": "IR Out 2",
+      "signalType": "ir",
+      "direction": "output",
+      "section": "IR",
+      "notes": "configurable IR output / serial Tx; TS; Wyrestorm convention: 3.5 mm TS (emitter) — verify",
+      "id": "port-5",
+      "connectorType": "trs-eighth"
+    },
+    {
+      "label": "Relay 1",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "notes": "SPDT",
+      "id": "port-6"
+    },
+    {
+      "label": "Relay 2",
+      "signalType": "contact-closure",
+      "direction": "output",
+      "section": "Relays",
+      "notes": "SPDT",
+      "id": "port-7"
+    },
+    {
+      "label": "GPIO 1",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "notes": "configurable digital input/output",
+      "id": "port-8"
+    },
+    {
+      "label": "GPIO 2",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "notes": "configurable digital input/output",
+      "id": "port-9"
+    },
+    {
+      "label": "GPIO 3",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "notes": "configurable digital input/output",
+      "id": "port-10"
+    },
+    {
+      "label": "GPIO 4",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Digital I/O",
+      "notes": "configurable digital input/output",
+      "id": "port-11"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "avail-wyrestorm-idb-300",
+  "label": "Wyrestorm IDB-300",
+  "shortName": "IDB-300",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "IDB-300",
+  "deviceType": "table-box",
+  "category": "Connectivity / Architectural",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/idb-300/",
+  "searchTerms": [
+    "idb-300",
+    "wyrestorm"
+  ],
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Non-rack",
+    "description": "Dual Channel CableBox | USB-C, HDMI+USB | Retractable | Cable management bag",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsMissing": "no technical specifications on the product page"
+  },
+  "ports": []
+}

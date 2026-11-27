@@ -1,0 +1,31 @@
+{
+  "id": "avail-wyrestorm-sp-0104-h2",
+  "label": "Wyrestorm SP-0104-H2",
+  "shortName": "SP-0104-H2",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SP-0104-H2",
+  "deviceType": "hdmi-splitter",
+  "category": "AV distribution / Distribution Amplifiers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sp-0104-h2/",
+  "searchTerms": [
+    "sp-0104-h2",
+    "wyrestorm"
+  ],
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "awaiting-ports",
+    "rackFormSource": "Shelf",
+    "description": "4K HDR 4:4:4 60Hz 1:4 HDMI Splitter with EDID management",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsMissing": "no technical specifications on the product page"
+  },
+  "ports": []
+}

@@ -9,6 +9,14 @@
  * manufacturer + part number) gets the non-empty values of the row — empty cells never erase a
  * value — and keeps its ports, slots and port provenance.
  *
+ * Kits (sheet Kits and the TX/RX pair rule, kitsOfIntake): a kit is sold under its own part number
+ * and consists of components that are blocks of their own (a matrix and its receivers, an extender's
+ * TX and RX). The kits go to docs/avail/kits.json; each component card gets _avail.kit.kitPartNumbers.
+ * Alt part number stays for an alternative part number of the same device: a kit part number there
+ * (the TX/RX rows of an extender kit) moves to the kit.
+ *
+ * Prices (MSRP) are not imported: the repository is public.
+ *
  * Pure functions, no Node or browser dependencies: the CLI (api-avail/src/importIntakeCli.ts) reads
  * the workbook and writes the files.
  */
@@ -19,6 +27,7 @@ import { AWAITING_PORTS, type CatalogAvail, type CatalogFile, type CatalogTempla
 import { findCategory, findVendor, TAXONOMY, VENDORS } from "./library";
 import { libraryFileName, slug } from "./libraryFiles";
 import { INTAKE_LIFECYCLES, isLifecycleDate, normalizeLifecycleDate } from "./lifecycle";
+import { canonicalFamily } from "./slotFamilies";
 
 /** Columns of the Products sheet, in template order; `*` marks the required ones. */
 export const INTAKE_COLUMNS = [
@@ -34,11 +43,11 @@ export const REQUIRED_COLUMNS = INTAKE_COLUMNS.filter((c) => c.endsWith("*")).ma
 
 /**
  * Review columns a reviewed form may add after the template's columns: Decision (Keep / Exclude /
- * Check) and Reason. With a Decision column only Keep rows are imported; Exclude rows are skipped
+ * Check), Reason and Data gaps (the reviewer's notes, not imported). With a Decision column only Keep rows are imported; Exclude rows are skipped
  * (counted with their reasons in the report); a Check row — or an empty or unknown decision — stops
  * the import: the review is not finished. Without a Decision column every row is imported.
  */
-export const REVIEW_COLUMNS = ["Decision", "Reason"] as const;
+export const REVIEW_COLUMNS = ["Decision", "Reason", "Data gaps"] as const;
 export const DECISIONS = ["Keep", "Exclude", "Check"] as const;
 export type Decision = (typeof DECISIONS)[number];
 
@@ -157,7 +166,12 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
     const example = EXAMPLE_NOTE_RE.test(v.Note ?? "");
     const pn = v["Part number"] ?? "";
 
-    for (const c of REQUIRED_COLUMNS) if (!v[c as Column]) errors.push(`${c} is empty`);
+    for (const c of REQUIRED_COLUMNS) {
+      if (v[c as Column]) continue;
+      // A reviewed form (Decision Keep) may keep a product without a manufacturer page: the reviewer saw it.
+      if (c === "Reference URL" && decisionAt >= 0) warnings.push("Reference URL is empty (kept by the review): the card has no referenceUrl, at most level B");
+      else errors.push(`${c} is empty`);
+    }
 
     const vendor = v.Vendor ? findVendor(v.Vendor) : undefined;
     if (v.Vendor && !vendor) errors.push(`Vendor "${v.Vendor}" is not in the vendor list (add it to docs/avail/avail-vendors.json first)`);
@@ -207,7 +221,10 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
     const fieldOf = (c: Column) => NUMBERS.find(([col]) => col === c)![1];
     const missingDims = DIMENSIONS.filter((c) => v[c] === undefined && (card?.[fieldOf(c)] ?? null) === null);
     const rack = v["Rack form"] ? RACK_FORMS[v["Rack form"]] : undefined;
-    if (missingDims.length && rack && v["Rack form"] !== "Non-rack") {
+    if (missingDims.length && rack && v["Rack form"] !== "Non-rack" && decisionAt >= 0) {
+      // A reviewed form keeps such a row (the reviewer saw the gap): the card waits for the data at level B.
+      warnings.push(`${missingDims.join(", ")} empty: required for rack form "${v["Rack form"]}" (kept by the review: level B until filled)`);
+    } else if (missingDims.length && rack && v["Rack form"] !== "Non-rack") {
       errors.push(`${missingDims.join(", ")} empty: required for rack form "${v["Rack form"]}"`);
     } else if (missingDims.length && !v["Rack form"] && !isRoomMounted({ category: v.Category, deviceType: v["Device type"] })) {
       warnings.push(`${missingDims.join(", ")} empty: required for anything that can go into a cabinet (set Rack form "Non-rack" if it is room-mounted)`);
@@ -218,7 +235,8 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
     if (/poe/i.test(volt) && !v["PoE draw (W)"]) warnings.push(`Input voltage "${volt}" is PoE but PoE draw (W) is empty`);
     if (volt && !/poe/i.test(volt) && !v["Power draw (W)"]) warnings.push("Power draw (W) is empty");
 
-    if (v.Model && vendor && !v.Model.toLowerCase().startsWith(vendor.name.toLowerCase())) {
+    // A model starting with another spelling of the vendor ("WyreStorm …") is renamed silently (report total).
+    if (v.Model && vendor && canonicalModel(v.Model, vendor.name) === `${vendor.name} ${v.Model}`) {
       warnings.push(`Model does not start with the vendor: "${vendor.name} ${v.Model}" will be used`);
     }
     if (!v["Datasheet URL"]) warnings.push("Datasheet URL is empty: ports are read from it later");
@@ -239,17 +257,47 @@ export function intakeId(vendor: string, partNumber: string): string {
   return `avail-${slug(vendor)}-${slug(partNumber)}`;
 }
 
+/**
+ * The model name with the canonical vendor name first: "WyreStorm EX-70-H2L" → "Wyrestorm EX-70-H2L"
+ * (a vendor alias or another spelling at the start is replaced), "EX-70-H2L" → "Wyrestorm EX-70-H2L".
+ */
+export function canonicalModel(model: string, vendor: string): string {
+  const v = findVendor(vendor);
+  const names = [vendor, ...(v?.aliases ?? [])].sort((a, b) => b.length - a.length);
+  const m = model.trim();
+  for (const n of names) {
+    if (m.toLowerCase() === n.toLowerCase()) return vendor;
+    if (m.toLowerCase().startsWith(`${n.toLowerCase()} `)) return `${vendor} ${m.slice(n.length).trim()}`;
+  }
+  return `${vendor} ${m}`;
+}
+
+/**
+ * A note without prices: clauses (". " / "; ") that name a price — MSRP, an amount in a currency, "per-unit price
+ * not published" — are dropped. The repository is public; the price list stays with the form.
+ */
+export function withoutPrices(note: string): string {
+  const PRICE_RE = /\bMSRP\b|\b\d[\d.,]*\s*(?:USD|EUR|GBP|AED|RUB)\b|(?:\$|€|£)\s?\d|\bprices?\b[^.;]*\bnot published\b/i;
+  return note
+    .split(/(?<=[.;])\s+(?=[A-Z(])/)
+    .filter((c) => !PRICE_RE.test(c))
+    .join(" ")
+    .replace(/;\s*$/, ".")
+    .trim();
+}
+
 /** The card a valid row describes (only the fields the row fills). */
 export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
   const vendor = findVendor(v.Vendor)!.name;
-  const model = v.Model!.toLowerCase().startsWith(vendor.toLowerCase()) ? v.Model! : `${vendor} ${v.Model}`;
+  const model = canonicalModel(v.Model!, vendor);
   const variant = v.Variant;
   const label = variant ? `${model} (${variant})` : model;
   const shortName = v["Short name"] ?? model.slice(vendor.length).trim();
   const pn = v["Part number"]!;
   const words = [...shortName.toLowerCase().split(/\s+/), ...(variant ? variant.toLowerCase().split(/[\s,]+/) : [])].filter(Boolean);
   const rack = v["Rack form"] ? RACK_FORMS[v["Rack form"]] : undefined;
-  const cards = list(v["Card for slot families"]);
+  // Slot families by their registry name (an alias such as "sfp-plus" → "sfp").
+  const cards = [...new Set(list(v["Card for slot families"]).map(canonicalFamily))];
   // Key order of the catalog files: card, then _avail, then ports.
   const t = {
     id: intakeId(vendor, pn),
@@ -260,7 +308,7 @@ export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
     deviceType: v["Device type"]!,
     category: v.Category!,
     auxiliaryData: [{ text: "{{deviceType}}", position: "header" }],
-    referenceUrl: v["Reference URL"]!,
+    ...(v["Reference URL"] ? { referenceUrl: v["Reference URL"] } : {}),
     searchTerms: [...new Set([pn.toLowerCase(), shortName.toLowerCase(), vendor.toLowerCase(), ...words])],
   } as Record<string, unknown>;
   const num = (col: Column) => (v[col] !== undefined ? parseNumber(v[col]!) : undefined);
@@ -270,7 +318,7 @@ export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
   ] as [Column, string][]) if (num(col) !== undefined) t[field] = num(col);
   if (v["Input voltage"]) t.voltage = v["Input voltage"];
   for (const [col, field] of [
-    ["PoE draw (W)", "poeDrawW"], ["PoE budget (W)", "poeBudgetW"], ["Heat (BTU/h)", "thermalBtuh"], ["MSRP (USD)", "unitCost"],
+    ["PoE draw (W)", "poeDrawW"], ["PoE budget (W)", "poeBudgetW"], ["Heat (BTU/h)", "thermalBtuh"],
   ] as [Column, string][]) if (num(col) !== undefined) t[field] = num(col);
   if (rack?.rackForm) t.rackForm = rack.rackForm;
   if (cards.length) t.slotFamily = cards[0];
@@ -283,13 +331,14 @@ export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
   if (v["Alt part number"]) a.altPartNumber = v["Alt part number"];
   if (v["Rack form"]) a.rackFormSource = v["Rack form"];
   if (rack?.rackUnits) a.rackUnits = rack.rackUnits;
-  const chassis = list(v["Slot families (chassis)"]);
+  const chassis = [...new Set(list(v["Slot families (chassis)"]).map(canonicalFamily))];
   if (chassis.length) a.slotFamilies = chassis;
   if (cards.length > 1) a.cardFamilies = cards;
   if (v.Description) a.description = v.Description;
   a.source = v.Source!;
   if (v["Datasheet URL"]) a.datasheetUrl = v["Datasheet URL"];
-  if (v.Note) a.note = v.Note;
+  const note = v.Note ? withoutPrices(v.Note) : "";
+  if (note) a.note = note;
   const lc = v.Lifecycle ? INTAKE_LIFECYCLES[v.Lifecycle] : undefined;
   if (lc) {
     a.lifecycle = lc;
@@ -304,7 +353,7 @@ export function cardFromRow(v: IntakeRow, intakeFile: string): CatalogTemplate {
 /** Card keys the intake owns (a row may set them on an existing card). */
 const CARD_KEYS = [
   "label", "shortName", "manufacturer", "modelNumber", "deviceType", "category", "referenceUrl", "searchTerms", "voltage",
-  "powerDrawW", "poeDrawW", "poeBudgetW", "thermalBtuh", "heightMm", "widthMm", "depthMm", "weightKg", "unitCost",
+  "powerDrawW", "poeDrawW", "poeBudgetW", "thermalBtuh", "heightMm", "widthMm", "depthMm", "weightKg",
   "rackForm", "slotFamily",
 ] as const;
 
@@ -344,6 +393,105 @@ export function mergeCard(existing: CatalogTemplate, row: CatalogTemplate): Cata
   return t;
 }
 
+// ---------------------------------------------------------------------------- kits
+
+export interface KitComponent {
+  partNumber: string;
+  qty: number;
+}
+
+/** A kit sold under its own part number: its components (each a block of its own) and where that comes from. */
+export interface KitDef {
+  vendor: string;
+  partNumber: string;
+  components: KitComponent[];
+  source: string;
+}
+
+export interface KitsFile {
+  about?: string;
+  kits: KitDef[];
+}
+
+/** Columns of the Kits sheet (the first one names where the kit part number comes from). */
+export const KITS_COLUMNS = ["Kit part number (price list)", "Component part number", "Qty", "Source"] as const;
+export const PAIR_SOURCE = "TX/RX pair: Alt part number of the …-TX and …-RX rows (Products sheet)";
+
+const TXRX_RE = /^(.*)-(TX|RX)$/i;
+
+/**
+ * The kits of an intake form: the Kits sheet (kit part number, component, qty, source) and the TX/RX
+ * pair rule — rows "<base>-TX" and "<base>-RX" whose Alt part number is the same kit part number make
+ * the kit 1 × TX + 1 × RX. Returns the kits, the kits of each component part number and the rows whose
+ * Alt part number is a kit (it moves to the kit), with warnings.
+ */
+export function kitsOfIntake(
+  rows: readonly IntakeRow[],
+  kitsSheet: string[][] | undefined,
+): { kits: KitDef[]; kitsOf: Map<string, string[]>; altIsKit: Set<string>; warnings: string[] } {
+  const warnings: string[] = [];
+  const kits = new Map<string, KitDef>();
+  const vendorOfPart = new Map(rows.filter((r) => r["Part number"]).map((r) => [r["Part number"]!.toLowerCase(), findVendor(r.Vendor)?.name ?? r.Vendor ?? ""]));
+  const formVendor = [...new Set(vendorOfPart.values())].length === 1 ? [...vendorOfPart.values()][0] : "";
+
+  // Kits sheet.
+  if (kitsSheet?.length) {
+    const headerAt = kitsSheet.findIndex((r) => r.some((c) => c.trim()));
+    const header = kitsSheet[headerAt].map((c) => c.trim());
+    const col = (prefix: string) => header.findIndex((h) => h.toLowerCase().startsWith(prefix.toLowerCase()));
+    const [kitAt, compAt, qtyAt, srcAt] = [col("Kit part number"), col("Component part number"), col("Qty"), col("Source")];
+    if (kitAt < 0 || compAt < 0 || qtyAt < 0) warnings.push(`Kits sheet: columns ${KITS_COLUMNS.join(", ")} expected; the sheet is skipped`);
+    else {
+      kitsSheet.slice(headerAt + 1).forEach((cells, i) => {
+        const kit = (cells[kitAt] ?? "").trim();
+        const comp = (cells[compAt] ?? "").trim();
+        if (!kit || !comp) return; // empty rows and notes under the table
+        const qty = Number((cells[qtyAt] ?? "").trim());
+        if (!Number.isInteger(qty) || qty < 1) return void warnings.push(`Kits sheet row ${headerAt + i + 2}: Qty "${cells[qtyAt] ?? ""}" is not a whole number ≥ 1`);
+        const vendor = vendorOfPart.get(comp.toLowerCase()) ?? formVendor;
+        if (!vendorOfPart.has(comp.toLowerCase())) warnings.push(`Kits sheet: component ${comp} of ${kit} is not a row of the Products sheet`);
+        const k = kits.get(kit) ?? { vendor, partNumber: kit, components: [], source: (cells[srcAt] ?? "").trim() || "Kits sheet" };
+        k.components.push({ partNumber: comp, qty });
+        kits.set(kit, k);
+      });
+    }
+  }
+
+  // TX/RX pairs whose Alt part number is the kit.
+  const pairs = new Map<string, { tx?: string; rx?: string; vendor: string }>();
+  for (const r of rows) {
+    const pn = r["Part number"];
+    const alt = r["Alt part number"];
+    const m = pn ? TXRX_RE.exec(pn) : null;
+    if (!pn || !alt || !m || kits.has(alt)) continue;
+    const p = pairs.get(alt) ?? { vendor: findVendor(r.Vendor)?.name ?? r.Vendor ?? "" };
+    if (m[2].toUpperCase() === "TX") p.tx = pn;
+    else p.rx = pn;
+    pairs.set(alt, p);
+  }
+  for (const [kit, p] of pairs) {
+    if (!p.tx || !p.rx) {
+      warnings.push(`Alt part number ${kit} of ${p.tx ?? p.rx} looks like a kit, but its ${p.tx ? "RX" : "TX"} row is missing: left as Alt part number`);
+      continue;
+    }
+    kits.set(kit, { vendor: p.vendor, partNumber: kit, components: [{ partNumber: p.tx, qty: 1 }, { partNumber: p.rx, qty: 1 }], source: PAIR_SOURCE });
+  }
+
+  const kitsOf = new Map<string, string[]>();
+  for (const k of kits.values()) for (const c of k.components) kitsOf.set(c.partNumber.toLowerCase(), [...(kitsOf.get(c.partNumber.toLowerCase()) ?? []), k.partNumber]);
+  const altIsKit = new Set(rows.filter((r) => r["Part number"] && r["Alt part number"] && kits.has(r["Alt part number"]!)).map((r) => r["Part number"]!.toLowerCase()));
+  return { kits: [...kits.values()], kitsOf, altIsKit, warnings };
+}
+
+/** docs/avail/kits.json after an import: the form's kits replace those with the same vendor and part number. */
+export function mergeKits(file: KitsFile, kits: readonly KitDef[]): KitsFile {
+  const key = (k: KitDef) => `${k.vendor}|${k.partNumber}`.toLowerCase();
+  const fresh = new Set(kits.map(key));
+  const all = [...file.kits.filter((k) => !fresh.has(key(k))), ...kits];
+  all.sort((a, b) => a.vendor.localeCompare(b.vendor) || a.partNumber.localeCompare(b.partNumber));
+  return { ...(file.about ? { about: file.about } : {}), kits: all };
+}
+
 export interface IntakeIndexEntry {
   file: string;
   id: string;
@@ -361,6 +509,9 @@ export interface IntakeResult extends IntakeValidation {
   remove: string[];
   /** index.json entries after the import, in catalog order (new cards appended). */
   index: IntakeIndexEntry[];
+  /** Kits of the form (sheet Kits, TX/RX pairs): for docs/avail/kits.json. */
+  kits: KitDef[];
+  kitWarnings: string[];
 }
 
 const indexEntry = (file: string, t: CatalogTemplate): IntakeIndexEntry => ({
@@ -376,21 +527,37 @@ const indexEntry = (file: string, t: CatalogTemplate): IntakeIndexEntry => ({
  * Validates the sheet and turns its valid rows into catalog changes against the current catalog
  * (files and index.json entries). Nothing is written here.
  */
-export function importIntake(sheet: string[][], catalog: readonly CatalogFile[], index: readonly IntakeIndexEntry[], intakeFile: string): IntakeResult {
+export function importIntake(
+  sheet: string[][],
+  catalog: readonly CatalogFile[],
+  index: readonly IntakeIndexEntry[],
+  intakeFile: string,
+  kitsSheet?: string[][],
+): IntakeResult {
   const byId = new Map(catalog.map((f) => [f.template.id, f]));
   const byPart = new Map(catalog.map((f) => [`${f.template.manufacturer}|${f.template.modelNumber.toLowerCase()}`, f]));
   const lookup = (vendor: string, pn: string) => (byId.get(intakeId(vendor, pn)) ?? byPart.get(`${vendor}|${pn.toLowerCase()}`))?.template;
   const validation = validateIntake(sheet, lookup);
-  const result: IntakeResult = { ...validation, actions: [], write: [], remove: [], index: [...index] };
+  const result: IntakeResult = { ...validation, actions: [], write: [], remove: [], index: [...index], kits: [], kitWarnings: [] };
   if (validation.fatal.length) return result;
+  const kitInfo = kitsOfIntake(validation.rows.filter((r) => !r.example).map((r) => r.values), kitsSheet);
+  result.kits = kitInfo.kits;
+  result.kitWarnings = kitInfo.warnings;
 
   const taken = new Map(catalog.map((f) => [f.file, f.template.id]));
 
   for (const r of validation.rows) {
     if (r.example || r.errors.length) continue;
     const card = cardFromRow(r.values, intakeFile);
+    // Kits: a kit part number in Alt part number moves to the kit; the component names its kits.
+    const pnKey = card.modelNumber.toLowerCase();
+    const altKit = kitInfo.altIsKit.has(pnKey) ? card._avail.altPartNumber : undefined;
+    if (altKit) delete card._avail.altPartNumber;
+    const inKits = kitInfo.kitsOf.get(pnKey);
+    if (inKits) card._avail.kit = { kitPartNumbers: inKits };
     const found = byId.get(card.id) ?? byPart.get(`${card.manufacturer}|${card.modelNumber.toLowerCase()}`);
     const next = found ? mergeCard(found.template, card) : card;
+    if (altKit && next._avail.altPartNumber === altKit) delete next._avail.altPartNumber;
     // File name: slug of the label; the part number tells two labels with one slug apart.
     const vendorDir = slug(next.manufacturer);
     let file = `${vendorDir}/${libraryFileName(next)}`;
@@ -447,6 +614,16 @@ export function formatIntakeReport(r: IntakeResult, intakeFile: string, dryRun: 
   lines.push(
     `Rows: ${r.rows.length}; created ${n("created")}, updated ${n("updated")}, unchanged ${n("unchanged")}, with errors (not imported) ${invalid}, example rows skipped ${examples}`,
   );
+  const real = r.rows.filter((x) => !x.example);
+  const renamed = real.filter((x) => x.values.Model && x.values.Vendor && findVendor(x.values.Vendor) && !x.values.Model.startsWith(`${findVendor(x.values.Vendor)!.name} `)).length;
+  if (renamed) lines.push(`Model names written with the canonical vendor name: ${renamed}`);
+  const priced = real.filter((x) => x.values["MSRP (USD)"]).length;
+  if (priced) lines.push(`MSRP (USD) filled in ${priced} rows: not imported (the repository is public, prices stay out)`);
+  if (r.kits.length) {
+    lines.push("", `Kits (docs/avail/kits.json): ${r.kits.length}`);
+    for (const k of r.kits) lines.push(`  ${k.partNumber} = ${k.components.map((c) => `${c.qty} × ${c.partNumber}`).join(" + ")}  [${k.source}]`);
+  }
+  for (const w of r.kitWarnings) lines.push(`  W ${w}`);
   const issues = r.rows.filter((x) => !x.example && (x.errors.length || x.warnings.length));
   if (issues.length) lines.push("", "Rows with errors (E, not imported) and warnings (W):");
   for (const x of issues) {

@@ -1,0 +1,126 @@
+{
+  "id": "avail-wyrestorm-mx-0402-mst-v2",
+  "label": "Wyrestorm MX-0402-MST (v2)",
+  "shortName": "MX-0402-MST",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "MX-0402-MST v2",
+  "deviceType": "switcher",
+  "category": "AV distribution / Matrix Switchers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/mx-0402-mst/",
+  "searchTerms": [
+    "mx-0402-mst v2",
+    "mx-0402-mst",
+    "wyrestorm",
+    "v2"
+  ],
+  "powerDrawW": 150,
+  "voltage": "20V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "v2",
+    "rackFormSource": "Shelf",
+    "description": "5K60Hz 4x2 Matrix Switcher | 5K60Hz 4:2:0 | HDR | 2 USB-C & 2 HDMI Inputs | 2 HDMI Outputs | MST | USB-C 100W Charging | Audio De-embed | USB 3.0 | USB-C & USB-B Ethernet | GPIO | RS232 | Sygma Cloud Management",
+    "source": "Manufacturer site",
+    "note": "Approx. 150 W incl. USB peripherals and USB-C charging. Product page is for MX-0402-MST (v1); v2 page not found. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/mx-0402-mst/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "RS-232 (mentioned in control methods) and GPIO (in the description): no connector listed in the specifications; USB 3.0 host and device ports: not listed; 20V DC In: connector not published; dimensions and weight not on the page"
+  },
+  "ports": [
+    {
+      "label": "HDMI In 1",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI In 2",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-1"
+    },
+    {
+      "label": "HDMI Out 1",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-2"
+    },
+    {
+      "label": "HDMI Out 2",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-3"
+    },
+    {
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "5-pin",
+      "id": "port-4"
+    },
+    {
+      "label": "LAN 1",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-5"
+    },
+    {
+      "label": "LAN 2",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Network",
+      "id": "port-6"
+    },
+    {
+      "label": "USB-C 1",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "listed as input; also video input",
+      "id": "port-7"
+    },
+    {
+      "label": "USB-C 2",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "USB",
+      "notes": "listed as input; also video input",
+      "id": "port-8"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "the page says only 20V; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-9",
+      "connectorType": "barrel"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "avail-wyrestorm-exp-con-aud-h2",
+  "label": "Wyrestorm EXP-CON-AUD-H2",
+  "shortName": "EXP-CON-AUD-H2",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "EXP-CON-AUD-H2",
+  "deviceType": "audio-embedder",
+  "category": "AV distribution / Interfaces",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/exp-con-aud-h2/",
+  "searchTerms": [
+    "exp-con-aud-h2",
+    "wyrestorm"
+  ],
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "Analog & Digital Audio Extractor with HDMI pass-through",
+    "source": "Manufacturer site",
+    "note": "No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsMissing": "no technical specifications on the product page",
+    "portsSource": {
+      "kind": "db",
+      "from": "93d3d140-a258-4aa3-a754-729e9b0c1c72",
+      "label": "Wyrestorm EXP-CON-AUD-H2 Audio Extractor",
+      "match": "part-number",
+      "status": "raw",
+      "level": "A"
+    }
+  },
+  "ports": [
+    {
+      "id": "tpl-0",
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "section": "Video Inputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "tpl-1",
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "section": "Video Outputs",
+      "connectorType": "hdmi"
+    },
+    {
+      "id": "tpl-2",
+      "label": "TOSLINK Out",
+      "signalType": "aes",
+      "direction": "output",
+      "connectorType": "toslink",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "tpl-3",
+      "label": "Analog Audio Out Left",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "tpl-4",
+      "label": "Analog Audio Out Right",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "Audio Outputs"
+    },
+    {
+      "id": "tpl-5",
+      "label": "Power In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "avail-wyrestorm-apo-sky-mic",
+  "label": "Wyrestorm APO-SKY-MIC",
+  "shortName": "APO-SKY-MIC",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "APO-SKY-MIC",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/apo-sky-mic/",
+  "searchTerms": [
+    "apo-sky-mic",
+    "wyrestorm"
+  ],
+  "heightMm": 26.5,
+  "widthMm": 108,
+  "depthMm": 108,
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "Companion Add-On Ceiling Mic for Apollo Video Bar",
+    "source": "Manufacturer site",
+    "note": "Powered by APO-VX20-UC or COM-MIC-HUB. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/apo-sky-mic/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "power input: page only says powered by the APO-VX20-UC or COM-MIC-HUB, not through which port; dimensions given without axis order; signal type of the RJ45 link not named"
+  },
+  "ports": [
+    {
+      "label": "RJ45 In",
+      "signalType": "custom",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "8-pin RJ45 female; cascading link, as the page names it",
+      "id": "port-0"
+    },
+    {
+      "label": "RJ45 Out",
+      "signalType": "custom",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "8-pin RJ45 female; cascading link, as the page names it",
+      "id": "port-1"
+    },
+    {
+      "label": "USB-C Firmware",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-c",
+      "section": "Configuration",
+      "notes": "firmware upgrade",
+      "id": "port-2"
+    }
+  ]
+}

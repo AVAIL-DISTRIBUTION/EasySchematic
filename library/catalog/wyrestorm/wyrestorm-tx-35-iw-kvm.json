@@ -1,0 +1,81 @@
+{
+  "id": "avail-wyrestorm-tx-35-iw-kvm",
+  "label": "Wyrestorm TX-35-IW-KVM",
+  "shortName": "TX-35-IW-KVM",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "TX-35-IW-KVM",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/tx-35-iw-kvm/",
+  "searchTerms": [
+    "tx-35-iw-kvm",
+    "wyrestorm"
+  ],
+  "powerDrawW": 4.5,
+  "voltage": "12V DC / PoH",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "HDMI & USB Single Gange In-Wall HDBT Transmitter | HDMI 1.4 | HDCP 2.2 | 35m 4K 60 4:2:0",
+    "source": "Manufacturer site",
+    "note": "PoH 1-way from receiver. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/tx-35-iw-kvm/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    }
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "PoH 1-way from the receiver",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; passthrough RS-232 + update port",
+      "id": "port-2"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "USB 2.0 host",
+      "id": "port-3"
+    },
+    {
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Power",
+      "notes": "optional local power when used with a non-PoH receiver; 12V DC 1A",
+      "id": "port-4"
+    }
+  ]
+}

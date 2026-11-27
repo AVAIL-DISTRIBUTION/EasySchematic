@@ -1,0 +1,205 @@
+{
+  "id": "avail-wyrestorm-dsp-88-dnt",
+  "label": "Wyrestorm DSP-88-DNT",
+  "shortName": "DSP-88-DNT",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "DSP-88-DNT",
+  "deviceType": "audio-dsp",
+  "category": "Audio Products / DSP",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/dsp-88-dnt/",
+  "searchTerms": [
+    "dsp-88-dnt",
+    "wyrestorm"
+  ],
+  "heightMm": 45,
+  "widthMm": 482,
+  "depthMm": 260,
+  "weightKg": 4,
+  "powerDrawW": 40,
+  "voltage": "110-240V AC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Digital Audio Processor | 8x Analog Input & 8x Dante/AES67 Input | 8x Analog Output & 8x Dante/AES67 Output | 1x1 USB Audio | Matrix Mixer | AEC | NHS | ANS | AGC | Ducker | EQ | Delay | 8xGPIO | LAN & RS232 Control | Preset",
+    "source": "Manufacturer site",
+    "note": "Max power published as \"< 40W\". No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link). Price list status: New. Available Now.",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/dsp-88-dnt/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "Dante RJ45 connector count (page says 'up to 8 Dante inputs/outputs via RJ45 connectors', channels vs connectors unclear); LAN / RS-232 / RS-485 / GPIO connectors and counts not published; USB Audio: connector not published; AC Power In: connector not published; analog channel-to-Phoenix grouping not published; supply stated as 110-240V AC (outside the standard value)"
+  },
+  "ports": [
+    {
+      "label": "Analog In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-0"
+    },
+    {
+      "label": "Analog In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-1"
+    },
+    {
+      "label": "Analog In 3",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-2"
+    },
+    {
+      "label": "Analog In 4",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-3"
+    },
+    {
+      "label": "Analog In 5",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-4"
+    },
+    {
+      "label": "Analog In 6",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-5"
+    },
+    {
+      "label": "Analog In 7",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-6"
+    },
+    {
+      "label": "Analog In 8",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "phoenix",
+      "section": "Audio Inputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-7"
+    },
+    {
+      "label": "Analog Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-8"
+    },
+    {
+      "label": "Analog Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-9"
+    },
+    {
+      "label": "Analog Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-10"
+    },
+    {
+      "label": "Analog Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-11"
+    },
+    {
+      "label": "Analog Out 5",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-12"
+    },
+    {
+      "label": "Analog Out 6",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-13"
+    },
+    {
+      "label": "Analog Out 7",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-14"
+    },
+    {
+      "label": "Analog Out 8",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "connectorType": "phoenix",
+      "section": "Audio Outputs",
+      "notes": "Balanced; removable Phoenix; pin count not published",
+      "id": "port-15"
+    },
+    {
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "notes": "Front panel; USB soundcard 1-in/1-out, UAC",
+      "id": "port-16"
+    },
+    {
+      "label": "AC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "AC 110-240V, 50-60 Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-17",
+      "connectorType": "iec"
+    }
+  ]
+}

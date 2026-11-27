@@ -1,0 +1,103 @@
+{
+  "id": "avail-wyrestorm-sw-120-tx3-uk",
+  "label": "Wyrestorm SW-120-TX3-UK (UK 2-gang)",
+  "shortName": "SW-120-TX3-UK",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SW-120-TX3-UK",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sw-120-tx3-uk/",
+  "searchTerms": [
+    "sw-120-tx3-uk",
+    "wyrestorm",
+    "uk",
+    "2-gang"
+  ],
+  "powerDrawW": 6.6,
+  "voltage": "20V DC",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "UK 2-gang",
+    "rackFormSource": "Non-rack",
+    "description": "4K60Hz HDBaseT 3.0 2-Gang In-Wall Transmitter | HDMI & USB-C input | PoH | USB2.0 | RS232 passthrough (4K: 100m/328ft) [For RX3-100 & MX-1007-HYB]",
+    "source": "Manufacturer site",
+    "note": "6.61 W max; PSU sold separately. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sw-120-tx3-uk/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "20V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDMI In",
+      "signalType": "hdmi",
+      "direction": "input",
+      "connectorType": "hdmi",
+      "section": "Video Inputs",
+      "id": "port-0"
+    },
+    {
+      "label": "USB-C In",
+      "signalType": "usb",
+      "direction": "input",
+      "connectorType": "usb-c",
+      "section": "Video Inputs",
+      "notes": "USB Alt Mode / host",
+      "id": "port-1"
+    },
+    {
+      "label": "HDBaseT Out",
+      "signalType": "hdbaset",
+      "direction": "output",
+      "connectorType": "rj45",
+      "section": "Video Outputs",
+      "notes": "HDBaseT 3.0; 2-way PoH",
+      "id": "port-2"
+    },
+    {
+      "label": "Audio In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "Audio Inputs",
+      "notes": "3.5mm TRS stereo",
+      "id": "port-3"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin; shared: API control or passthrough",
+      "id": "port-4"
+    },
+    {
+      "label": "USB-B Host",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "connectorType": "usb-b",
+      "section": "USB",
+      "notes": "Max throughput 300 Mbps",
+      "id": "port-5"
+    },
+    {
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "20V DC 6A; sold separately; 2-pin; Wyrestorm convention: 2-pin phoenix (in-wall) — verify",
+      "id": "port-6",
+      "connectorType": "phoenix"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "avail-wyrestorm-sr-10g-mm-sfpp",
+  "label": "Wyrestorm SR-10G-MM-SFPP",
+  "shortName": "SR-10G-MM-SFPP",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "SR-10G-MM-SFPP",
+  "deviceType": "expansion-card",
+  "category": "Networking / Switches",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/sr-10g-mm-sfpp/",
+  "searchTerms": [
+    "sr-10g-mm-sfpp",
+    "wyrestorm"
+  ],
+  "powerDrawW": 1,
+  "voltage": "3.3V DC",
+  "slotFamily": "sfp",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Non-rack",
+    "description": "SFP+ 10G Ethernet Fiber Module for Managed Switches and NHD Encoders/Decoders",
+    "source": "Manufacturer site",
+    "note": "Published as \"< 1W\". No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/sr-10g-mm-sfpp/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "connector: LC duplex is not in the connector list so connectorType left out; no own power input (module power +3.3V from host)"
+  },
+  "ports": [
+    {
+      "label": "10G Fiber",
+      "signalType": "fiber",
+      "direction": "bidirectional",
+      "section": "Network",
+      "notes": "SFP+ module; LC duplex; 850 nm; up to 300 m on OM3 multimode fiber; 10.3125 Gbps",
+      "id": "port-0"
+    }
+  ]
+}

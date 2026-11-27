@@ -1,0 +1,98 @@
+{
+  "id": "avail-wyrestorm-rxv-35-4k",
+  "label": "Wyrestorm RXV-35-4K",
+  "shortName": "RXV-35-4K",
+  "manufacturer": "Wyrestorm",
+  "modelNumber": "RXV-35-4K",
+  "deviceType": "hdbaset-extender",
+  "category": "AV distribution / Extenders",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.wyrestorm.com/product/rxv-35-4k/",
+  "searchTerms": [
+    "rxv-35-4k",
+    "wyrestorm"
+  ],
+  "powerDrawW": 12.4,
+  "voltage": "18V DC / PoH",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "rackFormSource": "Shelf",
+    "description": "4K60Hz HDBaseT Receiver | 4K60Hz 4:4:4 | PoH | IR & RS232 Passthrough (4K: 35m/115ft, 1080p: 70m/230ft) [For MXV]",
+    "source": "Manufacturer site",
+    "note": "Powered via PoH from matrix; 18V DC optional. 12.42 W max. No direct PDF datasheet on product page (documentation only via WyreStorm partner SharePoint folder, not a direct link).",
+    "intakeFile": "avail-intake-wyrestorm-20261127-reviewed-v2.xlsx",
+    "kit": {
+      "kitPartNumbers": [
+        "MXV-0404-H2A-KIT v2",
+        "MXV-0808-H2A-KIT"
+      ]
+    },
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "https://www.wyrestorm.com/product/rxv-35-4k/",
+      "note": "Technical Specifications on the manufacturer's product page"
+    },
+    "portsMissing": "18V DC In: connector not published"
+  },
+  "ports": [
+    {
+      "label": "HDBaseT In",
+      "signalType": "hdbaset",
+      "direction": "input",
+      "connectorType": "rj45",
+      "section": "Video Inputs",
+      "notes": "HDBaseT Class B; PoH 1-way from matrix",
+      "id": "port-0"
+    },
+    {
+      "label": "HDMI Out",
+      "signalType": "hdmi",
+      "direction": "output",
+      "connectorType": "hdmi",
+      "section": "Video Outputs",
+      "id": "port-1"
+    },
+    {
+      "label": "RS-232",
+      "signalType": "serial",
+      "direction": "bidirectional",
+      "connectorType": "phoenix",
+      "section": "Serial",
+      "notes": "3-pin terminal block",
+      "id": "port-2"
+    },
+    {
+      "label": "IR In",
+      "signalType": "ir",
+      "direction": "input",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR RX, 3.5mm TRS stereo",
+      "id": "port-3"
+    },
+    {
+      "label": "IR Out",
+      "signalType": "ir",
+      "direction": "output",
+      "connectorType": "trs-eighth",
+      "section": "IR",
+      "notes": "IR TX, 3.5mm TS mono",
+      "id": "port-4"
+    },
+    {
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "Optional; powered via PoH from matrix; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-5",
+      "connectorType": "barrel"
+    }
+  ]
+}
