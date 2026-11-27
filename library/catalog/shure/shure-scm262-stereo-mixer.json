@@ -1,0 +1,174 @@
+{
+  "id": "avail-shure-scm262e",
+  "label": "Shure SCM262 (Stereo Mixer)",
+  "shortName": "SCM262",
+  "manufacturer": "Shure",
+  "modelNumber": "SCM262E",
+  "deviceType": "audio-mixer",
+  "category": "Audio Products / Mixers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/mixers/scm262",
+  "searchTerms": [
+    "scm262e",
+    "scm262",
+    "shure",
+    "stereo",
+    "mixer"
+  ],
+  "heightMm": 43,
+  "widthMm": 218,
+  "depthMm": 162,
+  "weightKg": 1.1,
+  "voltage": "220-240V AC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Stereo Mixer",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "SCM262 Stereo Microphone Mixer",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/SCM262/en-US.pdf",
+    "note": "SCM262E: 220-240 V AC, 50/60 Hz, 30 mA per user guide; power in W not published. Price list net weight 1.286 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/SCM262-user-guide.pdf",
+      "note": "SCM262 user guide pp.5-6 (Rear Panel, DIP switches); spec sheet pubs.shure.com/file/259996 for levels"
+    },
+    "notes": "datasheetUrl was https://pubs.shure.com/file/259996 (spec sheet without connector details); replaced by the user guide."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic In 1",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Active balanced mic level; 12 V phantom (DIP switch 7)"
+    },
+    {
+      "id": "p2",
+      "label": "Mic In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "xlr-3",
+      "notes": "Active balanced mic level; 12 V phantom (DIP switch 7)"
+    },
+    {
+      "id": "p3",
+      "label": "Line In 2",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in., balanced/unbalanced line level; alternative input of channel 2"
+    },
+    {
+      "id": "p4",
+      "label": "Stereo In 1 L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer stereo"
+    },
+    {
+      "id": "p5",
+      "label": "Stereo In 1 R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer stereo"
+    },
+    {
+      "id": "p6",
+      "label": "Stereo In 2 L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer stereo"
+    },
+    {
+      "id": "p7",
+      "label": "Stereo In 2 R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer stereo"
+    },
+    {
+      "id": "p8",
+      "label": "Stereo In 3 L",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer stereo; stereo 3 has jukebox mute"
+    },
+    {
+      "id": "p9",
+      "label": "Stereo In 3 R",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer stereo; stereo 3 has jukebox mute"
+    },
+    {
+      "id": "p10",
+      "label": "Mic/Line Out L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in., balanced; mic or line level by DIP switch"
+    },
+    {
+      "id": "p11",
+      "label": "Mic/Line Out R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4 in., balanced; mic or line level by DIP switch"
+    },
+    {
+      "id": "p12",
+      "label": "Aux Out L",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer level"
+    },
+    {
+      "id": "p13",
+      "label": "Aux Out R",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "rca",
+      "notes": "RCA, unbalanced consumer level"
+    },
+    {
+      "id": "p14",
+      "label": "AC Power",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "iec",
+      "notes": "IEC inlet, removable cord; 220-240 V AC, 30 mA (SCM262E); no power switch"
+    }
+  ]
+}

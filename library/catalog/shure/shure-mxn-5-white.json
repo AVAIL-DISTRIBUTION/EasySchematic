@@ -1,0 +1,55 @@
+{
+  "id": "avail-shure-mxn-5w",
+  "label": "Shure MXN-5 (White)",
+  "shortName": "MXN-5",
+  "manufacturer": "Shure",
+  "modelNumber": "MXN-5W",
+  "deviceType": "speaker",
+  "category": "Audio Products / Speakers",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/loudspeakers",
+  "searchTerms": [
+    "mxn-5w",
+    "mxn-5",
+    "shure",
+    "white"
+  ],
+  "heightMm": 113,
+  "widthMm": 340,
+  "depthMm": 340,
+  "weightKg": 3.1,
+  "poeDrawW": 24,
+  "voltage": "PoE+ 802.3at class 4",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White",
+    "rackFormSource": "Non-rack",
+    "description": "Dante in-ceiling loudspeaker",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXN-5/en-US.pdf",
+    "note": "New product (Oct 2026 price list); no product page/datasheet found on shure.com yet - reference = loudspeakers category page. Power data not published yet. Price list: New Product. No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXN-5-user-guide.pdf",
+      "note": "MXN-5 user guide p.5 (Parts) and pp.22-23 (Specifications, Dimensions)"
+    },
+    "notes": "Dimensions from the user guide p.23: height 113 mm, bottom diameter 340 mm (width/depth = diameter)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE+)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 2 in / 1 out and control; the only power input, PoE+ class 4 (24 W max) or PoE class 0 (12 W max, reduced output)"
+    }
+  ]
+}

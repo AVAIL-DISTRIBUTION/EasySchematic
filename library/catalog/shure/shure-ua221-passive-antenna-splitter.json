@@ -1,0 +1,99 @@
+{
+  "id": "avail-shure-ua221z",
+  "label": "Shure UA221 (Passive Antenna Splitter)",
+  "shortName": "UA221",
+  "manufacturer": "Shure",
+  "modelNumber": "UA221Z",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua221",
+  "searchTerms": [
+    "ua221z",
+    "ua221",
+    "shure",
+    "passive",
+    "antenna",
+    "splitter"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Passive Antenna Splitter",
+    "rackFormSource": "Non-rack",
+    "description": "Passive Antenna Splitter",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA221/en-US.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA221-user-guide.pdf",
+      "note": "General description and models p.3; specifications pp.4-5 (port names ANT/R1/R2 from the 2006 UA221 guide)"
+    },
+    "notes": "Block is the kit of two splitters (one ANT and two R ports each); dimensions and weight are per splitter (UA221 guide p.5)."
+  },
+  "heightMm": 64,
+  "widthMm": 48,
+  "depthMm": 22,
+  "weightKg": 0.0453,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Splitter 1 ANT",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1000-2000 MHz; 2 dB insertion loss; antenna side of splitter 1"
+    },
+    {
+      "id": "p2",
+      "label": "Splitter 1 R1",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1000-2000 MHz; 2 dB insertion loss; to receiver antenna input"
+    },
+    {
+      "id": "p3",
+      "label": "Splitter 1 R2",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1000-2000 MHz; 2 dB insertion loss; to receiver antenna input"
+    },
+    {
+      "id": "p4",
+      "label": "Splitter 2 ANT",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1000-2000 MHz; 2 dB insertion loss; antenna side of splitter 2"
+    },
+    {
+      "id": "p5",
+      "label": "Splitter 2 R1",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1000-2000 MHz; 2 dB insertion loss; to receiver antenna input"
+    },
+    {
+      "id": "p6",
+      "label": "Splitter 2 R2",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1000-2000 MHz; 2 dB insertion loss; to receiver antenna input"
+    }
+  ]
+}

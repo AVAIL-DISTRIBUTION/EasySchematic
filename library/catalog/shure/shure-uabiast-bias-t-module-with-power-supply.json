@@ -1,0 +1,75 @@
+{
+  "id": "avail-shure-uabiast-e",
+  "label": "Shure UABIAST (Bias-T Module With Power Supply)",
+  "shortName": "UABIAST",
+  "manufacturer": "Shure",
+  "modelNumber": "UABIAST-E",
+  "deviceType": "power-supply",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/uabiast",
+  "searchTerms": [
+    "uabiast-e",
+    "uabiast",
+    "shure",
+    "bias-t",
+    "module",
+    "with",
+    "power",
+    "supply"
+  ],
+  "heightMm": 25,
+  "widthMm": 67,
+  "depthMm": 49,
+  "weightKg": 0.049,
+  "voltage": "12.4V DC",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Bias-T Module With Power Supply",
+    "rackFormSource": "Non-rack",
+    "description": "In-Line Power Adapter (Bias-T)",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UABIAST/en-US.pdf",
+    "note": "Max input 12.4 V DC, 400 mA; bias output 12 V DC. Supplied with PS24 PSU. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 0.45 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UABIAST-user-guide.pdf",
+      "note": "Connecting to a device p.3; specifications pp.3-4"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "RF + DC",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm; from the active antenna or in-line amplifier; supplies 12 V DC bias (up to three UA834, or two UA834 and one UA874); 100-2000 MHz"
+    },
+    {
+      "id": "p2",
+      "label": "RF Only",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm; to the receiver antenna input; <1 dB insertion loss"
+    },
+    {
+      "id": "p3",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12.4 V DC, 400 mA from the Shure PS24 power supply; Shure does not name the connector"
+    }
+  ]
+}

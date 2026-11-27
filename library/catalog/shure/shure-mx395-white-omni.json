@@ -1,0 +1,52 @@
+{
+  "id": "avail-shure-mx395w-o",
+  "label": "Shure MX395 (White, Omni)",
+  "shortName": "MX395",
+  "manufacturer": "Shure",
+  "modelNumber": "MX395W/O",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx395",
+  "searchTerms": [
+    "mx395w/o",
+    "mx395",
+    "shure",
+    "white",
+    "omni"
+  ],
+  "heightMm": 102,
+  "widthMm": 32,
+  "depthMm": 32,
+  "weightKg": 0.136,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, Omni",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Low Profile Boundary Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/file/259948",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/pubs-259948.pdf",
+      "note": "p.1 available models (3-pin XLR / 5-pin XLR LED), logic connections, dimensions; pinout from MX395 user guide p.3-4 (shure/MX395-user-guide.pdf); white/aluminum LED models listed in Microflex_Wired_2019_Letter_EN.pdf p.7"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Mic level, active balanced; 3-pin XLR male at the end of the mic body (pin 2 +, pin 3 -, pin 1 ground); 11-52 V DC phantom, 2.0 mA"
+    }
+  ]
+}

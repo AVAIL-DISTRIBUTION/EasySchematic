@@ -32,6 +32,16 @@ type Column = (typeof INTAKE_COLUMNS)[number] extends `${infer N} *` | infer N ?
 const name = (c: string) => c.replace(/\s*\*$/, "").trim();
 export const REQUIRED_COLUMNS = INTAKE_COLUMNS.filter((c) => c.endsWith("*")).map(name);
 
+/**
+ * Review columns a reviewed form may add after the template's columns: Decision (Keep / Exclude /
+ * Check) and Reason. With a Decision column only Keep rows are imported; Exclude rows are skipped
+ * (counted with their reasons in the report); a Check row — or an empty or unknown decision — stops
+ * the import: the review is not finished. Without a Decision column every row is imported.
+ */
+export const REVIEW_COLUMNS = ["Decision", "Reason"] as const;
+export const DECISIONS = ["Keep", "Exclude", "Check"] as const;
+export type Decision = (typeof DECISIONS)[number];
+
 /** Rack form values (Lists sheet) → catalog rackForm and rack units. */
 export const RACK_FORMS: Record<string, { rackForm?: "full" | "half" | "shelf-only"; rackUnits?: number }> = {
   "Non-rack": {},
@@ -84,9 +94,13 @@ export interface IntakeRowReport {
 }
 
 export interface IntakeValidation {
-  /** Problems with the sheet itself (missing required columns): nothing is imported. */
+  /** Problems with the sheet itself (missing required columns, unresolved review): nothing is imported. */
   fatal: string[];
   rows: (IntakeRowReport & { values: IntakeRow; example: boolean })[];
+  /** Rows the review excluded (Decision = Exclude): not validated, not imported. */
+  excluded: { row: number; partNumber: string; reason: string }[];
+  /** Rows the review has not decided yet (Decision = Check, empty or unknown): the import stops. */
+  unresolved: { row: number; partNumber: string; decision: string; reason: string }[];
 }
 
 /** A number cell: "12.5" → 12.5; Excel float noise is rounded to 6 decimals. */
@@ -107,23 +121,37 @@ function list(s: string | undefined): string[] {
  */
 export function validateIntake(sheet: string[][], existing?: (vendor: string, partNumber: string) => CatalogTemplate | undefined): IntakeValidation {
   const headerAt = sheet.findIndex((r) => r.some((c) => c.trim()));
-  if (headerAt < 0) return { fatal: ["the Products sheet is empty"], rows: [] };
+  const none = { rows: [], excluded: [], unresolved: [] };
+  if (headerAt < 0) return { fatal: ["the Products sheet is empty"], ...none };
   const header = sheet[headerAt].map(name);
   const fatal = REQUIRED_COLUMNS.filter((c) => !header.includes(c)).map((c) => `required column "${c}" is missing`);
-  const unknown = header.filter((h) => h && !INTAKE_COLUMNS.map(name).includes(h));
+  const known = [...INTAKE_COLUMNS.map(name), ...REVIEW_COLUMNS] as string[];
+  const unknown = header.filter((h) => h && !known.includes(h));
   if (unknown.length) fatal.push(`unknown columns: ${unknown.join(", ")} (use the template avail-intake-template.xlsx)`);
-  if (fatal.length) return { fatal, rows: [] };
+  if (fatal.length) return { fatal, ...none };
 
   const rows: IntakeValidation["rows"] = [];
+  const excluded: IntakeValidation["excluded"] = [];
+  const unresolved: IntakeValidation["unresolved"] = [];
+  const decisionAt = header.indexOf("Decision");
+  const reasonAt = header.indexOf("Reason");
   const seen = new Map<string, number>();
   sheet.slice(headerAt + 1).forEach((cells, i) => {
     if (!cells.some((c) => c && c.trim())) return;
     const v: IntakeRow = {};
     header.forEach((h, k) => {
       const x = (cells[k] ?? "").trim();
-      if (h && x) v[h as Column] = x;
+      if (h && x && !(REVIEW_COLUMNS as readonly string[]).includes(h)) v[h as Column] = x;
     });
     const rowNo = headerAt + i + 2;
+    if (decisionAt >= 0 && !EXAMPLE_NOTE_RE.test(v.Note ?? "")) {
+      const raw = (cells[decisionAt] ?? "").trim();
+      const decision = DECISIONS.find((d) => d.toLowerCase() === raw.toLowerCase());
+      const reason = reasonAt >= 0 ? (cells[reasonAt] ?? "").trim() : "";
+      const partNumber = v["Part number"] ?? "";
+      if (decision === "Exclude") return void excluded.push({ row: rowNo, partNumber, reason });
+      if (decision !== "Keep") return void unresolved.push({ row: rowNo, partNumber, decision: raw, reason });
+    }
     const errors: string[] = [];
     const warnings: string[] = [];
     const example = EXAMPLE_NOTE_RE.test(v.Note ?? "");
@@ -200,7 +228,10 @@ export function validateIntake(sheet: string[][], existing?: (vendor: string, pa
     }
     rows.push({ row: rowNo, partNumber: pn, errors, warnings, values: v, example });
   });
-  return { fatal, rows };
+  if (unresolved.length) {
+    fatal.push(`${unresolved.length} rows are not decided (Decision must be Keep or Exclude; Check means the review is not finished)`);
+  }
+  return { fatal, rows, excluded, unresolved };
 }
 
 /** Catalog id of a part number: "avail-extron-60-1572-15". */
@@ -395,12 +426,24 @@ export function formatIntakeReport(r: IntakeResult, intakeFile: string, dryRun: 
   const lines = [`Intake: ${intakeFile}${dryRun ? " (dry run, nothing written)" : ""}`];
   if (r.fatal.length) {
     for (const f of r.fatal) lines.push(`! ${f}`);
+    for (const u of r.unresolved) {
+      const what = u.decision ? `Decision "${u.decision}"` : "Decision empty";
+      lines.push(`  row ${String(u.row).padEnd(4)} ${u.partNumber || "(no part number)"}: ${what}${u.reason ? ` (${u.reason})` : ""}`);
+    }
     lines.push("FAILED: nothing imported");
     return lines.join("\n") + "\n";
   }
   const n = (a: string) => r.actions.filter((x) => x.action === a).length;
   const invalid = r.rows.filter((x) => !x.example && x.errors.length).length;
   const examples = r.rows.filter((x) => x.example).length;
+  if (r.excluded.length) {
+    lines.push(`Excluded by the review (Decision = Exclude): ${r.excluded.length}`);
+    const reasons = new Map<string, number>();
+    for (const x of r.excluded) reasons.set(x.reason || "(no reason)", (reasons.get(x.reason || "(no reason)") ?? 0) + 1);
+    for (const [reason, count] of [...reasons].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))) {
+      lines.push(`  ${String(count).padStart(4)}  ${reason}`);
+    }
+  }
   lines.push(
     `Rows: ${r.rows.length}; created ${n("created")}, updated ${n("updated")}, unchanged ${n("unchanged")}, with errors (not imported) ${invalid}, example rows skipped ${examples}`,
   );

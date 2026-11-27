@@ -1,0 +1,78 @@
+{
+  "id": "avail-shure-mx400dp",
+  "label": "Shure MX400DP (Desktop Preamp)",
+  "shortName": "MX400DP",
+  "manufacturer": "Shure",
+  "modelNumber": "MX400DP",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Gooseneck microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/mx400dp",
+  "searchTerms": [
+    "mx400dp",
+    "shure",
+    "desktop",
+    "preamp"
+  ],
+  "weightKg": 0.516,
+  "voltage": "48-52V DC phantom",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Desktop Preamp",
+    "rackFormSource": "Non-rack",
+    "description": "Desktop Base for MX405, MX410 and MX415",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MX4xx/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MX4xx-user-guide.pdf",
+      "note": "MX405/410/415 user guide pp.14-21 (MX400DP desktop base, cable wiring, logic, specifications)"
+    },
+    "portsMissing": "Dimensions of the MX400DP are not given in the MX4xx user guide."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Gooseneck In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "other",
+      "notes": "Keyed twist-lock socket for MX405 / MX410 / MX415 gooseneck (audio and LED)"
+    },
+    {
+      "id": "p2",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "6.1 m attached cable, 3-pin male XLR, active balanced; powered by 48-52 V DC phantom (8 mA)"
+    },
+    {
+      "id": "p3",
+      "label": "Logic Switch Out",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "Logic output (mute switch). Unterminated white wire in the attached cable; active low, sinks up to 20 mA, TTL; logic ground = green wire"
+    },
+    {
+      "id": "p4",
+      "label": "Logic LED In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "Logic input (LED control). Unterminated orange wire in the attached cable; active low (<=1.0 V), TTL; logic ground = green wire"
+    }
+  ]
+}

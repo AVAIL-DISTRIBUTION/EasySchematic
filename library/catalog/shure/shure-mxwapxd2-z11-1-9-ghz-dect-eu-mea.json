@@ -1,0 +1,123 @@
+{
+  "id": "avail-shure-mxwapxd2e-z11",
+  "label": "Shure MXWAPXD2 (Z11 (1.9 GHz DECT, EU/MEA))",
+  "shortName": "MXWAPXD2",
+  "manufacturer": "Shure",
+  "modelNumber": "MXWAPXD2E=-Z11",
+  "deviceType": "access-point",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/microflex-wireless-next/mxwapxd2",
+  "searchTerms": [
+    "mxwapxd2e=-z11",
+    "mxwapxd2",
+    "shure",
+    "z11",
+    "(1.9",
+    "ghz",
+    "dect",
+    "eu/mea)"
+  ],
+  "heightMm": 48.8,
+  "widthMm": 252.7,
+  "depthMm": 202.7,
+  "weightKg": 1.111,
+  "powerDrawW": 12.5,
+  "voltage": "5V DC (USB-C)",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Z11 (1.9 GHz DECT, EU/MEA)",
+    "rackFormSource": "Non-rack",
+    "description": "Access Point Transceiver / Charger, 2 ch",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/MXWNEXT/en-US.pdf",
+    "note": "MXW neXt user guide: 12.5 W typical; PoE class and maximum draw not published there. Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/MXWNEXT-user-guide.pdf",
+      "note": "MXW neXt user guide pp.22-25 (APXD2 front/back panel callouts), p.77 (Z11 band), pp.79-81 (MXWAPXD2 specifications)"
+    },
+    "portsMissing": "The two front docking/charging bays are not modelled as ports.",
+    "notes": "weightKg: card had 1.1, document gives 1.111 (MXWNEXT-user-guide.pdf). voltage: card had 'PoE', document gives '5V DC (USB-C)' (MXWNEXT-user-guide.pdf)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Analog In",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin block, balanced; line (+4 dBu) / aux (-10 dBV)"
+    },
+    {
+      "id": "p2",
+      "label": "Analog Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin block, balanced; full mix by default; line / aux / mic level"
+    },
+    {
+      "id": "p3",
+      "label": "Analog Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "phoenix",
+      "notes": "3-pin block, balanced; mix-minus (far end) by default; line / aux / mic level"
+    },
+    {
+      "id": "p4",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from up to 2 MXW neXt transmitters; DECT Z11 1880-1900 MHz"
+    },
+    {
+      "id": "p5",
+      "label": "Dante 1",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Gigabit; Dante / AES67 and control; switched / split / redundant modes; no PoE"
+    },
+    {
+      "id": "p6",
+      "label": "Dante 2",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Gigabit; Dante / AES67 and control; secondary port in split / redundant modes"
+    },
+    {
+      "id": "p7",
+      "label": "USB Audio",
+      "signalType": "usb",
+      "direction": "bidirectional",
+      "section": "USB",
+      "connectorType": "usb-c",
+      "notes": "Locking USB-C audio to laptop / videoconferencing unit"
+    },
+    {
+      "id": "p8",
+      "label": "DC Power (USB-C)",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "usb-c",
+      "notes": "Locking USB-C power, 4.5-5.5 V 2.5-3 A from the included SBC10-USB45WPD supply; 12.5 W typical"
+    }
+  ]
+}

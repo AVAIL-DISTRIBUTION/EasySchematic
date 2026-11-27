@@ -1,0 +1,191 @@
+{
+  "id": "avail-shure-slxd4qdan-e-g65",
+  "label": "Shure SLXD4QDAN+ (Band G65)",
+  "shortName": "SLXD4QDAN+",
+  "manufacturer": "Shure",
+  "modelNumber": "SLXD4QDAN+E=-G65",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/slxd-plus/slxd4q-dan-plus",
+  "searchTerms": [
+    "slxd4qdan+e=-g65",
+    "slxd4qdan+",
+    "shure",
+    "band",
+    "g65"
+  ],
+  "heightMm": 42,
+  "widthMm": 393,
+  "depthMm": 152,
+  "weightKg": 1.75,
+  "voltage": "15V DC",
+  "rackForm": "full",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band G65",
+    "rackFormSource": "1U Full rack",
+    "rackUnits": 1,
+    "description": "Quad Channel Receiver with Dante Audio",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/SLXD4Qplus/en-US.pdf",
+    "note": "15 V @ 1030 mA max with Dante; W not published (approx. 15.45 W by V x A, not entered). Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 2.95 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/SLXD4Qplus-user-guide.pdf",
+      "note": "p.5-6 receiver panels; p.25 RF cascade / antenna bias; p.34-35 specifications; matches curated library/avail/shure-slxd4qdan.json"
+    },
+    "notes": "weightKg was 1.8 before the data sheet (shure/SLXD4Qplus-user-guide.pdf, 2026-11-27)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "XLR Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switchable"
+    },
+    {
+      "id": "p2",
+      "label": "TRS Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" impedance-balanced"
+    },
+    {
+      "id": "p3",
+      "label": "XLR Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switchable"
+    },
+    {
+      "id": "p4",
+      "label": "TRS Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" impedance-balanced"
+    },
+    {
+      "id": "p5",
+      "label": "XLR Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switchable"
+    },
+    {
+      "id": "p6",
+      "label": "TRS Out 3",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" impedance-balanced"
+    },
+    {
+      "id": "p7",
+      "label": "XLR Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switchable"
+    },
+    {
+      "id": "p8",
+      "label": "TRS Out 4",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" impedance-balanced"
+    },
+    {
+      "id": "p9",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 15 V DC bias (150 mA max per antenna); Band G65"
+    },
+    {
+      "id": "p10",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; switchable 15 V DC bias (150 mA max per antenna); Band G65"
+    },
+    {
+      "id": "p11",
+      "label": "Cascade Out A",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "Passes antenna A to an additional receiver (up to 3 receivers / 12 channels)"
+    },
+    {
+      "id": "p12",
+      "label": "Cascade Out B",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "Passes antenna B to an additional receiver (up to 3 receivers / 12 channels)"
+    },
+    {
+      "id": "p13",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from SLX-D+ transmitters (4 channels); Band G65"
+    },
+    {
+      "id": "p14",
+      "label": "Dante (Primary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante and control; redundant / split / switched modes"
+    },
+    {
+      "id": "p15",
+      "label": "Dante (Secondary)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45"
+    },
+    {
+      "id": "p16",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC from the supplied PS60 supply (1030 mA max with Dante); Shure does not name the connector"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "avail-shure-ua834v",
+  "label": "Shure UA834 (In-Line Antenna Amplifier 175-216 Mhz)",
+  "shortName": "UA834",
+  "manufacturer": "Shure",
+  "modelNumber": "UA834V",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua834",
+  "searchTerms": [
+    "ua834v",
+    "ua834",
+    "shure",
+    "in-line",
+    "antenna",
+    "amplifier",
+    "175-216",
+    "mhz"
+  ],
+  "weightKg": 0.28,
+  "powerDrawW": 0.72,
+  "voltage": "10-15V DC (coax bias)",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "In-Line Antenna Amplifier 175-216 Mhz",
+    "rackFormSource": "Non-rack",
+    "description": "In-Line Antenna Amplifier",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA834/en-US.pdf",
+    "note": "Powered via coaxial bias from receiver/distribution. Datasheet URL = PDF of official user guide (no separate spec sheet linked). Price list net weight 0.454 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA834-user-guide.pdf",
+      "note": "Indicators and installation pp.3-4; specifications pp.7-8"
+    },
+    "notes": "Weight changed 0.3 kg -> 0.28 kg (without mounting stand; 0.42 kg with stand) per UA834 guide pp.7-8.",
+    "portsMissing": "The guide names only the TO ANTENNA connector; the receiver-side label is descriptive."
+  },
+  "heightMm": 67,
+  "widthMm": 32,
+  "depthMm": 112,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "To Antenna",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm; from the antenna; 174-216 MHz (UA834V); +5 dBm absolute max input; do not use DC-grounded antennas or splitters"
+    },
+    {
+      "id": "p2",
+      "label": "To Receiver",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC female, 50 ohm; to receiver or UA844/UA845 antenna input; amplifier powered by 10-15 V DC bias (0.60-0.72 W) from this connection; gain +6 / +12 dB"
+    }
+  ]
+}

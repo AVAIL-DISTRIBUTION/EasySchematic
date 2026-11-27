@@ -1,0 +1,52 @@
+{
+  "id": "avail-shure-mx202w-a-s",
+  "label": "Shure MX202 (White, Supercardioid, In-line XLR preamp)",
+  "shortName": "MX202",
+  "manufacturer": "Shure",
+  "modelNumber": "MX202W-A/S",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx202",
+  "searchTerms": [
+    "mx202w-a/s",
+    "mx202",
+    "shure",
+    "white",
+    "supercardioid",
+    "in-line",
+    "xlr",
+    "preamp"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "White, Supercardioid, In-line XLR preamp",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Overhead Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/MX202/us_pro_mx202_specsheet.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/us_pro_mx202_specsheet.pdf",
+      "note": "p.2 wiring diagram and dimensions (TA4F cable -> RK100PK -> XLR); in-line preamp furnished per Microflex_Wired_2019_Letter_EN.pdf p.10-11"
+    },
+    "notes": "Variant \"White, Supercardioid\" → \"White, Supercardioid, In-line XLR preamp\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Mic level, active balanced (pin 2 +, pin 3 -); 3-pin XLR male on the furnished RK100PK in-line preamp, fed by the mic's attached 9.1 m cable with TA4F (4-pin mini) plug; 11-52 V DC phantom, 2.0 mA"
+    }
+  ]
+}

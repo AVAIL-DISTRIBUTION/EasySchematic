@@ -1,0 +1,47 @@
+{
+  "id": "avail-shure-mx391-s",
+  "label": "Shure MX391 (Supercardioid)",
+  "shortName": "MX391",
+  "manufacturer": "Shure",
+  "modelNumber": "MX391/S",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx391",
+  "searchTerms": [
+    "mx391/s",
+    "mx391",
+    "shure",
+    "supercardioid"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Supercardioid",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Boundary Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/MX150/Microflex_Wired_2019_Letter_EN.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/Microflex_Wired_2019_Letter_EN.pdf",
+      "note": "p.12-13 MX391 available models and furnished RK100PK; wiring diagram TA4F -> RK100PK -> XLR in MX391 user guide p.6 (shure/MX391-user-guide.pdf)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Mic level, active balanced (pin 2 +, pin 3 -); 3-pin XLR male on the furnished RK100PK in-line preamp, fed by the mic's attached 3.7 m cable with TA4F (4-pin mini) plug; 11-52 V DC phantom, 2.0 mA"
+    }
+  ]
+}

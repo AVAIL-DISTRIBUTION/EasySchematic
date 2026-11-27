@@ -1,0 +1,111 @@
+{
+  "id": "avail-shure-qlxd4tw-l51",
+  "label": "Shure QLXD4 (Band L51)",
+  "shortName": "QLXD4",
+  "manufacturer": "Shure",
+  "modelNumber": "QLXD4TW=-L51",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/qlx-d_digital_wireless/qlxd4",
+  "searchTerms": [
+    "qlxd4tw=-l51",
+    "qlxd4",
+    "shure",
+    "band",
+    "l51"
+  ],
+  "heightMm": 41,
+  "widthMm": 197,
+  "depthMm": 151,
+  "weightKg": 0.777,
+  "voltage": "12V DC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band L51",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "QLXD4 Digital Wireless Receiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/file/259978",
+    "note": "12 V DC @ 0.4 A external PSU; W not published (approx. 4.8 W by V x A, not entered). Regional (TW) receiver version listed in MEA price list; band L51. Price list net weight 2.313 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/pubs-259978.pdf",
+      "note": "p.2 furnished accessories, p.5 QLXD4 specifications; callouts per QLXD user guide (shure/QLXD-user-guide.pdf p.11-13)"
+    },
+    "notes": "weightKg was 0.8 before the data sheet (shure/pubs-259978.pdf, 2026-11-27)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "XLR Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "Balanced, mic/line switch (30 dB pad)"
+    },
+    {
+      "id": "p2",
+      "label": "TRS Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" instrument/aux, impedance-balanced, +12 dBV full scale"
+    },
+    {
+      "id": "p3",
+      "label": "Antenna A In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; Band L51"
+    },
+    {
+      "id": "p4",
+      "label": "Antenna B In",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; Band L51"
+    },
+    {
+      "id": "p5",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from QLX-D transmitters; Band L51"
+    },
+    {
+      "id": "p6",
+      "label": "LAN",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Single-port Ethernet 10/100 (WWB, control)"
+    },
+    {
+      "id": "p7",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12 V DC 0.4 A from the supplied external supply (tip positive)"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "avail-shure-dca901",
+  "label": "Shure DCA901 (Black)",
+  "shortName": "DCA901",
+  "manufacturer": "Shure",
+  "modelNumber": "DCA901",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Array microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/dca901",
+  "searchTerms": [
+    "dca901",
+    "shure",
+    "black"
+  ],
+  "heightMm": 41.66,
+  "widthMm": 342.9,
+  "depthMm": 342.9,
+  "weightKg": 2.3,
+  "poeDrawW": 10.1,
+  "voltage": "PoE 802.3af class 0",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Black",
+    "rackFormSource": "Non-rack",
+    "description": "Broadcast Microphone Array",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/DCA901/en-US.pdf",
+    "note": "Datasheet URL = PDF of official user guide (no separate spec sheet linked).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/DCA901-user-guide.pdf",
+      "note": "DCA901 Parts p.9-10, PoE / Dante channels p.10, Specifications p.48-49, Dimensions p.53"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Dante (PoE)",
+      "signalType": "dante",
+      "direction": "bidirectional",
+      "section": "Dante",
+      "connectorType": "rj45",
+      "notes": "Dante / AES67 and control, PoE class 0 (10.1 W max). Dante channels: 12 outputs (8 direct outs, mono automix, stereo L/R automix, PFL)"
+    }
+  ]
+}

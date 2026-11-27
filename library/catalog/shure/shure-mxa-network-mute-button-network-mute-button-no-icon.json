@@ -1,0 +1,60 @@
+{
+  "id": "avail-shure-mxa-nmb-blank",
+  "label": "Shure MXA Network Mute Button (Network Mute Button No Icon)",
+  "shortName": "MXA Network Mute Button",
+  "manufacturer": "Shure",
+  "modelNumber": "MXA-NMB/BLANK",
+  "deviceType": "button-panel",
+  "category": "Audio Products / Control",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/mxamute",
+  "searchTerms": [
+    "mxa-nmb/blank",
+    "mxa network mute button",
+    "shure",
+    "mxa",
+    "network",
+    "mute",
+    "button",
+    "no",
+    "icon"
+  ],
+  "heightMm": 27,
+  "widthMm": 95,
+  "depthMm": 95,
+  "weightKg": 0.4,
+  "poeDrawW": 2,
+  "voltage": "PoE 802.3af class 1",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Network Mute Button No Icon",
+    "rackFormSource": "Non-rack",
+    "description": "Network Mute Button",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/mxa-mute/mxa-mute-button-specsheet-letter.pdf",
+    "note": "Values from MXA-MUTE user guide (base dimensions). Depth given as base height.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/mxa-mute-button-specsheet-letter.pdf",
+      "note": "Specifications p.1 (Electrical: connector type RJ45, PoE class 1, 2 W)"
+    },
+    "portsMissing": "Weight is not given in the spec sheet (card value kept)."
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "LAN (PoE)",
+      "signalType": "ethernet",
+      "direction": "bidirectional",
+      "section": "Network",
+      "connectorType": "rj45",
+      "notes": "Shure control network (mute / logic over the network, no audio); the only power input, PoE class 1 (2 W max)"
+    }
+  ]
+}

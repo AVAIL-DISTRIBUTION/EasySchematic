@@ -1,0 +1,101 @@
+{
+  "id": "avail-shure-blx88e-m17",
+  "label": "Shure BLX88 (Band M17)",
+  "shortName": "BLX88",
+  "manufacturer": "Shure",
+  "modelNumber": "BLX88E=-M17",
+  "deviceType": "wireless-mic-receiver",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/wireless-systems/blx_wireless/blx88",
+  "searchTerms": [
+    "blx88e=-m17",
+    "blx88",
+    "shure",
+    "band",
+    "m17"
+  ],
+  "heightMm": 38,
+  "widthMm": 308,
+  "depthMm": 101,
+  "weightKg": 0.429,
+  "voltage": "12-15V DC",
+  "rackForm": "shelf-only",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band M17",
+    "rackFormSource": "Shelf",
+    "description": "BLX88 Dual Wireless Receiver",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/BLX/en-US.pdf",
+    "note": "12-15 V DC @ 320 mA; W not published (approx. 4.8 W by V x A, not entered). Price list net weight 1.012 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/BLX-user-guide.pdf",
+      "note": "p.7 back panel; p.21-22 receiver specifications"
+    },
+    "notes": "weightKg was 0.4 before the data sheet (shure/BLX-user-guide.pdf, 2026-11-27); datasheetUrl was https://content-files.shure.com/Pubs/BLX/BLX_Spec_Sheet.pdf (lacks connector counts / types; replaced by the official user guide)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR mic-level output, 200 ohm, -27 dBV"
+    },
+    {
+      "id": "p2",
+      "label": "Instrument Out 1",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "ts-quarter",
+      "notes": "1/4\" instrument-level output, 50 ohm, -13 dBV"
+    },
+    {
+      "id": "p3",
+      "label": "Mic Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "xlr-3",
+      "notes": "XLR mic-level output, 200 ohm, -27 dBV"
+    },
+    {
+      "id": "p4",
+      "label": "Instrument Out 2",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "ts-quarter",
+      "notes": "1/4\" instrument-level output, 50 ohm, -13 dBV"
+    },
+    {
+      "id": "p5",
+      "label": "Microphone (Wireless)",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link from BLX transmitters (2 channels); Band M17; internal antenna"
+    },
+    {
+      "id": "p6",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "12-15 V DC 320 mA from the external supply (tip positive)"
+    }
+  ]
+}

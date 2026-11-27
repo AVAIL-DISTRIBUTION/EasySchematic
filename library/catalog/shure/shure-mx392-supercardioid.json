@@ -1,0 +1,68 @@
+{
+  "id": "avail-shure-mx392-s",
+  "label": "Shure MX392 (Supercardioid)",
+  "shortName": "MX392",
+  "manufacturer": "Shure",
+  "modelNumber": "MX392/S",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx392",
+  "searchTerms": [
+    "mx392/s",
+    "mx392",
+    "shure",
+    "supercardioid"
+  ],
+  "widthMm": 76.2,
+  "depthMm": 108.3,
+  "weightKg": 0.172,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Supercardioid",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Boundary Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/MX392/Microflex_Wired_2019_Letter_EN.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/Microflex_Wired_2019_Letter_EN.pdf",
+      "note": "p.12 (logic terminals, unterminated cable); wire colours from MX392/MX393 user guide p.8-9, p.13 (shure/MX392-MX393-user-guide.pdf)"
+    }
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "other",
+      "notes": "Mic level, active balanced; attached 3.7 m (12 ft) unterminated cable: red = audio +, black = audio -, shield; 11-52 V DC phantom, 2.0 mA"
+    },
+    {
+      "id": "p2",
+      "label": "Switch Out",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "Mute button logic output (output only), white wire of the same cable; TTL, active low (<=0.5 V), sinks up to 20 mA; momentary or toggle (DIP 1); logic ground = green wire (tied to audio ground in the mic)"
+    },
+    {
+      "id": "p3",
+      "label": "LED In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "LED control input (input only), orange wire of the same cable; active low (<=1.0 V), TTL; short to logic ground (green) to light the LED, e.g. from an automixer gate output (DIP 3 on)"
+    }
+  ]
+}

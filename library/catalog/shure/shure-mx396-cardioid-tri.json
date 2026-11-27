@@ -1,0 +1,89 @@
+{
+  "id": "avail-shure-mx396-c-tri",
+  "label": "Shure MX396 (Cardioid, Tri)",
+  "shortName": "MX396",
+  "manufacturer": "Shure",
+  "modelNumber": "MX396/C-TRI",
+  "deviceType": "wired-mic",
+  "category": "Microphones / Wired microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/microphones/mx396",
+  "searchTerms": [
+    "mx396/c-tri",
+    "mx396",
+    "shure",
+    "cardioid",
+    "tri"
+  ],
+  "heightMm": 24,
+  "widthMm": 110,
+  "depthMm": 110,
+  "weightKg": 0.587,
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Cardioid, Tri",
+    "rackFormSource": "Non-rack",
+    "description": "Microflex Multi-Element Boundary Microphone",
+    "source": "Manufacturer site",
+    "datasheetUrl": "https://content-files.shure.com/Pubs/MX396/us_pro_mx396_specsheet.pdf",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/us_pro_mx396_specsheet.pdf",
+      "note": "p.1 (unterminated cable with three shielded audio pairs and three logic conductors, LED IN / LOGIC OUT, dimensions, weight); wire colours from MX396 user guide p.4-5 (shure/MX396-user-guide.pdf)"
+    },
+    "notes": "Variant \"Cardioid\" → \"Cardioid, Tri\" (from the part number; the intake form gave one Variant to several part numbers)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Mic 1 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "other",
+      "notes": "Element A, mic level, active balanced; attached 6.1 m (20 ft) unterminated cable: white = +, green = -, shield = common ground; each element needs its own phantom-powered mic input (48-52 V DC)"
+    },
+    {
+      "id": "p2",
+      "label": "Mic 2 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "other",
+      "notes": "Element B, mic level, active balanced; same cable: orange = +, blue = -; own phantom-powered mic input"
+    },
+    {
+      "id": "p3",
+      "label": "Mic 3 Out",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "other",
+      "notes": "Element C, mic level, active balanced; same cable: yellow = +, gray = -; own phantom-powered mic input"
+    },
+    {
+      "id": "p4",
+      "label": "Switch Out",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "Mute button logic output (output only), red wire of the same cable; TTL, active low, sinks up to 20 mA; momentary or toggle (DIP 1); logic ground = silver (bare) wire"
+    },
+    {
+      "id": "p5",
+      "label": "LED In",
+      "signalType": "gpio",
+      "direction": "bidirectional",
+      "section": "Control",
+      "connectorType": "other",
+      "notes": "LED control input (input only), black wire of the same cable; active low (<=1.0 V), TTL; grounded = green, open = red; connect to an automixer gate output (DIP 3 up)"
+    }
+  ]
+}

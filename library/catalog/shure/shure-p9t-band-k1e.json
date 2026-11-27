@@ -1,0 +1,112 @@
+{
+  "id": "avail-shure-p9te-k1e",
+  "label": "Shure P9T (Band K1E)",
+  "shortName": "P9T",
+  "manufacturer": "Shure",
+  "modelNumber": "P9TE=-K1E",
+  "deviceType": "iem-transmitter",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/in-ear-monitoring/psm900/p9t",
+  "searchTerms": [
+    "p9te=-k1e",
+    "p9t",
+    "shure",
+    "band",
+    "k1e"
+  ],
+  "heightMm": 42,
+  "widthMm": 197,
+  "depthMm": 177,
+  "weightKg": 0.85,
+  "voltage": "15V DC",
+  "rackForm": "half",
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Band K1E",
+    "rackFormSource": "1U 1/2 rack",
+    "rackUnits": 1,
+    "description": "P9T Wireless Transmitter",
+    "source": "Manufacturer datasheet",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/PSM900/en-US.pdf",
+    "note": "415 mA typical at 15 V per user guide; W not published (approx. 6.2 W by V x A, not entered). Price list net weight 2.558 kg differs from datasheet weight (datasheet value used).",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/PSM900-user-guide.pdf",
+      "note": "p.9 rear panel connectors; p.19 LOOP outputs; p.22-23 specifications"
+    },
+    "portsMissing": "Front-panel 3.5 mm headphone monitor jack is not modelled.",
+    "notes": "weightKg was 0.8 before the data sheet (shure/PSM900-user-guide.pdf, 2026-11-27); datasheetUrl was https://pubs.shure.com/file/259994 (lacks connector counts / types; replaced by the official user guide)"
+  },
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Audio In 1 (L)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "combo-xlr-trs",
+      "notes": "L/CH1; combo XLR / 1/4\" TRS, electronically balanced, +4 dBu / -10 dBV; either input for mono"
+    },
+    {
+      "id": "p2",
+      "label": "Audio In 2 (R)",
+      "signalType": "analog-audio",
+      "direction": "input",
+      "section": "Audio Inputs",
+      "connectorType": "combo-xlr-trs",
+      "notes": "R/CH2; combo XLR / 1/4\" TRS, electronically balanced, +4 dBu / -10 dBV; either input for mono"
+    },
+    {
+      "id": "p3",
+      "label": "Loop Out 1 (L)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" TRS, electronically balanced, copy of the input signal"
+    },
+    {
+      "id": "p4",
+      "label": "Loop Out 2 (R)",
+      "signalType": "analog-audio",
+      "direction": "output",
+      "section": "Audio Outputs",
+      "connectorType": "trs-quarter",
+      "notes": "1/4\" TRS, electronically balanced, copy of the input signal"
+    },
+    {
+      "id": "p5",
+      "label": "Antenna Out",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "bnc",
+      "notes": "BNC, 50 ohm; Band K1E 596-632 MHz"
+    },
+    {
+      "id": "p6",
+      "label": "IEM (Wireless)",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "wireless",
+      "notes": "Wireless link to P9RA bodypack receivers (stereo); Band K1E 596-632 MHz"
+    },
+    {
+      "id": "p7",
+      "label": "DC Power In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "barrel",
+      "notes": "15 V DC 415 mA typical from the supplied power adapter"
+    }
+  ]
+}

@@ -493,7 +493,7 @@ Modules»), иначе причина в `_avail.portsMissing`; откуда с�
 габариты для Rack form), отчёт E/W по строкам; корректные строки пишет в `library/catalog/<vendor>/*.json` и
 `index.json` (id `avail-<vendor>-<артикул>`, `_avail`: status awaiting-ports, variant, source, datasheetUrl, note,
 intakeFile). Существующую карточку обновляет непустыми ячейками (пустые не стирают), порты и слоты не трогает;
-прежний `_avail.source` остаётся, источник формы — `intakeSource`. Код выхода 1 при строках с ошибками. Списки листа
+прежний `_avail.source` остаётся, источник формы — `intakeSource`. Колонки ревью Decision / Reason: только Keep, Exclude — в отчёт по причинам, Check — остановка со списком; без Decision — все строки. Код выхода 1 при строках с ошибками. Списки листа
 Lists сверяет тест `api-avail/test/intake.test.ts` (справочник меняется PR-ом вместе с шаблоном).
 
 Стандарт v0.7 (3.2): габариты и вес обязательны для того, что стоит в шкафу (в т.ч. любой `rackForm`);

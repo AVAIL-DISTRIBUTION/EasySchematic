@@ -1,0 +1,103 @@
+{
+  "id": "avail-shure-ua221db-rsma",
+  "label": "Shure UA221DB-RSMA (Reverse Sma Passive Splitter 2.4& 5.8Ghz)",
+  "shortName": "UA221DB-RSMA",
+  "manufacturer": "Shure",
+  "modelNumber": "UA221DB-RSMA",
+  "deviceType": "antenna-distribution",
+  "category": "Microphones / Wireless microphones",
+  "auxiliaryData": [
+    {
+      "text": "{{deviceType}}",
+      "position": "header"
+    }
+  ],
+  "referenceUrl": "https://www.shure.com/en-MEA/products/accessories/ua221db_rsma",
+  "searchTerms": [
+    "ua221db-rsma",
+    "shure",
+    "reverse",
+    "sma",
+    "passive",
+    "splitter",
+    "2.4&",
+    "5.8ghz"
+  ],
+  "_avail": {
+    "status": "ports-filled",
+    "variant": "Reverse Sma Passive Splitter 2.4& 5.8Ghz",
+    "rackFormSource": "Non-rack",
+    "description": "RSMA Dual Band Passive Antenna Splitter",
+    "source": "Manufacturer site",
+    "note": "No datasheet/user guide link published on product page.",
+    "intakeFile": "avail-intake-shure-20261126-reviewed.xlsx",
+    "datasheetUrl": "https://pubs.shure.com/view/guide/UA221DB-RSMA/en-US.pdf",
+    "portsSource": {
+      "kind": "datasheet",
+      "from": "shure/UA221DB-RSMA-user-guide.pdf",
+      "note": "General description and installation pp.3-4; specifications p.6"
+    },
+    "notes": "Block is the pair of splitters used together in the guide; dimensions and weight are per splitter (guide p.6).",
+    "portsMissing": "The guide shows the port names only in drawings; labels Common / Out 1 / Out 2 are descriptive."
+  },
+  "heightMm": 64.2,
+  "widthMm": 67.7,
+  "depthMm": 16,
+  "weightKg": 0.0425,
+  "ports": [
+    {
+      "id": "p1",
+      "label": "Splitter 1 Common",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "Reverse SMA, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1.8-7.0 GHz; antenna side of splitter 1"
+    },
+    {
+      "id": "p2",
+      "label": "Splitter 1 Out 1",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "Reverse SMA, 50 ohm; to receiver / GLXD+ frequency manager antenna port"
+    },
+    {
+      "id": "p3",
+      "label": "Splitter 1 Out 2",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "Reverse SMA, 50 ohm; to receiver / GLXD+ frequency manager antenna port"
+    },
+    {
+      "id": "p4",
+      "label": "Splitter 2 Common",
+      "signalType": "rf",
+      "direction": "input",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "Reverse SMA, 50 ohm, passive bi-directional splitter/combiner, blocks DC; 1.8-7.0 GHz; antenna side of splitter 2"
+    },
+    {
+      "id": "p5",
+      "label": "Splitter 2 Out 1",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "Reverse SMA, 50 ohm; to receiver / GLXD+ frequency manager antenna port"
+    },
+    {
+      "id": "p6",
+      "label": "Splitter 2 Out 2",
+      "signalType": "rf",
+      "direction": "output",
+      "section": "RF",
+      "connectorType": "sma",
+      "notes": "Reverse SMA, 50 ohm; to receiver / GLXD+ frequency manager antenna port"
+    }
+  ]
+}
