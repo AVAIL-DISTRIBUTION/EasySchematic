@@ -96,8 +96,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "20V DC 6A (sold separately)",
-      "id": "port-6"
+      "notes": "20V DC 6A (sold separately); 2-pin; Wyrestorm convention: 2-pin phoenix (in-wall) — verify",
+      "id": "port-6",
+      "connectorType": "phoenix"
     }
   ]
 }

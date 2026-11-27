@@ -485,6 +485,15 @@ phoenix; notes «2-pole captive screw — Extron convention, verify». Шасс�
 Modules»), иначе причина в `_avail.portsMissing`; откуда слоты — `_avail.slotsSource`; собственные разъёмы шасси
 остаются портами. Линтер: шасси только со слотами — не «no ports», но слот без `slotFamily` — W.
 
+Соглашение о разъёме питания Wyrestorm (решение 2026-11-27, `src/avail/wyrestormPower.ts`, применяет `fill:catalog-ports`
+ко всем карточкам Wyrestorm, кроме library; источник — spec sheets EX-100-H2, RXV-35-4K, NHD-400, NHD-500-IW-TX): только
+где документ разъём не называет, по корпусу (`wyrestormBody`) — настольная / полочная коробка (rackForm shelf-only) с DC →
+`barrel` (locking DC, threaded bushing), напряжение — блока питания (voltage карточки); настенная (`-IW`, `-UK`, `-US`; in-wall,
+wall plate, gang в названии / описании) → `phoenix` 2-pin; стоечная (full / half) с сетевым входом → `iec`. Коробка или
+настенная с PoH / PoC без порта питания получает «<V>V DC In» (локальный блок — альтернатива). notes порта — «Wyrestorm
+convention: … — verify». Камеры, бары, панели, сетевые устройства не на стойке — не трогает. Отчёт —
+`docs/avail/wyrestorm-intake.md`.
+
 Форма сбора (шаг 1.10, [`docs/avail/intake.md`](docs/avail/intake.md)): шаблон
 `tools/avail/intake/avail-intake-template.xlsx` (листы Instructions / Products / Kits / Lists) и правила — источник
 истины формата; промпт для ИИ-ассистента — `tools/avail/intake/avail-intake-ai-prompt.md`. `npm run import:intake --

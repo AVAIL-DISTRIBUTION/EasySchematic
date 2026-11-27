@@ -76,8 +76,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "20V 3A; locking connector",
-      "id": "port-3"
+      "notes": "20V 3A; locking connector; 2-pin; Wyrestorm convention: 2-pin phoenix (in-wall) — verify",
+      "id": "port-3",
+      "connectorType": "phoenix"
     }
   ]
 }

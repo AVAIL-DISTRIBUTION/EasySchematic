@@ -114,8 +114,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "2-way PoH",
-      "id": "port-7"
+      "notes": "2-way PoH; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-7",
+      "connectorType": "barrel"
     }
   ]
 }

@@ -92,6 +92,15 @@
       "section": "USB",
       "notes": "USB 2.0 Type-A out",
       "id": "port-4"
+    },
+    {
+      "id": "port-dc",
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
   ]
 }

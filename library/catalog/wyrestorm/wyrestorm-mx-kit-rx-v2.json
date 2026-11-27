@@ -76,6 +76,15 @@
       "connectorType": "trs-eighth",
       "section": "IR",
       "id": "port-3"
+    },
+    {
+      "id": "port-dc",
+      "label": "18V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
   ]
 }

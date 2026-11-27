@@ -51,8 +51,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "DC 18V/1A; TX and RX powered separately",
-      "id": "port-0"
+      "notes": "DC 18V/1A; TX and RX powered separately; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-0",
+      "connectorType": "barrel"
     }
   ]
 }

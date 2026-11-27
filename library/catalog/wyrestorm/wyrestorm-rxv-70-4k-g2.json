@@ -84,8 +84,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "optional; unit is powered via PoH from the matrix",
-      "id": "port-5"
+      "notes": "optional; unit is powered via PoH from the matrix; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-5",
+      "connectorType": "barrel"
     }
   ]
 }

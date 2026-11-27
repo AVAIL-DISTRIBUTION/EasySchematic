@@ -48,8 +48,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "or PoE",
-      "id": "port-1"
+      "notes": "or PoE; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-1",
+      "connectorType": "barrel"
     }
   ]
 }

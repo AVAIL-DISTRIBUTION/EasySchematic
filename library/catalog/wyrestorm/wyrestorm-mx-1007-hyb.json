@@ -317,7 +317,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-33"
+      "id": "port-33",
+      "connectorType": "iec",
+      "notes": "Wyrestorm convention: IEC — verify"
     }
   ]
 }

@@ -103,8 +103,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "2-way PoH: either unit can be powered by the other",
-      "id": "port-6"
+      "notes": "2-way PoH: either unit can be powered by the other; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-6",
+      "connectorType": "barrel"
     }
   ]
 }

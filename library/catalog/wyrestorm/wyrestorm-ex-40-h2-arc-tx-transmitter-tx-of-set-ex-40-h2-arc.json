@@ -72,8 +72,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "or power over cable from the other unit",
-      "id": "port-2"
+      "notes": "or power over cable from the other unit; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-2",
+      "connectorType": "barrel"
     }
   ]
 }

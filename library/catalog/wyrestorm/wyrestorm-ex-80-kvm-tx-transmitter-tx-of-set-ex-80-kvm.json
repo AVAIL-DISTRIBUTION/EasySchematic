@@ -77,8 +77,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "Page says 12V 2A; one adapter powers both units via 2-way PoC",
-      "id": "port-3"
+      "notes": "Page says 12V 2A; one adapter powers both units via 2-way PoC; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-3",
+      "connectorType": "barrel"
     }
   ]
 }

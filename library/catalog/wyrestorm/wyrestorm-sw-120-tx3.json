@@ -123,8 +123,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "or 2-way PoH; PSU sold separately",
-      "id": "port-10"
+      "notes": "or 2-way PoH; PSU sold separately; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-10",
+      "connectorType": "barrel"
     }
   ]
 }

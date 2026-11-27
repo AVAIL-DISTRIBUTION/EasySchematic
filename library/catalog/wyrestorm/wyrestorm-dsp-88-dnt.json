@@ -197,8 +197,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "AC 110-240V, 50-60 Hz",
-      "id": "port-17"
+      "notes": "AC 110-240V, 50-60 Hz; Wyrestorm convention: IEC — verify",
+      "id": "port-17",
+      "connectorType": "iec"
     }
   ]
 }

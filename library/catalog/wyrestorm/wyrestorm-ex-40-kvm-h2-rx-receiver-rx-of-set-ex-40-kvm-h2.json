@@ -106,6 +106,15 @@
       "section": "USB",
       "notes": "USB 2.0 device, 480Mbps",
       "id": "port-6"
+    },
+    {
+      "id": "port-dc",
+      "label": "DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "local supply, alternative to power over the link; voltage not published; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
   ]
 }

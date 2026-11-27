@@ -282,8 +282,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "AC 100-240V",
-      "id": "port-28"
+      "notes": "AC 100-240V; Wyrestorm convention: IEC — verify",
+      "id": "port-28",
+      "connectorType": "iec"
     }
   ]
 }

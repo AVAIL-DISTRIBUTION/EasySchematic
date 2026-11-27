@@ -163,8 +163,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "12V DC 2A in one spec block, 5V DC 2A in the other",
-      "id": "port-15"
+      "notes": "12V DC 2A in one spec block, 5V DC 2A in the other; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-15",
+      "connectorType": "barrel"
     }
   ]
 }

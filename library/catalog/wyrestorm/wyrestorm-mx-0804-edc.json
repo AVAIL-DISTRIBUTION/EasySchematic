@@ -283,7 +283,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-30"
+      "id": "port-30",
+      "connectorType": "iec",
+      "notes": "Wyrestorm convention: IEC — verify"
     }
   ]
 }

@@ -138,8 +138,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "Page states '18V DC 3A' and elsewhere '12v DC PSU' (disagree)",
-      "id": "port-11"
+      "notes": "Page states '18V DC 3A' and elsewhere '12v DC PSU' (disagree); Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-11",
+      "connectorType": "barrel"
     }
   ]
 }

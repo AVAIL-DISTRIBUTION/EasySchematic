@@ -314,8 +314,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "100V-240V AC",
-      "id": "port-34"
+      "notes": "100V-240V AC; Wyrestorm convention: IEC — verify",
+      "id": "port-34",
+      "connectorType": "iec"
     }
   ]
 }

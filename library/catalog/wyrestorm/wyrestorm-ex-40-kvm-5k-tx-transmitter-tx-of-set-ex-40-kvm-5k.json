@@ -100,6 +100,15 @@
       "connectorType": "usb-b",
       "section": "USB",
       "id": "port-6"
+    },
+    {
+      "id": "port-dc",
+      "label": "12V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "connectorType": "barrel",
+      "section": "Power",
+      "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
   ]
 }

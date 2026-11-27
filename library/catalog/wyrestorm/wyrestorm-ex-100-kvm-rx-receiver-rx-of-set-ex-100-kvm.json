@@ -122,8 +122,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "voltage not agreed on the page: 12V in the port list and 'DC 12V/3A', 20V in a third spec block",
-      "id": "port-9"
+      "notes": "voltage not agreed on the page: 12V in the port list and 'DC 12V/3A', 20V in a third spec block; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-9",
+      "connectorType": "barrel"
     }
   ]
 }

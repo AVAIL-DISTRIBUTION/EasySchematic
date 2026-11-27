@@ -102,8 +102,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "20V DC 3A",
-      "id": "port-7"
+      "notes": "20V DC 3A; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-7",
+      "connectorType": "barrel"
     }
   ]
 }

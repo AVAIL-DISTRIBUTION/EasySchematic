@@ -157,8 +157,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "12V 2A; or PoE+",
-      "id": "port-13"
+      "notes": "12V 2A; or PoE+; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-13",
+      "connectorType": "barrel"
     }
   ]
 }

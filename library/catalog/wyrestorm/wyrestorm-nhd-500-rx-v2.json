@@ -148,8 +148,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "12V DC 1A or PoE compliant (class disputed between blocks)",
-      "id": "port-12"
+      "notes": "12V DC 1A or PoE compliant (class disputed between blocks); Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-12",
+      "connectorType": "barrel"
     }
   ]
 }

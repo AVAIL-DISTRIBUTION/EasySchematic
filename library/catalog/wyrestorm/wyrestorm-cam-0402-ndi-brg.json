@@ -103,8 +103,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "5.5/2.1mm barrel connector",
-      "id": "port-7"
+      "notes": "5.5/2.1mm barrel connector; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-7",
+      "connectorType": "barrel"
     }
   ]
 }

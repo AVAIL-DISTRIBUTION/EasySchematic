@@ -115,8 +115,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "5V DC 1A",
-      "id": "port-9"
+      "notes": "5V DC 1A; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-9",
+      "connectorType": "barrel"
     }
   ]
 }

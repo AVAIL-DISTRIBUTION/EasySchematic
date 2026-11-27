@@ -146,8 +146,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "12V 2A DC PSU or 802.3at PoE+ compliant",
-      "id": "port-12"
+      "notes": "12V 2A DC PSU or 802.3at PoE+ compliant; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-12",
+      "connectorType": "barrel"
     }
   ]
 }

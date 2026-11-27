@@ -87,8 +87,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "notes": "or PoE+ 802.3at",
-      "id": "port-6"
+      "notes": "or PoE+ 802.3at; Wyrestorm convention: locking DC barrel (threaded bushing) — verify",
+      "id": "port-6",
+      "connectorType": "barrel"
     }
   ]
 }

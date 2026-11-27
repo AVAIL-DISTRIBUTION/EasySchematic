@@ -118,7 +118,9 @@
       "signalType": "power",
       "direction": "input",
       "section": "Power",
-      "id": "port-9"
+      "id": "port-9",
+      "connectorType": "barrel",
+      "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
   ]
 }
