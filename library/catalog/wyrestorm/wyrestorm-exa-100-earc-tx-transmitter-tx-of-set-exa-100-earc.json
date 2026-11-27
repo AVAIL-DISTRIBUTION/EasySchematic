@@ -25,7 +25,7 @@
   "heightMm": 70.2,
   "widthMm": 25,
   "depthMm": 120,
-  "weightKg": 0.3,
+  "weightKg": 0.32,
   "voltage": "5V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -46,7 +46,8 @@
       "from": "https://www.wyrestorm.com/product/exa-100-earc/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "S/PDIF In and IR connectors not published; power input connector not published; dimensions/weight and power consumption are given once for the set, not per unit"
+    "portsMissing": "S/PDIF In and IR connectors not published; power input connector not published; dimensions/weight and power consumption are given once for the set, not per unit",
+    "notes": "Spec: wyrestorm/EXA-100-EARC_SpecificationSheet_250716.pdf; L × W × H 120 × 25 × 70.2 mm; 3.582 W max — one value for the TX/RX pair in the document, the same written for both units (two 5 V 1 A supplies in the box); changed per the document: weightKg was 0.3 (2026-11-27). Spec: wyrestorm/EXA-100-EARC_SpecificationSheet_250716.pdf; L × W × H 120 × 25 × 70.2 mm; 3.582 W max — one value for the TX/RX pair in the document, the same written for both units (two 5 V 1 A supplies in the box) (2026-11-27)."
   },
   "ports": [
     {
@@ -101,5 +102,6 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "powerDrawW": 3.58
 }

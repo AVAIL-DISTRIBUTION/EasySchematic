@@ -34,7 +34,8 @@
       "from": "https://www.wyrestorm.com/product/con-xlr-dnt/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "5V DC In: only optional USB-C supply is published, main power is PoE; Audio In: sensitivity selectable -10dBV/+4dBu/+20dBu"
+    "portsMissing": "5V DC In: only optional USB-C supply is published, main power is PoE; Audio In: sensitivity selectable -10dBV/+4dBu/+20dBu",
+    "notes": "Spec: wyrestorm/CON-XLR-DNT_SpecSheet_260616.pdf; weight not published; power PoE 802.3af Class 1 (USB-C optional 5 V DC input) (2026-11-27)."
   },
   "ports": [
     {

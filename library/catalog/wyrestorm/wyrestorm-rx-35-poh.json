@@ -33,7 +33,8 @@
       "match": "part-number",
       "status": "raw",
       "level": "B"
-    }
+    },
+    "notes": "Spec: wyrestorm/RX-35-POH_SpecSheet_260209.pdf; 12 V DC 2 A supply optional (PoH 2-way) (2026-11-27)."
   },
   "ports": [
     {
@@ -85,5 +86,11 @@
       "connectorType": "barrel",
       "section": "Power"
     }
-  ]
+  ],
+  "heightMm": 21,
+  "widthMm": 140,
+  "depthMm": 80,
+  "weightKg": 0.18,
+  "powerDrawW": 9.3,
+  "voltage": "12V DC / PoH"
 }

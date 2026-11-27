@@ -33,7 +33,8 @@
       "match": "part-number",
       "status": "raw",
       "level": "A"
-    }
+    },
+    "notes": "Spec: wyrestorm/EXP-CON-AUD-H2_SpecSheet_240513_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -84,5 +85,11 @@
       "connectorType": "barrel",
       "section": "Power"
     }
-  ]
+  ],
+  "heightMm": 22,
+  "widthMm": 80,
+  "depthMm": 90,
+  "weightKg": 0.23,
+  "powerDrawW": 2.88,
+  "voltage": "5V DC"
 }

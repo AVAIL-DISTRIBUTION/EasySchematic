@@ -17,7 +17,7 @@
     "tx-35-iw",
     "wyrestorm"
   ],
-  "powerDrawW": 7.8,
+  "powerDrawW": 9.3,
   "voltage": "12V DC / PoH",
   "_avail": {
     "status": "ports-filled",
@@ -31,7 +31,8 @@
       "from": "https://www.wyrestorm.com/product/tx-35-iw/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "HDBaseT Out: RJ45 connector inferred from HDBaseT (page does not name the connector)"
+    "portsMissing": "HDBaseT Out: RJ45 connector inferred from HDBaseT (page does not name the connector)",
+    "notes": "Spec: wyrestorm/TX-35-IW_SpecSheet_260209.pdf; changed per the document: powerDrawW was 7.8 (2026-11-27). Spec: wyrestorm/TX-35-IW_SpecSheet_260209.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -78,5 +79,9 @@
       "notes": "2-pin; local power, 12V DC 1A (sold separately); optional with PoH",
       "id": "port-4"
     }
-  ]
+  ],
+  "heightMm": 105,
+  "widthMm": 45,
+  "depthMm": 38,
+  "weightKg": 0.16
 }

@@ -34,7 +34,8 @@
       "from": "https://www.wyrestorm.com/product/sw-0206-vw/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "20V DC In: connector not published; dimensions given without axis order"
+    "portsMissing": "20V DC In: connector not published; dimensions given without axis order",
+    "notes": "Spec: wyrestorm/SW-0206-VW_SpecSheet_260312_EN.pdf; printed 'Length x Width x Height 27 × 320 × 180 mm' (27 mm is the height); weight not published; power consumption not published — from the 20 V DC 3 A supply; powerDrawW 48.0 W computed: V × A × 0.8 from PSU rating (20 V × 3 A) (2026-11-27)."
   },
   "ports": [
     {
@@ -137,5 +138,6 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "powerDrawW": 48.0
 }

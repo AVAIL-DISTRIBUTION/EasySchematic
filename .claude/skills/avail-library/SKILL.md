@@ -495,6 +495,16 @@ phoenix; notes «2-pole captive screw — Extron convention, verify». Шасс�
 Modules»), иначе причина в `_avail.portsMissing`; откуда слоты — `_avail.slotsSource`; собственные разъёмы шасси
 остаются портами. Линтер: шасси только со слотами — не «no ports», но слот без `slotFamily` — W.
 
+Wyrestorm: габариты, вес и мощность по спецификациям (2026-11-27). PDF — `/Users/dmartakov/avail/datasheets/wyrestorm/`
+(в git не кладём). Документация Wyrestorm — гостевые папки SharePoint PartnerResources: ссылка «Download All Documentation»
+на странице продукта → папка `Documentation` (у NetworkHD — общая папка с серийными «NHD 100 / 500 / 600 Series
+Specification Sheet»); без spec sheet — user guide / quickstart, без них — зеркала дилеров (conferenceroomav, ambertech), URL —
+в notes. Часть PDF — картинки без текста (OCR). Правила: мощность в ваттах как есть (максимальная); только блок питания —
+V × A × 0.8 с пометкой «computed: V × A × 0.8 from PSU rating»; одно значение на комплект TX/RX — обоим, с пометкой (и «one supply
+powers both units… do not count the pair twice» при PoC / PoH); «L × W × H» таблиц NetworkHD: L → depthMm; источник и
+прежние значения — в `_avail.notes`. Стандарт v0.14: артикул Wyrestorm с «-IW» / «-IWC» — монтаж в помещении
+(`WYRESTORM_IN_WALL_RE`, `mountedByName`).
+
 Соглашение о разъёме питания Wyrestorm (решение 2026-11-27, `src/avail/wyrestormPower.ts`, применяет `fill:catalog-ports`
 ко всем карточкам Wyrestorm, кроме library; источник — spec sheets EX-100-H2, RXV-35-4K, NHD-400, NHD-500-IW-TX): только
 где документ разъём не называет, по корпусу (`wyrestormBody`) — настольная / полочная коробка (rackForm shelf-only) с DC →

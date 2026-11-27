@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/cam-0402-brg/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "RS-232 and LAN are named as control options but no port or connector is listed; dimensions"
+    "portsMissing": "RS-232 and LAN are named as control options but no port or connector is listed; dimensions",
+    "notes": "Spec: wyrestorm/CAM-0402-xx-BRG User Guide 260311.pdf (no spec sheet published); L × W × H 140 × 250 × 25 mm (2026-11-27)."
   },
   "ports": [
     {
@@ -95,5 +96,9 @@
       "id": "port-6",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 250,
+  "depthMm": 140,
+  "weightKg": 0.92
 }

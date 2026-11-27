@@ -17,7 +17,7 @@
     "nhd-600-trxf",
     "wyrestorm"
   ],
-  "powerDrawW": 24,
+  "powerDrawW": 15.5,
   "voltage": "12V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-600-trxf/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Balanced Audio I/O: connector not published; 12V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "Balanced Audio I/O: connector not published; 12V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/NHD 600 Series Specification Sheet_260228.pdf; L × W × H 215 × 140 × 25 mm, 1.75 lbs; 8 W, 15.5 W with USB load; changed per the document: powerDrawW was 24 (2026-11-27). Spec: wyrestorm/NHD 600 Series Specification Sheet_260228.pdf; L × W × H 215 × 140 × 25 mm, 1.75 lbs; 8 W, 15.5 W with USB load (2026-11-27)."
   },
   "ports": [
     {
@@ -143,5 +144,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 140,
+  "depthMm": 215,
+  "weightKg": 0.79
 }

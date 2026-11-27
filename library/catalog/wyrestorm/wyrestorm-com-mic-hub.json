@@ -34,7 +34,8 @@
       "from": "https://www.wyrestorm.com/product/com-mic-hub/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published"
+    "portsMissing": "12V DC In: connector not published",
+    "notes": "Spec: wyrestorm/COM-MIC-HUB_SpecSheet_241018_EN.pdf; weight not published; powerDrawW 19.2 W computed: V × A × 0.8 from PSU rating (12 V × 2 A) (2026-11-27)."
   },
   "ports": [
     {
@@ -136,5 +137,6 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "powerDrawW": 19.2
 }

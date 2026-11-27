@@ -39,7 +39,8 @@
       "from": "https://www.wyrestorm.com/product/mxv-0404-h2a-kit/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "IR Ext (1x IR Ext: 3.5mm TRS Stereo): direction not published; mirrored HDMI output: mentioned in features, not listed in the outputs; AC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "IR Ext (1x IR Ext: 3.5mm TRS Stereo): direction not published; mirrored HDMI output: mentioned in features, not listed in the outputs; AC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/MXV-0404-H2A-KIT_SpecSheet_210125_EN.pdf; max power 85 W includes 4 receivers powered via PoH (12.5 W each): do not count PoH-powered receivers again (2026-11-27)."
   },
   "ports": [
     {
@@ -271,5 +272,9 @@
       "connectorType": "iec",
       "notes": "Wyrestorm convention: IEC — verify"
     }
-  ]
+  ],
+  "heightMm": 43.5,
+  "widthMm": 440,
+  "depthMm": 300,
+  "weightKg": 4.06
 }

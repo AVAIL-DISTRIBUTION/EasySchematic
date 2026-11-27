@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/exf-300-h2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Outputs list is not split by unit (assigned from the Inputs split); RS-232 and IR per-unit assignment not stated, listed on both ends because the page says bidirectional over OM3; 12V DC In: connector not published; power consumption 4W not stated per unit; dimensions"
+    "portsMissing": "Outputs list is not split by unit (assigned from the Inputs split); RS-232 and IR per-unit assignment not stated, listed on both ends because the page says bidirectional over OM3; 12V DC In: connector not published; power consumption 4W not stated per unit; dimensions",
+    "notes": "Spec: wyrestorm/EXF-300-H2_SpecSheet_241205_EN.pdf; max power 4 W — one value for the TX/RX pair in the document, the same written for both units (2026-11-27)."
   },
   "ports": [
     {
@@ -98,5 +99,10 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 20,
+  "widthMm": 150,
+  "depthMm": 74.4,
+  "weightKg": 0.3,
+  "powerDrawW": 4
 }

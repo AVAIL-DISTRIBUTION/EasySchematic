@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-510-tx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Analog Audio: connector not published; 20V DC In: connector not published; which RJ45 carries PoE is not stated; dimensions"
+    "portsMissing": "Analog Audio: connector not published; 20V DC In: connector not published; which RJ45 carries PoE is not stated; dimensions",
+    "notes": "Spec: wyrestorm/NHD 500 Series Specification Sheet_260904.pdf; 215 × 160 × 25 mm, 2.22 lbs; 8.5 W, 73 W with the external PSU and 60 W USB-C charging (2026-11-27)."
   },
   "ports": [
     {
@@ -123,5 +124,10 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 160,
+  "depthMm": 215,
+  "weightKg": 1.01,
+  "powerDrawW": 73
 }

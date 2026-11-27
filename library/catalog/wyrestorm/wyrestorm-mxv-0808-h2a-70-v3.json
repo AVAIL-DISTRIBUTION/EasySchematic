@@ -35,7 +35,8 @@
       "from": "https://www.wyrestorm.com/product/mxv-0808-h2a-70-v3/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "AC Power In: connector not published; separate '3.5mm jack input for local IR commands' is mentioned in the features without a count or section"
+    "portsMissing": "AC Power In: connector not published; separate '3.5mm jack input for local IR commands' is mentioned in the features without a count or section",
+    "notes": "Spec: wyrestorm/MXV Full Range_SpecSheet_220121_EN.pdf; column MXV-0808-H2A/70; the range gives two weights (Max) 5.02 / 5.34 kg without naming models: the larger written (2026-11-27)."
   },
   "ports": [
     {
@@ -445,5 +446,9 @@
       "id": "port-46",
       "connectorType": "iec"
     }
-  ]
+  ],
+  "heightMm": 43.5,
+  "widthMm": 440,
+  "depthMm": 300,
+  "weightKg": 5.34
 }

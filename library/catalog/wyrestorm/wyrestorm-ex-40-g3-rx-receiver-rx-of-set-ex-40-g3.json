@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/ex-40-g3/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "5V DC In: connector not published"
+    "portsMissing": "5V DC In: connector not published",
+    "notes": "Spec: wyrestorm/EX-40-G3_SpecSheet_221219_EN.pdf; max power 2.5 W per TX/RX pair — one value for the TX/RX pair in the document, the same written for both units; one supply powers both units over the link (PoC/PoH): do not count the pair twice (2026-11-27)."
   },
   "ports": [
     {
@@ -80,5 +81,10 @@
       "id": "port-3",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 21,
+  "widthMm": 70,
+  "depthMm": 70.2,
+  "weightKg": 0.2,
+  "powerDrawW": 2.5
 }

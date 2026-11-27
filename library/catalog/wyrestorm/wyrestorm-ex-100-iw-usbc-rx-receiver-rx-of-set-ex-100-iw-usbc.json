@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/ex-100-iw-usbc/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "RS-232/IR/video: none listed; page does not name the RJ45 link type; power input for this unit not stated; max power consumption 39.79W not stated per unit; DC IN connector: only 'locking connector' stated"
+    "portsMissing": "RS-232/IR/video: none listed; page does not name the RJ45 link type; power input for this unit not stated; max power consumption 39.79W not stated per unit; DC IN connector: only 'locking connector' stated",
+    "notes": "Spec: wyrestorm/EX-100-IW-USBC_SpecSheet_250422_EN.pdf; the document gives one set of dimensions (20.5 × 150 × 100 mm) without naming the unit; written for the receiver box (the TX is single-gang in-wall); weight not published; max power 39.79 W with USB fully loaded, 6.94 W without USB load — one value for the TX/RX pair in the document, the same written for both units (2026-11-27)."
   },
   "ports": [
     {
@@ -90,5 +91,9 @@
       "notes": "USB 3.2 Gen 1",
       "id": "port-4"
     }
-  ]
+  ],
+  "heightMm": 20.5,
+  "widthMm": 150,
+  "depthMm": 100,
+  "powerDrawW": 39.79
 }

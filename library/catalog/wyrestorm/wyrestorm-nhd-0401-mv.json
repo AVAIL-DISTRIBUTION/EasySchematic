@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-0401-mv/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "12V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/NHD-0401-MV Specification Sheet_260330.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -117,5 +118,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 24,
+  "widthMm": 215,
+  "depthMm": 120,
+  "weightKg": 0.81
 }

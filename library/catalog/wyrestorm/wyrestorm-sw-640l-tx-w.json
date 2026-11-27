@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/sw-640l-tx-w/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Relay output and PA sensor input: counts and connectors not published (In the Box connectors are not tied to ports); 20V DC In: connector not published"
+    "portsMissing": "Relay output and PA sensor input: counts and connectors not published (In the Box connectors are not tied to ports); 20V DC In: connector not published",
+    "notes": "Spec: wyrestorm/SW-640L-TX-W_Specsheet_260209.pdf; antennas excluded (with antennas: 90.9 × 215 × 210.7 mm); power consumption not in the document (card value kept) (2026-11-27)."
   },
   "ports": [
     {
@@ -181,5 +182,9 @@
       "id": "port-16",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 42,
+  "widthMm": 215,
+  "depthMm": 180.2,
+  "weightKg": 1.2
 }

@@ -35,7 +35,8 @@
       "from": "https://www.wyrestorm.com/product/mx-1007-hyb/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "2x MIC inputs, 1x LINE input, 2x 5-pin balanced audio outputs and 4-channel amplified speaker outputs are named in features but not listed with connectors; AC Power In: connector not published; power consumption; weight"
+    "portsMissing": "2x MIC inputs, 1x LINE input, 2x 5-pin balanced audio outputs and 4-channel amplified speaker outputs are named in features but not listed with connectors; AC Power In: connector not published; power consumption; weight",
+    "notes": "Spec: wyrestorm/MX-1007-HYB_Specsheet_260225_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -321,5 +322,7 @@
       "connectorType": "iec",
       "notes": "Wyrestorm convention: IEC — verify"
     }
-  ]
+  ],
+  "weightKg": 8.68,
+  "powerDrawW": 242.5
 }

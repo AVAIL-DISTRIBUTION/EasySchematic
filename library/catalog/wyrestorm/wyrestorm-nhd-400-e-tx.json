@@ -33,7 +33,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-400-e-tx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "page lists 'Outputs: 1x 8-pin RJ-45' and 'Ethernet: 1x LAN (PoE) 8-pin RJ-45' without saying whether they are one port or two; modelled as one; 12V DC In: connector not published"
+    "portsMissing": "page lists 'Outputs: 1x 8-pin RJ-45' and 'Ethernet: 1x LAN (PoE) 8-pin RJ-45' without saying whether they are one port or two; modelled as one; 12V DC In: connector not published",
+    "notes": "Spec: wyrestorm/NetworkHD Full Range_SpecSheet_240730_EN (ambertech).pdf (dealer mirror https://ambertech.com.au/Documents/Manuals/Wyrestorm/NetworkHD%20Full%20Range_SpecSheet_240730_EN.pdf; no 400 series sheet on wyrestorm.com); column 400 / 400-E / 400-DNT: L × W × H 220 × 140 × 25 mm, 1.75 lbs, 8 W (2026-11-27)."
   },
   "ports": [
     {
@@ -71,5 +72,9 @@
       "id": "port-3",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 140,
+  "depthMm": 220,
+  "weightKg": 0.79
 }

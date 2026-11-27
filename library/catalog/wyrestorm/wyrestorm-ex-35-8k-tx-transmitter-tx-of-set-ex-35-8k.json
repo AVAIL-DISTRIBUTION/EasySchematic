@@ -45,7 +45,8 @@
       "match": "part-number",
       "status": "raw",
       "level": "B"
-    }
+    },
+    "notes": "Spec: wyrestorm/EX-35-8K_SpecificationSheet_251209.pdf; 11.4 W max per pair via PoC — one value for the TX/RX pair in the document, the same written for both units; one supply powers both units over the link (PoC/PoH): do not count the pair twice (2026-11-27)."
   },
   "ports": [
     {
@@ -96,5 +97,10 @@
       "connectorType": "barrel",
       "section": "Power"
     }
-  ]
+  ],
+  "heightMm": 15.3,
+  "widthMm": 140,
+  "depthMm": 90.2,
+  "weightKg": 0.27,
+  "powerDrawW": 11.4
 }

@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/cam-0402-ndi-brg/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "RS-232: listed as control option only, no connector published; power connector type not in the standard list"
+    "portsMissing": "RS-232: listed as control option only, no connector published; power connector type not in the standard list",
+    "notes": "Spec: wyrestorm/CAM-0402-xx-BRG User Guide 260311.pdf (no spec sheet published); L × W × H 140 × 250 × 25 mm (2026-11-27)."
   },
   "ports": [
     {
@@ -107,5 +108,9 @@
       "id": "port-7",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 250,
+  "depthMm": 140,
+  "weightKg": 0.92
 }

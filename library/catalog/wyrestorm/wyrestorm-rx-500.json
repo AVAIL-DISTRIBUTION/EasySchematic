@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/rx-500/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "12V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/RX-500_SpecSheet_260204_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -120,5 +121,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 210,
+  "depthMm": 90.2,
+  "weightKg": 0.68
 }

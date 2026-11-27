@@ -25,7 +25,7 @@
   "heightMm": 15,
   "widthMm": 63,
   "depthMm": 80,
-  "weightKg": 0.1,
+  "weightKg": 0.13,
   "voltage": "12V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -46,7 +46,8 @@
       "from": "https://www.wyrestorm.com/product/ex-70-h2c/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "HDMI, extender link (RJ45), IR, S/PDIF and loop-out ports: the page gives no port counts or per-unit connectors; power input per unit not stated (page says 'DC 12V/1A, PoC' and a locking DC 12V connector); dimensions 15 x 63 x 80 mm given once for the set"
+    "portsMissing": "HDMI, extender link (RJ45), IR, S/PDIF and loop-out ports: the page gives no port counts or per-unit connectors; power input per unit not stated (page says 'DC 12V/1A, PoC' and a locking DC 12V connector); dimensions 15 x 63 x 80 mm given once for the set",
+    "notes": "Spec: wyrestorm/EX-70-H2C_Specification_Sheet_251208.pdf; 4.2 W max per pair via PoC — one value for the TX/RX pair in the document, the same written for both units; one supply powers both units over the link (PoC/PoH): do not count the pair twice; changed per the document: weightKg was 0.1 (2026-11-27). Spec: wyrestorm/EX-70-H2C_Specification_Sheet_251208.pdf; 4.2 W max per pair via PoC — one value for the TX/RX pair in the document, the same written for both units; one supply powers both units over the link (PoC/PoH): do not count the pair twice (2026-11-27)."
   },
   "ports": [
     {
@@ -67,5 +68,6 @@
       "section": "Power",
       "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "powerDrawW": 4.2
 }

@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/ex-70-h2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "18V DC In: connector not published; the page gives one Max Power Consumption (4.68W) for the set, not per unit; IR / RS-232 lines are not split TX/RX on the page (assumed present on both units)"
+    "portsMissing": "18V DC In: connector not published; the page gives one Max Power Consumption (4.68W) for the set, not per unit; IR / RS-232 lines are not split TX/RX on the page (assumed present on both units)",
+    "notes": "Spec: wyrestorm/EX-70-H2 v2_SpecSheet_251212_EN.pdf; max power TX 4.68 W, RX 6.84 W (2026-11-27)."
   },
   "ports": [
     {
@@ -98,5 +99,10 @@
       "id": "port-5",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 15.2,
+  "widthMm": 136.4,
+  "depthMm": 74.2,
+  "weightKg": 0.24,
+  "powerDrawW": 4.68
 }

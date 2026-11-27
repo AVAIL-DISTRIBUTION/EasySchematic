@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/rx-700/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "DC In: connector not published and voltage inconsistent on the page"
+    "portsMissing": "DC In: connector not published and voltage inconsistent on the page",
+    "notes": "Spec: wyrestorm/RX-700_SpecSheet_200331_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -142,5 +143,9 @@
       "id": "port-11",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 245,
+  "depthMm": 90,
+  "weightKg": 0.62
 }

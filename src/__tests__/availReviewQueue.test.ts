@@ -35,6 +35,16 @@ describe("room-mounted by name and description (v0.9)", () => {
     for (const b of no) expect(mountedByName(b), b.label).toBe(false);
   });
 
+  it("Wyrestorm -IW part numbers are in-wall (v0.14); other vendors and look-alikes are not", () => {
+    for (const modelNumber of ["TX-35-IW", "TX-35-IWC-KVM", "NHD-500-IW-TX v2", "EX-100-IW-USBC-TX"]) {
+      expect(mountedByName({ label: "Wyrestorm X", manufacturer: "Wyrestorm", modelNumber }), modelNumber).toBe(true);
+    }
+    expect(mountedByName({ label: "Wyrestorm X", manufacturer: "Wyrestorm", modelNumber: "SW-IWX-200" })).toBe(false);
+    expect(mountedByName({ label: "Wyrestorm X", manufacturer: "Wyrestorm", modelNumber: "NHD-400-TX" })).toBe(false);
+    expect(mountedByName({ label: "Extron X", manufacturer: "Extron", modelNumber: "X-IW" })).toBe(false);
+    expect(isRoomMounted({ label: "Wyrestorm X", manufacturer: "Wyrestorm", modelNumber: "EX-100-IW-USBC-RX", rackForm: "shelf-only" })).toBe(false);
+  });
+
   it("rackForm still wins; a room-mounted name drops the dimensions requirement only", () => {
     expect(isRoomMounted({ label: "Extron DTP3 T 322 D", manufacturer: "Extron", rackForm: "half" })).toBe(false);
     const t = { ...dtp3(), label: "Extron DTP3 T 203 D", heightMm: undefined, weightKg: undefined };

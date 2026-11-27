@@ -32,7 +32,8 @@
       "match": "part-number",
       "status": "raw",
       "level": "B"
-    }
+    },
+    "notes": "Spec: wyrestorm/TS-280-xx_SpecSheet_230710_EN.pdf; touchscreen powered with 12 V DC from the touchscreen interface module (module 0.36 W, 25 × 80.2 × 50 mm, 0.14 kg) (2026-11-27)."
   },
   "ports": [
     {
@@ -59,5 +60,11 @@
       "connectorType": "other",
       "section": "Power"
     }
-  ]
+  ],
+  "heightMm": 86,
+  "widthMm": 147,
+  "depthMm": 32.1,
+  "weightKg": 0.28,
+  "powerDrawW": 0.84,
+  "voltage": "12V DC (from the interface module)"
 }

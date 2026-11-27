@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/exp-sw-0401-h2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "IR Ext. Port: connector and direction not published (treated as input); 12V DC In: connector not published; dimensions"
+    "portsMissing": "IR Ext. Port: connector and direction not published (treated as input); 12V DC In: connector not published; dimensions",
+    "notes": "Spec: wyrestorm/EXP-SW-0401-H2_SpecSheet_210810_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -93,5 +94,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 16,
+  "widthMm": 175,
+  "depthMm": 66.2,
+  "weightKg": 0.25
 }

@@ -45,7 +45,8 @@
       "from": "https://www.wyrestorm.com/product/ex3-100-earc/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector and per-unit supply not published; Ethernet passthrough up to 1Gb is a feature without a port; power consumption and dimensions (blocks disagree)"
+    "portsMissing": "12V DC In: connector and per-unit supply not published; Ethernet passthrough up to 1Gb is a feature without a port; power consumption and dimensions (blocks disagree)",
+    "notes": "Spec: wyrestorm/EX3-100-EARC_SpecSheet_250826_EN.pdf; L × W × H 190 × 115 × 23 mm; power consumption 20.04 W — one value for the TX/RX pair in the document, the same written for both units (2026-11-27)."
   },
   "ports": [
     {
@@ -110,5 +111,7 @@
       "id": "port-6",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "weightKg": 0.59,
+  "powerDrawW": 20.04
 }

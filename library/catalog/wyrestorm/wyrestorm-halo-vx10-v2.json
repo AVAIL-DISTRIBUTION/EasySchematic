@@ -37,7 +37,8 @@
       "from": "https://www.wyrestorm.com/product/halo-vx10-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published; dimensions and weight include the bracket"
+    "portsMissing": "12V DC In: connector not published; dimensions and weight include the bracket",
+    "notes": "Spec: wyrestorm/HALO-VX10 v2_SpecSheet_220313_EN (conferenceroomav).pdf (dealer mirror https://www.conferenceroomav.com/pdf/halo-vx10-v2-specsheet-220313-en.pdf; not on wyrestorm.com); height 97.5 mm with stand (2026-11-27)."
   },
   "ports": [
     {
@@ -66,5 +67,6 @@
       "id": "port-2",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "powerDrawW": 6
 }

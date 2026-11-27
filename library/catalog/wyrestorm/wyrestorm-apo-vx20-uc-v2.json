@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/apo-vx20-uc-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "power input: not in the technical specifications; APO-SKY-MIC expansion connector: not published; WLAN and Bluetooth have no connector"
+    "portsMissing": "power input: not in the technical specifications; APO-SKY-MIC expansion connector: not published; WLAN and Bluetooth have no connector",
+    "notes": "Spec: wyrestorm/APO-VX20-UC v2 User Guide 260509.pdf (no spec sheet published); dimensions and weight with bracket; power consumption (max) 112 W plus up to 60 W USB-C charging per the guide; supply DC 20 V 6 A (2026-11-27)."
   },
   "ports": [
     {
@@ -97,5 +98,11 @@
       "notes": "USB 3.0 host",
       "id": "port-6"
     }
-  ]
+  ],
+  "heightMm": 126.82,
+  "widthMm": 699.4,
+  "depthMm": 90,
+  "weightKg": 2.58,
+  "powerDrawW": 112,
+  "voltage": "20V DC"
 }

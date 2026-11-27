@@ -45,7 +45,8 @@
       "from": "https://www.wyrestorm.com/product/ex-60-usb2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "weight not on the page"
+    "portsMissing": "weight not on the page",
+    "notes": "Spec: wyrestorm/EX-60-USB2_SpecificationSheet_090325.pdf; weight not published; power consumption not published — from the included DC 18 V 1 A supply, one value for the TX/RX pair in the document, the same written for both units; the TX powers the RX over the cable (one-way PoC): do not count the pair twice; powerDrawW 14.4 W computed: V × A × 0.8 from PSU rating (18 V × 1 A) (2026-11-27)."
   },
   "ports": [
     {
@@ -102,5 +103,6 @@
       "section": "Power",
       "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "powerDrawW": 14.4
 }
