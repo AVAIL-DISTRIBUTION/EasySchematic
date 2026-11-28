@@ -35,18 +35,9 @@
       "note": "Technical Specifications on the manufacturer's product page"
     },
     "portsMissing": "12V DC In: connector not published",
-    "notes": "Spec: wyrestorm/COM-MIC-HUB_SpecSheet_241018_EN.pdf; weight not published; powerDrawW 19.2 W computed: V × A × 0.8 from PSU rating (12 V × 2 A) (2026-11-27)."
+    "notes": "Spec: wyrestorm/COM-MIC-HUB_SpecSheet_241018_EN.pdf; weight not published; powerDrawW 19.2 W computed: V × A × 0.8 from PSU rating (12 V × 2 A) (2026-11-27). Ceiling Mic: the same custom bus as APO-SKY-MIC RJ45 In, bidirectional, section Expansion; was input / Audio Inputs (2026-11-28)."
   },
   "ports": [
-    {
-      "label": "Ceiling Mic",
-      "signalType": "custom",
-      "direction": "input",
-      "connectorType": "rj45",
-      "section": "Audio Inputs",
-      "notes": "connects and powers the ceiling microphone",
-      "id": "port-0"
-    },
     {
       "label": "AEC Ref",
       "signalType": "analog-audio",
@@ -118,6 +109,15 @@
       "section": "Digital I/O",
       "notes": "2-pin; 5V",
       "id": "port-8"
+    },
+    {
+      "label": "Ceiling Mic",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "connectorType": "rj45",
+      "section": "Expansion",
+      "notes": "Apollo mic cascade (custom bus, as the APO-VX20-UC v2 guide calls it: 'Microphone Cascading'): to APO-SKY-MIC; 'connect and power the ceiling microphone' (spec sheet); supplies power to the mic",
+      "id": "port-0"
     },
     {
       "label": "USB-B Host",
