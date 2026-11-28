@@ -120,6 +120,7 @@ export interface RoomMountedInput {
   label?: unknown;
   shortName?: unknown;
   manufacturer?: unknown;
+  modelNumber?: unknown;
   /** The catalog card's description (library/catalog _avail, or the database's catalog meta). */
   _avail?: { description?: unknown } | null;
 }
@@ -127,17 +128,24 @@ export interface RoomMountedInput {
 /**
  * Mounting words in the name or the catalog description (standard 3.2, v0.9): a wallplate, a
  * decorator-style or in-wall / in-ceiling unit, an AAP / MAAP plate, a Cable Cubby, a table or
- * under-table box.
+ * under-table box; Wyrestorm "-IW" part numbers (v0.14).
  */
 export const ROOM_MOUNTED_WORDS_RE = /\b(wall ?plates?|decorator(?:-style)?|in-wall|in-ceiling|ceiling|m?aap|cable cubby|under-table|table)\b/i;
 /** Extron's Decorator-Style models end in " D": "DTP3 T 322 D", "NBP 106 D (White)", "DTP3 R 201 D, White". */
 const EXTRON_DECORATOR_RE = /\sD(?=$|[\s,(])/;
+/**
+ * Wyrestorm in-wall models carry "-IW" in the part number (v0.14): TX-35-IW, TX-35-IWC-KVM, NHD-500-IW-TX,
+ * EX-100-IW-USBC. A rack form on the card still wins (isRoomMounted checks it first).
+ */
+const WYRESTORM_IN_WALL_RE = /-IWC?(?=$|[-\s])/i;
 
 export function mountedByName(block: RoomMountedInput): boolean {
   const str = (v: unknown) => (typeof v === "string" ? v : "");
   const name = `${str(block.label)} ${str(block.shortName)}`;
   if (ROOM_MOUNTED_WORDS_RE.test(name) || ROOM_MOUNTED_WORDS_RE.test(str(block._avail?.description))) return true;
-  return /^extron$/i.test(str(block.manufacturer).trim()) && EXTRON_DECORATOR_RE.test(str(block.label).replace(/^Extron\s+/i, "").trim());
+  const vendor = str(block.manufacturer).trim();
+  if (/^wyrestorm$/i.test(vendor) && WYRESTORM_IN_WALL_RE.test(str(block.modelNumber).trim())) return true;
+  return /^extron$/i.test(vendor) && EXTRON_DECORATOR_RE.test(str(block.label).replace(/^Extron\s+/i, "").trim());
 }
 
 /** modelNumber of a Generic block: "Generic Room PC" → "GEN-ROOM-PC". */

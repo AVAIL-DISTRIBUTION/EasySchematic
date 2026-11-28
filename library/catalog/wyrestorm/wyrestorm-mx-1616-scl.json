@@ -38,7 +38,8 @@
     },
     "portsMissing": "mains inlet and supply voltage not published; depth and weight not published",
     "slotsSource": "document: https://www.wyrestorm.com/product/mx-1616-scl/",
-    "slotsNote": "\"16 Cards: TX-SCL-HDBT, TX-SCL-HDMI\" (Technical Specifications); each card is HDMI In + HDMI Out or HDBaseT Out + 5-pin balanced audio out"
+    "slotsNote": "\"16 Cards: TX-SCL-HDBT, TX-SCL-HDMI\" (Technical Specifications); each card is HDMI In + HDMI Out or HDBaseT Out + 5-pin balanced audio out",
+    "notes": "Spec: wyrestorm/MX-1616-SCL_SpecSheet_260310.pdf; weight approx. 13.5 kg, dependent on the transmission cards used (2026-11-27)."
   },
   "ports": [
     {
@@ -150,5 +151,9 @@
       "label": "Slot 16",
       "slotFamily": "wyrestorm-mx-1616-scl"
     }
-  ]
+  ],
+  "depthMm": 382.7,
+  "weightKg": 13.5,
+  "powerDrawW": 450,
+  "voltage": "100-240V AC"
 }

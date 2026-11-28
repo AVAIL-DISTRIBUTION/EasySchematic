@@ -39,7 +39,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-ctl-pro-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "power input and voltage (blocks disagree); which LAN port takes PoE; dimensions; Power Consumption 'Max 15.4' has no unit"
+    "portsMissing": "power input and voltage (blocks disagree); which LAN port takes PoE; dimensions; Power Consumption 'Max 15.4' has no unit",
+    "notes": "Spec: wyrestorm/NHD-CTL-PRO v2 Specification Sheet_260929.pdf; weight not published; dimensions 215 × 120 × 25 mm (L × W × H) — card keeps W 215 / D 120; power maximum 15.4 W, average 8 W (2026-11-27)."
   },
   "ports": [
     {

@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/ex-100-usb3/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "20V DC In: connector not published; page does not say the RJ45 link is HDBaseT; Max Power Consumption (39.79W / 6.94W) is not split per unit"
+    "portsMissing": "20V DC In: connector not published; page does not say the RJ45 link is HDBaseT; Max Power Consumption (39.79W / 6.94W) is not split per unit",
+    "notes": "Spec: wyrestorm/EX-100-USB3_SpecSheet_240909_EN.pdf; weight not published; max power 39.79 W with USB fully loaded, 6.94 W without USB load — one value for the TX/RX pair in the document, the same written for both units (2026-11-27)."
   },
   "ports": [
     {
@@ -99,5 +100,9 @@
       "id": "port-5",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 20.5,
+  "widthMm": 150,
+  "depthMm": 100,
+  "powerDrawW": 39.79
 }

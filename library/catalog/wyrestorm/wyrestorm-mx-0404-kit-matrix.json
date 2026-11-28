@@ -37,7 +37,8 @@
       "from": "https://www.wyrestorm.com/product/mx-0404-kit/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "AC In: connector not published; the second spec block adds 'Analog: 2ch Analog' audio but lists no analog connector"
+    "portsMissing": "AC In: connector not published; the second spec block adds 'Analog: 2ch Analog' audio but lists no analog connector",
+    "notes": "Spec: wyrestorm/Full Range KIT_SpecSheet_220317_EN.pdf; column MX-0404-KIT (2026-11-27)."
   },
   "ports": [
     {
@@ -228,5 +229,9 @@
       "id": "port-21",
       "connectorType": "iec"
     }
-  ]
+  ],
+  "heightMm": 43.5,
+  "widthMm": 440,
+  "depthMm": 300,
+  "weightKg": 4.06
 }

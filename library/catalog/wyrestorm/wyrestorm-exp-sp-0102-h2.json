@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/exp-sp-0102-h2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "5V DC In: connector not published"
+    "portsMissing": "5V DC In: connector not published",
+    "notes": "Spec: wyrestorm/EXP-SP-0102-H2_SpecSheet_191007_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -68,5 +69,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 20,
+  "widthMm": 100,
+  "depthMm": 65.2,
+  "weightKg": 0.18
 }

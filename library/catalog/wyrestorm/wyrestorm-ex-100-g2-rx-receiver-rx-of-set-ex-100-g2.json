@@ -43,7 +43,8 @@
       "from": "https://www.wyrestorm.com/product/ex-100-g2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Video, HDBaseT, IR, RS-232 and CEC connectors are not listed in the specifications (page names RS-232 only as a firmware update path); 18V DC In: connector not published"
+    "portsMissing": "Video, HDBaseT, IR, RS-232 and CEC connectors are not listed in the specifications (page names RS-232 only as a firmware update path); 18V DC In: connector not published",
+    "notes": "Spec: wyrestorm/EX-100-G2_SpecificationSheet_251210.pdf; TX 5.5 W, RX 7.6 W (powered separately) (2026-11-27)."
   },
   "ports": [
     {
@@ -55,5 +56,9 @@
       "id": "port-0",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 14.9,
+  "widthMm": 135,
+  "depthMm": 74.2,
+  "weightKg": 0.24
 }

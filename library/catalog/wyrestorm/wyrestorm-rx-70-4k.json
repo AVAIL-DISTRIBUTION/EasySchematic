@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/rx-70-4k/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published; additional Phoenix power port (mentioned in features): not specified; dimensions and weight not on the page"
+    "portsMissing": "12V DC In: connector not published; additional Phoenix power port (mentioned in features): not specified; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/RX-70-4K v2_SpecSheet_260204_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -94,5 +95,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 18,
+  "widthMm": 232,
+  "depthMm": 93,
+  "weightKg": 0.5
 }

@@ -31,7 +31,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-128-ndi-trx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "LAN: the page lists 1 x RJ-45 under Video Input and again 1 x RJ-45 under Video Output, so it is not clear whether they are one physical connector or two (one is given); 20V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "LAN: the page lists 1 x RJ-45 under Video Input and again 1 x RJ-45 under Video Output, so it is not clear whether they are one physical connector or two (one is given); 20V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/NHD 100 Series Specification Sheet_260228.pdf; L × W × H 175 × 100.2 × 25 mm, 1.14 lbs; power consumption not published — from the 20 V DC 1 A supply (the user guide says 12 V DC 1A; spec sheet taken); PoE alternative; powerDrawW 16.0 W computed: V × A × 0.8 from PSU rating (20 V × 1 A) (2026-11-27)."
   },
   "ports": [
     {
@@ -52,5 +53,10 @@
       "id": "port-1",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 100.2,
+  "depthMm": 175,
+  "weightKg": 0.52,
+  "powerDrawW": 16.0
 }

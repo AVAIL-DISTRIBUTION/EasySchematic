@@ -17,7 +17,7 @@
     "rxv-35-scl",
     "wyrestorm"
   ],
-  "powerDrawW": 12.4,
+  "powerDrawW": 12.42,
   "voltage": "12V DC / PoH",
   "rackForm": "shelf-only",
   "_avail": {
@@ -38,7 +38,8 @@
       "from": "https://www.wyrestorm.com/product/rxv-35-scl/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "optional DC input (voltage differs between blocks); analog and S/PDIF audio outputs are named in the first block's features and audio formats but not listed with connectors; dimensions; weight"
+    "portsMissing": "optional DC input (voltage differs between blocks); analog and S/PDIF audio outputs are named in the first block's features and audio formats but not listed with connectors; dimensions; weight",
+    "notes": "Spec: wyrestorm/RXV-35-SCL_SpecSheet_200602_EN.pdf; changed per the document: powerDrawW was 12.4 (2026-11-27). Spec: wyrestorm/RXV-35-SCL_SpecSheet_200602_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -94,5 +95,9 @@
       "section": "Power",
       "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 18,
+  "widthMm": 180,
+  "depthMm": 80,
+  "weightKg": 0.36
 }

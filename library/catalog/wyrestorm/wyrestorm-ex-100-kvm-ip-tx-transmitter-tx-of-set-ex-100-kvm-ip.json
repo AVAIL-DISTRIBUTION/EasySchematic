@@ -43,7 +43,8 @@
       "from": "https://www.wyrestorm.com/product/ex-100-kvm-ip/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "USB ports: number and connector not published (page mentions USB 2.0 over IP and a built-in hub; SFP only in FAQ); 12V DC In: connector not published; dimensions"
+    "portsMissing": "USB ports: number and connector not published (page mentions USB 2.0 over IP and a built-in hub; SFP only in FAQ); 12V DC In: connector not published; dimensions",
+    "notes": "Spec: wyrestorm/EX-100-KVM-IP_SpecSheet_240328_EN.pdf; W × H × D 112 × 17.8 × 65.2 mm; 2.5 W max per unit (2026-11-27)."
   },
   "ports": [
     {
@@ -72,5 +73,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 17.8,
+  "widthMm": 112,
+  "depthMm": 65.2,
+  "weightKg": 0.18
 }

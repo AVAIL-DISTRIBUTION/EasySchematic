@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/ex-35-h2-arc/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Outputs list is not split by unit: HDBaseT/Toslink/Source Audio/HDMI outputs assigned from the Inputs split and feature text; 12V DC In: connector not published; power consumption 8.88W not stated per unit; dimensions"
+    "portsMissing": "Outputs list is not split by unit: HDBaseT/Toslink/Source Audio/HDMI outputs assigned from the Inputs split and feature text; 12V DC In: connector not published; power consumption 8.88W not stated per unit; dimensions",
+    "notes": "Spec: wyrestorm/EX-35-H2-ARC_SpecSheet_251216_EN.pdf; max power 8.88 W — one value for the TX/RX pair in the document, the same written for both units; one supply powers both units over the link (PoC/PoH): do not count the pair twice (2026-11-27)."
   },
   "ports": [
     {
@@ -116,5 +117,10 @@
       "id": "port-7",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 21,
+  "widthMm": 195,
+  "depthMm": 94.8,
+  "weightKg": 0.36,
+  "powerDrawW": 8.88
 }

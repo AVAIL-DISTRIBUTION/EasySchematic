@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-500-e/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Audio Out: connector not published; 12V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "Audio Out: connector not published; 12V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/NHD 500 Series Specification Sheet_260904.pdf; 215 × 120 × 25 mm, 1.63 lbs; TX 6 W, RX 7.5 W (2026-11-27)."
   },
   "ports": [
     {
@@ -78,5 +79,10 @@
       "id": "port-4",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 120,
+  "depthMm": 215,
+  "weightKg": 0.74,
+  "powerDrawW": 6
 }

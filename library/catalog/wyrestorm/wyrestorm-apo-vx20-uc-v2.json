@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/apo-vx20-uc-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "power input: not in the technical specifications; APO-SKY-MIC expansion connector: not published; WLAN and Bluetooth have no connector"
+    "portsMissing": "power connector type not named (guide: 'DC 20V/6A — connect to the power adapter provided'); WLAN and Bluetooth have no connector",
+    "notes": "Spec: wyrestorm/APO-VX20-UC v2 User Guide 260509.pdf (no spec sheet published); dimensions and weight with bracket; power consumption (max) 112 W plus up to 60 W USB-C charging per the guide; supply DC 20 V 6 A (2026-11-27). Power port per APO-VX20-UC v2 User Guide 260509.pdf: panel item L 'DC 20V/6A', Power Supply DC 20V 6A, Power Consumption (max) 112W (+ USB-C 60W charging); the in-the-box list says '24V 6A Power Supply' — spec value 20 V taken (2026-11-27). MIC port (item K) added from the User Guide 260509 p.5; connector Mini USB from the Quickstart Guide 260312 in-box list (APO-MIC-EXT, RJ45 to USB MINI adapter) (2026-11-28)."
   },
   "ports": [
     {
@@ -71,6 +72,15 @@
       "id": "port-3"
     },
     {
+      "id": "port-8",
+      "label": "MIC",
+      "signalType": "custom",
+      "direction": "bidirectional",
+      "connectorType": "usb-mini",
+      "section": "Expansion",
+      "notes": "Apollo mic cascade (custom bus, as the APO-VX20-UC v2 guide calls it: 'Microphone Cascading'): to APO-SKY-MIC (panel item K, 'Connect to an external microphone APO-SKY-MIC'); up to 5 daisy-chained mics, 26 m max; powers the mics (APO-SKY-MIC: 'Powered by the APO-VX20-UC'); connector: the User Guide does not name it — Mini USB from the in-box APO-MIC-EXT 'RJ45 to USB MINI adapter' (Quickstart Guide 260312); the mic's RJ45 cable goes through that adapter"
+    },
+    {
       "label": "USB-C",
       "signalType": "usb",
       "direction": "bidirectional",
@@ -96,6 +106,21 @@
       "section": "USB",
       "notes": "USB 3.0 host",
       "id": "port-6"
+    },
+    {
+      "id": "port-7",
+      "label": "20V DC In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "notes": "DC 20V/6A from the supplied power adapter (panel item L); 112 W max (+ USB-C 60 W charging); connector not named in the guide; Wyrestorm convention: DC barrel, external adapter (not locking) — verify",
+      "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 126.82,
+  "widthMm": 699.4,
+  "depthMm": 90,
+  "weightKg": 2.58,
+  "powerDrawW": 112,
+  "voltage": "20V DC"
 }

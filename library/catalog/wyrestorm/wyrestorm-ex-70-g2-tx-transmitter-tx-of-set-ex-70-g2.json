@@ -43,7 +43,8 @@
       "from": "https://www.wyrestorm.com/product/ex-70-g2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "IR ports (1x IR TX 3.5mm TS Mono, 1x IR RX 3.5mm TRS Stereo): the page does not say which unit has them; RS-232 (3-pin Phoenix) exists on the v2 chassis only, version of this unit not stated; 18V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "IR ports (1x IR TX 3.5mm TS Mono, 1x IR RX 3.5mm TRS Stereo): the page does not say which unit has them; RS-232 (3-pin Phoenix) exists on the v2 chassis only, version of this unit not stated; 18V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/EX-70-G2 v2_SpecSheet_260311_EN.pdf; v2 chassis; TX 7 W, RX 17 W (2026-11-27)."
   },
   "ports": [
     {
@@ -72,5 +73,9 @@
       "id": "port-2",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 15,
+  "widthMm": 108.8,
+  "depthMm": 64.2,
+  "weightKg": 0.36
 }

@@ -17,7 +17,7 @@
     "sw-515-rx",
     "wyrestorm"
   ],
-  "powerDrawW": 16.3,
+  "powerDrawW": 16.25,
   "voltage": "12V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/sw-515-rx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "IR port (direction); 12V DC In: connector not published; dimensions"
+    "portsMissing": "IR port (direction); 12V DC In: connector not published; dimensions",
+    "notes": "Spec: wyrestorm/SW-515-RX_SpecSheet_210225_EN.pdf; without feet / brackets (with: 44.5 × 263 × 148.7 mm); changed per the document: powerDrawW was 16.3 (2026-11-27). Spec: wyrestorm/SW-515-RX_SpecSheet_210225_EN.pdf; without feet / brackets (with: 44.5 × 263 × 148.7 mm) (2026-11-27)."
   },
   "ports": [
     {
@@ -189,5 +190,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 42,
+  "widthMm": 220,
+  "depthMm": 148.7,
+  "weightKg": 0.95
 }

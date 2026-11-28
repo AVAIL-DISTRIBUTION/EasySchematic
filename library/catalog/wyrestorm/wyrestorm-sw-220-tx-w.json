@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/sw-220-tx-w/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published; Wi-Fi antennas are not connectors; dimensions and weight not on the page"
+    "portsMissing": "12V DC In: connector not published; Wi-Fi antennas are not connectors; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/SW-220-TX-W_SpecSheet_250814_EN-2.pdf; printed 'Length x Width x Height 215 × 25 × 120.2 mm' (25 mm is the height), antennas not included (2026-11-27)."
   },
   "ports": [
     {
@@ -102,5 +103,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 120.2,
+  "weightKg": 0.68
 }

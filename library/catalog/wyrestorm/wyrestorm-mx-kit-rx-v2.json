@@ -41,7 +41,8 @@
       "from": "https://www.wyrestorm.com/product/mx-0808-kit-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "page groups Matrix and Receivers without a per-unit split (assigned by count and signal); second RS-232 (3-pin Terminal Block) not assigned to a unit; 18V DC (Optional) input: unit not stated; power consumption garbled; dimensions"
+    "portsMissing": "page groups Matrix and Receivers without a per-unit split (assigned by count and signal); second RS-232 (3-pin Terminal Block) not assigned to a unit; 18V DC (Optional) input: unit not stated; power consumption garbled; dimensions",
+    "notes": "Spec: wyrestorm/Full Range KIT_SpecSheet_220317_EN.pdf; the kit document gives matrix dimensions only: receiver dimensions and weight not published (2026-11-27)."
   },
   "ports": [
     {

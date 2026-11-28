@@ -38,7 +38,8 @@
       "from": "https://www.wyrestorm.com/product/mxv-0808-h2a-kit/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "AC Power In: connector not published; IR / IR TX per-HDBaseT-port assignment not stated"
+    "portsMissing": "AC Power In: connector not published; IR / IR TX per-HDBaseT-port assignment not stated",
+    "notes": "Spec: wyrestorm/MXV-0808-H2A-KIT_SpecSheet_250801_EN.pdf; H × W × D 43.5 × 440 × 300 mm (2026-11-27)."
   },
   "ports": [
     {
@@ -443,5 +444,9 @@
       "id": "port-46",
       "connectorType": "iec"
     }
-  ]
+  ],
+  "heightMm": 43.5,
+  "widthMm": 440,
+  "depthMm": 300,
+  "weightKg": 5.34
 }

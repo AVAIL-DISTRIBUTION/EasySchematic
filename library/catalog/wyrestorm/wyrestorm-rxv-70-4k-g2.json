@@ -17,7 +17,7 @@
     "rxv-70-4k-g2",
     "wyrestorm"
   ],
-  "powerDrawW": 12.4,
+  "powerDrawW": 12.42,
   "voltage": "18V DC / PoH",
   "rackForm": "shelf-only",
   "_avail": {
@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/rxv-70-4k-g2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "analog and S/PDIF audio outputs are listed under audio formats without connectors or counts; 18V DC In: connector not published"
+    "portsMissing": "analog and S/PDIF audio outputs are listed under audio formats without connectors or counts; 18V DC In: connector not published",
+    "notes": "Spec: wyrestorm/RXV-70-4K-G2_SpecSheet_190626_EN.pdf; changed per the document: powerDrawW was 12.4 (2026-11-27). Spec: wyrestorm/RXV-70-4K-G2_SpecSheet_190626_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -88,5 +89,9 @@
       "id": "port-5",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 15.2,
+  "widthMm": 136.4,
+  "depthMm": 74.2,
+  "weightKg": 0.24
 }

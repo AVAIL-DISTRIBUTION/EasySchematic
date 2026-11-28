@@ -25,7 +25,7 @@
   "heightMm": 22,
   "widthMm": 64,
   "depthMm": 87,
-  "weightKg": 0.2,
+  "weightKg": 0.16,
   "voltage": "5V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -46,7 +46,8 @@
       "from": "https://www.wyrestorm.com/product/exf-10km-5k/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "5V DC In: connector type not in the standard list (5.5/2.1 DC connector with screw lock); firmware update port not published; dimensions/weight given once for the set, not per unit"
+    "portsMissing": "5V DC In: connector type not in the standard list (5.5/2.1 DC connector with screw lock); firmware update port not published; dimensions/weight given once for the set, not per unit",
+    "notes": "Spec: wyrestorm/EXF-10KM-5K_SpecificationSheet_260128.pdf; weight 0.35 lbs; power consumption not published — from the 5 V DC 2 A supply (one per unit in the box); powerDrawW 8.0 W computed: V × A × 0.8 from PSU rating (5 V × 2 A); changed per the document: weightKg was 0.2 (2026-11-27). Spec: wyrestorm/EXF-10KM-5K_SpecificationSheet_260128.pdf; weight 0.35 lbs; power consumption not published — from the 5 V DC 2 A supply (one per unit in the box); powerDrawW 8.0 W computed: V × A × 0.8 from PSU rating (5 V × 2 A) (2026-11-27)."
   },
   "ports": [
     {
@@ -75,5 +76,6 @@
       "id": "port-2",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "powerDrawW": 8.0
 }

@@ -43,7 +43,8 @@
       "from": "https://www.wyrestorm.com/product/ex-80-kvm/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published and 'DC' not stated on the page"
+    "portsMissing": "12V DC In: connector not published and 'DC' not stated on the page",
+    "notes": "Spec: wyrestorm/EX-80-KVM_SpecSheet_250416_EN.pdf; 3.6 W per unit (2026-11-27)."
   },
   "ports": [
     {
@@ -90,5 +91,9 @@
       "id": "port-4",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 23,
+  "widthMm": 75,
+  "depthMm": 98.2,
+  "weightKg": 0.22
 }

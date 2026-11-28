@@ -45,7 +45,8 @@
       "from": "https://www.wyrestorm.com/product/ex-70-h2l/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "link type is not named HDBaseT on the page; IR In/IR Out/Audio Out/HDMI/UTP: connector not published except RJ45; 12V DC In: connector not published; RS-232 pass-through: no connector listed; Micro-USB firmware port: page does not say which unit has it"
+    "portsMissing": "link type is not named HDBaseT on the page; IR In/IR Out/Audio Out/HDMI/UTP: connector not published except RJ45; 12V DC In: connector not published; RS-232 pass-through: no connector listed; Micro-USB firmware port: page does not say which unit has it",
+    "notes": "Spec: wyrestorm/EX-70-H2L_SpecSheet_260423.pdf; weight not published; power consumption not published — from the included 18 V 2 A supply; one supply powers both units over the link (PoC/PoH): do not count the pair twice; powerDrawW 28.8 W computed: V × A × 0.8 from PSU rating (18 V × 2 A) (2026-11-27)."
   },
   "ports": [
     {
@@ -100,5 +101,6 @@
       "id": "port-5",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "powerDrawW": 28.8
 }

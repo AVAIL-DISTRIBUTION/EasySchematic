@@ -34,7 +34,8 @@
       "from": "https://www.wyrestorm.com/product/con-usbc-dnt/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Inputs and Outputs both list 1x RJ45 Dante/AES67 and 1x USB-C; the page does not say whether they are the same connectors (listed once each); weight"
+    "portsMissing": "Inputs and Outputs both list 1x RJ45 Dante/AES67 and 1x USB-C; the page does not say whether they are the same connectors (listed once each); weight",
+    "notes": "Spec: wyrestorm/CON-USBC-DNT_SpecSheet_260616.pdf; weight not published; power PoE 802.3af Class 1 (USB-C optional 5 V DC input) (2026-11-27)."
   },
   "ports": [
     {

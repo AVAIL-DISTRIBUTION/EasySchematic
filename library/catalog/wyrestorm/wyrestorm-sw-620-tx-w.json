@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/sw-620-tx-w/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "'1 x USB 3.0 Type-C port' may be the same connector as the USB-C input (not stated); 20V DC In: connector not published and 'DC' not stated"
+    "portsMissing": "'1 x USB 3.0 Type-C port' may be the same connector as the USB-C input (not stated); 20V DC In: connector not published and 'DC' not stated",
+    "notes": "Spec: wyrestorm/SW-620-TX-W_SpecSheet_251126.pdf; weight not published (2026-11-27)."
   },
   "ports": [
     {
@@ -149,5 +150,8 @@
       "id": "port-12",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 160
 }

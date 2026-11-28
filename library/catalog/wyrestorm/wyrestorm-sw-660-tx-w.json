@@ -31,7 +31,8 @@
       "from": "https://www.wyrestorm.com/product/sw-660-tx-w/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "LAN ports: count disputed (2x vs 3x RJ-45) so left out; Relay output and PA sensor (MUTE) input: counts and connectors not published; 20V DC In: connector not published; Wi-Fi antennas are not ports"
+    "portsMissing": "LAN ports: count disputed (2x vs 3x RJ-45) so left out; Relay output and PA sensor (MUTE) input: counts and connectors not published; 20V DC In: connector not published; Wi-Fi antennas are not ports",
+    "notes": "Spec: wyrestorm/SW-660-TX-W_Quickstart_260727.pdf (no spec sheet published); antennas excluded (with antennas: 90.9 × 215 × 210.7 mm); power consumption not published — from the 20 V 10 A supply; powerDrawW 160.0 W computed: V × A × 0.8 from PSU rating (20 V × 10 A) (2026-11-27)."
   },
   "ports": [
     {
@@ -181,5 +182,10 @@
       "id": "port-16",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 42,
+  "widthMm": 215,
+  "depthMm": 180.2,
+  "weightKg": 1.42,
+  "powerDrawW": 160.0
 }

@@ -20,7 +20,7 @@
   "heightMm": 25,
   "widthMm": 150,
   "depthMm": 145.2,
-  "powerDrawW": 24,
+  "powerDrawW": 6.6,
   "voltage": "12V DC / PoE+ 802.3at",
   "poeDrawW": 24,
   "rackForm": "shelf-only",
@@ -36,7 +36,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-600-e-tx-rx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "PoE+ (802.3at) compliant: page does not say which RJ45 port carries PoE; In the Box lists a 12V 1A PSU while specifications say 12V 2A; 12V DC In: connector not published"
+    "portsMissing": "PoE+ (802.3at) compliant: page does not say which RJ45 port carries PoE; In the Box lists a 12V 1A PSU while specifications say 12V 2A; 12V DC In: connector not published",
+    "notes": "Spec: wyrestorm/NHD 600 Series Specification Sheet_260228.pdf; L × W × H 145.2 × 150 × 25 mm, 1.36 lbs; TX 6.6 W, RX 7.2 W; changed per the document: powerDrawW was 24 (2026-11-27). Spec: wyrestorm/NHD 600 Series Specification Sheet_260228.pdf; L × W × H 145.2 × 150 × 25 mm, 1.36 lbs; TX 6.6 W, RX 7.2 W (2026-11-27)."
   },
   "ports": [
     {
@@ -118,5 +119,6 @@
       "id": "port-8",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "weightKg": 0.62
 }

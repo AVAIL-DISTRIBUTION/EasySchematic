@@ -34,7 +34,8 @@
       "from": "https://www.wyrestorm.com/product/con-dnt-xlr/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "weight not on the page"
+    "portsMissing": "weight not on the page",
+    "notes": "Spec: wyrestorm/CON-DNT-XLR_SpecSheet_260611.pdf; weight not published; power PoE 802.3af Class 1 (USB-C optional 5 V DC input) (2026-11-27)."
   },
   "ports": [
     {

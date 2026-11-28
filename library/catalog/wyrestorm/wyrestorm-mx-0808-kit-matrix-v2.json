@@ -39,7 +39,8 @@
       "from": "https://www.wyrestorm.com/product/mx-0808-kit-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "4 mirrored HDMI outputs named in features but not in the Outputs list; second RS-232 (3-pin Terminal Block) not assigned to a unit; Audio Out connector not published; AC Power In connector not published; 18V DC (Optional) input: unit not stated; the page groups Matrix and Receivers without a per-unit split (assigned by count and signal); power consumption garbled; dimensions"
+    "portsMissing": "4 mirrored HDMI outputs named in features but not in the Outputs list; second RS-232 (3-pin Terminal Block) not assigned to a unit; Audio Out connector not published; AC Power In connector not published; 18V DC (Optional) input: unit not stated; the page groups Matrix and Receivers without a per-unit split (assigned by count and signal); power consumption garbled; dimensions",
+    "notes": "Spec: wyrestorm/Full Range KIT_SpecSheet_220317_EN.pdf; column MX-0808-KIT (the document gives 4.06 kg for every column) (2026-11-27)."
   },
   "ports": [
     {
@@ -385,5 +386,9 @@
       "connectorType": "iec",
       "notes": "Wyrestorm convention: IEC — verify"
     }
-  ]
+  ],
+  "heightMm": 43.5,
+  "widthMm": 440,
+  "depthMm": 300,
+  "weightKg": 4.06
 }

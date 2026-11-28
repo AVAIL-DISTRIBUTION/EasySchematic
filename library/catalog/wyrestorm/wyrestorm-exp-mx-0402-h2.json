@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/exp-mx-0402-h2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "IR front panel sensor is not a port; 5V DC In: connector not published"
+    "portsMissing": "IR front panel sensor is not a port; 5V DC In: connector not published",
+    "notes": "Spec: wyrestorm/EXP-MX-0402-H2_SpecSheet_250218_EN.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -119,5 +120,9 @@
       "id": "port-9",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 22,
+  "widthMm": 182,
+  "depthMm": 77,
+  "weightKg": 0.34
 }

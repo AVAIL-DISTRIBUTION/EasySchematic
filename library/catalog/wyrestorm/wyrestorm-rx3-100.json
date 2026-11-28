@@ -17,7 +17,7 @@
     "rx3-100",
     "wyrestorm"
   ],
-  "powerDrawW": 10.9,
+  "powerDrawW": 10.92,
   "voltage": "20V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/rx3-100/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "page lists 'Audio Out 3.5mm' and 'Line Out 2ch audio over HDBaseT' in one line; modelled as one port; 20V DC In: connector not published"
+    "portsMissing": "page lists 'Audio Out 3.5mm' and 'Line Out 2ch audio over HDBaseT' in one line; modelled as one port; 20V DC In: connector not published",
+    "notes": "Spec: wyrestorm/RX3-100_SpecSheet_260310.pdf; changed per the document: powerDrawW was 10.9 (2026-11-27). Spec: wyrestorm/RX3-100_SpecSheet_260310.pdf (2026-11-27)."
   },
   "ports": [
     {
@@ -106,5 +107,9 @@
       "id": "port-7",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 230,
+  "depthMm": 110,
+  "weightKg": 0.36
 }

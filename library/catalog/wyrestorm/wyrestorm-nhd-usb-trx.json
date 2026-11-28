@@ -36,7 +36,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-usb-trx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published"
+    "portsMissing": "12V DC In: connector not published",
+    "notes": "Spec: wyrestorm/NHD-USB-TRX_UserGuide_251208.pdf (no spec sheet published); W × H × D 140 × 23.5 × 90 mm; weight not published; 2.2 W no load, 18.5 W full load (2026-11-27)."
   },
   "ports": [
     {

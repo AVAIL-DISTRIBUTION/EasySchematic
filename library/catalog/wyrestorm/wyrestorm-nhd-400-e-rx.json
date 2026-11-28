@@ -33,7 +33,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-400-e-rx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Inputs 1x RJ-45 and Ethernet 1x LAN (PoE) RJ-45 listed separately; treated as one connector; 12V DC In: connector not published; dimensions"
+    "portsMissing": "Inputs 1x RJ-45 and Ethernet 1x LAN (PoE) RJ-45 listed separately; treated as one connector; 12V DC In: connector not published; dimensions",
+    "notes": "Spec: wyrestorm/NetworkHD Full Range_SpecSheet_240730_EN (ambertech).pdf (dealer mirror https://ambertech.com.au/Documents/Manuals/Wyrestorm/NetworkHD%20Full%20Range_SpecSheet_240730_EN.pdf; no 400 series sheet on wyrestorm.com); column 400 / 400-E / 400-DNT: L × W × H 220 × 140 × 25 mm, 1.75 lbs, 8 W (2026-11-27)."
   },
   "ports": [
     {
@@ -71,5 +72,9 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 140,
+  "depthMm": 220,
+  "weightKg": 0.79
 }

@@ -31,7 +31,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-124-tx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "LAN: speed and PoE disputed between the two spec blocks, so left out of notes; 12V DC In: connector not published"
+    "portsMissing": "LAN: speed and PoE disputed between the two spec blocks, so left out of notes; 12V DC In: connector not published",
+    "notes": "Spec: wyrestorm/NHD 100 Series Specification Sheet_260228.pdf; L × W × H 260 × 215 × 25 mm, 3.21 lbs (2026-11-27)."
   },
   "ports": [
     {
@@ -83,5 +84,10 @@
       "connectorType": "barrel",
       "notes": "Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 215,
+  "depthMm": 260,
+  "weightKg": 1.46,
+  "powerDrawW": 14
 }

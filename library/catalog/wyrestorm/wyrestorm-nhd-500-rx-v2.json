@@ -35,7 +35,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-500-tx-rx-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Dante/AES67: listed only as an audio format, no separate port; 12V DC In: connector not published; PoE class (802.3at vs 802.3af) disputed; Audio Out: connector not published; SFP: speed/type disputed"
+    "portsMissing": "Dante/AES67: listed only as an audio format, no separate port; 12V DC In: connector not published; PoE class (802.3at vs 802.3af) disputed; Audio Out: connector not published; SFP: speed/type disputed",
+    "notes": "Spec: wyrestorm/NHD 500 Series Specification Sheet_260904.pdf; 215 × 160 × 25 mm, 1.75 lbs (shared with NHD-500-TX v2); 7 W, 20.8 W with USB load (2026-11-27)."
   },
   "ports": [
     {
@@ -153,5 +154,10 @@
       "id": "port-12",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 160,
+  "depthMm": 215,
+  "weightKg": 0.79,
+  "powerDrawW": 20.8
 }

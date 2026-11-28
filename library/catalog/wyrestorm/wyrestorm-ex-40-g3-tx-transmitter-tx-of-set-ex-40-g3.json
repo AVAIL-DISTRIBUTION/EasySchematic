@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/ex-40-g3/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "power input of the transmitter: not published (page: 5V DC 1A optional for Receiver; PoC 1-way Transmitter to Receiver)"
+    "portsMissing": "power input of the transmitter: not published (page: 5V DC 1A optional for Receiver; PoC 1-way Transmitter to Receiver)",
+    "notes": "Spec: wyrestorm/EX-40-G3_SpecSheet_221219_EN.pdf; max power 2.5 W per TX/RX pair — one value for the TX/RX pair in the document, the same written for both units; one supply powers both units over the link (PoC/PoH): do not count the pair twice (2026-11-27)."
   },
   "ports": [
     {
@@ -80,5 +81,10 @@
       "section": "Power",
       "notes": "local supply, alternative to power over the link; Wyrestorm convention: locking DC barrel (threaded bushing) — verify"
     }
-  ]
+  ],
+  "heightMm": 21,
+  "widthMm": 70,
+  "depthMm": 70.2,
+  "weightKg": 0.2,
+  "powerDrawW": 2.5
 }

@@ -19,7 +19,7 @@
     "wyrestorm",
     "v2"
   ],
-  "powerDrawW": 150,
+  "powerDrawW": 200,
   "voltage": "20V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -35,7 +35,8 @@
       "from": "https://www.wyrestorm.com/product/mx-0402-mst/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "RS-232 (mentioned in control methods) and GPIO (in the description): no connector listed in the specifications; USB 3.0 host and device ports: not listed; 20V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "RS-232 (mentioned in control methods) and GPIO (in the description): no connector listed in the specifications; USB 3.0 host and device ports: not listed; 20V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/MX-0402-MST_Quickstart_260312.pdf (no spec sheet published); L × W × H 300 × 180 × 25 mm; power consumption up to 200 W (155.6 W with 22.5 W USB-A and 2 × 60 W USB-C charging); changed per the document: powerDrawW was 150 (2026-11-27). Spec: wyrestorm/MX-0402-MST_Quickstart_260312.pdf (no spec sheet published); L × W × H 300 × 180 × 25 mm; power consumption up to 200 W (155.6 W with 22.5 W USB-A and 2 × 60 W USB-C charging) (2026-11-27)."
   },
   "ports": [
     {
@@ -122,5 +123,9 @@
       "id": "port-9",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 180,
+  "depthMm": 300,
+  "weightKg": 2.66
 }

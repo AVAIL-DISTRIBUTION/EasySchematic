@@ -33,7 +33,12 @@
       "from": "https://www.wyrestorm.com/product/idb-200-xx/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "HDMI inputs (1 or 2) and RJ-45: the two spec blocks disagree and the page does not say which is for MS; mains outlet/inlet not given for the multi-standard model; dimensions and weight not on the page"
+    "portsMissing": "HDMI inputs (1 or 2) and RJ-45: the two spec blocks disagree and the page does not say which is for MS; mains outlet (multi-standard) not modelled as a port; inlet from IDB-200_SpecSheet_210902_EN.pdf; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/IDB-200_SpecSheet_210902_EN.pdf; table box: top surface 85 × 85 mm, under-table 79.8 × 80 mm (dimensions not required); weight not published; the device's own power draw not published (mains outlet 100-250 V AC, 16 A max is pass-through) (2026-11-27). Mains In per IDB-200_SpecSheet_210902_EN.pdf (IDB-200-MS column): 'Integrated 40cm Weiland connector (EPN 1114)', 100-250VAC, 16A max; passive outlet module with no consumption of its own: powerDrawW not set; pass-through power to the outlet (2026-11-27).",
+    "passThroughPower": {
+      "enabled": true,
+      "powers": "mains outlets for devices on the table"
+    }
   },
   "ports": [
     {
@@ -62,6 +67,15 @@
       "section": "USB",
       "notes": "charging, 5v 2.4a per port",
       "id": "port-2"
+    },
+    {
+      "id": "port-3",
+      "label": "Mains In",
+      "signalType": "power",
+      "direction": "input",
+      "section": "Power",
+      "connectorType": "other",
+      "notes": "integrated 40 cm Wieland connector (EPN 1114); 100-250 V AC 50-60 Hz, 16 A max; passive — feeds the multi-standard mains outlet, total of connected devices max 3.6 kW"
     }
   ]
 }

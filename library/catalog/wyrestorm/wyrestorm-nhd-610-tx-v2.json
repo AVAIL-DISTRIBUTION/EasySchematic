@@ -19,7 +19,7 @@
     "wyrestorm",
     "v2"
   ],
-  "powerDrawW": 24,
+  "powerDrawW": 10,
   "voltage": "12V DC / PoE+ 802.3at",
   "poeDrawW": 24,
   "rackForm": "shelf-only",
@@ -36,7 +36,8 @@
       "from": "https://www.wyrestorm.com/product/nhd-610-tx-v2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "Audio In / Audio Out: 5-pin connector type not named; 12V DC In: connector not published"
+    "portsMissing": "Audio In / Audio Out: 5-pin connector type not named; 12V DC In: connector not published",
+    "notes": "Spec: wyrestorm/NHD 600 Series Specification Sheet_260228.pdf; L × W × H 215 × 140 × 25 mm, 1.75 lbs; changed per the document: powerDrawW was 24 (2026-11-27). Spec: wyrestorm/NHD 600 Series Specification Sheet_260228.pdf; L × W × H 215 × 140 × 25 mm, 1.75 lbs (2026-11-27)."
   },
   "ports": [
     {
@@ -163,5 +164,9 @@
       "id": "port-13",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 140,
+  "depthMm": 215,
+  "weightKg": 0.79
 }

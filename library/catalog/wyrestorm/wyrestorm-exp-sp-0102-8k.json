@@ -33,7 +33,8 @@
       "from": "https://www.wyrestorm.com/product/exp-sp-0102-8k/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published; ARC and S/PDIF audio output are mentioned but no connector is listed"
+    "portsMissing": "12V DC In: connector not published; ARC and S/PDIF audio output are mentioned but no connector is listed",
+    "notes": "Spec: wyrestorm/EXP-SP-0102-8K_SpecSheet_260312_EN.pdf; width printed as 140mm/0.78in (inch value inconsistent; mm taken) (2026-11-27)."
   },
   "ports": [
     {
@@ -69,5 +70,9 @@
       "id": "port-3",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 18,
+  "widthMm": 140,
+  "depthMm": 80.2,
+  "weightKg": 0.28
 }

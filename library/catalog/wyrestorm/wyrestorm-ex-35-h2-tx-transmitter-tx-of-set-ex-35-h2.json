@@ -42,7 +42,8 @@
       "from": "https://www.wyrestorm.com/product/ex-35-h2/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "IR and RS-232 lines are not split per unit on the page, applied to both units; power input per unit not stated (one 18V PSU in the box, 2-way PoH); Max Power Consumption 8.88W not stated per unit; 18V DC In: connector not published"
+    "portsMissing": "IR and RS-232 lines are not split per unit on the page, applied to both units; power input per unit not stated (one 18V PSU in the box, 2-way PoH); Max Power Consumption 8.88W not stated per unit; 18V DC In: connector not published",
+    "notes": "Spec: wyrestorm/EX-35-H2 v2_SpecSheet_180921_EN.pdf; max power 8.88 W — one value for the TX/RX pair in the document, the same written for both units; one supply powers both units over the link (PoC/PoH): do not count the pair twice (2026-11-27)."
   },
   "ports": [
     {
@@ -98,5 +99,10 @@
       "id": "port-5",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 15.2,
+  "widthMm": 136.4,
+  "depthMm": 74.2,
+  "weightKg": 0.36,
+  "powerDrawW": 8.88
 }

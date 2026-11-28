@@ -45,7 +45,8 @@
       "from": "https://www.wyrestorm.com/product/ex-60d-kvm/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "12V DC In: connector not published; the 12V supply is listed once for the kit (assigned to TX because PoC is one-way Tx -> Rx); weight; dimensions not stated per unit"
+    "portsMissing": "12V DC In: connector not published; the 12V supply is listed once for the kit (assigned to TX because PoC is one-way Tx -> Rx); weight; dimensions not stated per unit",
+    "notes": "Spec: wyrestorm/EX-60D-KVM_Specsheet_260513.pdf; weight not published; power: 'DC 12V' only, no current or wattage published (2026-11-27)."
   },
   "ports": [
     {

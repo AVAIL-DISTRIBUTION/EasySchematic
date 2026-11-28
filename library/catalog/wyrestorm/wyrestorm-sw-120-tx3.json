@@ -17,7 +17,7 @@
     "sw-120-tx3",
     "wyrestorm"
   ],
-  "powerDrawW": 10.5,
+  "powerDrawW": 10.46,
   "voltage": "20V DC",
   "rackForm": "shelf-only",
   "_avail": {
@@ -32,7 +32,8 @@
       "from": "https://www.wyrestorm.com/product/sw-120-tx3/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "20V DC In: connector not published; dimensions and weight not on the page"
+    "portsMissing": "20V DC In: connector not published; dimensions and weight not on the page",
+    "notes": "Spec: wyrestorm/SW-120-TX3_SpecSheet_260209.pdf; printed 'Length x Width x Height 230 × 25 × 110 mm' (25 mm is the height, as RX3-100: H 25, W 230, D 110); changed per the document: powerDrawW was 10.5 (2026-11-27). Spec: wyrestorm/SW-120-TX3_SpecSheet_260209.pdf; printed 'Length x Width x Height 230 × 25 × 110 mm' (25 mm is the height, as RX3-100: H 25, W 230, D 110) (2026-11-27)."
   },
   "ports": [
     {
@@ -127,5 +128,9 @@
       "id": "port-10",
       "connectorType": "barrel"
     }
-  ]
+  ],
+  "heightMm": 25,
+  "widthMm": 230,
+  "depthMm": 110,
+  "weightKg": 0.63
 }

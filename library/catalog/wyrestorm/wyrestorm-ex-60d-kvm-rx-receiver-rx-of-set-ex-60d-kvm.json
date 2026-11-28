@@ -45,7 +45,8 @@
       "from": "https://www.wyrestorm.com/product/ex-60d-kvm/",
       "note": "Technical Specifications on the manufacturer's product page"
     },
-    "portsMissing": "no own power input listed (powered by PoC from the transmitter); weight; dimensions not stated per unit"
+    "portsMissing": "no own power input listed (powered by PoC from the transmitter); weight; dimensions not stated per unit",
+    "notes": "Spec: wyrestorm/EX-60D-KVM_Specsheet_260513.pdf; weight not published; power: 'DC 12V' only, no current or wattage published (2026-11-27)."
   },
   "ports": [
     {

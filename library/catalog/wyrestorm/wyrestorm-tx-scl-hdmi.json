@@ -28,7 +28,8 @@
       "kind": "datasheet",
       "from": "https://www.wyrestorm.com/product/mx-1616-scl/",
       "note": "card I/O listed on the MX-1616-SCL product page (Technical Specifications); an input/output card despite \"Output Card\" in the price list name"
-    }
+    },
+    "notes": "Spec: wyrestorm/MX-1616-SCL_SpecSheet_260310.pdf; output card of MX-1616-SCL: no product page or spec sheet of its own; dimensions and weight not published (card in a slot) (2026-11-27)."
   },
   "ports": [
     {
